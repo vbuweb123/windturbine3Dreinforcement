@@ -10,5 +10,6 @@ namespace WindBarrierReinforcement
     {
         public int Test { get; set; }
         public int Test2 { get; set; }
+        public string Name { get; set; }
     }
 }
