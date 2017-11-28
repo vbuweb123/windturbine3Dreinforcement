@@ -1,0 +1,190 @@
+﻿<Page x:Class="WindBarrierReinforcement.Page01"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+      xmlns:behaviors="clr-namespace:WindBarrierReinforcement.Behaviors"
+      xmlns:local="clr-namespace:WindBarrierReinforcement"
+      mc:Ignorable="d" 
+      d:DesignHeight="465" d:DesignWidth="700"
+      Title="Page01">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/XamlResources.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="White">
+        <TextBlock HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" Text="Global" VerticalAlignment="Top"/>
+        <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="1,25,250,0">
+            
+            <!--H Foundation-->
+            <Label FontSize="12" Content="H Foundation" HorizontalAlignment="Left" Margin="2,2,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_H_Foundation"   
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding HFoundation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,4,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--H Foundation Edge-->
+            <Label FontSize="12" Content="H Foundation Edge" HorizontalAlignment="Left" Margin="2,30,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_H_Foundation_Edge"
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding HFoundationEdge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,32,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--H Tower Base-->
+            <Label FontSize="12" Content="H Tower Base" HorizontalAlignment="Left" Margin="2,58,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_H_Tower_Base"
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding HTowerBase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                
+                HorizontalAlignment="Left" Height="23" Margin="125,60,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--H Bottom-->
+            <Label FontSize="12" Content="H Bottom" HorizontalAlignment="Left" Margin="2,86,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_H_Bottom"  
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding HBottom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                HorizontalAlignment="Left" Height="23" Margin="125,88,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Diameter Foundation-->
+            <Label FontSize="12" Content="Diameter Foundation" HorizontalAlignment="Left" Margin="2,114,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_Diameter_Foundation"  
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding DFoundation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,116,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Diameter Tower Base-->
+            <Label FontSize="12" Content="Diameter Tower Base" HorizontalAlignment="Left" Margin="2,142,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_Diameter_Tower_Base"   
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding DTowerBase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,144,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            
+            <!--Foundation Bed-->
+            <Label FontSize="12" Content="Foundation Bed" HorizontalAlignment="Left" Margin="2,170,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_Foundation_Bed"  
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding FoundationBed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,172,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Diameter Anchors-->
+            <Label FontSize="12" Content="Diameter Anchors" HorizontalAlignment="Left" Margin="2,197,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_DiameterAnchor"
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding DiameterAnchor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,199,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Radius Centerline Tower-->
+            <Label FontSize="12" Content="Radius Centerline Tower" HorizontalAlignment="Left" Margin="2,224,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_Radius_Centerline_Tower"
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding RadiusCenterlineTower, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,226,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Bottom Cover-->
+            <Label FontSize="12" Content="Bottom Cover" HorizontalAlignment="Left" Margin="2,251,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_Bottom_Cover"     
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding BottomCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,253,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Top Cover-->
+            <Label FontSize="12" Content="Top Cover" HorizontalAlignment="Left" Margin="2,278,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_Top_Cover"   
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding TopCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,280,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Edge Cover-->
+            <Label FontSize="12" Content="Edge Cover" HorizontalAlignment="Left" Margin="2,305,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_Edge_Cover"  
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding EdgeCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,307,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Radius Btc-->
+            <Label FontSize="12" Content="Radius Btc" HorizontalAlignment="Left" Margin="2,332,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_Radius_Btc"  
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding RadiusBtc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,334,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Material Foundation-->
+            <Label FontSize="12" Content="Material Foundation" HorizontalAlignment="Left" Margin="2,360,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_Material_Foundation"            
+                HorizontalAlignment="Left" Height="23" Margin="125,362,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            
+            
+            <Label FontSize="12" Content="Material Foundation Bed" HorizontalAlignment="Left" Margin="2,387,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_Material_Foundation_Bed"            
+                HorizontalAlignment="Left" Height="23" Margin="149,389,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Material Foundation Bed" HorizontalAlignment="Left" Margin="210,5,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_Material_Foundation_Bed_Copy"            
+                HorizontalAlignment="Left" Height="23" Margin="366,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Material Tower Base" HorizontalAlignment="Left" Margin="210,32,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_Material_Tower_Base"            
+                HorizontalAlignment="Left" Height="23" Margin="366,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Hight Above Ground" HorizontalAlignment="Left" Margin="210,60,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_HeightAboveGround"            
+                HorizontalAlignment="Left" Height="23" Margin="366,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Dept Foundation" HorizontalAlignment="Left" Margin="210,87,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_Dept_Foundation"            
+                HorizontalAlignment="Left" Height="23" Margin="366,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Coordinations Ground Point X" HorizontalAlignment="Left" Margin="210,115,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_ARC_CenterPoint_X"            
+                HorizontalAlignment="Left" Height="23" Margin="394,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Foundation Point Z" HorizontalAlignment="Left" Margin="210,201,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_ARC_FoundationPoint_Z"            
+                HorizontalAlignment="Left" Height="23" Margin="366,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Coordinations Ground Point Y" HorizontalAlignment="Left" Margin="210,144,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_ARC_CenterPoint_Y"            
+                HorizontalAlignment="Left" Height="23" Margin="394,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Coordinations Ground Point Z" HorizontalAlignment="Left" Margin="210,171,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_ARC_CenterPoint_Z"            
+                HorizontalAlignment="Left" Height="23" Margin="394,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" RenderTransformOrigin="-0.346,-1.87"/>
+
+        </Grid>
+
+
+    </Grid>
+</Page>
