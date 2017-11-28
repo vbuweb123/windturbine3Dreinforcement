@@ -141,31 +141,48 @@
             <!--Material Foundation-->
             <Label FontSize="12" Content="Material Foundation" HorizontalAlignment="Left" Margin="2,360,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_Material_Foundation"            
+                x:Name="UI_TextBox_Material_Foundation"   
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding MaterialFoundation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 HorizontalAlignment="Left" Height="23" Margin="125,362,0,0" TextWrapping="Wrap" 
                 VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
-            
-            
+
+            <!--Material Foundation Bed-->
             <Label FontSize="12" Content="Material Foundation Bed" HorizontalAlignment="Left" Margin="2,387,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_Material_Foundation_Bed"            
-                HorizontalAlignment="Left" Height="23" Margin="149,389,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" RenderTransformOrigin="-0.346,-1.87"/>
-            <Label FontSize="12" Content="Material Foundation Bed" HorizontalAlignment="Left" Margin="210,5,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_Material_Foundation_Bed_Copy"            
-                HorizontalAlignment="Left" Height="23" Margin="366,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                x:Name="UI_TextBox_Material_Foundation_Bed"
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding MaterialFoundationBed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="149,389,0,0" TextWrapping="Wrap"
+                VerticalAlignment="Top" Width="54" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Material Tower Base-->
             <Label FontSize="12" Content="Material Tower Base" HorizontalAlignment="Left" Margin="210,32,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_Material_Tower_Base"            
-                HorizontalAlignment="Left" Height="23" Margin="366,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                x:Name="UI_TextBox_Material_Tower_Base"
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding MaterialFoundationBed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="366,34,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Hight Above Ground-->
             <Label FontSize="12" Content="Hight Above Ground" HorizontalAlignment="Left" Margin="210,60,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_HeightAboveGround"            
-                HorizontalAlignment="Left" Height="23" Margin="366,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                x:Name="UI_TextBox_HeightAboveGround"   
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding HightAboveGround, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="366,62,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Dept Foundation-->
             <Label FontSize="12" Content="Dept Foundation" HorizontalAlignment="Left" Margin="210,87,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_Dept_Foundation"            
-                HorizontalAlignment="Left" Height="23" Margin="366,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                x:Name="UI_TextBox_Dept_Foundation"  
+                
+                HorizontalAlignment="Left" Height="23" Margin="366,89,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            
+            <!---->
             <Label FontSize="12" Content="Coordinations Ground Point X" HorizontalAlignment="Left" Margin="210,115,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_ARC_CenterPoint_X"            

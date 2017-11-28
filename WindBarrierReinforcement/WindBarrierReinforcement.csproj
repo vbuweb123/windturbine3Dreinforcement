@@ -66,7 +66,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Behaviors\NumericBehavior.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Common\Attributes\DisplayByResourceKeyAttribute.cs" />
     <Compile Include="Common\Attributes\KeyNameAttribute.cs" />
     <Compile Include="Common\DataModel\DataModel.cs" />
