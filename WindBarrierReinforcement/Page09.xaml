@@ -1,0 +1,56 @@
+﻿<Page x:Class="WindBarrierReinforcement.Page09"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WindBarrierReinforcement"
+      mc:Ignorable="d" 
+   d:DesignHeight="465" d:DesignWidth="700"
+      Title="Page09">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/XamlResources.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="White">
+        <TextBlock HorizontalAlignment="Left" Margin="20,10,0,0" TextWrapping="Wrap" Text="U Bars Around Bolts" VerticalAlignment="Top"/>
+        <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="14,35,476,15">
+            <Label FontSize="12" Content="To Exterior Length" HorizontalAlignment="Left" Margin="2,7,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_UBAB_ToExteriorLength"        
+                HorizontalAlignment="Left" Height="23" Margin="123,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Top Offset" HorizontalAlignment="Left" Margin="4,68,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_UBAB_topOffset"            
+                HorizontalAlignment="Left" Height="23" Margin="125,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Hook Small Diameter" HorizontalAlignment="Left" Margin="4,96,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_UBAB_HookSmallDiam"            
+                HorizontalAlignment="Left" Height="23" Margin="125,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Bar Diameter" HorizontalAlignment="Left" Margin="4,124,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_UBAB_BarDiameter"            
+                HorizontalAlignment="Left" Height="23" Margin="125,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Small Opening Inner Axis" HorizontalAlignment="Left" Margin="4,152,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_UBAB_SmallOpeningInnerAxis"            
+                HorizontalAlignment="Left" Height="23" Margin="125,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Make Fillet" HorizontalAlignment="Left" Margin="6,180,0,0" VerticalAlignment="Top"/>
+            <Label FontSize="12" Content="Spacing" HorizontalAlignment="Left" Margin="4,203,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_UBAB_Spacing"            
+                HorizontalAlignment="Left" Height="23" Margin="125,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+        </Grid>
+
+        <Label FontSize="12" Content="To Interior Length" HorizontalAlignment="Left" Margin="18,74,0,0" VerticalAlignment="Top"/>
+        <TextBox 
+            Name="UI_TextBox_UBAB_ToInteriorLength"            
+            HorizontalAlignment="Left" Height="23" Margin="139,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87">
+        </TextBox>
+
+
+    </Grid>
+</Page>

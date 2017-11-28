@@ -1,0 +1,47 @@
+﻿<Window x:Class="WindBarrierReinforcement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindBarrierReinforcement"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="930">
+    <Grid>
+        
+        <Frame Name="FrameMain" Margin="0,35,0,0" NavigationUIVisibility="Hidden">
+
+        </Frame>
+        <Menu Name="UI_Menu" HorizontalAlignment="Center" FontWeight="Bold"  Height="360" Margin="700,0,0,0"
+              VerticalAlignment="Top" Width="230" Padding="10 1 1 1" Background="Orange" FontStyle="Italic">
+
+            <MenuItem Tag="Page01" Header="Global" Width="230" Height="30"></MenuItem>
+
+            <MenuItem Tag="Page02" Header="Anchor" Width="230" Height="30"></MenuItem>
+
+            <MenuItem Tag="Page03" Header="Piles" Width="230" Height="30" ></MenuItem>
+
+            <MenuItem Tag="Page04" Header="BottomR"   Width="230" Height="30" ></MenuItem>
+
+            <MenuItem Tag="Page05" Header="TopR"   Width="230" Height="30" ></MenuItem>
+
+            <MenuItem Tag="Page06" Header="UnderPlateBottomR"  Width="230" Height="30" ></MenuItem>
+
+            <MenuItem Tag="Page07" Name="UI_MenuItem_OverPlateTopR" Header="OverPlateTopR"   Width="230" Height="30" ></MenuItem>
+
+            <MenuItem Tag="Page08" Header="AnchorsReinforcement"   Width="230" Height="30" ></MenuItem>
+
+            <MenuItem Tag="Page09" Header="UBarsAroundBolts"   Width="230" Height="30" ></MenuItem>
+
+            <MenuItem Tag="Page10" Header="ChairsR"   Width="230" Height="30" ></MenuItem>
+
+            <MenuItem Tag="Page11" Header="Materials"   Width="230" Height="30"  ></MenuItem>
+
+            <MenuItem Tag="Page12" Header="BS8666"   Width="230" Height="30"  ></MenuItem>
+
+
+        </Menu>
+
+
+
+    </Grid>
+</Window>
