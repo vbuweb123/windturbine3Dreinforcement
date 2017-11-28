@@ -1,0 +1,84 @@
+﻿<Page x:Class="WindBarrierReinforcement.Page10"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WindBarrierReinforcement"
+      mc:Ignorable="d" 
+      d:DesignHeight="465" d:DesignWidth="700"
+      Title="Page10">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/XamlResources.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="White">
+        <TextBlock HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" Text="Chairs" VerticalAlignment="Top"/>
+        <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="0,21,251,4">
+            <Label FontSize="12" Content="Spacing Tangential" HorizontalAlignment="Left" Margin="2,31,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_CHR_SpacingValue_Tangential_1"         
+                HorizontalAlignment="Left" Height="23" Margin="113,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Diameter" HorizontalAlignment="Left" Margin="2,59,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_CHR_Diameter_1"         
+                HorizontalAlignment="Left" Height="23" Margin="113,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Zone Length" HorizontalAlignment="Left" Margin="2,87,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_CHR_Zone_Length_1"         
+                HorizontalAlignment="Left" Height="23" Margin="113,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Spacing Radial" HorizontalAlignment="Left" Margin="2,116,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_CHR_SpacingValue_Radial_1"         
+                HorizontalAlignment="Left" Height="23" Margin="113,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Edge Offset" HorizontalAlignment="Left" Margin="2,145,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_CHR_EdgeOffset_1"         
+                HorizontalAlignment="Left" Height="23" Margin="113,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Hook Length" HorizontalAlignment="Left" Margin="2,174,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_CHR_Hook_Lengths_1"         
+                HorizontalAlignment="Left" Height="23" Margin="113,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="ChairsOverTopCirculars" HorizontalAlignment="Left" Margin="2,203,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_CHR_ChairsOverTopCirculars_1"         
+                HorizontalAlignment="Left" Height="23" Margin="113,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="TopChairsOverlapp" HorizontalAlignment="Left" Margin="2,232,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_CHR_TopChairsOverlapp_1"       
+                HorizontalAlignment="Left" Height="23" Margin="113,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <Label FontSize="12" Content="Zone" HorizontalAlignment="Left" Margin="2,3,0,0" VerticalAlignment="Top"/>
+            <Label FontSize="12" Content="1" HorizontalAlignment="Left" Margin="142,3,0,0" VerticalAlignment="Top"/>
+            <Label FontSize="12" Content="2" HorizontalAlignment="Left" Margin="234,3,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_CHR_SpacingValue_Tangential_2"         
+                HorizontalAlignment="Left" Height="23" Margin="204,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <TextBox 
+                x:Name="UI_TextBox_CHR_Diameter_2"         
+                HorizontalAlignment="Left" Height="23" Margin="204,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <TextBox 
+                x:Name="UI_TextBox_CHR_Zone_Length_2"         
+                HorizontalAlignment="Left" Height="23" Margin="204,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <TextBox 
+                x:Name="UI_TextBox_CHR_SpacingValue_Radial_2"         
+                HorizontalAlignment="Left" Height="23" Margin="204,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <TextBox 
+                x:Name="UI_TextBox_CHR_EdgeOffset_2"         
+                HorizontalAlignment="Left" Height="23" Margin="204,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <TextBox 
+                x:Name="UI_TextBox_CHR_Hook_Lengths_2"         
+                HorizontalAlignment="Left" Height="23" Margin="204,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <TextBox 
+                x:Name="UI_TextBox_CHR_ChairsOverTopCirculars_2"         
+                HorizontalAlignment="Left" Height="23" Margin="204,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+            <TextBox 
+                x:Name="UI_TextBox_CHR_TopChairsOverlapp_2"       
+                HorizontalAlignment="Left" Height="23" Margin="204,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+        </Grid>
+
+    </Grid>
+</Page>

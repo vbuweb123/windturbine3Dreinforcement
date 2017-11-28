@@ -1,0 +1,3 @@
+{Key}UPBR_Dir1_Diameter{Value}0
+{Key}UPBR_Dir1_MarginCover{Value}0
+{Key}UPBR_Dir1_Spacing{Value}0

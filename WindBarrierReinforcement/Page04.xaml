@@ -1,0 +1,45 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WindBarrierReinforcement"
+      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Behaviors="clr-namespace:WindBarrierReinforcement.Behaviors" x:Class="WindBarrierReinforcement.Page04"
+      mc:Ignorable="d" 
+      d:DesignHeight="465" d:DesignWidth="700"
+      Title="Page04">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/XamlResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="White">
+        <TextBlock HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" Text="Bottom Reinforcement" VerticalAlignment="Top"/>
+        <TabControl TabStripPlacement="Left" HorizontalAlignment="Left" Margin="0,30,0,0" Width="400" SelectionChanged="TabControl_SelectionChanged">
+            <TabItem Header="Radial" Margin="-4,-6,-36,2">
+                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="32,-6,-2,11">
+
+                    <Label FontSize="12" Content="Spacing" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <TextBox 
+                      x:Name="UI_TextBox_BTR_No_LargeDiameter"            
+                      HorizontalAlignment="Left" Height="23" Margin="141,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87">
+                        <i:Interaction.Behaviors>
+                            <Behaviors:NumericBehaviour InitialValue="0"/>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                </Grid>
+
+            </TabItem>
+
+            <TabItem Header="Circular" Margin="-4,-6,-37,2">
+                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="33,-6,-2,11"/>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Page>
