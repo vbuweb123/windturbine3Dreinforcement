@@ -9,5 +9,6 @@ namespace WindBarrierReinforcement
     class Class1
     {
         public int Test { get; set; }
+        public int Test2 { get; set; }
     }
 }
