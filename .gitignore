@@ -15,3 +15,7 @@ slnx.sqlite
 *.sqlite
 /.vs/*.sqlite
 .vs/*.sqlite
+/packages
+/packages/*.*
+/WindBarrierReinforcement/bin/
+/WindBarrierReinforcement/obj/
