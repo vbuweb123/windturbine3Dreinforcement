@@ -81,6 +81,8 @@
     <Compile Include="Common\ValueConverters\NegateBool.cs" />
     <Compile Include="DataModels\NSPage01\DataModel_Global_Coordinations_GroundPoint.cs" />
     <Compile Include="DataModels\NSPage01\DataModel_Global_Formwork.cs" />
+    <Compile Include="DataModels\NSPage01\DataModel_Global_Materials.cs" />
+    <Compile Include="DataModels\NSPage02\DataModel_Anchor.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_D1.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_D2.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_L.cs" />

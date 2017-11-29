@@ -25,7 +25,7 @@ namespace WindBarrierReinforcement
     {
         public DataModel_Global_Formwork DataModel_Global_Formwork { get; set; }
         public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint { get; set; }
-
+        public DataModel_Global_Materials DataModel_Global_Materials { get; set; }
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
         }
@@ -34,6 +34,7 @@ namespace WindBarrierReinforcement
         {
             DataModel_Global_Formwork = new DataModel_Global_Formwork();
             DataModel_Global_Coordinations_GroundPoint = new DataModel_Global_Coordinations_GroundPoint();
+            DataModel_Global_Materials = new DataModel_Global_Materials();
 
             InitializeComponent();
             this.DataContext = this;

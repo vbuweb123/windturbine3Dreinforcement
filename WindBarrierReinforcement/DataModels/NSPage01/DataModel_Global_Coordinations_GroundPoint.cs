@@ -18,5 +18,34 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
             get { return coordinationX; }
             set { coordinationX = value; NotifyPropertyChanged("CoordinationX"); }
         }
+
+        /// <summary>
+        /// UI_TextBox_ARC_CenterPoint_Y
+        /// </summary>
+        private int coordinationY;
+        public int CoordinationY
+        {
+            get { return coordinationY; }
+            set { coordinationY = value; NotifyPropertyChanged("CoordinationY"); }
+        }
+        /// <summary>
+        /// UI_TextBox_ARC_CenterPoint_Z
+        /// </summary>
+        private int coordinationZ;
+        public int CoordinationZ
+        {
+            get { return coordinationZ; }
+            set { coordinationZ = value; NotifyPropertyChanged("CoordinationZ"); }
+        }
+        /// <summary>
+        /// UI_TextBox_ARC_FoundationPoint_Z
+        /// </summary>
+        private int foundationPointZ;
+        public int FoundationPointZ
+        {
+            get { return foundationPointZ; }
+            set { foundationPointZ = value; NotifyPropertyChanged("FoundationPointZ"); }
+        }
+        
     }
 }

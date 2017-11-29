@@ -126,35 +126,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         {
             get { return radiusBtc; }
             set { radiusBtc = value; NotifyPropertyChanged("RadiusBtc"); }
-        }
-        /// <summary>
-        /// UI_TextBox_Material_Foundation
-        /// </summary>
-        private string materialFoundation;
-        public string MaterialFoundation
-        {
-            get { return materialFoundation; }
-            set { materialFoundation = value; NotifyPropertyChanged("MaterialFoundation"); }
-        }
-        /// <summary>
-        /// UI_TextBox_Material_Foundation_Bed
-        /// </summary>
-        private string materialFoundationBed;
-        public string MaterialFoundationBed
-        {
-            get { return materialFoundationBed; }
-            set { materialFoundationBed = value; NotifyPropertyChanged("MaterialFoundationBed"); }
-        }
-        
-        /// <summary>
-        /// UI_TextBox_Material_Tower_Base
-        /// </summary>
-        private string materialTowerBase;
-        public string MaterialTowerBase
-        {
-            get { return materialTowerBase; }
-            set { materialTowerBase = value; NotifyPropertyChanged("MaterialTowerBase"); }
-        }
+        }     
 
         /// <summary>
         /// UI_TextBox_HeightAboveGround
