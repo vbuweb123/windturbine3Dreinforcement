@@ -17,7 +17,7 @@
 
     <Grid Background="White">
         <TextBlock HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" Text="ScrewPiles" VerticalAlignment="Top"/>
-        <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="10,21,235,4">
+        <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="10,15,235,10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="27*"/>
                 <ColumnDefinition Width="10*"/>
@@ -100,60 +100,86 @@
             <Label FontSize="12" Content="Screw Piles 1" HorizontalAlignment="Left" Margin="53.693,-1,0,0" VerticalAlignment="Top" Grid.Column="2"/>
             <Label FontSize="12" Content="Screw Piles 1" HorizontalAlignment="Left" Margin="272.693,-1,0,0" VerticalAlignment="Top" Grid.Column="2"/>
 
-            <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="273,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" TextChanged="TextBox_TextChanged"/>
-            <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="273,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.44,-1.017"/>
-            <Label Content="Forces&#xD;&#xA;" HorizontalAlignment="Left" Margin="192,19,0,0" VerticalAlignment="Top" Width="73" Height="26" Grid.Column="2"/>
-            <Label Content="PR_BottomCover" HorizontalAlignment="Left" Margin="183,53,0,0" VerticalAlignment="Top" Width="93" Grid.Column="2"/>
-            <Label FontSize="12" Content="PR_TopCover" HorizontalAlignment="Left" Margin="183,92,0,0" VerticalAlignment="Top" Width="93" Grid.Column="2"/>
+            <!--Forces-->
+            <Label Content="Forces" HorizontalAlignment="Left" Margin="142,22,0,0" VerticalAlignment="Top" Width="73" Height="26" Grid.Column="2"/>
+            <TextBox 
+                x:Name="UI_TextBox_Forces_1"
+                DataContext="{Binding DataModel_ScrewPile_SP}"
+                Text="{Binding Forces , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="351,25,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="57" TextChanged="TextBox_TextChanged"/>
+
+            <!--PRBottomCover-->
+            <Label Content="PR_BottomCover" HorizontalAlignment="Left" Margin="142,55,0,0" VerticalAlignment="Top" Width="93" Grid.Column="2"/>
+            <TextBox 
+                x:Name="UI_TextBox_PRBottomCover_1"
+                DataContext="{Binding DataModel_ScrewPile_SP}"
+                Text="{Binding PR_BottomCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="351,58,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.44,-1.017"/>
+
+            <!--PRTopCover-->
+            <Label FontSize="12" Content="PR_TopCover" HorizontalAlignment="Left" Margin="142,92,0,0" VerticalAlignment="Top" Width="93" Grid.Column="2"/>
             <TextBox 
                 x:Name="UI_TextBox_TopCover_1"
                 DataContext="{Binding DataModel_ScrewPile_SP}"
                 Text="{Binding PR_TopCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Right" Height="23" Margin="0,92,88,0" TextWrapping="Wrap" 
+                HorizontalAlignment="Right" Height="23" Margin="0,95,10,0" TextWrapping="Wrap" 
                 VerticalAlignment="Top" Width="57" RenderTransformOrigin="-0.346,-1.87" Grid.Column="2"/>
+
+            <!--PR_StirrupRadius_Layer1-->
+            <Label Content="PR_StirrupRadius_Layer1" Grid.Column="2" HorizontalAlignment="Left" Margin="140,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.07,-0.795" Width="128"/>
             <TextBox 
                 x:Name="UI_TextBox_PR_StirrupRadius_Layer1_1"
                 DataContext="{Binding DataModel_ScrewPile_SP}"
                 Text="{Binding PR_StirrupRadius_Layer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Right" Height="23" Margin="0,134,88,0" TextWrapping="Wrap" 
+                HorizontalAlignment="Right" Height="23" Margin="0,134,10,0" TextWrapping="Wrap" 
                 VerticalAlignment="Top" Width="57" RenderTransformOrigin="-0.346,-1.87" Grid.Column="2"/>
 
-            <!--Diameter-->
-            <Label FontSize="12" Content="Diameter" HorizontalAlignment="Left" Margin="183,205,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+            <!--PR_Spacing_Layer1-->
+            <Label Content="PR_Spacing_Layer1" Grid.Column="2" HorizontalAlignment="Left" Margin="142,168,0,0" VerticalAlignment="Top" Width="126"/>
+            <TextBox 
+                x:Name="UI_TextBox_PR_Spacing_Layer1_1"
+                DataContext="{Binding DataModel_ScrewPile_SP}"
+                Text="{Binding PR_Spacing_Layer1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Right" Height="23" Margin="0,171,10,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="57" RenderTransformOrigin="-0.346,-1.87" Grid.Column="2"/>
+            <!--PR_StirrupRebarDiam_Layer1-->
+            <Label FontSize="12" Content="PR_StirrupRebarDiam_Layer1" HorizontalAlignment="Left" Margin="142,205,0,0" VerticalAlignment="Top" Grid.Column="2"/>
             <ComboBox
                         x:Name="UI_ComboBox_Dir1_Diameters"
                         DataContext="{Binding DataModel_ScrewPile_SP}"
                         ItemsSource="{Binding PR_StirrupRebarDiam_Layer1, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameter1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="271,209,88,0" VerticalAlignment="Top" Grid.Column="2"/>
+                        Margin="349,209,10,0" VerticalAlignment="Top" Grid.Column="2"/>
 
+            <!--PR_NoOfLongRebars-->
+            <Label Content="PR_NoOfLongRebars" Grid.Column="2" HorizontalAlignment="Left" Margin="142,245,0,0" VerticalAlignment="Top" Width="126" />
             <TextBox 
-                x:Name="UI_TextBox_PR_StirrupRadius_Layer1_1_Copy3"
+                x:Name="UI_TextBox_PR_NoOfLongRebars"
                 DataContext="{Binding DataModel_ScrewPile_SP}"
-                Text="{Binding Slope, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Right" Height="23" Margin="0,307,88,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="57" RenderTransformOrigin="-0.346,-1.87" Grid.Column="2"/>
-            <TextBox 
-                x:Name="UI_TextBox_PR_StirrupRadius_Layer1_1_Copy5"
-                DataContext="{Binding DataModel_ScrewPile_SP}"
-                Text="{Binding Slope, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Right" Height="23" Margin="0,276,88,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="57" RenderTransformOrigin="-0.346,-1.87" Grid.Column="2"/>
-            <TextBox 
-                x:Name="UI_TextBox_PR_StirrupRadius_Layer1_1_Copy7"
-                DataContext="{Binding DataModel_ScrewPile_SP}"
-                Text="{Binding Slope, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Right" Height="23" Margin="0,245,88,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="57" RenderTransformOrigin="-0.346,-1.87" Grid.Column="2"/>
-            <TextBox 
-                x:Name="UI_TextBox_PR_Spacing_Layer1_1"
-                DataContext="{Binding DataModel_ScrewPile_SP}"
-                Text="{Binding PR_Spacing_Layer1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Right" Height="23" Margin="0,168,88,0" TextWrapping="Wrap" 
+                Text="{Binding PR_NoOfLongRebars , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Right" Height="23" Margin="0,248,10,0" TextWrapping="Wrap" 
                 VerticalAlignment="Top" Width="57" RenderTransformOrigin="-0.346,-1.87" Grid.Column="2"/>
 
-
+            <!--PR_LongRebarDiam-->
+            <Label FontSize="12" Content="PR_LongRebarDiam" HorizontalAlignment="Left" Margin="142,286,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.688,0.577"/>
+            <ComboBox
+                        x:Name="UI_ComboBox_Dir_LongRebarDiam"
+                        DataContext="{Binding DataModel_ScrewPile_SP}"
+                        ItemsSource="{Binding PR_LongRebarDiam, Mode=OneWay}"
+                        SelectedIndex="{Binding SelectedIndexDiameter2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Margin="349,290,10,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.475,3.091"/>
+            <!--PR_TopLongExtension-->
+            <Label Content="PR_TopLongExtension" Grid.Column="2" HorizontalAlignment="Left" Margin="142,327,0,0" VerticalAlignment="Top"/>
+            <TextBox 
+                x:Name="UI_TextBox_PR_TopLongExtension"
+                DataContext="{Binding DataModel_ScrewPile_SP}"
+                Text="{Binding PR_TopLongExtension, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Right" Height="23" Margin="0,330,10,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="57" RenderTransformOrigin="-0.346,-1.87" Grid.Column="2"/>
+            <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+           
         </Grid>
-
     </Grid>
 </Page>

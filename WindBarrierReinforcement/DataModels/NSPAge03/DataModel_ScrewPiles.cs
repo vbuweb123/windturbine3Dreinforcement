@@ -28,7 +28,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         public string PileType
         {
             get { return pileType ; }
-            set { PileType = value; NotifyPropertyChanged("PileType"); }
+            set { pileType = value; NotifyPropertyChanged("PileType"); }
         }
 
         private int circleDiameter;
@@ -83,8 +83,8 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         private int depthPile;
         public int DepthPile
         {
-            get { return pileDepth; }
-            set { pileDepth = value; NotifyPropertyChanged("DepthPile"); }
+            get { return depthPile; }
+            set { depthPile = value; NotifyPropertyChanged("DepthPile"); }
         }
 
         private string forces;
@@ -135,7 +135,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         public int PR_NoOfLongRebars
         {
             get { return pr_NoOfLongRebars; }
-            set { PR_NoOfLongRebars = value; NotifyPropertyChanged("PR_NoOfLongRebars"); }
+            set { pr_NoOfLongRebars = value; NotifyPropertyChanged("PR_NoOfLongRebars"); }
         }
 
         private int selectedIndexDiameter2;
@@ -167,7 +167,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         public int PR_Spacing_Layer2
         {
             get { return pr_Spacing_Layer2; }
-            set { PR_Spacing_Layer2 = value; NotifyPropertyChanged("PR_Spacing_Layer2"); }
+            set { pr_Spacing_Layer2 = value; NotifyPropertyChanged("PR_Spacing_Layer2"); }
         }
 
         private int selectedIndexDiameter3;
