@@ -41,6 +41,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         }
         public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
 
+        /// <summary>
+        /// Binded to TextBox Style Trigger. Value of 0 will disagle Spacing. Value of 1 will disable NoOfBars
+        /// </summary>
         public string SpacingEnabled
         {
             get
@@ -72,23 +75,5 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
             get { return noOfBars; }
             set { noOfBars = value; NotifyPropertyChanged("NoOfBars"); }
         }
-               
-
-        /// <summary>
-        /// UPBR_Dir1_MarginConver
-        /// </summary>
-        //private int marginCover;
-
-        //[KeyName(KeyName = "UPBR_Dir1_MarginCover")]
-        //public int MarginCover
-        //{
-        //    get { return marginCover; }
-
-        //    set { marginCover = value; NotifyPropertyChanged("MarginCover"); }
-        //}
-       
-       
-       
-
     }
 }
