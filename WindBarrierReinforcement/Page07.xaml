@@ -8,16 +8,18 @@
       xmlns:behaviors="clr-namespace:WindBarrierReinforcement.Behaviors"
       mc:Ignorable="d" 
       d:DesignHeight="465" d:DesignWidth="700"
+      xmlns:l="clr-namespace:WindBarrierReinforcement.Common.ValueConverters"
       Title="Page07">
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/XamlResources.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
+            <l:NegateBool x:Key="NegateBoolConverter"/>
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Background="White">
+    <Grid Background="White" Margin="10,10,10,10">
         <TextBlock HorizontalAlignment="Left" Margin="20,10,0,0" TextWrapping="Wrap" Text="OPTR - Over Plate Top Reinforcement" VerticalAlignment="Top"/>
         <TabControl TabStripPlacement="Left" HorizontalAlignment="Left" Margin="0,25,0,0" Width="375" SelectionChanged="TabControl_SelectionChanged">
             <TabItem Header="Straight Bars Direction 1" Margin="-1,1,-2,-5">
@@ -564,30 +566,27 @@
                         Margin="72,33,10,0" VerticalAlignment="Top"/>
 
                     <!--Offset-->
-                    <Label Content="Offset" HorizontalAlignment="Left" Margin="3,182,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Offset" HorizontalAlignment="Left" Margin="3,202,0,0" VerticalAlignment="Top"/>
                     <TextBox                         
                         x:Name="UI_TextBox_OPTR_CircularMargin_Offset"
                         DataContext="{Binding DataModel_CircularBarsExteriorSide}"
                         Text="{Binding Offset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="142,183,0,0" TextWrapping="Wrap" 
+                        HorizontalAlignment="Left" Height="23" Margin="142,202,0,0" TextWrapping="Wrap" 
                         VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
 
-                    <RadioButton
-                        x:Name="UI_Radio_Button_OPTR_CircularMargin_Spacing_UseDefaultLength"
-                        Content="Use Default Length" HorizontalAlignment="Left" Margin="75,154,0,0" 
-                        VerticalAlignment="Top" RenderTransformOrigin="0.684,0.625"/>
+
 
                     <!--Max Length-->
-                    <Label Content="Max Length" HorizontalAlignment="Left" Margin="3,212,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Max Length" HorizontalAlignment="Left" Margin="3,229,0,0" VerticalAlignment="Top"/>
                     <TextBox                         
                         x:Name="UI_TextBox_OPTR_CircularMargin_MaxLength"    
                         DataContext="{Binding DataModel_CircularBarsExteriorSide}"
                         Text="{Binding MaxLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="22" Margin="142,213,0,0" TextWrapping="Wrap" 
+                        HorizontalAlignment="Left" Height="22" Margin="142,230,0,0" TextWrapping="Wrap" 
                         VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
@@ -595,19 +594,45 @@
                     </TextBox>
 
                     <!--Overlap-->
-                    <Label Content="Overlap" HorizontalAlignment="Left" Margin="3,243,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Overlap" HorizontalAlignment="Left" Margin="3,256,0,0" VerticalAlignment="Top"/>
                     <TextBox                         
                         x:Name="UI_TextBox_OPTR_CircularMargin_Overlap"       
                         DataContext="{Binding DataModel_CircularBarsExteriorSide}"
                         Text="{Binding Overlap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="24" Margin="142,243,0,0" TextWrapping="Wrap" 
+                        HorizontalAlignment="Left" Height="24" Margin="142,256,0,0" TextWrapping="Wrap" 
                         VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
+                    <TextBlock Margin="4,145,0,250">
+                        <InlineUIContainer>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Use Default Length" VerticalAlignment="Center" Margin="0,2" Width="110"/>
+                                <RadioButton
+                                    GroupName="TrueFalse"
+                                    x:Name="UI_Radio_Button_OPTR_CircularMargin_Spacing_UseDefaultLength"
+                                    Content="True" HorizontalAlignment="Left" Margin="1,9,0,0" 
+                                    VerticalAlignment="Top" FontSize="12"
+                                    DataContext="{Binding DataModel_CircularBarsExteriorSide}"
+                                    IsChecked="{Binding UseDefaultLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <RadioButton
+                                    GroupName="TrueFalse" FontSize="12"
+                                    x:Name="UI_Radio_Button_OPTR_CircularMargin_Spacing_UseDefaultLength2"
+                                    Content="False" HorizontalAlignment="Left" Margin="1,9,0,0" 
+                                    VerticalAlignment="Top"
+                                    DataContext="{Binding DataModel_CircularBarsExteriorSide}"
+                                    IsChecked="{Binding UseDefaultLength, Converter={StaticResource NegateBoolConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                        </InlineUIContainer>
+                    </TextBlock>
+                    <!--<WrapPanel Orientation="Horizontal" Margin="11,150,1,220" VerticalAlignment="Center" Height="55">
+                        
+
+                    </WrapPanel>-->
                 </Grid>
             </TabItem>
+
         </TabControl>
     </Grid>
 </Page>

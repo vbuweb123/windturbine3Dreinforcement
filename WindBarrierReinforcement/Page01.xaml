@@ -178,15 +178,21 @@
             <Label FontSize="12" Content="Dept Foundation" HorizontalAlignment="Left" Margin="210,87,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_Dept_Foundation"  
-                
+                DataContext="{Binding DataModel_Global_Formwork}"
+                Text="{Binding DeptFoundation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 HorizontalAlignment="Left" Height="23" Margin="366,89,0,0" TextWrapping="Wrap" 
                 VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
-            
-            <!---->
+
+            <!--Coordinations Ground Point X-->
             <Label FontSize="12" Content="Coordinations Ground Point X" HorizontalAlignment="Left" Margin="210,115,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_ARC_CenterPoint_X"            
-                HorizontalAlignment="Left" Height="23" Margin="394,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" RenderTransformOrigin="-0.346,-1.87"/>
+                x:Name="UI_TextBox_ARC_CenterPoint_X"   
+                DataContext="{Binding DataModel_Global_Coordinations_GroundPoint}"
+                Text="{Binding CoordinationX, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                
+                HorizontalAlignment="Left" Height="23" Margin="394,117,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="50" RenderTransformOrigin="-0.346,-1.87"/>
+            
+            <!---->
             <Label FontSize="12" Content="Foundation Point Z" HorizontalAlignment="Left" Margin="210,201,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_ARC_FoundationPoint_Z"            

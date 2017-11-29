@@ -61,29 +61,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
             set { l_BendAngle = value; NotifyPropertyChanged("L_BendAngle"); }
         }
 
-
-
-        /// <summary>
-        /// UPBR_Dir1_L_OverEdgeExtentLength
-        /// </summary>
-        //private int overEdgeExtentLength;
-        //[KeyName(KeyName = "UPBR_Dir1_L_OverEdgeExtentLength")]
-        //public int L_OverEdgeExtentLength
-        //{
-        //    get { return overEdgeExtentLength; }
-        //    set { overEdgeExtentLength = value; NotifyPropertyChanged("L_OverEdgeExtentLength"); }
-        //}
-        /// <summary>
-        /// UPBR_Dir1_L_Overlap
-        /// </summary>
-        //private int l_Overlap;
-        //[KeyName(KeyName = "UPBR_Dir1_L_Overlap")]
-        //public int L_Overlap
-        //{
-        //    get { return l_Overlap; }
-        //    set { l_Overlap = value; NotifyPropertyChanged("L_Overlap"); }
-        //}
-
         /// <summary>
         /// UI_TextBox_UPBR_Dir1_L_RadialSpacing
         /// </summary>

@@ -175,7 +175,7 @@
 
             </TabItem>
 
-            <TabItem Header="Direction 1 (L Bars)" Margin="-4,-6,1,2">
+            <TabItem Header="L Bars" Margin="-4,-6,1,2">
                 <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="0,0,2,5">
 
                     <!--Lx-->
@@ -228,7 +228,7 @@
                     <Label Content="Radial Spacing" HorizontalAlignment="Left" Margin="6,126,0,0" VerticalAlignment="Top"/>
                     <TextBox 
                        x:Name="UI_TextBox_UPBR_Dir1_L_RadialSpacing" 
-                       DataContext="{Binding DataModel_BottomBar_L}"
+                       DataContext="{Binding DataModel_BR_L}"
                        Text="{Binding L_RadialSpacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                        HorizontalAlignment="Left" Height="23" Margin="121,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50">
                         <i:Interaction.Behaviors>
@@ -365,7 +365,7 @@
                     <Label FontSize="12" Content="Option" HorizontalAlignment="Left" Margin="6,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="60"/>
                     <ComboBox 
                         x:Name="UI_TextBox_UPBR_TB_Dir2_Option"
-                        DataContext="{Binding DataModel_TB_D1}"
+                        DataContext="{Binding DataModel_TB_D2}"
                         ItemsSource="{Binding OptionNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexOption, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Margin="81,35,48,0" VerticalAlignment="Top"/>

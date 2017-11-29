@@ -40,6 +40,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         }
         public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
 
+        /// <summary>
+        /// Binded to TextBox Style Trigger. Value of 0 will disagle Spacing. Value of 1 will disable NoOfBars
+        /// </summary>
         public string SpacingEnabled
         {
             get

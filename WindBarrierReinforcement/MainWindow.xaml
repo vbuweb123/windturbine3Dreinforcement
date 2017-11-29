@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WindBarrierReinforcement"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="930">
+        Title="MainWindow" Height="700" Width="930" ResizeMode="NoResize">
     <Grid>
         
         <Frame Name="FrameMain" Margin="0,35,0,0" NavigationUIVisibility="Hidden">

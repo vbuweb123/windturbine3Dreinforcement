@@ -113,5 +113,15 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             get { return overlap; }
             set { overlap = value; NotifyPropertyChanged("Overlap"); }
         }
+
+        /// <summary>
+        /// UI_TextBox_OPTR_CircularMargin_Overlap
+        /// </summary>
+        private bool useDefaultLength;
+        public bool UseDefaultLength
+        {
+            get { return useDefaultLength; }
+            set { useDefaultLength = value; NotifyPropertyChanged("UseDefaultLength"); }
+        }
     }
 }
