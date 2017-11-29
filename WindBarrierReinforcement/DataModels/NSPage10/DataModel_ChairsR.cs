@@ -18,16 +18,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         {
             this.page10 = page10;
         }
-        /// <summary>
-        /// NoOfBars
-        /// </summary>
-        private int tangentialSpacing;
-        public int TangentialSpacing
-        {
-            get { return tangentialSpacing; }
-            set { tangentialSpacing = value; NotifyPropertyChanged("TangentialSpacing"); }
-        }
-        /// <summary>
+        
+        
+        ///   <summary>
         /// UI_TextBox_CHR_Diameter_1
         /// </summary>
         private int selectedIndexDiameter;
@@ -46,40 +39,12 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
             set { zoneLength = value; NotifyPropertyChanged("ZoneLength"); }
         }
 
+
         private int spacingValueRadial;//TODO : ALTA CLASA
         public int SpacingValueRadial
         {
             get { return spacingValueRadial; }
             set { spacingValueRadial = value; NotifyPropertyChanged("SpacingValueRadial"); }
         }
-
-        private int edgeOffset;
-        public int EdgeOffset
-        {
-            get { return edgeOffset; }
-            set { edgeOffset = value; NotifyPropertyChanged("EdgeOffset"); }
-        }
-
-        private int hookLenghts;
-        public int HookLengths
-        {
-            get { return hookLenghts; }
-            set { hookLenghts = value; NotifyPropertyChanged("HookLenghts"); }
-        }
-
-        private bool chairsOverTopCirculars;
-        public bool ChairsOverTopCirculars
-        {
-            get { return chairsOverTopCirculars; }
-            set { chairsOverTopCirculars = value; NotifyPropertyChanged("ChairsOverTopCirculars"); }
-        }
-
-        private int topChairsOverlapp;
-        public int TopChairsOverlapp
-        {
-            get { return topChairsOverlapp; }
-            set { topChairsOverlapp = value; NotifyPropertyChanged("TopChairsOverlapp"); }
-        }
-
     }
 }

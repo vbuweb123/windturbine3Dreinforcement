@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WindBarrierReinforcement"
+      xmlns:l="clr-namespace:WindBarrierReinforcement.Common.ValueConverters"
       mc:Ignorable="d" 
       d:DesignHeight="465" d:DesignWidth="700"
       Title="Page10">
@@ -12,85 +13,130 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/XamlResources.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
+            <l:NegateBool x:Key="NegateBoolConverter"/>
         </ResourceDictionary>
     </Page.Resources>
 
     <Grid Background="White">
         <TextBlock HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" Text="Chairs" VerticalAlignment="Top"/>
-        <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="0,25,251,0">
+        <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="0,26,251,-1">
 
             <!--Spacing Tangential-->
-            <Label FontSize="12" Content="Spacing Tangential" HorizontalAlignment="Left" Margin="4,125,0,0" VerticalAlignment="Top"/>
+            <Label FontSize="12" Content="Spacing Tangential" HorizontalAlignment="Left" Margin="-4,171,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_CHR_SpacingValue_Tangential_1"    
-                DataContext="{Binding Zone1}"
+                DataContext="{Binding Z1}"
                 Text="{Binding TangentialSpacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="113,125,0,0" TextWrapping="Wrap" 
+                HorizontalAlignment="Left" Height="23" Margin="113,174,0,0" TextWrapping="Wrap" 
                 VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
 
             <!-- Diameter-->
-            <Label FontSize="12" Content="Diameter" HorizontalAlignment="Left" Margin="4,156,0,0" VerticalAlignment="Top"/>
+            <Label FontSize="12" Content="Diameter" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.501,-0.639"/>
             <ComboBox                
-                x:Name="UI_ComboBox_Dir2_Diameters"                
-                DataContext="{Binding Zone1}"
+                x:Name="UI_ComboBox_Dir1_Diameters"                
+                DataContext="{Binding DataModel_ChairsR}"
                 ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                 SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                Margin="113,160,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="78"/>
+                Margin="113,89,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="78"/>
             <!--Zone Length-->
             <Label FontSize="12" Content="Zone Length" HorizontalAlignment="Left" Margin="2,30,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_CHR_Zone_Length_1" 
-                DataContext="{Binding Zone1}"
+                DataContext="{Binding  DataModel_ChairsR }"
                 Text="{Binding ZoneLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="113,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                HorizontalAlignment="Left" Height="23" Margin="113,32,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
             <!--Spacing Radial-->
             <Label FontSize="12" Content="Spacing Radial" HorizontalAlignment="Left" Margin="2,59,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_CHR_SpacingValue_Radial_1"
-                DataContext="{Binding Zone1}"
+                DataContext="{Binding DataModel_ChairsR}"
                 Text="{Binding SpacingValueRadial, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="113,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                HorizontalAlignment="Left" Height="23" Margin="113,61,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
             <!--Edge Offset-->
-            <Label FontSize="12" Content="Edge Offset" HorizontalAlignment="Left" Margin="2,88,0,0" VerticalAlignment="Top"/>
+            <Label FontSize="12" Content="Edge Offset" HorizontalAlignment="Left" Margin="2,209,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.569,3.421"/>
             <TextBox 
                 x:Name="UI_TextBox_CHR_EdgeOffset_1"
-                DataContext="{Binding Zone1}"
+                DataContext="{Binding Z1}"
                 Text="{Binding EdgeOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="113,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                HorizontalAlignment="Left" Height="23" Margin="113,212,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
             <!--Hook Lengths-->
-            <Label FontSize="12" Content="Hook Length" HorizontalAlignment="Left" Margin="10,224,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.59,1.154"/>
+            <Label FontSize="12" Content="Hook Length" HorizontalAlignment="Left" Margin="1,247,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.59,1.154">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.078"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
             <TextBox 
                 x:Name="UI_TextBox_CHR_Hook_Lengths_1"
-                DataContext="{Binding Zone1}"
-                Text="{Binding EdgeOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="113,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                DataContext="{Binding Z1}"
+                Text="{Binding HookLengths, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="114,244,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="0.01"/>
+                        <RotateTransform Angle="0.199"/>
+                        <TranslateTransform X="-0.007"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
             <!--ChairsOverTopCirculars-->
-            <StackPanel Orientation="Horizontal" Margin="113,204,167,216">
-                <RadioButton GroupName="ChairsOverTopCirculars" IsChecked="{Binding ChairsOverTopCirculars}"
-                        DataContext="{Binding Zone1}"
-                        Content="Yes" HorizontalAlignment="Left"/>
+            <StackPanel Orientation="Horizontal" Margin="113,280,167,100">
                 <RadioButton GroupName="ChairsOverTopCirculars"
-                        DataContext="{Binding Zone1}"
-                        Content="No" HorizontalAlignment="Left" Margin="10,0,0,0">
+                        DataContext="{Binding Z1}"
+                        IsChecked="{Binding ChairsOverTopCirculars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Content="Yes" HorizontalAlignment="Left" Margin="0,0,0,44" Height="18" VerticalAlignment="Bottom"/>
+                <RadioButton GroupName="ChairsOverTopCirculars"
+                        DataContext="{Binding Z2}"
+                             IsChecked="{Binding ChairsOverTopCirculars, Converter={StaticResource NegateBoolConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Content="No" HorizontalAlignment="Left" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Width="43">
+                    <RadioButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.118"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </RadioButton.RenderTransform>
                 </RadioButton>
             </StackPanel>
-            <!--ChairsOverTopCirculars-->
-            <Label FontSize="12" Content="TopChairsOverlapp" HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top"/>
+            <!--TopChairsOverlapp-->
+            <Label FontSize="12" Content="TopChairsOverlapp" HorizontalAlignment="Left" Margin="-4,319,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_CHR_TopChairsOverlapp_1"       
-                HorizontalAlignment="Left" Height="23" Margin="113,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                x:Name="UI_TextBox_CHR_TopChairsOverlapp_1"
+                DataContext="{Binding Z1}"
+                Text="{Binding TopChairsOverlapp, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                HorizontalAlignment="Left" Height="23" Margin="113,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
             <Label FontSize="12" Content="Zone" HorizontalAlignment="Left" Margin="2,3,0,0" VerticalAlignment="Top"/>
             <Label FontSize="12" Content="1" HorizontalAlignment="Left" Margin="142,3,0,0" VerticalAlignment="Top"/>
             <Label FontSize="12" Content="2" HorizontalAlignment="Left" Margin="234,3,0,0" VerticalAlignment="Top"/>
+            <!--ZoneLength2-->
             <TextBox 
-                x:Name="UI_TextBox_CHR_Zone_Length_2"         
+                x:Name="UI_TextBox_CHR_Zone_Length_2"  
+                DataContext="{Binding Z2}"
+                Text="{Binding ZoneLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
                 HorizontalAlignment="Left" Height="23" Margin="204,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
             <TextBox 
-                x:Name="UI_TextBox_CHR_SpacingValue_Radial_2"         
+                x:Name="UI_TextBox_CHR_SpacingValue_Radial_2"   
+                DataContext="{Binding Z2}"
+                Text="{Binding SpacingValueRadial, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                 HorizontalAlignment="Left" Height="23" Margin="204,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
             <TextBox 
-                x:Name="UI_TextBox_CHR_EdgeOffset_2"         
-                HorizontalAlignment="Left" Height="23" Margin="204,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                x:Name="UI_TextBox_CHR_EdgeOffset_2"  
+                DataContext="{Binding Z2}"
+                Text="{Binding EdgeOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                HorizontalAlignment="Left" Height="23" Margin="204,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
 
         </Grid>
 
