@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+
 namespace WindBarrierReinforcement
 {
     /// <summary>
@@ -20,12 +22,14 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page04 : Page
     {
+       
+
         public Page04()
         {
+           
             InitializeComponent();
+            
         }
-        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-        }
+        
     }
 }

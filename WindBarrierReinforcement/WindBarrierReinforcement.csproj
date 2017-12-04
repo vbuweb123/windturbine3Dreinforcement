@@ -83,6 +83,7 @@
     <Compile Include="DataModels\NSPage01\DataModel_Global_Formwork.cs" />
     <Compile Include="DataModels\NSPage01\DataModel_Global_Materials.cs" />
     <Compile Include="DataModels\NSPage02\DataModel_Anchor.cs" />
+    <Compile Include="DataModels\NSPage05\DataModel_Top_Reinforcement.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_D1.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_D2.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_L.cs" />

@@ -31,7 +31,7 @@
                         DataContext="{Binding DataModel_BR_D1}"
                         ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="151,9,12,0" VerticalAlignment="Top" RenderTransformOrigin="0.02,0.682"/>
+                        Margin="151,9,12,0" VerticalAlignment="Top" />
 
                     <!--Option-->
                     <Label FontSize="12" Content="Option" HorizontalAlignment="Left" Margin="6,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="100"/>
