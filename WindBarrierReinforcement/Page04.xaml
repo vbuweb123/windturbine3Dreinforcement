@@ -19,16 +19,21 @@
 
     <Grid Background="White">
         <TextBlock HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" Text="Bottom Reinforcement" VerticalAlignment="Top"/>
-        <TabControl TabStripPlacement="Left" HorizontalAlignment="Left" Margin="0,30,0,0" Width="400" SelectionChanged="TabControl_SelectionChanged">
+        <TabControl TabStripPlacement="Left" HorizontalAlignment="Left" Margin="0,30,0,0" Width="400" >
             <TabItem Header="Radial" Margin="-4,-6,-36,2">
                 <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="32,-6,-2,11">
 
-                    <Label FontSize="12" Content="Spacing" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <!--Diameter Anchor-->
+                    <Label FontSize="12" Content="Diameter Anchor" HorizontalAlignment="Left" Margin="2,2,0,0" VerticalAlignment="Top"/>
                     <TextBox 
-                      x:Name="UI_TextBox_BTR_No_LargeDiameter"            
-                      HorizontalAlignment="Left" Height="23" Margin="141,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87">
+                        
+                        x:Name="UI_TextBox_DiameterAnchor"
+                        DataContext="{Binding DataModel_Anchor}"
+                        Text="{Binding DiameterAnchor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        HorizontalAlignment="Left" Height="23" Margin="125,4,0,0" TextWrapping="Wrap" 
+                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87">
                         <i:Interaction.Behaviors>
-                            <Behaviors:NumericBehaviour InitialValue="0"/>
+                            <Behaviors:NumericBehaviour InitialValue="0"></Behaviors:NumericBehaviour>
                         </i:Interaction.Behaviors>
                     </TextBox>
 

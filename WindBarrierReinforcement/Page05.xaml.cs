@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WindBarrierReinforcement.DataModels.NSPage05;
 
 namespace WindBarrierReinforcement
 {
@@ -20,9 +21,17 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page05 : Page
     {
+        public DataModel_Top_Reinforcement DataModel_Top_Reinforcement1 { get; set; }
+        public DataModel_Top_Reinforcement DataModel_Top_Reinforcement2 { get; set; }
+
         public Page05()
         {
+            DataModel_Top_Reinforcement1 = new DataModel_Top_Reinforcement();
+            DataModel_Top_Reinforcement2 = new DataModel_Top_Reinforcement();
+
             InitializeComponent();
+            this.DataContext = this;
         }
+       
     }
 }

@@ -25,7 +25,7 @@ namespace WindBarrierReinforcement
     {
         public DataModel_Global_Formwork DataModel_Global_Formwork { get; set; }
         public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint { get; set; }
-
+        public DataModel_Global_Materials DataModel_Global_Materials { get; set; }
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
         }
@@ -33,8 +33,21 @@ namespace WindBarrierReinforcement
         public Page01()
         {
             DataModel_Global_Formwork = new DataModel_Global_Formwork();
-            DataModel_Global_Coordinations_GroundPoint = new DataModel_Global_Coordinations_GroundPoint();
 
+            DataModel_Global_Coordinations_GroundPoint = new DataModel_Global_Coordinations_GroundPoint();
+            DataModel_Global_Coordinations_GroundPoint.Update(DataModel_Global_Formwork.DeptFoundation, DataModel_Global_Formwork.HBottom);
+
+            DataModel_Global_Materials = new DataModel_Global_Materials();
+
+            DataModel_Global_Formwork.PropertyChanged += delegate (object sender, System.ComponentModel.PropertyChangedEventArgs e)
+            {
+                if (e.PropertyName == "HBottom" || e.PropertyName == "DeptFoundation")
+                {
+                    //update
+                    DataModel_Global_Coordinations_GroundPoint.Update(DataModel_Global_Formwork.DeptFoundation, DataModel_Global_Formwork.HBottom);
+                    DataModel_Global_Coordinations_GroundPoint.NotifyPropertyChanged("FoundationPointZ");
+                }
+            };
             InitializeComponent();
             this.DataContext = this;
         }

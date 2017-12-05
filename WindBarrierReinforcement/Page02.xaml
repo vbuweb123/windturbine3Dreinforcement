@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
       xmlns:local="clr-namespace:WindBarrierReinforcement"
       xmlns:behaviors="clr-namespace:WindBarrierReinforcement.Behaviors"
       mc:Ignorable="d" 
@@ -19,102 +20,226 @@
     <Grid Background="White">
         <TextBlock HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" Text="Anchor" VerticalAlignment="Top"/>
         <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="0,25,251,0">
+
+            <!--Diameter Anchor-->
             <Label FontSize="12" Content="Diameter Anchor" HorizontalAlignment="Left" Margin="2,2,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_DiameterAnchor"         
-                HorizontalAlignment="Left" Height="23" Margin="125,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                x:Name="UI_TextBox_DiameterAnchor"
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding DiameterAnchor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,4,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87">
+                <i:Interaction.Behaviors>
+                    <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                </i:Interaction.Behaviors>
+            </TextBox>
+
+            <!--Diameter Anchor Int-->
             <Label FontSize="12" Content="Diameter Anchor Int" HorizontalAlignment="Left" Margin="2,31,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_DiameterAnchorINT"         
-                HorizontalAlignment="Left" Height="23" Margin="125,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                x:Name="UI_TextBox_DiameterAnchorINT"        
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding DiameterAnchorInt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,33,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--No Bolt Pairs-->
             <Label FontSize="12" Content="No Bolt Pairs" HorizontalAlignment="Left" Margin="2,60,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_No_BoltPairs"        
-                HorizontalAlignment="Left" Height="23" Margin="125,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                x:Name="UI_TextBox_No_BoltPairs"       
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding NoOfBoltPairs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,62,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Shrink Hose Heigth-->
             <Label FontSize="12" Content="Shrink Hose Heigth" HorizontalAlignment="Left" Margin="2,88,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_PE_shrink_hose_heigth"        
-                HorizontalAlignment="Left" Height="23" Margin="125,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                x:Name="UI_TextBox_PE_shrink_hose_heigth"  
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding Peshrinkhoseheigth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,90,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Fillet Top Zone-->
             <Label FontSize="12" Content="Fillet Top Zone" HorizontalAlignment="Left" Margin="2,116,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_FIlletTOP_ZONE"
-                HorizontalAlignment="Left" Height="23" Margin="125,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
-            <Label FontSize="12" Content="Fillet Bott Zone" HorizontalAlignment="Left" Margin="2,144,0,0" VerticalAlignment="Top"/>
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding FilletTopZone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,118,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Fillet Bott Zone-->
+            <Label FontSize="12" Content="Fillet Bottom Zone" HorizontalAlignment="Left" Margin="2,144,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_FIlletBott_ZONE_"
-                HorizontalAlignment="Left" Height="23" Margin="125,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                x:Name="UI_TextBox_FIlletBott_ZONE"
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding FilletBottomZone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,146,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" />
+
+            <!--Top Anchor Nut-->
             <Label FontSize="12" Content="Top Anchor Nut" HorizontalAlignment="Left" Margin="2,172,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_TopAnchorNut"
-                HorizontalAlignment="Left" Height="23" Margin="125,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding TopAnchorNut, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,174,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Bottom Anchor Nut-->
             <Label FontSize="12" Content="Bottom Anchor Nut" HorizontalAlignment="Left" Margin="2,200,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_BottomAnchorNut"
-                HorizontalAlignment="Left" Height="23" Margin="125,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding BottomAnchorNut, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,202,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Depth Anchor-->
             <Label FontSize="12" Content="Depth Anchor" HorizontalAlignment="Left" Margin="2,228,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_Depth_Anchor"
-                HorizontalAlignment="Left" Height="23" Margin="125,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding DepthAnchor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,230,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Depth Anchor Bottom-->
             <Label FontSize="12" Content="Depth Anchor Bottom" HorizontalAlignment="Left" Margin="2,256,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_Depth_Anchor_Botttom"
-                HorizontalAlignment="Left" Height="23" Margin="125,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding DepthAnchorBottom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,258,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Radius Centerline Tower-->
             <Label FontSize="12" Content="Radius Centerline Tower" HorizontalAlignment="Left" Margin="2,283,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_Radius_Centerline_Tower"
-                HorizontalAlignment="Left" Height="23" Margin="125,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding RadiusCenterLineTower, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,285,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Insertion Depth Top Flange-->
             <Label FontSize="12" Content="Insertion Depth Top Flange" HorizontalAlignment="Left" Margin="2,311,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_Insertion_Depth_Top_Flange"
-                HorizontalAlignment="Left" Height="23" Margin="125,313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding InsertionDepthTopFlange, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,313,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Thickness Top Flange-->
             <Label FontSize="12" Content="Thickness Top Flange" HorizontalAlignment="Left" Margin="2,339,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_Thickness_Top_Flange"
-                HorizontalAlignment="Left" Height="23" Margin="125,341,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding ThicknessTopFlange, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,341,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Width Concrete Bed-->
             <Label FontSize="12" Content="Width Concrete Bed" HorizontalAlignment="Left" Margin="2,367,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_Width_Concrete_Bed"
-                HorizontalAlignment="Left" Height="23" Margin="125,369,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding WidthConcreteBed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,369,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Width Top Flange-->
             <Label FontSize="12" Content="Width Top Flange" HorizontalAlignment="Left" Margin="2,395,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_Width_Top_Flange"
-                HorizontalAlignment="Left" Height="23" Margin="125,397,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding WidthTopFlange, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="125,397,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Depth Conc Bed-->
             <Label FontSize="12" Content="Depth Conc Bed" HorizontalAlignment="Left" Margin="229,2,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_Depth_Conc_Bed"         
-                HorizontalAlignment="Left" Height="23" Margin="352,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
-            <Label FontSize="12" Content="Distance Bolt Pair" HorizontalAlignment="Left" Margin="229,30,0,0" VerticalAlignment="Top"/>
+                x:Name="UI_TextBox_Depth_Conc_Bed"    
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding DepthConcreteBed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="352,4,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Distance Bolt Pair-->
+            <Label FontSize="12" Content="Distance Bolt Pair" HorizontalAlignment="Left" Margin="229,30,0,0" VerticalAlignment="Top"/>         
             <TextBox 
-                x:Name="UI_TextBox_DistanceBoltPair"         
-                HorizontalAlignment="Left" Height="23" Margin="352,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                x:Name="UI_TextBox_DistanceBoltPair"  
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding DispanceBoltPairs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="352,32,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--UI_TextBox_Thickness_Bott_Flange-->
             <Label FontSize="12" Content="Thickness Bott Flange" HorizontalAlignment="Left" Margin="229,58,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_Thickness_Bott_Flange"         
-                HorizontalAlignment="Left" Height="23" Margin="352,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                x:Name="UI_TextBox_Thickness_Bott_Flange"     
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding ThicknessBottFlange, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="352,60,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Width Bott Flange-->
             <Label FontSize="12" Content="Width Bott Flange" HorizontalAlignment="Left" Margin="229,86,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_Width_Bott_Flange"         
-                HorizontalAlignment="Left" Height="23" Margin="352,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                x:Name="UI_TextBox_Width_Bott_Flange" 
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding WidthBottFlange, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="352,88,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Bolt Diameter-->
             <Label FontSize="12" Content="Bolt Diameter" HorizontalAlignment="Left" Margin="229,114,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_BoltDiameter"         
-                HorizontalAlignment="Left" Height="23" Margin="352,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
-            <Label FontSize="12" Content="Material Grout" HorizontalAlignment="Left" Margin="229,144,0,0" VerticalAlignment="Top"/>
+                x:Name="UI_TextBox_BoltDiameter"
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding BoltDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="352,116,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Material Grout-->
+            <Label FontSize="12" Content="Material Grout" HorizontalAlignment="Left" Margin="229,144,0,0" VerticalAlignment="Top"/>            
             <TextBox 
                 x:Name="UI_TextBox_MaterialGrout"         
-                HorizontalAlignment="Left" Height="23" Margin="352,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding MaterialGrout, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="352,146,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Number Suppports-->
             <Label FontSize="12" Content="Number Suppports" HorizontalAlignment="Left" Margin="229,174,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_NumberSuppports"
-                HorizontalAlignment="Left" Height="23" Margin="352,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding NumberSuppports, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="352,176,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Bolt Length-->
             <Label FontSize="12" Content="Bolt Length" HorizontalAlignment="Left" Margin="229,203,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_BoltLength"
-                HorizontalAlignment="Left" Height="23" Margin="352,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding BoltLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="352,205,0,0" TextWrapping="Wrap"
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
+            <!--Offset Bott Flange-->
             <Label FontSize="12" Content="Offset Bott Flange" HorizontalAlignment="Left" Margin="229,231,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_OffsetBottFlange"
-                HorizontalAlignment="Left" Height="23" Margin="352,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding OffsetBottFlange, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="352,233,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
 
         </Grid>
 
