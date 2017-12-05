@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WindBarrierReinforcement.DataModels.NSPAge03;
 
 namespace WindBarrierReinforcement
 {
@@ -20,9 +21,18 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page03 : Page
     {
+
+        public DataModel_ScrewPiles  DataModel_ScrewPile_SP{ get; set; }
         public Page03()
         {
+            DataModel_ScrewPile_SP =  new DataModel_ScrewPiles(this);
+              this.DataContext = this;
             InitializeComponent();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

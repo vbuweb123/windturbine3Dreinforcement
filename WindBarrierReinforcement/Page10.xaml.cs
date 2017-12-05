@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WindBarrierReinforcement.DataModels.NSPage10;
 
 namespace WindBarrierReinforcement
 {
@@ -20,9 +21,27 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page10 : Page
     {
+        public DataModel_ChairsR DataModel_ChairsR { get; set; }
+        public DataModel_ChairsR_Zones Z1 { get; set; }
+        public DataModel_ChairsR_Zones Z2 { get; set; }
+        //public DataModel_ChairsR Zone3 { get; set; }
+        //public DataModel_ChairsR Zone4 { get; set; }
+
         public Page10()
         {
+            DataModel_ChairsR = new DataModel_ChairsR(this);
+            Z1 = new DataModel_ChairsR_Zones(this);
+            Z2 = new DataModel_ChairsR_Zones(this);
+            //Zone2 = new DataModel_ChairsR(this);
+            //Zone3 = new DataModel_ChairsR(this);
+            //Zone4 = new DataModel_ChairsR(this);
+            this.DataContext = this;
             InitializeComponent();
         }
+
+        //private void UI_ComboBox_Dir2_Diameters_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+
+        //}
     }
 }
