@@ -81,7 +81,10 @@
     <Compile Include="Common\ValueConverters\NegateBool.cs" />
     <Compile Include="DataModels\NSPage01\DataModel_Global_Coordinations_GroundPoint.cs" />
     <Compile Include="DataModels\NSPage01\DataModel_Global_Formwork.cs" />
+    <Compile Include="DataModels\NSPage01\DataModel_Global_Materials.cs" />
+    <Compile Include="DataModels\NSPage02\DataModel_Anchor.cs" />
     <Compile Include="DataModels\NSPAge03\DataModel_ScrewPiles.cs" />
+    <Compile Include="DataModels\NSPage05\DataModel_Top_Reinforcement.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_D1.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_D2.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_L.cs" />
@@ -101,6 +104,7 @@
     <Compile Include="DataModels\NSPage08\DataModel_ARIntCircularLateral.cs" />
     <Compile Include="DataModels\NSPage08\DataModel_ARIntCircularTop.cs" />
     <Compile Include="DataModels\NSPage08\DataModel_ARIntUBars.cs" />
+    <Compile Include="DataModels\NSPage09\DataModelUBAB.cs" />
     <Compile Include="DataModels\NSPage10\DataModel_ChairsR.cs" />
     <Compile Include="DataModels\NSPage10\DataModel_ChairsR_Zones.cs" />
     <Compile Include="Page10.xaml.cs">
@@ -139,6 +143,7 @@
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\RManager.cs" />
+    <Compile Include="StaticModel\Global.cs" />
     <Compile Include="Writer\Writer.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

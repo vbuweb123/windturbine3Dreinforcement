@@ -90,29 +90,29 @@
                     <!--Diameter Anchors-->
                     <Label FontSize="12" Content="Diameter Anchors" HorizontalAlignment="Left" Margin="2,197,0,0" VerticalAlignment="Top"/>
                     <TextBox 
-                x:Name="UI_TextBox_DiameterAnchor"
-                DataContext="{Binding DataModel_Global_Formwork}"
-                Text="{Binding DiameterAnchor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="125,199,0,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                        x:Name="UI_TextBox_DiameterAnchor"
+                        DataContext="{Binding DataModel_Global_Formwork}"
+                        Text="{Binding DiameterAnchor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        HorizontalAlignment="Left" Height="23" Margin="125,199,0,0" TextWrapping="Wrap" 
+                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
 
                     <!--Radius Centerline Tower-->
                     <Label FontSize="12" Content="Radius Centerline Tower" HorizontalAlignment="Left" Margin="2,224,0,0" VerticalAlignment="Top"/>
                     <TextBox 
-                x:Name="UI_TextBox_Radius_Centerline_Tower"
-                DataContext="{Binding DataModel_Global_Formwork}"
-                Text="{Binding RadiusCenterlineTower, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="125,226,0,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                        IsEnabled="False"                       
+                        DataContext="{Binding DataModel_Global_Formwork}"
+                        Text="{Binding RadiusCenterLineTower, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                        HorizontalAlignment="Left" Height="23" Margin="125,226,0,0" TextWrapping="Wrap" 
+                        VerticalAlignment="Top" Width="78"/>
 
                     <!--Bottom Cover-->
                     <Label FontSize="12" Content="Bottom Cover" HorizontalAlignment="Left" Margin="2,251,0,0" VerticalAlignment="Top"/>
                     <TextBox 
-                x:Name="UI_TextBox_Bottom_Cover"     
-                DataContext="{Binding DataModel_Global_Formwork}"
-                Text="{Binding BottomCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="125,253,0,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                      
+                        DataContext="{Binding DataModel_Global_Formwork}"
+                        Text="{Binding BottomCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        HorizontalAlignment="Left" Height="23" Margin="125,253,0,0" TextWrapping="Wrap" 
+                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
 
                     <!--Top Cover-->
                     <Label FontSize="12" Content="Top Cover" HorizontalAlignment="Left" Margin="2,278,0,0" VerticalAlignment="Top"/>
