@@ -81,6 +81,7 @@
     <Compile Include="Common\ValueConverters\NegateBool.cs" />
     <Compile Include="DataModels\NSPage01\DataModel_Global_Coordinations_GroundPoint.cs" />
     <Compile Include="DataModels\NSPage01\DataModel_Global_Formwork.cs" />
+    <Compile Include="DataModels\NSPAge03\DataModel_ScrewPiles.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_D1.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_D2.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_L.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="DataModels\NSPage08\DataModel_ARIntCircularTop.cs" />
     <Compile Include="DataModels\NSPage08\DataModel_ARIntUBars.cs" />
     <Compile Include="DataModels\NSPage10\DataModel_ChairsR.cs" />
+    <Compile Include="DataModels\NSPage10\DataModel_ChairsR_Zones.cs" />
     <Compile Include="Page10.xaml.cs">
       <DependentUpon>Page10.xaml</DependentUpon>
     </Compile>
