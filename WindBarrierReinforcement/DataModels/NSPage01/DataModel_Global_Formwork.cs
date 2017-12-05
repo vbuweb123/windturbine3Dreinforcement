@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
+using WindBarrierReinforcement.DataModels.NSPage02;
 
 namespace WindBarrierReinforcement.DataModels.NSPage01
 {
@@ -16,7 +17,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int HFoundation
         {
             get { return hFoundation; }
-            set { hFoundation = value; NotifyPropertyChanged("HFoundation"); }
+            set { hFoundation = value; NotifyPropertyChanged("HFoundation"); NotifyPropertyChanged("DeptFoundation"); }
         }
         /// <summary>
         /// UI_TextBox_H_Foundation_Edge
@@ -34,7 +35,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int HTowerBase
         {
             get { return hTowerBase; }
-            set { hTowerBase = value; NotifyPropertyChanged("HTowerBase"); }
+            set { hTowerBase = value; NotifyPropertyChanged("HTowerBase"); NotifyPropertyChanged("DeptFoundation"); }
         }
         /// <summary>
         /// UI_TextBox_H_Bottom"
@@ -43,7 +44,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int HBottom
         {
             get { return hBottom; }
-            set { hBottom = value; NotifyPropertyChanged("HBottom"); }
+            set { hBottom = value; NotifyPropertyChanged("HBottom"); NotifyPropertyChanged("RadiusBtc"); }
         }
         /// <summary>
         /// UI_TextBox_Diameter_Foundation
@@ -61,7 +62,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int DTowerBase
         {
             get { return dTowerBase; }
-            set { dTowerBase = value; NotifyPropertyChanged("DTowerBase"); }
+            set { dTowerBase = value; NotifyPropertyChanged("DTowerBase"); NotifyPropertyChanged("RadiusBtc"); }
         }
         /// <summary>
         /// UI_TextBox_Foundation_Bed
@@ -87,7 +88,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         private int radiusCenterlineTower;
         public int RadiusCenterlineTower
         {
-            get { return radiusCenterlineTower; }
+            get => radiusCenterlineTower;
             set { radiusCenterlineTower = value; NotifyPropertyChanged("RadiusCenterlineTower"); }
         }
         /// <summary>
@@ -124,7 +125,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         private int radiusBtc;
         public int RadiusBtc
         {
-            get { return radiusBtc; }
+            get { return radiusBtc = dTowerBase/2 - hBottom; }
             set { radiusBtc = value; NotifyPropertyChanged("RadiusBtc"); }
         }     
 
@@ -135,7 +136,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int HightAboveGround
         {
             get { return hightAboveGround; }
-            set { hightAboveGround = value; NotifyPropertyChanged("HightAboveGround"); }
+            set { hightAboveGround = value; NotifyPropertyChanged("HightAboveGround"); NotifyPropertyChanged("DeptFoundation");
+            }
         }
         /// <summary>
         /// UI_TextBox_Dept_Foundation
@@ -143,8 +145,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         private int deptFoundation;
         public int DeptFoundation
         {
-            get { return deptFoundation; }
-            set { deptFoundation = value; NotifyPropertyChanged("DeptFoundation"); }
+            get { return deptFoundation = hFoundation + hTowerBase - hightAboveGround; }
+            set { deptFoundation = value; NotifyPropertyChanged("DeptFoundation");  }
         }
     }
 }

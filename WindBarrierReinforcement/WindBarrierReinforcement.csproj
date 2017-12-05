@@ -103,6 +103,7 @@
     <Compile Include="DataModels\NSPage08\DataModel_ARIntCircularLateral.cs" />
     <Compile Include="DataModels\NSPage08\DataModel_ARIntCircularTop.cs" />
     <Compile Include="DataModels\NSPage08\DataModel_ARIntUBars.cs" />
+    <Compile Include="DataModels\NSPage09\DataModelUBAB.cs" />
     <Compile Include="Page10.xaml.cs">
       <DependentUpon>Page10.xaml</DependentUpon>
     </Compile>

@@ -35,17 +35,27 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int CoordinationZ
         {
             get { return coordinationZ; }
-            set { coordinationZ = value; NotifyPropertyChanged("CoordinationZ"); }
+            set { coordinationZ = value; NotifyPropertyChanged("CoordinationZ"); NotifyPropertyChanged("FoundationPointZ"); }
         }
         /// <summary>
         /// UI_TextBox_ARC_FoundationPoint_Z
         /// </summary>
-        private int foundationPointZ;
+        /// 
         public int FoundationPointZ
         {
-            get { return foundationPointZ; }
-            set { foundationPointZ = value; NotifyPropertyChanged("FoundationPointZ"); }
+            get => coordinationZ - _depthFoundation - _hBottom;
         }
-        
+        private int _depthFoundation;
+        private int _hBottom;
+
+        public DataModel_Global_Coordinations_GroundPoint()
+        {
+
+        }
+        public void Update(int depthFoundation, int hBottom)
+        {
+            _depthFoundation = depthFoundation;
+            _hBottom = hBottom;
+        }
     }
 }

@@ -38,7 +38,7 @@
                         DataContext="{Binding DataModel_Global_Formwork}"
                         Text="{Binding HFoundationEdge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         HorizontalAlignment="Left" Height="23" Margin="125,32,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>               
+                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
 
                     <!--H Tower Base-->
                     <Label FontSize="12" Content="H Tower Base" HorizontalAlignment="Left" Margin="2,58,0,0" VerticalAlignment="Top"/>
@@ -47,8 +47,8 @@
                         DataContext="{Binding DataModel_Global_Formwork}"
                         Text="{Binding HTowerBase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                
                         HorizontalAlignment="Left" Height="23" Margin="125,60,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>                      
-                
+                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+
                     <!--H Bottom-->
                     <Label FontSize="12" Content="H Bottom" HorizontalAlignment="Left" Margin="2,86,0,0" VerticalAlignment="Top"/>
                     <TextBox 
@@ -57,8 +57,8 @@
                          Text="{Binding HBottom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
                          HorizontalAlignment="Left" Height="23" Margin="125,88,0,0" TextWrapping="Wrap" 
                          VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
-                        
-               
+
+
 
                     <!--Diameter Foundation-->
                     <Label FontSize="12" Content="Diameter Foundation" HorizontalAlignment="Left" Margin="2,114,0,0" VerticalAlignment="Top"/>
@@ -135,11 +135,11 @@
                     <!--Radius Btc-->
                     <Label FontSize="12" Content="Radius Btc" HorizontalAlignment="Left" Margin="2,332,0,0" VerticalAlignment="Top"/>
                     <TextBox 
-                        x:Name="UI_TextBox_Radius_Btc"  
+                        IsEnabled="False"
                         DataContext="{Binding DataModel_Global_Formwork}"
                         Text="{Binding RadiusBtc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         HorizontalAlignment="Left" Height="23" Margin="125,334,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                        VerticalAlignment="Top" Width="78" />
 
 
 
@@ -155,7 +155,7 @@
                     <!--Dept Foundation-->
                     <Label FontSize="12" Content="Dept Foundation" HorizontalAlignment="Left" Margin="2,386,0,0" VerticalAlignment="Top"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_Dept_Foundation"  
+                        IsEnabled="False"  
                         DataContext="{Binding DataModel_Global_Formwork}"
                         Text="{Binding DeptFoundation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         HorizontalAlignment="Left" Height="23" Margin="125,388,0,0" TextWrapping="Wrap" 
@@ -171,26 +171,26 @@
                 x:Name="UI_TextBox_Material_Foundation"   
                 DataContext="{Binding DataModel_Global_Materials}"
                 Text="{Binding MaterialFoundation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="129,13,0,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="74" RenderTransformOrigin="-0.346,-1.87"/>
+                HorizontalAlignment="Left" Height="23" Margin="148,13,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="77" RenderTransformOrigin="-0.346,-1.87"/>
 
                     <!--Material Foundation Bed-->
-                    <Label FontSize="12" Content="Material Foundation Bed" HorizontalAlignment="Left" Margin="1,46,0,0" VerticalAlignment="Top"/>
+                    <Label FontSize="12" Content="Material Foundation Bed" HorizontalAlignment="Left" Margin="1,44,0,0" VerticalAlignment="Top"/>
                     <TextBox 
                 x:Name="UI_TextBox_Material_Foundation_Bed"
                 DataContext="{Binding DataModel_Global_Materials}"
                 Text="{Binding MaterialFoundationBed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="148,48,0,0" TextWrapping="Wrap"
-                VerticalAlignment="Top" Width="55" RenderTransformOrigin="-0.346,-1.87"/>
+                HorizontalAlignment="Left" Height="23" Margin="148,46,0,0" TextWrapping="Wrap"
+                VerticalAlignment="Top" Width="77" RenderTransformOrigin="-0.346,-1.87"/>
 
                     <!--Material Tower Base-->
-                    <Label FontSize="12" Content="Material Tower Base" HorizontalAlignment="Left" Margin="2,77,0,0" VerticalAlignment="Top" Width="102"/>
+                    <Label FontSize="12" Content="Material Tower Base" HorizontalAlignment="Left" Margin="2,77,0,0" VerticalAlignment="Top" Width="115"/>
                     <TextBox 
                 x:Name="UI_TextBox_Material_Tower_Base"
                 DataContext="{Binding DataModel_Global_Materials}"
-                Text="{Binding MaterialFoundationBed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="128,78,0,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.346,-1.87"/>
+                Text="{Binding MaterialTowerBase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                HorizontalAlignment="Left" Height="23" Margin="148,78,0,0" TextWrapping="Wrap" 
+                VerticalAlignment="Top" Width="77" RenderTransformOrigin="-0.346,-1.87"/>
 
                 </Grid>
             </TabItem>
@@ -221,16 +221,16 @@
                        DataContext="{Binding DataModel_Global_Coordinations_GroundPoint}"
                        Text="{Binding CoordinationZ, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                        HorizontalAlignment="Left" Height="23" Margin="176,63,0,0" TextWrapping="Wrap" 
-                       VerticalAlignment="Top" Width="50" RenderTransformOrigin="-0.346,-1.87"/>
+                       VerticalAlignment="Top" Width="50"/>
 
                     <!--Coordinations Ground Point Z-->
                     <Label FontSize="12" Content="Foundation Point Z" HorizontalAlignment="Left" Margin="-4,85,0,0" VerticalAlignment="Top"/>
-                    <TextBox                         
-                        x:Name="UI_TextBox_ARC_FoundationPoint_Z"
+                    <TextBox IsEnabled="False"             
+                      
                         DataContext="{Binding DataModel_Global_Coordinations_GroundPoint}"
-                        Text="{Binding FoundationPointZ, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Text="{Binding FoundationPointZ, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                         HorizontalAlignment="Left" Height="23" Margin="176,89,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="50" RenderTransformOrigin="-0.346,-1.87"/>
+                        VerticalAlignment="Top" Width="50"/>
                 </Grid>
             </TabItem>
         </TabControl>

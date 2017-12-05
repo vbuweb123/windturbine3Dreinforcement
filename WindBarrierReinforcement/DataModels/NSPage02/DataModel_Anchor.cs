@@ -27,8 +27,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         public int DiameterAnchorInt
         {
             get { return diameterAnchorInt; }
-            set { diameterAnchorInt = value; NotifyPropertyChanged("DiameterAnchorInt"); }
-           
+            set { diameterAnchorInt = value; NotifyPropertyChanged("DiameterAnchorInt"); }           
         }
         /// <summary>
         /// UI_TextBox_No_BoltPairs
@@ -105,7 +104,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         public int RadiusCenterLineTower
         {
             get { return radiusCenterLineTower; }
-            set { radiusCenterLineTower = value; NotifyPropertyChanged("RadiusCenterLineTower"); }
+            set { radiusCenterLineTower = value; NotifyPropertyChanged("RadiusCenterLineTower");  }
         }
         /// <summary>
         /// UI_TextBox_Insertion_Depth_Top_Flange

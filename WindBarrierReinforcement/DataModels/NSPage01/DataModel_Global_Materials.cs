@@ -12,7 +12,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// <summary>
         /// UI_TextBox_Material_Foundation
         /// </summary>
-        private string materialFoundation;
+        private string materialFoundation = "C35/37-GB";
         public string MaterialFoundation
         {
             get { return materialFoundation; }
@@ -21,7 +21,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// <summary>
         /// UI_TextBox_Material_Foundation_Bed
         /// </summary>
-        private string materialFoundationBed;
+        private string materialFoundationBed = "C12/15-OB";
         public string MaterialFoundationBed
         {
             get { return materialFoundationBed; }
@@ -31,7 +31,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// <summary>
         /// UI_TextBox_Material_Tower_Base
         /// </summary>
-        private string materialTowerBase;
+        private string materialTowerBase = "C45/55-GB";
         public string MaterialTowerBase
         {
             get { return materialTowerBase; }
