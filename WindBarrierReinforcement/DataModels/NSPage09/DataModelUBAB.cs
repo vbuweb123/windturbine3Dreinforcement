@@ -33,7 +33,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         }
 
         private int distanceFromTop;    
-        public int DistanceFromTop
+        public int DistanceFromTop 
         {
             get { return distanceFromTop; }
             set { distanceFromTop = value; NotifyPropertyChanged("DistanceFromTop"); }

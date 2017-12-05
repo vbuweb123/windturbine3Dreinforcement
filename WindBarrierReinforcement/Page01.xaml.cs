@@ -14,30 +14,43 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.DataModels.NSPage01;
+using WindBarrierReinforcement.DataModels.NSPage02;
 using WindBarrierReinforcement.DataModels.NSPage06;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement
 {
+
     /// <summary>
     /// Interaction logic for Page1.xaml
     /// </summary>
     public partial class Page01 : Page
     {
-        public DataModel_Global_Formwork DataModel_Global_Formwork { get; set; }
-        public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint { get; set; }
-        public DataModel_Global_Materials DataModel_Global_Materials { get; set; }
+
+        public DataModel_Global_Formwork DataModel_Global_Formwork
+        {
+            get => Global.DataModel_Global_Formwork;
+            set => Global.DataModel_Global_Formwork = value;
+        }
+        public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint
+        {
+            get => Global.DataModel_Global_Coordinations_GroundPoint;
+            set => Global.DataModel_Global_Coordinations_GroundPoint = value;
+        }
+        public DataModel_Global_Materials DataModel_Global_Materials
+        {
+            get => Global.DataModel_Global_Materials;
+            set => Global.DataModel_Global_Materials = value;
+        }
+
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
         }
 
         public Page01()
         {
-            DataModel_Global_Formwork = new DataModel_Global_Formwork();
 
-            DataModel_Global_Coordinations_GroundPoint = new DataModel_Global_Coordinations_GroundPoint();
             DataModel_Global_Coordinations_GroundPoint.Update(DataModel_Global_Formwork.DeptFoundation, DataModel_Global_Formwork.HBottom);
-
-            DataModel_Global_Materials = new DataModel_Global_Materials();
 
             DataModel_Global_Formwork.PropertyChanged += delegate (object sender, System.ComponentModel.PropertyChangedEventArgs e)
             {
@@ -48,7 +61,16 @@ namespace WindBarrierReinforcement
                     DataModel_Global_Coordinations_GroundPoint.NotifyPropertyChanged("FoundationPointZ");
                 }
             };
+            Global.DataModel_Anchor.PropertyChanged += (o, e) =>
+            {
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x=>x.RadiusCenterLineTower))
+                {
+                    DataModel_Global_Formwork.UpdateA(Global.DataModel_Anchor.RadiusCenterLineTower);
+                }
+            };
+
             InitializeComponent();
+
             this.DataContext = this;
         }
     }

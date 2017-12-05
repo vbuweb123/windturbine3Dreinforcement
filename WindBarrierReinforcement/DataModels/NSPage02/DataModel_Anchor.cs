@@ -16,8 +16,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         private int diameterAnchor;
         public int DiameterAnchor
         {
+            //B2
             get { return diameterAnchor; }
-            set { diameterAnchor = value; NotifyPropertyChanged("DiameterAnchor"); }
+            set { diameterAnchor = value; NotifyPropertyChanged("DiameterAnchor"); NotifyPropertyChanged("DispanceBoltPairs"); NotifyPropertyChanged("RadiusCenterLineTower"); }
         }
 
         /// <summary>
@@ -26,8 +27,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         private int diameterAnchorInt;
         public int DiameterAnchorInt
         {
+            //B3
             get { return diameterAnchorInt; }
-            set { diameterAnchorInt = value; NotifyPropertyChanged("DiameterAnchorInt"); }           
+            set { diameterAnchorInt = value; NotifyPropertyChanged("DiameterAnchorInt"); NotifyPropertyChanged("DispanceBoltPairs"); }           
         }
         /// <summary>
         /// UI_TextBox_No_BoltPairs
@@ -35,6 +37,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         private int noOFBoltPairs;
         public int NoOfBoltPairs
         {
+
             get { return noOFBoltPairs; }
             set { noOFBoltPairs = value;NotifyPropertyChanged("NoOfBoltPairs"); }
         }
@@ -103,7 +106,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         private int radiusCenterLineTower;
         public int RadiusCenterLineTower
         {
-            get { return radiusCenterLineTower; }
+            get { return radiusCenterLineTower = (diameterAnchor/2 - dispanceBoltPairs/2); }
             set { radiusCenterLineTower = value; NotifyPropertyChanged("RadiusCenterLineTower");  }
         }
         /// <summary>
@@ -151,8 +154,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         private int dispanceBoltPairs;
         public int DispanceBoltPairs
         {
-            get { return dispanceBoltPairs; }
-            set { dispanceBoltPairs = value; NotifyPropertyChanged("DispanceBoltPairs"); }
+            //B18=(B2-B3)/2
+            get { return dispanceBoltPairs = (diameterAnchor - diameterAnchorInt)/2; }
+            set { dispanceBoltPairs = value; NotifyPropertyChanged("DispanceBoltPairs"); NotifyPropertyChanged("RadiusCenterLineTower"); }
         }
         /// <summary>
         /// UI_TextBox_Thickness_Bott_Flange
