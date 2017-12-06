@@ -19,16 +19,3 @@ slnx.sqlite
 /WindBarrierReinforcement/obj/*.*
 /WindBarrierReinforcement/bin/
 /WindBarrierReinforcement/obj/
-<<<<<<< HEAD
-*.ide
-=======
-*.sqlite
-.vs/slnx.sqlite
-*.sqlite
-*.pdb
-*.pdb
-*.exe
-.vs/WindBarrierReinforcement/v15/.suo
-*.sqlite
-*.sqlite
->>>>>>> master

@@ -56,6 +56,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         {
             _depthFoundation = depthFoundation;
             _hBottom = hBottom;
-        }
+        }               
     }
 }

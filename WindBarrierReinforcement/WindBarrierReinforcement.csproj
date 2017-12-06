@@ -66,10 +66,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Behaviors\NumericBehavior.cs" />
-    <Compile Include="Common\AttachedProperties\CultureKey.cs" />
     <Compile Include="Common\Attributes\DisplayByResourceKeyAttribute.cs" />
     <Compile Include="Common\Attributes\KeyNameAttribute.cs" />
-    <Compile Include="Common\Attributes\ResourceFileAttribute.cs" />
     <Compile Include="Common\DataModel\DataModel.cs" />
     <Compile Include="Common\Eng\EOptionsCBES.cs" />
     <Compile Include="Common\Eng\EDiameters.cs" />
@@ -107,11 +105,8 @@
     <Compile Include="DataModels\NSPage08\DataModel_ARIntCircularTop.cs" />
     <Compile Include="DataModels\NSPage08\DataModel_ARIntUBars.cs" />
     <Compile Include="DataModels\NSPage09\DataModelUBAB.cs" />
-    <Compile Include="DataModels\NSPage09\DataModelUBABCollection.cs" />
     <Compile Include="DataModels\NSPage10\DataModel_ChairsR.cs" />
     <Compile Include="DataModels\NSPage10\DataModel_ChairsR_Zones.cs" />
-    <Compile Include="DataModels\NSPage11\DataModelExtraInformation.cs" />
-    <Compile Include="DataModels\NSPage12\DataModelBSShapes.cs" />
     <Compile Include="Page10.xaml.cs">
       <DependentUpon>Page10.xaml</DependentUpon>
     </Compile>
@@ -142,21 +137,13 @@
     <Compile Include="Page12.xaml.cs">
       <DependentUpon>Page12.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Resources\CultureLanguages.cs" />
-    <Compile Include="Resources\CultureRenamer.cs" />
-    <Compile Include="Resources\CurrentLanguage.cs" />
-    <Compile Include="Resources\EN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EN.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\EWords.cs" />
     <Compile Include="Resources\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\RManager.cs" />
+    <Compile Include="StaticModel\Global.cs" />
     <Compile Include="Writer\Writer.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -247,53 +234,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\EN.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>EN.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="Assets\Fonts\Lato\Lato-Black.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Fonts\Lato\Lato-BlackItalic.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Fonts\Lato\Lato-Bold.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Fonts\Lato\Lato-BoldItalic.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Fonts\Lato\Lato-Hairline.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Fonts\Lato\Lato-HairlineItalic.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Fonts\Lato\Lato-Italic.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Fonts\Lato\Lato-Light.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Fonts\Lato\Lato-LightItalic.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Fonts\Lato\Lato-Regular.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Fonts\Indie Flower\IndieFlower.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Fonts\Pacifico\Pacifico-Regular.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Fonts\Acme\Acme-Regular.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -310,11 +254,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\UPBR_2.JPG">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\Icons\partial.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

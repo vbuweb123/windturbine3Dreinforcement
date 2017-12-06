@@ -5,53 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WindBarrierReinforcement"
       mc:Ignorable="d" 
-      d:DesignHeight="465" d:DesignWidth="700"
+      d:DesignHeight="300" d:DesignWidth="300"
       Title="Page12">
-    <Page.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/WindBarrierReinforcement;component/Resources/XamlResources.xaml"></ResourceDictionary>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Page.Resources>
 
-    <Grid Background="{StaticResource AppMainBackgroundColor}">
-        <DataGrid  ItemsSource="{Binding DataModelShapesCollection, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
-                   Name="Ui_DataGrid_Shapes" HorizontalAlignment="Left" Height="427" Margin="10,10,0,0" VerticalAlignment="Top" Width="680"
-                   AutoGenerateColumns="False"  CanUserReorderColumns="False" CanUserDeleteRows="False" CanUserAddRows="False">
-            <DataGrid.ColumnHeaderStyle>
-                <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="TextBlock.Height" Value="50"/>
-                    <Setter Property="TextBlock.FontSize" Value="12"/>
-                    <Setter Property="TextBlock.FontFamily" Value="{StaticResource Lato}"/>
-                    <Setter Property="ContentTemplate">
-                        <Setter.Value>
-                            <DataTemplate>
-                                <TextBlock  TextOptions.TextRenderingMode="ClearType" Text="{Binding}" TextWrapping="Wrap"/>
-                            </DataTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    
-                    <!--<Setter Property="-->
-                </Style>
-            </DataGrid.ColumnHeaderStyle>
-
-            <DataGrid.CellStyle>
-                <Style TargetType="DataGridCell">
-                    <Setter Property="IsEnabled" Value="False"/>
-                    <Setter Property="Foreground" Value="Black"/>
-                </Style>
-            </DataGrid.CellStyle>
-            
-            <DataGrid.Columns>
-                
-                <DataGridTextColumn  Header="Nominal Size" Width="*" Binding="{Binding NominalSize}"/>
-                <DataGridTextColumn Header="Minimum Radius for Scheduling, r" Width="*" Binding="{Binding MinRadiusForScheduling}"/>
-                <DataGridTextColumn Header="Minimum Diameter of bending former, M" Width="*" Binding="{Binding MinDiameterOfBendingFormer}"/>
-                <DataGridTextColumn Header="General (min 5d straigt)" Width="*" Binding="{Binding GeneralMin5d}"/>
-                <DataGridTextColumn Header="Links where bend ≤ 150°" Width="*" Binding="{Binding LinksUnder150}"/>
-            </DataGrid.Columns>
-            
-        </DataGrid>
-    </Grid>
+    <Grid/>
 </Page>
