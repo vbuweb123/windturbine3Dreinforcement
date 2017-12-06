@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -14,7 +15,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WindBarrierReinforcement.Common.AttachedProperties;
+using WindBarrierReinforcement.DataModels;
 using WindBarrierReinforcement.DataModels.NSPage09;
+using WindBarrierReinforcement.Resources;
 
 namespace WindBarrierReinforcement
 {
@@ -23,51 +27,66 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page09 : Page
     {
-        public DataModelUBAB DataModelUBAB { get; set; }
+        public DataModelUBABCollection DataModelUBABCollection { get; set; }
 
+        private string _zoneName = "Zona ";
         public Page09()
         {
-            DataModelUBAB = new DataModelUBAB();
+            DataModelUBABCollection = new DataModelUBABCollection();
             InitializeComponent();
             this.DataContext = this;
+
+            AddNewNDataModel();
+            SetGridDataContext(0);
+
+            CultureRenamer.RenameCollection(UI_Grid_DataModelContent.Children);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddNewNDataModel()
         {
-            TabItem tabItemModel = (TabItem)UI_TabControl_DynamicZones.Items[0];
-            //UI_TabControl_DynamicZones.Items.Add(tabItemModel);
-            TabItem newTab = new TabItem();
-            Grid templateGrid = (Grid)tabItemModel.Content;
-
-            newTab.Header = "test";
-
-            //create grid
-            Grid grid = new Grid();
-            grid.SetValue(BackgroundProperty, templateGrid.GetValue(BackgroundProperty));
-            newTab.SetValue(ContentProperty, grid);
-
-            foreach (FrameworkElement element in templateGrid.Children)
-            {
-                FrameworkElement newelement;
-
-                switch (element)
-                {
-                    case Label labelElement:
-                        newelement = new Label();
-                        newelement.SetValue(FontSizeProperty, element.GetValue(FontSizeProperty));
-                        newelement.SetValue(ContentProperty, element.GetValue(ContentProperty));
-                        newelement.SetValue(HorizontalAlignmentProperty, element.GetValue(HorizontalAlignmentProperty));
-                        newelement.SetValue(MarginProperty, element.GetValue(MarginProperty));
-                        newelement.SetValue(VerticalAlignmentProperty, element.GetValue(VerticalAlignmentProperty));
-                        grid.Children.Add(newelement);
-                        break;
-                }
-                break;
-                
-            }
-            //adding content to tab
-            UI_TabControl_DynamicZones.Items.Add(newTab);
+            DataModelUBABCollection.Add(_zoneName);
         }
+        
+        private void RemoveLastDataModel()
+        {
+            DataModelUBABCollection.RemoveLast();
+        }
+        private void SetGridDataContext(int index)
+        {
+            if (index > DataModelUBABCollection.Collection.Count - 1)
+                throw new ArgumentOutOfRangeException();
 
+            UI_Grid_DataModelContent.DataContext = DataModelUBABCollection[index];
+        }
+        /// <summary>
+        /// Event = Add new zone
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Ui_ButtonAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewNDataModel();
+        }
+        /// <summary>
+        /// Event - remove last zone
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Ui_ButtonRemove_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveLastDataModel();
+        }
+        /// <summary>
+        /// Event - Click on zone button. Change data context of grid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Ui_ToolBarBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button btnSender = (Button)sender;
+            int Index = (int)btnSender.GetValue(TagProperty);
+
+            SetGridDataContext(Index);
+        }
     }
 }

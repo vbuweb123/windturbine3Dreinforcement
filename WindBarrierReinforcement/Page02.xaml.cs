@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WindBarrierReinforcement.DataModels.NSPage02;
-using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement
 {
@@ -23,14 +22,11 @@ namespace WindBarrierReinforcement
     /// 
     public partial class Page02 : Page
     {
-        public DataModel_Anchor DataModel_Anchor
-        {
-            get => Global.DataModel_Anchor;
-            set => Global.DataModel_Anchor = value;
-        }
-
+        public DataModel_Anchor DataModel_Anchor { get; set; }
         public Page02()
-        {        
+        {
+            DataModel_Anchor = new DataModel_Anchor();
+
             InitializeComponent();
 
             this.DataContext = this;

@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WindBarrierReinforcement"
+      xmlns:ap ="clr-namespace:WindBarrierReinforcement.Common.AttachedProperties"
       mc:Ignorable="d" 
    d:DesignHeight="465" d:DesignWidth="700"
       Title="Page09">
@@ -16,46 +17,76 @@
     </Page.Resources>
 
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Left" Margin="20,10,0,0" TextWrapping="Wrap" Text="U Bars Around Bolts" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,10,0,0" TextWrapping="Wrap" Text="U Bars Around Bolts" 
+                   VerticalAlignment="Top" Style="{StaticResource AppContentTitleTextBlock}"/>
+        <!--Singular Content-->
+        <Grid Name="UI_Grid_DataModelContent" Background="{StaticResource ExpanderBackgroudBrush}" Margin="120,45,343,9.8">
+            
+            <Label Name="UiLabelTitle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6,4,0,0" Width="212" Style="{StaticResource AppContentTitleLabel}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock ap:CultureKey.CultureRes="UBAB_Label_Title" Text="Enter" Padding="0,0,5,0">
+                    </TextBlock>
+                    <TextBlock Text="{Binding ZoneName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+            </Label>
+
+            <Label Content="Exterior Half Length" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding ExteriorHalfLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     HorizontalAlignment="Left" Height="23" Margin="145,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" Template="{StaticResource AppTextBoxGeneric }"/>
+
+            <Label Content="Interior Half Length" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top"/>
+            <TextBox IsEnabled="False" Text="{Binding InteriorHalfLength, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Template="{StaticResource AppTextBoxGeneric}"
+                             HorizontalAlignment="Left" Height="23" Margin="145,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" />
+
+            <Label Content="Small Edge" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding SmallEdge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Template="{StaticResource AppTextBoxGeneric }"
+                        HorizontalAlignment="Left" Height="23" Margin="145,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" />
 
 
-        <TabControl Name="UI_TabControl_DynamicZones" Margin="15,35,25,20">
-            <TabItem Header="Zone 1">
+            <Label Content="Distance From Top" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding DistanceFromTop, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Template="{StaticResource AppTextBoxGeneric }"
+                        HorizontalAlignment="Left" Height="23" Margin="145,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" />
 
-                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="0,-1,0,1" DataContext="{Binding DataModelUBAB}">
-                    <Label FontSize="10" Content="Exterior Half Length" HorizontalAlignment="Left" Margin="2,7,0,0" VerticalAlignment="Top"/>
-                    <TextBox Text="{Binding ExteriorHalfLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                             HorizontalAlignment="Left" Height="23" Margin="137,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" />
+            <Label Content="Free Edge Length" HorizontalAlignment="Left" Margin="10,148,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding FreeEdgeLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Template="{StaticResource AppTextBoxGeneric }"
+                        HorizontalAlignment="Left" Height="23" Margin="145,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" />
 
-                    <Label FontSize="10" Content="Interior Half Length" HorizontalAlignment="Left" Margin="2,35,0,0" VerticalAlignment="Top"/>
-                    <TextBox Text="{Binding InteriorHalfLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                             HorizontalAlignment="Left" Height="23" Margin="137,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" />
+            <Label HorizontalAlignment="Left" Margin="10,176,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
 
-                    <Label FontSize="10" Content="Small Edge" HorizontalAlignment="Left" Margin="2,63,0,0" VerticalAlignment="Top"/>
-                    <TextBox Text="{Binding SmallEdge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="137,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" />
-
-                    <Label FontSize="10" Content="Distance From Top" HorizontalAlignment="Left" Margin="2,92,0,0" VerticalAlignment="Top"/>
-                    <TextBox Text="{Binding DistanceFromTop, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="137,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" />
-
-                    <Label FontSize="10" Content="Free Edge Length" HorizontalAlignment="Left" Margin="2,120,0,0" VerticalAlignment="Top"/>
-                    <TextBox Text="{Binding FreeEdgeLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="137,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" />
-
-                    <Label FontSize="10" Content="Diameter" HorizontalAlignment="Left" Margin="2,148,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
-                    <ComboBox                    
+            <ComboBox                    
                         ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="170,148,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="45" />
+                        Margin="145,176,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="78" />
 
 
+            <Label Content="Free Edge Length" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top"/>
 
-                </Grid>
-            </TabItem>
-        </TabControl>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="320,15,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        </Grid>
 
+
+        <ToolBarTray Orientation="Vertical" HorizontalAlignment="Left" Height="412" Margin="13,43,0,0" VerticalAlignment="Top" Width="100">
+            <ToolBar DataContext="{Binding DataModelUBABCollection}" ItemsSource="{Binding Collection}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,0,-100,-412">
+                <ToolBar.ItemTemplate>
+                    <DataTemplate>
+                        <Button VerticalAlignment="Center" Click="Ui_ToolBarBtn_Click" Tag="{Binding IndexInList,Mode=OneTime}" Width="100">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                <Image Source="pack://application:,,,/WindBarrierReinforcement;component/Assets/Icons/partial.png" Height="15" Width="15"/>
+                                <TextBlock Width="100" Text="{Binding ZoneName, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"></TextBlock>
+                            </StackPanel>
+                        </Button>
+                    </DataTemplate>
+                </ToolBar.ItemTemplate>
+                <!--<Button VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" HorizontalContentAlignment="Left">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                        <Image Source="pack://application:,,,/WindBarrierReinforcement;component/Assets/Icons/partial.png" Height="15" Width="15"/>
+                        <TextBlock Text="Click" FontSize="12" HorizontalAlignment="Stretch"/>
+                    </StackPanel>
+                </Button>-->
+            </ToolBar>
+        </ToolBarTray>
+        <Button Content="+" HorizontalAlignment="Left" Margin="135,21,0,0" VerticalAlignment="Top" Width="21" Click="Ui_ButtonAdd_Click"/>
+
+        <Button Content="-" HorizontalAlignment="Left" Margin="166,21,0,0" VerticalAlignment="Top" Width="21" Click="Ui_ButtonRemove_Click"/>
 
     </Grid>
 </Page>
