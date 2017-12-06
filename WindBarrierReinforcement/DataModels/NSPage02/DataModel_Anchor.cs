@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
+using WindBarrierReinforcement.Common.Reflected;
 
 namespace WindBarrierReinforcement.DataModels.NSPage02
 {
@@ -19,7 +20,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
             get { return diameterAnchor; }
             set { diameterAnchor = value; NotifyPropertyChanged("DiameterAnchor"); }
         }
-        
+
         /// <summary>
         /// UI_TextBox_DiameterAnchorINT
         /// </summary>
@@ -27,7 +28,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         public int DiameterAnchorInt
         {
             get { return diameterAnchorInt; }
-            set { diameterAnchorInt = value; NotifyPropertyChanged("DiameterAnchorInt"); }           
+            set { diameterAnchorInt = value; NotifyPropertyChanged("DiameterAnchorInt"); }
         }
         /// <summary>
         /// UI_TextBox_No_BoltPairs
@@ -36,16 +37,16 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         public int NoOfBoltPairs
         {
             get { return noOFBoltPairs; }
-            set { noOFBoltPairs = value;NotifyPropertyChanged("NoOfBoltPairs"); }
+            set { noOFBoltPairs = value; NotifyPropertyChanged("NoOfBoltPairs"); }
         }
         /// <summary>
         /// UI_TextBox_PE_shrink_hose_heigths
         /// </summary>
         private int pe_shrink_hose_heigth;
-        public int Peshrinkhoseheigth
+        public int PeShrinkHoseHeigth
         {
             get { return pe_shrink_hose_heigth; }
-            set { pe_shrink_hose_heigth = value; NotifyPropertyChanged("Peshrinkhoseheigth"); }
+            set { pe_shrink_hose_heigth = value; NotifyPropertyChanged("PeShrinkHoseHeigth"); }
         }
         /// <summary>
         /// UI_TextBox_FIlletTOP_ZONE
@@ -84,12 +85,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         }
         /// <summary>
         /// UI_TextBox_Depth_Anchor
-        private int depthAnchor;
-        public int DepthAnchor
-        {
-            get { return depthAnchor; }
-            set { depthAnchor = value; NotifyPropertyChanged("DepthAnchor"); }
-        }
+        public int DepthAnchor => PeShrinkHoseHeigth + FilletTopZone + FilletBottomZone - BottomAnchorNut - TopAnchorNut - ThicknessBottFlange;
         /// <summary>
         /// UI_TextBox_Depth_Anchor_Botttom
         private int depthAnchorBottom;
@@ -100,17 +96,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         }
         /// <summary>
         /// UI_TextBox_Radius_Centerline_Tower
-        private int radiusCenterLineTower;
-        public int RadiusCenterLineTower
-        {
-<<<<<<< HEAD
-            get { return radiusCenterLineTower; }
-=======
-            //B12 = B2/2-B18/2
-            get { return radiusCenterLineTower = (diameterAnchor/2 - dispanceBoltPairs/2); }
->>>>>>> ViorelBranch1
-            set { radiusCenterLineTower = value; NotifyPropertyChanged("RadiusCenterLineTower");  }
-        }
+        public int RadiusCenterLineTower => (diameterAnchor / 2 - dispanceBoltPairs / 2);
+
         /// <summary>
         /// UI_TextBox_Insertion_Depth_Top_Flange
         private int insertionDepthTopFlange;
@@ -134,7 +121,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         {
             get { return widthConcreteBed; }
             set { widthConcreteBed = value; NotifyPropertyChanged("WidthConcreteBed"); }
-        }       
+        }
         /// <summary>
         /// UI_TextBox_Width_Top_Flange
         private int widthTopFlange;
@@ -217,6 +204,22 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         {
             get { return offsetBottFlange; }
             set { offsetBottFlange = value; NotifyPropertyChanged("OffsetBottFlange"); }
+        }
+        public DataModel_Anchor()
+        {
+            this.PropertyChanged += (o, e) =>
+            {
+                //public int DepthAnchor => PeShrinkHoseHeigth + FilletTopZone + FilletBottomZone - BottomAnchorNut - TopAnchorNut - ThicknessBottFlange;
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.PeShrinkHoseHeigth)
+                    || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.FilletTopZone)
+                    || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.FilletBottomZone)
+                    || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.BottomAnchorNut)
+                    || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.TopAnchorNut)
+                    || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.ThicknessBottFlange))
+                {
+                    NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DepthAnchor));
+                }
+            };
         }
     }
 }

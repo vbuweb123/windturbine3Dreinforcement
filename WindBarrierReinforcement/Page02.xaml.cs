@@ -23,6 +23,7 @@ namespace WindBarrierReinforcement
     public partial class Page02 : Page
     {
         public DataModel_Anchor DataModel_Anchor { get; set; }
+
         public Page02()
         {
             DataModel_Anchor = new DataModel_Anchor();

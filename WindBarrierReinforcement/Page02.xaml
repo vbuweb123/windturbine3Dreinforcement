@@ -40,8 +40,8 @@
                 x:Name="UI_TextBox_DiameterAnchorINT"        
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding DiameterAnchorInt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="125,33,0,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                HorizontalAlignment="Left" Height="23" Margin="125,33,0,0"
+                VerticalAlignment="Top" Width="78" />
 
             <!--No Bolt Pairs-->
             <Label FontSize="12" Content="No Bolt Pairs" HorizontalAlignment="Left" Margin="2,60,0,0" VerticalAlignment="Top"/>
@@ -57,7 +57,7 @@
             <TextBox 
                 x:Name="UI_TextBox_PE_shrink_hose_heigth"  
                 DataContext="{Binding DataModel_Anchor}"
-                Text="{Binding Peshrinkhoseheigth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Text="{Binding PeShrinkHoseHeigth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 HorizontalAlignment="Left" Height="23" Margin="125,90,0,0" TextWrapping="Wrap" 
                 VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
 
