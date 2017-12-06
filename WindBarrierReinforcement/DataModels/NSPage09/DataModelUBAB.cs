@@ -20,7 +20,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
 
         private int interiorHalfLength;
         public int InteriorHalfLength
-        {
+        { //TODO : Viorel - aceeasi eroare
             get { return interiorHalfLength = exteriorHalfLength; }
             set { interiorHalfLength = value; NotifyPropertyChanged("InteriorHalfLength");  }
         }
