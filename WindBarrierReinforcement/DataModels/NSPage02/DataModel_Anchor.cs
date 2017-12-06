@@ -19,7 +19,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
             get { return diameterAnchor; }
             set { diameterAnchor = value; NotifyPropertyChanged("DiameterAnchor"); }
         }
-
+        
         /// <summary>
         /// UI_TextBox_DiameterAnchorINT
         /// </summary>
@@ -103,7 +103,12 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         private int radiusCenterLineTower;
         public int RadiusCenterLineTower
         {
+<<<<<<< HEAD
             get { return radiusCenterLineTower; }
+=======
+            //B12 = B2/2-B18/2
+            get { return radiusCenterLineTower = (diameterAnchor/2 - dispanceBoltPairs/2); }
+>>>>>>> ViorelBranch1
             set { radiusCenterLineTower = value; NotifyPropertyChanged("RadiusCenterLineTower");  }
         }
         /// <summary>
