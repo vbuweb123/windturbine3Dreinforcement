@@ -27,3 +27,4 @@ slnx.sqlite
 *.exe
 .vs/WindBarrierReinforcement/v15/.suo
 *.sqlite
+*.sqlite
