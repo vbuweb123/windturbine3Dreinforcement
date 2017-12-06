@@ -8,5 +8,7 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="Page12">
 
-    <Grid/>
+    <Grid>
+        <TextBlock Text="test"/>
+    </Grid>
 </Page>
