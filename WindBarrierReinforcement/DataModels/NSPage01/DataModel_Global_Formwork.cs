@@ -85,27 +85,12 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// <summary>
         /// UI_TextBox_Radius_Centerline_Tower
         /// </summary>
-        
-        public int RadiusCenterLineTower
+        private int radiusCenterlineTower;
+        public int RadiusCenterlineTower
         {
-            get => _radiusCenterlineTower;
-
+            get => radiusCenterlineTower;
+            set { radiusCenterlineTower = value; NotifyPropertyChanged("RadiusCenterlineTower"); }
         }
-        private int _radiusCenterlineTower;
-
-
-        public void UpdateA(int radiusCenterLineTower)
-        {
-            _radiusCenterlineTower = radiusCenterLineTower;
-            NotifyPropertyChanged("RadiusCenterLineTower");
-        }
-
-        public DataModel_Global_Formwork()
-        {
-
-        }
-       
-
         /// <summary>
         /// UI_TextBox_Bottom_Cover
         /// </summary>
