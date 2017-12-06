@@ -22,7 +22,7 @@ namespace WindBarrierReinforcement
 {
 
     /// <summary>
-    /// Interaction logic for Page1.xaml
+    /// Interaction logic for Page1.xaml a
     /// </summary>
     public partial class Page01 : Page
     {
