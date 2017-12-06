@@ -23,3 +23,7 @@ slnx.sqlite
 .vs/slnx.sqlite
 *.sqlite
 *.pdb
+*.pdb
+*.exe
+.vs/WindBarrierReinforcement/v15/.suo
+*.sqlite
