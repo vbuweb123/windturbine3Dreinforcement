@@ -19,3 +19,7 @@ slnx.sqlite
 /WindBarrierReinforcement/obj/*.*
 /WindBarrierReinforcement/bin/
 /WindBarrierReinforcement/obj/
+*.sqlite
+.vs/slnx.sqlite
+*.sqlite
+*.pdb
