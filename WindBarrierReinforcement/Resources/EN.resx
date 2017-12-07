@@ -198,6 +198,60 @@
   <data name="Lbl_AR_Ext_TopOffset" xml:space="preserve">
     <value>Top Offset</value>
   </data>
+  <data name="Lbl_AR_ICB_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="Lbl_AR_ICB_MaxBarLength" xml:space="preserve">
+    <value>Maximum Bar Length</value>
+  </data>
+  <data name="Lbl_AR_ICB_MinBarLength" xml:space="preserve">
+    <value>Minimum Bar Length</value>
+  </data>
+  <data name="Lbl_AR_ICB_Spacing" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="Lbl_AR_ICB_StartExtraOffset" xml:space="preserve">
+    <value>Extra Offset At Top Bend</value>
+  </data>
+  <data name="Lbl_AR_ICL_BottomExtraOffset" xml:space="preserve">
+    <value>Extra Offset At Bottom Bend</value>
+  </data>
+  <data name="Lbl_AR_ICL_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="Lbl_AR_ICL_MaxBarLength" xml:space="preserve">
+    <value>Maximum Bar Length</value>
+  </data>
+  <data name="Lbl_AR_ICL_MinBarLength" xml:space="preserve">
+    <value>Minimum Bar Length</value>
+  </data>
+  <data name="Lbl_AR_ICL_NoOfBars" xml:space="preserve">
+    <value>No Of Bars</value>
+  </data>
+  <data name="Lbl_AR_ICL_Option" xml:space="preserve">
+    <value>Option</value>
+  </data>
+  <data name="Lbl_AR_ICL_Spacing" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="Lbl_AR_ICL_TopExtraOffset" xml:space="preserve">
+    <value>Extra Offset At Top Bend</value>
+  </data>
+  <data name="Lbl_AR_ICT_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="Lbl_AR_ICT_MaxBarLength" xml:space="preserve">
+    <value>Maximum Bar Length</value>
+  </data>
+  <data name="Lbl_AR_ICT_MinBarLength" xml:space="preserve">
+    <value>Minimum Bar Length</value>
+  </data>
+  <data name="Lbl_AR_ICT_Spacing" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="Lbl_AR_ICT_StartExtraOffset" xml:space="preserve">
+    <value>Extra Offset At Start Bend</value>
+  </data>
   <data name="Lbl_AR_Int_AxisOffset" xml:space="preserve">
     <value>Offset From Anchor CenterLine</value>
   </data>

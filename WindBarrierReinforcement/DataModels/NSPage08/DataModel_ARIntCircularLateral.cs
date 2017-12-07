@@ -12,6 +12,12 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
     public class DataModel_ARIntCircularLateral : DataModel
     {
         /// <summary>
+        /// Common Data
+        /// </summary>
+        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
+
+        public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
+        /// <summary>
         /// UI_ComboBox_AR_ICL_Diameter
         /// </summary>        
         private int selectedIndexDiameter;
@@ -21,12 +27,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
         }
 
-        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
-
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameter = 0;
-        }
         /// <summary>
         /// UI_ComboBox_AR_ICL_Option
         /// </summary>
@@ -36,18 +36,12 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             get { return selectedIndexOption; }
             set { selectedIndexOption = value; NotifyPropertyChanged("SelectedIndexOption"); NotifyPropertyChanged("SpacingEnabled"); }
         }
-        public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
+        /// <summary>
+        /// Will affect a trigger in the textbox that has SpacingEnabled Binded to it.
+        /// The trigger itself is defined in XamlResources and added to textboxes
+        /// </summary>
+        public string SpacingEnabled => (SelectedIndexOption == 0) ? "0" : "1";
 
-        public string SpacingEnabled
-        {
-            get
-            {
-                if (SelectedIndexOption == 0)
-                    return "0";
-                else
-                    return "1";
-            }
-        }
         /// <summary>
         /// UI_TextBox_AR_ICL_Spacing
         /// </summary>
@@ -65,6 +59,50 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         {
             get { return noOfBars; }
             set { noOfBars = value; NotifyPropertyChanged("NoOfBars"); }
+        }
+        /// <summary>
+        /// UI_TextBox_AR_ECL_MinBarLength
+        /// </summary>
+        private int minbarLength;
+        public int MinBarLength
+        {
+            get { return minbarLength; }
+            set { minbarLength = value; NotifyPropertyChanged("MinBarLength"); }
+        }
+
+        /// <summary>
+        /// UI_TextBox_AR_ECL_MaxBarLength
+        /// </summary>
+        private int maxbarLength;
+        public int MaxBarLength
+        {
+            get { return maxbarLength; }
+            set { maxbarLength = value; NotifyPropertyChanged("MaxBarLength"); }
+        }
+
+        /// <summary>
+        /// UI_TextBox_AR_ECL_TopExtraOffset
+        /// </summary>
+        private int topExtraOffset;
+        public int TopExtraOffset
+        {
+            get { return topExtraOffset; }
+            set { topExtraOffset = value; NotifyPropertyChanged("TopExtraOffset"); }
+        }
+
+        /// <summary>
+        /// UI_TextBox_AR_ECL_MaxBarLength
+        /// </summary>
+        private int bottomExtraOffset;
+        public int BottomExtraOffset
+        {
+            get { return bottomExtraOffset; }
+            set { bottomExtraOffset = value; NotifyPropertyChanged("BottomExtraOffset"); }
+        }
+
+        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            SelectedIndexDiameter = 0;
         }
     }
 }
