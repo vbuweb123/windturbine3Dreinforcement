@@ -8,11 +8,13 @@
       xmlns:behaviors="clr-namespace:WindBarrierReinforcement.Behaviors"
       mc:Ignorable="d" 
       xmlns:ap ="clr-namespace:WindBarrierReinforcement.Common.AttachedProperties"
+      xmlns:valueconverter ="clr-namespace:WindBarrierReinforcement.Common.ValueConverters"
       d:DesignHeight="465" d:DesignWidth="700"
       Title="Page08">
 
     <Page.Resources>
         <ResourceDictionary>
+            <valueconverter:NegateBool x:Key="NegateBoolStatic"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/XamlResources.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
@@ -172,7 +174,7 @@
                         DataContext="{Binding DataModel_ARExteriorCircularLateral}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Tag="{Binding SpacingEnabled}"
-                        Style="{StaticResource TextBoxTrigger_Tag01}" Template="{StaticResource AppTextBoxGeneric}"
+                        Style="{StaticResource TextBoxTrigger_Tag10}" Template="{StaticResource AppTextBoxGeneric}"
                         HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
@@ -415,7 +417,7 @@
                         DataContext="{Binding DataModel_ARIntCircularLateral}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Tag="{Binding SpacingEnabled}"
-                        Template="{StaticResource AppTextBoxGeneric}" Style="{StaticResource TextBoxTrigger_Tag01}"
+                        Template="{StaticResource AppTextBoxGeneric}" Style="{StaticResource TextBoxTrigger_Tag10}"
                         HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" 
                         VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
@@ -474,7 +476,6 @@
             </TabItem>
             <TabItem Header="Interior Circular Bottom">
                 <Grid Name="UI_Grid_AR_ICB" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
-
                     <!--Diameter-->
                     <Label ap:CultureKey.CultureRes="Lbl_AR_ICB_Diameter" Content="__Diameter" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
                     <ComboBox                        
