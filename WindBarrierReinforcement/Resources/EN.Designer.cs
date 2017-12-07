@@ -556,6 +556,15 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Over Plate Top Reinforcement.
+        /// </summary>
+        internal static string Txt_OverPlateTopReinforcementTitle {
+            get {
+                return ResourceManager.GetString("Txt_OverPlateTopReinforcementTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter values for.
         /// </summary>
         internal static string UBAB_Label_Title {
