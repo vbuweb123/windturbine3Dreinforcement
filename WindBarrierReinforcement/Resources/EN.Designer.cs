@@ -61,6 +61,12 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Diameter Anchor.
+        /// </summary>
+        internal static string Lbl_Anc_DiameterAnchor {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_DiameterAnchor", resourceCulture);
+ }}
         ///   Looks up a localized string similar to Diameter.
         /// </summary>
         internal static string Lbl_AR_ECB_Diameter {
@@ -69,7 +75,6 @@ namespace WindBarrierReinforcement.Resources {
             }
         }
         
-        /// <summary>
         ///   Looks up a localized string similar to Maximum Bar Length.
         /// </summary>
         internal static string Lbl_AR_ECB_MaxBarLength {

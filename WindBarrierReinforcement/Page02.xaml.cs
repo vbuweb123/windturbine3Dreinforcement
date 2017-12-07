@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WindBarrierReinforcement.DataModels.NSPage02;
+using WindBarrierReinforcement.Resources;
 using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement
@@ -34,6 +35,8 @@ namespace WindBarrierReinforcement
             InitializeComponent();
 
             this.DataContext = this;
+
+            CultureRenamer.RenameCollection(Ui_Grid_Anchor.Children);
         }
 
         private void UI_TextBox_OPTR_CircularMargin_Option_SelectionChanged(object sender, SelectionChangedEventArgs e)
