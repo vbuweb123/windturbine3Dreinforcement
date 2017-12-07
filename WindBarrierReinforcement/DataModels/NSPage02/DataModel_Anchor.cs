@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
+using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.DataModels.NSPage01;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage02
 {
@@ -18,7 +21,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         {
             //B2
             get { return diameterAnchor; }
-            set { diameterAnchor = value; NotifyPropertyChanged("DiameterAnchor"); NotifyPropertyChanged("DispanceBoltPairs"); NotifyPropertyChanged("RadiusCenterLineTower"); }
+            set { diameterAnchor = value; NotifyPropertyChanged("DiameterAnchor");}
         }
 
         /// <summary>
@@ -29,7 +32,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         {
             //B3
             get { return diameterAnchorInt; }
-            set { diameterAnchorInt = value; NotifyPropertyChanged("DiameterAnchorInt"); NotifyPropertyChanged("DispanceBoltPairs"); }           
+            set { diameterAnchorInt = value; NotifyPropertyChanged("DiameterAnchorInt");  }           
         }
         /// <summary>
         /// UI_TextBox_No_BoltPairs
@@ -87,27 +90,27 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         }
         /// <summary>
         /// UI_TextBox_Depth_Anchor
-        private int depthAnchor;
+       
         public int DepthAnchor
         {
-            get { return depthAnchor; }
-            set { depthAnchor = value; NotifyPropertyChanged("DepthAnchor"); }
+            get => pe_shrink_hose_heigth + filletTopZone + filletBottomZone - topAnchorNut - bottomAnchorNut - thicknessBottFlange;
+
         }
         /// <summary>
         /// UI_TextBox_Depth_Anchor_Botttom
-        private int depthAnchorBottom;
+       
         public int DepthAnchorBottom
         {
-            get { return depthAnchorBottom; }
-            set { depthAnchorBottom = value; NotifyPropertyChanged("DepthAnchorBottom"); }
+            get => Global.DataModel_Global_Formwork.HBottom + OffsetBottFlange;            
         }
         /// <summary>
         /// UI_TextBox_Radius_Centerline_Tower
-        private int radiusCenterLineTower;
+       
         public int RadiusCenterLineTower
         {//TODO Viorel - aici nu e bine
-            get { return radiusCenterLineTower = (diameterAnchor/2 - dispanceBoltPairs/2); }
-            set { radiusCenterLineTower = value; NotifyPropertyChanged("RadiusCenterLineTower");  }
+
+            get => (diameterAnchor/2 - dispanceBoltPairs/2); 
+         
         }
         /// <summary>
         /// UI_TextBox_Insertion_Depth_Top_Flange
@@ -155,8 +158,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         public int DispanceBoltPairs
         {   //TODO : Viorel - aici nu e bine
             //B18=(B2-B3)/2
-            get { return dispanceBoltPairs = (diameterAnchor - diameterAnchorInt)/2; }
-            set { dispanceBoltPairs = value; NotifyPropertyChanged("DispanceBoltPairs"); NotifyPropertyChanged("RadiusCenterLineTower"); }
+            get => dispanceBoltPairs = (diameterAnchor - diameterAnchorInt)/2;
+           
         }
         /// <summary>
         /// UI_TextBox_Thickness_Bott_Flange
@@ -202,20 +205,72 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_BoltLength
         /// </summary>
-        private int boltLength;
+        
         public int BoltLength
         {
-            get { return boltLength; }
-            set { boltLength = value; NotifyPropertyChanged("BoltLength"); }
+            get => thicknessBottFlange + RadiusCenterLineTower;
+
+
         }
         /// <summary>
         /// UI_TextBox_OffsetBottFlange
         /// </summary>
-        private int offsetBottFlange;
+      
         public int OffsetBottFlange
         {
-            get { return offsetBottFlange; }
-            set { offsetBottFlange = value; NotifyPropertyChanged("OffsetBottFlange"); }
+            get => Global.DataModel_Global_Formwork.HFoundation + Global.DataModel_Global_Formwork.HTowerBase - DepthAnchor;          
+        }
+
+        public DataModel_Anchor()
+        {
+            this.PropertyChanged += DataModel_GlobalAnchor_PropertyChanged;
+            Global.DataModel_Global_Formwork.PropertyChanged += DataModel_Global_Formwork_PropertyChanged;
+        }
+
+        private void DataModel_Global_Formwork_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HFoundation) ||
+               e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HTowerBase))
+            {
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.OffsetBottFlange));
+            }
+            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))            
+            {
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.OffsetBottFlange));
+            }
+        }
+
+        private void DataModel_GlobalAnchor_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DiameterAnchor) || 
+                e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DiameterAnchorInt))
+            {
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DispanceBoltPairs));
+            }
+            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DiameterAnchorInt) || 
+                e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DispanceBoltPairs))
+            {
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.RadiusCenterLineTower));
+            }
+            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.Peshrinkhoseheigth) || 
+                e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.FilletTopZone) ||
+                e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.FilletBottomZone)||
+                e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.TopAnchorNut) ||
+                e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.BottomAnchorNut)||
+                e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.ThicknessBottFlange))                
+            {
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DepthAnchor));
+            }
+
+            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DepthAnchor))
+            {
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.OffsetBottFlange));
+            }
+            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.OffsetBottFlange))
+            {
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DepthAnchorBottom));
+            }
+
         }
     }
 }

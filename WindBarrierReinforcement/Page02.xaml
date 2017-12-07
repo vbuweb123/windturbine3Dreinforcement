@@ -100,27 +100,26 @@
             <!--Depth Anchor-->
             <Label FontSize="12" Content="Depth Anchor" HorizontalAlignment="Left" Margin="2,228,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_Depth_Anchor"
+                IsEnabled="False"
                 DataContext="{Binding DataModel_Anchor}"
-                Text="{Binding DepthAnchor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Text="{Binding DepthAnchor, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                 HorizontalAlignment="Left" Height="23" Margin="125,230,0,0" TextWrapping="Wrap" 
                 VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
 
             <!--Depth Anchor Bottom-->
             <Label FontSize="12" Content="Depth Anchor Bottom" HorizontalAlignment="Left" Margin="2,256,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_Depth_Anchor_Botttom"
+            <TextBox                 
                 DataContext="{Binding DataModel_Anchor}"
-                Text="{Binding DepthAnchorBottom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Text="{Binding DepthAnchorBottom, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                 HorizontalAlignment="Left" Height="23" Margin="125,258,0,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                VerticalAlignment="Top" Width="78"/>
 
             <!--Radius Centerline Tower-->
             <Label FontSize="12" Content="Radius Centerline Tower" HorizontalAlignment="Left" Margin="2,283,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 x:Name="UI_TextBox_Radius_Centerline_Tower"
                 DataContext="{Binding DataModel_Anchor}"
-                Text="{Binding RadiusCenterLineTower, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Text="{Binding RadiusCenterLineTower, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                 HorizontalAlignment="Left" Height="23" Margin="125,285,0,0" TextWrapping="Wrap" 
                 VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
 
@@ -174,7 +173,7 @@
             <TextBox 
                 x:Name="UI_TextBox_DistanceBoltPair"  
                 DataContext="{Binding DataModel_Anchor}"
-                Text="{Binding DispanceBoltPairs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Text="{Binding DispanceBoltPairs, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                 HorizontalAlignment="Left" Height="23" Margin="352,32,0,0" TextWrapping="Wrap" 
                 VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
 
@@ -226,18 +225,18 @@
             <!--Bolt Length-->
             <Label FontSize="12" Content="Bolt Length" HorizontalAlignment="Left" Margin="229,203,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_BoltLength"
+                IsEnabled="False"
                 DataContext="{Binding DataModel_Anchor}"
-                Text="{Binding BoltLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Text="{Binding BoltLength, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                 HorizontalAlignment="Left" Height="23" Margin="352,205,0,0" TextWrapping="Wrap"
                 VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
 
             <!--Offset Bott Flange-->
             <Label FontSize="12" Content="Offset Bott Flange" HorizontalAlignment="Left" Margin="229,231,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                x:Name="UI_TextBox_OffsetBottFlange"
+               IsEnabled="False"
                 DataContext="{Binding DataModel_Anchor}"
-                Text="{Binding OffsetBottFlange, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Text="{Binding OffsetBottFlange, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                 HorizontalAlignment="Left" Height="23" Margin="352,233,0,0" TextWrapping="Wrap" 
                 VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
 
