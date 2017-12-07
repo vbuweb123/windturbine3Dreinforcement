@@ -7,6 +7,7 @@
       xmlns:local="clr-namespace:WindBarrierReinforcement"
       xmlns:behaviors="clr-namespace:WindBarrierReinforcement.Behaviors"
       mc:Ignorable="d" 
+      xmlns:ap ="clr-namespace:WindBarrierReinforcement.Common.AttachedProperties"
       d:DesignHeight="465" d:DesignWidth="700"
       Title="Page08">
 
@@ -18,44 +19,53 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Background="White">
+    <Grid Background="{StaticResource AppMainBackgroundColor}">
         <TextBlock Text="Anchors Reinforcement" HorizontalAlignment="Left" Margin="10,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TabControl TabStripPlacement="Left" HorizontalAlignment="Left" Margin="15,25,0,0" Width="320" SelectionChanged="TabControl_SelectionChanged">
+        <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,25,25,25" SelectionChanged="TabControl_SelectionChanged" BorderThickness="0" Background="{StaticResource AppMainBackgroundColor}">
+            
             <TabItem Header="Exterior U Bars" Margin="-4,-6,1,2">
-                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="0,0,2,5">
+                <TabItem.Style>
+                    <Style TargetType="TabItem">
+                        <Setter Property="Foreground" Value="red"/>
+                    </Style>
+                </TabItem.Style>
+                <Grid Name="UI_Grid_ArExtU" Background="{StaticResource AppContainerBackgroundColor}" Margin="0,0,2,5">
 
                     <!--Top Offset-->
-                    <Label FontSize="12" Content="Top Offset" HorizontalAlignment="Left" Margin="1,4,0,0" VerticalAlignment="Top" Height="26" Width="66"/>
+                    <Label Content="__Top Offset" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" 
+                           Height="25" ap:CultureKey.CultureRes="Lbl_AR_Ext_TopOffset"/>
                     <TextBox 
                         x:Name="UI_TextBox_AR_Ext_TopOffset"    
                         DataContext="{Binding DataModel_ARExtUBars}"
                         Text="{Binding TopOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="111,6,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="23" Margin="111,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
 
                     <!--Bottom Offset-->
-                    <Label FontSize="12" Content="Bottom Offset" HorizontalAlignment="Left" Margin="1,32,0,0" VerticalAlignment="Top" Height="26" Width="85"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Ext_BottomOffset" Content="__Bottom Offset" HorizontalAlignment="Left" 
+                           Margin="5,32,0,0" VerticalAlignment="Top" Height="26"/>
                     <TextBox                         
                         x:Name="UI_TextBox_AR_Ext_BottomOffset"
                         DataContext="{Binding DataModel_ARExtUBars}"
                         Text="{Binding BottomOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="111,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="23" Margin="111,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
 
                     <!--Axis Offset-->
-                    <Label FontSize="12" Content="Axis Offset" HorizontalAlignment="Left" Margin="1,61,0,0" VerticalAlignment="Top" Height="26" Width="67"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Ext_AxisOffset" Content="__Axis Offset" HorizontalAlignment="Left" Margin="5,61,0,0" VerticalAlignment="Top" Height="26"/>
                     <TextBox                         
                         x:Name="UI_TextBox_AR_Ext_AxisOffset"  
                         DataContext="{Binding DataModel_ARExtUBars}"
-                        Text="{Binding AxisOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                        
-                        HorizontalAlignment="Left" Height="23" Margin="111,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
-                        Width="52" RenderTransformOrigin="-0.346,-1.87"/>
+                        Text="{Binding AxisOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"      
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="23" Margin="111,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  Width="52"/>
 
                     <!--Diameter U Larger-->
-                    <Label FontSize="12" Content="Diameter U Larger" HorizontalAlignment="Left" Margin="0,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Grid.ColumnSpan="2" Height="26" Width="107"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Ext_Diameter_Ularger" Content="__Diameter U Larger" HorizontalAlignment="Left" Margin="0,91,0,0" VerticalAlignment="Top" Height="26"/>
                     <ComboBox                        
                         x:Name="UI_ComboBox_AR_Ext_Diameter_Ularger"
                         DataContext="{Binding DataModel_ARExtUBars}"
-                        ItemsSource="{Binding DiameterNamesL, Mode=OneWay}"
+                        ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameterL, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Margin="112,92,4,0" VerticalAlignment="Top"/>
 
@@ -64,7 +74,7 @@
                     <ComboBox                        
                         x:Name="UI_ComboBox_AR_Ext_Diameter_Usmaller"
                         DataContext="{Binding DataModel_ARExtUBars}"
-                        ItemsSource="{Binding DiameterNamesS, Mode=OneWay}"
+                        ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameterS, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Margin="111,121,5,0" VerticalAlignment="Top"/>
 

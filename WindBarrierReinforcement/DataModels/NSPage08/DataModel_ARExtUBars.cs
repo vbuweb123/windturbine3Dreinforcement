@@ -12,6 +12,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
     public class DataModel_ARExtUBars : DataModel
     {
         /// <summary>
+        /// Common Properties
+        /// </summary>
+        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
+
+        /// <summary>
         /// UI_TextBox_AR_Ext_TopOffset
         /// </summary>
         private int topOffset;
@@ -47,9 +52,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             get { return selectedIndexDiameterL; }
             set { selectedIndexDiameterL = value; NotifyPropertyChanged("SelectedIndexDiameterL"); }
         }
-
-        public List<String> DiameterNamesL => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
-
+        
         private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
             SelectedIndexDiameterL = 0;
@@ -63,8 +66,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             get { return selectedIndexDiameterS; }
             set { selectedIndexDiameterS = value; NotifyPropertyChanged("SelectedIndexDiameterS"); }
         }
-
-        public List<String> DiameterNamesS => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
 
         /// <summary>
         /// UI_TextBox_AR_Ext_HookLength_Ularger
@@ -84,7 +85,5 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             get { return hookUSmaller; }
             set { hookUSmaller = value; NotifyPropertyChanged("HookUSmaller"); }
         }
-
-
     }
 }

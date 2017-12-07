@@ -61,6 +61,42 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Axis Offset.
+        /// </summary>
+        internal static string Lbl_AR_Ext_AxisOffset {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Ext_AxisOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom Offset.
+        /// </summary>
+        internal static string Lbl_AR_Ext_BottomOffset {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Ext_BottomOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diameter For Larger U Bar.
+        /// </summary>
+        internal static string Lbl_AR_Ext_Diameter_Ularger {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Ext_Diameter_Ularger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top Offset.
+        /// </summary>
+        internal static string Lbl_AR_Ext_TopOffset {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Ext_TopOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter values for.
         /// </summary>
         internal static string UBAB_Label_Title {

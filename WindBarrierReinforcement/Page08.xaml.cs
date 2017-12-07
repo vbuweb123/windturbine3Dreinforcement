@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WindBarrierReinforcement.DataModels.NSPage08;
+using WindBarrierReinforcement.Resources;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement
 {
@@ -21,33 +23,60 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page08 : Page
     {
-        public DataModel_ARExtUBars DataModel_ARExtUBars { get; set; }
-        public DataModel_ARExteriorCircularTop DataModel_ARExteriorCircularTop { get; set; }
-        public DataModel_ARExteriorCircularLateral DataModel_ARExteriorCircularLateral { get; set; }
-        public DataModel_ARExteriorCircularBottom DataModel_ARExteriorCircularBottom { get; set; }
-        public DataModel_ARIntUBars DataModel_ARIntUBars { get; set; }
-        public DataModel_ARIntCircularTop DataModel_ARIntCircularTop { get; set; }
-        public DataModel_ARIntCircularBottom DataModel_ARIntCircularBottom { get; set; }
-        public DataModel_ARIntCircularLateral DataModel_ARIntCircularLateral { get; set; }
+        public DataModel_ARExtUBars DataModel_ARExtUBars
+        {
+            get => GlobalDataModelsPage08.DataModel_ARExtUBars;
+            set => GlobalDataModelsPage08.DataModel_ARExtUBars = value;
+        }
+
+        public DataModel_ARExteriorCircularTop DataModel_ARExteriorCircularTop
+        {
+            get => GlobalDataModelsPage08.DataModel_ARExteriorCircularTop;
+            set => GlobalDataModelsPage08.DataModel_ARExteriorCircularTop = value;
+        }
+
+        public DataModel_ARExteriorCircularLateral DataModel_ARExteriorCircularLateral
+        {
+            get => GlobalDataModelsPage08.DataModel_ARExteriorCircularLateral;
+            set => GlobalDataModelsPage08.DataModel_ARExteriorCircularLateral = value;
+        }
+
+        public DataModel_ARExteriorCircularBottom DataModel_ARExteriorCircularBottom
+        {
+            get => GlobalDataModelsPage08.DataModel_ARExteriorCircularBottom;
+            set => GlobalDataModelsPage08.DataModel_ARExteriorCircularBottom = value;
+        }
+
+        public DataModel_ARIntUBars DataModel_ARIntUBars
+        {
+            get => GlobalDataModelsPage08.DataModel_ARIntUBars;
+            set => GlobalDataModelsPage08.DataModel_ARIntUBars = value;
+        }
+        public DataModel_ARIntCircularTop DataModel_ARIntCircularTop
+        {
+            get => GlobalDataModelsPage08.DataModel_ARIntCircularTop;
+            set => GlobalDataModelsPage08.DataModel_ARIntCircularTop = value;
+        }
+        public DataModel_ARIntCircularBottom DataModel_ARIntCircularBottom
+        {
+            get => GlobalDataModelsPage08.DataModel_ARIntCircularBottom;
+            set => GlobalDataModelsPage08.DataModel_ARIntCircularBottom = value;
+        }
+        public DataModel_ARIntCircularLateral DataModel_ARIntCircularLateral
+        {
+            get => GlobalDataModelsPage08.DataModel_ARIntCircularLateral;
+            set => GlobalDataModelsPage08.DataModel_ARIntCircularLateral = value;
+        }
 
         public Page08()
         {
-            DataModel_ARExtUBars = new DataModel_ARExtUBars();
-            DataModel_ARExteriorCircularTop = new DataModel_ARExteriorCircularTop();
-            DataModel_ARExteriorCircularLateral = new DataModel_ARExteriorCircularLateral();
-            DataModel_ARExteriorCircularBottom = new DataModel_ARExteriorCircularBottom();
-            DataModel_ARIntUBars = new DataModel_ARIntUBars();
-            DataModel_ARIntCircularTop = new DataModel_ARIntCircularTop();
-            DataModel_ARIntCircularBottom = new DataModel_ARIntCircularBottom();
-            DataModel_ARIntCircularLateral = new DataModel_ARIntCircularLateral();
-
             InitializeComponent();
             this.DataContext = this;
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            CultureRenamer.RenameCollection(UI_Grid_ArExtU.Children);
         }
 
        
