@@ -12,6 +12,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
     public class DataModel_ARExteriorCircularTop : DataModel
     {
         /// <summary>
+        /// Common
+        /// </summary>
+        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
+
+        /// <summary>
         /// UI_ComboBox_AR_ECT_Diameter
         /// </summary>        
         private int selectedIndexDiameter;
@@ -20,8 +25,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             get { return selectedIndexDiameter; }
             set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
         }
-
-        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
 
         private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {

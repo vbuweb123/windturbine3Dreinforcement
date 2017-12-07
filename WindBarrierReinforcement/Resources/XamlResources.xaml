@@ -7,9 +7,9 @@
 
     <!--Colors-->
     <Color x:Key="Orange 200">#FFCC80</Color>
-    
+    <Color x:Key="LightGreen300">#9CCC65</Color>
     <Color x:Key="Teal400">#26A69A</Color>
-    
+
     <Color x:Key="BlueGrey50">#ECEFF1</Color>
     <Color x:Key="BlueGrey100">#CFD8DC</Color>
     <Color x:Key="BlueGrey200">#B0BEC5</Color>
@@ -23,6 +23,8 @@
 
     <Color x:Key="Cyan 100">#B2EBF2</Color>
 
+    <Color x:Key="Gray900">#212121</Color>
+
     <Color x:Key="BlueGray_Random1">#374760</Color>
     <!--Brushes-->
     <SolidColorBrush x:Key="ExpanderBackgroudBrush" Color="{StaticResource LightGray}"></SolidColorBrush>
@@ -33,6 +35,8 @@
 
     <SolidColorBrush x:Key="AppMainBackgroundColor" Color="{StaticResource BlueGray_Random1}"/>
     <SolidColorBrush x:Key="AppContainerBackgroundColor" Color="{StaticResource BlueGrey200}"/>
+    <SolidColorBrush x:Key="AppTabItemTextColor" Color="{StaticResource Gray900}"/>
+    <SolidColorBrush x:Key="AppTitleColor" Color="{StaticResource LightGreen300}"/>
     <!--Load Fonts-->
     <FontFamily x:Key="Lato">pack://application:,,,/Assets/Fonts/Lato/#Lato</FontFamily>
     <FontFamily x:Key="Pacifico">pack://application:,,,/Assets/Fonts/Pacifico/#Pacifico</FontFamily>
@@ -45,7 +49,6 @@
     </Style>
     <Style x:Key="AppTextBlockGeneric" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="{DynamicResource Acme}"></Setter>
-        <Setter Property="FontSize" Value="10"/>
     </Style>
     <!--app styles global-->
     <Style TargetType="Label" BasedOn="{StaticResource AppGeneric}">
@@ -60,11 +63,12 @@
         <Setter Property="FontSize" Value="16"/>
     </Style>
     <Style TargetType="TextBlock" x:Key="AppContentTitleTextBlock" BasedOn="{StaticResource AppTextBlockGeneric}">
-        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="{StaticResource AppTitleColor}"/>
     </Style>
-    
-    
-    
+
+    <!--Text Box template-->
+
     <ControlTemplate x:Key="AppTextBoxGeneric" TargetType="TextBox">
         <Border x:Name="border" Height="25" CornerRadius="3" BorderBrush="{StaticResource AppTextBox_BorderBrush}" BorderThickness="1" 
                             Background="{StaticResource AppTextBox_Background}" VerticalAlignment="Center">
@@ -77,5 +81,35 @@
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-
+    <!--Text Box Styles-->
+    <Style x:Key="TextBoxTrigger_Tag01" TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger Property="Tag" Value="0">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="1">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="TextBoxTrigger_Tag10" TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger Property="Tag" Value="1">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="0">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--Tab Item Style-->
+    <Style TargetType="TabItem">
+        <Setter Property="Foreground" Value="{StaticResource AppTabItemTextColor}"/>
+        <Setter Property="FontFamily" Value="{StaticResource Lato}"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+    </Style>
 </ResourceDictionary>

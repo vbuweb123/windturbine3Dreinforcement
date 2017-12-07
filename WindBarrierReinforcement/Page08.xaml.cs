@@ -57,17 +57,18 @@ namespace WindBarrierReinforcement
             get => GlobalDataModelsPage08.DataModel_ARIntCircularTop;
             set => GlobalDataModelsPage08.DataModel_ARIntCircularTop = value;
         }
-        public DataModel_ARIntCircularBottom DataModel_ARIntCircularBottom
-        {
-            get => GlobalDataModelsPage08.DataModel_ARIntCircularBottom;
-            set => GlobalDataModelsPage08.DataModel_ARIntCircularBottom = value;
-        }
         public DataModel_ARIntCircularLateral DataModel_ARIntCircularLateral
         {
             get => GlobalDataModelsPage08.DataModel_ARIntCircularLateral;
             set => GlobalDataModelsPage08.DataModel_ARIntCircularLateral = value;
         }
 
+        public DataModel_ARIntCircularBottom DataModel_ARIntCircularBottom
+        {
+            get => GlobalDataModelsPage08.DataModel_ARIntCircularBottom;
+            set => GlobalDataModelsPage08.DataModel_ARIntCircularBottom = value;
+        }
+        
         public Page08()
         {
             InitializeComponent();
@@ -77,8 +78,14 @@ namespace WindBarrierReinforcement
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             CultureRenamer.RenameCollection(UI_Grid_ArExtU.Children);
+            CultureRenamer.RenameTextBlock(UI_TextBlock_Title);
+            CultureRenamer.RenameCollection(UI_Grid_AR_ECT.Children);
+            CultureRenamer.RenameCollection(UI_Grid_AR_ECL.Children);
+            CultureRenamer.RenameCollection(UI_Grid_AR_ECB.Children);
+            CultureRenamer.RenameCollection(UI_Grid_Ar_Int.Children);
+            CultureRenamer.RenameCollection(UI_Grid_AR_ICT.Children);
+            CultureRenamer.RenameCollection(UI_Grid_AR_ICL.Children);
+            CultureRenamer.RenameCollection(UI_Grid_AR_ICB.Children);
         }
-
-       
     }
 }
