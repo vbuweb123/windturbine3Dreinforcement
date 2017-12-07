@@ -6,6 +6,10 @@
 
 
     <!--Colors-->
+    <Color x:Key="Orange 200">#FFCC80</Color>
+    
+    <Color x:Key="Teal400">#26A69A</Color>
+    
     <Color x:Key="BlueGrey50">#ECEFF1</Color>
     <Color x:Key="BlueGrey100">#CFD8DC</Color>
     <Color x:Key="BlueGrey200">#B0BEC5</Color>
@@ -28,6 +32,7 @@
     <SolidColorBrush x:Key="AppTextBox_Disabled_Background" Color="{StaticResource BlueGrey100}"/>
 
     <SolidColorBrush x:Key="AppMainBackgroundColor" Color="{StaticResource BlueGray_Random1}"/>
+    <SolidColorBrush x:Key="AppContainerBackgroundColor" Color="{StaticResource BlueGrey200}"/>
     <!--Load Fonts-->
     <FontFamily x:Key="Lato">pack://application:,,,/Assets/Fonts/Lato/#Lato</FontFamily>
     <FontFamily x:Key="Pacifico">pack://application:,,,/Assets/Fonts/Pacifico/#Pacifico</FontFamily>
@@ -44,7 +49,7 @@
     </Style>
     <!--app styles global-->
     <Style TargetType="Label" BasedOn="{StaticResource AppGeneric}">
-        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="FontSize" Value="12"/>
     </Style>
 
     <Style TargetType="TextBlock" BasedOn="{StaticResource AppTextBlockGeneric}">

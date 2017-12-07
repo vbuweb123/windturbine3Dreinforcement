@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Lbl_AR_Ext_AxisOffset" xml:space="preserve">
+    <value>Axis Offset</value>
+  </data>
+  <data name="Lbl_AR_Ext_BottomOffset" xml:space="preserve">
+    <value>Bottom Offset</value>
+  </data>
+  <data name="Lbl_AR_Ext_Diameter_Ularger" xml:space="preserve">
+    <value>Diameter For Larger U Bar</value>
+  </data>
+  <data name="Lbl_AR_Ext_TopOffset" xml:space="preserve">
+    <value>Top Offset</value>
+  </data>
   <data name="UBAB_Label_Title" xml:space="preserve">
     <value>Enter values for</value>
     <comment>Page 09</comment>
