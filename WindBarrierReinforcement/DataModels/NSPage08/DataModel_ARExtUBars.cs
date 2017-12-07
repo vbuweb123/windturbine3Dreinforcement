@@ -85,5 +85,23 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             get { return hookUSmaller; }
             set { hookUSmaller = value; NotifyPropertyChanged("HookUSmaller"); }
         }
+        /// <summary>
+        /// UI_TextBox_AR_Int_TopExtraOffset
+        /// </summary>
+        private int topExtraOffset;
+        public int TopExtraOffset
+        {
+            get { return topExtraOffset; }
+            set { topExtraOffset = value; NotifyPropertyChanged("TopExtraOffset"); }
+        }
+        /// <summary>
+        /// UI_TextBox_AR_Int_BottomExtraOffset
+        /// </summary>
+        private int bottomExtraOffset;
+        public int BottomExtraOffset
+        {
+            get { return bottomExtraOffset; }
+            set { bottomExtraOffset = value; NotifyPropertyChanged("BottomExtraOffset"); }
+        }
     }
 }

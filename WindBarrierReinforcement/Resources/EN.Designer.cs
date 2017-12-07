@@ -61,11 +61,182 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Diameter.
+        /// </summary>
+        internal static string Lbl_AR_ECB_Diameter {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECB_Diameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum Bar Length.
+        /// </summary>
+        internal static string Lbl_AR_ECB_MaxBarLength {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECB_MaxBarLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimum Bar Length.
+        /// </summary>
+        internal static string Lbl_AR_ECB_MinBarLength {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECB_MinBarLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spacing.
+        /// </summary>
+        internal static string Lbl_AR_ECB_Spacing {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECB_Spacing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start Offset From Bend.
+        /// </summary>
+        internal static string Lbl_AR_ECB_StartExtraOffset {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECB_StartExtraOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extra Offset At Bottom Bend.
+        /// </summary>
+        internal static string Lbl_AR_ECL_BottomExtraOffset {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECL_BottomExtraOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diameter.
+        /// </summary>
+        internal static string Lbl_AR_ECL_Diameter {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECL_Diameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum Bar Length.
+        /// </summary>
+        internal static string Lbl_AR_ECL_MaxBarLength {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECL_MaxBarLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimum Bar Length.
+        /// </summary>
+        internal static string Lbl_AR_ECL_MinBarLength {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECL_MinBarLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Of Bars.
+        /// </summary>
+        internal static string Lbl_AR_ECL_NoOfBars {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECL_NoOfBars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Option.
+        /// </summary>
+        internal static string Lbl_AR_ECL_Option {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECL_Option", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spacing.
+        /// </summary>
+        internal static string Lbl_AR_ECL_Spacing {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECL_Spacing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extra Offset At Top Bend.
+        /// </summary>
+        internal static string Lbl_AR_ECL_TopExtraOffset {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECL_TopExtraOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diameter.
+        /// </summary>
+        internal static string Lbl_AR_ECT_Diameter {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECT_Diameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum Bar Length.
+        /// </summary>
+        internal static string Lbl_AR_ECT_MaxBarLength {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECT_MaxBarLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimum Bar Length.
+        /// </summary>
+        internal static string Lbl_AR_ECT_MinBarLength {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECT_MinBarLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spacing.
+        /// </summary>
+        internal static string Lbl_AR_ECT_Spacing {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECT_Spacing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extra Offset At Bend.
+        /// </summary>
+        internal static string Lbl_AR_ECT_StartExtraOffset {
+            get {
+                return ResourceManager.GetString("Lbl_AR_ECT_StartExtraOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Axis Offset.
         /// </summary>
         internal static string Lbl_AR_Ext_AxisOffset {
             get {
                 return ResourceManager.GetString("Lbl_AR_Ext_AxisOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extra Offset At Bottom Bend.
+        /// </summary>
+        internal static string Lbl_AR_Ext_BottomExtraOffset {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Ext_BottomExtraOffset", resourceCulture);
             }
         }
         
@@ -88,11 +259,137 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Diameter For Smaller U Bar.
+        /// </summary>
+        internal static string Lbl_AR_Ext_Diameter_Usmaller {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Ext_Diameter_Usmaller", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Large U - Hook Length.
+        /// </summary>
+        internal static string Lbl_AR_Ext_HookLength_Ularger {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Ext_HookLength_Ularger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Small U - Hook Length.
+        /// </summary>
+        internal static string Lbl_AR_Ext_HookLength_Usmaller {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Ext_HookLength_Usmaller", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extra Offset At Top Bend.
+        /// </summary>
+        internal static string Lbl_AR_Ext_TopExtraOffset {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Ext_TopExtraOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Top Offset.
         /// </summary>
         internal static string Lbl_AR_Ext_TopOffset {
             get {
                 return ResourceManager.GetString("Lbl_AR_Ext_TopOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Offset From Anchor CenterLine.
+        /// </summary>
+        internal static string Lbl_AR_Int_AxisOffset {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Int_AxisOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extra Offset At Bottom Bend.
+        /// </summary>
+        internal static string Lbl_AR_Int_BottomExtraOffset {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Int_BottomExtraOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Offset From Foundation Level.
+        /// </summary>
+        internal static string Lbl_AR_Int_BottomOffset {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Int_BottomOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diameter Of Larger U.
+        /// </summary>
+        internal static string Lbl_AR_Int_Diameter_Ularger {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Int_Diameter_Ularger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diameter Of Smaller U.
+        /// </summary>
+        internal static string Lbl_AR_Int_Diameter_Usmaller {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Int_Diameter_Usmaller", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Large U - Hook Length.
+        /// </summary>
+        internal static string Lbl_AR_Int_HookLength_Ularger {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Int_HookLength_Ularger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Small U - Hook Length.
+        /// </summary>
+        internal static string Lbl_AR_Int_HookLength_Usmaller {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Int_HookLength_Usmaller", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extra Offset At Top Bend.
+        /// </summary>
+        internal static string Lbl_AR_Int_TopExtraOffset {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Int_TopExtraOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Offset From Top Concrete.
+        /// </summary>
+        internal static string Lbl_AR_Int_TopOffset {
+            get {
+                return ResourceManager.GetString("Lbl_AR_Int_TopOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reinforcements Around Anchors.
+        /// </summary>
+        internal static string Txt_AnchorsReinforcement {
+            get {
+                return ResourceManager.GetString("Txt_AnchorsReinforcement", resourceCulture);
             }
         }
         

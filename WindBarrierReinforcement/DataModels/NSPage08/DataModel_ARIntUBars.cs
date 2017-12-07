@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage08
 {
     public class DataModel_ARIntUBars : DataModel
     {
+        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
+
         /// <summary>
         /// UI_TextBox_AR_Int_TopOffset
         /// </summary>
@@ -47,13 +50,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             get { return selectedIndexDiameterL; }
             set { selectedIndexDiameterL = value; NotifyPropertyChanged("SelectedIndexDiameterL"); }
         }
-
-        public List<String> DiameterNamesL => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
-
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameterL = 0;
-        }
+       
         /// <summary>
         /// UI_ComboBox_AR_Int_Diameter_Usmaller
         /// </summary>        
@@ -64,7 +61,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             set { selectedIndexDiameterS = value; NotifyPropertyChanged("SelectedIndexDiameterS"); }
         }
 
-        public List<String> DiameterNamesS => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
         /// <summary>
         /// UI_TextBox_AR_Int_HookLength_Ularger
         /// </summary>
@@ -102,5 +98,56 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             set { bottomExtraOffset = value; NotifyPropertyChanged("BottomExtraOffset"); }
         }
 
+        public DataModel_ARIntUBars()
+        {
+            GlobalDataModelsPage08.DataModel_ARExtUBars.PropertyChanged += (o, e) =>
+            {
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.TopOffset))
+                {
+                    this.TopOffset = GlobalDataModelsPage08.DataModel_ARExtUBars.TopOffset;
+                    NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.TopOffset));
+                }
+
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.BottomOffset))
+                {
+                    this.BottomOffset = GlobalDataModelsPage08.DataModel_ARExtUBars.BottomOffset;
+                    NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.BottomOffset));
+                }
+
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.AxisOffset))
+                {
+                    this.AxisOffset = GlobalDataModelsPage08.DataModel_ARExtUBars.AxisOffset;
+                    NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.AxisOffset));
+                }
+
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.HookULarger))
+                {
+                    this.HookULarger = GlobalDataModelsPage08.DataModel_ARExtUBars.HookULarger;
+                    NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.HookULarger));
+                }
+
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.HookUSmaller))
+                {
+                    this.HookUSmaller = GlobalDataModelsPage08.DataModel_ARExtUBars.HookUSmaller;
+                    NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.HookUSmaller));
+                }
+
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.TopExtraOffset))
+                {
+                    this.TopExtraOffset = GlobalDataModelsPage08.DataModel_ARExtUBars.TopExtraOffset;
+                    NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.TopExtraOffset));
+                }
+
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.BottomExtraOffset))
+                {
+                    this.BottomExtraOffset = GlobalDataModelsPage08.DataModel_ARExtUBars.BottomExtraOffset;
+                    NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.BottomExtraOffset));
+                }
+            };
+        }
+        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            SelectedIndexDiameterL = 0;
+        }
     }
 }
