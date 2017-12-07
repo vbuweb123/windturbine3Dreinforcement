@@ -20,373 +20,335 @@
     </Page.Resources>
 
     <Grid Background="{StaticResource AppMainBackgroundColor}">
-        <TextBlock Text="Anchors Reinforcement" HorizontalAlignment="Left" Margin="10,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,25,25,25" SelectionChanged="TabControl_SelectionChanged" BorderThickness="0" Background="{StaticResource AppMainBackgroundColor}">
-            
-            <TabItem Header="Exterior U Bars" Margin="-4,-6,1,2">
-                <TabItem.Style>
-                    <Style TargetType="TabItem">
-                        <Setter Property="Foreground" Value="red"/>
-                    </Style>
-                </TabItem.Style>
-                <Grid Name="UI_Grid_ArExtU" Background="{StaticResource AppContainerBackgroundColor}" Margin="0,0,2,5">
+        <TextBlock ap:CultureKey.CultureRes="Txt_AnchorsReinforcement" Text="__Anchors Reinforcement" HorizontalAlignment="Left" Margin="20,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+                   Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title" />
+        
+        <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,50,25,25" 
+                    SelectionChanged="TabControl_SelectionChanged" BorderThickness="0" 
+                    Background="{StaticResource AppMainBackgroundColor}">
+
+            <TabItem Header="Exterior U Bars">
+                <Grid Name="UI_Grid_ArExtU" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
 
                     <!--Top Offset-->
                     <Label Content="__Top Offset" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" 
                            Height="25" ap:CultureKey.CultureRes="Lbl_AR_Ext_TopOffset"/>
                     <TextBox 
-                        x:Name="UI_TextBox_AR_Ext_TopOffset"    
                         DataContext="{Binding DataModel_ARExtUBars}"
                         Text="{Binding TopOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Template="{StaticResource AppTextBoxGeneric}"
-                        HorizontalAlignment="Left" Height="23" Margin="111,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
+                        HorizontalAlignment="Left" Height="25" Margin="150,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                     <!--Bottom Offset-->
                     <Label ap:CultureKey.CultureRes="Lbl_AR_Ext_BottomOffset" Content="__Bottom Offset" HorizontalAlignment="Left" 
-                           Margin="5,32,0,0" VerticalAlignment="Top" Height="26"/>
+                           Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_AR_Ext_BottomOffset"
                         DataContext="{Binding DataModel_ARExtUBars}"
                         Text="{Binding BottomOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Template="{StaticResource AppTextBoxGeneric}"
-                        HorizontalAlignment="Left" Height="23" Margin="111,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
+                        HorizontalAlignment="Left" Height="25" Margin="150,35,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
 
                     <!--Axis Offset-->
-                    <Label ap:CultureKey.CultureRes="Lbl_AR_Ext_AxisOffset" Content="__Axis Offset" HorizontalAlignment="Left" Margin="5,61,0,0" VerticalAlignment="Top" Height="26"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Ext_AxisOffset" Content="__Axis Offset" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="26"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_AR_Ext_AxisOffset"  
                         DataContext="{Binding DataModel_ARExtUBars}"
                         Text="{Binding AxisOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"      
                         Template="{StaticResource AppTextBoxGeneric}"
-                        HorizontalAlignment="Left" Height="23" Margin="111,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  Width="52"/>
+                        HorizontalAlignment="Left" Width="150" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
                     <!--Diameter U Larger-->
-                    <Label ap:CultureKey.CultureRes="Lbl_AR_Ext_Diameter_Ularger" Content="__Diameter U Larger" HorizontalAlignment="Left" Margin="0,91,0,0" VerticalAlignment="Top" Height="26"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Ext_Diameter_Ularger" Content="__Diameter U Larger" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="26"/>
                     <ComboBox                        
-                        x:Name="UI_ComboBox_AR_Ext_Diameter_Ularger"
                         DataContext="{Binding DataModel_ARExtUBars}"
                         ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameterL, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="112,92,4,0" VerticalAlignment="Top"/>
+                        Margin="150,95,4,0" VerticalAlignment="Top" Width="150" HorizontalAlignment="Left"/>
 
                     <!--Diameter U Smaller-->
-                    <Label FontSize="12" Content="Diameter U Smaller" HorizontalAlignment="Left" Margin="-1,121,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Grid.ColumnSpan="2" Height="26" Width="112"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Ext_Diameter_Usmaller" Content="__Diameter U Smaller" HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top"  Height="26"/>
                     <ComboBox                        
-                        x:Name="UI_ComboBox_AR_Ext_Diameter_Usmaller"
                         DataContext="{Binding DataModel_ARExtUBars}"
                         ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameterS, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="111,121,5,0" VerticalAlignment="Top"/>
+                        Margin="150,125,5,0" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
                     <!--Hook U Larger-->
-                    <Label FontSize="12" Content="Hook U Larger" HorizontalAlignment="Left" Margin="1,152,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Grid.ColumnSpan="2" Height="26" Width="87"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Ext_HookLength_Ularger" Content="__Hook U Larger" HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                                                 
-                        x:Name="UI_TextBox_AR_Ext_HookLength_Ularger"     
                         DataContext="{Binding DataModel_ARExtUBars}"
                         Text="{Binding HookULarger, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="111,153,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                     <!--Hook U Smaller-->
-                    <Label FontSize="12" Content="Hook U Smaller" HorizontalAlignment="Left" Margin="1,180,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="92"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Ext_HookLength_Usmaller" Content="__Hook U Smaller" HorizontalAlignment="Left" Margin="5,185,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_AR_Ext_HookLength_Usmaller"       
                         DataContext="{Binding DataModel_ARExtUBars}"
                         Text="{Binding HookUSmaller, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="111,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <!--Top Extra Offset-->
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Ext_TopExtraOffset" Content="__Top Extra Offset" Margin="5,215,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25"/>
+                    <TextBox 
+                        DataContext="{Binding DataModel_ARExtUBars}"
+                        Text="{Binding TopExtraOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+
+                    <!--Bottom Extra Offset-->
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Ext_BottomExtraOffset" Content="__Bottom Extra Offset" HorizontalAlignment="Left" Margin="5,245,0,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox                         
+                        DataContext="{Binding DataModel_ARExtUBars}"
+                        Text="{Binding BottomExtraOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Exterior Circular Top" Margin="-3,-5,0,1">
-                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="0,-1,0,1">
-
+            
+            <TabItem Header="Exterior Circular Top">
+                <Grid Name="UI_Grid_AR_ECT" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
                     <!--Diameter-->
-                    <Label FontSize="12" Content="Diameter" HorizontalAlignment="Left" Margin="-1,1,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="86" Grid.RowSpan="3"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECT_Diameter" Content="__Diameter" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
                     <ComboBox                        
-                        x:Name="UI_ComboBox_AR_ECT_Diameter"
                         DataContext="{Binding DataModel_ARExteriorCircularTop}"
                         ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="111,5,5,0" VerticalAlignment="Top" />
+                        Margin="150,5,50,0" Width="150" VerticalAlignment="Top" Height="25"/>
 
                     <!--Spacing-->
-                    <Label FontSize="12" Content="Spacing" HorizontalAlignment="Left" Margin="0,34,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="86"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECT_Spacing" Content="__Spacing" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox 
-                        x:Name="UI_TextBox_AR_ECT_Spacing"    
                         DataContext="{Binding DataModel_ARExteriorCircularTop}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="110,36,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="55" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,35,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
 
                     <!--Length Bar Min-->
-                    <Label FontSize="12" Content="Lenght Bar Min" HorizontalAlignment="Left" Margin="-1,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="111"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECT_MinBarLength" Content="__Lenght Bar Min" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25" />
                     <TextBox 
-                        x:Name="UI_TextBox_AR_ECT_MinBarLength" 
                         DataContext="{Binding DataModel_ARExteriorCircularTop}"
                         Text="{Binding MinBarLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="110,68,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="54" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                     <!--Length Bar Max-->
-                    <Label FontSize="12" Content="Lenght Bar Max" HorizontalAlignment="Left" Margin="0,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="123"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECT_MaxBarLength" Content="__Lenght Bar Max" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox 
-                        x:Name="UI_TextBox_AR_ECT_MaxBarLength"    
                         DataContext="{Binding DataModel_ARExteriorCircularTop}"
                         Text="{Binding MaxBarLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="111,101,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="53" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,95,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
 
                     <!--Start Extra Offset-->
-                    <Label FontSize="12" Content="Start Extra Offset" HorizontalAlignment="Left" Margin="0,130,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="123"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECT_StartExtraOffset" Content="__Start Extra Offset" HorizontalAlignment="Left" Margin="5,130,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox 
-                        x:Name="UI_TextBox_AR_ECT_StartExtraOffset"    
                         DataContext="{Binding DataModel_ARExteriorCircularTop}"
                         Text="{Binding StartExtraOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="111,130,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="53" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,125,50,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Exterior Circular Lateral" Margin="-3,-5,0,1">
-                <Grid  Background="{StaticResource ExpanderBackgroudBrush}" Margin="-2,-2,-1,0">
+            <TabItem Header="Exterior Circular Lateral">
+                <Grid Name="UI_Grid_AR_ECL"  Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
                     <!--Diameter-->
-                    <Label FontSize="12" Content="Diameter" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="100"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECL_Diameter" Content="__Diameter" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25" />
                     <ComboBox                        
-                        x:Name="UI_ComboBox_AR_ECL_Diameter"
                         DataContext="{Binding DataModel_ARExteriorCircularLateral}"
                         ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="124,5,5,0" VerticalAlignment="Top" />
+                        Margin="150,5,50,0" VerticalAlignment="Top" Width="150" Height="25" />
 
                     <!--Option-->
-                    <Label FontSize="12" Content="Option" HorizontalAlignment="Left" Margin="1,27,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="100"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECL_Option" Content="__Option" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
                     <ComboBox 
-                        x:Name="UI_ComboBox_AR_ECL_Option"
                         DataContext="{Binding DataModel_ARExteriorCircularLateral}"
                         ItemsSource="{Binding OptionNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexOption, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="89,30,6,0" VerticalAlignment="Top"/>
+                        Margin="150,35,50,0" VerticalAlignment="Top"/>
 
                     <!--Spacing-->
-                    <Label FontSize="12" Content="Spacing" HorizontalAlignment="Left" Margin="-1,82,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="100"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECL_Spacing" Content="__Spacing" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox 
-                        x:Name="UI_TextBox_AR_ECL_Spacing"                       
                         DataContext="{Binding DataModel_ARExteriorCircularLateral}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Tag="{Binding SpacingEnabled}"
-                        HorizontalAlignment="Left" Height="23" Margin="124,84,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="42" RenderTransformOrigin="-0.346,-1.87">
+                        Style="{StaticResource TextBoxTrigger_Tag01}" Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="0">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="1">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
                     </TextBox>
 
                     <!--No Of Bars-->
-                    <Label FontSize="12" Content="No Of Bars" HorizontalAlignment="Left" Margin="-1,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="100"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECL_NoOfBars" Content="__No Of Bars" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_AR_ECL_NoOfBars"                       
                         DataContext="{Binding DataModel_ARExteriorCircularLateral}"
                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Tag="{Binding SpacingEnabled}"
-                        HorizontalAlignment="Left" Height="23" Margin="124,56,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="42" RenderTransformOrigin="-0.346,-1.87">
+                        Style="{StaticResource TextBoxTrigger_Tag01}" Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" >
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="0">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="1">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
                     </TextBox>
 
                     <!--Bar Length Min-->
-                    <Label FontSize="12" Content="Bar Length Min" HorizontalAlignment="Left" Margin="-1,109,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="100"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECL_MinBarLength" Content="__Bar Length Min" HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_AR_ECL_MinBarLength"
                         DataContext="{Binding DataModel_ARExteriorCircularLateral}"
                         Text="{Binding MinBarLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="124,111,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="42" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                     <!--Bar Length Max-->
-                    <Label FontSize="12" Content="Bar Length Max" HorizontalAlignment="Left" Margin="-1,137,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="100"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECL_MaxBarLength" Content="__Bar Length Max" HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                                                 
-                        x:Name="UI_TextBox_AR_ECL_MaxBarLength"
                         DataContext="{Binding DataModel_ARExteriorCircularLateral}"
-                        Text="{Binding MaxBarLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                        
-                        HorizontalAlignment="Left" Height="23" Margin="124,139,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="42" RenderTransformOrigin="-0.346,-1.87"/>
+                        Text="{Binding MaxBarLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                     <!--Top Extra Offset-->
-                    <Label FontSize="12" Content="Top Extra Offset" HorizontalAlignment="Left" Margin="-1,165,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="100"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECL_TopExtraOffset" Content="__Top Extra Offset" Margin="5,185,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25"/>
                     <TextBox 
-                        x:Name="UI_TextBox_AR_ECL_TopExtraOffset"
                         DataContext="{Binding DataModel_ARExteriorCircularLateral}"
                         Text="{Binding TopExtraOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
-                        HorizontalAlignment="Left" Height="23" Margin="124,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                     <!--Bottom Extra Offset-->
-                    <Label FontSize="12" Content="Bottom Extra Offset" HorizontalAlignment="Left" Margin="0,196,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="117"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECL_BottomExtraOffset" Content="__Bottom Extra Offset" HorizontalAlignment="Left" Margin="5,215,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_AR_ECL_BottomExtraOffset"
                         DataContext="{Binding DataModel_ARExteriorCircularLateral}"
                         Text="{Binding BottomExtraOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                        HorizontalAlignment="Left" Height="23" Margin="124,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Exterior Circular Bottom" Margin="-3,-5,0,1">
-                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="0,1,0,-1">
+            
+            <TabItem Header="Exterior Circular Bottom">
+                <Grid Name="UI_Grid_AR_ECB" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
 
-                    <!--Diameter-->
-                    <Label FontSize="12" Content="Diameter" HorizontalAlignment="Left" Margin="-1,1,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="86" Grid.RowSpan="3"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECB_Diameter" Content="__Diameter" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
                     <ComboBox                        
-                        x:Name="UI_ComboBox_AR_ECB_Diameter"
                         DataContext="{Binding DataModel_ARExteriorCircularBottom}"
                         ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="111,5,5,0" VerticalAlignment="Top" />
+                        Margin="150,5,50,0" VerticalAlignment="Top" Width="150"/>
 
                     <!--Spacing-->
-                    <Label FontSize="12" Content="Spacing" HorizontalAlignment="Left" Margin="0,34,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="86"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECB_Spacing" Content="__Spacing" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox 
-                        x:Name="UI_TextBox_AR_ECB_Spacing"    
                         DataContext="{Binding DataModel_ARExteriorCircularBottom}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="111,36,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,35,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                     <!--Length Bar Min-->
-                    <Label FontSize="12" Content="Lenght Bar Min" HorizontalAlignment="Left" Margin="-1,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="111"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECB_MinBarLength" Content="__Lenght Bar Min" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox 
-                        x:Name="UI_TextBox_AR_ECB_MinBarLength"
                         DataContext="{Binding DataModel_ARExteriorCircularBottom}"
                         Text="{Binding MinBarLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="110,68,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="54" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                     <!--Length Bar Max-->
-                    <Label FontSize="12" Content="Lenght Bar Max" HorizontalAlignment="Left" Margin="0,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="123"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECB_MaxBarLength" Content="__Lenght Bar Max" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox 
-                        x:Name="UI_TextBox_AR_ECB_MaxBarLength"    
                         DataContext="{Binding DataModel_ARExteriorCircularBottom}"
                         Text="{Binding MaxBarLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="111,101,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="53" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                     <!--Start Extra Offset-->
-                    <Label FontSize="12" Content="Start Extra Offset" HorizontalAlignment="Left" Margin="0,130,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="123"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_ECB_StartExtraOffset" Content="__Start Extra Offset" HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox 
-                        x:Name="UI_TextBox_AR_ECB_StartExtraOffset"
                         DataContext="{Binding DataModel_ARExteriorCircularBottom}"
                         Text="{Binding StartExtraOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="111,130,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="53" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Interior U Bars" Margin="-3,-5,0,1">
-                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="0,1,0,2">
-
+            <TabItem Header="Interior U Bars">
+                <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
                     <!--Top Offset-->
-                    <Label FontSize="12" Content="Top Offset" HorizontalAlignment="Left" Margin="1,4,0,0" VerticalAlignment="Top" Height="26" Width="66"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Int_TopOffset" Content="__Top Offset" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25" />
                     <TextBox 
-                        x:Name="UI_TextBox_AR_Int_TopOffset"    
                         DataContext="{Binding DataModel_ARIntUBars}"
                         Text="{Binding TopOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="124,6,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="39" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        IsEnabled="False"
+                        HorizontalAlignment="Left" Height="25" Margin="150,5,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                     <!--Bottom Offset-->
-                    <Label FontSize="12" Content="Bottom Offset" HorizontalAlignment="Left" Margin="1,32,0,0" VerticalAlignment="Top" Height="26" Width="85"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Int_BottomOffset" Content="__Bottom Offset" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_AR_Int_BottomOffset"
                         DataContext="{Binding DataModel_ARIntUBars}"
                         Text="{Binding BottomOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="124,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
+                        HorizontalAlignment="Left" Height="23" Margin="150,35,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                     <!--Axis Offset-->
-                    <Label FontSize="12" Content="Axis Offset" HorizontalAlignment="Left" Margin="1,61,0,0" VerticalAlignment="Top" Height="26" Width="67"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Int_AxisOffset" Content="__Axis Offset" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_AR_Int_AxisOffset"  
                         DataContext="{Binding DataModel_ARIntUBars}"
-                        Text="{Binding AxisOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                        
-                        HorizontalAlignment="Left" Height="23" Margin="124,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
-                        Width="39" RenderTransformOrigin="-0.346,-1.87"/>
+                        Text="{Binding AxisOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                        Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
+                        HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                     <!--Diameter U Larger-->
-                    <Label FontSize="12" Content="Diameter U Larger" HorizontalAlignment="Left" Margin="0,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Grid.ColumnSpan="2" Height="26" Width="107"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Int_Diameter_Ularger" Content="__Diameter U Larger" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"/>
                     <ComboBox                        
-                        x:Name="UI_ComboBox_AR_Int_Diameter_Ularger"
                         DataContext="{Binding DataModel_ARIntUBars}"
-                        ItemsSource="{Binding DiameterNamesL, Mode=OneWay}"
+                        ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameterL, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="112,92,4,0" VerticalAlignment="Top"/>
+                        Margin="150,95,50,0" VerticalAlignment="Top" Width="150" Height="25"/>
 
                     <!--Diameter U Smaller-->
-                    <Label FontSize="12" Content="Diameter U Smaller" HorizontalAlignment="Left" Margin="-1,121,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Grid.ColumnSpan="2" Height="26" Width="112"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Int_Diameter_Usmaller" Content="__Diameter U Smaller" HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top" Height="25"/>
                     <ComboBox                        
-                        x:Name="UI_ComboBox_AR_Int_Diameter_Usmaller"
                         DataContext="{Binding DataModel_ARIntUBars}"
-                        ItemsSource="{Binding DiameterNamesS, Mode=OneWay}"
+                        ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameterS, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="111,121,5,0" VerticalAlignment="Top"/>
+                        Margin="150,125,50,0" Width="150" VerticalAlignment="Top" Height="25"/>
 
                     <!--Hook U Larger-->
-                    <Label FontSize="12" Content="Hook U Larger" HorizontalAlignment="Left" Margin="1,146,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="87"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Int_HookLength_Ularger" Content="__Hook U Larger" HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                                                 
-                        x:Name="UI_TextBox_AR_Int_HookLength_Ularger"
                         DataContext="{Binding DataModel_ARIntUBars}"
+                        Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Text="{Binding HookULarger, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="124,147,0,0" TextWrapping="Wrap"
-                        VerticalAlignment="Top" Width="39" RenderTransformOrigin="-0.346,-1.87"/>
+                        HorizontalAlignment="Left" Height="25" Margin="150,155,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                     <!--Hook U Smaller-->
-                    <Label FontSize="12" Content="Hook U Smaller" HorizontalAlignment="Left" Margin="1,172,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="92"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Int_HookLength_Usmaller" Content="__Hook U Smaller" HorizontalAlignment="Left" Margin="5,185,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_AR_Int_HookLength_Usmaller"
                         DataContext="{Binding DataModel_ARIntUBars}"
                         Text="{Binding HookUSmaller, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="124,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
+                        HorizontalAlignment="Left" Height="25" Margin="150,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                     <!--Top Extra Offset-->
-                    <Label FontSize="12" Content="Top Extra Offset" HorizontalAlignment="Left" Margin="1,202,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="98"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Int_TopExtraOffset" Content="__Top Extra Offset" HorizontalAlignment="Left" Margin="5,215,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                                                 
-                        x:Name="UI_TextBox_AR_Int_TopExtraOffset"
                         DataContext="{Binding DataModel_ARIntUBars}"
                         Text="{Binding TopExtraOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="124,203,0,0" TextWrapping="Wrap"
-                        VerticalAlignment="Top" Width="39" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
+                        HorizontalAlignment="Left" Height="25" Margin="150,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                     <!--Bottom Extra Offset-->
-                    <Label FontSize="12" Content="Bottom Extra Offset" HorizontalAlignment="Left" Margin="1,229,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="113"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_AR_Int_BottomExtraOffset" Content="__Bottom Extra Offset" HorizontalAlignment="Left" Margin="5,245,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_AR_Int_BottomExtraOffset"
                         DataContext="{Binding DataModel_ARIntUBars}"
                         Text="{Binding BottomExtraOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="124,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
+                        HorizontalAlignment="Left" Height="25" Margin="150,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Interior Circular Top" Margin="-3,-5,0,1">
-                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="0,1,0,2">
+            <TabItem Header="Interior Circular Top">
+                <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
 
                     <!--Diameter-->
                     <Label FontSize="12" Content="Diameter" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.551,2.423" Height="26" Width="100"/>

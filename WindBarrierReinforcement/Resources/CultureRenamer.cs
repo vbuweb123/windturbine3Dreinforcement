@@ -43,7 +43,11 @@ namespace WindBarrierReinforcement.Resources
                     object value = label.GetValue(CultureKey.CultureResKey);
                     if (value != null)
                     {
-                        label.Content = RManager.GetCultureWord((string)value);
+                        string replacement = RManager.GetCultureWord((string)value);
+                        if (!string.IsNullOrEmpty(replacement))
+                        {
+                            label.Content = RManager.GetCultureWord((string)value);
+                        }
                     }
                 }
         }
@@ -57,7 +61,11 @@ namespace WindBarrierReinforcement.Resources
 
             if (value != null)
             {
-                textBlock.Text = RManager.GetCultureWord((string)value);
+                string replacement = RManager.GetCultureWord((string)value);
+                if (!string.IsNullOrEmpty(replacement))
+                {
+                    textBlock.Text = replacement;
+                }
             }
 
         }

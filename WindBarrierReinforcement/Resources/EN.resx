@@ -117,8 +117,65 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Lbl_AR_ECB_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="Lbl_AR_ECB_MaxBarLength" xml:space="preserve">
+    <value>Maximum Bar Length</value>
+  </data>
+  <data name="Lbl_AR_ECB_MinBarLength" xml:space="preserve">
+    <value>Minimum Bar Length</value>
+  </data>
+  <data name="Lbl_AR_ECB_Spacing" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="Lbl_AR_ECB_StartExtraOffset" xml:space="preserve">
+    <value>Start Offset From Bend</value>
+  </data>
+  <data name="Lbl_AR_ECL_BottomExtraOffset" xml:space="preserve">
+    <value>Extra Offset At Bottom Bend</value>
+  </data>
+  <data name="Lbl_AR_ECL_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="Lbl_AR_ECL_MaxBarLength" xml:space="preserve">
+    <value>Maximum Bar Length</value>
+  </data>
+  <data name="Lbl_AR_ECL_MinBarLength" xml:space="preserve">
+    <value>Minimum Bar Length</value>
+  </data>
+  <data name="Lbl_AR_ECL_NoOfBars" xml:space="preserve">
+    <value>No Of Bars</value>
+  </data>
+  <data name="Lbl_AR_ECL_Option" xml:space="preserve">
+    <value>Option</value>
+  </data>
+  <data name="Lbl_AR_ECL_Spacing" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="Lbl_AR_ECL_TopExtraOffset" xml:space="preserve">
+    <value>Extra Offset At Top Bend</value>
+  </data>
+  <data name="Lbl_AR_ECT_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="Lbl_AR_ECT_MaxBarLength" xml:space="preserve">
+    <value>Maximum Bar Length</value>
+  </data>
+  <data name="Lbl_AR_ECT_MinBarLength" xml:space="preserve">
+    <value>Minimum Bar Length</value>
+  </data>
+  <data name="Lbl_AR_ECT_Spacing" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="Lbl_AR_ECT_StartExtraOffset" xml:space="preserve">
+    <value>Extra Offset At Bend</value>
+  </data>
   <data name="Lbl_AR_Ext_AxisOffset" xml:space="preserve">
     <value>Axis Offset</value>
+  </data>
+  <data name="Lbl_AR_Ext_BottomExtraOffset" xml:space="preserve">
+    <value>Extra Offset At Bottom Bend</value>
   </data>
   <data name="Lbl_AR_Ext_BottomOffset" xml:space="preserve">
     <value>Bottom Offset</value>
@@ -126,8 +183,50 @@
   <data name="Lbl_AR_Ext_Diameter_Ularger" xml:space="preserve">
     <value>Diameter For Larger U Bar</value>
   </data>
+  <data name="Lbl_AR_Ext_Diameter_Usmaller" xml:space="preserve">
+    <value>Diameter For Smaller U Bar</value>
+  </data>
+  <data name="Lbl_AR_Ext_HookLength_Ularger" xml:space="preserve">
+    <value>Large U - Hook Length</value>
+  </data>
+  <data name="Lbl_AR_Ext_HookLength_Usmaller" xml:space="preserve">
+    <value>Small U - Hook Length</value>
+  </data>
+  <data name="Lbl_AR_Ext_TopExtraOffset" xml:space="preserve">
+    <value>Extra Offset At Top Bend</value>
+  </data>
   <data name="Lbl_AR_Ext_TopOffset" xml:space="preserve">
     <value>Top Offset</value>
+  </data>
+  <data name="Lbl_AR_Int_AxisOffset" xml:space="preserve">
+    <value>Offset From Anchor CenterLine</value>
+  </data>
+  <data name="Lbl_AR_Int_BottomExtraOffset" xml:space="preserve">
+    <value>Extra Offset At Bottom Bend</value>
+  </data>
+  <data name="Lbl_AR_Int_BottomOffset" xml:space="preserve">
+    <value>Offset From Foundation Level</value>
+  </data>
+  <data name="Lbl_AR_Int_Diameter_Ularger" xml:space="preserve">
+    <value>Diameter Of Larger U</value>
+  </data>
+  <data name="Lbl_AR_Int_Diameter_Usmaller" xml:space="preserve">
+    <value>Diameter Of Smaller U</value>
+  </data>
+  <data name="Lbl_AR_Int_HookLength_Ularger" xml:space="preserve">
+    <value>Large U - Hook Length</value>
+  </data>
+  <data name="Lbl_AR_Int_HookLength_Usmaller" xml:space="preserve">
+    <value>Small U - Hook Length</value>
+  </data>
+  <data name="Lbl_AR_Int_TopExtraOffset" xml:space="preserve">
+    <value>Extra Offset At Top Bend</value>
+  </data>
+  <data name="Lbl_AR_Int_TopOffset" xml:space="preserve">
+    <value>Offset From Top Concrete</value>
+  </data>
+  <data name="Txt_AnchorsReinforcement" xml:space="preserve">
+    <value>Reinforcements Around Anchors</value>
   </data>
   <data name="UBAB_Label_Title" xml:space="preserve">
     <value>Enter values for</value>

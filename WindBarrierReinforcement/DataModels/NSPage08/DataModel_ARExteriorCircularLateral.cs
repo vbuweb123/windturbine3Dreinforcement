@@ -12,6 +12,12 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
     public class DataModel_ARExteriorCircularLateral : DataModel
     {
         /// <summary>
+        /// Common Data
+        /// </summary>
+        public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
+
+        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
+        /// <summary>
         /// UI_ComboBox_AR_ECL_Diameter
         /// </summary>        
         private int selectedIndexDiameter;
@@ -21,12 +27,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
         }
 
-        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
-
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameter = 0;
-        }
         /// <summary>
         /// UI_ComboBox_AR_ECL_Option
         /// </summary>
@@ -36,18 +36,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             get { return selectedIndexOption; }
             set { selectedIndexOption = value; NotifyPropertyChanged("SelectedIndexOption"); NotifyPropertyChanged("SpacingEnabled"); }
         }
-        public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
 
-        public string SpacingEnabled
-        {
-            get
-            {
-                if (SelectedIndexOption == 0)
-                    return "0";
-                else              
-                return "1";
-            }
-        }
+        public string SpacingEnabled => (SelectedIndexOption == 0) ? "0" : "1";
+  
         /// <summary>
         /// UI_TextBox_AR_ECL_Spacing
         /// </summary>
@@ -104,6 +95,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         {
             get { return bottomExtraOffset; }
             set { bottomExtraOffset = value; NotifyPropertyChanged("BottomExtraOffset"); }
+        }
+
+        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            SelectedIndexDiameter = 0;
         }
     }
 }
