@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WindBarrierReinforcement.DataModels.NSPage07;
+using WindBarrierReinforcement.Resources;
 
 namespace WindBarrierReinforcement
 {
@@ -40,14 +41,7 @@ namespace WindBarrierReinforcement
             InitializeComponent();
             this.DataContext = this;
 
-        }
-        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void UI_TextBox_OPTR_CircularTop_Overlap_TextChanged(object sender, TextChangedEventArgs e)
-        {
+            CultureRenamer.RenameTextBlock(UI_TextBlock_Title);
 
         }
     }

@@ -287,6 +287,9 @@
   <data name="Txt_AnchorsReinforcement" xml:space="preserve">
     <value>Reinforcements Around Anchors</value>
   </data>
+  <data name="Txt_OverPlateTopReinforcementTitle" xml:space="preserve">
+    <value>Over Plate Top Reinforcement</value>
+  </data>
   <data name="UBAB_Label_Title" xml:space="preserve">
     <value>Enter values for</value>
     <comment>Page 09</comment>
