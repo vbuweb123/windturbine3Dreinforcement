@@ -61,6 +61,24 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Diameter Anchor.
+        /// </summary>
+        internal static string Lbl_Anc_DiameterAnchor {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_DiameterAnchor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diameter Anchor Int.
+        /// </summary>
+        internal static string Lbl_Anc_DiameterAnchorInt {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_DiameterAnchorInt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Axis Offset.
         /// </summary>
         internal static string Lbl_AR_Ext_AxisOffset {
