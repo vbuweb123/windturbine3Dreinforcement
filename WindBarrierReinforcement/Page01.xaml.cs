@@ -26,7 +26,6 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page01 : Page
     {
-
         public DataModel_Global_Formwork DataModel_Global_Formwork
         {
             get => Global.DataModel_Global_Formwork;
@@ -50,7 +49,7 @@ namespace WindBarrierReinforcement
         public Page01()
         {
 
-            DataModel_Global_Coordinations_GroundPoint.Update(DataModel_Global_Formwork.DeptFoundation, DataModel_Global_Formwork.HBottom);
+            //DataModel_Global_Coordinations_GroundPoint.Update(DataModel_Global_Formwork.DeptFoundation, DataModel_Global_Formwork.HBottom);
 
             DataModel_Global_Formwork.PropertyChanged += delegate (object sender, System.ComponentModel.PropertyChangedEventArgs e)
             {
@@ -63,7 +62,7 @@ namespace WindBarrierReinforcement
             };
             Global.DataModel_Anchor.PropertyChanged += (o, e) =>
             {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x=>x.RadiusCenterLineTower))
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.RadiusCenterLineTower))
                 {
                     DataModel_Global_Formwork.UpdateA(Global.DataModel_Anchor.RadiusCenterLineTower);
                 }
