@@ -84,16 +84,5 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             get { return edgeCover; }
             set { edgeCover = value; NotifyPropertyChanged("EdgeCover"); }
         }
-
-        public DataModel_StraightBars(Page context)
-        {
-            context.Loaded += Context_Loaded;
-        }
-
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexOption = 0;
-            SelectedIndexDiameter = 0;
-        }
     }
 }

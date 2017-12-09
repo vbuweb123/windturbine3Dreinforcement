@@ -24,11 +24,7 @@
         <TextBlock ap:CultureKey.CultureRes="Txt_OverPlateTopReinforcementTitle" Text="__OPTR - Over Plate Top Reinforcement" HorizontalAlignment="Left" Margin="20,15,0,0"
                    TextWrapping="Wrap" VerticalAlignment="Top"
                    Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title" />
-        <TextBlock>
-            <StackPanel>
-                <TextBlock Text="da"></TextBlock>
-            </StackPanel>
-        </TextBlock>
+
         <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,50,25,25" BorderThickness="0" 
                     Background="{StaticResource AppMainBackgroundColor}">
 

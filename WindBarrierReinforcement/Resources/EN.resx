@@ -117,11 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  
   <data name="Lbl_Anc_DiameterAnchor" xml:space="preserve">
     <value>Diameter Anchor</value>
   </data>
-
   <data name="Lbl_AR_ECB_Diameter" xml:space="preserve">
     <value>Diameter</value>
   </data>
@@ -408,11 +406,95 @@
   <data name="Txt_OverPlateTopReinforcementTitle" xml:space="preserve">
     <value>Over Plate Top Reinforcement</value>
   </data>
-  <data name="UBAB_Label_Title" xml:space="preserve">
+  <data name="Tb_UBAB_Label_Title" xml:space="preserve">
     <value>Enter values for</value>
     <comment>Page 09</comment>
   </data>
   <data name="Lbl_Anc_DiameterAnchorInt" xml:space="preserve">
     <value>Diameter Anchor Int</value>
+  </data>
+  <data name="General_No" xml:space="preserve">
+    <value>Nu</value>
+    <comment>Page 10</comment>
+  </data>
+  <data name="General_Yes" xml:space="preserve">
+    <value>Da</value>
+    <comment>Page 10</comment>
+  </data>
+  <data name="Lbl_CHR_ChairsOverTopCirculars" xml:space="preserve">
+    <value>Chairs Over Top Circular</value>
+    <comment>Page 10</comment>
+  </data>
+  <data name="Lbl_CHR_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+    <comment>Page 10</comment>
+  </data>
+  <data name="Lbl_CHR_EdgeOffset" xml:space="preserve">
+    <value>Edge Offset</value>
+    <comment>Page 10</comment>
+  </data>
+  <data name="Lbl_CHR_HookLength" xml:space="preserve">
+    <value>Hook Length</value>
+    <comment>Page 10</comment>
+  </data>
+  <data name="Lbl_CHR_RadialSpacing" xml:space="preserve">
+    <value>Radial Spacing</value>
+    <comment>Page 10</comment>
+  </data>
+  <data name="Lbl_CHR_SpacingValueTangential" xml:space="preserve">
+    <value>Tangential Spacing</value>
+    <comment>Page 10</comment>
+  </data>
+  <data name="Lbl_CHR_TopChairOverlapp" xml:space="preserve">
+    <value>Top Chair Overlap</value>
+    <comment>Page 10</comment>
+  </data>
+  <data name="Lbl_CHR_Zone1" xml:space="preserve">
+    <value>Zone 1</value>
+    <comment>Page 10</comment>
+  </data>
+  <data name="Lbl_CHR_Zone2" xml:space="preserve">
+    <value>Zone 2</value>
+    <comment>Page 10</comment>
+  </data>
+  <data name="Lbl_CHR_ZoneLength" xml:space="preserve">
+    <value>Zone Length</value>
+    <comment>Page 10</comment>
+  </data>
+  <data name="Lbl_CHR_Zones" xml:space="preserve">
+    <value>Zones</value>
+    <comment>Page 10</comment>
+  </data>
+  <data name="Lbl_UBAB_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+    <comment>Page 09</comment>
+  </data>
+  <data name="Lbl_UBAB_DistanceFromTop" xml:space="preserve">
+    <value>Distance From Top Of Concrete</value>
+    <comment>Page 09</comment>
+  </data>
+  <data name="Lbl_UBAB_ExteriorHalfLength" xml:space="preserve">
+    <value>Exterior Half Length</value>
+    <comment>Page 09</comment>
+  </data>
+  <data name="Lbl_UBAB_FreeEdgeLength" xml:space="preserve">
+    <value>Free Edge Length</value>
+    <comment>Page 09</comment>
+  </data>
+  <data name="Lbl_UBAB_InteriorHalfLength" xml:space="preserve">
+    <value>Interior Half Length</value>
+    <comment>Page 09</comment>
+  </data>
+  <data name="Lbl_UBAB_SmallEdge" xml:space="preserve">
+    <value>Small Edge</value>
+    <comment>Page 09</comment>
+  </data>
+  <data name="Tb_CHR_Title" xml:space="preserve">
+    <value>Chairs</value>
+    <comment>Page 10</comment>
+  </data>
+  <data name="Tb_Page09_Title" xml:space="preserve">
+    <value>U Bars Near Bolts</value>
+    <comment>Page 09</comment>
   </data>
 </root>

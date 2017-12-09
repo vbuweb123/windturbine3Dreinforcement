@@ -61,12 +61,42 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nu.
+        /// </summary>
+        internal static string General_No {
+            get {
+                return ResourceManager.GetString("General_No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Da.
+        /// </summary>
+        internal static string General_Yes {
+            get {
+                return ResourceManager.GetString("General_Yes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Diameter Anchor.
         /// </summary>
         internal static string Lbl_Anc_DiameterAnchor {
             get {
                 return ResourceManager.GetString("Lbl_Anc_DiameterAnchor", resourceCulture);
- }}
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diameter Anchor Int.
+        /// </summary>
+        internal static string Lbl_Anc_DiameterAnchorInt {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_DiameterAnchorInt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Diameter.
         /// </summary>
         internal static string Lbl_AR_ECB_Diameter {
@@ -75,6 +105,7 @@ namespace WindBarrierReinforcement.Resources {
             }
         }
         
+        /// <summary>
         ///   Looks up a localized string similar to Maximum Bar Length.
         /// </summary>
         internal static string Lbl_AR_ECB_MaxBarLength {
@@ -561,6 +592,105 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chairs Over Top Circular.
+        /// </summary>
+        internal static string Lbl_CHR_ChairsOverTopCirculars {
+            get {
+                return ResourceManager.GetString("Lbl_CHR_ChairsOverTopCirculars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diameter.
+        /// </summary>
+        internal static string Lbl_CHR_Diameter {
+            get {
+                return ResourceManager.GetString("Lbl_CHR_Diameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edge Offset.
+        /// </summary>
+        internal static string Lbl_CHR_EdgeOffset {
+            get {
+                return ResourceManager.GetString("Lbl_CHR_EdgeOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hook Length.
+        /// </summary>
+        internal static string Lbl_CHR_HookLength {
+            get {
+                return ResourceManager.GetString("Lbl_CHR_HookLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Radial Spacing.
+        /// </summary>
+        internal static string Lbl_CHR_RadialSpacing {
+            get {
+                return ResourceManager.GetString("Lbl_CHR_RadialSpacing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tangential Spacing.
+        /// </summary>
+        internal static string Lbl_CHR_SpacingValueTangential {
+            get {
+                return ResourceManager.GetString("Lbl_CHR_SpacingValueTangential", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top Chair Overlap.
+        /// </summary>
+        internal static string Lbl_CHR_TopChairOverlapp {
+            get {
+                return ResourceManager.GetString("Lbl_CHR_TopChairOverlapp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 1.
+        /// </summary>
+        internal static string Lbl_CHR_Zone1 {
+            get {
+                return ResourceManager.GetString("Lbl_CHR_Zone1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 2.
+        /// </summary>
+        internal static string Lbl_CHR_Zone2 {
+            get {
+                return ResourceManager.GetString("Lbl_CHR_Zone2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone Length.
+        /// </summary>
+        internal static string Lbl_CHR_ZoneLength {
+            get {
+                return ResourceManager.GetString("Lbl_CHR_ZoneLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zones.
+        /// </summary>
+        internal static string Lbl_CHR_Zones {
+            get {
+                return ResourceManager.GetString("Lbl_CHR_Zones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Diameter.
         /// </summary>
         internal static string Lbl_OPTR_CBT_CircularBarDiam {
@@ -903,6 +1033,87 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Diameter.
+        /// </summary>
+        internal static string Lbl_UBAB_Diameter {
+            get {
+                return ResourceManager.GetString("Lbl_UBAB_Diameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Distance From Top Of Concrete.
+        /// </summary>
+        internal static string Lbl_UBAB_DistanceFromTop {
+            get {
+                return ResourceManager.GetString("Lbl_UBAB_DistanceFromTop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exterior Half Length.
+        /// </summary>
+        internal static string Lbl_UBAB_ExteriorHalfLength {
+            get {
+                return ResourceManager.GetString("Lbl_UBAB_ExteriorHalfLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Free Edge Length.
+        /// </summary>
+        internal static string Lbl_UBAB_FreeEdgeLength {
+            get {
+                return ResourceManager.GetString("Lbl_UBAB_FreeEdgeLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interior Half Length.
+        /// </summary>
+        internal static string Lbl_UBAB_InteriorHalfLength {
+            get {
+                return ResourceManager.GetString("Lbl_UBAB_InteriorHalfLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Small Edge.
+        /// </summary>
+        internal static string Lbl_UBAB_SmallEdge {
+            get {
+                return ResourceManager.GetString("Lbl_UBAB_SmallEdge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chairs.
+        /// </summary>
+        internal static string Tb_CHR_Title {
+            get {
+                return ResourceManager.GetString("Tb_CHR_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to U Bars Near Bolts.
+        /// </summary>
+        internal static string Tb_Page09_Title {
+            get {
+                return ResourceManager.GetString("Tb_Page09_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter values for.
+        /// </summary>
+        internal static string Tb_UBAB_Label_Title {
+            get {
+                return ResourceManager.GetString("Tb_UBAB_Label_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reinforcements Around Anchors.
         /// </summary>
         internal static string Txt_AnchorsReinforcement {
@@ -917,15 +1128,6 @@ namespace WindBarrierReinforcement.Resources {
         internal static string Txt_OverPlateTopReinforcementTitle {
             get {
                 return ResourceManager.GetString("Txt_OverPlateTopReinforcementTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enter values for.
-        /// </summary>
-        internal static string UBAB_Label_Title {
-            get {
-                return ResourceManager.GetString("UBAB_Label_Title", resourceCulture);
             }
         }
     }
