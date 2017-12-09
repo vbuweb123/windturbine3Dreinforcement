@@ -19,6 +19,7 @@ using WindBarrierReinforcement.Common.AttachedProperties;
 using WindBarrierReinforcement.DataModels;
 using WindBarrierReinforcement.DataModels.NSPage09;
 using WindBarrierReinforcement.Resources;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement
 {
@@ -27,19 +28,18 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page09 : Page
     {
-        public DataModelUBABCollection DataModelUBABCollection { get; set; }
+        public DataModelUBABCollection DataModelUBABCollection => GlobalPage09.DataModelUBABCollection;
 
         private string _zoneName = "Zona ";
         public Page09()
         {
-            DataModelUBABCollection = new DataModelUBABCollection();
             InitializeComponent();
             this.DataContext = this;
 
             AddNewNDataModel();
             SetGridDataContext(0);
 
-            CultureRenamer.RenameCollection(UI_Grid_DataModelContent.Children);
+            CultureRenamer.Rename(UI_Grid_Master);
         }
 
         private void AddNewNDataModel()

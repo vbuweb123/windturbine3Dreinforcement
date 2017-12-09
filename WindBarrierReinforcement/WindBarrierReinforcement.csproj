@@ -109,8 +109,8 @@
     <Compile Include="DataModels\NSPage08\DataModel_ARIntUBars.cs" />
     <Compile Include="DataModels\NSPage09\DataModelUBAB.cs" />
     <Compile Include="DataModels\NSPage09\DataModelUBABCollection.cs" />
-    <Compile Include="DataModels\NSPage10\DataModel_ChairsR.cs" />
-    <Compile Include="DataModels\NSPage10\DataModel_ChairsR_Zones.cs" />
+    <Compile Include="DataModels\NSPage10\DataModel_CHR_General.cs" />
+    <Compile Include="DataModels\NSPage10\DataModel_CHR_Zone.cs" />
     <Compile Include="DataModels\NSPage11\DataModelExtraInformation.cs" />
     <Compile Include="DataModels\NSPage12\DataModelBSShapes.cs" />
     <Compile Include="Page10.xaml.cs">
@@ -159,6 +159,10 @@
     </Compile>
     <Compile Include="Resources\RManager.cs" />
     <Compile Include="StaticModel\Global.cs" />
+    <Compile Include="StaticModel\GlobalPage07.cs" />
+    <Compile Include="StaticModel\GlobalPage08.cs" />
+    <Compile Include="StaticModel\GlobalPage09.cs" />
+    <Compile Include="StaticModel\GlobalPage10.cs" />
     <Compile Include="Writer\Writer.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

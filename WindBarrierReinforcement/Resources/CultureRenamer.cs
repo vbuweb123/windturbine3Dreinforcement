@@ -42,6 +42,18 @@ namespace WindBarrierReinforcement.Resources
                 }
             }
         }
+        private static void RenameRadioButton(RadioButton radioButton)
+        {
+            object value = radioButton.GetValue(CultureKey.CultureResKey);
+            if (value != null)
+            {
+                string replacement = RManager.GetCultureWord((string)value);
+                if (!string.IsNullOrEmpty(replacement))
+                {
+                    radioButton.Content = RManager.GetCultureWord((string)value);
+                }
+            }
+        }
         private static void RenameTextBlock(TextBlock textBlock)
         {
             if (textBlock.Inlines.Count > 0)
@@ -81,13 +93,13 @@ namespace WindBarrierReinforcement.Resources
             if (Element is TextBlock)
             {
                 RenameTextBlock((TextBlock)Element);
-                return;
             }
             if (Element is Label)
             {
                 RenameLabel((Label)Element);
-                return;
             }
+            if (Element is RadioButton)
+                RenameRadioButton((RadioButton)Element);
             //Check for content
             PropertyInfo ContentProperty = Element.GetType().GetProperty("Content", BindingFlags.Instance | BindingFlags.Public);
             if (ContentProperty != null)

@@ -10,37 +10,23 @@ using WindBarrierReinforcement.Common.Reflected;
 
 namespace WindBarrierReinforcement.DataModels.NSPage10
 {
-    public class DataModel_ChairsR : DataModel
+    public class DataModel_CHR_General : DataModel
     {
-        private Page10 page10;
-
-        public DataModel_ChairsR(Page10 page10)
+        private int edgeOffset;
+        public int EdgeOffset
         {
-            this.page10 = page10;
-        }
-        
-        
-        ///   <summary>
-        /// UI_TextBox_CHR_Diameter_1
-        /// </summary>
-        private int selectedIndexDiameter;
-        public int SelectedIndexDiameter
-        {
-            get { return selectedIndexDiameter; }
-            set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
+            get { return edgeOffset; }
+            set { edgeOffset = value; NotifyPropertyChanged("EdgeOffset"); }
         }
 
-        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
-
-        private int zoneLength; //TODO : ALTA CLASA
+        private int zoneLength;
         public int ZoneLength
         {
             get { return zoneLength; }
             set { zoneLength = value; NotifyPropertyChanged("ZoneLength"); }
         }
 
-
-        private int spacingValueRadial;//TODO : ALTA CLASA
+        private int spacingValueRadial;
         public int SpacingValueRadial
         {
             get { return spacingValueRadial; }

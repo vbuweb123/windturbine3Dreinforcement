@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WindBarrierReinforcement"
       xmlns:ap ="clr-namespace:WindBarrierReinforcement.Common.AttachedProperties"
       mc:Ignorable="d" 
-   d:DesignHeight="465" d:DesignWidth="700"
+      d:DesignHeight="465" d:DesignWidth="700"
       Title="Page09">
     <Page.Resources>
         <ResourceDictionary>
@@ -16,59 +16,18 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Background="White">
-        <TextBlock HorizontalAlignment="Left" Margin="20,10,0,0" TextWrapping="Wrap" Text="U Bars Around Bolts" 
+    <Grid Name="UI_Grid_Master" Background="{StaticResource AppMainBackgroundColor}">
+        <TextBlock ap:CultureKey.CultureRes="Tb_Page09_Title"  HorizontalAlignment="Left" Margin="20,10,0,0" TextWrapping="Wrap" Text="__U Bars Around Bolts" 
                    VerticalAlignment="Top" Style="{StaticResource AppContentTitleTextBlock}"/>
-        <!--Singular Content-->
-        <Grid Name="UI_Grid_DataModelContent" Background="{StaticResource ExpanderBackgroudBrush}" Margin="120,45,343,9.8">
-            
-            <Label Name="UiLabelTitle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6,4,0,0" Width="212" Style="{StaticResource AppContentTitleLabel}">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock ap:CultureKey.CultureRes="UBAB_Label_Title" Text="Enter" Padding="0,0,5,0">
-                    </TextBlock>
-                    <TextBlock Text="{Binding ZoneName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
-                </StackPanel>
-            </Label>
-
-            <Label Content="Exterior Half Length" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top"/>
-            <TextBox Text="{Binding ExteriorHalfLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                     HorizontalAlignment="Left" Height="23" Margin="145,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" Template="{StaticResource AppTextBoxGeneric }"/>
-
-            <Label Content="Interior Half Length" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top"/>
-            <TextBox IsEnabled="False" Text="{Binding InteriorHalfLength, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Template="{StaticResource AppTextBoxGeneric}"
-                             HorizontalAlignment="Left" Height="23" Margin="145,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" />
-
-            <Label Content="Small Edge" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top"/>
-            <TextBox Text="{Binding SmallEdge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Template="{StaticResource AppTextBoxGeneric }"
-                        HorizontalAlignment="Left" Height="23" Margin="145,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" />
-
-
-            <Label Content="Distance From Top" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
-            <TextBox Text="{Binding DistanceFromTop, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Template="{StaticResource AppTextBoxGeneric }"
-                        HorizontalAlignment="Left" Height="23" Margin="145,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" />
-
-            <Label Content="Free Edge Length" HorizontalAlignment="Left" Margin="10,148,0,0" VerticalAlignment="Top"/>
-            <TextBox Text="{Binding FreeEdgeLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Template="{StaticResource AppTextBoxGeneric }"
-                        HorizontalAlignment="Left" Height="23" Margin="145,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" />
-
-            <Label HorizontalAlignment="Left" Margin="10,176,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
-
-            <ComboBox                    
-                        ItemsSource="{Binding DiameterNames, Mode=OneWay}"
-                        SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="145,176,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="78" />
-
-
-            <Label Content="Free Edge Length" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top"/>
-
-        </Grid>
-
-
-        <ToolBarTray Orientation="Vertical" HorizontalAlignment="Left" Height="412" Margin="13,43,0,0" VerticalAlignment="Top" Width="100">
-            <ToolBar DataContext="{Binding DataModelUBABCollection}" ItemsSource="{Binding Collection}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,0,-100,-412">
+        
+        <ToolBarTray Orientation="Vertical" HorizontalAlignment="Left" Height="402"
+                     Margin="13,43,0,0" VerticalAlignment="Top" Width="150">
+            <ToolBar DataContext="{Binding DataModelUBABCollection}" ItemsSource="{Binding Collection}" 
+                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,0,-150,-402">
                 <ToolBar.ItemTemplate>
                     <DataTemplate>
-                        <Button VerticalAlignment="Center" Click="Ui_ToolBarBtn_Click" Tag="{Binding IndexInList,Mode=OneTime}" Width="100">
+                        <Button VerticalAlignment="Center" Click="Ui_ToolBarBtn_Click" Tag="{Binding IndexInList,Mode=OneTime}"
+                                HorizontalAlignment="Stretch" Margin="0,0,0,0" Height="30">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
                                 <Image Source="pack://application:,,,/WindBarrierReinforcement;component/Assets/Icons/partial.png" Height="15" Width="15"/>
                                 <TextBlock Width="100" Text="{Binding ZoneName, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"></TextBlock>
@@ -76,17 +35,47 @@
                         </Button>
                     </DataTemplate>
                 </ToolBar.ItemTemplate>
-                <!--<Button VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" HorizontalContentAlignment="Left">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                        <Image Source="pack://application:,,,/WindBarrierReinforcement;component/Assets/Icons/partial.png" Height="15" Width="15"/>
-                        <TextBlock Text="Click" FontSize="12" HorizontalAlignment="Stretch"/>
-                    </StackPanel>
-                </Button>-->
             </ToolBar>
         </ToolBarTray>
-        <Button Content="+" HorizontalAlignment="Left" Margin="135,21,0,0" VerticalAlignment="Top" Width="21" Click="Ui_ButtonAdd_Click"/>
 
-        <Button Content="-" HorizontalAlignment="Left" Margin="166,21,0,0" VerticalAlignment="Top" Width="21" Click="Ui_ButtonRemove_Click"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="168,49,0,0" VerticalAlignment="Top" Width="29" Click="Ui_ButtonAdd_Click" Height="52"/>
 
+        <Button Content="-" HorizontalAlignment="Left" Margin="168,120,0,0" VerticalAlignment="Top" Width="29" Click="Ui_ButtonRemove_Click" Height="52"/>
+
+        <!--Singular Content-->
+        <Grid Name="UI_Grid_DataModelContent" Background="{StaticResource AppContainerBackgroundColor}" Margin="202,45,20,20">
+            <Label Name="UiLabelTitle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,0" Height="30">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock ap:CultureKey.CultureRes="Tb_UBAB_Label_Title" Text="__Enter" Padding="0,0,5,0" Style="{StaticResource AppContentTitleTextBlock2}"/>
+                    <TextBlock Text="{Binding ZoneName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource AppContentTitleTextBlock2}"/>
+                </StackPanel>
+            </Label>
+
+            <Label ap:CultureKey.CultureRes="Lbl_UBAB_InteriorHalfLength" Content="__Exterior Half Length" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding ExteriorHalfLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     HorizontalAlignment="Left" Height="25" Margin="150,35,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" 
+                     Template="{StaticResource AppTextBoxGeneric }"/>
+
+            <Label ap:CultureKey.CultureRes="Lbl_UBAB_ExteriorHalfLength" Content="__Interior Half Length" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding InteriorHalfLength, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Template="{StaticResource AppTextBoxGeneric}"
+                     HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"  IsEnabled="False"/>
+
+            <Label ap:CultureKey.CultureRes="Lbl_UBAB_SmallEdge" Content="__Small Edge" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding SmallEdge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Template="{StaticResource AppTextBoxGeneric }"
+                     HorizontalAlignment="Left" Height="25" Margin="150,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
+
+            <Label ap:CultureKey.CultureRes="Lbl_UBAB_DistanceFromTop" Content="__Distance From Top" HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding DistanceFromTop, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Template="{StaticResource AppTextBoxGeneric }"
+                     HorizontalAlignment="Left" Height="25" Margin="150,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
+
+            <Label ap:CultureKey.CultureRes="Lbl_UBAB_FreeEdgeLength" Content="__Free Edge Length" HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding FreeEdgeLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Template="{StaticResource AppTextBoxGeneric }"
+                     HorizontalAlignment="Left" Height="25" Margin="150,155,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
+
+            <Label ap:CultureKey.CultureRes="Lbl_UBAB_Diameter" Content="__Diameter" HorizontalAlignment="Left" Margin="5,185,0,0" VerticalAlignment="Top" Height="25"/>
+            <ComboBox ItemsSource="{Binding DiameterNames, Mode=OneWay}"
+                      SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      Margin="150,185,50,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150" />
+        </Grid>
     </Grid>
 </Page>
