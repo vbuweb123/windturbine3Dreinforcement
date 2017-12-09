@@ -11,6 +11,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
 {
     public class DataModel_CircularBarsTop : DataModel
     {
+        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
+        public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
         /// <summary>
         /// UI_TextBox_OPTR_CircularBarDiam
         /// </summary>        
@@ -21,12 +23,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
         }
 
-        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
-
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameter = 0;
-        }
+        
         /// <summary>
         /// OPTR_CircularTop_Option
         /// </summary>
@@ -36,9 +33,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             get { return selectedIndexOption; }
             set { selectedIndexOption = value; NotifyPropertyChanged("SelectedIndexOption"); NotifyPropertyChanged("SpacingEnabled");}
         }
-
-        public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
-
         /// <summary>
         /// UI_TextBox_OPTR_CircularTop_Spacing
         /// </summary>
@@ -49,16 +43,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             set { spacing = value; NotifyPropertyChanged("Spacing"); }
         }
 
-        public string SpacingEnabled
-        {
-            get
-            {
-                if (SelectedIndexOption == 0)
-                    return "Disabled";
-                else
-                    return "Enabled";
-            }
-        }
+        public string SpacingEnabled => (SelectedIndexOption == 0) ? "Disabled" : "Enabled";
         /// <summary>
         /// UI_TextBox_OPTR_CircularTop_NoBars
         /// </summary>
@@ -97,6 +82,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             set { groups = value; NotifyPropertyChanged("Groups"); }
         }
 
-
+        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            SelectedIndexDiameter = 0;
+        }
     }
 }

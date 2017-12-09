@@ -11,6 +11,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
 {
     public class DataModel_RadialEdgeConcrete : DataModel
     {
+        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
+
         /// <summary>
         /// UI_TextBox_OPTR_InteriorEdgeLength
         /// </summary>
@@ -39,12 +41,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
         }
 
-        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
-
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {          
-            SelectedIndexDiameter = 0;
-        }
+       
         /// <summary>
         /// UI_TextBox_OPTR_TowerAxisCover
         /// </summary>
@@ -83,6 +80,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             get { return edgeCover; }
             set { edgeCover = value; NotifyPropertyChanged("EdgeCover"); }
         }
-
+        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            SelectedIndexDiameter = 0;
+        }
     }
 }
