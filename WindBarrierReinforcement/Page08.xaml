@@ -21,16 +21,16 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Background="{StaticResource AppMainBackgroundColor}">
+    <Grid Name="UI_Grid_Page8_Master" Background="{StaticResource AppMainBackgroundColor}">
         <TextBlock ap:CultureKey.CultureRes="Txt_AnchorsReinforcement" Text="__Anchors Reinforcement" HorizontalAlignment="Left" Margin="20,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-                   Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title" />
+                   Style="{StaticResource  AppContentTitleTextBlock}" />
         
         <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,50,25,25" 
                     SelectionChanged="TabControl_SelectionChanged" BorderThickness="0" 
                     Background="{StaticResource AppMainBackgroundColor}">
 
             <TabItem Header="Exterior U Bars">
-                <Grid Name="UI_Grid_ArExtU" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                <Grid  Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
 
                     <!--Top Offset-->
                     <Label Content="__Top Offset" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" 
@@ -108,7 +108,7 @@
             </TabItem>
             
             <TabItem Header="Exterior Circular Top">
-                <Grid Name="UI_Grid_AR_ECT" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
                     <!--Diameter-->
                     <Label ap:CultureKey.CultureRes="Lbl_AR_ECT_Diameter" Content="__Diameter" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
                     <ComboBox                        
@@ -151,7 +151,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Exterior Circular Lateral">
-                <Grid Name="UI_Grid_AR_ECL"  Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                <Grid   Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
                     <!--Diameter-->
                     <Label ap:CultureKey.CultureRes="Lbl_AR_ECL_Diameter" Content="__Diameter" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25" />
                     <ComboBox                        
@@ -229,7 +229,7 @@
             </TabItem>
             
             <TabItem Header="Exterior Circular Bottom">
-                <Grid Name="UI_Grid_AR_ECB" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
 
                     <Label ap:CultureKey.CultureRes="Lbl_AR_ECB_Diameter" Content="__Diameter" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
                     <ComboBox                        
@@ -273,7 +273,7 @@
             </TabItem>
 
             <TabItem Header="Interior U Bars">
-                <Grid Name="UI_Grid_Ar_Int" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                <Grid  Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
                     <!--Top Offset-->
                     <Label ap:CultureKey.CultureRes="Lbl_AR_Int_TopOffset" Content="__Top Offset" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25" />
                     <TextBox 
@@ -350,7 +350,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Interior Circular Top">
-                <Grid Name="UI_Grid_AR_ICT" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
                     <!--Diameter-->
                     <Label ap:CultureKey.CultureRes="Lbl_AR_ICT_Diameter" Content="__Diameter" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
                     <ComboBox                        
@@ -393,7 +393,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Interior Circular Lateral">
-                <Grid Name="UI_Grid_AR_ICL" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
 
                     <!--Diameter-->
                     <Label ap:CultureKey.CultureRes="Lbl_AR_ICL_Diameter" Content="__Diameter" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25"/>
@@ -475,7 +475,7 @@
 
             </TabItem>
             <TabItem Header="Interior Circular Bottom">
-                <Grid Name="UI_Grid_AR_ICB" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
                     <!--Diameter-->
                     <Label ap:CultureKey.CultureRes="Lbl_AR_ICB_Diameter" Content="__Diameter" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
                     <ComboBox                        

@@ -98,6 +98,7 @@
     <Compile Include="DataModels\NSPage07\DataModel_CircularBarsTop.cs" />
     <Compile Include="DataModels\NSPage07\DataModel_RadialEdgeConcrete.cs" />
     <Compile Include="DataModels\NSPage07\DataModel_StraightBars.cs" />
+    <Compile Include="DataModels\NSPage07\DataModel_StraightBars_Extra.cs" />
     <Compile Include="DataModels\NSPage08\DataModel_ARExteriorCircularBottom.cs" />
     <Compile Include="DataModels\NSPage08\DataModel_ARExteriorCircularLateral.cs" />
     <Compile Include="DataModels\NSPage08\DataModel_ARExteriorCircularTop.cs" />

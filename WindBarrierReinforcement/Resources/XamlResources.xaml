@@ -103,6 +103,28 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <Style x:Key="TextBoxTagTrigger_EnabledIfEnabled" TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger Property="Tag" Value="Disabled">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Enabled">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBoxTagTrigger_EnabledIfDisabled" TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger Property="Tag" Value="Disabled">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Enabled">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
     <!--Tab Item Style-->
     <Style TargetType="TabItem">
         <Setter Property="Foreground" Value="{StaticResource AppTabItemTextColor}"/>

@@ -27,22 +27,21 @@ namespace WindBarrierReinforcement
         public DataModel_RadialEdgeConcrete DataModel_RadialEdgeConcrete { get; set; }
         public DataModel_CircularBarsTop DataModel_CircularBarsTop { get; set; }
         public DataModel_CircularBarsExteriorSide DataModel_CircularBarsExteriorSide { get; set; }
-
+        public DataModel_StraightBars_Extra DataModel_StraightBars_Extra { get; set; }
         public Page07()
         {
             //initializing data models
-            DataModel_StraightBars_Dir1 = new DataModel_StraightBars(this);
-            DataModel_StraightBars_Dir2 = new DataModel_StraightBars(this);
+            DataModel_StraightBars_Dir1 = new DataModel_StraightBars(this);//TODO : CHECK THIS THIS
+            DataModel_StraightBars_Dir2 = new DataModel_StraightBars(this);//TODO : CHECK THIS THIS
             DataModel_RadialEdgeConcrete = new DataModel_RadialEdgeConcrete();
             DataModel_CircularBarsTop = new DataModel_CircularBarsTop();
             DataModel_CircularBarsExteriorSide = new DataModel_CircularBarsExteriorSide();
-
+            DataModel_StraightBars_Extra = new DataModel_StraightBars_Extra();
             //starting page
             InitializeComponent();
             this.DataContext = this;
 
-            CultureRenamer.RenameTextBlock(UI_TextBlock_Title);
-
+            CultureRenamer.Rename(UI_MasterGrid);
         }
     }
 }

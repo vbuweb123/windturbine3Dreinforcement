@@ -547,6 +547,357 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Group Definition.
+        /// </summary>
+        internal static string Lbl_CBT_OPTR_Groups {
+            get {
+                return ResourceManager.GetString("Lbl_CBT_OPTR_Groups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diameter.
+        /// </summary>
+        internal static string Lbl_OPTR_CBT_CircularBarDiam {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CBT_CircularBarDiam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum Length.
+        /// </summary>
+        internal static string Lbl_OPTR_CBT_CircularTop_MaxLength {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CBT_CircularTop_MaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Of Bars.
+        /// </summary>
+        internal static string Lbl_OPTR_CBT_CircularTop_NoBars {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CBT_CircularTop_NoBars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overlap Length.
+        /// </summary>
+        internal static string Lbl_OPTR_CBT_CircularTop_Overlap {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CBT_CircularTop_Overlap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spacing.
+        /// </summary>
+        internal static string Lbl_OPTR_CBT_CircularTop_Spacing {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CBT_CircularTop_Spacing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Option.
+        /// </summary>
+        internal static string Lbl_OPTR_CBT_Option {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CBT_Option", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diameter.
+        /// </summary>
+        internal static string Lbl_OPTR_CircularMargin_Diameter {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_Diameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum Length.
+        /// </summary>
+        internal static string Lbl_OPTR_CircularMargin_MaxLength {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_MaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Of Bars.
+        /// </summary>
+        internal static string Lbl_OPTR_CircularMargin_NoBars {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_NoBars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Offset From Top Bend.
+        /// </summary>
+        internal static string Lbl_OPTR_CircularMargin_Offset {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_Offset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Option.
+        /// </summary>
+        internal static string Lbl_OPTR_CircularMargin_Option {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_Option", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overlap Length.
+        /// </summary>
+        internal static string Lbl_OPTR_CircularMargin_Overlap {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_Overlap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spacing.
+        /// </summary>
+        internal static string Lbl_OPTR_CircularMargin_Spacing {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_Spacing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom Length.
+        /// </summary>
+        internal static string Lbl_OPTR_CircularMargin_Spacing_CustomLength {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_Spacing_CustomLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Default Length.
+        /// </summary>
+        internal static string Lbl_OPTR_CircularMargin_Spacing_UseDefaultLength {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_Spacing_UseDefaultLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diameter.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir1_Diameter {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir1_Diameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edge Cover.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir1_EdgeCover {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir1_EdgeCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to L-Shape X.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir1_Lx {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir1_Lx", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to L-Shape Y.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir1_Ly {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir1_Ly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Of Bars.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir1_NoOfBars {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir1_NoOfBars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Option.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir1_Option {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir1_Option", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spacing.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir1_SpacingValue {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir1_SpacingValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimum Bar Length.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir12_Extra_MinBarLength {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir12_Extra_MinBarLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Offset From TowerCenterLine.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir12_Extra_TowerAxisTopOffset {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir12_Extra_TowerAxisTopOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diameter.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir2_Diameter {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir2_Diameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edge Cover.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir2_EdgeCover {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir2_EdgeCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to L-Shape X.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir2_Lx {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir2_Lx", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to L-Shape Y.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir2_Ly {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir2_Ly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Of Bars.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir2_NoOfBars {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir2_NoOfBars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Option.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir2_Option {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir2_Option", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spacing.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir2_SpacingValue {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir2_SpacingValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom Cover.
+        /// </summary>
+        internal static string Lbl_OPTR_RAE_BottomCover {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_RAE_BottomCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom Edge Length.
+        /// </summary>
+        internal static string Lbl_OPTR_RAE_BottomEdgeLength {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_RAE_BottomEdgeLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edge Cover.
+        /// </summary>
+        internal static string Lbl_OPTR_RAE_EdgeCover {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_RAE_EdgeCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interior Edge Length.
+        /// </summary>
+        internal static string Lbl_OPTR_RAE_InteriorEdgeLength {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_RAE_InteriorEdgeLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diameter.
+        /// </summary>
+        internal static string Lbl_OPTR_RAE_RadialBarDiameter {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_RAE_RadialBarDiameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top Cover.
+        /// </summary>
+        internal static string Lbl_OPTR_RAE_TopCover {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_RAE_TopCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Offset From Anchor Centerline.
+        /// </summary>
+        internal static string Lbl_OPTR_RAE_TowerAxisCover {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_RAE_TowerAxisCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reinforcements Around Anchors.
         /// </summary>
         internal static string Txt_AnchorsReinforcement {
