@@ -593,4 +593,52 @@
     <value>Materials</value>
     <comment>Page 11</comment>
   </data>
+  <data name="Tb_P11_AdditionalInformation" xml:space="preserve">
+    <value>Additional Information</value>
+    <comment>Page 11</comment>
+  </data>
+  <data name="Tb_P11_ConcreteCover" xml:space="preserve">
+    <value>Concrete Cover</value>
+    <comment>Page 11</comment>
+  </data>
+  <data name="Tb_P11_ConcreteQuality" xml:space="preserve">
+    <value>Concrete Quality</value>
+    <comment>Page 11</comment>
+  </data>
+  <data name="Tb_P11_EnvelopeAroundConcrete" xml:space="preserve">
+    <value>Envelope Around Concrete</value>
+    <comment>Page 11</comment>
+  </data>
+  <data name="Tb_P11_Exposure_Class" xml:space="preserve">
+    <value>Exposure Class</value>
+    <comment>Page 11</comment>
+  </data>
+  <data name="Tb_P11_Foundation" xml:space="preserve">
+    <value>Foundation</value>
+    <comment>Page 11</comment>
+  </data>
+  <data name="Tb_P11_FoundationPiles" xml:space="preserve">
+    <value>Foundation Piles</value>
+    <comment>Page 11</comment>
+  </data>
+  <data name="Tb_P11_FoundationTowerBase" xml:space="preserve">
+    <value>Foundation Tower Base</value>
+    <comment>Page 11</comment>
+  </data>
+  <data name="Tb_P11_Grouting" xml:space="preserve">
+    <value>Grouting</value>
+    <comment>Page 11</comment>
+  </data>
+  <data name="Tb_P11_LeanConcrete" xml:space="preserve">
+    <value>Lean Concrete</value>
+    <comment>Page 11</comment>
+  </data>
+  <data name="Tb_P11_MaximumGranulatesSize" xml:space="preserve">
+    <value>Maximum Granulates Size</value>
+    <comment>Page 11</comment>
+  </data>
+  <data name="Tb_P11_Slump" xml:space="preserve">
+    <value>Consistency Class</value>
+    <comment>Page 11</comment>
+  </data>
 </root>
