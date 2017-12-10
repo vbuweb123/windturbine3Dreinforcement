@@ -70,7 +70,11 @@
     <Compile Include="Common\Attributes\DisplayByResourceKeyAttribute.cs" />
     <Compile Include="Common\Attributes\KeyNameAttribute.cs" />
     <Compile Include="Common\Attributes\ResourceFileAttribute.cs" />
+    <Compile Include="Common\Attributes\ValueAttribute.cs" />
     <Compile Include="Common\DataModel\DataModel.cs" />
+    <Compile Include="Common\Eng\EConcreteQuality.cs" />
+    <Compile Include="Common\Eng\EConsistenceTolerance.cs" />
+    <Compile Include="Common\Eng\EExposureClass.cs" />
     <Compile Include="Common\Eng\EOptionsCBES.cs" />
     <Compile Include="Common\Eng\EDiameters.cs" />
     <Compile Include="Common\Eng\EOption.cs" />
@@ -110,8 +114,8 @@
     <Compile Include="DataModels\NSPage09\DataModelUBAB.cs" />
     <Compile Include="DataModels\NSPage09\DataModelUBABCollection.cs" />
     <Compile Include="DataModels\NSPage10\DataModel_CHR_General.cs" />
-    <Compile Include="DataModels\NSPage10\DataModel_CHR_Zone.cs" />
-    <Compile Include="DataModels\NSPage11\DataModelExtraInformation.cs" />
+    <Compile Include="DataModels\NSPage10\DataModel_CHR_Zones.cs" />
+    <Compile Include="DataModels\NSPage11\DataModelMaterials.cs" />
     <Compile Include="DataModels\NSPage12\DataModelBSShapes.cs" />
     <Compile Include="Page10.xaml.cs">
       <DependentUpon>Page10.xaml</DependentUpon>
@@ -163,6 +167,8 @@
     <Compile Include="StaticModel\GlobalPage08.cs" />
     <Compile Include="StaticModel\GlobalPage09.cs" />
     <Compile Include="StaticModel\GlobalPage10.cs" />
+    <Compile Include="StaticModel\GlobalPage11.cs" />
+    <Compile Include="StaticModel\GlobalPage12.cs" />
     <Compile Include="Writer\Writer.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -324,6 +330,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DataModels\NewFolder1\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

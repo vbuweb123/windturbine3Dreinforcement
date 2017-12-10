@@ -12,10 +12,7 @@ namespace WindBarrierReinforcement.StaticModel
         public static DataModel_CHR_General dataModel_CHR_General;
         public static DataModel_CHR_General DataModel_CHR_General => dataModel_CHR_General ?? (dataModel_CHR_General = new DataModel_CHR_General());
 
-        private static DataModel_CHR_Zone dataModel_CHR_Z1;
-        public static DataModel_CHR_Zone DataModel_CHR_Z1 => dataModel_CHR_Z1 ?? (dataModel_CHR_Z1 = new DataModel_CHR_Zone());
-
-        private static DataModel_CHR_Zone dataModel_CHR_Z2;
-        public static DataModel_CHR_Zone DataModel_CHR_Z2 => dataModel_CHR_Z2 ?? (dataModel_CHR_Z2 = new DataModel_CHR_Zone());
+        private static DataModel_CHR_Zones dataModel_CHR_Zones;
+        public static DataModel_CHR_Zones DataModel_CHR_Zones => dataModel_CHR_Zones ?? (dataModel_CHR_Zones = new DataModel_CHR_Zones());
     }
 }
