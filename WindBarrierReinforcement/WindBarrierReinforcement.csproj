@@ -163,6 +163,7 @@
     <Compile Include="StaticModel\GlobalPage08.cs" />
     <Compile Include="StaticModel\GlobalPage09.cs" />
     <Compile Include="StaticModel\GlobalPage10.cs" />
+    <Compile Include="StaticModel\GlobalPage12.cs" />
     <Compile Include="Writer\Writer.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
