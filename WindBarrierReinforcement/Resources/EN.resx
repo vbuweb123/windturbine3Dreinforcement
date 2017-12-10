@@ -122,289 +122,381 @@
   </data>
   <data name="Lbl_AR_ECB_Diameter" xml:space="preserve">
     <value>Diameter</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECB_MaxBarLength" xml:space="preserve">
     <value>Maximum Bar Length</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECB_MinBarLength" xml:space="preserve">
     <value>Minimum Bar Length</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECB_Spacing" xml:space="preserve">
     <value>Spacing</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECB_StartExtraOffset" xml:space="preserve">
     <value>Start Offset From Bend</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECL_BottomExtraOffset" xml:space="preserve">
     <value>Extra Offset At Bottom Bend</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECL_Diameter" xml:space="preserve">
     <value>Diameter</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECL_MaxBarLength" xml:space="preserve">
     <value>Maximum Bar Length</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECL_MinBarLength" xml:space="preserve">
     <value>Minimum Bar Length</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECL_NoOfBars" xml:space="preserve">
     <value>No Of Bars</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECL_Option" xml:space="preserve">
     <value>Option</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECL_Spacing" xml:space="preserve">
     <value>Spacing</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECL_TopExtraOffset" xml:space="preserve">
     <value>Extra Offset At Top Bend</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECT_Diameter" xml:space="preserve">
     <value>Diameter</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECT_MaxBarLength" xml:space="preserve">
     <value>Maximum Bar Length</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECT_MinBarLength" xml:space="preserve">
     <value>Minimum Bar Length</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECT_Spacing" xml:space="preserve">
     <value>Spacing</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ECT_StartExtraOffset" xml:space="preserve">
     <value>Extra Offset At Bend</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Ext_AxisOffset" xml:space="preserve">
     <value>Axis Offset</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Ext_BottomExtraOffset" xml:space="preserve">
     <value>Extra Offset At Bottom Bend</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Ext_BottomOffset" xml:space="preserve">
     <value>Bottom Offset</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Ext_Diameter_Ularger" xml:space="preserve">
     <value>Diameter For Larger U Bar</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Ext_Diameter_Usmaller" xml:space="preserve">
     <value>Diameter For Smaller U Bar</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Ext_HookLength_Ularger" xml:space="preserve">
     <value>Large U - Hook Length</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Ext_HookLength_Usmaller" xml:space="preserve">
     <value>Small U - Hook Length</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Ext_TopExtraOffset" xml:space="preserve">
     <value>Extra Offset At Top Bend</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Ext_TopOffset" xml:space="preserve">
     <value>Top Offset</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICB_Diameter" xml:space="preserve">
     <value>Diameter</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICB_MaxBarLength" xml:space="preserve">
     <value>Maximum Bar Length</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICB_MinBarLength" xml:space="preserve">
     <value>Minimum Bar Length</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICB_Spacing" xml:space="preserve">
     <value>Spacing</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICB_StartExtraOffset" xml:space="preserve">
     <value>Extra Offset At Top Bend</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICL_BottomExtraOffset" xml:space="preserve">
     <value>Extra Offset At Bottom Bend</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICL_Diameter" xml:space="preserve">
     <value>Diameter</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICL_MaxBarLength" xml:space="preserve">
     <value>Maximum Bar Length</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICL_MinBarLength" xml:space="preserve">
     <value>Minimum Bar Length</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICL_NoOfBars" xml:space="preserve">
     <value>No Of Bars</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICL_Option" xml:space="preserve">
     <value>Option</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICL_Spacing" xml:space="preserve">
     <value>Spacing</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICL_TopExtraOffset" xml:space="preserve">
     <value>Extra Offset At Top Bend</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICT_Diameter" xml:space="preserve">
     <value>Diameter</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICT_MaxBarLength" xml:space="preserve">
     <value>Maximum Bar Length</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICT_MinBarLength" xml:space="preserve">
     <value>Minimum Bar Length</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICT_Spacing" xml:space="preserve">
     <value>Spacing</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_ICT_StartExtraOffset" xml:space="preserve">
     <value>Extra Offset At Start Bend</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Int_AxisOffset" xml:space="preserve">
     <value>Offset From Anchor CenterLine</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Int_BottomExtraOffset" xml:space="preserve">
     <value>Extra Offset At Bottom Bend</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Int_BottomOffset" xml:space="preserve">
     <value>Offset From Foundation Level</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Int_Diameter_Ularger" xml:space="preserve">
     <value>Diameter Of Larger U</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Int_Diameter_Usmaller" xml:space="preserve">
     <value>Diameter Of Smaller U</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Int_HookLength_Ularger" xml:space="preserve">
     <value>Large U - Hook Length</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Int_HookLength_Usmaller" xml:space="preserve">
     <value>Small U - Hook Length</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Int_TopExtraOffset" xml:space="preserve">
     <value>Extra Offset At Top Bend</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_AR_Int_TopOffset" xml:space="preserve">
     <value>Offset From Top Concrete</value>
+    <comment>Page 08</comment>
   </data>
   <data name="Lbl_CBT_OPTR_Groups" xml:space="preserve">
     <value>Group Definition</value>
   </data>
   <data name="Lbl_OPTR_CBT_CircularBarDiam" xml:space="preserve">
     <value>Diameter</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_CBT_CircularTop_MaxLength" xml:space="preserve">
     <value>Maximum Length</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_CBT_CircularTop_NoBars" xml:space="preserve">
     <value>No Of Bars</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_CBT_CircularTop_Overlap" xml:space="preserve">
     <value>Overlap Length</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_CBT_CircularTop_Spacing" xml:space="preserve">
     <value>Spacing</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_CBT_Option" xml:space="preserve">
     <value>Option</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_CircularMargin_Diameter" xml:space="preserve">
     <value>Diameter</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_CircularMargin_MaxLength" xml:space="preserve">
     <value>Maximum Length</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_CircularMargin_NoBars" xml:space="preserve">
     <value>No Of Bars</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_CircularMargin_Offset" xml:space="preserve">
     <value>Offset From Top Bend</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_CircularMargin_Option" xml:space="preserve">
     <value>Option</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_CircularMargin_Overlap" xml:space="preserve">
     <value>Overlap Length</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_CircularMargin_Spacing" xml:space="preserve">
     <value>Spacing</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_CircularMargin_Spacing_CustomLength" xml:space="preserve">
     <value>Custom Length</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_CircularMargin_Spacing_UseDefaultLength" xml:space="preserve">
     <value>Use Default Length</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_Dir12_Extra_MinBarLength" xml:space="preserve">
     <value>Minimum Bar Length</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_Dir12_Extra_TowerAxisTopOffset" xml:space="preserve">
     <value>Offset From TowerCenterLine</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_Dir1_Diameter" xml:space="preserve">
     <value>Diameter</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_Dir1_EdgeCover" xml:space="preserve">
     <value>Edge Cover</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_Dir1_Lx" xml:space="preserve">
     <value>L-Shape X</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_Dir1_Ly" xml:space="preserve">
     <value>L-Shape Y</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_Dir1_NoOfBars" xml:space="preserve">
     <value>No Of Bars</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_Dir1_Option" xml:space="preserve">
     <value>Option</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_Dir1_SpacingValue" xml:space="preserve">
     <value>Spacing</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_Dir2_Diameter" xml:space="preserve">
     <value>Diameter</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_Dir2_EdgeCover" xml:space="preserve">
     <value>Edge Cover</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_Dir2_Lx" xml:space="preserve">
     <value>L-Shape X</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_Dir2_Ly" xml:space="preserve">
     <value>L-Shape Y</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_Dir2_NoOfBars" xml:space="preserve">
     <value>No Of Bars</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_Dir2_Option" xml:space="preserve">
     <value>Option</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_Dir2_SpacingValue" xml:space="preserve">
     <value>Spacing</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_RAE_BottomCover" xml:space="preserve">
     <value>Bottom Cover</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_RAE_BottomEdgeLength" xml:space="preserve">
     <value>Bottom Edge Length</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_RAE_EdgeCover" xml:space="preserve">
     <value>Edge Cover</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_RAE_InteriorEdgeLength" xml:space="preserve">
     <value>Interior Edge Length</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_RAE_RadialBarDiameter" xml:space="preserve">
     <value>Diameter</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_RAE_TopCover" xml:space="preserve">
     <value>Top Cover</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Lbl_OPTR_RAE_TowerAxisCover" xml:space="preserve">
     <value>Offset From Anchor Centerline</value>
-    <comment>Sometimes refered as TowerAxis</comment>
+    <comment>Page 07 - Sometimes refered as TowerAxis</comment>
   </data>
   <data name="Txt_AnchorsReinforcement" xml:space="preserve">
     <value>Reinforcements Around Anchors</value>
   </data>
   <data name="Txt_OverPlateTopReinforcementTitle" xml:space="preserve">
     <value>Over Plate Top Reinforcement</value>
+    <comment>Page 07</comment>
   </data>
   <data name="Tb_UBAB_Label_Title" xml:space="preserve">
     <value>Enter values for</value>
@@ -496,5 +588,9 @@
   <data name="Tb_Page09_Title" xml:space="preserve">
     <value>U Bars Near Bolts</value>
     <comment>Page 09</comment>
+  </data>
+  <data name="Tb_Page11_Title" xml:space="preserve">
+    <value>Materials</value>
+    <comment>Page 11</comment>
   </data>
 </root>

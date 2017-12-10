@@ -1105,6 +1105,15 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Materials.
+        /// </summary>
+        internal static string Tb_Page11_Title {
+            get {
+                return ResourceManager.GetString("Tb_Page11_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter values for.
         /// </summary>
         internal static string Tb_UBAB_Label_Title {

@@ -4,12 +4,286 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WindBarrierReinforcement"
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+      xmlns:behaviors ="clr-namespace:WindBarrierReinforcement.Behaviors"
+      xmlns:ap ="clr-namespace:WindBarrierReinforcement.Common.AttachedProperties"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-      Title="Page11">
+      d:DesignHeight="465" d:DesignWidth="700"
+      Title="Materials">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WindBarrierReinforcement;component/Resources/XamlResources.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Name="UI_Grid_Master" Background="{StaticResource AppMainBackgroundColor}">
+        <TextBlock ap:CultureKey.CultureRes="Tb_Page11_Title"  HorizontalAlignment="Left" Margin="20,10,0,0" TextWrapping="Wrap" Text="__Materials" 
+                   VerticalAlignment="Top" Style="{StaticResource AppContentTitleTextBlock}"/>
 
-    <Grid>
-        <Label Content="Label1111" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,107,0,0"/>
+        <Grid Name="UI_Grid_ArExtU" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="20,40,20,150">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--Grid Column 0-->
+            <TextBlock Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="0"
+                       Text="__Concrete Quality" HorizontalAlignment="Left" Margin="5,40,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
+            <TextBlock Style="{StaticResource AppTextBlockGeneric}" Grid.Column="0"
+                       Text="__Exposure Class" HorizontalAlignment="Left" Margin="5,80,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
+            <TextBlock Style="{StaticResource AppTextBlockGeneric}" Grid.Column="0"
+                       Text="__Slump(Consistency)" HorizontalAlignment="Left" Margin="5,120,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
+            <TextBlock Style="{StaticResource AppTextBlockGeneric}" Grid.Column="0"
+                       Text="__Maximum Size For Granulates" HorizontalAlignment="Left" Margin="5,160,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
+            <TextBlock Style="{StaticResource AppTextBlockGeneric}" Grid.Column="0"
+                       Text="_Additional Information" HorizontalAlignment="Left" Margin="5,200,0,0" VerticalAlignment="Top"  Height="35" TextWrapping="Wrap"/>
+            <TextBlock Style="{StaticResource AppTextBlockGeneric}" Grid.Column="0"
+                       Text="__Concrete Cover" HorizontalAlignment="Left" Margin="5,240,0,0" VerticalAlignment="Top"  Height="35" TextWrapping="Wrap"/>
+            <!--Grid Column 1-->
+            <TextBlock Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="1"
+                       Text="__Foundation" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
+            <ComboBox  DataContext="{Binding DataModelMaterialsFoundation}"
+                       ItemsSource="{Binding ConcreteQualityNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexConcreteQuality, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="1" Margin="5,40,5,0" Height="25" VerticalAlignment="Top"/>
+            <ComboBox  DataContext="{Binding DataModelMaterialsFoundation}"
+                       ItemsSource="{Binding ExposureClassNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexExposureClass, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="1" Margin="5,80,5,0" Height="25" VerticalAlignment="Top"/>
+            <ComboBox  DataContext="{Binding DataModelMaterialsFoundation}"
+                       ItemsSource="{Binding ConsistenceToleranceNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexConsistenceTolerance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="1" Margin="5,120,5,0" Height="25" VerticalAlignment="Top"/>
+            <TextBox   DataContext="{Binding DataModelMaterialsFoundation}"
+                       Text="{Binding MaximumGranulesSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="1" HorizontalAlignment="Stretch" Height="25" Margin="5,160,5,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour/>
+                        </i:Interaction.Behaviors>
+            </TextBox>
 
+            <TextBox   DataContext="{Binding DataModelMaterialsFoundation}"
+                       Text="{Binding AdditionalInformation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="1" HorizontalAlignment="Stretch" Height="25" Margin="5,200,5,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+            <TextBox   DataContext="{Binding DataModelMaterialsFoundation}"
+                       Text="{Binding ConcreteCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="1" HorizontalAlignment="Stretch" Height="25" Margin="5,240,5,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                <i:Interaction.Behaviors>
+                    <behaviors:NumericBehaviour/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+            <!--Grid Column 2-->
+            <TextBlock Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="2"
+                       Text="__Foundation Tower Base" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
+            
+            <ComboBox  DataContext="{Binding DataModelMaterialsFoundationTowerBase}"
+                       ItemsSource="{Binding ConcreteQualityNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexConcreteQuality, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="2" Margin="5,40,5,0" Height="25" VerticalAlignment="Top"/>
+            <ComboBox  DataContext="{Binding DataModelMaterialsFoundationTowerBase}"
+                       ItemsSource="{Binding ExposureClassNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexExposureClass, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="2" Margin="5,80,5,0" Height="25" VerticalAlignment="Top"/>
+            
+            <ComboBox  DataContext="{Binding DataModelMaterialsFoundationTowerBase}"
+                       ItemsSource="{Binding ConsistenceToleranceNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexConsistenceTolerance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="2" Margin="5,120,5,0" Height="25" VerticalAlignment="Top"/>
+            
+            <TextBox   DataContext="{Binding DataModelMaterialsFoundationTowerBase}"
+                       Text="{Binding MaximumGranulesSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="2" HorizontalAlignment="Stretch" Height="25" Margin="5,160,5,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                <i:Interaction.Behaviors>
+                    <behaviors:NumericBehaviour/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+
+            <TextBox   DataContext="{Binding DataModelMaterialsFoundationTowerBase}"
+                       Text="{Binding AdditionalInformation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="2" HorizontalAlignment="Stretch" Height="25" Margin="5,200,5,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+            <TextBox   DataContext="{Binding DataModelMaterialsFoundationTowerBase}"
+                       Text="{Binding ConcreteCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="2" HorizontalAlignment="Stretch" Height="25" Margin="5,240,5,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                <i:Interaction.Behaviors>
+                    <behaviors:NumericBehaviour/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+            <!--Grid Column 3-->
+            <TextBlock Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="3"
+                       Text="__Lean Concrete" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
+            
+            <ComboBox  DataContext="{Binding DataModelMaterialsLeanConcrete}"
+                       ItemsSource="{Binding ConcreteQualityNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexConcreteQuality, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="3" Margin="5,40,5,0" Height="25" VerticalAlignment="Top"/>
+            
+            <ComboBox  DataContext="{Binding DataModelMaterialsLeanConcrete}"
+                       ItemsSource="{Binding ExposureClassNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexExposureClass, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="3" Margin="5,80,5,0" Height="25" VerticalAlignment="Top"/>
+            
+            <ComboBox  DataContext="{Binding DataModelMaterialsLeanConcrete}"
+                       ItemsSource="{Binding ConsistenceToleranceNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexConsistenceTolerance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="3" Margin="5,120,5,0" Height="25" VerticalAlignment="Top"/>
+
+            <TextBox   DataContext="{Binding DataModelMaterialsLeanConcrete}"
+                       Text="{Binding MaximumGranulesSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="3" HorizontalAlignment="Stretch" Height="25" Margin="5,160,5,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                <i:Interaction.Behaviors>
+                    <behaviors:NumericBehaviour/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+
+            <TextBox   DataContext="{Binding DataModelMaterialsLeanConcrete}"
+                       Text="{Binding AdditionalInformation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="3" HorizontalAlignment="Stretch" Height="25" Margin="5,200,5,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+            <TextBox   DataContext="{Binding DataModelMaterialsLeanConcrete}"
+                       Text="{Binding ConcreteCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="3" HorizontalAlignment="Stretch" Height="25" Margin="5,240,5,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                <i:Interaction.Behaviors>
+                    <behaviors:NumericBehaviour/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+            <!--Grid Column 4-->
+            <TextBlock Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="4"
+                       Text="__Envelope around conduits" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
+            
+            <ComboBox  DataContext="{Binding DataModelMaterialsEnvelopeAroundConduits}"
+                       ItemsSource="{Binding ConcreteQualityNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexConcreteQuality, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="4" Margin="5,40,5,0" Height="25" VerticalAlignment="Top"/>
+            
+            <ComboBox  DataContext="{Binding DataModelMaterialsEnvelopeAroundConduits}"
+                       ItemsSource="{Binding ExposureClassNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexExposureClass, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="4" Margin="5,80,5,0" Height="25" VerticalAlignment="Top"/>
+            
+            <ComboBox  DataContext="{Binding DataModelMaterialsEnvelopeAroundConduits}"
+                       ItemsSource="{Binding ConsistenceToleranceNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexConsistenceTolerance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="4" Margin="5,120,5,0" Height="25" VerticalAlignment="Top"/>
+
+            <TextBox   DataContext="{Binding DataModelMaterialsEnvelopeAroundConduits}"
+                       Text="{Binding MaximumGranulesSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="4" HorizontalAlignment="Stretch" Height="25" Margin="5,160,5,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                <i:Interaction.Behaviors>
+                    <behaviors:NumericBehaviour/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+
+            <TextBox   DataContext="{Binding DataModelMaterialsEnvelopeAroundConduits}"
+                       Text="{Binding AdditionalInformation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="4" HorizontalAlignment="Stretch" Height="25" Margin="5,200,5,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+            <TextBox   DataContext="{Binding DataModelMaterialsEnvelopeAroundConduits}"
+                       Text="{Binding ConcreteCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="4" HorizontalAlignment="Stretch" Height="25" Margin="5,240,5,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                <i:Interaction.Behaviors>
+                    <behaviors:NumericBehaviour/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+            <!--Grid Column 5-->
+            <TextBlock Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="5"
+                       Text="__Grouting" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
+            <ComboBox  DataContext="{Binding DataModelMaterialsGrouting}"
+                       ItemsSource="{Binding ConcreteQualityNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexConcreteQuality, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="5" Margin="5,40,5,0" Height="25" VerticalAlignment="Top"/>
+            
+            <ComboBox  DataContext="{Binding DataModelMaterialsGrouting}"
+                       ItemsSource="{Binding ExposureClassNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexExposureClass, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="5" Margin="5,80,5,0" Height="25" VerticalAlignment="Top"/>
+            
+            <ComboBox  DataContext="{Binding DataModelMaterialsGrouting}"
+                       ItemsSource="{Binding ConsistenceToleranceNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexConsistenceTolerance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="5" Margin="5,120,5,0" Height="25" VerticalAlignment="Top"/>
+
+            <TextBox   DataContext="{Binding DataModelMaterialsGrouting}"
+                       Text="{Binding MaximumGranulesSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="5" HorizontalAlignment="Stretch" Height="25" Margin="5,160,5,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                <i:Interaction.Behaviors>
+                    <behaviors:NumericBehaviour/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+
+            <TextBox   DataContext="{Binding DataModelMaterialsGrouting}"
+                       Text="{Binding AdditionalInformation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="5" HorizontalAlignment="Stretch" Height="25" Margin="5,200,5,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+            <TextBox   DataContext="{Binding DataModelMaterialsGrouting}"
+                       Text="{Binding ConcreteCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="5" HorizontalAlignment="Stretch" Height="25" Margin="5,240,5,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                <i:Interaction.Behaviors>
+                    <behaviors:NumericBehaviour/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+            <!--Grid Column 6-->
+            <TextBlock Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="6"
+                       Text="__Foundation Piles" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
+            <ComboBox  DataContext="{Binding DataModelMaterialsFoundationPile}"
+                       ItemsSource="{Binding ConcreteQualityNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexConcreteQuality, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="6" Margin="5,40,5,0" Height="25" VerticalAlignment="Top"/>
+            
+            <ComboBox  DataContext="{Binding DataModelMaterialsFoundationPile}"
+                       ItemsSource="{Binding ExposureClassNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexExposureClass, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="6" Margin="5,80,5,0" Height="25" VerticalAlignment="Top"/>
+            
+            <ComboBox  DataContext="{Binding DataModelMaterialsFoundationPile}"
+                       ItemsSource="{Binding ConsistenceToleranceNames, Mode=OneWay}"
+                       SelectedIndex="{Binding SelectedIndexConsistenceTolerance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="6" Margin="5,120,5,0" Height="25" VerticalAlignment="Top"/>
+
+            <TextBox   DataContext="{Binding DataModelMaterialsFoundationPile}"
+                       Text="{Binding MaximumGranulesSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="6" HorizontalAlignment="Stretch" Height="25" Margin="5,160,5,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                <i:Interaction.Behaviors>
+                    <behaviors:NumericBehaviour/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+
+            <TextBox   DataContext="{Binding DataModelMaterialsFoundationPile}"
+                       Text="{Binding AdditionalInformation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="6" HorizontalAlignment="Stretch" Height="25" Margin="5,200,5,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+            <TextBox   DataContext="{Binding DataModelMaterialsFoundationPile}"
+                       Text="{Binding ConcreteCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Template="{StaticResource AppTextBoxGeneric}"
+                       Grid.Column="6" HorizontalAlignment="Stretch" Height="25" Margin="5,240,5,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                <i:Interaction.Behaviors>
+                    <behaviors:NumericBehaviour/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+        </Grid>
     </Grid>
 </Page>
