@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage04
 {
@@ -98,7 +99,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         public double SpacingAngle
         {
             get { return spacingAngle; }
-            set
+            private set
             {
                 spacingAngle = value;
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.SpacingAngle));
@@ -106,11 +107,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int largeDiameterOffsetFromCenter;
-
         public int LargeDiameterOffsetFromCenter
         {
             get { return largeDiameterOffsetFromCenter; }
-            set
+            private set
             {
                 largeDiameterOffsetFromCenter = value;
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.LargeDiameterOffsetFromCenter));
@@ -121,14 +121,18 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         public int SmallDiameterOffsetFromCenter
         {
             get { return smallDiameterOffsetFromCenter; }
-            set { smallDiameterOffsetFromCenter = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.SmallDiameterOffsetFromCenter)); }
+            private set
+            {
+                smallDiameterOffsetFromCenter = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.SmallDiameterOffsetFromCenter));
+            }
         }
 
         private int thirdDiameterOffsetFromCenter;
         public int ThirdDiameterOffsetFromCenter
         {
             get { return thirdDiameterOffsetFromCenter; }
-            set { thirdDiameterOffsetFromCenter = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.ThirdDiameterOffsetFromCenter)); }
+            private set { thirdDiameterOffsetFromCenter = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.ThirdDiameterOffsetFromCenter)); }
         }
 
         private int selectedIndexHookType;
@@ -146,35 +150,35 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         public int OverlappLargeDiameter
         {
             get { return overlappLargeDiameter; }
-            set { overlappLargeDiameter = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.OverlappLargeDiameter)); }
+            private set { overlappLargeDiameter = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.OverlappLargeDiameter)); }
         }
 
         private int overlappSmallDiameter;
         public int OverlappSmallDiameter
         {
             get { return overlappSmallDiameter; }
-            set { overlappSmallDiameter = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.OverlappSmallDiameter)); }
+            private set { overlappSmallDiameter = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.OverlappSmallDiameter)); }
         }
 
         private int overlapp3rdDiameter;
         public int Overlapp3rdDiameter
         {
             get { return overlapp3rdDiameter; }
-            set { overlapp3rdDiameter = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.Overlapp3rdDiameter)); }
+            private set { overlapp3rdDiameter = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.Overlapp3rdDiameter)); }
         }
 
         private double spacing3rdDiameterAngle;
         public double Spacing3rdDiameterAngle
         {
             get { return spacing3rdDiameterAngle; }
-            set{ spacing3rdDiameterAngle = value;NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.Spacing3rdDiameterAngle));}
+            private set { spacing3rdDiameterAngle = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.Spacing3rdDiameterAngle)); }
         }
 
         private double startOffsetAngle;
         public double StartOffsetAngle
         {
             get { return startOffsetAngle; }
-            set { startOffsetAngle = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.StartOffsetAngle)); }
+            private set { startOffsetAngle = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.StartOffsetAngle)); }
         }
 
         private int maximumLength;
@@ -183,6 +187,86 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             get { return maximumLength; }
             set { maximumLength = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.MaximumLength)); }
         }
+        public DataModelRadial2()
+        {
 
+            this.PropertyChanged += (o, e) =>
+            {
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.LargeDiamNoOfBars))
+                    Set_SpacingAngle();
+                // LargeDiameterOffsetFromCenter => Math.Max(UnreinforcedCore, GlobalPage04.DataModelRadialGeneral.MinCore);
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.UnreinforcedCore))
+                    Set_LargeDiameterOffsetFromCenter();
+
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.Spacing3rdDiameterAngle))
+                    Set_ThirdDiameterOffsetFromCenter();
+
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.ThirdDiamNoOfBars))
+                    Set_Spacing3rdDiameterAngle();
+
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.SpacingAngle))
+                    Set_StartOffsetAngle();
+            };
+            GlobalPage04.DataModelRadialGeneral.PropertyChanged += (o, e) =>
+            {
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadialGeneral>(x => x.MinCore))
+                    Set_LargeDiameterOffsetFromCenter();
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadialGeneral>(x => x.MinSpaceField))
+                    Set_ThirdDiameterOffsetFromCenter();
+            };
+            GlobalPage04.DataModelRadial1.PropertyChanged += (o, e) =>
+            {
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.OverlappLargeDiameter))
+                    Set_OverlappLargeDiameter();
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.OverlappSmallDiameter))
+                    Set_OverlappSmallDiameter();
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.Overlapp3rdDiameter))
+                    Set_Overlapp3rdDiameter();
+            };
+            GlobalPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
+            {
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage02.DataModel_Anchor>(x => x.DiameterAnchor)
+                    || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage02.DataModel_Anchor>(x => x.BoltDiameter))
+                    Set_SmallDiameterOffsetFromCenter();
+            };
+        }
+        private void Set_SmallDiameterOffsetFromCenter()
+        {
+            //TODO: Change into a combobox in pgae2
+            SmallDiameterOffsetFromCenter = (int)Math.Round(Math.Ceiling((double)(GlobalPage02.DataModel_Anchor.DiameterAnchor / 2 + 50 + GlobalPage02.DataModel_Anchor.BoltDiameter)), 0);
+        }
+        private void Set_SpacingAngle()
+        {
+            SpacingAngle = (LargeDiamNoOfBars == 0) ? 0 : (LargeDiamNoOfBars == 0) ? 0 : Math.Round((double)360 / LargeDiamNoOfBars, 2);
+        }
+        private void Set_LargeDiameterOffsetFromCenter()
+        {
+            LargeDiameterOffsetFromCenter = Math.Max(UnreinforcedCore, GlobalPage04.DataModelRadialGeneral.MinCore);
+        }
+        private void Set_ThirdDiameterOffsetFromCenter()
+        {
+            ThirdDiameterOffsetFromCenter = (Spacing3rdDiameterAngle == 0) ? 0 :
+                (int)(Math.Round(Math.Ceiling((double)GlobalPage04.DataModelRadialGeneral.MinSpaceField / (0.5 * Spacing3rdDiameterAngle * Math.PI / 180)), 0));
+        }
+        private void Set_OverlappLargeDiameter()
+        {
+            OverlappLargeDiameter = GlobalPage04.DataModelRadial1.OverlappLargeDiameter;
+        }
+        private void Set_OverlappSmallDiameter()
+        {
+            OverlappSmallDiameter = GlobalPage04.DataModelRadial1.OverlappSmallDiameter;
+        }
+        private void Set_Overlapp3rdDiameter()
+        {
+            Overlapp3rdDiameter = GlobalPage04.DataModelRadial1.Overlapp3rdDiameter;
+        }
+        private void Set_Spacing3rdDiameterAngle()
+        {
+            Spacing3rdDiameterAngle = (ThirdDiamNoOfBars == 0) ? 0 : (int)Math.Round((double)360 / ThirdDiamNoOfBars, 0);
+        }
+        private void Set_StartOffsetAngle()
+        {
+            StartOffsetAngle = Math.Round(SpacingAngle / 2, 2);
+        }
     }
 }
