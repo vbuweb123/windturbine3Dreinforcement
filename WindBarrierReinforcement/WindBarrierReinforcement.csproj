@@ -75,6 +75,7 @@
     <Compile Include="Common\Eng\EConcreteQuality.cs" />
     <Compile Include="Common\Eng\EConsistenceTolerance.cs" />
     <Compile Include="Common\Eng\EExposureClass.cs" />
+    <Compile Include="Common\Eng\EHookTypes.cs" />
     <Compile Include="Common\Eng\EOptionsCBES.cs" />
     <Compile Include="Common\Eng\EDiameters.cs" />
     <Compile Include="Common\Eng\EOption.cs" />
@@ -89,7 +90,11 @@
     <Compile Include="DataModels\NSPage01\DataModel_Global_Formwork.cs" />
     <Compile Include="DataModels\NSPage01\DataModel_Global_Materials.cs" />
     <Compile Include="DataModels\NSPage02\DataModel_Anchor.cs" />
-    <Compile Include="DataModels\NSPAge03\DataModel_ScrewPiles.cs" />
+    <Compile Include="DataModels\NSPage03\DataModel_ScrewPiles.cs" />
+    <Compile Include="DataModels\NSPage04\DataModelCircularGeneral.cs" />
+    <Compile Include="DataModels\NSPage04\DataModelRadial2.cs" />
+    <Compile Include="DataModels\NSPage04\DataModelRadial1.cs" />
+    <Compile Include="DataModels\NSPage04\DataModelRadialGeneral.cs" />
     <Compile Include="DataModels\NSPage05\DataModel_Top_Reinforcement.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_D1.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_D2.cs" />
@@ -163,6 +168,7 @@
     </Compile>
     <Compile Include="Resources\RManager.cs" />
     <Compile Include="StaticModel\Global.cs" />
+    <Compile Include="StaticModel\GlobalPage04.cs" />
     <Compile Include="StaticModel\GlobalPage07.cs" />
     <Compile Include="StaticModel\GlobalPage08.cs" />
     <Compile Include="StaticModel\GlobalPage09.cs" />

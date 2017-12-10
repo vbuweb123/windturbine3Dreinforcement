@@ -641,4 +641,8 @@
     <value>Consistency Class</value>
     <comment>Page 11</comment>
   </data>
+  <data name="Tb_BottomReinforcement" xml:space="preserve">
+    <value>Bottom Reinforcement</value>
+    <comment>Page 04</comment>
+  </data>
 </root>

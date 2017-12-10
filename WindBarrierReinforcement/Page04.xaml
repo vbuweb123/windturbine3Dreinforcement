@@ -4,9 +4,11 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WindBarrierReinforcement"
+      xmlns:behaviors="clr-namespace:WindBarrierReinforcement.Behaviors"
       xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Behaviors="clr-namespace:WindBarrierReinforcement.Behaviors" x:Class="WindBarrierReinforcement.Page04"
       mc:Ignorable="d" 
-      d:DesignHeight="465" d:DesignWidth="700"
+      xmlns:ap ="clr-namespace:WindBarrierReinforcement.Common.AttachedProperties"
+      d:DesignHeight="580" d:DesignWidth="700"
       Title="Page04">
 
     <Page.Resources>
@@ -17,33 +19,492 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Background="White">
-        <TextBlock HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" Text="Bottom Reinforcement" VerticalAlignment="Top"/>
-        <TabControl TabStripPlacement="Left" HorizontalAlignment="Left" Margin="0,30,0,0" Width="400" >
-            <TabItem Header="Radial" Margin="-4,-6,-36,2">
-                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="32,-6,-2,11">
+    <Grid Name="UI_Grid_MasterGrid" Background="{StaticResource AppMainBackgroundColor}">
+        <TextBlock ap:CultureKey.CultureRes="Tb_BottomReinforcement" Text="__OPTR - Over Plate Top Reinforcement" HorizontalAlignment="Left" Margin="20,5,0,0"
+                   TextWrapping="Wrap" VerticalAlignment="Top"
+                   Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title" />
 
-                    <!--Diameter Anchor-->
-                    <Label FontSize="12" Content="Diameter Anchor" HorizontalAlignment="Left" Margin="2,2,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                        
-                        x:Name="UI_TextBox_DiameterAnchor"
-                        DataContext="{Binding DataModel_Anchor}"
-                        Text="{Binding DiameterAnchor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="125,4,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87">
+        <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,25,25,5" BorderThickness="0" 
+                    Background="{StaticResource AppMainBackgroundColor}">
+            <!--Tab Item Radial General-->
+            <TabItem Header="__Radial General">
+                <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+
+                    <Label Content="__MinCore" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox
+                        DataContext="{Binding DataModelRadialGeneral}"
+                        Text="{Binding MinCore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,5,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
-                            <Behaviors:NumericBehaviour InitialValue="0"></Behaviors:NumericBehaviour>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
                         </i:Interaction.Behaviors>
                     </TextBox>
 
+                    <Label Content="__MinSpaceField" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox
+                        DataContext="{Binding DataModelRadialGeneral}"
+                        Text="{Binding MinSpaceField, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,35,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <Label Content="__MinSpaceCenter" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox
+                        DataContext="{Binding DataModelRadialGeneral}"
+                        Text="{Binding MinSpaceCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <Label Content="__AlternativeMinStartAngle" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox
+                        DataContext="{Binding DataModelRadialGeneral}"
+                        Text="{Binding AlternativeMinStartAngle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
                 </Grid>
+            </TabItem>
+            <!--Tab Item Circular General-->
+            <TabItem Header="__Circular General">
+                <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                    <Label Content="__MinCore" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox
+                        DataContext="{Binding DataModelCircularGeneral}"
+                        Text="{Binding OverlapLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,5,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
+                    <Label Content="__MaximumRebarLength" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox
+                        DataContext="{Binding DataModelCircularGeneral}"
+                        Text="{Binding MaximumRebarLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,35,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <Label Content="__DiameterEdgeCirculars" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"/>
+                    <ComboBox                        
+                        DataContext="{Binding DataModelCircularGeneral}"
+                        ItemsSource="{Binding DiameterNames, Mode=OneWay}"
+                        SelectedIndex="{Binding SelectedDiameterEdgeCirculars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Margin="150,65,4,0" VerticalAlignment="Top" Width="150" HorizontalAlignment="Left"/>
+
+                    <Label Content="__NumberEdgeCirculars" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox
+                        DataContext="{Binding DataModelCircularGeneral}"
+                        Text="{Binding NumberEdgeCirculars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <Label Content="__SpacingEdgeCirculars" HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox
+                        DataContext="{Binding DataModelCircularGeneral}"
+                        Text="{Binding SpacingEdgeCirculars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,125,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <Label Content="__RadiusCore" HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox
+                        DataContext="{Binding DataModelCircularGeneral}"
+                        Text="{Binding RadiusCore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,155,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </Grid>
+            </TabItem>
+            <!--Tab Item Radial-->
+            <TabItem Header="__Radial" HorizontalAlignment="Stretch">
+                <Grid Background="{StaticResource AppContainerBackgroundColor}"  HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Grid Column 0 -->
+                    <Label Grid.Column="0" Content="__LargeDiamNoOfBars" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__LargeDiameter" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__SmallDiamNoOfBars" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__SmallDiameter" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__ThirdDiamNoOfBars" HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__ThirdDiameter" HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__UnreinforcedCore" HorizontalAlignment="Left" Margin="5,185,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__SpacingAngle" HorizontalAlignment="Left" Margin="5,215,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__LargeDiameterOffsetFromCenter" HorizontalAlignment="Left" Margin="5,245,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__SmallDiameterOffsetFromCenter" HorizontalAlignment="Left" Margin="5,275,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__ThirdDiameterOffsetFromCenter" HorizontalAlignment="Left" Margin="5,305,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__HookType" HorizontalAlignment="Left" Margin="5,335,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__OverlappLargeDiameter" HorizontalAlignment="Left" Margin="5,365,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__OverlappSmallDiameter" HorizontalAlignment="Left" Margin="5,395,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__Overlapp3rdDiameter" HorizontalAlignment="Left" Margin="5,425,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__Spacing3rdDiameterAngle" HorizontalAlignment="Left" Margin="5,455,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__StartOffsetAngle" HorizontalAlignment="Left" Margin="5,485,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__MaximumLength" HorizontalAlignment="Left" Margin="5,515,0,0" VerticalAlignment="Top" Height="25"/>
+                    
+                    <!--Grid Column 1 -->
+                    <TextBox
+                        DataContext="{Binding DataModelRadial1}"
+                        Text="{Binding LargeDiamNoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,5,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                    
+                    <ComboBox
+                        DataContext="{Binding DataModelRadial1}"
+                        ItemsSource="{Binding DiameterNames, Mode=OneWay}"
+                        SelectedIndex="{Binding SelectedIndexLargeDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Grid.Column="1" Margin="5,35,5,0" Height="24" Width="150" VerticalAlignment="Top"/>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial1}"
+                        Text="{Binding SmallDiamNoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,65,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <ComboBox
+                        DataContext="{Binding DataModelRadial1}"
+                        ItemsSource="{Binding DiameterNames, Mode=OneWay}"
+                        SelectedIndex="{Binding SelectedIndexSmallDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Grid.Column="1" Margin="5,95,5,0" Height="24" Width="150" VerticalAlignment="Top"/>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial1}"
+                        Text="{Binding ThirdDiamNoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,125,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <ComboBox
+                        DataContext="{Binding DataModelRadial1}"
+                        ItemsSource="{Binding DiameterNames, Mode=OneWay}"
+                        SelectedIndex="{Binding SelectedIndexThirdDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Grid.Column="1" Margin="5,155,5,0" Height="24" Width="150" VerticalAlignment="Top"/>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial1}"
+                        Text="{Binding UnreinforcedCore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,185,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial1}"
+                        Text="{Binding SpacingAngle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,215,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial1}"
+                        Text="{Binding LargeDiameterOffsetFromCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,245,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial1}"
+                        Text="{Binding SmallDiameterOffsetFromCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,275,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial1}"
+                        Text="{Binding ThirdDiameterOffsetFromCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,305,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <ComboBox
+                        DataContext="{Binding DataModelRadial1}"
+                        ItemsSource="{Binding HookTypesNames, Mode=OneWay}"
+                        SelectedIndex="{Binding SelectedIndexHookType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Grid.Column="1" Margin="5,335,5,0" Height="24" Width="150" VerticalAlignment="Top"/>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial1}"
+                        Text="{Binding OverlappLargeDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,365,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial1}"
+                        Text="{Binding OverlappSmallDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,395,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial1}"
+                        Text="{Binding Overlapp3rdDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,425,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial1}"
+                        Text="{Binding Spacing3rdDiameterAngle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,455,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial1}"
+                        Text="{Binding StartOffsetAngle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,485,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial1}"
+                        Text="{Binding MaximumLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,515,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                    <!--Grid Column 2 -->
+                    <!--Grid Column 1 -->
+                    <TextBox
+                        DataContext="{Binding DataModelRadial2}"
+                        Text="{Binding LargeDiamNoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,5,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <ComboBox
+                        DataContext="{Binding DataModelRadial2}"
+                        ItemsSource="{Binding DiameterNames, Mode=OneWay}"
+                        SelectedIndex="{Binding SelectedIndexLargeDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Grid.Column="2" Margin="5,35,5,0" Height="24" Width="150" VerticalAlignment="Top"/>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial2}"
+                        Text="{Binding SmallDiamNoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,65,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <ComboBox
+                        DataContext="{Binding DataModelRadial2}"
+                        ItemsSource="{Binding DiameterNames, Mode=OneWay}"
+                        SelectedIndex="{Binding SelectedIndexSmallDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Grid.Column="2" Margin="5,95,5,0" Height="24" Width="150" VerticalAlignment="Top"/>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial2}"
+                        Text="{Binding ThirdDiamNoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,125,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <ComboBox
+                        DataContext="{Binding DataModelRadial2}"
+                        ItemsSource="{Binding DiameterNames, Mode=OneWay}"
+                        SelectedIndex="{Binding SelectedIndexThirdDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Grid.Column="2" Margin="5,155,5,0" Height="24" Width="150" VerticalAlignment="Top"/>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial2}"
+                        Text="{Binding UnreinforcedCore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,185,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial2}"
+                        Text="{Binding SpacingAngle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,215,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial2}"
+                        Text="{Binding LargeDiameterOffsetFromCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,245,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial2}"
+                        Text="{Binding SmallDiameterOffsetFromCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,275,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial2}"
+                        Text="{Binding ThirdDiameterOffsetFromCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,305,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <ComboBox
+                        DataContext="{Binding DataModelRadial2}"
+                        ItemsSource="{Binding HookTypesNames, Mode=OneWay}"
+                        SelectedIndex="{Binding SelectedIndexHookType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Grid.Column="2" Margin="5,335,5,0" Height="24" Width="150" VerticalAlignment="Top"/>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial2}"
+                        Text="{Binding OverlappLargeDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,365,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial2}"
+                        Text="{Binding OverlappSmallDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,395,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial2}"
+                        Text="{Binding Overlapp3rdDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,425,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial2}"
+                        Text="{Binding Spacing3rdDiameterAngle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,455,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial2}"
+                        Text="{Binding StartOffsetAngle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,485,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <TextBox
+                        DataContext="{Binding DataModelRadial2}"
+                        Text="{Binding MaximumLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,515,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </Grid>
             </TabItem>
 
-            <TabItem Header="Circular" Margin="-4,-6,-37,2">
-                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="33,-6,-2,11"/>
+            <TabItem Header="__Circular">
+                <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0"/>
             </TabItem>
+
         </TabControl>
 
     </Grid>

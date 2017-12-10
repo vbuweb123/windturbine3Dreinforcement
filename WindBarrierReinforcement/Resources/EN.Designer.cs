@@ -1087,6 +1087,15 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bottom Reinforcement.
+        /// </summary>
+        internal static string Tb_BottomReinforcement {
+            get {
+                return ResourceManager.GetString("Tb_BottomReinforcement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chairs.
         /// </summary>
         internal static string Tb_CHR_Title {

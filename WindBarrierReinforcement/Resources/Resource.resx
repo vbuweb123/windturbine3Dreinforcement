@@ -236,6 +236,18 @@
     <value>XD3</value>
     <comment>EExposureClass</comment>
   </data>
+  <data name="HookType_A" xml:space="preserve">
+    <value>A(Over Top Radial Bars)</value>
+    <comment>EHookTypes</comment>
+  </data>
+  <data name="HookType_B" xml:space="preserve">
+    <value>B(Over Edge Verticals)</value>
+    <comment>EHookTypes</comment>
+  </data>
+  <data name="HookType_C" xml:space="preserve">
+    <value>C(None)</value>
+    <comment>EHookTypes</comment>
+  </data>
   <data name="Page01" xml:space="preserve">
     <value>Global</value>
     <comment>Global</comment>
