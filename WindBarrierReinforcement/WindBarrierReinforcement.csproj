@@ -168,7 +168,12 @@
     </Compile>
     <Compile Include="Resources\RManager.cs" />
     <Compile Include="StaticModel\Global.cs" />
+    <Compile Include="StaticModel\GlobalPage01.cs" />
+    <Compile Include="StaticModel\GlobalPage02.cs" />
+    <Compile Include="StaticModel\GlobalPage03.cs" />
     <Compile Include="StaticModel\GlobalPage04.cs" />
+    <Compile Include="StaticModel\GlobalPage05.cs" />
+    <Compile Include="StaticModel\GlobalPage06.cs" />
     <Compile Include="StaticModel\GlobalPage07.cs" />
     <Compile Include="StaticModel\GlobalPage08.cs" />
     <Compile Include="StaticModel\GlobalPage09.cs" />
