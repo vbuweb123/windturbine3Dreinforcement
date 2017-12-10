@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
-
+using WindBarrierReinforcement.DataModels.NSPage04;
+using WindBarrierReinforcement.Resources;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement
 {
@@ -22,14 +23,17 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page04 : Page
     {
-       
+        public DataModelCircularGeneral DataModelCircularGeneral => GlobalPage04.DataModelCircularGeneral;
+        public DataModelRadial1 DataModelRadial1 => GlobalPage04.DataModelRadial1;
+        public DataModelRadial2 DataModelRadial2 => GlobalPage04.DataModelRadial2;
+        public DataModelRadialGeneral DataModelRadialGeneral => GlobalPage04.DataModelRadialGeneral;
 
         public Page04()
         {
-           
             InitializeComponent();
-            
+            this.DataContext = this;
+
+            CultureRenamer.Rename(UI_Grid_MasterGrid);
         }
-        
     }
 }

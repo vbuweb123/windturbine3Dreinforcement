@@ -367,6 +367,33 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A(Over Top Radial Bars).
+        /// </summary>
+        internal static string HookType_A {
+            get {
+                return ResourceManager.GetString("HookType_A", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to B(Over Edge Verticals).
+        /// </summary>
+        internal static string HookType_B {
+            get {
+                return ResourceManager.GetString("HookType_B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C(None).
+        /// </summary>
+        internal static string HookType_C {
+            get {
+                return ResourceManager.GetString("HookType_C", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Global.
         /// </summary>
         internal static string Page01 {
