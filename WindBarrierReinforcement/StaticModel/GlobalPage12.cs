@@ -29,6 +29,7 @@ namespace WindBarrierReinforcement.StaticModel
             // TODO : Get these from XML File
             DataModelShapesCollection.Add(new DataModelBSShapes
             {
+                Reference = Common.Eng.EDiameters.D6,
                 NominalSize = 6,
                 MinRadiusForScheduling = 12,
                 MinDiameterOfBendingFormer = 24,
@@ -37,6 +38,7 @@ namespace WindBarrierReinforcement.StaticModel
             });
             DataModelShapesCollection.Add(new DataModelBSShapes
             {
+                Reference = Common.Eng.EDiameters.D8,
                 NominalSize = 8,
                 MinRadiusForScheduling = 16,
                 MinDiameterOfBendingFormer = 32,
@@ -45,6 +47,7 @@ namespace WindBarrierReinforcement.StaticModel
             });
             DataModelShapesCollection.Add(new DataModelBSShapes
             {
+                Reference = Common.Eng.EDiameters.D10,
                 NominalSize = 10,
                 MinRadiusForScheduling = 20,
                 MinDiameterOfBendingFormer = 40,
@@ -53,6 +56,7 @@ namespace WindBarrierReinforcement.StaticModel
             });
             DataModelShapesCollection.Add(new DataModelBSShapes
             {
+                Reference = Common.Eng.EDiameters.D12,
                 NominalSize = 12,
                 MinRadiusForScheduling = 24,
                 MinDiameterOfBendingFormer = 48,
@@ -61,6 +65,7 @@ namespace WindBarrierReinforcement.StaticModel
             });
             DataModelShapesCollection.Add(new DataModelBSShapes
             {
+                Reference = Common.Eng.EDiameters.D16,
                 NominalSize = 16,
                 MinRadiusForScheduling = 32,
                 MinDiameterOfBendingFormer = 64,
@@ -69,6 +74,7 @@ namespace WindBarrierReinforcement.StaticModel
             });
             DataModelShapesCollection.Add(new DataModelBSShapes
             {
+                Reference = Common.Eng.EDiameters.D18,
                 NominalSize = 18,
                 MinRadiusForScheduling = 36,
                 MinDiameterOfBendingFormer = 0,
@@ -77,6 +83,7 @@ namespace WindBarrierReinforcement.StaticModel
             });
             DataModelShapesCollection.Add(new DataModelBSShapes
             {
+                Reference = Common.Eng.EDiameters.D20,
                 NominalSize = 20,
                 MinRadiusForScheduling = 70,
                 MinDiameterOfBendingFormer = 140,
@@ -85,6 +92,7 @@ namespace WindBarrierReinforcement.StaticModel
             });
             DataModelShapesCollection.Add(new DataModelBSShapes
             {
+                Reference = Common.Eng.EDiameters.D25,
                 NominalSize = 25,
                 MinRadiusForScheduling = 87,
                 MinDiameterOfBendingFormer = 175,
@@ -93,6 +101,7 @@ namespace WindBarrierReinforcement.StaticModel
             });
             DataModelShapesCollection.Add(new DataModelBSShapes
             {
+                Reference = Common.Eng.EDiameters.D32,
                 NominalSize = 32,
                 MinRadiusForScheduling = 112,
                 MinDiameterOfBendingFormer = 224,
@@ -101,6 +110,7 @@ namespace WindBarrierReinforcement.StaticModel
             });
             DataModelShapesCollection.Add(new DataModelBSShapes
             {
+                Reference = Common.Eng.EDiameters.D40,
                 NominalSize = 40,
                 MinRadiusForScheduling = 140,
                 MinDiameterOfBendingFormer = 280,
@@ -109,6 +119,7 @@ namespace WindBarrierReinforcement.StaticModel
             });
             DataModelShapesCollection.Add(new DataModelBSShapes
             {
+                Reference = Common.Eng.EDiameters.D50,
                 NominalSize = 50,
                 MinRadiusForScheduling = 175,
                 MinDiameterOfBendingFormer = 350,

@@ -55,30 +55,30 @@
             <!--Zone Length-->
             <Label ap:CultureKey.CultureRes="Lbl_CHR_ZoneLength"  Grid.Column="0" Content="__Zone Length" HorizontalAlignment="Left" Margin="5,90,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                DataContext="{Binding  DataModel_CHR_Z1 }" Template="{StaticResource AppTextBoxGeneric}"
-                Text="{Binding ZoneLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                DataContext="{Binding  DataModel_CHR_Zones }" Template="{StaticResource AppTextBoxGeneric}"
+                Text="{Binding ZoneLength1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1" HorizontalAlignment="Center" Height="25" Margin="0,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
             <!--Spacing Radial-->
             <Label ap:CultureKey.CultureRes="Lbl_CHR_RadialSpacing"  Grid.Column="0" Content="__Spacing Radial" HorizontalAlignment="Left" Margin="5,120,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                DataContext="{Binding DataModel_CHR_Z1}"
-                Text="{Binding SpacingValueRadial, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                DataContext="{Binding DataModel_CHR_Zones}"
+                Text="{Binding spacingValueRadial1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                 Template="{StaticResource AppTextBoxGeneric}"
                 Grid.Column="1" HorizontalAlignment="Center" Height="25" Margin="0,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
             <!--Edge Offset-->
             <Label ap:CultureKey.CultureRes="Lbl_CHR_EdgeOffset" Grid.Column="0" Content="__Edge Offset" HorizontalAlignment="Left" Margin="5,150,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                DataContext="{Binding DataModel_CHR_Z1}" Template="{StaticResource AppTextBoxGeneric}"
-                Text="{Binding EdgeOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                DataContext="{Binding DataModel_CHR_Zones}" Template="{StaticResource AppTextBoxGeneric}"
+                Text="{Binding EdgeOffset1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1" HorizontalAlignment="Center" Height="25" Margin="0,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
             <!--Hook Lengths-->
             <Label ap:CultureKey.CultureRes="Lbl_CHR_HookLength"  Grid.Column="0" Content="__Hook Length" HorizontalAlignment="Left" Margin="5,180,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 DataContext="{Binding DataModel_CHR_General}" Template="{StaticResource AppTextBoxGeneric}"
-                Text="{Binding HookLengths, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Text="{Binding HookLengths, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="False"
                 Grid.Column="1" HorizontalAlignment="Center" Height="25" Margin="0,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
             <!--ChairsOverTopCirculars-->
@@ -102,16 +102,16 @@
                 Grid.Column="1" HorizontalAlignment="Center" Height="25" Margin="0,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
             <!--ZoneLength2-->
             <TextBox 
-                DataContext="{Binding DataModel_CHR_Z2}" Template="{StaticResource AppTextBoxGeneric}"
-                Text="{Binding ZoneLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                DataContext="{Binding DataModel_CHR_Zones}" Template="{StaticResource AppTextBoxGeneric}"
+                Text="{Binding ZoneLength2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
                 Grid.Column="2" HorizontalAlignment="Center" Height="25" Margin="0,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
             <TextBox 
-                DataContext="{Binding DataModel_CHR_Z2}" Template="{StaticResource AppTextBoxGeneric}"
-                Text="{Binding SpacingValueRadial, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                DataContext="{Binding DataModel_CHR_Zones}" Template="{StaticResource AppTextBoxGeneric}"
+                Text="{Binding SpacingValueRadial2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                  Grid.Column="2" HorizontalAlignment="Center" Height="25" Margin="0,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
             <TextBox 
-                DataContext="{Binding DataModel_CHR_Z2}" Template="{StaticResource AppTextBoxGeneric}"
-                Text="{Binding EdgeOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                DataContext="{Binding DataModel_CHR_Zones}" Template="{StaticResource AppTextBoxGeneric}"
+                Text="{Binding EdgeOffset2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                 Grid.Column="2" HorizontalAlignment="Center" Height="25" Margin="0,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         </Grid>
     </Grid>

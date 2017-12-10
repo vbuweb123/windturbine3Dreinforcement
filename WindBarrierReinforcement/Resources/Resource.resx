@@ -144,6 +144,9 @@
   <data name="EDiameters_D40" xml:space="preserve">
     <value>D40</value>
   </data>
+  <data name="EDiameters_D50" xml:space="preserve">
+    <value>D50</value>
+  </data>
   <data name="EDiameters_D6" xml:space="preserve">
     <value>D6</value>
   </data>

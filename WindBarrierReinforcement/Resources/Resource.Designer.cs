@@ -142,6 +142,15 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to D50.
+        /// </summary>
+        internal static string EDiameters_D50 {
+            get {
+                return ResourceManager.GetString("EDiameters_D50", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to D6.
         /// </summary>
         internal static string EDiameters_D6 {

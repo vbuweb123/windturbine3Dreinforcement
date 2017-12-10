@@ -30,6 +30,8 @@ namespace WindBarrierReinforcement.Common.Eng
         [DisplayByResourceKey(ResourceKey = "EDiameters_D32")]
         D32,
         [DisplayByResourceKey(ResourceKey = "EDiameters_D40")]
-        D40
+        D40,
+        [DisplayByResourceKey(ResourceKey = "EDiameters_D50")]
+        D50
     };
 }

@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage10
 {
@@ -27,11 +28,16 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
             get { return selectedIndexDiameter; }
             set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
         }
-        private int hookLenghts;
+
         public int HookLengths
         {
-            get { return hookLenghts; }
-            set { hookLenghts = value; NotifyPropertyChanged("HookLengths"); }
+            get
+            {
+                EDiameters value = (EDiameters)SelectedIndexDiameter; //TODO - check this strict dependency to the index in the list. Maybe add in tag a reference?
+                var BSShape = GlobalPage12.DataModelShapesCollection.Where(x => x.Reference == value).SingleOrDefault();
+                if (BSShape == null) return -1;//NEED TO ADD THE VALUE IN GLOBAPL PAGE 12 in the list of BSShapes
+                return BSShape.NominalSize * (7+5);
+            }
         }
 
         private bool chairsOverTopCirculars;
@@ -47,9 +53,17 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
             get { return topChairsOverlapp; }
             set { topChairsOverlapp = value; NotifyPropertyChanged("TopChairsOverlapp"); }
         }
+        public DataModel_CHR_General()
+        {
+            this.PropertyChanged += DataModel_CHR_General_PropertyChanged;
+        }
 
-
-
-
+        private void DataModel_CHR_General_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_CHR_General>(x => x.SelectedIndexDiameter))
+            {
+                NotifyPropertyChanged("HookLengths");
+            }
+        }
     }
 }

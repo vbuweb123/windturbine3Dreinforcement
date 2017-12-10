@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
+using WindBarrierReinforcement.Common.Eng;
 
 namespace WindBarrierReinforcement.DataModels.NSPage12
 {
     public class DataModelBSShapes : DataModel
     {
+        public EDiameters Reference { get; set; }
         /// <summary>
         /// Nominal size of bar, d, mm
         /// </summary>
