@@ -11,41 +11,26 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
 {
     public class DataModel_CHR_Zone : DataModel
     {
-        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
-
-        private int selectedIndexDiameter;
-        public int SelectedIndexDiameter
+        private int zoneLength;
+        public int ZoneLength
         {
-            get { return selectedIndexDiameter; }
-            set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
+            get { return zoneLength; }
+            set { zoneLength = value; NotifyPropertyChanged("ZoneLength"); }
+        }
+        private int spacingValueRadial;
+        public int SpacingValueRadial
+        {
+            get { return spacingValueRadial; }
+            set { spacingValueRadial = value; NotifyPropertyChanged("SpacingValueRadial"); }
         }
 
-        private int tangentialSpacing;
-        public int TangentialSpacing
+        private int edgeOffset;
+        public int EdgeOffset
         {
-            get { return tangentialSpacing; }
-            set { tangentialSpacing = value; NotifyPropertyChanged("TangentialSpacing"); }
-        }
-       
-        private int hookLenghts;
-        public int HookLengths
-        {
-            get { return hookLenghts; }
-            set { hookLenghts = value; NotifyPropertyChanged("HookLengths"); }
+            get { return edgeOffset; }
+            set { edgeOffset = value; NotifyPropertyChanged("EdgeOffset"); }
         }
 
-        private bool chairsOverTopCirculars;
-        public bool ChairsOverTopCirculars
-        {
-            get { return chairsOverTopCirculars; }
-            set { chairsOverTopCirculars = value; NotifyPropertyChanged("ChairsOverTopCirculars"); }
-        }
-
-        private int topChairsOverlapp;
-        public  int TopChairsOverlapp
-        {
-            get { return topChairsOverlapp; }
-            set { topChairsOverlapp = value; NotifyPropertyChanged("TopChairsOverlapp"); }
-        }
+        
    }
 }

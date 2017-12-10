@@ -41,42 +41,43 @@
             <Label ap:CultureKey.CultureRes="Lbl_CHR_SpacingValueTangential" Grid.Column="0" Content="__Spacing Tangential" HorizontalAlignment="Left" 
                    Margin="5,30,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                DataContext="{Binding Z1}" Template="{StaticResource AppTextBoxGeneric}"
+                DataContext="{Binding DataModel_CHR_General}" Template="{StaticResource AppTextBoxGeneric}"
                 Text="{Binding TangentialSpacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1" HorizontalAlignment="Center" Height="25" Margin="0,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
 
             <!-- Diameter-->
             <Label ap:CultureKey.CultureRes="Lbl_CHR_Diameter" Grid.Column="0" Content="__Diameter" HorizontalAlignment="Left" Margin="5,60,0,0" VerticalAlignment="Top"/>
             <ComboBox                
-                DataContext="{Binding DataModel_ChairsR}"
+                DataContext="{Binding DataModel_CHR_General}"
                 ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                 SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1" Margin="0,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="150" Height="25"/>
             <!--Zone Length-->
             <Label ap:CultureKey.CultureRes="Lbl_CHR_ZoneLength"  Grid.Column="0" Content="__Zone Length" HorizontalAlignment="Left" Margin="5,90,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                DataContext="{Binding  DataModel_ChairsR }" Template="{StaticResource AppTextBoxGeneric}"
+                DataContext="{Binding  DataModel_CHR_Z1 }" Template="{StaticResource AppTextBoxGeneric}"
                 Text="{Binding ZoneLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1" HorizontalAlignment="Center" Height="25" Margin="0,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
             <!--Spacing Radial-->
             <Label ap:CultureKey.CultureRes="Lbl_CHR_RadialSpacing"  Grid.Column="0" Content="__Spacing Radial" HorizontalAlignment="Left" Margin="5,120,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                DataContext="{Binding DataModel_ChairsR}"
-                Text="{Binding SpacingValueRadial, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Template="{StaticResource AppTextBoxGeneric}"
+                DataContext="{Binding DataModel_CHR_Z1}"
+                Text="{Binding SpacingValueRadial, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                Template="{StaticResource AppTextBoxGeneric}"
                 Grid.Column="1" HorizontalAlignment="Center" Height="25" Margin="0,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
             <!--Edge Offset-->
             <Label ap:CultureKey.CultureRes="Lbl_CHR_EdgeOffset" Grid.Column="0" Content="__Edge Offset" HorizontalAlignment="Left" Margin="5,150,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                DataContext="{Binding Z1}" Template="{StaticResource AppTextBoxGeneric}"
+                DataContext="{Binding DataModel_CHR_Z1}" Template="{StaticResource AppTextBoxGeneric}"
                 Text="{Binding EdgeOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1" HorizontalAlignment="Center" Height="25" Margin="0,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
             <!--Hook Lengths-->
             <Label ap:CultureKey.CultureRes="Lbl_CHR_HookLength"  Grid.Column="0" Content="__Hook Length" HorizontalAlignment="Left" Margin="5,180,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                DataContext="{Binding Z1}" Template="{StaticResource AppTextBoxGeneric}"
+                DataContext="{Binding DataModel_CHR_General}" Template="{StaticResource AppTextBoxGeneric}"
                 Text="{Binding HookLengths, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1" HorizontalAlignment="Center" Height="25" Margin="0,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
@@ -84,11 +85,11 @@
             <Label ap:CultureKey.CultureRes="Lbl_CHR_ChairsOverTopCirculars"  Grid.Column="0" Content="__ChairsOverTopCirculars" HorizontalAlignment="Left" Margin="5,210,0,0" VerticalAlignment="Top"/>
             <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="0,210,0,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Center">
                 <RadioButton GroupName="GN_ChairsOverTopCirculars" ap:CultureKey.CultureRes="General_Yes"
-                        DataContext="{Binding Z1}"
+                        DataContext="{Binding DataModel_CHR_General}"
                         IsChecked="{Binding ChairsOverTopCirculars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Content="Yes" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <RadioButton GroupName="GN_ChairsOverTopCirculars" ap:CultureKey.CultureRes="General_No"
-                        DataContext="{Binding Z2}" 
+                        DataContext="{Binding DataModel_CHR_General}" 
                         IsChecked="{Binding ChairsOverTopCirculars, Converter={StaticResource NegateBoolConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Content="No" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
                 </RadioButton>
@@ -96,20 +97,20 @@
             <!--TopChairsOverlapp-->
             <Label ap:CultureKey.CultureRes="Lbl_CHR_TopChairOverlapp" Grid.Column="0" Content="__TopChairsOverlapp" HorizontalAlignment="Left" Margin="5,240,0,0" VerticalAlignment="Top"/>
             <TextBox 
-                DataContext="{Binding Z1}" Template="{StaticResource AppTextBoxGeneric}"
+                DataContext="{Binding DataModel_CHR_General}" Template="{StaticResource AppTextBoxGeneric}"
                 Text="{Binding TopChairsOverlapp, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
                 Grid.Column="1" HorizontalAlignment="Center" Height="25" Margin="0,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
             <!--ZoneLength2-->
             <TextBox 
-                DataContext="{Binding Z2}" Template="{StaticResource AppTextBoxGeneric}"
+                DataContext="{Binding DataModel_CHR_Z2}" Template="{StaticResource AppTextBoxGeneric}"
                 Text="{Binding ZoneLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
                 Grid.Column="2" HorizontalAlignment="Center" Height="25" Margin="0,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
             <TextBox 
-                DataContext="{Binding Z2}" Template="{StaticResource AppTextBoxGeneric}"
+                DataContext="{Binding DataModel_CHR_Z2}" Template="{StaticResource AppTextBoxGeneric}"
                 Text="{Binding SpacingValueRadial, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                  Grid.Column="2" HorizontalAlignment="Center" Height="25" Margin="0,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
             <TextBox 
-                DataContext="{Binding Z2}" Template="{StaticResource AppTextBoxGeneric}"
+                DataContext="{Binding DataModel_CHR_Z2}" Template="{StaticResource AppTextBoxGeneric}"
                 Text="{Binding EdgeOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                 Grid.Column="2" HorizontalAlignment="Center" Height="25" Margin="0,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         </Grid>

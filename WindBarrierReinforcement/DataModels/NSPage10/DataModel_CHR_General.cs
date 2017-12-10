@@ -12,25 +12,44 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
 {
     public class DataModel_CHR_General : DataModel
     {
-        private int edgeOffset;
-        public int EdgeOffset
+        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
+
+        private int tangentialSpacing;
+        public int TangentialSpacing
         {
-            get { return edgeOffset; }
-            set { edgeOffset = value; NotifyPropertyChanged("EdgeOffset"); }
+            get { return tangentialSpacing; }
+            set { tangentialSpacing = value; NotifyPropertyChanged("TangentialSpacing"); }
         }
 
-        private int zoneLength;
-        public int ZoneLength
+        private int selectedIndexDiameter;
+        public int SelectedIndexDiameter
         {
-            get { return zoneLength; }
-            set { zoneLength = value; NotifyPropertyChanged("ZoneLength"); }
+            get { return selectedIndexDiameter; }
+            set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
+        }
+        private int hookLenghts;
+        public int HookLengths
+        {
+            get { return hookLenghts; }
+            set { hookLenghts = value; NotifyPropertyChanged("HookLengths"); }
         }
 
-        private int spacingValueRadial;
-        public int SpacingValueRadial
+        private bool chairsOverTopCirculars;
+        public bool ChairsOverTopCirculars
         {
-            get { return spacingValueRadial; }
-            set { spacingValueRadial = value; NotifyPropertyChanged("SpacingValueRadial"); }
+            get { return chairsOverTopCirculars; }
+            set { chairsOverTopCirculars = value; NotifyPropertyChanged("ChairsOverTopCirculars"); }
         }
+
+        private int topChairsOverlapp;
+        public int TopChairsOverlapp
+        {
+            get { return topChairsOverlapp; }
+            set { topChairsOverlapp = value; NotifyPropertyChanged("TopChairsOverlapp"); }
+        }
+
+
+
+
     }
 }
