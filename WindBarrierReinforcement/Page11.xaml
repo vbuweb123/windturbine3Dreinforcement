@@ -33,20 +33,20 @@
             </Grid.ColumnDefinitions>
             
             <!--Grid Column 0-->
-            <TextBlock Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="0"
+            <TextBlock ap:CultureKey.CultureRes="Tb_P11_ConcreteQuality" Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="0"
                        Text="__Concrete Quality" HorizontalAlignment="Left" Margin="5,40,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
-            <TextBlock Style="{StaticResource AppTextBlockGeneric}" Grid.Column="0"
+            <TextBlock ap:CultureKey.CultureRes="Tb_P11_Exposure_Class" Style="{StaticResource AppTextBlockGeneric}" Grid.Column="0"
                        Text="__Exposure Class" HorizontalAlignment="Left" Margin="5,80,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
-            <TextBlock Style="{StaticResource AppTextBlockGeneric}" Grid.Column="0"
+            <TextBlock ap:CultureKey.CultureRes="Tb_P11_Slump" Style="{StaticResource AppTextBlockGeneric}" Grid.Column="0"
                        Text="__Slump(Consistency)" HorizontalAlignment="Left" Margin="5,120,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
-            <TextBlock Style="{StaticResource AppTextBlockGeneric}" Grid.Column="0"
+            <TextBlock ap:CultureKey.CultureRes="Tb_P11_MaximumGranulatesSize" Style="{StaticResource AppTextBlockGeneric}" Grid.Column="0"
                        Text="__Maximum Size For Granulates" HorizontalAlignment="Left" Margin="5,160,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
-            <TextBlock Style="{StaticResource AppTextBlockGeneric}" Grid.Column="0"
+            <TextBlock ap:CultureKey.CultureRes="Tb_P11_AdditionalInformation" Style="{StaticResource AppTextBlockGeneric}" Grid.Column="0"
                        Text="_Additional Information" HorizontalAlignment="Left" Margin="5,200,0,0" VerticalAlignment="Top"  Height="35" TextWrapping="Wrap"/>
-            <TextBlock Style="{StaticResource AppTextBlockGeneric}" Grid.Column="0"
+            <TextBlock ap:CultureKey.CultureRes="Tb_P11_ConcreteCover" Style="{StaticResource AppTextBlockGeneric}" Grid.Column="0"
                        Text="__Concrete Cover" HorizontalAlignment="Left" Margin="5,240,0,0" VerticalAlignment="Top"  Height="35" TextWrapping="Wrap"/>
             <!--Grid Column 1-->
-            <TextBlock Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="1"
+            <TextBlock ap:CultureKey.CultureRes="Tb_P11_Foundation" Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="1"
                        Text="__Foundation" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
             <ComboBox  DataContext="{Binding DataModelMaterialsFoundation}"
                        ItemsSource="{Binding ConcreteQualityNames, Mode=OneWay}"
@@ -83,7 +83,7 @@
                 </i:Interaction.Behaviors>
             </TextBox>
             <!--Grid Column 2-->
-            <TextBlock Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="2"
+            <TextBlock ap:CultureKey.CultureRes="Tb_P11_FoundationTowerBase" Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="2"
                        Text="__Foundation Tower Base" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
             
             <ComboBox  DataContext="{Binding DataModelMaterialsFoundationTowerBase}"
@@ -123,7 +123,7 @@
                 </i:Interaction.Behaviors>
             </TextBox>
             <!--Grid Column 3-->
-            <TextBlock Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="3"
+            <TextBlock ap:CultureKey.CultureRes="Tb_P11_LeanConcrete" Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="3"
                        Text="__Lean Concrete" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
             
             <ComboBox  DataContext="{Binding DataModelMaterialsLeanConcrete}"
@@ -164,7 +164,7 @@
                 </i:Interaction.Behaviors>
             </TextBox>
             <!--Grid Column 4-->
-            <TextBlock Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="4"
+            <TextBlock ap:CultureKey.CultureRes="Tb_P11_EnvelopeAroundConcrete" Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="4"
                        Text="__Envelope around conduits" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
             
             <ComboBox  DataContext="{Binding DataModelMaterialsEnvelopeAroundConduits}"
@@ -205,7 +205,7 @@
                 </i:Interaction.Behaviors>
             </TextBox>
             <!--Grid Column 5-->
-            <TextBlock Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="5"
+            <TextBlock ap:CultureKey.CultureRes="Tb_P11_Grouting" Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="5"
                        Text="__Grouting" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
             <ComboBox  DataContext="{Binding DataModelMaterialsGrouting}"
                        ItemsSource="{Binding ConcreteQualityNames, Mode=OneWay}"
@@ -245,7 +245,7 @@
                 </i:Interaction.Behaviors>
             </TextBox>
             <!--Grid Column 6-->
-            <TextBlock Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="6"
+            <TextBlock ap:CultureKey.CultureRes="Tb_P11_FoundationPiles" Style="{StaticResource AppTextBlockGeneric}"  Grid.Column="6"
                        Text="__Foundation Piles" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="35" TextWrapping="Wrap"/>
             <ComboBox  DataContext="{Binding DataModelMaterialsFoundationPile}"
                        ItemsSource="{Binding ConcreteQualityNames, Mode=OneWay}"

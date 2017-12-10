@@ -1096,6 +1096,114 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Additional Information.
+        /// </summary>
+        internal static string Tb_P11_AdditionalInformation {
+            get {
+                return ResourceManager.GetString("Tb_P11_AdditionalInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Concrete Cover.
+        /// </summary>
+        internal static string Tb_P11_ConcreteCover {
+            get {
+                return ResourceManager.GetString("Tb_P11_ConcreteCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Concrete Quality.
+        /// </summary>
+        internal static string Tb_P11_ConcreteQuality {
+            get {
+                return ResourceManager.GetString("Tb_P11_ConcreteQuality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Envelope Around Concrete.
+        /// </summary>
+        internal static string Tb_P11_EnvelopeAroundConcrete {
+            get {
+                return ResourceManager.GetString("Tb_P11_EnvelopeAroundConcrete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exposure Class.
+        /// </summary>
+        internal static string Tb_P11_Exposure_Class {
+            get {
+                return ResourceManager.GetString("Tb_P11_Exposure_Class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Foundation.
+        /// </summary>
+        internal static string Tb_P11_Foundation {
+            get {
+                return ResourceManager.GetString("Tb_P11_Foundation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Foundation Piles.
+        /// </summary>
+        internal static string Tb_P11_FoundationPiles {
+            get {
+                return ResourceManager.GetString("Tb_P11_FoundationPiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Foundation Tower Base.
+        /// </summary>
+        internal static string Tb_P11_FoundationTowerBase {
+            get {
+                return ResourceManager.GetString("Tb_P11_FoundationTowerBase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grouting.
+        /// </summary>
+        internal static string Tb_P11_Grouting {
+            get {
+                return ResourceManager.GetString("Tb_P11_Grouting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lean Concrete.
+        /// </summary>
+        internal static string Tb_P11_LeanConcrete {
+            get {
+                return ResourceManager.GetString("Tb_P11_LeanConcrete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum Granulates Size.
+        /// </summary>
+        internal static string Tb_P11_MaximumGranulatesSize {
+            get {
+                return ResourceManager.GetString("Tb_P11_MaximumGranulatesSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consistency Class.
+        /// </summary>
+        internal static string Tb_P11_Slump {
+            get {
+                return ResourceManager.GetString("Tb_P11_Slump", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to U Bars Near Bolts.
         /// </summary>
         internal static string Tb_Page09_Title {
