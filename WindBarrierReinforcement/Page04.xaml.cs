@@ -23,10 +23,10 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page04 : Page
     {
-        public DataModelCircularGeneral DataModelCircularGeneral => GlobalPage04.DataModelCircularGeneral;
-        public DataModelRadial1 DataModelRadial1 => GlobalPage04.DataModelRadial1;
-        public DataModelRadial2 DataModelRadial2 => GlobalPage04.DataModelRadial2;
-        public DataModelRadialGeneral DataModelRadialGeneral => GlobalPage04.DataModelRadialGeneral;
+        public DataModelCircularGeneral DataModelCircularGeneral => GlobalPageEvts.Global.GlobalPage04.DataModelCircularGeneral;
+        public DataModelRadial1 DataModelRadial1 => GlobalPageEvts.Global.GlobalPage04.DataModelRadial1;
+        public DataModelRadial2 DataModelRadial2 => GlobalPageEvts.Global.GlobalPage04.DataModelRadial2;
+        public DataModelRadialGeneral DataModelRadialGeneral => GlobalPageEvts.Global.GlobalPage04.DataModelRadialGeneral;
 
         public Page04()
         {

@@ -24,11 +24,7 @@ namespace WindBarrierReinforcement
     /// 
     public partial class Page02 : Page
     {
-        public DataModel_Anchor DataModel_Anchor
-        {
-            get => Global.DataModel_Anchor;
-            set => Global.DataModel_Anchor = value;
-        }
+        public DataModel_Anchor DataModel_Anchor => GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor;
 
         public Page02()
         {
@@ -36,7 +32,7 @@ namespace WindBarrierReinforcement
 
             this.DataContext = this;
 
-            CultureRenamer.RenameCollection(Ui_Grid_Anchor.Children);
+            CultureRenamer.Rename(UI_Grid_Master);
         }      
     }
 }

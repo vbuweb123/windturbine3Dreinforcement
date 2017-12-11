@@ -645,7 +645,96 @@
     <value>Bottom Reinforcement</value>
     <comment>Page 04</comment>
   </data>
-  <data name="Txt_Global" xml:space="preserve">
-    <value>Global</value>
+  <data name="Lbl_Anc_BoltDiameter" xml:space="preserve">
+    <value>Bolt Diameter</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_BoltLength" xml:space="preserve">
+    <value>Bolt Length</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_BottomAnchorNut" xml:space="preserve">
+    <value>Bottom Anchor Nut</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_DepthAnchor" xml:space="preserve">
+    <value>Depth Anchor</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_DepthAnchorBottom" xml:space="preserve">
+    <value>Depth Anchor Bottom</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_DepthConcreteBed" xml:space="preserve">
+    <value>Depth Concrete Bed</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_DistanceBoltPairs" xml:space="preserve">
+    <value>Distance Bolt Pairs</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_FilletBottomZone" xml:space="preserve">
+    <value>Fillet Bottom Zone</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_FilletTopZone" xml:space="preserve">
+    <value>Fillet Top Zone</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_InsertionDepthTopFlange" xml:space="preserve">
+    <value>Insertion Depth Top Flange</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_MaterialGrout" xml:space="preserve">
+    <value>Grout Material</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_NoBoltPairs" xml:space="preserve">
+    <value>No Of Bolt Pairs</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_NumberSuppports" xml:space="preserve">
+    <value>No Of Supports</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_OffsetBottFlange" xml:space="preserve">
+    <value>Offset Bottom Flange</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_Peshrinkhoseheigth" xml:space="preserve">
+    <value>Shrink Hode Height</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_RadiusCenterlineTower" xml:space="preserve">
+    <value>Radius Centerline Tower</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_ThicknessBottFlange" xml:space="preserve">
+    <value>Thickness Bottom Flange</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_ThicknessTopFlange" xml:space="preserve">
+    <value>Thickness Top Flange</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_TopAnchorNut" xml:space="preserve">
+    <value>Top Anchor Nut</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_WidthBottFlange" xml:space="preserve">
+    <value>Width Bottom Flange</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_WidthConcreteBed" xml:space="preserve">
+    <value>Width Concrete Bed</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Lbl_Anc_WidthTopFlange" xml:space="preserve">
+    <value>Width Top Flange</value>
+    <comment>Page 02</comment>
+  </data>
+  <data name="Tb_P02_Title" xml:space="preserve">
+    <value>Anchor</value>
+    <comment>Page 02</comment>
   </data>
 </root>

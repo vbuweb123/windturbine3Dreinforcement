@@ -23,21 +23,21 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page08 : Page
     {
-        public DataModel_ARExtUBars DataModel_ARExtUBars => GlobalPage08.DataModel_ARExtUBars;
+        public DataModel_ARExtUBars DataModel_ARExtUBars => GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars;
 
-        public DataModel_ARExteriorCircularTop DataModel_ARExteriorCircularTop => GlobalPage08.DataModel_ARExteriorCircularTop;
+        public DataModel_ARExteriorCircularTop DataModel_ARExteriorCircularTop => GlobalPageEvts.Global.GlobalPage08.DataModel_ARExteriorCircularTop;
        
-        public DataModel_ARExteriorCircularLateral DataModel_ARExteriorCircularLateral => GlobalPage08.DataModel_ARExteriorCircularLateral;
+        public DataModel_ARExteriorCircularLateral DataModel_ARExteriorCircularLateral => GlobalPageEvts.Global.GlobalPage08.DataModel_ARExteriorCircularLateral;
        
-        public DataModel_ARExteriorCircularBottom DataModel_ARExteriorCircularBottom => GlobalPage08.DataModel_ARExteriorCircularBottom;
+        public DataModel_ARExteriorCircularBottom DataModel_ARExteriorCircularBottom => GlobalPageEvts.Global.GlobalPage08.DataModel_ARExteriorCircularBottom;
         
-        public DataModel_ARIntUBars DataModel_ARIntUBars => GlobalPage08.DataModel_ARIntUBars;
+        public DataModel_ARIntUBars DataModel_ARIntUBars => GlobalPageEvts.Global.GlobalPage08.DataModel_ARIntUBars;
        
-        public DataModel_ARIntCircularTop DataModel_ARIntCircularTop => GlobalPage08.DataModel_ARIntCircularTop;
+        public DataModel_ARIntCircularTop DataModel_ARIntCircularTop => GlobalPageEvts.Global.GlobalPage08.DataModel_ARIntCircularTop;
       
-        public DataModel_ARIntCircularLateral DataModel_ARIntCircularLateral => GlobalPage08.DataModel_ARIntCircularLateral;
+        public DataModel_ARIntCircularLateral DataModel_ARIntCircularLateral => GlobalPageEvts.Global.GlobalPage08.DataModel_ARIntCircularLateral;
         
-        public DataModel_ARIntCircularBottom DataModel_ARIntCircularBottom => GlobalPage08.DataModel_ARIntCircularBottom;
+        public DataModel_ARIntCircularBottom DataModel_ARIntCircularBottom => GlobalPageEvts.Global.GlobalPage08.DataModel_ARIntCircularBottom;
               
         public Page08()
         {

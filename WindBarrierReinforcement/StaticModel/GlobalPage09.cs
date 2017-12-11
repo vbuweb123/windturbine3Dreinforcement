@@ -7,9 +7,9 @@ using WindBarrierReinforcement.DataModels.NSPage09;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public static class GlobalPage09
+    public class GlobalPage09
     {
-        private static DataModelUBABCollection dataModelUBABCollection;
-        public static DataModelUBABCollection DataModelUBABCollection => dataModelUBABCollection ?? (dataModelUBABCollection = new DataModelUBABCollection());
+        private DataModelUBABCollection dataModelUBABCollection;
+        public DataModelUBABCollection DataModelUBABCollection => dataModelUBABCollection ?? (dataModelUBABCollection = new DataModelUBABCollection());
     }
 }

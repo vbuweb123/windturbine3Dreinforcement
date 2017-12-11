@@ -23,7 +23,7 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page12 : Page
     {
-        public ObservableCollection<DataModelBSShapes> DataModelShapesCollection => GlobalPage12.DataModelShapesCollection;
+        public ObservableCollection<DataModelBSShapes> DataModelShapesCollection => GlobalPageEvts.Global.GlobalPage12.DataModelShapesCollection;
 
         public Page12()
         {

@@ -33,12 +33,9 @@
                     <Label Content="__MinCore" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox
                         DataContext="{Binding DataModelRadialGeneral}"
-                        Text="{Binding MinCore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
-                        Template="{StaticResource AppTextBoxGeneric}"
+                        Text="{Binding MinCore, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         HorizontalAlignment="Left" Height="25" Margin="150,5,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
                     </TextBox>
 
                     <Label Content="__MinSpaceField" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
@@ -67,7 +64,7 @@
                     <TextBox
                         DataContext="{Binding DataModelRadialGeneral}"
                         Text="{Binding AlternativeMinStartAngle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
-                        Template="{StaticResource AppTextBoxGeneric}"
+                        Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
@@ -233,9 +230,6 @@
                         Text="{Binding SpacingAngle, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,215,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
                     </TextBox>
 
                     <TextBox
@@ -243,9 +237,6 @@
                         Text="{Binding LargeDiameterOffsetFromCenter, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,245,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
                     </TextBox>
 
                     <TextBox
@@ -253,9 +244,6 @@
                         Text="{Binding SmallDiameterOffsetFromCenter, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,275,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
                     </TextBox>
 
                     <TextBox
@@ -263,9 +251,6 @@
                         Text="{Binding ThirdDiameterOffsetFromCenter, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,305,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
                     </TextBox>
 
                     <ComboBox
@@ -309,9 +294,6 @@
                         Text="{Binding Spacing3rdDiameterAngle, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,455,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
                     </TextBox>
 
                     <TextBox
@@ -319,9 +301,7 @@
                         Text="{Binding StartOffsetAngle, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="5,485,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
+
                     </TextBox>
 
                     <TextBox
@@ -398,9 +378,7 @@
                         Text="{Binding SpacingAngle, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,215,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
+
                     </TextBox>
 
                     <TextBox
@@ -408,9 +386,7 @@
                         Text="{Binding LargeDiameterOffsetFromCenter, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,245,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
+
                     </TextBox>
 
                     <TextBox
@@ -418,9 +394,7 @@
                         Text="{Binding SmallDiameterOffsetFromCenter, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,275,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
+                       
                     </TextBox>
 
                     <TextBox
@@ -428,9 +402,7 @@
                         Text="{Binding ThirdDiameterOffsetFromCenter, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,305,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
+                   
                     </TextBox>
 
                     <ComboBox
@@ -444,9 +416,7 @@
                         Text="{Binding OverlappLargeDiameter, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,365,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
+
                     </TextBox>
 
                     <TextBox
@@ -454,9 +424,7 @@
                         Text="{Binding OverlappSmallDiameter, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,395,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
+
                     </TextBox>
 
                     <TextBox
@@ -464,9 +432,7 @@
                         Text="{Binding Overlapp3rdDiameter, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,425,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
+
                     </TextBox>
 
                     <TextBox
@@ -474,9 +440,7 @@
                         Text="{Binding Spacing3rdDiameterAngle, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,455,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
+
                     </TextBox>
 
                     <TextBox
@@ -484,9 +448,7 @@
                         Text="{Binding StartOffsetAngle, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,485,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
+
                     </TextBox>
 
                     <TextBox

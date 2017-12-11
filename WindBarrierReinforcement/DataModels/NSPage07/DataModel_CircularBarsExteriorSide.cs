@@ -112,12 +112,5 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             get { return overlap; }
             set { overlap = value; NotifyPropertyChanged("Overlap"); }
         }
-
-       
-
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameter = 0;
-        }
     }
 }

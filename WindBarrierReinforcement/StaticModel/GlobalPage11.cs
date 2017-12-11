@@ -7,30 +7,30 @@ using WindBarrierReinforcement.DataModels.NSPage11;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public static class GlobalPage11
+    public class GlobalPage11
     {
-        private static DataModelMaterials dataModelMaterialsFoundation;
-        public static DataModelMaterials DataModelMaterialsFoundation
+        private DataModelMaterials dataModelMaterialsFoundation;
+        public DataModelMaterials DataModelMaterialsFoundation
             => dataModelMaterialsFoundation ?? (dataModelMaterialsFoundation = new DataModelMaterials("Foundation"));
 
-        private static DataModelMaterials dataModelMaterialsFoundationTowerBase;
-        public static DataModelMaterials DataModelMaterialsFoundationTowerBase
+        private DataModelMaterials dataModelMaterialsFoundationTowerBase;
+        public DataModelMaterials DataModelMaterialsFoundationTowerBase
             => dataModelMaterialsFoundationTowerBase ?? (dataModelMaterialsFoundationTowerBase = new DataModelMaterials("Foundation Tower Base"));
 
-        private static DataModelMaterials dataModelMaterialsLeanConcrete;
-        public static DataModelMaterials DataModelMaterialsLeanConcrete
+        private DataModelMaterials dataModelMaterialsLeanConcrete;
+        public DataModelMaterials DataModelMaterialsLeanConcrete
             => dataModelMaterialsLeanConcrete ?? (dataModelMaterialsLeanConcrete = new DataModelMaterials("Lean Concrete"));
 
-        private static DataModelMaterials dataModelMaterialsEnvelopeAroundConduits;
-        public static DataModelMaterials DataModelMaterialsEnvelopeAroundConduits
+        private DataModelMaterials dataModelMaterialsEnvelopeAroundConduits;
+        public DataModelMaterials DataModelMaterialsEnvelopeAroundConduits
             => dataModelMaterialsEnvelopeAroundConduits ?? (dataModelMaterialsEnvelopeAroundConduits = new DataModelMaterials("Envelope Around Conduits"));
 
-        private static DataModelMaterials dataModelMaterialsGrouting;
-        public static DataModelMaterials DataModelMaterialsGrouting
+        private DataModelMaterials dataModelMaterialsGrouting;
+        public DataModelMaterials DataModelMaterialsGrouting
             => dataModelMaterialsGrouting ?? (dataModelMaterialsGrouting = new DataModelMaterials("Grouting"));
 
-        private static DataModelMaterials dataModelMaterialsFoundationPiles;
-        public static DataModelMaterials DataModelMaterialsFoundationPile
+        private DataModelMaterials dataModelMaterialsFoundationPiles;
+        public DataModelMaterials DataModelMaterialsFoundationPile
             => dataModelMaterialsFoundationPiles ?? (dataModelMaterialsFoundationPiles = new DataModelMaterials("Foundation Piles"));
     }
 }
