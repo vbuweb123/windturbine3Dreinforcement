@@ -20,29 +20,32 @@ namespace WindBarrierReinforcement.StaticModel
     {
         private class _GlobalPage11 : IGlobalPage11
         {
-            private DataModelMaterials dataModelMaterialsFoundation;
-            public DataModelMaterials DataModelMaterialsFoundation
-                => dataModelMaterialsFoundation ?? (dataModelMaterialsFoundation = new DataModelMaterials("Foundation"));
+            public DataModelMaterials DataModelMaterialsFoundation { get; private set; }
 
-            private DataModelMaterials dataModelMaterialsFoundationTowerBase;
-            public DataModelMaterials DataModelMaterialsFoundationTowerBase
-                => dataModelMaterialsFoundationTowerBase ?? (dataModelMaterialsFoundationTowerBase = new DataModelMaterials("Foundation Tower Base"));
+            public DataModelMaterials DataModelMaterialsFoundationTowerBase { get; private set; }
 
-            private DataModelMaterials dataModelMaterialsLeanConcrete;
-            public DataModelMaterials DataModelMaterialsLeanConcrete
-                => dataModelMaterialsLeanConcrete ?? (dataModelMaterialsLeanConcrete = new DataModelMaterials("Lean Concrete"));
+            public DataModelMaterials DataModelMaterialsLeanConcrete { get; private set; }
 
-            private DataModelMaterials dataModelMaterialsEnvelopeAroundConduits;
-            public DataModelMaterials DataModelMaterialsEnvelopeAroundConduits
-                => dataModelMaterialsEnvelopeAroundConduits ?? (dataModelMaterialsEnvelopeAroundConduits = new DataModelMaterials("Envelope Around Conduits"));
+            public DataModelMaterials DataModelMaterialsEnvelopeAroundConduits { get; private set; }
 
-            private DataModelMaterials dataModelMaterialsGrouting;
-            public DataModelMaterials DataModelMaterialsGrouting
-                => dataModelMaterialsGrouting ?? (dataModelMaterialsGrouting = new DataModelMaterials("Grouting"));
+            public DataModelMaterials DataModelMaterialsGrouting { get; private set; }
 
-            private DataModelMaterials dataModelMaterialsFoundationPiles;
-            public DataModelMaterials DataModelMaterialsFoundationPile
-                => dataModelMaterialsFoundationPiles ?? (dataModelMaterialsFoundationPiles = new DataModelMaterials("Foundation Piles"));
+            public DataModelMaterials DataModelMaterialsFoundationPile { get; private set; }
+
+            public _GlobalPage11(EvtHandler evtHandler)
+            {
+                DataModelMaterialsFoundation = new DataModelMaterials("Foundation");
+
+                DataModelMaterialsFoundationTowerBase = new DataModelMaterials("Foundation Tower Base");
+
+                DataModelMaterialsLeanConcrete = new DataModelMaterials("Lean Concrete");
+
+                DataModelMaterialsEnvelopeAroundConduits = new DataModelMaterials("Envelope Around Conduits");
+
+                DataModelMaterialsGrouting = new DataModelMaterials("Grouting");
+
+                DataModelMaterialsFoundationPile = new DataModelMaterials("Foundation Piles");
+            }
         }
     }
 }

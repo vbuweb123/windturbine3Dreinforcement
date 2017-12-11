@@ -225,9 +225,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
             private set { offsetBottFlange = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.OffsetBottFlange)); }
         }
 
-        public DataModel_Anchor()
+        public DataModel_Anchor(EvtHandler evtHandler)
         {
-            GlobalPageEvts.Evts.Add(() => {
+            evtHandler.Register(() => {
                 this.PropertyChanged += (o, e) => {
                     //Depth Anchor
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.Peshrinkhoseheigth)
@@ -258,7 +258,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
                 };
             });
 
-            GlobalPageEvts.Evts.Add(() => {
+            evtHandler.Register(() => {
                 GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) => {
                     //DepthAnchorBottom
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))
@@ -270,7 +270,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
                 };
             });
 
-            GlobalPageEvts.Evts.Add(() => {
+            evtHandler.Register(() => {
                 GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsGrouting.PropertyChanged += (o, e) => {
                     //MaterialGrout
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage11.DataModelMaterials>(x => x.SelectedIndexConcreteQuality))

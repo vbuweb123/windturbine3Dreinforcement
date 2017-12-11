@@ -18,17 +18,19 @@ namespace WindBarrierReinforcement.StaticModel
     {
         private class _GlobalPage01 : IGlobalPage01
         {
-            private DataModel_Global_Formwork dataModel_Global_Formwork;
-            public DataModel_Global_Formwork DataModel_Global_Formwork
-                => dataModel_Global_Formwork ?? (dataModel_Global_Formwork = new DataModel_Global_Formwork());
 
-            private DataModel_Global_Coordinations_GroundPoint dataModel_Global_Coordinations_GroundPoint;
-            public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint
-                => dataModel_Global_Coordinations_GroundPoint ?? (dataModel_Global_Coordinations_GroundPoint = new DataModel_Global_Coordinations_GroundPoint());
+            public DataModel_Global_Formwork DataModel_Global_Formwork { get; private set; }
 
-            private DataModel_Global_Materials dataModel_Global_Materials;
-            public DataModel_Global_Materials DataModel_Global_Materials
-                => dataModel_Global_Materials ?? (dataModel_Global_Materials = new DataModel_Global_Materials());
+            public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint{ get; private set; }
+
+            public DataModel_Global_Materials DataModel_Global_Materials { get; private set; }
+
+            public _GlobalPage01(EvtHandler evtHandler)
+            {
+                DataModel_Global_Formwork = new DataModel_Global_Formwork(evtHandler);
+                DataModel_Global_Coordinations_GroundPoint = new DataModel_Global_Coordinations_GroundPoint(evtHandler);
+                DataModel_Global_Materials = new DataModel_Global_Materials(evtHandler);
+            }
         }
     }
 }

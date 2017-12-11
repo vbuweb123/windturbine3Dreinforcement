@@ -51,16 +51,16 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
             set { foundationPointZ = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.FoundationPointZ)); }
         }
 
-        public DataModel_Global_Coordinations_GroundPoint()
+        public DataModel_Global_Coordinations_GroundPoint(EvtHandler evtHandler)
         {
-            GlobalPageEvts.Evts.Add(() => {
+            evtHandler.Register(() => {
                 this.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.CoordinationZ))
                         Set_FoundationPointZ();
                 };
             });
-            GlobalPageEvts.Evts.Add(() => {
+            evtHandler.Register(() => {
                 GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DeptFoundation)

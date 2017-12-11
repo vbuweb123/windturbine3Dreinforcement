@@ -53,9 +53,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
             get { return topChairsOverlapp; }
             set { topChairsOverlapp = value; NotifyPropertyChanged("TopChairsOverlapp"); }
         }
-        public DataModel_CHR_General()
+        public DataModel_CHR_General(EvtHandler eventHandler)
         {
-            GlobalPageEvts.Evts.Add(() =>
+            eventHandler.Register(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -65,7 +65,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
                     }
                 };
             });
-            GlobalPageEvts.Evts.Add(() =>
+            eventHandler.Register(() =>
             {
                 GlobalPageEvts.Global.GlobalPage12.DataModelShapesCollection.CollectionChanged += (o, e) =>
                 {

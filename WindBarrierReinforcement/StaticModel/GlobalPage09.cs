@@ -15,8 +15,12 @@ namespace WindBarrierReinforcement.StaticModel
     {
         private class _GlobalPage09 : IGlobalPage09
         {
-            private DataModelUBABCollection dataModelUBABCollection;
-            public DataModelUBABCollection DataModelUBABCollection => dataModelUBABCollection ?? (dataModelUBABCollection = new DataModelUBABCollection());
+            public DataModelUBABCollection DataModelUBABCollection { get; private set; }
+
+            public _GlobalPage09(EvtHandler eventHandler)
+            {
+                DataModelUBABCollection = new DataModelUBABCollection(eventHandler);
+            }
         }
     }
 }

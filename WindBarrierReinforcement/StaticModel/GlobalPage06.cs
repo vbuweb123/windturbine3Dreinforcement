@@ -21,26 +21,30 @@ namespace WindBarrierReinforcement.StaticModel
     {
         private class _GlobalPage06 : IGlobalPage06
         {
-            private DataModel_BR_D1 dataModel_BR_D1;
-            public DataModel_BR_D1 DataModel_BR_D1 => dataModel_BR_D1 ?? (dataModel_BR_D1 = new DataModel_BR_D1());
+            public DataModel_BR_D1 DataModel_BR_D1 { get; private set; }
 
-            private DataModel_BR_D2 dataModel_BR_D2;
-            public DataModel_BR_D2 DataModel_BR_D2 => dataModel_BR_D2 ?? (dataModel_BR_D2 = new DataModel_BR_D2());
+            public DataModel_BR_D2 DataModel_BR_D2 { get; private set; }
 
-            private DataModel_BR_L dataModel_BR_L;
-            public DataModel_BR_L DataModel_BR_L => dataModel_BR_L ?? (dataModel_BR_L = new DataModel_BR_L());
+            public DataModel_BR_L DataModel_BR_L { get; private set; }
 
-            private DataModel_TB_D1 dataModel_TB_D1;
-            public DataModel_TB_D1 DataModel_TB_D1 => dataModel_TB_D1 ?? (dataModel_TB_D1 = new DataModel_TB_D1());
+            public DataModel_TB_D1 DataModel_TB_D1 { get; private set; }
 
-            private DataModel_TB_D2 dataModel_TB_D2;
-            public DataModel_TB_D2 DataModel_TB_D2 => dataModel_TB_D2 ?? (dataModel_TB_D2 = new DataModel_TB_D2());
+            public DataModel_TB_D2 DataModel_TB_D2 { get; private set; }
 
-            private DataModel_Circular_EdgeOfL dataModel_Circular_EdgeOfL;
-            public DataModel_Circular_EdgeOfL DataModel_Circular_EdgeOfL => dataModel_Circular_EdgeOfL ?? (dataModel_Circular_EdgeOfL = new DataModel_Circular_EdgeOfL());
+            public DataModel_Circular_EdgeOfL DataModel_Circular_EdgeOfL { get; private set; }
 
-            private DataModel_Generalities dataModel_Generalities;
-            public DataModel_Generalities DataModel_Generalities => dataModel_Generalities ?? (dataModel_Generalities = new DataModel_Generalities());
+            public DataModel_Generalities DataModel_Generalities { get; private set; }
+
+            public _GlobalPage06(EvtHandler evtHandler)
+            {
+                DataModel_BR_D1 = new DataModel_BR_D1();
+                DataModel_BR_D2 = new DataModel_BR_D2();
+                DataModel_BR_L = new DataModel_BR_L();
+                DataModel_TB_D1 = new DataModel_TB_D1();
+                DataModel_TB_D2 = new DataModel_TB_D2();
+                DataModel_Circular_EdgeOfL = new DataModel_Circular_EdgeOfL();
+                DataModel_Generalities = new DataModel_Generalities();
+            }
         }
     }
    

@@ -22,38 +22,34 @@ namespace WindBarrierReinforcement.StaticModel
     {
         private class _GlobalPage08 : IGlobalPage08
         {
-            private DataModel_ARExtUBars dataModel_ARExtUBars;
-            public DataModel_ARExtUBars DataModel_ARExtUBars
-                => dataModel_ARExtUBars ?? (dataModel_ARExtUBars = new DataModel_ARExtUBars());
+            public DataModel_ARExtUBars DataModel_ARExtUBars { get; private set; }
 
-            private DataModel_ARExteriorCircularTop dataModel_ARExteriorCircularTop;
-            public DataModel_ARExteriorCircularTop DataModel_ARExteriorCircularTop
-                => dataModel_ARExteriorCircularTop ?? (dataModel_ARExteriorCircularTop = new DataModel_ARExteriorCircularTop());
+            public DataModel_ARExteriorCircularTop DataModel_ARExteriorCircularTop { get; private set; }
 
-            private DataModel_ARExteriorCircularLateral dataModel_ARExteriorCircularLateral;
-            public DataModel_ARExteriorCircularLateral DataModel_ARExteriorCircularLateral
-                => dataModel_ARExteriorCircularLateral ?? (dataModel_ARExteriorCircularLateral = new DataModel_ARExteriorCircularLateral());
+            public DataModel_ARExteriorCircularLateral DataModel_ARExteriorCircularLateral { get; private set; }
 
-            private DataModel_ARExteriorCircularBottom dataModel_ARExteriorCircularBottom;
-            public DataModel_ARExteriorCircularBottom DataModel_ARExteriorCircularBottom
-                => dataModel_ARExteriorCircularBottom ?? (dataModel_ARExteriorCircularBottom = new DataModel_ARExteriorCircularBottom());
+            public DataModel_ARExteriorCircularBottom DataModel_ARExteriorCircularBottom { get; private set; }
 
-            private DataModel_ARIntUBars dataModel_ARIntUBars;
-            public DataModel_ARIntUBars DataModel_ARIntUBars
-                => dataModel_ARIntUBars ?? (dataModel_ARIntUBars = new DataModel_ARIntUBars());
+            public DataModel_ARIntUBars DataModel_ARIntUBars { get; private set; }
 
-            private DataModel_ARIntCircularTop dataModel_ARIntCircularTop;
-            public DataModel_ARIntCircularTop DataModel_ARIntCircularTop
-                => dataModel_ARIntCircularTop ?? (dataModel_ARIntCircularTop = new DataModel_ARIntCircularTop());
+            public DataModel_ARIntCircularTop DataModel_ARIntCircularTop { get; private set; }
 
-            private DataModel_ARIntCircularBottom dataModel_ARIntCircularBottom;
-            public DataModel_ARIntCircularBottom DataModel_ARIntCircularBottom
-                => dataModel_ARIntCircularBottom ?? (dataModel_ARIntCircularBottom = new DataModel_ARIntCircularBottom());
+            public DataModel_ARIntCircularBottom DataModel_ARIntCircularBottom { get; private set; }
 
-            private DataModel_ARIntCircularLateral dataModel_ARIntCircularLateral;
-            public DataModel_ARIntCircularLateral DataModel_ARIntCircularLateral
-                => dataModel_ARIntCircularLateral ?? (dataModel_ARIntCircularLateral = new DataModel_ARIntCircularLateral());
+            public DataModel_ARIntCircularLateral DataModel_ARIntCircularLateral { get; private set; }
+
+            public _GlobalPage08(EvtHandler evtHandler)
+            {
+                DataModel_ARExtUBars = new DataModel_ARExtUBars();
+                DataModel_ARExteriorCircularTop = new DataModel_ARExteriorCircularTop();
+                DataModel_ARExteriorCircularLateral = new DataModel_ARExteriorCircularLateral();
+                DataModel_ARExteriorCircularBottom = new DataModel_ARExteriorCircularBottom();
+                DataModel_ARIntUBars = new DataModel_ARIntUBars(evtHandler);
+                DataModel_ARIntCircularTop = new DataModel_ARIntCircularTop();
+                DataModel_ARIntCircularBottom = new DataModel_ARIntCircularBottom();
+                DataModel_ARIntCircularLateral = new DataModel_ARIntCircularLateral();
+            }
         }
     }
-    
+
 }

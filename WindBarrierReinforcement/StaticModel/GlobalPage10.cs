@@ -16,12 +16,15 @@ namespace WindBarrierReinforcement.StaticModel
     {
         private class _GlobalPage10 : IGlobalPage10
         {
-            private DataModel_CHR_General dataModel_CHR_General;
-            public DataModel_CHR_General DataModel_CHR_General => dataModel_CHR_General ?? (dataModel_CHR_General = new DataModel_CHR_General());
+            public DataModel_CHR_General DataModel_CHR_General { get; private set; }
 
-            private DataModel_CHR_Zones dataModel_CHR_Zones;
-            public DataModel_CHR_Zones DataModel_CHR_Zones => dataModel_CHR_Zones ?? (dataModel_CHR_Zones = new DataModel_CHR_Zones());
+            public DataModel_CHR_Zones DataModel_CHR_Zones { get; private set; }
+
+            public _GlobalPage10(EvtHandler eventHandler)
+            {
+                DataModel_CHR_General = new DataModel_CHR_General(eventHandler);
+                DataModel_CHR_Zones  = new DataModel_CHR_Zones(eventHandler);
+            }
         }
-
     }
 }

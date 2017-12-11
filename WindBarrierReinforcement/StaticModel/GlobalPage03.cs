@@ -14,8 +14,12 @@ namespace WindBarrierReinforcement.StaticModel
     public partial class Global {
         private class _GlobalPage03 : IGlobalPage03
         {
-            private DataModel_ScrewPiles dataModel_ScrewPile;
-            public DataModel_ScrewPiles DataModel_ScrewPile => dataModel_ScrewPile ?? (dataModel_ScrewPile = new DataModel_ScrewPiles());
+            public DataModel_ScrewPiles DataModel_ScrewPile { get; private set; }
+
+            public _GlobalPage03(EvtHandler evtHandler)
+            {
+                DataModel_ScrewPile = new DataModel_ScrewPiles(evtHandler);
+            }
         }
     }
    

@@ -14,8 +14,12 @@ namespace WindBarrierReinforcement.StaticModel
     public partial class Global {
         private class _GlobalPage02 : IGlobalPage02
         {
-            private DataModel_Anchor dataModel_Anchor;
-            public DataModel_Anchor DataModel_Anchor => dataModel_Anchor ?? (dataModel_Anchor = new DataModel_Anchor());
+            public DataModel_Anchor DataModel_Anchor { get; private set; }
+
+            public _GlobalPage02(EvtHandler evtHandler)
+            {
+                DataModel_Anchor = new DataModel_Anchor(evtHandler);
+            }
         }
     }
 }

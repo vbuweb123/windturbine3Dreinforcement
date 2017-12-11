@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage09
 {
@@ -13,14 +14,15 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
 
         //private int _zoneIndexCurrent = 0;
         private int _maxzones = 10;
-
+        private EvtHandler evtHandler;
         public DataModelUBAB this[int index]
         {
             get => Collection[index];
         }
 
-        public DataModelUBABCollection()
+        public DataModelUBABCollection(EvtHandler evtHandler)
         {
+            this.evtHandler = evtHandler;
             Collection = new ObservableCollection<DataModelUBAB>();
         }
         public void Add(string zoneName)
@@ -31,7 +33,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
 
                 string zoneNameIndex = zoneName + lastPosition;
 
-                this.Collection.Add(new DataModelUBAB(zoneNameIndex, lastPosition));
+                this.Collection.Add(new DataModelUBAB(this.evtHandler, zoneNameIndex, lastPosition));
             }
         }
         public void RemoveAt(int index)

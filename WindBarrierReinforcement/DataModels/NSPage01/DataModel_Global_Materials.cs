@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage01
 {
@@ -49,6 +50,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
                 materialTowerBase = value;
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Materials>(x => x.MaterialTowerBase));
             }
+        }
+        public DataModel_Global_Materials(EvtHandler evtHandler)
+        {
+
         }
     }
 }

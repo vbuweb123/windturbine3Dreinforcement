@@ -167,6 +167,7 @@
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\RManager.cs" />
+    <Compile Include="StaticModel\EvtHandler.cs" />
     <Compile Include="StaticModel\GlobalPage01.cs" />
     <Compile Include="StaticModel\GlobalPage02.cs" />
     <Compile Include="StaticModel\GlobalPage03.cs" />

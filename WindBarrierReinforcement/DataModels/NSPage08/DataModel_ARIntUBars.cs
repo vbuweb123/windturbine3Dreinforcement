@@ -98,9 +98,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             private set { bottomExtraOffset = value; NotifyPropertyChanged("BottomExtraOffset"); }
         }
 
-        public DataModel_ARIntUBars()
+        public DataModel_ARIntUBars(EvtHandler evtHandler)
         {
-            GlobalPageEvts.Evts.Add(() => {
+            evtHandler.Register(() => {
                 GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.TopOffset))

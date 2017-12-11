@@ -187,9 +187,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             get { return maximumLength; }
             set { maximumLength = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.MaximumLength)); }
         }
-        public DataModelRadial1()
+        public DataModelRadial1(EvtHandler evtHandler)
         {
-            GlobalPageEvts.Evts.Add(() => {
+            evtHandler.Register(() => {
                 this.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.LargeDiamNoOfBars))
@@ -208,7 +208,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                         Set_StartOffsetAngle();
                 };
             });
-            GlobalPageEvts.Evts.Add(() => {
+            evtHandler.Register(() => {
                 GlobalPageEvts.Global.GlobalPage04.DataModelRadialGeneral.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadialGeneral>(x => x.MinCore))
@@ -217,7 +217,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                         Set_ThirdDiameterOffsetFromCenter();
                 };
             });
-            GlobalPageEvts.Evts.Add(() => {
+            evtHandler.Register(() => {
                 GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage02.DataModel_Anchor>(x => x.DiameterAnchor)

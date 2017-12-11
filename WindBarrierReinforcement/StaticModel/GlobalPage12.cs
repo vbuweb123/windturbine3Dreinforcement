@@ -17,20 +17,8 @@ namespace WindBarrierReinforcement.StaticModel
     {
         private class _GlobalPage12 : IGlobalPage12
         {
-            private ObservableCollection<DataModelBSShapes> dataModelShapesCollection;
-            public ObservableCollection<DataModelBSShapes> DataModelShapesCollection
-            {
-                get
-                {
-                    if (dataModelShapesCollection == null)
-                    {
-                        dataModelShapesCollection = new ObservableCollection<DataModelBSShapes>();
-                        PopulateShapes();
-                        return dataModelShapesCollection;
-                    }
-                    return dataModelShapesCollection;
-                }
-            }
+            public ObservableCollection<DataModelBSShapes> DataModelShapesCollection { get; private set; }
+
             private void PopulateShapes()
             {
                 // TODO : Get these from XML File
@@ -134,8 +122,12 @@ namespace WindBarrierReinforcement.StaticModel
                     LinksUnder150 = 725
                 });
             }
+
+            public _GlobalPage12(EvtHandler evtHandler)
+            {
+                DataModelShapesCollection = new ObservableCollection<DataModelBSShapes>();
+                PopulateShapes();
+            }
         }
     }
-
-
 }

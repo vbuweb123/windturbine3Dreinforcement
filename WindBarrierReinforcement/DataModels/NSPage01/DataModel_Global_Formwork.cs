@@ -212,9 +212,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DeptFoundation));
             }
         }
-        public DataModel_Global_Formwork()
+        public DataModel_Global_Formwork(EvtHandler evtHandler)
         {
-            GlobalPageEvts.Evts.Add(() =>
+            evtHandler.Register(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -228,7 +228,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
                 };
             });
 
-            GlobalPageEvts.Evts.Add(() =>
+            evtHandler.Register(() =>
             {
                 GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
                 {

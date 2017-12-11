@@ -187,9 +187,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             get { return maximumLength; }
             set { maximumLength = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.MaximumLength)); }
         }
-        public DataModelRadial2()
+        public DataModelRadial2(EvtHandler evtHandler)
         {
-            GlobalPageEvts.Evts.Add(() =>
+            evtHandler.Register(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -209,7 +209,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                         Set_StartOffsetAngle();
                 };
             });
-            GlobalPageEvts.Evts.Add(() =>
+            evtHandler.Register(() =>
             {
                 GlobalPageEvts.Global.GlobalPage04.DataModelRadialGeneral.PropertyChanged += (o, e) =>
                 {
@@ -219,7 +219,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                         Set_ThirdDiameterOffsetFromCenter();
                 };
             });
-            GlobalPageEvts.Evts.Add(() =>
+            evtHandler.Register(() =>
             {
                 GlobalPageEvts.Global.GlobalPage04.DataModelRadial1.PropertyChanged += (o, e) =>
                 {
@@ -231,7 +231,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                         Set_Overlapp3rdDiameter();
                 };
             });
-            GlobalPageEvts.Evts.Add(() =>
+            evtHandler.Register(() =>
             {
                 GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
                 {

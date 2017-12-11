@@ -53,9 +53,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
             get { return edgeOffset2; }
             set { edgeOffset2 = value; NotifyPropertyChanged("EdgeOffset2"); }
         }
-        public DataModel_CHR_Zones()
+        public DataModel_CHR_Zones(EvtHandler eventHandler)
         {
-            GlobalPageEvts.Evts.Add(() =>
+            eventHandler.Register(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -65,7 +65,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
                 };
             });
 
-            GlobalPageEvts.Evts.Add(() =>
+            eventHandler.Register(() =>
             {
                 GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
                 {
@@ -76,7 +76,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
                 };
 
             });
-            GlobalPageEvts.Evts.Add(() =>
+            eventHandler.Register(() =>
             {
                 GlobalPageEvts.Global.GlobalPage04.DataModelRadial1.PropertyChanged += (o, e) =>
                 {
@@ -84,7 +84,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
                         Set_ZoneLength2();
                 };
             });
-            GlobalPageEvts.Evts.Add(() =>
+            eventHandler.Register(() =>
             {
                 GlobalPageEvts.Global.GlobalPage04.DataModelCircularGeneral.PropertyChanged += (o, e) =>
                 {
@@ -92,7 +92,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
                         Set_ZoneLength2();
                 };
             });
-            GlobalPageEvts.Evts.Add(() =>
+            eventHandler.Register(() =>
             {
                 GlobalPageEvts.Global.GlobalPage12.DataModelShapesCollection.CollectionChanged += (o, e) =>
                 {

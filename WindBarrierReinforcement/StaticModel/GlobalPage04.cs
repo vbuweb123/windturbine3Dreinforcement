@@ -17,18 +17,21 @@ namespace WindBarrierReinforcement.StaticModel
     public partial class Global {
         private class _GlobalPage04:IGlobalPage04
         {
-            private DataModelCircularGeneral dataModelCircularGeneral;
-            public DataModelCircularGeneral DataModelCircularGeneral => dataModelCircularGeneral ?? (dataModelCircularGeneral = new DataModelCircularGeneral());
+            public DataModelCircularGeneral DataModelCircularGeneral { get; private set; }
 
-            private DataModelRadial1 dataModelRadial1;
-            public DataModelRadial1 DataModelRadial1 => dataModelRadial1 ?? (dataModelRadial1 = new DataModelRadial1());
+            public DataModelRadial1 DataModelRadial1 { get; private set; }
 
-            private DataModelRadial2 dataModelRadial2;
-            public DataModelRadial2 DataModelRadial2 => dataModelRadial2 ?? (dataModelRadial2 = new DataModelRadial2());
+            public DataModelRadial2 DataModelRadial2 { get; private set; }
 
-            private DataModelRadialGeneral dataModelRadialGeneral;
-            public DataModelRadialGeneral DataModelRadialGeneral => dataModelRadialGeneral ?? (dataModelRadialGeneral = new DataModelRadialGeneral());
+            public DataModelRadialGeneral DataModelRadialGeneral { get;private set; }
 
+            public _GlobalPage04(EvtHandler evtHandler)
+            {
+                DataModelCircularGeneral = new DataModelCircularGeneral();
+                DataModelRadial1 = new DataModelRadial1(evtHandler);
+                DataModelRadial2 = new DataModelRadial2(evtHandler);
+                DataModelRadialGeneral = new DataModelRadialGeneral(evtHandler);
+            }
         }
     }
 }

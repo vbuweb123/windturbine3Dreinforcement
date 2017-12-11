@@ -41,11 +41,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             set { alternativeMinStartAngle = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadialGeneral>(x => x.AlternativeMinStartAngle)); }
         }
         public static int trest = 0;
-        public DataModelRadialGeneral()
+        public DataModelRadialGeneral(EvtHandler evtHandler)
         {
             trest++;
             var a = trest;
-            GlobalPageEvts.Evts.Add(() =>
+            evtHandler.Register(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -55,7 +55,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                 };
             });
 
-            GlobalPageEvts.Evts.Add(() =>
+            evtHandler.Register(() =>
             {
                 GlobalPageEvts.Global.GlobalPage04.DataModelRadial2.PropertyChanged += (o, e) =>
                 {
@@ -66,7 +66,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                 };
             });
 
-            GlobalPageEvts.Evts.Add(() =>
+            evtHandler.Register(() =>
             {
                 GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
                 {

@@ -32,28 +32,29 @@ namespace WindBarrierReinforcement.StaticModel
 
         public IGlobalPage12 GlobalPage12 { get; private set; }
 
+        private EvtHandler EvtHandler;
+
         public Global()
         {
-            GlobalPage01 = new _GlobalPage01();
-            GlobalPage02 = new _GlobalPage02();
-            GlobalPage03 = new _GlobalPage03();
-            GlobalPage04 = new _GlobalPage04();
-            GlobalPage05 = new _GlobalPage05();
-            GlobalPage06 = new _GlobalPage06();
-            GlobalPage07 = new _GlobalPage07();
-            GlobalPage08 = new _GlobalPage08();
-            GlobalPage09 = new _GlobalPage09();
-            GlobalPage10 = new _GlobalPage10();
-            GlobalPage11 = new _GlobalPage11();
-            GlobalPage12 = new _GlobalPage12();
+            GlobalPage01 = new _GlobalPage01(EvtHandler);
+            GlobalPage02 = new _GlobalPage02(EvtHandler);
+            GlobalPage03 = new _GlobalPage03(EvtHandler);
+            GlobalPage04 = new _GlobalPage04(EvtHandler);
+            GlobalPage05 = new _GlobalPage05(EvtHandler);
+            GlobalPage06 = new _GlobalPage06(EvtHandler);
+            GlobalPage07 = new _GlobalPage07(EvtHandler);
+            GlobalPage08 = new _GlobalPage08(EvtHandler);
+            GlobalPage09 = new _GlobalPage09(EvtHandler);
+            GlobalPage10 = new _GlobalPage10(EvtHandler);
+            GlobalPage11 = new _GlobalPage11(EvtHandler);
+            GlobalPage12 = new _GlobalPage12(EvtHandler);
             //calling each registered action
-            GlobalPageEvts.Evts.ForEach((evtAction) => evtAction());
+            Evts.ForEach((evtAction) => evtAction());
         }
     }
     public static class GlobalPageEvts
     {
-        private static List<Action> evts;
-        public static List<Action> Evts => evts ?? (evts = new List<Action>());
+
 
         private static Global global;
         public static Global Global => global ?? (global = new Global());

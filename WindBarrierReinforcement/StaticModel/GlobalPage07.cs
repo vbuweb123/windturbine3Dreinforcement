@@ -16,28 +16,32 @@ namespace WindBarrierReinforcement.StaticModel
         DataModel_CircularBarsExteriorSide DataModel_CircularBarsExteriorSide { get; }
         DataModel_StraightBars_Extra DataModel_StraightBars_Extra { get; }
     }
-    public partial class Global {
+    public partial class Global
+    {
         private class _GlobalPage07 : IGlobalPage07
         {
-            private DataModel_StraightBars dataModel_StraightBars_Dir1;
-            public DataModel_StraightBars DataModel_StraightBars_Dir1 => dataModel_StraightBars_Dir1 ?? (dataModel_StraightBars_Dir1 = new DataModel_StraightBars());
+            public DataModel_StraightBars DataModel_StraightBars_Dir1 { get; private set; }
 
-            private DataModel_StraightBars dataModel_StraightBars_Dir2;
-            public DataModel_StraightBars DataModel_StraightBars_Dir2 => dataModel_StraightBars_Dir2 ?? (dataModel_StraightBars_Dir2 = new DataModel_StraightBars());
+            public DataModel_StraightBars DataModel_StraightBars_Dir2 { get; private set; }
 
-            private DataModel_RadialEdgeConcrete dataModel_RadialEdgeConcrete;
-            public DataModel_RadialEdgeConcrete DataModel_RadialEdgeConcrete => dataModel_RadialEdgeConcrete ?? (dataModel_RadialEdgeConcrete = new DataModel_RadialEdgeConcrete());
+            public DataModel_RadialEdgeConcrete DataModel_RadialEdgeConcrete { get; private set; }
 
-            private DataModel_CircularBarsTop dataModel_CircularBarsTop;
-            public DataModel_CircularBarsTop DataModel_CircularBarsTop => dataModel_CircularBarsTop ?? (dataModel_CircularBarsTop = new DataModel_CircularBarsTop());
+            public DataModel_CircularBarsTop DataModel_CircularBarsTop { get; private set; }
 
-            private DataModel_CircularBarsExteriorSide dataModel_CircularBarsExteriorSide;
-            public DataModel_CircularBarsExteriorSide DataModel_CircularBarsExteriorSide
-                => dataModel_CircularBarsExteriorSide ?? (dataModel_CircularBarsExteriorSide = new DataModel_CircularBarsExteriorSide());
+            public DataModel_CircularBarsExteriorSide DataModel_CircularBarsExteriorSide { get; private set; }
 
-            private DataModel_StraightBars_Extra dataModel_StraightBars_Extra;
-            public DataModel_StraightBars_Extra DataModel_StraightBars_Extra => dataModel_StraightBars_Extra ?? (dataModel_StraightBars_Extra = new DataModel_StraightBars_Extra());
+            public DataModel_StraightBars_Extra DataModel_StraightBars_Extra { get; private set; }
+
+            public _GlobalPage07(EvtHandler evtHandler)
+            {
+                DataModel_StraightBars_Dir1 = new DataModel_StraightBars();
+                DataModel_StraightBars_Dir2 = new DataModel_StraightBars();
+                DataModel_RadialEdgeConcrete = new DataModel_RadialEdgeConcrete();
+                DataModel_CircularBarsTop = new DataModel_CircularBarsTop();
+                DataModel_CircularBarsExteriorSide = new DataModel_CircularBarsExteriorSide();
+                DataModel_StraightBars_Extra = new DataModel_StraightBars_Extra();
+            }
         }
     }
-    
+
 }

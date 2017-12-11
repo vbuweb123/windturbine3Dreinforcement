@@ -258,22 +258,28 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
             }
         }
 
-        public DataModel_ScrewPiles()
+        public DataModel_ScrewPiles(EvtHandler evtHandler)
         {
-            this.PropertyChanged += (o, e) =>
-            {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PileDepth))
-                    Set_DepthPile();
-                if (true)
+            evtHandler.Register(() => {
+                this.PropertyChanged += (o, e) =>
                 {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PileDepth))
+                        Set_DepthPile();
+                    if (true)
+                    {
 
-                }
-            };
-            GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Coordinations_GroundPoint.PropertyChanged += (o, e) =>
+                    }
+                };
+            });
+
+            evtHandler.Register(() =>
             {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.FoundationPointZ))
-                    Set_DepthPile();
-            };
+                GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Coordinations_GroundPoint.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.FoundationPointZ))
+                        Set_DepthPile();
+                };
+            });
         }
 
         private void Set_DepthPile()
