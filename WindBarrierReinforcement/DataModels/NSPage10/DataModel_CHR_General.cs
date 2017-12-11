@@ -33,7 +33,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         public int HookLengths
         {
             get => hookLengths;
-            private set {
+            private set
+            {
                 hookLengths = value;
                 NotifyPropertyChanged("HookLengths");
             }
@@ -54,27 +55,30 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         }
         public DataModel_CHR_General()
         {
-            this.PropertyChanged += DataModel_CHR_General_PropertyChanged;
-            GlobalPageEvts.Global.GlobalPage12.DataModelShapesCollection.CollectionChanged += DataModelShapesCollection_CollectionChanged;
-        }
-
-        private void DataModelShapesCollection_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        {
-            Set_HookLengths();
-        }
-
-        private void DataModel_CHR_General_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_CHR_General>(x => x.SelectedIndexDiameter))
+            GlobalPageEvts.Evts.Add(() =>
             {
-                Set_HookLengths();
-            }
+                this.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_CHR_General>(x => x.SelectedIndexDiameter))
+                    {
+                        Set_HookLengths();
+                    }
+                };
+            });
+            GlobalPageEvts.Evts.Add(() =>
+            {
+                GlobalPageEvts.Global.GlobalPage12.DataModelShapesCollection.CollectionChanged += (o, e) =>
+                {
+                    Set_HookLengths();
+                };
+            });
         }
+
         private void Set_HookLengths()
         {
             EDiameters value = (EDiameters)SelectedIndexDiameter; //TODO - check this strict dependency to the index in the list. Maybe add in tag a reference?
             var BSShape = GlobalPageEvts.Global.GlobalPage12.DataModelShapesCollection.Where(x => x.Reference == value).SingleOrDefault();
-            if (BSShape == null) HookLengths = - 1;//NEED TO ADD THE VALUE IN GLOBAPL PAGE 12 in the list of BSShapes
+            if (BSShape == null) HookLengths = -1;//NEED TO ADD THE VALUE IN GLOBAPL PAGE 12 in the list of BSShapes
             HookLengths = BSShape.NominalSize * (7 + 5);
         }
     }

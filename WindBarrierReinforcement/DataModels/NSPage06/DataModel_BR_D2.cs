@@ -15,7 +15,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// <summary>
         /// UI_ComboBox_UPBR_Dir2_Diameter
         /// </summary>       
-        [KeyName(KeyName = "UPBR_Dir2_Diameter")]
         private int selectedIndexDiameter;
         public int SelectedIndexDiameter
         {
@@ -57,7 +56,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// <summary>
         /// UI_TextBox_UPBR_Dir2_SpacingValue
         /// </summary>
-        [KeyName(KeyName = "UPBR_Dir1_Spacing")]
         private int spacing;
         public int Spacing
         {

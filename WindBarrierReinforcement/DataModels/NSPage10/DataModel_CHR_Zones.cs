@@ -55,33 +55,51 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         }
         public DataModel_CHR_Zones()
         {
-            this.PropertyChanged += (o, e) =>
+            GlobalPageEvts.Evts.Add(() =>
             {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_CHR_Zones>(x => x.EdgeOffset2) ||
-                    e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_CHR_Zones>(x => x.ZoneLength1))
+                this.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_CHR_Zones>(x => x.EdgeOffset2) ||
+                        e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_CHR_Zones>(x => x.ZoneLength1))
+                        Set_ZoneLength2();
+                };
+            });
+
+            GlobalPageEvts.Evts.Add(() =>
+            {
+                GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage01.DataModel_Global_Formwork>(x => x.DFoundation) ||
+                        e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage01.DataModel_Global_Formwork>(x => x.DTowerBase) ||
+                        e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage01.DataModel_Global_Formwork>(x => x.EdgeCover))
+                        Set_ZoneLength2();
+                };
+
+            });
+            GlobalPageEvts.Evts.Add(() =>
+            {
+                GlobalPageEvts.Global.GlobalPage04.DataModelRadial1.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage04.DataModelRadial1>(x => x.SelectedIndexLargeDiameter))
+                        Set_ZoneLength2();
+                };
+            });
+            GlobalPageEvts.Evts.Add(() =>
+            {
+                GlobalPageEvts.Global.GlobalPage04.DataModelCircularGeneral.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage04.DataModelCircularGeneral>(x => x.SelectedDiameterEdgeCirculars))
+                        Set_ZoneLength2();
+                };
+            });
+            GlobalPageEvts.Evts.Add(() =>
+            {
+                GlobalPageEvts.Global.GlobalPage12.DataModelShapesCollection.CollectionChanged += (o, e) =>
+                {
                     Set_ZoneLength2();
-            };
-            GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
-            {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage01.DataModel_Global_Formwork>(x => x.DFoundation) ||
-                    e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage01.DataModel_Global_Formwork>(x => x.DTowerBase) ||
-                    e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage01.DataModel_Global_Formwork>(x => x.EdgeCover))
-                    Set_ZoneLength2();
-            };
-            GlobalPageEvts.Global.GlobalPage04.DataModelRadial1.PropertyChanged += (o, e) =>
-            {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage04.DataModelRadial1>(x => x.SelectedIndexLargeDiameter))
-                    Set_ZoneLength2();
-            };
-            GlobalPageEvts.Global.GlobalPage04.DataModelCircularGeneral.PropertyChanged += (o, e) =>
-            {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage04.DataModelCircularGeneral>(x => x.SelectedDiameterEdgeCirculars))
-                    Set_ZoneLength2();
-            };
-            GlobalPageEvts.Global.GlobalPage12.DataModelShapesCollection.CollectionChanged += (o, e) =>
-            {
-                Set_ZoneLength2();
-            };
+                };
+            });
+
         }
         private void Set_ZoneLength2()
         {
