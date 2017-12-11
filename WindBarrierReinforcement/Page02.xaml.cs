@@ -32,7 +32,7 @@ namespace WindBarrierReinforcement
 
             this.DataContext = this;
 
-            CultureRenamer.RenameCollection(Ui_Grid_Anchor.Children);
+            CultureRenamer.Rename(UI_Grid_Master);
         }      
     }
 }
