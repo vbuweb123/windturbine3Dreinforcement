@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WindBarrierReinforcement.DataModels.NSPAge03;
+using WindBarrierReinforcement.Resources;
 
 namespace WindBarrierReinforcement
 {
@@ -25,9 +26,10 @@ namespace WindBarrierReinforcement
         public DataModel_ScrewPiles  DataModel_ScrewPile_SP{ get; set; }
         public Page03()
         {
-            DataModel_ScrewPile_SP =  new DataModel_ScrewPiles(this);
+            DataModel_ScrewPile_SP =  new DataModel_ScrewPiles();
               this.DataContext = this;
             InitializeComponent();
+            CultureRenamer.Rename(UI_Grid_Master);
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

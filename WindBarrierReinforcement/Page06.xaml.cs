@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.DataModels.NSPage06;
+using WindBarrierReinforcement.Resources;
 
 namespace WindBarrierReinforcement
 {
@@ -31,6 +32,7 @@ namespace WindBarrierReinforcement
         public DataModel_Generalities DataModel_Generalities { get; set; }
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            CultureRenamer.Rename(UI_Master_Grid);
         }
 
         public Page06()
@@ -43,8 +45,6 @@ namespace WindBarrierReinforcement
             DataModel_TB_D2 = new DataModel_TB_D2();
             DataModel_Circular_EdgeOfL = new DataModel_Circular_EdgeOfL();
             DataModel_Generalities = new DataModel_Generalities();
-
-
             InitializeComponent();
             this.DataContext = this;
 

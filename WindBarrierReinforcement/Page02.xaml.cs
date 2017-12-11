@@ -31,17 +31,12 @@ namespace WindBarrierReinforcement
         }
 
         public Page02()
-        {        
+        {
             InitializeComponent();
 
             this.DataContext = this;
 
             CultureRenamer.RenameCollection(Ui_Grid_Anchor.Children);
-        }
-
-        private void UI_TextBox_OPTR_CircularMargin_Option_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        }      
     }
 }

@@ -4,242 +4,332 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-      xmlns:behaviors="clr-namespace:WindBarrierReinforcement.Behaviors"
       xmlns:local="clr-namespace:WindBarrierReinforcement"
+      xmlns:behaviors="clr-namespace:WindBarrierReinforcement.Behaviors"
       mc:Ignorable="d" 
+      xmlns:ap ="clr-namespace:WindBarrierReinforcement.Common.AttachedProperties"
+      xmlns:valueconverter ="clr-namespace:WindBarrierReinforcement.Common.ValueConverters"
       d:DesignHeight="465" d:DesignWidth="700"
       Title="Page01">
+
     <Page.Resources>
         <ResourceDictionary>
+            <valueconverter:NegateBool x:Key="NegateBoolStatic"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/XamlResources.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Background="White">
-        <TextBlock HorizontalAlignment="Left" Margin="17,10,0,0" TextWrapping="Wrap" Text="UPBR - Under Plate Bottom Reinforcement" VerticalAlignment="Top"/>
-        <TabControl TabStripPlacement="Left" HorizontalAlignment="Left" Margin="0,35,0,0" Width="695" SelectionChanged="TabControl_SelectionChanged">
-            <TabItem Header="Direction 1 (bottom bars)" Margin="-4,-6,1,2">
-                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="1,1,300,1">
+    <Grid Name="UI_Grid_Master" Background="{StaticResource AppMainBackgroundColor}">
+        <TextBlock ap:CultureKey.CultureRes="Txt_Global" Text="__Global" HorizontalAlignment="Left" Margin="20,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+                   Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title" />
+
+        <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,50,25,25" 
+                    SelectionChanged="TabControl_SelectionChanged" BorderThickness="0" 
+                    Background="{StaticResource AppMainBackgroundColor}">
+
+            <TabItem Header="Formwork">
+                <Grid Name="UI_Grid_Global" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="500" >
+
                     <!--H Foundation-->
-                    <Label FontSize="12" Content="H Foundation" HorizontalAlignment="Left" Margin="2,2,0,0" VerticalAlignment="Top"/>
-                    <TextBox                         
-                        x:Name="UI_TextBox_H_Foundation"   
+                    <Label Content="__H Foundation" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" 
+                           Height="25" ap:CultureKey.CultureRes="Lbl_G_HFoundation"/>
+                    <TextBox                
                         DataContext="{Binding DataModel_Global_Formwork}"
                         Text="{Binding HFoundation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="125,4,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="130,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
                     <!--H Foundation Edge-->
-                    <Label FontSize="12" Content="H Foundation Edge" HorizontalAlignment="Left" Margin="2,30,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                        x:Name="UI_TextBox_H_Foundation_Edge"
+                    <Label Content="__H Foundation Edge" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" 
+                           Height="25" ap:CultureKey.CultureRes="Lbl_G_HFoundationEdge"/>
+                    <TextBox                        
                         DataContext="{Binding DataModel_Global_Formwork}"
                         Text="{Binding HFoundationEdge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="125,32,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="130,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
                     <!--H Tower Base-->
-                    <Label FontSize="12" Content="H Tower Base" HorizontalAlignment="Left" Margin="2,58,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                        x:Name="UI_TextBox_H_Tower_Base"
+                    <Label Content="__H Tower Base" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" 
+                           Height="25" ap:CultureKey.CultureRes="Lbl_G_HTowerBase"/>
+                    <TextBox                        
                         DataContext="{Binding DataModel_Global_Formwork}"
                         Text="{Binding HTowerBase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                
-                        HorizontalAlignment="Left" Height="23" Margin="125,60,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="130,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
                     <!--H Bottom-->
-                    <Label FontSize="12" Content="H Bottom" HorizontalAlignment="Left" Margin="2,86,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                         x:Name="UI_TextBox_H_Bottom"  
+                    <Label Content="__H Bottom" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" 
+                           Height="25" ap:CultureKey.CultureRes="Lbl_G_HBottom"/>
+                    <TextBox                     
                          DataContext="{Binding DataModel_Global_Formwork}"
                          Text="{Binding HBottom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
-                         HorizontalAlignment="Left" Height="23" Margin="125,88,0,0" TextWrapping="Wrap" 
-                         VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
-
-
+                         Template="{StaticResource AppTextBoxGeneric}"
+                         HorizontalAlignment="Left" Height="25" Margin="130,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
                     <!--Diameter Foundation-->
-                    <Label FontSize="12" Content="Diameter Foundation" HorizontalAlignment="Left" Margin="2,114,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                x:Name="UI_TextBox_Diameter_Foundation"  
-                DataContext="{Binding DataModel_Global_Formwork}"
-                Text="{Binding DFoundation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="125,116,0,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                    <Label Content="__D Foundation" HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top" 
+                           Height="25" ap:CultureKey.CultureRes="Lbl_G_DFoundation"/>
+                    <TextBox                        
+                        DataContext="{Binding DataModel_Global_Formwork}"
+                        Text="{Binding DFoundation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="130,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
                     <!--Diameter Tower Base-->
-                    <Label FontSize="12" Content="Diameter Tower Base" HorizontalAlignment="Left" Margin="2,142,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                x:Name="UI_TextBox_Diameter_Tower_Base"   
-                DataContext="{Binding DataModel_Global_Formwork}"
-                Text="{Binding DTowerBase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="125,144,0,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                    <Label Content="__D Tower Base" HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top" 
+                           Height="25" ap:CultureKey.CultureRes="Lbl_G_DTowerBase"/>
+                    <TextBox                         
+                        DataContext="{Binding DataModel_Global_Formwork}"
+                        Text="{Binding DTowerBase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="130,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
                     <!--Foundation Bed-->
-                    <Label FontSize="12" Content="Foundation Bed" HorizontalAlignment="Left" Margin="2,170,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                x:Name="UI_TextBox_Foundation_Bed"  
-                DataContext="{Binding DataModel_Global_Formwork}"
-                Text="{Binding FoundationBed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="125,172,0,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                    <Label Content="__Foundation Bed" HorizontalAlignment="Left" Margin="5,185,0,0" VerticalAlignment="Top" 
+                           Height="25" ap:CultureKey.CultureRes="Lbl_G_FoundationBed"/>
+                    <TextBox                                                    
+                         DataContext="{Binding DataModel_Global_Formwork}"
+                         Text="{Binding FoundationBed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Template="{StaticResource AppTextBoxGeneric}"
+                         HorizontalAlignment="Left" Height="25" Margin="130,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
                     <!--Diameter Anchors-->
-                    <Label FontSize="12" Content="Diameter Anchors" HorizontalAlignment="Left" Margin="2,197,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                        x:Name="UI_TextBox_DiameterAnchor"
+                    <Label Content="__DiameterAnchor" HorizontalAlignment="Left" Margin="5,215,0,0" VerticalAlignment="Top" 
+                           Height="25" ap:CultureKey.CultureRes="Lbl_G_DiameterAnchor"/>
+                    <TextBox                         
                         DataContext="{Binding DataModel_Global_Formwork}"
                         Text="{Binding DiameterAnchor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="125,199,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="130,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
                     <!--Radius Centerline Tower-->
-                    <Label FontSize="12" Content="Radius Centerline Tower" HorizontalAlignment="Left" Margin="2,224,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                        IsEnabled="False"                       
-                        DataContext="{Binding DataModel_Global_Formwork}"
-                        Text="{Binding RadiusCenterLineTower, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="125,226,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="78"/>
+                    <Label Content="__RadiusCenterLineTower" HorizontalAlignment="Left" Margin="5,245,0,0" VerticalAlignment="Top" 
+                           Height="25" ap:CultureKey.CultureRes="Lbl_G_RadiusCenterLineTower"/>
+                    <TextBox                          
+                         IsEnabled="False"             
+                         DataContext="{Binding DataModel_Global_Formwork}"
+                         Text="{Binding RadiusCenterLineTower, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                         Template="{StaticResource AppTextBoxGeneric}"
+                         HorizontalAlignment="Left" Height="25" Margin="130,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
                     <!--Bottom Cover-->
-                    <Label FontSize="12" Content="Bottom Cover" HorizontalAlignment="Left" Margin="2,251,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                      
+                    <Label Content="__BottomCover" HorizontalAlignment="Left" Margin="5,275,0,0" VerticalAlignment="Top" 
+                           Height="25" ap:CultureKey.CultureRes="Lbl_G_BottomCover"/>
+                    <TextBox                         
                         DataContext="{Binding DataModel_Global_Formwork}"
                         Text="{Binding BottomCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="125,253,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="130,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
                     <!--Top Cover-->
-                    <Label FontSize="12" Content="Top Cover" HorizontalAlignment="Left" Margin="2,278,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                        x:Name="UI_TextBox_Top_Cover"   
-                        DataContext="{Binding DataModel_Global_Formwork}"
-                        Text="{Binding TopCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="125,280,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                    <Label Content="__TopCover" HorizontalAlignment="Left" Margin="5,305,0,0" VerticalAlignment="Top" 
+                           Height="25" ap:CultureKey.CultureRes="Lbl_G_TopCover"/>
+                    <TextBox                             
+                           x:Name="UI_TextBox_Top_Cover"   
+                           DataContext="{Binding DataModel_Global_Formwork}"
+                           Text="{Binding TopCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                           Template="{StaticResource AppTextBoxGeneric}"
+                           HorizontalAlignment="Left" Height="25" Margin="130,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
                     <!--Edge Cover-->
-                    <Label FontSize="12" Content="Edge Cover" HorizontalAlignment="Left" Margin="2,305,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                        x:Name="UI_TextBox_Edge_Cover"  
+                    <Label Content="__EdgeCover" HorizontalAlignment="Left" Margin="5,335,0,0" VerticalAlignment="Top" 
+                           Height="25" ap:CultureKey.CultureRes="Lbl_G_EdgeCover"/>
+                    <TextBox                         
                         DataContext="{Binding DataModel_Global_Formwork}"
                         Text="{Binding EdgeCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="125,307,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="130,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
                     <!--Radius Btc-->
-                    <Label FontSize="12" Content="Radius Btc" HorizontalAlignment="Left" Margin="2,332,0,0" VerticalAlignment="Top"/>
+                    <Label Content="__RadiusBtc" HorizontalAlignment="Left" Margin="240,5,0,0" VerticalAlignment="Top" 
+                           Height="25" ap:CultureKey.CultureRes="Lbl_G_RadiusBtc"/>
                     <TextBox 
                         IsEnabled="False"
                         DataContext="{Binding DataModel_Global_Formwork}"
                         Text="{Binding RadiusBtc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="125,334,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="78" />
-
-
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="350,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
                     <!--Hight Above Ground-->
-                    <Label FontSize="12" Content="Hight Above Ground" HorizontalAlignment="Left" Margin="2,359,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                        x:Name="UI_TextBox_HeightAboveGround"   
+                    <Label Content="__HightAboveGround" HorizontalAlignment="Left" Margin="240,35,0,0" VerticalAlignment="Top" 
+                           Height="25" ap:CultureKey.CultureRes="Lbl_G_HightAboveGround"/>
+                    <TextBox                            
                         DataContext="{Binding DataModel_Global_Formwork}"
                         Text="{Binding HightAboveGround, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="125,361,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="350,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
                     <!--Dept Foundation-->
-                    <Label FontSize="12" Content="Dept Foundation" HorizontalAlignment="Left" Margin="2,386,0,0" VerticalAlignment="Top"/>
+                    <Label Content="__DeptFoundation" HorizontalAlignment="Left" Margin="240,65,0,0" VerticalAlignment="Top" 
+                           Height="25" ap:CultureKey.CultureRes="Lbl_G_DepthFoundation"/>
                     <TextBox                         
                         IsEnabled="False"  
                         DataContext="{Binding DataModel_Global_Formwork}"
                         Text="{Binding DeptFoundation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="125,388,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="78" RenderTransformOrigin="-0.346,-1.87"/>
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="350,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Materials" Margin="-4,-6,1,2">
-                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="1,1,300,1">
+            <TabItem Header="Materials">
+                <Grid Name="UI_Grid_G_Materials" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="500">
+                    
                     <!--Material Foundation-->
-                    <Label FontSize="12" Content="Material Foundation" HorizontalAlignment="Left" Margin="0,11,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                x:Name="UI_TextBox_Material_Foundation"   
-                DataContext="{Binding DataModel_Global_Materials}"
-                Text="{Binding MaterialFoundation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="148,13,0,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="77" RenderTransformOrigin="-0.346,-1.87"/>
+                    <Label Content="__Material Foundation" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"
+                           ap:CultureKey.CultureRes="Lbl_G_MaterialFoundation"/>
+                    <TextBox                 
+                        DataContext="{Binding DataModel_Global_Materials}"
+                        Text="{Binding MaterialFoundation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Template="{StaticResource AppTextBoxGeneric}"                        
+                        HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" 
+                        Height="25" Margin="130,5,50,0" Width="100"/>                
 
                     <!--Material Foundation Bed-->
-                    <Label FontSize="12" Content="Material Foundation Bed" HorizontalAlignment="Left" Margin="1,44,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                x:Name="UI_TextBox_Material_Foundation_Bed"
-                DataContext="{Binding DataModel_Global_Materials}"
-                Text="{Binding MaterialFoundationBed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="148,46,0,0" TextWrapping="Wrap"
-                VerticalAlignment="Top" Width="77" RenderTransformOrigin="-0.346,-1.87"/>
+                    <Label Content="__Material FoundationBed" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"
+                           ap:CultureKey.CultureRes="Lbl_G_MaterialFoundationBed"/>
+                    <TextBox                          
+                        DataContext="{Binding DataModel_Global_Materials}"
+                        Text="{Binding MaterialFoundationBed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Template="{StaticResource AppTextBoxGeneric}"                        
+                        HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" 
+                        Height="25" Margin="130,35,50,0" Width="100"/>
 
                     <!--Material Tower Base-->
-                    <Label FontSize="12" Content="Material Tower Base" HorizontalAlignment="Left" Margin="2,77,0,0" VerticalAlignment="Top" Width="115"/>
-                    <TextBox 
-                x:Name="UI_TextBox_Material_Tower_Base"
-                DataContext="{Binding DataModel_Global_Materials}"
-                Text="{Binding MaterialTowerBase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="148,78,0,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="77" RenderTransformOrigin="-0.346,-1.87"/>
+                    <Label Content="__Material Tower Base" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"
+                           ap:CultureKey.CultureRes="Lbl_G_MaterialTowerBase"/>
+                    <TextBox                 
+                        DataContext="{Binding DataModel_Global_Materials}"
+                        Text="{Binding MaterialTowerBase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Template="{StaticResource AppTextBoxGeneric}"                        
+                        HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" 
+                        Height="25" Margin="130,65,50,0" Width="100"/>
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Coordinations" Margin="-4,-6,1,2">
-                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="1,1,300,1">
+            
+            <TabItem Header="Coordinations">
+                <Grid Name="UI_Grid_G_Coordinations" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="500">
+                    
                     <!--Coordinations Ground Point X-->
-                    <Label FontSize="12" Content="Coordinations Ground Point X" HorizontalAlignment="Left" Margin="-4,6,0,0" VerticalAlignment="Top" Width="170"/>
-                    <TextBox 
-                x:Name="UI_TextBox_ARC_CenterPoint_X"   
-                DataContext="{Binding DataModel_Global_Coordinations_GroundPoint}"
-                Text="{Binding CoordinationX, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                
-                HorizontalAlignment="Left" Height="23" Margin="176,8,0,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="50" RenderTransformOrigin="-0.346,-1.87"/>
+                    <Label Content="__Coordination X" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"
+                           ap:CultureKey.CultureRes="Lbl_G_CoordinationX"/>
+                    <TextBox                         
+                        DataContext="{Binding DataModel_Global_Coordinations_GroundPoint}"
+                        Text="{Binding CoordinationX, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                
+                        Template="{StaticResource AppTextBoxGeneric}"                        
+                        HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" 
+                        Height="25" Margin="130,5,50,0" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
                     <!--Coordinations Ground Point Y-->
-                    <Label FontSize="12" Content="Coordinations Ground Point Y" HorizontalAlignment="Left" Margin="-5,35,0,0" VerticalAlignment="Top"/>
+                    <Label Content="__Coordination Y" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"
+                           ap:CultureKey.CultureRes="Lbl_G_CoordinationY"/>
+                    <TextBox
+                        DataContext="{Binding DataModel_Global_Coordinations_GroundPoint}"
+                        Text="{Binding CoordinationY, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Template="{StaticResource AppTextBoxGeneric}"                        
+                        HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" 
+                        Height="25" Margin="130,35,50,0" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <!--Coordinations Ground Point Z-->
+                    <Label Content="__Coordination Z" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"
+                           ap:CultureKey.CultureRes="Lbl_G_CoordinationZ"/>
+                    <TextBox                       
+                        DataContext="{Binding DataModel_Global_Coordinations_GroundPoint}"
+                        Text="{Binding CoordinationZ, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Template="{StaticResource AppTextBoxGeneric}"                        
+                        HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" 
+                        Height="25" Margin="130,65,50,0" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <!--Coordinations Ground Point Z-->
+                    <Label Content="__Foundation Point Z" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"
+                           ap:CultureKey.CultureRes="Lbl_G_FoundationPointZ"/>
                     <TextBox 
-                x:Name="UI_TextBox_ARC_CenterPoint_Y"  
-                DataContext="{Binding DataModel_Global_Coordinations_GroundPoint}"
-                Text="{Binding CoordinationY, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                HorizontalAlignment="Left" Height="23" Margin="176,36,0,0" TextWrapping="Wrap" 
-                VerticalAlignment="Top" Width="50" RenderTransformOrigin="-0.346,-1.87"/>
-
-                    <!--Coordinations Ground Point Z-->
-                    <Label FontSize="12" Content="Coordinations Ground Point Z" HorizontalAlignment="Left" Margin="-4,62,0,0" VerticalAlignment="Top"/>
-                    <TextBox  
-                       x:Name="UI_TextBox_ARC_CenterPoint_Z"
-                       DataContext="{Binding DataModel_Global_Coordinations_GroundPoint}"
-                       Text="{Binding CoordinationZ, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                       HorizontalAlignment="Left" Height="23" Margin="176,63,0,0" TextWrapping="Wrap" 
-                       VerticalAlignment="Top" Width="50"/>
-
-                    <!--Coordinations Ground Point Z-->
-                    <Label FontSize="12" Content="Foundation Point Z" HorizontalAlignment="Left" Margin="-4,85,0,0" VerticalAlignment="Top"/>
-                    <TextBox IsEnabled="False"             
-                      
+                        IsEnabled="False"
                         DataContext="{Binding DataModel_Global_Coordinations_GroundPoint}"
                         Text="{Binding FoundationPointZ, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="176,89,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="50"/>
+                        Template="{StaticResource AppTextBoxGeneric}"                        
+                        HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" 
+                        Height="25" Margin="130,95,50,0" Width="100">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
                 </Grid>
             </TabItem>
         </TabControl>
-
-
-
-
     </Grid>
-
-
-
 </Page>

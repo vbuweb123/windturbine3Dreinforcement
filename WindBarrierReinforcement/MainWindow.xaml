@@ -8,7 +8,7 @@
         Title="MainWindow" Height="700" Width="930" ResizeMode="NoResize">
     <Grid>
         
-        <Frame Name="FrameMain" Margin="0,35,0,0" NavigationUIVisibility="Hidden">
+        <Frame Name="FrameMain" Margin="0,50,0,0" NavigationUIVisibility="Hidden">
 
         </Frame>
         <Menu Name="UI_Menu" HorizontalAlignment="Center" FontWeight="Bold"  Height="360" Margin="700,0,0,0"
