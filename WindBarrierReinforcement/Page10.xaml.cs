@@ -13,35 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WindBarrierReinforcement.DataModels.NSPage10;
+using WindBarrierReinforcement.Resources;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement
 {
-    /// <summary>
-    /// Interaction logic for Page10.xaml
-    /// </summary>
     public partial class Page10 : Page
     {
-        public DataModel_ChairsR DataModel_ChairsR { get; set; }
-        public DataModel_ChairsR_Zones Z1 { get; set; }
-        public DataModel_ChairsR_Zones Z2 { get; set; }
-        //public DataModel_ChairsR Zone3 { get; set; }
-        //public DataModel_ChairsR Zone4 { get; set; }
+        public DataModel_CHR_General DataModel_CHR_General => GlobalPage10.DataModel_CHR_General;
+        public DataModel_CHR_Zones DataModel_CHR_Zones => GlobalPage10.DataModel_CHR_Zones;
 
         public Page10()
         {
-            DataModel_ChairsR = new DataModel_ChairsR(this);
-            Z1 = new DataModel_ChairsR_Zones(this);
-            Z2 = new DataModel_ChairsR_Zones(this);
-            //Zone2 = new DataModel_ChairsR(this);
-            //Zone3 = new DataModel_ChairsR(this);
-            //Zone4 = new DataModel_ChairsR(this);
             this.DataContext = this;
             InitializeComponent();
+
+            CultureRenamer.Rename(UI_Grid_Master);
         }
-
-        //private void UI_ComboBox_Dir2_Diameters_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-
-        //}
     }
 }

@@ -101,47 +101,47 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         
         public DataModel_ARIntUBars()
         {
-            GlobalDataModelsPage08.DataModel_ARExtUBars.PropertyChanged += (o, e) =>
+            GlobalPage08.DataModel_ARExtUBars.PropertyChanged += (o, e) =>
             {
                 if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.TopOffset))
                 {
-                    this.TopOffset = GlobalDataModelsPage08.DataModel_ARExtUBars.TopOffset;
+                    this.TopOffset = GlobalPage08.DataModel_ARExtUBars.TopOffset;
                     NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.TopOffset));
                 }
 
                 if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.BottomOffset))
                 {
-                    this.BottomOffset = GlobalDataModelsPage08.DataModel_ARExtUBars.BottomOffset;
+                    this.BottomOffset = GlobalPage08.DataModel_ARExtUBars.BottomOffset;
                     NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.BottomOffset));
                 }
 
                 if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.AxisOffset))
                 {
-                    this.AxisOffset = GlobalDataModelsPage08.DataModel_ARExtUBars.AxisOffset;
+                    this.AxisOffset = GlobalPage08.DataModel_ARExtUBars.AxisOffset;
                     NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.AxisOffset));
                 }
 
                 if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.HookULarger))
                 {
-                    this.HookULarger = GlobalDataModelsPage08.DataModel_ARExtUBars.HookULarger;
+                    this.HookULarger = GlobalPage08.DataModel_ARExtUBars.HookULarger;
                     NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.HookULarger));
                 }
 
                 if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.HookUSmaller))
                 {
-                    this.HookUSmaller = GlobalDataModelsPage08.DataModel_ARExtUBars.HookUSmaller;
+                    this.HookUSmaller = GlobalPage08.DataModel_ARExtUBars.HookUSmaller;
                     NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.HookUSmaller));
                 }
 
                 if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.TopExtraOffset))
                 {
-                    this.TopExtraOffset = GlobalDataModelsPage08.DataModel_ARExtUBars.TopExtraOffset;
+                    this.TopExtraOffset = GlobalPage08.DataModel_ARExtUBars.TopExtraOffset;
                     NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.TopExtraOffset));
                 }
 
                 if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.BottomExtraOffset))
                 {
-                    this.BottomExtraOffset = GlobalDataModelsPage08.DataModel_ARExtUBars.BottomExtraOffset;
+                    this.BottomExtraOffset = GlobalPage08.DataModel_ARExtUBars.BottomExtraOffset;
                     NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.BottomExtraOffset));
                 }
             };

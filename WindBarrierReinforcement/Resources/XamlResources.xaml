@@ -59,14 +59,16 @@
         <Setter Property="FontSize" Value="10"/>
     </Style>
     <!--app styles particular-->
-    <Style TargetType="Label" x:Key="AppContentTitleLabel" BasedOn="{StaticResource AppGeneric}">
-        <Setter Property="FontSize" Value="16"/>
+    <Style TargetType="Label" x:Key="AppContentTitleLabel">
+        <Setter Property="FontSize" Value="18"/>
     </Style>
     <Style TargetType="TextBlock" x:Key="AppContentTitleTextBlock" BasedOn="{StaticResource AppTextBlockGeneric}">
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Foreground" Value="{StaticResource AppTitleColor}"/>
     </Style>
-
+    <Style TargetType="TextBlock" x:Key="AppContentTitleTextBlock2" BasedOn="{StaticResource AppTextBlockGeneric}">
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
     <!--Text Box template-->
 
     <ControlTemplate x:Key="AppTextBoxGeneric" TargetType="TextBox">
@@ -99,6 +101,28 @@
                 <Setter Property="IsEnabled" Value="True"></Setter>
             </Trigger>
             <Trigger Property="Tag" Value="0">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBoxTagTrigger_EnabledIfEnabled" TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger Property="Tag" Value="Disabled">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Enabled">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBoxTagTrigger_EnabledIfDisabled" TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger Property="Tag" Value="Disabled">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Enabled">
                 <Setter Property="IsEnabled" Value="False"></Setter>
             </Trigger>
         </Style.Triggers>

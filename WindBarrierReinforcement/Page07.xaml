@@ -9,6 +9,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="465" d:DesignWidth="700"
       xmlns:l="clr-namespace:WindBarrierReinforcement.Common.ValueConverters"
+      xmlns:ap ="clr-namespace:WindBarrierReinforcement.Common.AttachedProperties"
       Title="Page07">
     <Page.Resources>
         <ResourceDictionary>
@@ -19,227 +20,193 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Background="White" Margin="10,10,10,10">
-        <TextBlock HorizontalAlignment="Left" Margin="20,10,0,0" TextWrapping="Wrap" Text="OPTR - Over Plate Top Reinforcement" VerticalAlignment="Top"/>
-        <TabControl TabStripPlacement="Left" HorizontalAlignment="Left" Margin="0,25,0,0" Width="375" SelectionChanged="TabControl_SelectionChanged">
-            <TabItem Header="Straight Bars Direction 1" Margin="-1,1,-2,-5">
-                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="0,0,2,5">
-                    <!--Spacing-->
-                    <Label FontSize="12" Content="Spacing" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                         x:Name="UI_TextBox_OPTR_Dir1_SpacingValue"
-                         DataContext="{Binding DataModel_StraightBars_Dir1}"
-                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                         HorizontalAlignment="Left" Height="23" Margin="139,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
-                         Width="52" RenderTransformOrigin="-0.346,-1.87" Tag="{Binding SpacingEnabled}">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="Disabled">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="Enabled">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
-                    </TextBox>
+    <Grid Name="UI_MasterGrid" Background="{StaticResource AppMainBackgroundColor}">
+        <TextBlock ap:CultureKey.CultureRes="Txt_OverPlateTopReinforcementTitle" Text="__OPTR - Over Plate Top Reinforcement" HorizontalAlignment="Left" Margin="20,15,0,0"
+                   TextWrapping="Wrap" VerticalAlignment="Top"
+                   Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title" />
 
-                    <!--Option-->
-                    <Label FontSize="12" Content="Option" HorizontalAlignment="Left" Margin="10,61,0,0" 
-                           VerticalAlignment="Top" RenderTransformOrigin="0.638,2.346"/>
-                    <ComboBox 
-                        x:Name="UI_TextBox_OPTR_Dir1_Options"
-                        DataContext="{Binding DataModel_StraightBars_Dir1}"
-                        ItemsSource="{Binding OptionNames, Mode=OneWay}"
-                        SelectedIndex="{Binding SelectedIndexOption, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="83,63,12,0" VerticalAlignment="Top"/>
+        <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,50,25,25" BorderThickness="0" 
+                    Background="{StaticResource AppMainBackgroundColor}">
 
+            <TabItem Header="Straight Bars Direction 1">
+                <Grid Name="UI_Grid_OPTR_StraightBars1" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
                     <!--Edge Cover-->
-                    <Label FontSize="12" Content="Edge Cover" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_Dir1_EdgeCover" Content="__Edge Cover" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox
-                        x:Name="UI_TextBox_OPTR_Dir1_EdgeCover" 
                         DataContext="{Binding DataModel_StraightBars_Dir1}"
                         Text="{Binding EdgeCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
-                        HorizontalAlignment="Left" Height="23" Margin="141,4,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87">
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,5,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
                         </i:Interaction.Behaviors>
-                    </TextBox>
-
-                    <!--No. Of Bars-->
-                    <Label FontSize="12" Content="No of Bars" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
-                         x:Name="UI_TextBox_OPTR_Dir1_NoOfBars"      
-                         DataContext="{Binding DataModel_StraightBars_Dir1}"
-                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                         HorizontalAlignment="Left" Height="23" Margin="139,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
-                         Width="52" RenderTransformOrigin="-0.346,-1.87" Tag="{Binding SpacingEnabled}" >
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="Disabled">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="Enabled">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
                     </TextBox>
 
                     <!--Diameter-->
-                    <Label FontSize="12" Content="Diameter" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_Dir1_Diameter" Content="__Diameter" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
                     <ComboBox
-                        x:Name="UI_ComboBox_Dir1_Diameters"
                         DataContext="{Binding DataModel_StraightBars_Dir1}"
                         ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="141,34,12,0" VerticalAlignment="Top"/>
+                        Margin="150,35,50,0" Height="25" Width="150" VerticalAlignment="Top"/>
+
+
+                    <!--Option-->
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_Dir1_Option" Content="__Option" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top"/>
+                    <ComboBox 
+                        DataContext="{Binding DataModel_StraightBars_Dir1}"
+                        ItemsSource="{Binding OptionNames, Mode=OneWay}"
+                        SelectedIndex="{Binding SelectedIndexOption, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Margin="150,65,50,0" Width="150" VerticalAlignment="Top" Height="25"/>
+                    <!--Spacing-->
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_Dir1_SpacingValue" Content="__Spacing" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox 
+                         DataContext="{Binding DataModel_StraightBars_Dir1}"
+                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Tag="{Binding SpacingEnabled}" Template="{StaticResource AppTextBoxGeneric}"
+                         Style="{StaticResource TextBoxTagTrigger_EnabledIfEnabled}"
+                         HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                    <!--No. Of Bars-->
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_Dir1_NoOfBars" Content="__No of Bars" HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox 
+                         DataContext="{Binding DataModel_StraightBars_Dir1}"
+                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Tag="{Binding SpacingEnabled}" Template="{StaticResource AppTextBoxGeneric}"
+                         Style="{StaticResource TextBoxTagTrigger_EnabledIfDisabled}"
+                         HorizontalAlignment="Left" Height="25" Margin="150,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  Width="150"  >
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
 
                     <!--Lx-->
-                    <Label FontSize="12" Content="L x" HorizontalAlignment="Left" Margin="11,152,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_Dir1_Lx" Content="__L x" HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox 
-                        x:Name="UI_TextBox_OPTR_Dir1_Lx"    
                         DataContext="{Binding DataModel_StraightBars_Dir1}"
-                        Text="{Binding Lx,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"                        
-                        HorizontalAlignment="Left" Height="23" Margin="139,153,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87">
+                        Text="{Binding Lx,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,155,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
 
                     <!--Ly-->
-                    <Label FontSize="12" Content="L y" HorizontalAlignment="Left" Margin="11,182,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_Dir1_Ly" Content="__L y" HorizontalAlignment="Left" Margin="5,185,0,0" VerticalAlignment="Top"/>
                     <TextBox 
-                        x:Name="UI_TextBox_OPTR_Dir1_Ly"  
                         DataContext="{Binding DataModel_StraightBars_Dir1}"                        
                         Text="{Binding Ly, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="139,183,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87">
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" >
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"/>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                    <!--Extra Information for both direction - TowerAxisTopOffset - distance from to bars-->
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_Dir12_Extra_TowerAxisTopOffset" Content="__TowerAxisTopOffset" HorizontalAlignment="Left" 
+                           Margin="5,215,0,0" VerticalAlignment="Top"/>
+                    <TextBox 
+                        DataContext="{Binding DataModel_StraightBars_Extra}"                        
+                        Text="{Binding TowerAxisTopOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" >
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"/>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                    <!--the straight bars are enclosed by a circular area. Minimum will determine the min bar length at side-->
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_Dir12_Extra_MinBarLength" Content="__MinBarLength" HorizontalAlignment="Left" 
+                           Margin="5,245,0,0" VerticalAlignment="Top"/>
+                    <TextBox 
+                        DataContext="{Binding DataModel_StraightBars_Extra}"                        
+                        Text="{Binding MinBarLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" >
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
                 </Grid>
             </TabItem>
-            <TabItem Header="Straight Bars Direction 2" Margin="-1,1,-2,-5">
-                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="0,0,2,5">
-
-                    <!--Spacing-->
-                    <Label FontSize="12" Content="Spacing" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top"/>
-                    <TextBox                         
-                        x:Name="UI_TextBox_OPTR_Dir2_SpacingValue"            
-                         DataContext="{Binding DataModel_StraightBars_Dir2}"
-                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                         HorizontalAlignment="Left" Height="23" Margin="137,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
-                         Width="51" RenderTransformOrigin="-0.346,-1.87" Tag="{Binding SpacingEnabled}">
+            
+            <TabItem Header="Straight Bars Direction 2">
+                <Grid Name="UI_Grid_OPTR_StraightBars2" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                    <!--Edge Cover-->
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_Dir2_EdgeCover" Content="__Edge Cover" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox                                                
+                        DataContext="{Binding DataModel_StraightBars_Dir2}"
+                        Text="{Binding EdgeCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,5,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
                         </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="Disabled">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="Enabled">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
                     </TextBox>
-
                     <!--Diameter-->
-                    <Label FontSize="12" Content="Diameter" HorizontalAlignment="Left" Margin="10,36,0,0" 
-                           VerticalAlignment="Top" RenderTransformOrigin="0.452,0.462"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_Dir2_Diameter" Content="__Diameter" HorizontalAlignment="Left" Margin="5,35,0,0"  VerticalAlignment="Top"/>
                     <ComboBox
-                        x:Name="UI_ComboBox_Dir2_Diameters"
                         DataContext="{Binding DataModel_StraightBars_Dir2}"
                         ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="137,40,16,0" VerticalAlignment="Top"/>
-
-                    <!--Edge Cover-->
-                    <Label FontSize="12" Content="Edge Cover" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top"/>
-                    <TextBox                                                
-                        x:Name="UI_TextBox_OPTR_Dir2_EdgeCover"
+                        Margin="150,35,50,0" Height="25" Width="150" VerticalAlignment="Top"/>
+                    <!--Option-->
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_Dir2_Option" Content="__Option" HorizontalAlignment="Left" Margin="5,65,0,0" 
+                           VerticalAlignment="Top"/>
+                    <ComboBox 
                         DataContext="{Binding DataModel_StraightBars_Dir2}"
-                        Text="{Binding EdgeCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="137,10,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87">
+                        ItemsSource="{Binding OptionNames, Mode=OneWay}"
+                        SelectedIndex="{Binding SelectedIndexOption, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Margin="150,65,50,0" Width="150" Height="25" VerticalAlignment="Top"/>
+
+                    <!--Spacing-->
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_Dir2_SpacingValue" Content="__Spacing" HorizontalAlignment="Left" Margin="5,95,0,0" Height="25" VerticalAlignment="Top"/>
+                    <TextBox                         
+                         DataContext="{Binding DataModel_StraightBars_Dir2}"
+                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Tag="{Binding SpacingEnabled}" Template="{StaticResource AppTextBoxGeneric}"
+                         Style="{StaticResource TextBoxTagTrigger_EnabledIfEnabled}"
+                         HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" >
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
                         </i:Interaction.Behaviors>
                     </TextBox>
 
                     <!--No Of Bars-->
-                    <Label FontSize="12" Content="No of Bars" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_Dir2_NoOfBars" Content="__No of Bars" HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_OPTR_Dir2_NoOfBars"            
                         DataContext="{Binding DataModel_StraightBars_Dir2}"
                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="137,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
-                        Width="51" RenderTransformOrigin="-0.346,-1.87" Tag="{Binding SpacingEnabled}" >
+                        Tag="{Binding SpacingEnabled}" Template="{StaticResource AppTextBoxGeneric}"
+                        Style="{StaticResource TextBoxTagTrigger_EnabledIfDisabled}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,125,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" >
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
                         </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="Disabled">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="Enabled">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
                     </TextBox>
 
-                    <!--Option-->
-                    <Label FontSize="12" Content="Option" HorizontalAlignment="Left" Margin="10,68,0,0" 
-                           VerticalAlignment="Top" RenderTransformOrigin="0.638,2.346"/>
-                    <ComboBox 
-                        x:Name="UI_TextBox_OPTR_Dir2_Options"
-                        DataContext="{Binding DataModel_StraightBars_Dir2}"
-                        ItemsSource="{Binding OptionNames, Mode=OneWay}"
-                        SelectedIndex="{Binding SelectedIndexOption, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="80,69,15,0" VerticalAlignment="Top"/>
-
                     <!--L x-->
-                    <Label FontSize="12" Content="L x" HorizontalAlignment="Left" Margin="10,161,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_Dir2_Lx" Content="__L x" HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_OPTR_Dir2_Lx"    
-                         DataContext="{Binding DataModel_StraightBars_Dir2}"
+                        DataContext="{Binding DataModel_StraightBars_Dir2}"
                         Text="{Binding Lx,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"     
-                        HorizontalAlignment="Left" Height="23" Margin="137,161,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="51" RenderTransformOrigin="-0.346,-1.87">
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,155,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
 
                     <!--Ly-->
-                    <Label FontSize="12" Content="L y" HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_Dir2_Ly" Content="__L y" HorizontalAlignment="Left" Margin="5,185,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_OPTR_Dir2_Ly"
                         DataContext="{Binding DataModel_StraightBars_Dir2}"                  
                         Text="{Binding Ly, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="137,192,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="51" RenderTransformOrigin="-0.346,-1.87">
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
@@ -247,208 +214,165 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Radial At Edge Of Concrete" Margin="-1,1,-2,-5">
-                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="0,0,2,5">
+            <TabItem Header="Radial At Edge Of Concrete">
+                <Grid Name="UI_Grid_OPTR_RadialAtEdge" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
 
                     <!--Interior Edge Length-->
-                    <Label FontSize="12" Content="Interior Edge Length" HorizontalAlignment="Left" Margin="4,4,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_RAE_InteriorEdgeLength" Content="__Interior Edge Length" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_OPTR_InteriorEdgeLength"
                         DataContext="{Binding DataModel_RadialEdgeConcrete}"
                         Text="{Binding InteriorEdgeLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="133,4,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="60" RenderTransformOrigin="-0.346,-1.87">
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,5,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
 
                     <!--Bottom Edge Length-->
-                    <Label FontSize="12" Content="Bottom Edge Length" HorizontalAlignment="Left" Margin="4,34,0,0" 
-                           VerticalAlignment="Top" RenderTransformOrigin="0.551,3.308"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_RAE_BottomEdgeLength" Content="__Bottom Edge Length" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_OPTR_BottomEdgeLength"
                         DataContext="{Binding DataModel_RadialEdgeConcrete}"      
                         Text="{Binding BottomEdgeLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="133,34,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="60" RenderTransformOrigin="-0.346,-1.87">
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,35,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
 
                     <!--Radial Bars Diameters-->
-                    <Label FontSize="12" Content="Radial Bar Diameter" HorizontalAlignment="Left" Margin="3,69,0,0" 
-                           VerticalAlignment="Top" RenderTransformOrigin="0.551,3.308"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_RAE_RadialBarDiameter" Content="__Radial Bar Diameter" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top"/>
                     <ComboBox                        
-                        x:Name="UI_TextBox_OPTR_RadialBarDiameter"
                         DataContext="{Binding DataModel_RadialEdgeConcrete}"
                         ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="143,70,10,0" VerticalAlignment="Top"/>
+                        Margin="150,65,50,0" Width="150" Height="25" VerticalAlignment="Top"/>
 
                     <!--Tower Axis Cover-->
-                    <Label FontSize="12" Content="Tower Axis Cover" HorizontalAlignment="Left" Margin="2,99,0,0" 
-                           VerticalAlignment="Top" RenderTransformOrigin="0.551,3.308"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_RAE_TowerAxisCover" Content="__Tower Axis Cover" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top"/>
                     <TextBox
-                        x:Name="UI_TextBox_OPTR_TowerAxisCover"  
                         DataContext="{Binding DataModel_RadialEdgeConcrete}"
                         Text="{Binding TowerAxisCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="133,102,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="60" RenderTransformOrigin="-0.346,-1.87">
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
 
                     <!--Top Cover-->
-                    <Label FontSize="12" Content="Top Cover" HorizontalAlignment="Left" Margin="3,129,0,0" 
-                           VerticalAlignment="Top" RenderTransformOrigin="0.551,3.308"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_RAE_TopCover" Content="__Top Cover" HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_OPTR_TopCover"
                         DataContext="{Binding DataModel_RadialEdgeConcrete}"
                         Text="{Binding TopCover, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="133,132,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="60" RenderTransformOrigin="-0.346,-1.87">
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
 
                     <!--Bottom Cover-->
-                    <Label FontSize="12" Content="Bottom Cover" HorizontalAlignment="Left" Margin="4,159,0,0" 
-                           VerticalAlignment="Top" RenderTransformOrigin="0.551,3.308"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_RAE_BottomCover" Content="__Bottom Cover" HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_OPTR_BottomCover"     
                         DataContext="{Binding DataModel_RadialEdgeConcrete}"
                         Text="{Binding BottomCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="133,162,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="60" RenderTransformOrigin="-0.346,-1.87">
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
 
                     <!--Edge Cover-->
-                    <Label FontSize="12" Content="Edge Cover" HorizontalAlignment="Left" Margin="4,188,0,0" 
-                           VerticalAlignment="Top" RenderTransformOrigin="0.551,3.308"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_RAE_EdgeCover" Content="__Edge Cover" HorizontalAlignment="Left" Margin="5,185,0,0" VerticalAlignment="Top"/>
                     <TextBox 
-                    x:Name="UI_TextBox_OPTR_EdgeCover"
                         DataContext="{Binding DataModel_RadialEdgeConcrete}"
                         Text="{Binding EdgeCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="133,191,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="60" RenderTransformOrigin="-0.346,-1.87">
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,185,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
                 </Grid>
             </TabItem>
-            <TabItem Header="Circular Bars - Top" Margin="-1,1,-2,-5">
-                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="0,0,2,5">
+            <TabItem Header="Circular Bars - Top">
+                <Grid Name="UI_Grid_ArExtU" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
 
                     <!--Diameter-->
-                    <Label FontSize="12" Content="Diameter" HorizontalAlignment="Left" Margin="4,1,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_CBT_CircularBarDiam" Content="__Diameter" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
                     <ComboBox                            
-                        x:Name="UI_TextBox_OPTR_CircularBarDiam"
                         DataContext="{Binding DataModel_CircularBarsTop}"
                         ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="142,6,11,0" VerticalAlignment="Top"/>
+                        Margin="150,5,50,0" Width="150" Height="25" VerticalAlignment="Top"/>
 
                     <!--Option-->
-                    <Label FontSize="12" Content="Option" HorizontalAlignment="Left" Margin="5,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.638,2.346"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_CBT_Option" Content="__Option" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
                     <ComboBox 
-                        x:Name="OPTR_CircularTop_Option"
                         DataContext="{Binding DataModel_CircularBarsTop}"
                         ItemsSource="{Binding OptionNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexOption, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="86,33,9,0" VerticalAlignment="Top"/>
+                        Margin="150,35,50,0" Width="150" Height="25" VerticalAlignment="Top"/>
 
                     <!--No. Of Bars-->
-                    <Label FontSize="12" Content="No Of Bars" HorizontalAlignment="Left" Margin="2,58,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_CBT_CircularTop_NoBars" Content="__No Of Bars" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                        
-                        x:Name="UI_TextBox_OPTR_CircularTop_NoBars"
                         DataContext="{Binding DataModel_CircularBarsTop}"
                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        HorizontalAlignment="Left" Height="23" Margin="129,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
-                        Width="66" RenderTransformOrigin="-0.346,-1.87">
+                        Tag="{Binding SpacingEnabled}" Template="{StaticResource AppTextBoxGeneric}"
+                        Style="{StaticResource TextBoxTagTrigger_EnabledIfDisabled}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" >
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="Disabled">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="Enabled">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
                     </TextBox>
 
                     <!--Spacing-->
-                    <Label FontSize="12" Content="Spacing" HorizontalAlignment="Left" Margin="1,87,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_CBT_CircularTop_Spacing" Content="__Spacing" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox 
-                        x:Name="UI_TextBox_OPTR_CircularTop_Spacing"
                         DataContext="{Binding DataModel_CircularBarsTop}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="127,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" 
-                        RenderTransformOrigin="-0.346,-1.87" Tag="{Binding SpacingEnabled}">
+                        Tag="{Binding SpacingEnabled}" Template="{StaticResource AppTextBoxGeneric}"
+                        Style="{StaticResource TextBoxTagTrigger_EnabledIfEnabled}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="Disabled">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="Enabled">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
                     </TextBox>
 
                     <!--Max Length-->
-                    <Label FontSize="12" Content="Max Length" HorizontalAlignment="Left" Margin="2,116,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_CBT_CircularTop_MaxLength" Content="__Max Length" HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox            
-                        x:Name="UI_TextBox_OPTR_CircularTop_MaxLength"
                         DataContext="{Binding DataModel_CircularBarsTop}"
                         Text="{Binding MaxLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="127,119,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="66" RenderTransformOrigin="-0.346,-1.87">
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
 
                     <!--Overlap-->
-                    <Label FontSize="12" Content="Overlap" HorizontalAlignment="Left" Margin="7,152,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_CBT_CircularTop_Overlap" Content="__Overlap" HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox 
-                        x:Name="UI_TextBox_OPTR_CircularTop_Overlap"  
                         DataContext="{Binding DataModel_CircularBarsTop}"
                         Text="{Binding Overlap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="128,154,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="66" RenderTransformOrigin="-0.346,-1.87" TextChanged="UI_TextBox_OPTR_CircularTop_Overlap_TextChanged">
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,155,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
 
-                    <Label FontSize="12" Content="Groups" HorizontalAlignment="Left" Margin="7,183,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_CBT_OPTR_Groups" Content="__Groups" HorizontalAlignment="Left" Margin="5,185,0,0" Height="25" VerticalAlignment="Top"/>
                     <TextBox 
-                        x:Name="UI_TextBox_OPTR_Groups"
                         DataContext="{Binding DataModel_CircularBarsTop}"
                         Text="{Binding Groups, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="127,185,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="66" RenderTransformOrigin="-0.346,-1.87">
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
@@ -456,69 +380,85 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Circular Bars - Exterior Side" Margin="-1,1,-2,-5">
-                <Grid Background="{StaticResource ExpanderBackgroudBrush}" Margin="0,0,2,5">
-
+            <TabItem Header="Circular Bars - Exterior Side">
+                <Grid Name="UI_Grid_CircularBarsExtSide" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
                     <!--Diameter-->
-                    <Label Content="Diameter" HorizontalAlignment="Left" Margin="3,4,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.593,0"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_CircularMargin_Diameter" Content="__Diameter" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
                     <ComboBox                            
-                        x:Name="UI_TextBox_OPTR_CircularMargin_Diameter"
                         DataContext="{Binding DataModel_CircularBarsExteriorSide}"
                         ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="142,6,11,0" VerticalAlignment="Top"/>
+                        Margin="150,5,50,0" Width="150" VerticalAlignment="Top" Height="25"/>
+                    <!--Option-->
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_CircularMargin_Option" Content="__Option" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top"/>
+                    <ComboBox 
+                        DataContext="{Binding DataModel_CircularBarsExteriorSide}"
+                        ItemsSource="{Binding OptionNamesCBES, Mode=OneWay}"
+                        SelectedIndex="{Binding SelectedIndexOption, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
 
+                        Margin="150,35,50,0" Width="150" VerticalAlignment="Top" Height="25"/>
+                    <!--Use Default-->
+                    <StackPanel Height="25" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Stretch"  Margin="0,95,0,0">
+                        <Label ap:CultureKey.CultureRes="Lbl_OPTR_CircularMargin_Spacing_UseDefaultLength" Content="__Use Default Length" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="5,0,0,0" Width="110"/>
+                        <RadioButton
+                                    GroupName="TrueFalse" Margin="40,0,0,0"
+                                    Content="True" HorizontalAlignment="Left"  VerticalContentAlignment="Center" FontSize="12"
+                                    DataContext="{Binding DataModel_CircularBarsExteriorSide}"
+                                    IsChecked="{Binding UseDefaultLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <RadioButton
+                                    GroupName="TrueFalse" Margin="15,0,0,0"
+                                    Content="False" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="12"
+                                    DataContext="{Binding DataModel_CircularBarsExteriorSide}"
+                                    IsChecked="{Binding UseDefaultLength, Converter={StaticResource NegateBoolConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </StackPanel>
+                    
                     <!--No Of Bars-->
-                    <Label Content="No Of Bars" HorizontalAlignment="Left" Margin="5,59,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.147,0.577"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_CircularMargin_NoBars" Content="__No Of Bars" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top"/>
                     <TextBox                        
-                        x:Name="UI_TextBox_OPTR_CircularMargin_NoBars"
                         DataContext="{Binding DataModel_CircularBarsExteriorSide}"
                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        HorizontalAlignment="Left" Height="23" Margin="142,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
-                        Width="52" RenderTransformOrigin="-0.346,-1.87">
+                        Tag="{Binding SelectedOptionName}" Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+                        Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                         <TextBox.Style>
                             <Style TargetType="TextBox">
                                 <Style.Triggers>
-                                    <Trigger Property="Tag" Value="0">
+                                    <Trigger Property="Tag" Value="NoOfBars_Spacing">
                                         <Setter Property="IsEnabled" Value="True"></Setter>
                                     </Trigger>
-                                    <Trigger Property="Tag" Value="1">
+                                    <Trigger Property="Tag" Value="Spacing_Length">
                                         <Setter Property="IsEnabled" Value="False"></Setter>
                                     </Trigger>
-                                    <Trigger Property="Tag" Value="2">
+                                    <Trigger Property="Tag" Value="NoOfBars_Length">
                                         <Setter Property="IsEnabled" Value="True"></Setter>
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-
                     <!--Spacing-->
-                    <Label Content="Spacing" HorizontalAlignment="Left" Margin="5,87,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_CircularMargin_Spacing" Content="__Spacing" HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top"/>
                     <TextBox                        
-                        x:Name="UI_TextBox_OPTR_CircularMargin_Spacing"
                         DataContext="{Binding DataModel_CircularBarsExteriorSide}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        HorizontalAlignment="Left" Height="23" Margin="142,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
-                        Width="52" RenderTransformOrigin="-0.346,-1.87">
+                        Tag="{Binding SelectedOptionName}" Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,125,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                         <TextBox.Style>
                             <Style TargetType="TextBox">
                                 <Style.Triggers>
-                                    <Trigger Property="Tag" Value="0">
+                                    <Trigger Property="Tag" Value="EOption_NoOfBars_Spacing">
                                         <Setter Property="IsEnabled" Value="True"></Setter>
                                     </Trigger>
-                                    <Trigger Property="Tag" Value="1">
+                                    <Trigger Property="Tag" Value="Spacing_Length">
                                         <Setter Property="IsEnabled" Value="True"></Setter>
                                     </Trigger>
-                                    <Trigger Property="Tag" Value="2">
+                                    <Trigger Property="Tag" Value="NoOfBars_Length">
                                         <Setter Property="IsEnabled" Value="False"></Setter>
                                     </Trigger>
                                 </Style.Triggers>
@@ -527,27 +467,25 @@
                     </TextBox>
 
                     <!--Custom Length-->
-                    <Label Content="Spacing Custom Lenght" HorizontalAlignment="Left" Margin="4,119,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_CircularMargin_Spacing_CustomLength" Content="__Spacing Custom Lenght" HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top"/>
                     <TextBox                        
-                        x:Name="UI_TextBox_OPTR_CircularMargin_Spacing_CustomLength"
                         DataContext="{Binding DataModel_CircularBarsExteriorSide}"
                         Text="{Binding CustomLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        HorizontalAlignment="Left" Height="23" Margin="142,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
-                        Width="52" RenderTransformOrigin="-0.346,-1.87">
+                        Tag="{Binding SelectedOptionName}" Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,155,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                         <TextBox.Style>
                             <Style TargetType="TextBox">
                                 <Style.Triggers>
-                                    <Trigger Property="Tag" Value="0">
+                                    <Trigger Property="Tag" Value="NoOfBars_Spacing">
                                         <Setter Property="IsEnabled" Value="False"></Setter>
                                     </Trigger>
-                                    <Trigger Property="Tag" Value="1">
+                                    <Trigger Property="Tag" Value="Spacing_Length">
                                         <Setter Property="IsEnabled" Value="True"></Setter>
                                     </Trigger>
-                                    <Trigger Property="Tag" Value="2">
+                                    <Trigger Property="Tag" Value="NoOfBars_Length">
                                         <Setter Property="IsEnabled" Value="True"></Setter>
                                     </Trigger>
                                 </Style.Triggers>
@@ -555,77 +493,43 @@
                         </TextBox.Style>
                     </TextBox>
 
-                    <!--Option-->
-                    <Label FontSize="12" Content="Option" HorizontalAlignment="Left" Margin="4,29,0,0" 
-                           VerticalAlignment="Top" RenderTransformOrigin="0.638,2.346"/>
-                    <ComboBox 
-                        x:Name="UI_TextBox_OPTR_CircularMargin_Option"
-                        DataContext="{Binding DataModel_CircularBarsExteriorSide}"
-                        ItemsSource="{Binding OptionNamesCBES, Mode=OneWay}"
-                        SelectedIndex="{Binding SelectedIndexOption, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="72,33,10,0" VerticalAlignment="Top"/>
-
                     <!--Offset-->
-                    <Label Content="Offset" HorizontalAlignment="Left" Margin="3,202,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_CircularMargin_Offset" Content="__Offset" HorizontalAlignment="Left" Margin="5,185,0,0" VerticalAlignment="Top"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_OPTR_CircularMargin_Offset"
                         DataContext="{Binding DataModel_CircularBarsExteriorSide}"
                         Text="{Binding Offset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="23" Margin="142,202,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87">
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,185,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
 
-
-
                     <!--Max Length-->
-                    <Label Content="Max Length" HorizontalAlignment="Left" Margin="3,229,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_CircularMargin_MaxLength" Content="__Max Length" HorizontalAlignment="Left" Margin="5,215,0,0" VerticalAlignment="Top"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_OPTR_CircularMargin_MaxLength"    
                         DataContext="{Binding DataModel_CircularBarsExteriorSide}"
                         Text="{Binding MaxLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="22" Margin="142,230,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87">
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
 
                     <!--Overlap-->
-                    <Label Content="Overlap" HorizontalAlignment="Left" Margin="3,256,0,0" VerticalAlignment="Top"/>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_CircularMargin_Overlap" Content="__Overlap" HorizontalAlignment="Left" Margin="5,245,0,0" VerticalAlignment="Top"/>
                     <TextBox                         
-                        x:Name="UI_TextBox_OPTR_CircularMargin_Overlap"       
                         DataContext="{Binding DataModel_CircularBarsExteriorSide}"
                         Text="{Binding Overlap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        HorizontalAlignment="Left" Height="24" Margin="142,256,0,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.346,-1.87">
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
-                    <TextBlock Margin="4,145,0,250">
-                        <InlineUIContainer>
-                            <StackPanel Orientation="Horizontal">
-                                <Label Content="Use Default Length" VerticalAlignment="Center" Margin="0,2" Width="110"/>
-                                <RadioButton
-                                    GroupName="TrueFalse"
-                                    x:Name="UI_Radio_Button_OPTR_CircularMargin_Spacing_UseDefaultLength"
-                                    Content="True" HorizontalAlignment="Left" Margin="1,9,0,0" 
-                                    VerticalAlignment="Top" FontSize="12"
-                                    DataContext="{Binding DataModel_CircularBarsExteriorSide}"
-                                    IsChecked="{Binding UseDefaultLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                <RadioButton
-                                    GroupName="TrueFalse" FontSize="12"
-                                    x:Name="UI_Radio_Button_OPTR_CircularMargin_Spacing_UseDefaultLength2"
-                                    Content="False" HorizontalAlignment="Left" Margin="1,9,0,0" 
-                                    VerticalAlignment="Top"
-                                    DataContext="{Binding DataModel_CircularBarsExteriorSide}"
-                                    IsChecked="{Binding UseDefaultLength, Converter={StaticResource NegateBoolConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                            </StackPanel>
-                        </InlineUIContainer>
-                    </TextBlock>
+
+                        
                     <!--<WrapPanel Orientation="Horizontal" Margin="11,150,1,220" VerticalAlignment="Center" Height="55">
                         
 

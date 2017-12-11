@@ -12,7 +12,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
 {
     public class DataModel_StraightBars : DataModel
     {
-        
+        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
+
+        public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
         /// <summary>
         /// ComboBox - Option Types
         /// </summary>
@@ -23,8 +25,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             set { selectedIndexOption = value; NotifyPropertyChanged("SelectedIndexOption"); NotifyPropertyChanged("SpacingEnabled"); }
         }
 
-        public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
-
         /// <summary>
         /// ComboBox - Diameter Types
         /// </summary>
@@ -34,20 +34,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             get { return selectedIndexDiameter; }
             set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
         }
-
-        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
-
-
-        public DataModel_StraightBars(Page context)
-        {
-            context.Loaded += Context_Loaded;
-        }
-
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexOption = 0;
-            SelectedIndexDiameter = 0;
-        }
+       
         /// <summary>
         /// Spacing
         /// </summary>
@@ -58,16 +45,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             set { spacing = value; NotifyPropertyChanged("Spacing"); }
         }
 
-        public string SpacingEnabled
-        {
-            get
-            {
-                if (SelectedIndexOption == 0)
-                    return "Disabled";
-                else
-                    return "Enabled";
-            }
-        }
+        public string SpacingEnabled => (SelectedIndexOption == 0) ? "Disabled" : "Enabled";
+        
         /// <summary>
         /// NoOfBars
         /// </summary>
@@ -78,16 +57,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             set { noOfBars = value; NotifyPropertyChanged("NoOfBars"); }
         }
 
-        //public string NoOfBarsEnabled
-        //{
-        //    get
-        //    {
-        //        if (SelectedIndexOption == 0)
-        //            return "Enabled";
-        //        else
-        //            return "Disabled";
-        //    }
-        //}        
         /// <summary>
         /// Lx
         /// </summary>

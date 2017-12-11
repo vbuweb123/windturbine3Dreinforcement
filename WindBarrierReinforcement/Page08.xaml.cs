@@ -23,52 +23,22 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page08 : Page
     {
-        public DataModel_ARExtUBars DataModel_ARExtUBars
-        {
-            get => GlobalDataModelsPage08.DataModel_ARExtUBars;
-            set => GlobalDataModelsPage08.DataModel_ARExtUBars = value;
-        }
+        public DataModel_ARExtUBars DataModel_ARExtUBars => GlobalPage08.DataModel_ARExtUBars;
 
-        public DataModel_ARExteriorCircularTop DataModel_ARExteriorCircularTop
-        {
-            get => GlobalDataModelsPage08.DataModel_ARExteriorCircularTop;
-            set => GlobalDataModelsPage08.DataModel_ARExteriorCircularTop = value;
-        }
-
-        public DataModel_ARExteriorCircularLateral DataModel_ARExteriorCircularLateral
-        {
-            get => GlobalDataModelsPage08.DataModel_ARExteriorCircularLateral;
-            set => GlobalDataModelsPage08.DataModel_ARExteriorCircularLateral = value;
-        }
-
-        public DataModel_ARExteriorCircularBottom DataModel_ARExteriorCircularBottom
-        {
-            get => GlobalDataModelsPage08.DataModel_ARExteriorCircularBottom;
-            set => GlobalDataModelsPage08.DataModel_ARExteriorCircularBottom = value;
-        }
-
-        public DataModel_ARIntUBars DataModel_ARIntUBars
-        {
-            get => GlobalDataModelsPage08.DataModel_ARIntUBars;
-            set => GlobalDataModelsPage08.DataModel_ARIntUBars = value;
-        }
-        public DataModel_ARIntCircularTop DataModel_ARIntCircularTop
-        {
-            get => GlobalDataModelsPage08.DataModel_ARIntCircularTop;
-            set => GlobalDataModelsPage08.DataModel_ARIntCircularTop = value;
-        }
-        public DataModel_ARIntCircularLateral DataModel_ARIntCircularLateral
-        {
-            get => GlobalDataModelsPage08.DataModel_ARIntCircularLateral;
-            set => GlobalDataModelsPage08.DataModel_ARIntCircularLateral = value;
-        }
-
-        public DataModel_ARIntCircularBottom DataModel_ARIntCircularBottom
-        {
-            get => GlobalDataModelsPage08.DataModel_ARIntCircularBottom;
-            set => GlobalDataModelsPage08.DataModel_ARIntCircularBottom = value;
-        }
+        public DataModel_ARExteriorCircularTop DataModel_ARExteriorCircularTop => GlobalPage08.DataModel_ARExteriorCircularTop;
+       
+        public DataModel_ARExteriorCircularLateral DataModel_ARExteriorCircularLateral => GlobalPage08.DataModel_ARExteriorCircularLateral;
+       
+        public DataModel_ARExteriorCircularBottom DataModel_ARExteriorCircularBottom => GlobalPage08.DataModel_ARExteriorCircularBottom;
         
+        public DataModel_ARIntUBars DataModel_ARIntUBars => GlobalPage08.DataModel_ARIntUBars;
+       
+        public DataModel_ARIntCircularTop DataModel_ARIntCircularTop => GlobalPage08.DataModel_ARIntCircularTop;
+      
+        public DataModel_ARIntCircularLateral DataModel_ARIntCircularLateral => GlobalPage08.DataModel_ARIntCircularLateral;
+        
+        public DataModel_ARIntCircularBottom DataModel_ARIntCircularBottom => GlobalPage08.DataModel_ARIntCircularBottom;
+              
         public Page08()
         {
             InitializeComponent();
@@ -77,15 +47,7 @@ namespace WindBarrierReinforcement
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            CultureRenamer.RenameCollection(UI_Grid_ArExtU.Children);
-            CultureRenamer.RenameTextBlock(UI_TextBlock_Title);
-            CultureRenamer.RenameCollection(UI_Grid_AR_ECT.Children);
-            CultureRenamer.RenameCollection(UI_Grid_AR_ECL.Children);
-            CultureRenamer.RenameCollection(UI_Grid_AR_ECB.Children);
-            CultureRenamer.RenameCollection(UI_Grid_Ar_Int.Children);
-            CultureRenamer.RenameCollection(UI_Grid_AR_ICT.Children);
-            CultureRenamer.RenameCollection(UI_Grid_AR_ICL.Children);
-            CultureRenamer.RenameCollection(UI_Grid_AR_ICB.Children);
+            CultureRenamer.Rename(UI_Grid_Page8_Master);
         }
     }
 }

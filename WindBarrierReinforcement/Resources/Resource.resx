@@ -117,6 +117,42 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Concrete_C12_15_OB" xml:space="preserve">
+    <value>C12/15-OB</value>
+    <comment>EConcreteQuality</comment>
+  </data>
+  <data name="Concrete_C35_37_GB" xml:space="preserve">
+    <value>C35/37-GB</value>
+    <comment>EConcreteQuality</comment>
+  </data>
+  <data name="Concrete_C45_55_GB" xml:space="preserve">
+    <value>C45/55-GB</value>
+    <comment>EConcreteQuality</comment>
+  </data>
+  <data name="Concrete_C_12_45_OB" xml:space="preserve">
+    <value>C12/45-OB</value>
+    <comment>EConcreteQuality</comment>
+  </data>
+  <data name="Concrete_C_90_105_OB" xml:space="preserve">
+    <value>C90/105-OB</value>
+    <comment>EConcreteQuality</comment>
+  </data>
+  <data name="ConsistenceTolerance_S1" xml:space="preserve">
+    <value>S1</value>
+    <comment>EConsistenceTolerance - slump</comment>
+  </data>
+  <data name="ConsistenceTolerance_S2" xml:space="preserve">
+    <value>S2</value>
+    <comment>EConsistenceTolerance - slump</comment>
+  </data>
+  <data name="ConsistenceTolerance_S3" xml:space="preserve">
+    <value>S3</value>
+    <comment>EConsistenceTolerance - slump</comment>
+  </data>
+  <data name="ConsistenceTolerance_S4" xml:space="preserve">
+    <value>S4</value>
+    <comment>EConsistenceTolerance - slump</comment>
+  </data>
   <data name="EDiameters_D10" xml:space="preserve">
     <value>D10</value>
   </data>
@@ -144,6 +180,9 @@
   <data name="EDiameters_D40" xml:space="preserve">
     <value>D40</value>
   </data>
+  <data name="EDiameters_D50" xml:space="preserve">
+    <value>D50</value>
+  </data>
   <data name="EDiameters_D6" xml:space="preserve">
     <value>D6</value>
   </data>
@@ -164,6 +203,50 @@
   </data>
   <data name="EOption_Spacing_Length" xml:space="preserve">
     <value>Spacing&amp;Length</value>
+  </data>
+  <data name="ExposureClass_X0" xml:space="preserve">
+    <value>X0</value>
+    <comment>EExposureClass</comment>
+  </data>
+  <data name="ExposureClass_XC1" xml:space="preserve">
+    <value>XC1</value>
+    <comment>EExposureClass</comment>
+  </data>
+  <data name="ExposureClass_XC2" xml:space="preserve">
+    <value>XC2</value>
+    <comment>EExposureClass</comment>
+  </data>
+  <data name="ExposureClass_XC3" xml:space="preserve">
+    <value>XC3</value>
+    <comment>EExposureClass</comment>
+  </data>
+  <data name="ExposureClass_XC4" xml:space="preserve">
+    <value>XC4</value>
+    <comment>EExposureClass</comment>
+  </data>
+  <data name="ExposureClass_XD1" xml:space="preserve">
+    <value>XD1</value>
+    <comment>EExposureClass</comment>
+  </data>
+  <data name="ExposureClass_XD2" xml:space="preserve">
+    <value>XD2</value>
+    <comment>EExposureClass</comment>
+  </data>
+  <data name="ExposureClass_XD3" xml:space="preserve">
+    <value>XD3</value>
+    <comment>EExposureClass</comment>
+  </data>
+  <data name="HookType_A" xml:space="preserve">
+    <value>A(Over Top Radial Bars)</value>
+    <comment>EHookTypes</comment>
+  </data>
+  <data name="HookType_B" xml:space="preserve">
+    <value>B(Over Edge Verticals)</value>
+    <comment>EHookTypes</comment>
+  </data>
+  <data name="HookType_C" xml:space="preserve">
+    <value>C(None)</value>
+    <comment>EHookTypes</comment>
   </data>
   <data name="Page01" xml:space="preserve">
     <value>Global</value>

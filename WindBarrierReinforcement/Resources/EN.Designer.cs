@@ -61,56 +61,20 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bolt Diameter.
+        ///   Looks up a localized string similar to Nu.
         /// </summary>
-        internal static string Lbl_Anc_BoltDiameter {
+        internal static string General_No {
             get {
-                return ResourceManager.GetString("Lbl_Anc_BoltDiameter", resourceCulture);
+                return ResourceManager.GetString("General_No", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bolt Length.
+        ///   Looks up a localized string similar to Da.
         /// </summary>
-        internal static string Lbl_Anc_BoltLength {
+        internal static string General_Yes {
             get {
-                return ResourceManager.GetString("Lbl_Anc_BoltLength", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Bottom Anchor Nut.
-        /// </summary>
-        internal static string Lbl_Anc_BottomAnchorNut {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_BottomAnchorNut", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth Anchor.
-        /// </summary>
-        internal static string Lbl_Anc_DepthAnchor {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_DepthAnchor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth Anchor Bottom.
-        /// </summary>
-        internal static string Lbl_Anc_DepthAnchorBottom {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_DepthAnchorBottom", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth Concrete Bed.
-        /// </summary>
-        internal static string Lbl_Anc_DepthConcreteBed {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_DepthConcreteBed", resourceCulture);
+                return ResourceManager.GetString("General_Yes", resourceCulture);
             }
         }
         
@@ -129,150 +93,6 @@ namespace WindBarrierReinforcement.Resources {
         internal static string Lbl_Anc_DiameterAnchorInt {
             get {
                 return ResourceManager.GetString("Lbl_Anc_DiameterAnchorInt", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Dispance Bolt Pairs.
-        /// </summary>
-        internal static string Lbl_Anc_DispanceBoltPairs {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_DispanceBoltPairs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fillet Bottom Zone.
-        /// </summary>
-        internal static string Lbl_Anc_FilletBottomZone {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_FilletBottomZone", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fillet Top Zone.
-        /// </summary>
-        internal static string Lbl_Anc_FilletTopZone {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_FilletTopZone", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Insertion Depth Top Flange.
-        /// </summary>
-        internal static string Lbl_Anc_InsertionDepthTopFlange {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_InsertionDepthTopFlange", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Materia lGrout.
-        /// </summary>
-        internal static string Lbl_Anc_MaterialGrout {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_MaterialGrout", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No Bolt Pairs.
-        /// </summary>
-        internal static string Lbl_Anc_NoBoltPairs {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_NoBoltPairs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Number Suppports.
-        /// </summary>
-        internal static string Lbl_Anc_NumberSuppports {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_NumberSuppports", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Offset Bott Flange.
-        /// </summary>
-        internal static string Lbl_Anc_OffsetBottFlange {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_OffsetBottFlange", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Pe Shrink Hose Heigth.
-        /// </summary>
-        internal static string Lbl_Anc_Peshrinkhoseheigth {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_Peshrinkhoseheigth", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Radius Centerline Tower.
-        /// </summary>
-        internal static string Lbl_Anc_RadiusCenterlineTower {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_RadiusCenterlineTower", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Thickness Bott Flange.
-        /// </summary>
-        internal static string Lbl_Anc_ThicknessBottFlange {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_ThicknessBottFlange", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Thickness Top Flange.
-        /// </summary>
-        internal static string Lbl_Anc_ThicknessTopFlange {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_ThicknessTopFlange", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Top Anchor Nut.
-        /// </summary>
-        internal static string Lbl_Anc_TopAnchorNut {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_TopAnchorNut", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width Bott Flange.
-        /// </summary>
-        internal static string Lbl_Anc_WidthBottFlange {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_WidthBottFlange", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width Concrete Bed.
-        /// </summary>
-        internal static string Lbl_Anc_WidthConcreteBed {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_WidthConcreteBed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Width Top Flange.
-        /// </summary>
-        internal static string Lbl_Anc_WidthTopFlange {
-            get {
-                return ResourceManager.GetString("Lbl_Anc_WidthTopFlange", resourceCulture);
             }
         }
         
@@ -763,641 +583,659 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bottom Cover.
+        ///   Looks up a localized string similar to Group Definition.
         /// </summary>
-        internal static string Lbl_G_BottomCover {
+        internal static string Lbl_CBT_OPTR_Groups {
             get {
-                return ResourceManager.GetString("Lbl_G_BottomCover", resourceCulture);
+                return ResourceManager.GetString("Lbl_CBT_OPTR_Groups", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Coordination X.
+        ///   Looks up a localized string similar to Chairs Over Top Circular.
         /// </summary>
-        internal static string Lbl_G_CoordinationX {
+        internal static string Lbl_CHR_ChairsOverTopCirculars {
             get {
-                return ResourceManager.GetString("Lbl_G_CoordinationX", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Coordination Y.
-        /// </summary>
-        internal static string Lbl_G_CoordinationY {
-            get {
-                return ResourceManager.GetString("Lbl_G_CoordinationY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Coordination Z.
-        /// </summary>
-        internal static string Lbl_G_CoordinationZ {
-            get {
-                return ResourceManager.GetString("Lbl_G_CoordinationZ", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth Foundation.
-        /// </summary>
-        internal static string Lbl_G_DepthFoundation {
-            get {
-                return ResourceManager.GetString("Lbl_G_DepthFoundation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to D Foundation.
-        /// </summary>
-        internal static string Lbl_G_DFoundation {
-            get {
-                return ResourceManager.GetString("Lbl_G_DFoundation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Diameter Anchor.
-        /// </summary>
-        internal static string Lbl_G_DiameterAnchor {
-            get {
-                return ResourceManager.GetString("Lbl_G_DiameterAnchor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to D Tower Base.
-        /// </summary>
-        internal static string Lbl_G_DTowerBase {
-            get {
-                return ResourceManager.GetString("Lbl_G_DTowerBase", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Edge Cover.
-        /// </summary>
-        internal static string Lbl_G_EdgeCover {
-            get {
-                return ResourceManager.GetString("Lbl_G_EdgeCover", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Foundation Bed.
-        /// </summary>
-        internal static string Lbl_G_FoundationBed {
-            get {
-                return ResourceManager.GetString("Lbl_G_FoundationBed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Foundation Point Z.
-        /// </summary>
-        internal static string Lbl_G_FoundationPointZ {
-            get {
-                return ResourceManager.GetString("Lbl_G_FoundationPointZ", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to H Bottom.
-        /// </summary>
-        internal static string Lbl_G_HBottom {
-            get {
-                return ResourceManager.GetString("Lbl_G_HBottom", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to H Foundation.
-        /// </summary>
-        internal static string Lbl_G_HFoundation {
-            get {
-                return ResourceManager.GetString("Lbl_G_HFoundation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to H Foundation Edge.
-        /// </summary>
-        internal static string Lbl_G_HFoundationEdge {
-            get {
-                return ResourceManager.GetString("Lbl_G_HFoundationEdge", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hight Above Ground.
-        /// </summary>
-        internal static string Lbl_G_HightAboveGround {
-            get {
-                return ResourceManager.GetString("Lbl_G_HightAboveGround", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to H Tower Base.
-        /// </summary>
-        internal static string Lbl_G_HTowerBase {
-            get {
-                return ResourceManager.GetString("Lbl_G_HTowerBase", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Material Foundation.
-        /// </summary>
-        internal static string Lbl_G_MaterialFoundation {
-            get {
-                return ResourceManager.GetString("Lbl_G_MaterialFoundation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Material Foundation Bed.
-        /// </summary>
-        internal static string Lbl_G_MaterialFoundationBed {
-            get {
-                return ResourceManager.GetString("Lbl_G_MaterialFoundationBed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Material Tower Base.
-        /// </summary>
-        internal static string Lbl_G_MaterialTowerBase {
-            get {
-                return ResourceManager.GetString("Lbl_G_MaterialTowerBase", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Radius Btc.
-        /// </summary>
-        internal static string Lbl_G_RadiusBtc {
-            get {
-                return ResourceManager.GetString("Lbl_G_RadiusBtc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Radius CenterLine Tower.
-        /// </summary>
-        internal static string Lbl_G_RadiusCenterLineTower {
-            get {
-                return ResourceManager.GetString("Lbl_G_RadiusCenterLineTower", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Top Cover.
-        /// </summary>
-        internal static string Lbl_G_TopCover {
-            get {
-                return ResourceManager.GetString("Lbl_G_TopCover", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Angle.
-        /// </summary>
-        internal static string Lbl_PilesAngle_1 {
-            get {
-                return ResourceManager.GetString("Lbl_PilesAngle_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Circle Diameter.
-        /// </summary>
-        internal static string Lbl_PilesCircleDiameter_1 {
-            get {
-                return ResourceManager.GetString("Lbl_PilesCircleDiameter_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Depth Pile.
-        /// </summary>
-        internal static string Lbl_PilesDepthPile_1 {
-            get {
-                return ResourceManager.GetString("Lbl_PilesDepthPile_1", resourceCulture);
+                return ResourceManager.GetString("Lbl_CHR_ChairsOverTopCirculars", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Diameter.
         /// </summary>
-        internal static string Lbl_PilesDir1_Diameters {
+        internal static string Lbl_CHR_Diameter {
             get {
-                return ResourceManager.GetString("Lbl_PilesDir1_Diameters", resourceCulture);
+                return ResourceManager.GetString("Lbl_CHR_Diameter", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Div Per Curve.
+        ///   Looks up a localized string similar to Edge Offset.
         /// </summary>
-        internal static string Lbl_PilesdivPerCurve_1 {
+        internal static string Lbl_CHR_EdgeOffset {
             get {
-                return ResourceManager.GetString("Lbl_PilesdivPerCurve_1", resourceCulture);
+                return ResourceManager.GetString("Lbl_CHR_EdgeOffset", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forces.
+        ///   Looks up a localized string similar to Hook Length.
         /// </summary>
-        internal static string Lbl_PilesForces_1 {
+        internal static string Lbl_CHR_HookLength {
             get {
-                return ResourceManager.GetString("Lbl_PilesForces_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Long Rebar Diameter.
-        /// </summary>
-        internal static string Lbl_PilesLongRebarDiam {
-            get {
-                return ResourceManager.GetString("Lbl_PilesLongRebarDiam", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Material Piles.
-        /// </summary>
-        internal static string Lbl_PilesMaterial_Piles_1 {
-            get {
-                return ResourceManager.GetString("Lbl_PilesMaterial_Piles_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No Piles.
-        /// </summary>
-        internal static string Lbl_PilesNo_Piles_1 {
-            get {
-                return ResourceManager.GetString("Lbl_PilesNo_Piles_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No Of Long Rebars.
-        /// </summary>
-        internal static string Lbl_PilesNoOfLongRebars {
-            get {
-                return ResourceManager.GetString("Lbl_PilesNoOfLongRebars", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to pile Depth.
-        /// </summary>
-        internal static string Lbl_PilespileDepth_1 {
-            get {
-                return ResourceManager.GetString("Lbl_PilespileDepth_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Top Long Extension.
-        /// </summary>
-        internal static string Lbl_PilesPR_TopLongExtension {
-            get {
-                return ResourceManager.GetString("Lbl_PilesPR_TopLongExtension", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Bottom Cover.
-        /// </summary>
-        internal static string Lbl_PilesPRBottomCover_1 {
-            get {
-                return ResourceManager.GetString("Lbl_PilesPRBottomCover_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Slope.
-        /// </summary>
-        internal static string Lbl_PilesSlope_1 {
-            get {
-                return ResourceManager.GetString("Lbl_PilesSlope_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spacing.
-        /// </summary>
-        internal static string Lbl_PilesSpacing_Layer1_1 {
-            get {
-                return ResourceManager.GetString("Lbl_PilesSpacing_Layer1_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Stirrup Radius.
-        /// </summary>
-        internal static string Lbl_PilesStirrupRadius_Layer1_1 {
-            get {
-                return ResourceManager.GetString("Lbl_PilesStirrupRadius_Layer1_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Top Cover.
-        /// </summary>
-        internal static string Lbl_PilesTopCover_1 {
-            get {
-                return ResourceManager.GetString("Lbl_PilesTopCover_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Bottom Cover.
-        /// </summary>
-        internal static string Lbl_UPBR_BottomCover {
-            get {
-                return ResourceManager.GetString("Lbl_UPBR_BottomCover", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Diameter.
-        /// </summary>
-        internal static string Lbl_UPBR_C_Diameter {
-            get {
-                return ResourceManager.GetString("Lbl_UPBR_C_Diameter", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Option.
-        /// </summary>
-        internal static string Lbl_UPBR_C_Dir2_Option {
-            get {
-                return ResourceManager.GetString("Lbl_UPBR_C_Dir2_Option", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spacing.
-        /// </summary>
-        internal static string Lbl_UPBR_C_Dir2_SpacingValue {
-            get {
-                return ResourceManager.GetString("Lbl_UPBR_C_Dir2_SpacingValue", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Max Length.
-        /// </summary>
-        internal static string Lbl_UPBR_C_MaxLength {
-            get {
-                return ResourceManager.GetString("Lbl_UPBR_C_MaxLength", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No Of Bars.
-        /// </summary>
-        internal static string Lbl_UPBR_C_NoOfBars {
-            get {
-                return ResourceManager.GetString("Lbl_UPBR_C_NoOfBars", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Overlap Length.
-        /// </summary>
-        internal static string Lbl_UPBR_C_OverlapLength {
-            get {
-                return ResourceManager.GetString("Lbl_UPBR_C_OverlapLength", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Diameter.
-        /// </summary>
-        internal static string Lbl_UPBR_Dir1_Diameter {
-            get {
-                return ResourceManager.GetString("Lbl_UPBR_Dir1_Diameter", resourceCulture);
+                return ResourceManager.GetString("Lbl_CHR_HookLength", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Radial Spacing.
         /// </summary>
-        internal static string Lbl_UPBR_Dir1_L_RadialSpacing {
+        internal static string Lbl_CHR_RadialSpacing {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_Dir1_L_RadialSpacing", resourceCulture);
+                return ResourceManager.GetString("Lbl_CHR_RadialSpacing", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No Of Bars.
+        ///   Looks up a localized string similar to Tangential Spacing.
         /// </summary>
-        internal static string Lbl_UPBR_Dir1_NoOfBars {
+        internal static string Lbl_CHR_SpacingValueTangential {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_Dir1_NoOfBars", resourceCulture);
+                return ResourceManager.GetString("Lbl_CHR_SpacingValueTangential", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Option.
+        ///   Looks up a localized string similar to Top Chair Overlap.
         /// </summary>
-        internal static string Lbl_UPBR_Dir1_Option {
+        internal static string Lbl_CHR_TopChairOverlapp {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_Dir1_Option", resourceCulture);
+                return ResourceManager.GetString("Lbl_CHR_TopChairOverlapp", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spacing.
+        ///   Looks up a localized string similar to Zone 1.
         /// </summary>
-        internal static string Lbl_UPBR_Dir1_Spacing {
+        internal static string Lbl_CHR_Zone1 {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_Dir1_Spacing", resourceCulture);
+                return ResourceManager.GetString("Lbl_CHR_Zone1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Diameter.
+        ///   Looks up a localized string similar to Zone 2.
         /// </summary>
-        internal static string Lbl_UPBR_Dir2_Diameter {
+        internal static string Lbl_CHR_Zone2 {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_Dir2_Diameter", resourceCulture);
+                return ResourceManager.GetString("Lbl_CHR_Zone2", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No Of Bars.
+        ///   Looks up a localized string similar to Zone Length.
         /// </summary>
-        internal static string Lbl_UPBR_Dir2_NoOfBars {
+        internal static string Lbl_CHR_ZoneLength {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_Dir2_NoOfBars", resourceCulture);
+                return ResourceManager.GetString("Lbl_CHR_ZoneLength", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Option.
+        ///   Looks up a localized string similar to Zones.
         /// </summary>
-        internal static string Lbl_UPBR_Dir2_Option {
+        internal static string Lbl_CHR_Zones {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_Dir2_Option", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spacing.
-        /// </summary>
-        internal static string Lbl_UPBR_Dir2_SpacingValue {
-            get {
-                return ResourceManager.GetString("Lbl_UPBR_Dir2_SpacingValue", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Horizontal Edge Cover.
-        /// </summary>
-        internal static string Lbl_UPBR_HorizontalEdgeCover {
-            get {
-                return ResourceManager.GetString("Lbl_UPBR_HorizontalEdgeCover", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Bend Angle.
-        /// </summary>
-        internal static string Lbl_UPBR_L_BendAngle {
-            get {
-                return ResourceManager.GetString("Lbl_UPBR_L_BendAngle", resourceCulture);
+                return ResourceManager.GetString("Lbl_CHR_Zones", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Diameter.
         /// </summary>
-        internal static string Lbl_UPBR_L_Diameter {
+        internal static string Lbl_OPTR_CBT_CircularBarDiam {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_L_Diameter", resourceCulture);
+                return ResourceManager.GetString("Lbl_OPTR_CBT_CircularBarDiam", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to L x.
+        ///   Looks up a localized string similar to Maximum Length.
         /// </summary>
-        internal static string Lbl_UPBR_Lx {
+        internal static string Lbl_OPTR_CBT_CircularTop_MaxLength {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_Lx", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to L y.
-        /// </summary>
-        internal static string Lbl_UPBR_Ly {
-            get {
-                return ResourceManager.GetString("Lbl_UPBR_Ly", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Diameter.
-        /// </summary>
-        internal static string Lbl_UPBR_TB_Dir1_Diameter {
-            get {
-                return ResourceManager.GetString("Lbl_UPBR_TB_Dir1_Diameter", resourceCulture);
+                return ResourceManager.GetString("Lbl_OPTR_CBT_CircularTop_MaxLength", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to No Of Bars.
         /// </summary>
-        internal static string Lbl_UPBR_TB_Dir1_NoOfBars {
+        internal static string Lbl_OPTR_CBT_CircularTop_NoBars {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_TB_Dir1_NoOfBars", resourceCulture);
+                return ResourceManager.GetString("Lbl_OPTR_CBT_CircularTop_NoBars", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Option.
+        ///   Looks up a localized string similar to Overlap Length.
         /// </summary>
-        internal static string Lbl_UPBR_TB_Dir1_Option {
+        internal static string Lbl_OPTR_CBT_CircularTop_Overlap {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_TB_Dir1_Option", resourceCulture);
+                return ResourceManager.GetString("Lbl_OPTR_CBT_CircularTop_Overlap", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Spacing.
         /// </summary>
-        internal static string Lbl_UPBR_TB_Dir1_SpacingValue {
+        internal static string Lbl_OPTR_CBT_CircularTop_Spacing {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_TB_Dir1_SpacingValue", resourceCulture);
+                return ResourceManager.GetString("Lbl_OPTR_CBT_CircularTop_Spacing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Option.
+        /// </summary>
+        internal static string Lbl_OPTR_CBT_Option {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CBT_Option", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Diameter.
         /// </summary>
-        internal static string Lbl_UPBR_TB_Dir2_Diameter {
+        internal static string Lbl_OPTR_CircularMargin_Diameter {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_TB_Dir2_Diameter", resourceCulture);
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_Diameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum Length.
+        /// </summary>
+        internal static string Lbl_OPTR_CircularMargin_MaxLength {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_MaxLength", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to No Of Bars.
         /// </summary>
-        internal static string Lbl_UPBR_TB_Dir2_NoOfBars {
+        internal static string Lbl_OPTR_CircularMargin_NoBars {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_TB_Dir2_NoOfBars", resourceCulture);
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_NoBars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Offset From Top Bend.
+        /// </summary>
+        internal static string Lbl_OPTR_CircularMargin_Offset {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_Offset", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Option.
         /// </summary>
-        internal static string Lbl_UPBR_TB_Dir2_Option {
+        internal static string Lbl_OPTR_CircularMargin_Option {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_TB_Dir2_Option", resourceCulture);
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_Option", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overlap Length.
+        /// </summary>
+        internal static string Lbl_OPTR_CircularMargin_Overlap {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_Overlap", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Spacing.
         /// </summary>
-        internal static string Lbl_UPBR_TB_Dir2_SpacingValue {
+        internal static string Lbl_OPTR_CircularMargin_Spacing {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_TB_Dir2_SpacingValue", resourceCulture);
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_Spacing", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Min Length Rebar.
+        ///   Looks up a localized string similar to Custom Length.
         /// </summary>
-        internal static string Lbl_UPBR_TB_MinLengthRebar {
+        internal static string Lbl_OPTR_CircularMargin_Spacing_CustomLength {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_TB_MinLengthRebar", resourceCulture);
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_Spacing_CustomLength", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Offset From Bottom.
+        ///   Looks up a localized string similar to Use Default Length.
         /// </summary>
-        internal static string Lbl_UPBR_TB_OffsetFromBottom {
+        internal static string Lbl_OPTR_CircularMargin_Spacing_UseDefaultLength {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_TB_OffsetFromBottom", resourceCulture);
+                return ResourceManager.GetString("Lbl_OPTR_CircularMargin_Spacing_UseDefaultLength", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Radius Of Rebars.
+        ///   Looks up a localized string similar to Diameter.
         /// </summary>
-        internal static string Lbl_UPBR_TB_RadiusOfRebars {
+        internal static string Lbl_OPTR_Dir1_Diameter {
             get {
-                return ResourceManager.GetString("Lbl_UPBR_TB_RadiusOfRebars", resourceCulture);
+                return ResourceManager.GetString("Lbl_OPTR_Dir1_Diameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edge Cover.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir1_EdgeCover {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir1_EdgeCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to L-Shape X.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir1_Lx {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir1_Lx", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to L-Shape Y.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir1_Ly {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir1_Ly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Of Bars.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir1_NoOfBars {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir1_NoOfBars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Option.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir1_Option {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir1_Option", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spacing.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir1_SpacingValue {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir1_SpacingValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimum Bar Length.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir12_Extra_MinBarLength {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir12_Extra_MinBarLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Offset From TowerCenterLine.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir12_Extra_TowerAxisTopOffset {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir12_Extra_TowerAxisTopOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diameter.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir2_Diameter {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir2_Diameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edge Cover.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir2_EdgeCover {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir2_EdgeCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to L-Shape X.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir2_Lx {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir2_Lx", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to L-Shape Y.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir2_Ly {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir2_Ly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Of Bars.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir2_NoOfBars {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir2_NoOfBars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Option.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir2_Option {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir2_Option", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spacing.
+        /// </summary>
+        internal static string Lbl_OPTR_Dir2_SpacingValue {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_Dir2_SpacingValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom Cover.
+        /// </summary>
+        internal static string Lbl_OPTR_RAE_BottomCover {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_RAE_BottomCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom Edge Length.
+        /// </summary>
+        internal static string Lbl_OPTR_RAE_BottomEdgeLength {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_RAE_BottomEdgeLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edge Cover.
+        /// </summary>
+        internal static string Lbl_OPTR_RAE_EdgeCover {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_RAE_EdgeCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interior Edge Length.
+        /// </summary>
+        internal static string Lbl_OPTR_RAE_InteriorEdgeLength {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_RAE_InteriorEdgeLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diameter.
+        /// </summary>
+        internal static string Lbl_OPTR_RAE_RadialBarDiameter {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_RAE_RadialBarDiameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top Cover.
+        /// </summary>
+        internal static string Lbl_OPTR_RAE_TopCover {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_RAE_TopCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Offset From Anchor Centerline.
+        /// </summary>
+        internal static string Lbl_OPTR_RAE_TowerAxisCover {
+            get {
+                return ResourceManager.GetString("Lbl_OPTR_RAE_TowerAxisCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diameter.
+        /// </summary>
+        internal static string Lbl_UBAB_Diameter {
+            get {
+                return ResourceManager.GetString("Lbl_UBAB_Diameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Distance From Top Of Concrete.
+        /// </summary>
+        internal static string Lbl_UBAB_DistanceFromTop {
+            get {
+                return ResourceManager.GetString("Lbl_UBAB_DistanceFromTop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exterior Half Length.
+        /// </summary>
+        internal static string Lbl_UBAB_ExteriorHalfLength {
+            get {
+                return ResourceManager.GetString("Lbl_UBAB_ExteriorHalfLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Free Edge Length.
+        /// </summary>
+        internal static string Lbl_UBAB_FreeEdgeLength {
+            get {
+                return ResourceManager.GetString("Lbl_UBAB_FreeEdgeLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interior Half Length.
+        /// </summary>
+        internal static string Lbl_UBAB_InteriorHalfLength {
+            get {
+                return ResourceManager.GetString("Lbl_UBAB_InteriorHalfLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Small Edge.
+        /// </summary>
+        internal static string Lbl_UBAB_SmallEdge {
+            get {
+                return ResourceManager.GetString("Lbl_UBAB_SmallEdge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom Reinforcement.
+        /// </summary>
+        internal static string Tb_BottomReinforcement {
+            get {
+                return ResourceManager.GetString("Tb_BottomReinforcement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chairs.
+        /// </summary>
+        internal static string Tb_CHR_Title {
+            get {
+                return ResourceManager.GetString("Tb_CHR_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Additional Information.
+        /// </summary>
+        internal static string Tb_P11_AdditionalInformation {
+            get {
+                return ResourceManager.GetString("Tb_P11_AdditionalInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Concrete Cover.
+        /// </summary>
+        internal static string Tb_P11_ConcreteCover {
+            get {
+                return ResourceManager.GetString("Tb_P11_ConcreteCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Concrete Quality.
+        /// </summary>
+        internal static string Tb_P11_ConcreteQuality {
+            get {
+                return ResourceManager.GetString("Tb_P11_ConcreteQuality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Envelope Around Concrete.
+        /// </summary>
+        internal static string Tb_P11_EnvelopeAroundConcrete {
+            get {
+                return ResourceManager.GetString("Tb_P11_EnvelopeAroundConcrete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exposure Class.
+        /// </summary>
+        internal static string Tb_P11_Exposure_Class {
+            get {
+                return ResourceManager.GetString("Tb_P11_Exposure_Class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Foundation.
+        /// </summary>
+        internal static string Tb_P11_Foundation {
+            get {
+                return ResourceManager.GetString("Tb_P11_Foundation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Foundation Piles.
+        /// </summary>
+        internal static string Tb_P11_FoundationPiles {
+            get {
+                return ResourceManager.GetString("Tb_P11_FoundationPiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Foundation Tower Base.
+        /// </summary>
+        internal static string Tb_P11_FoundationTowerBase {
+            get {
+                return ResourceManager.GetString("Tb_P11_FoundationTowerBase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grouting.
+        /// </summary>
+        internal static string Tb_P11_Grouting {
+            get {
+                return ResourceManager.GetString("Tb_P11_Grouting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lean Concrete.
+        /// </summary>
+        internal static string Tb_P11_LeanConcrete {
+            get {
+                return ResourceManager.GetString("Tb_P11_LeanConcrete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum Granulates Size.
+        /// </summary>
+        internal static string Tb_P11_MaximumGranulatesSize {
+            get {
+                return ResourceManager.GetString("Tb_P11_MaximumGranulatesSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consistency Class.
+        /// </summary>
+        internal static string Tb_P11_Slump {
+            get {
+                return ResourceManager.GetString("Tb_P11_Slump", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to U Bars Near Bolts.
+        /// </summary>
+        internal static string Tb_Page09_Title {
+            get {
+                return ResourceManager.GetString("Tb_Page09_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Materials.
+        /// </summary>
+        internal static string Tb_Page11_Title {
+            get {
+                return ResourceManager.GetString("Tb_Page11_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter values for.
+        /// </summary>
+        internal static string Tb_UBAB_Label_Title {
+            get {
+                return ResourceManager.GetString("Tb_UBAB_Label_Title", resourceCulture);
             }
         }
         
@@ -1411,47 +1249,11 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Global.
+        ///   Looks up a localized string similar to Over Plate Top Reinforcement.
         /// </summary>
-        internal static string Txt_Global {
+        internal static string Txt_OverPlateTopReinforcementTitle {
             get {
-                return ResourceManager.GetString("Txt_Global", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Piles.
-        /// </summary>
-        internal static string Txt_Piles {
-            get {
-                return ResourceManager.GetString("Txt_Piles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Top Reinforcement.
-        /// </summary>
-        internal static string Txt_Top_Reinforcement {
-            get {
-                return ResourceManager.GetString("Txt_Top_Reinforcement", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Under Plate Bottom Reinforcement.
-        /// </summary>
-        internal static string Txt_Under_Plate_Bottom_Reinforcement {
-            get {
-                return ResourceManager.GetString("Txt_Under_Plate_Bottom_Reinforcement", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enter values for.
-        /// </summary>
-        internal static string UBAB_Label_Title {
-            get {
-                return ResourceManager.GetString("UBAB_Label_Title", resourceCulture);
+                return ResourceManager.GetString("Txt_OverPlateTopReinforcementTitle", resourceCulture);
             }
         }
     }

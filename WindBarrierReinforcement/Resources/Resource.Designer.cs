@@ -61,6 +61,87 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to C12/45-OB.
+        /// </summary>
+        internal static string Concrete_C_12_45_OB {
+            get {
+                return ResourceManager.GetString("Concrete_C_12_45_OB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C90/105-OB.
+        /// </summary>
+        internal static string Concrete_C_90_105_OB {
+            get {
+                return ResourceManager.GetString("Concrete_C_90_105_OB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C12/15-OB.
+        /// </summary>
+        internal static string Concrete_C12_15_OB {
+            get {
+                return ResourceManager.GetString("Concrete_C12_15_OB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C35/37-GB.
+        /// </summary>
+        internal static string Concrete_C35_37_GB {
+            get {
+                return ResourceManager.GetString("Concrete_C35_37_GB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C45/55-GB.
+        /// </summary>
+        internal static string Concrete_C45_55_GB {
+            get {
+                return ResourceManager.GetString("Concrete_C45_55_GB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to S1.
+        /// </summary>
+        internal static string ConsistenceTolerance_S1 {
+            get {
+                return ResourceManager.GetString("ConsistenceTolerance_S1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to S2.
+        /// </summary>
+        internal static string ConsistenceTolerance_S2 {
+            get {
+                return ResourceManager.GetString("ConsistenceTolerance_S2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to S3.
+        /// </summary>
+        internal static string ConsistenceTolerance_S3 {
+            get {
+                return ResourceManager.GetString("ConsistenceTolerance_S3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to S4.
+        /// </summary>
+        internal static string ConsistenceTolerance_S4 {
+            get {
+                return ResourceManager.GetString("ConsistenceTolerance_S4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to D10.
         /// </summary>
         internal static string EDiameters_D10 {
@@ -142,6 +223,15 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to D50.
+        /// </summary>
+        internal static string EDiameters_D50 {
+            get {
+                return ResourceManager.GetString("EDiameters_D50", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to D6.
         /// </summary>
         internal static string EDiameters_D6 {
@@ -201,6 +291,105 @@ namespace WindBarrierReinforcement.Resources {
         internal static string EOption_Spacing_Length {
             get {
                 return ResourceManager.GetString("EOption_Spacing_Length", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to X0.
+        /// </summary>
+        internal static string ExposureClass_X0 {
+            get {
+                return ResourceManager.GetString("ExposureClass_X0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XC1.
+        /// </summary>
+        internal static string ExposureClass_XC1 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XC1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XC2.
+        /// </summary>
+        internal static string ExposureClass_XC2 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XC2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XC3.
+        /// </summary>
+        internal static string ExposureClass_XC3 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XC3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XC4.
+        /// </summary>
+        internal static string ExposureClass_XC4 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XC4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XD1.
+        /// </summary>
+        internal static string ExposureClass_XD1 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XD1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XD2.
+        /// </summary>
+        internal static string ExposureClass_XD2 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XD2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XD3.
+        /// </summary>
+        internal static string ExposureClass_XD3 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XD3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A(Over Top Radial Bars).
+        /// </summary>
+        internal static string HookType_A {
+            get {
+                return ResourceManager.GetString("HookType_A", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to B(Over Edge Verticals).
+        /// </summary>
+        internal static string HookType_B {
+            get {
+                return ResourceManager.GetString("HookType_B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C(None).
+        /// </summary>
+        internal static string HookType_C {
+            get {
+                return ResourceManager.GetString("HookType_C", resourceCulture);
             }
         }
         

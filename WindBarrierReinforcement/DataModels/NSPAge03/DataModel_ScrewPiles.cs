@@ -11,12 +11,6 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
 {
     public  class DataModel_ScrewPiles : DataModel
     {
-        private Page03 page03;
-        public DataModel_ScrewPiles(Page03 page03)
-        {
-            this.page03 = page03;
-        }
-
         private int row;
         public int Row
         {

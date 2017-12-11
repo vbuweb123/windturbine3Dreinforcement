@@ -11,9 +11,12 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
 {
     public class DataModel_CircularBarsExteriorSide : DataModel
     {
+        public List<String> OptionNamesCBES => EnumHelpers.GetEnumDisplayText(typeof(EOptionsCBES));
+        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
         /// <summary>
         /// UI_TextBox_OPTR_CircularMargin_Diameter
-        /// </summary>        
+        /// </summary>      
+        /// 
         private int selectedIndexDiameter;
         public int SelectedIndexDiameter
         {
@@ -21,12 +24,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
         }      
 
-        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
-
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameter = 0;
-        }
 
         /// <summary>
         /// UI_TextBox_OPTR_CircularMargin_Option
@@ -35,24 +32,26 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
-            set { selectedIndexOption = value; NotifyPropertyChanged("SelectedIndexOption"); NotifyPropertyChanged("SpacingEnabled"); }
+            set { selectedIndexOption = value; NotifyPropertyChanged("SelectedIndexOption"); NotifyPropertyChanged("SelectedOptionName"); }
         }
-        public List<String> OptionNamesCBES => EnumHelpers.GetEnumDisplayText(typeof(EOptionsCBES));
 
-        public string SpacingEnabled
+        private int selectedTrueFalseOption;
+        public int SelectedTrueFalseOption
         {
-            get
-            {
-                if (SelectedIndexOption == 0)
-                    return "0";
-                else
-                    if (SelectedIndexOption == 1)
-                {
-                    return "1";
-                }
-                    return "2";
-            }
+            get { return selectedTrueFalseOption; }
+            set { selectedTrueFalseOption = value; NotifyPropertyChanged("SelectedTrueFalseOption"); }
         }
+        /// <summary>
+        /// UI_TextBox_OPTR_CircularMargin_Overlap
+        /// </summary>
+        private bool useDefaultLength;
+        public bool UseDefaultLength
+        {
+            get { return useDefaultLength; }
+            set { useDefaultLength = value; NotifyPropertyChanged("UseDefaultLength"); }
+        }
+        //binded to Style (IsEnabled) triggers to textblocks. Styles maybe defined in XamlResources
+        public string SelectedOptionName => Enum.GetName(typeof(EOptionsCBES), SelectedIndexOption);
 
         /// <summary>
         /// UI_TextBox_OPTR_CircularTop_NoBars
@@ -114,14 +113,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             set { overlap = value; NotifyPropertyChanged("Overlap"); }
         }
 
-        /// <summary>
-        /// UI_TextBox_OPTR_CircularMargin_Overlap
-        /// </summary>
-        private bool useDefaultLength;
-        public bool UseDefaultLength
+       
+
+        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            get { return useDefaultLength; }
-            set { useDefaultLength = value; NotifyPropertyChanged("UseDefaultLength"); }
+            SelectedIndexDiameter = 0;
         }
     }
 }
