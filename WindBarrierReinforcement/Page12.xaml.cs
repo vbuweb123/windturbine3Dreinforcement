@@ -23,10 +23,12 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page12 : Page
     {
-        public ObservableCollection<DataModelBSShapes> DataModelShapesCollection => GlobalPageEvts.Global.GlobalPage12.DataModelShapesCollection;
+        public ObservableCollection<DataModelBSShapes> DataModelShapesCollection { get; private set; }
 
-        public Page12()
+        public Page12(GlobalDataModels global)
         {
+            DataModelShapesCollection = global.GDMPage12.DataModelShapesCollection;
+
             InitializeComponent();
             this.DataContext = this;
         }

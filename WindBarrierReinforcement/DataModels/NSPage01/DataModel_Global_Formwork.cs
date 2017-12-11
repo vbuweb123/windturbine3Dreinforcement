@@ -212,9 +212,13 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DeptFoundation));
             }
         }
-        public DataModel_Global_Formwork(EvtHandler evtHandler)
+        private GlobalDataModels global;
+
+        public DataModel_Global_Formwork(GlobalDataModels global)
         {
-            evtHandler.Register(() =>
+            this.global = global;
+
+            global.EvtHandler.Add(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -228,9 +232,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
                 };
             });
 
-            evtHandler.Register(() =>
+            global.EvtHandler.Add(() =>
             {
-                GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
+                global.GDMPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.RadiusCenterLineTower))
                         Set_RadiusCenterLineTower();
@@ -248,7 +252,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         }
         private void Set_RadiusCenterLineTower()
         {
-            RadiusCenterLineTower = GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.RadiusCenterLineTower;
+            RadiusCenterLineTower = this.global.GDMPage02.DataModel_Anchor.RadiusCenterLineTower;
         }
     }
 }

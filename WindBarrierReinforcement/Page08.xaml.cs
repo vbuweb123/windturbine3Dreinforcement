@@ -23,24 +23,33 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page08 : Page
     {
-        public DataModel_ARExtUBars DataModel_ARExtUBars => GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars;
+        public DataModel_ARExtUBars DataModel_ARExtUBars { get; private set; }
 
-        public DataModel_ARExteriorCircularTop DataModel_ARExteriorCircularTop => GlobalPageEvts.Global.GlobalPage08.DataModel_ARExteriorCircularTop;
-       
-        public DataModel_ARExteriorCircularLateral DataModel_ARExteriorCircularLateral => GlobalPageEvts.Global.GlobalPage08.DataModel_ARExteriorCircularLateral;
-       
-        public DataModel_ARExteriorCircularBottom DataModel_ARExteriorCircularBottom => GlobalPageEvts.Global.GlobalPage08.DataModel_ARExteriorCircularBottom;
-        
-        public DataModel_ARIntUBars DataModel_ARIntUBars => GlobalPageEvts.Global.GlobalPage08.DataModel_ARIntUBars;
-       
-        public DataModel_ARIntCircularTop DataModel_ARIntCircularTop => GlobalPageEvts.Global.GlobalPage08.DataModel_ARIntCircularTop;
-      
-        public DataModel_ARIntCircularLateral DataModel_ARIntCircularLateral => GlobalPageEvts.Global.GlobalPage08.DataModel_ARIntCircularLateral;
-        
-        public DataModel_ARIntCircularBottom DataModel_ARIntCircularBottom => GlobalPageEvts.Global.GlobalPage08.DataModel_ARIntCircularBottom;
-              
-        public Page08()
+        public DataModel_ARExteriorCircularTop DataModel_ARExteriorCircularTop { get; private set; }
+
+        public DataModel_ARExteriorCircularLateral DataModel_ARExteriorCircularLateral { get; private set; }
+
+        public DataModel_ARExteriorCircularBottom DataModel_ARExteriorCircularBottom { get; private set; }
+
+        public DataModel_ARIntUBars DataModel_ARIntUBars { get; private set; }
+
+        public DataModel_ARIntCircularTop DataModel_ARIntCircularTop { get; private set; }
+
+        public DataModel_ARIntCircularLateral DataModel_ARIntCircularLateral { get; private set; }
+
+        public DataModel_ARIntCircularBottom DataModel_ARIntCircularBottom { get; private set; }
+
+        public Page08(GlobalDataModels global)
         {
+            DataModel_ARExtUBars = global.GDMPage08.DataModel_ARExtUBars;
+            DataModel_ARExteriorCircularTop = global.GDMPage08.DataModel_ARExteriorCircularTop;
+            DataModel_ARExteriorCircularLateral = global.GDMPage08.DataModel_ARExteriorCircularLateral;
+            DataModel_ARExteriorCircularBottom = global.GDMPage08.DataModel_ARExteriorCircularBottom;
+            DataModel_ARIntUBars = global.GDMPage08.DataModel_ARIntUBars;
+            DataModel_ARIntCircularTop = global.GDMPage08.DataModel_ARIntCircularTop;
+            DataModel_ARIntCircularLateral = global.GDMPage08.DataModel_ARIntCircularLateral;
+            DataModel_ARIntCircularBottom = global.GDMPage08.DataModel_ARIntCircularBottom;
+
             InitializeComponent();
             this.DataContext = this;
         }

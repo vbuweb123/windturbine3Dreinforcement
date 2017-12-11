@@ -7,7 +7,7 @@ using WindBarrierReinforcement.DataModels.NSPage08;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public interface IGlobalPage08
+    public interface IGlobalDataModelsPage08
     {
         DataModel_ARExtUBars DataModel_ARExtUBars { get; }
         DataModel_ARExteriorCircularTop DataModel_ARExteriorCircularTop { get; }
@@ -18,9 +18,9 @@ namespace WindBarrierReinforcement.StaticModel
         DataModel_ARIntCircularBottom DataModel_ARIntCircularBottom { get; }
         DataModel_ARIntCircularLateral DataModel_ARIntCircularLateral { get; }
     }
-    public partial class Global
+    public partial class GlobalDataModels
     {
-        private class _GlobalPage08 : IGlobalPage08
+        private class _GlobalDataModelsPage08 : IGlobalDataModelsPage08
         {
             public DataModel_ARExtUBars DataModel_ARExtUBars { get; private set; }
 
@@ -38,13 +38,13 @@ namespace WindBarrierReinforcement.StaticModel
 
             public DataModel_ARIntCircularLateral DataModel_ARIntCircularLateral { get; private set; }
 
-            public _GlobalPage08(EvtHandler evtHandler)
+            public _GlobalDataModelsPage08(GlobalDataModels global)
             {
                 DataModel_ARExtUBars = new DataModel_ARExtUBars();
                 DataModel_ARExteriorCircularTop = new DataModel_ARExteriorCircularTop();
                 DataModel_ARExteriorCircularLateral = new DataModel_ARExteriorCircularLateral();
                 DataModel_ARExteriorCircularBottom = new DataModel_ARExteriorCircularBottom();
-                DataModel_ARIntUBars = new DataModel_ARIntUBars(evtHandler);
+                DataModel_ARIntUBars = new DataModel_ARIntUBars(global);
                 DataModel_ARIntCircularTop = new DataModel_ARIntCircularTop();
                 DataModel_ARIntCircularBottom = new DataModel_ARIntCircularBottom();
                 DataModel_ARIntCircularLateral = new DataModel_ARIntCircularLateral();

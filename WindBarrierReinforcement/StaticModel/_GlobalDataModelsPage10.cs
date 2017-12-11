@@ -7,23 +7,23 @@ using WindBarrierReinforcement.DataModels.NSPage10;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public interface IGlobalPage10
+    public interface IGlobalDataModelsPage10
     {
         DataModel_CHR_General DataModel_CHR_General { get; }
         DataModel_CHR_Zones DataModel_CHR_Zones { get; }
     }
-    public partial class Global
+    public partial class GlobalDataModels
     {
-        private class _GlobalPage10 : IGlobalPage10
+        private class _GlobalDataModelsPage10 : IGlobalDataModelsPage10
         {
             public DataModel_CHR_General DataModel_CHR_General { get; private set; }
 
             public DataModel_CHR_Zones DataModel_CHR_Zones { get; private set; }
 
-            public _GlobalPage10(EvtHandler eventHandler)
+            public _GlobalDataModelsPage10(GlobalDataModels global)
             {
-                DataModel_CHR_General = new DataModel_CHR_General(eventHandler);
-                DataModel_CHR_Zones  = new DataModel_CHR_Zones(eventHandler);
+                DataModel_CHR_General = new DataModel_CHR_General(global);
+                DataModel_CHR_Zones  = new DataModel_CHR_Zones(global);
             }
         }
     }

@@ -7,18 +7,18 @@ using WindBarrierReinforcement.DataModels.NSPAge03;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public interface IGlobalPage03
+    public interface IGlobalDataModelsPage03
     {
         DataModel_ScrewPiles DataModel_ScrewPile { get; }
     }
-    public partial class Global {
-        private class _GlobalPage03 : IGlobalPage03
+    public partial class GlobalDataModels {
+        private class _GlobalDataModelsPage03 : IGlobalDataModelsPage03
         {
             public DataModel_ScrewPiles DataModel_ScrewPile { get; private set; }
 
-            public _GlobalPage03(EvtHandler evtHandler)
+            public _GlobalDataModelsPage03(GlobalDataModels global)
             {
-                DataModel_ScrewPile = new DataModel_ScrewPiles(evtHandler);
+                DataModel_ScrewPile = new DataModel_ScrewPiles(global);
             }
         }
     }

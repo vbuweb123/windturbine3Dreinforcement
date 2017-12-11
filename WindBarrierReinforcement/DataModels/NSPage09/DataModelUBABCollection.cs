@@ -14,15 +14,18 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
 
         //private int _zoneIndexCurrent = 0;
         private int _maxzones = 10;
-        private EvtHandler evtHandler;
+        private GlobalDataModels global;
+
+
         public DataModelUBAB this[int index]
         {
             get => Collection[index];
         }
 
-        public DataModelUBABCollection(EvtHandler evtHandler)
+        public DataModelUBABCollection(GlobalDataModels global)
         {
-            this.evtHandler = evtHandler;
+            this.global = global;
+
             Collection = new ObservableCollection<DataModelUBAB>();
         }
         public void Add(string zoneName)
@@ -33,7 +36,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
 
                 string zoneNameIndex = zoneName + lastPosition;
 
-                this.Collection.Add(new DataModelUBAB(this.evtHandler, zoneNameIndex, lastPosition));
+                this.Collection.Add(new DataModelUBAB(global, zoneNameIndex, lastPosition));
             }
         }
         public void RemoveAt(int index)

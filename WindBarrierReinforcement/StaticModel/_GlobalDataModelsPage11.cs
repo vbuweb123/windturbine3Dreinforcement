@@ -7,7 +7,7 @@ using WindBarrierReinforcement.DataModels.NSPage11;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public interface IGlobalPage11
+    public interface IGlobalDataModelsPage11
     {
         DataModelMaterials DataModelMaterialsFoundation { get; }
         DataModelMaterials DataModelMaterialsFoundationTowerBase { get; }
@@ -16,9 +16,9 @@ namespace WindBarrierReinforcement.StaticModel
         DataModelMaterials DataModelMaterialsGrouting { get; }
         DataModelMaterials DataModelMaterialsFoundationPile { get; }
     }
-    public partial class Global
+    public partial class GlobalDataModels
     {
-        private class _GlobalPage11 : IGlobalPage11
+        private class _GlobalDataModelsPage11 : IGlobalDataModelsPage11
         {
             public DataModelMaterials DataModelMaterialsFoundation { get; private set; }
 
@@ -32,7 +32,7 @@ namespace WindBarrierReinforcement.StaticModel
 
             public DataModelMaterials DataModelMaterialsFoundationPile { get; private set; }
 
-            public _GlobalPage11(EvtHandler evtHandler)
+            public _GlobalDataModelsPage11(GlobalDataModels global)
             {
                 DataModelMaterialsFoundation = new DataModelMaterials("Foundation");
 

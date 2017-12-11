@@ -7,15 +7,15 @@ using WindBarrierReinforcement.DataModels.NSPage04;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public interface IGlobalPage04
+    public interface IGlobalDataModelsPage04
     {
         DataModelCircularGeneral DataModelCircularGeneral { get; }
         DataModelRadial1 DataModelRadial1 { get; }
         DataModelRadial2 DataModelRadial2 { get; }
         DataModelRadialGeneral DataModelRadialGeneral { get; }
     }
-    public partial class Global {
-        private class _GlobalPage04:IGlobalPage04
+    public partial class GlobalDataModels {
+        private class _GlobalDataModelsPage04:IGlobalDataModelsPage04
         {
             public DataModelCircularGeneral DataModelCircularGeneral { get; private set; }
 
@@ -25,12 +25,12 @@ namespace WindBarrierReinforcement.StaticModel
 
             public DataModelRadialGeneral DataModelRadialGeneral { get;private set; }
 
-            public _GlobalPage04(EvtHandler evtHandler)
+            public _GlobalDataModelsPage04(GlobalDataModels global)
             {
                 DataModelCircularGeneral = new DataModelCircularGeneral();
-                DataModelRadial1 = new DataModelRadial1(evtHandler);
-                DataModelRadial2 = new DataModelRadial2(evtHandler);
-                DataModelRadialGeneral = new DataModelRadialGeneral(evtHandler);
+                DataModelRadial1 = new DataModelRadial1(global);
+                DataModelRadial2 = new DataModelRadial2(global);
+                DataModelRadialGeneral = new DataModelRadialGeneral(global);
             }
         }
     }

@@ -7,19 +7,19 @@ using WindBarrierReinforcement.DataModels.NSPage05;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public interface IGlobalPage05
+    public interface IGlobalDataModelsPage05
     {
         DataModel_Top_Reinforcement DataModel_Top_Reinforcement1 { get; }
         DataModel_Top_Reinforcement DataModel_Top_Reinforcement2 { get; }
     }
-    public partial class Global {
-        private class _GlobalPage05 : IGlobalPage05
+    public partial class GlobalDataModels {
+        private class _GlobalDataModelsPage05 : IGlobalDataModelsPage05
         {
             public DataModel_Top_Reinforcement DataModel_Top_Reinforcement1 { get; private set; }
 
             public DataModel_Top_Reinforcement DataModel_Top_Reinforcement2 { get; private set; }
 
-            public _GlobalPage05(EvtHandler evtHandler)
+            public _GlobalDataModelsPage05(GlobalDataModels global)
             {
                 DataModel_Top_Reinforcement1 = new DataModel_Top_Reinforcement();
                 DataModel_Top_Reinforcement2 = new DataModel_Top_Reinforcement();

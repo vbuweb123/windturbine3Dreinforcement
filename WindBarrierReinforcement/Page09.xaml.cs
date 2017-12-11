@@ -28,11 +28,13 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page09 : Page
     {
-        public DataModelUBABCollection DataModelUBABCollection => GlobalPageEvts.Global.GlobalPage09.DataModelUBABCollection;
+        public DataModelUBABCollection DataModelUBABCollection { get; private set; }
 
         private string _zoneName = "Zona ";
-        public Page09()
+        public Page09(GlobalDataModels global)
         {
+            DataModelUBABCollection = global.GDMPage09.DataModelUBABCollection;
+
             InitializeComponent();
             this.DataContext = this;
 

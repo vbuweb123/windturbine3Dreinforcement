@@ -7,7 +7,7 @@ using WindBarrierReinforcement.DataModels.NSPage07;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public interface IGlobalPage07
+    public interface IGlobalDataModelsPage07
     {
         DataModel_StraightBars DataModel_StraightBars_Dir1 { get; }
         DataModel_StraightBars DataModel_StraightBars_Dir2 { get; }
@@ -16,9 +16,9 @@ namespace WindBarrierReinforcement.StaticModel
         DataModel_CircularBarsExteriorSide DataModel_CircularBarsExteriorSide { get; }
         DataModel_StraightBars_Extra DataModel_StraightBars_Extra { get; }
     }
-    public partial class Global
+    public partial class GlobalDataModels
     {
-        private class _GlobalPage07 : IGlobalPage07
+        private class _GlobalDataModelsPage07 : IGlobalDataModelsPage07
         {
             public DataModel_StraightBars DataModel_StraightBars_Dir1 { get; private set; }
 
@@ -32,7 +32,7 @@ namespace WindBarrierReinforcement.StaticModel
 
             public DataModel_StraightBars_Extra DataModel_StraightBars_Extra { get; private set; }
 
-            public _GlobalPage07(EvtHandler evtHandler)
+            public _GlobalDataModelsPage07(GlobalDataModels global)
             {
                 DataModel_StraightBars_Dir1 = new DataModel_StraightBars();
                 DataModel_StraightBars_Dir2 = new DataModel_StraightBars();

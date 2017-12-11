@@ -7,16 +7,16 @@ using WindBarrierReinforcement.DataModels.NSPage01;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public interface IGlobalPage01
+    public interface IGlobalDataModelsPage01
     {
         DataModel_Global_Formwork DataModel_Global_Formwork { get; }
         DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint { get; }
         DataModel_Global_Materials DataModel_Global_Materials { get; }
     }
 
-    public partial class Global
+    public partial class GlobalDataModels
     {
-        private class _GlobalPage01 : IGlobalPage01
+        private class _GlobalDataModelsPage01 : IGlobalDataModelsPage01
         {
 
             public DataModel_Global_Formwork DataModel_Global_Formwork { get; private set; }
@@ -25,11 +25,11 @@ namespace WindBarrierReinforcement.StaticModel
 
             public DataModel_Global_Materials DataModel_Global_Materials { get; private set; }
 
-            public _GlobalPage01(EvtHandler evtHandler)
+            public _GlobalDataModelsPage01(GlobalDataModels global)
             {
-                DataModel_Global_Formwork = new DataModel_Global_Formwork(evtHandler);
-                DataModel_Global_Coordinations_GroundPoint = new DataModel_Global_Coordinations_GroundPoint(evtHandler);
-                DataModel_Global_Materials = new DataModel_Global_Materials(evtHandler);
+                DataModel_Global_Formwork = new DataModel_Global_Formwork(global);
+                DataModel_Global_Coordinations_GroundPoint = new DataModel_Global_Coordinations_GroundPoint(global);
+                DataModel_Global_Materials = new DataModel_Global_Materials();
             }
         }
     }

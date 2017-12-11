@@ -7,19 +7,19 @@ using WindBarrierReinforcement.DataModels.NSPage09;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public interface IGlobalPage09
+    public interface IGlobalDataModelsPage09
     {
         DataModelUBABCollection DataModelUBABCollection { get; }
     }
-    public partial class Global
+    public partial class GlobalDataModels
     {
-        private class _GlobalPage09 : IGlobalPage09
+        private class _GlobalDataModelsPage09 : IGlobalDataModelsPage09
         {
             public DataModelUBABCollection DataModelUBABCollection { get; private set; }
 
-            public _GlobalPage09(EvtHandler eventHandler)
+            public _GlobalDataModelsPage09(GlobalDataModels global)
             {
-                DataModelUBABCollection = new DataModelUBABCollection(eventHandler);
+                DataModelUBABCollection = new DataModelUBABCollection(global);
             }
         }
     }

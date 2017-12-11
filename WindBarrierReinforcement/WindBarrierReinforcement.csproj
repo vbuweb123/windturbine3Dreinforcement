@@ -167,20 +167,20 @@
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\RManager.cs" />
-    <Compile Include="StaticModel\EvtHandler.cs" />
-    <Compile Include="StaticModel\GlobalPage01.cs" />
-    <Compile Include="StaticModel\GlobalPage02.cs" />
-    <Compile Include="StaticModel\GlobalPage03.cs" />
-    <Compile Include="StaticModel\GlobalPage04.cs" />
-    <Compile Include="StaticModel\GlobalPage05.cs" />
-    <Compile Include="StaticModel\GlobalPage06.cs" />
-    <Compile Include="StaticModel\GlobalPage07.cs" />
-    <Compile Include="StaticModel\GlobalPage08.cs" />
-    <Compile Include="StaticModel\GlobalPage09.cs" />
-    <Compile Include="StaticModel\GlobalPage10.cs" />
-    <Compile Include="StaticModel\GlobalPage11.cs" />
-    <Compile Include="StaticModel\GlobalPage12.cs" />
-    <Compile Include="StaticModel\GlobalPageEvts.cs" />
+    <Compile Include="StaticModel\_EvtHandler.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage01.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage02.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage03.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage04.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage05.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage06.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage07.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage08.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage09.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage10.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage11.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage12.cs" />
+    <Compile Include="StaticModel\GlobalDataModels.cs" />
     <Compile Include="Writer\Writer.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

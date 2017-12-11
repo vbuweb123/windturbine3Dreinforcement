@@ -98,44 +98,44 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             private set { bottomExtraOffset = value; NotifyPropertyChanged("BottomExtraOffset"); }
         }
 
-        public DataModel_ARIntUBars(EvtHandler evtHandler)
+        public DataModel_ARIntUBars(GlobalDataModels global)
         {
-            evtHandler.Register(() => {
-                GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.PropertyChanged += (o, e) =>
+            global.EvtHandler.Add(() => {
+                global.GDMPage08.DataModel_ARExtUBars.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.TopOffset))
                     {
-                        this.TopOffset = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.TopOffset;
+                        this.TopOffset = global.GDMPage08.DataModel_ARExtUBars.TopOffset;
                     }
 
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.BottomOffset))
                     {
-                        this.BottomOffset = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.BottomOffset;
+                        this.BottomOffset = global.GDMPage08.DataModel_ARExtUBars.BottomOffset;
                     }
 
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.AxisOffset))
                     {
-                        this.AxisOffset = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.AxisOffset;
+                        this.AxisOffset = global.GDMPage08.DataModel_ARExtUBars.AxisOffset;
                     }
 
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.HookULarger))
                     {
-                        this.HookULarger = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.HookULarger;
+                        this.HookULarger = global.GDMPage08.DataModel_ARExtUBars.HookULarger;
                     }
 
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.HookUSmaller))
                     {
-                        this.HookUSmaller = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.HookUSmaller;
+                        this.HookUSmaller = global.GDMPage08.DataModel_ARExtUBars.HookUSmaller;
                     }
 
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.TopExtraOffset))
                     {
-                        this.TopExtraOffset = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.TopExtraOffset;
+                        this.TopExtraOffset = global.GDMPage08.DataModel_ARExtUBars.TopExtraOffset;
                     }
 
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.BottomExtraOffset))
                     {
-                        this.BottomExtraOffset = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.BottomExtraOffset;
+                        this.BottomExtraOffset = global.GDMPage08.DataModel_ARExtUBars.BottomExtraOffset;
                     }
                 };
             });

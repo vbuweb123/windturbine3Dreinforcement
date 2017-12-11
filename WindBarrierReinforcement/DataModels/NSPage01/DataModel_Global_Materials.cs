@@ -51,9 +51,5 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Materials>(x => x.MaterialTowerBase));
             }
         }
-        public DataModel_Global_Materials(EvtHandler evtHandler)
-        {
-
-        }
     }
 }

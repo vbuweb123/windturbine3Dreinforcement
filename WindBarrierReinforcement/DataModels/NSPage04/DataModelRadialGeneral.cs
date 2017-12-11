@@ -40,12 +40,13 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             get { return alternativeMinStartAngle; }
             set { alternativeMinStartAngle = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadialGeneral>(x => x.AlternativeMinStartAngle)); }
         }
-        public static int trest = 0;
-        public DataModelRadialGeneral(EvtHandler evtHandler)
+
+        private GlobalDataModels global;
+        public DataModelRadialGeneral(GlobalDataModels global)
         {
-            trest++;
-            var a = trest;
-            evtHandler.Register(() =>
+            this.global = global;
+
+            global.EvtHandler.Add(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -55,9 +56,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                 };
             });
 
-            evtHandler.Register(() =>
+            global.EvtHandler.Add(() =>
             {
-                GlobalPageEvts.Global.GlobalPage04.DataModelRadial2.PropertyChanged += (o, e) =>
+                global.GDMPage04.DataModelRadial2.PropertyChanged += (o, e) =>
                 {
                     //Min Core
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.SpacingAngle))
@@ -66,9 +67,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                 };
             });
 
-            evtHandler.Register(() =>
+            global.EvtHandler.Add(() =>
             {
-                GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
+                global.GDMPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
                 {
                     //Min Core
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage02.DataModel_Anchor>(x => x.BoltDiameter) ||
@@ -81,13 +82,13 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
         private void Set_MinCore()
         {
-            MinCore = (int)Math.Ceiling(MinSpaceCenter / (Math.Sin(GlobalPageEvts.Global.GlobalPage04.DataModelRadial2.SpacingAngle)));
+            MinCore = (int)Math.Ceiling(MinSpaceCenter / (Math.Sin(global.GDMPage04.DataModelRadial2.SpacingAngle)));
         }
         private void Set_alternativeHalfMinStartAngle()
         {
-            int anchorBoltDiameter = GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.GetBoltDiameterNominalSize();
-            int radiusCenterLineTower = GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.RadiusCenterLineTower;
-            int distanceBoltPair = GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.DispanceBoltPairs;
+            int anchorBoltDiameter = global.GDMPage02.DataModel_Anchor.GetBoltDiameterNominalSize();
+            int radiusCenterLineTower =global.GDMPage02.DataModel_Anchor.RadiusCenterLineTower;
+            int distanceBoltPair = global.GDMPage02.DataModel_Anchor.DispanceBoltPairs;
 
             this.alternativeHalfMinStartAngle = Math.Atan((anchorBoltDiameter + 50) / (radiusCenterLineTower - distanceBoltPair / 2));
 

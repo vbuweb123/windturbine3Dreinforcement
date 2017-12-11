@@ -53,9 +53,14 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
             get { return topChairsOverlapp; }
             set { topChairsOverlapp = value; NotifyPropertyChanged("TopChairsOverlapp"); }
         }
-        public DataModel_CHR_General(EvtHandler eventHandler)
+
+        private GlobalDataModels global;
+
+        public DataModel_CHR_General(GlobalDataModels global)
         {
-            eventHandler.Register(() =>
+            this.global = global;
+
+            global.EvtHandler.Add(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -65,9 +70,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
                     }
                 };
             });
-            eventHandler.Register(() =>
+            global.EvtHandler.Add(() =>
             {
-                GlobalPageEvts.Global.GlobalPage12.DataModelShapesCollection.CollectionChanged += (o, e) =>
+                global.GDMPage12.DataModelShapesCollection.CollectionChanged += (o, e) =>
                 {
                     Set_HookLengths();
                 };
@@ -77,7 +82,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         private void Set_HookLengths()
         {
             EDiameters value = (EDiameters)SelectedIndexDiameter; //TODO - check this strict dependency to the index in the list. Maybe add in tag a reference?
-            var BSShape = GlobalPageEvts.Global.GlobalPage12.DataModelShapesCollection.Where(x => x.Reference == value).SingleOrDefault();
+            var BSShape = global.GDMPage12.DataModelShapesCollection.Where(x => x.Reference == value).SingleOrDefault();
             if (BSShape == null) HookLengths = -1;//NEED TO ADD THE VALUE IN GLOBAPL PAGE 12 in the list of BSShapes
             HookLengths = BSShape.NominalSize * (7 + 5);
         }

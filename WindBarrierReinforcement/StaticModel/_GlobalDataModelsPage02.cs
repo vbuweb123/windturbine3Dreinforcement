@@ -7,18 +7,18 @@ using WindBarrierReinforcement.DataModels.NSPage02;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public interface IGlobalPage02
+    public interface IGlobalDataModelsPage02
     {
         DataModel_Anchor DataModel_Anchor { get; }
     }
-    public partial class Global {
-        private class _GlobalPage02 : IGlobalPage02
+    public partial class GlobalDataModels {
+        private class _GlobalDataModelsPage02 : IGlobalDataModelsPage02
         {
             public DataModel_Anchor DataModel_Anchor { get; private set; }
 
-            public _GlobalPage02(EvtHandler evtHandler)
+            public _GlobalDataModelsPage02(GlobalDataModels global)
             {
-                DataModel_Anchor = new DataModel_Anchor(evtHandler);
+                DataModel_Anchor = new DataModel_Anchor(global);
             }
         }
     }

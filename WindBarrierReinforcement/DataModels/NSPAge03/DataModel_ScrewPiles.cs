@@ -257,10 +257,13 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PR_Ureinforcement_RebarDiam));
             }
         }
+        private GlobalDataModels global;
 
-        public DataModel_ScrewPiles(EvtHandler evtHandler)
+        public DataModel_ScrewPiles(GlobalDataModels global)
         {
-            evtHandler.Register(() => {
+            this.global = global;
+
+            global.EvtHandler.Add(() => {
                 this.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PileDepth))
@@ -272,9 +275,9 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
                 };
             });
 
-            evtHandler.Register(() =>
+            global.EvtHandler.Add(() =>
             {
-                GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Coordinations_GroundPoint.PropertyChanged += (o, e) =>
+                global.GDMPage01.DataModel_Global_Coordinations_GroundPoint.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.FoundationPointZ))
                         Set_DepthPile();
@@ -284,7 +287,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
 
         private void Set_DepthPile()
         {
-            DepthPile = GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Coordinations_GroundPoint.FoundationPointZ + PileDepth;
+            DepthPile = global.GDMPage01.DataModel_Global_Coordinations_GroundPoint.FoundationPointZ + PileDepth;
         }
 
         private void Set_PR_StirrupRadius_Layer2()

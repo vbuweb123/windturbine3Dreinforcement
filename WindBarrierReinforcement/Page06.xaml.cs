@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.DataModels.NSPage06;
 using WindBarrierReinforcement.Resources;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement
 {
@@ -23,37 +24,33 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page06 : Page
     {
-        public DataModel_BR_D1 DataModel_BR_D1 { get; set; }
-        public DataModel_BR_D2 DataModel_BR_D2 { get; set; }
-        public DataModel_BR_L DataModel_BR_L { get; set; }
-        public DataModel_TB_D1 DataModel_TB_D1 { get; set; }
-        public DataModel_TB_D2 DataModel_TB_D2 { get; set; }
-        public DataModel_Circular_EdgeOfL DataModel_Circular_EdgeOfL { get; set; }
-        public DataModel_Generalities DataModel_Generalities { get; set; }
+        public DataModel_BR_D1 DataModel_BR_D1 { get; private set; }
+        public DataModel_BR_D2 DataModel_BR_D2 { get; private  set; }
+        public DataModel_BR_L DataModel_BR_L { get; private set; }
+        public DataModel_TB_D1 DataModel_TB_D1 { get; private set; }
+        public DataModel_TB_D2 DataModel_TB_D2 { get; private set; }
+        public DataModel_Circular_EdgeOfL DataModel_Circular_EdgeOfL { get; private set; }
+        public DataModel_Generalities DataModel_Generalities { get; private set; }
+
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             CultureRenamer.Rename(UI_Master_Grid);
         }
 
-        public Page06()
+        public Page06(GlobalDataModels global)
         {
-            
-            DataModel_BR_D1 = new DataModel_BR_D1();
-            DataModel_BR_D2 = new DataModel_BR_D2();
-            DataModel_BR_L = new DataModel_BR_L();
-            DataModel_TB_D1 = new DataModel_TB_D1();
-            DataModel_TB_D2 = new DataModel_TB_D2();
-            DataModel_Circular_EdgeOfL = new DataModel_Circular_EdgeOfL();
-            DataModel_Generalities = new DataModel_Generalities();
+
+            DataModel_BR_D1 = global.GDMPage06.DataModel_BR_D1;
+            DataModel_BR_D2 = global.GDMPage06.DataModel_BR_D2;
+            DataModel_BR_L = global.GDMPage06.DataModel_BR_L;
+            DataModel_TB_D1 = global.GDMPage06.DataModel_TB_D1;
+            DataModel_TB_D2 = global.GDMPage06.DataModel_TB_D2;
+            DataModel_Circular_EdgeOfL = global.GDMPage06.DataModel_Circular_EdgeOfL;
+            DataModel_Generalities = global.GDMPage06.DataModel_Generalities;
+
+
             InitializeComponent();
             this.DataContext = this;
-            
-         //  Writer.Writer.AddElementToDisplay(PropertyDataInfo.GetInfo(DataModel_BR_D1, x => x.Diameter));
-         //  Writer.Writer.AddElementToDisplay(PropertyDataInfo.GetInfo(DataModel_BR_D1, x => x.MarginCover));
-         //  Writer.Writer.AddElementToDisplay(PropertyDataInfo.GetInfo(DataModel_BR_D1, x => x.Spacing));
-                     
-            
-
         }
     }
 }

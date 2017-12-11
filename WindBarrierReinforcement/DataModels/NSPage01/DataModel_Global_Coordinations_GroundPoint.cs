@@ -50,18 +50,21 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
             get { return foundationPointZ; }
             set { foundationPointZ = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.FoundationPointZ)); }
         }
+        private GlobalDataModels global;
 
-        public DataModel_Global_Coordinations_GroundPoint(EvtHandler evtHandler)
+        public DataModel_Global_Coordinations_GroundPoint(GlobalDataModels global)
         {
-            evtHandler.Register(() => {
+            this.global = global;
+
+            global.EvtHandler.Add(() => {
                 this.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.CoordinationZ))
                         Set_FoundationPointZ();
                 };
             });
-            evtHandler.Register(() => {
-                GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
+            global.EvtHandler.Add(() => {
+                global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DeptFoundation)
                         || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))
@@ -72,7 +75,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
               
         private void Set_FoundationPointZ()
         {
-            FoundationPointZ = CoordinationZ - GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.DeptFoundation - GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.HBottom;
+            FoundationPointZ = CoordinationZ - this.global.GDMPage01.DataModel_Global_Formwork.DeptFoundation - this.global.GDMPage01.DataModel_Global_Formwork.HBottom;
         }
     }
 }

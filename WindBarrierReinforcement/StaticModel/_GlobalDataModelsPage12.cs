@@ -8,14 +8,14 @@ using WindBarrierReinforcement.DataModels.NSPage12;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public interface IGlobalPage12
+    public interface IGlobalDataModelsPage12
     {
         ObservableCollection<DataModelBSShapes> DataModelShapesCollection { get; }
     }
 
-    public partial class Global
+    public partial class GlobalDataModels
     {
-        private class _GlobalPage12 : IGlobalPage12
+        private class _GlobalDataModelsPage12 : IGlobalDataModelsPage12
         {
             public ObservableCollection<DataModelBSShapes> DataModelShapesCollection { get; private set; }
 
@@ -123,7 +123,7 @@ namespace WindBarrierReinforcement.StaticModel
                 });
             }
 
-            public _GlobalPage12(EvtHandler evtHandler)
+            public _GlobalDataModelsPage12(GlobalDataModels global)
             {
                 DataModelShapesCollection = new ObservableCollection<DataModelBSShapes>();
                 PopulateShapes();

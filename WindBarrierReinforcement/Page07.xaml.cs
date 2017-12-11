@@ -23,20 +23,27 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page07 : Page
     {
-        public DataModel_StraightBars DataModel_StraightBars_Dir1 => GlobalPageEvts.Global.GlobalPage07.DataModel_StraightBars_Dir1;
+        public DataModel_StraightBars DataModel_StraightBars_Dir1 { get; private set; }
 
-        public DataModel_StraightBars DataModel_StraightBars_Dir2 => GlobalPageEvts.Global.GlobalPage07.DataModel_StraightBars_Dir2;
+        public DataModel_StraightBars DataModel_StraightBars_Dir2 { get; private set; }
 
-        public DataModel_RadialEdgeConcrete DataModel_RadialEdgeConcrete => GlobalPageEvts.Global.GlobalPage07.DataModel_RadialEdgeConcrete;
+        public DataModel_RadialEdgeConcrete DataModel_RadialEdgeConcrete { get; private set; }
 
-        public DataModel_CircularBarsTop DataModel_CircularBarsTop => GlobalPageEvts.Global.GlobalPage07.DataModel_CircularBarsTop;
+        public DataModel_CircularBarsTop DataModel_CircularBarsTop { get; private set; }
 
-        public DataModel_CircularBarsExteriorSide DataModel_CircularBarsExteriorSide => GlobalPageEvts.Global.GlobalPage07.DataModel_CircularBarsExteriorSide;
+        public DataModel_CircularBarsExteriorSide DataModel_CircularBarsExteriorSide { get; private set; }
 
-        public DataModel_StraightBars_Extra DataModel_StraightBars_Extra => GlobalPageEvts.Global.GlobalPage07.DataModel_StraightBars_Extra;
+        public DataModel_StraightBars_Extra DataModel_StraightBars_Extra { get; private set; }
 
-        public Page07()
+        public Page07(GlobalDataModels global)
         {
+            DataModel_StraightBars_Dir1 = global.GDMPage07.DataModel_StraightBars_Dir1;
+            DataModel_StraightBars_Dir2 = global.GDMPage07.DataModel_StraightBars_Dir2;
+            DataModel_RadialEdgeConcrete = global.GDMPage07.DataModel_RadialEdgeConcrete;
+            DataModel_CircularBarsTop = global.GDMPage07.DataModel_CircularBarsTop;
+            DataModel_CircularBarsExteriorSide = global.GDMPage07.DataModel_CircularBarsExteriorSide;
+            DataModel_StraightBars_Extra = global.GDMPage07.DataModel_StraightBars_Extra;
+            
             InitializeComponent();
             this.DataContext = this;
 
