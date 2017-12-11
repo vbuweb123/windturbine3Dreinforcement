@@ -30,18 +30,15 @@ namespace WindBarrierReinforcement
 
         public DataModel_Global_Formwork DataModel_Global_Formwork
         {
-            get => Global.DataModel_Global_Formwork;
-            set => Global.DataModel_Global_Formwork = value;
+            get => GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork;
         }
         public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint
         {
-            get => Global.DataModel_Global_Coordinations_GroundPoint;
-            set => Global.DataModel_Global_Coordinations_GroundPoint = value;
+            get => GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Coordinations_GroundPoint;
         }
         public DataModel_Global_Materials DataModel_Global_Materials
         {
-            get => Global.DataModel_Global_Materials;
-            set => Global.DataModel_Global_Materials = value;
+            get => GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Materials;
         }
 
         public Page01()
@@ -58,11 +55,11 @@ namespace WindBarrierReinforcement
                     DataModel_Global_Coordinations_GroundPoint.NotifyPropertyChanged("FoundationPointZ");
                 }
             };
-            Global.DataModel_Anchor.PropertyChanged += (o, e) =>
+            GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
             {
                 if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x=>x.RadiusCenterLineTower))
                 {
-                    DataModel_Global_Formwork.UpdateA(Global.DataModel_Anchor.RadiusCenterLineTower);
+                    DataModel_Global_Formwork.UpdateA(GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.RadiusCenterLineTower);
                 }
             };
 

@@ -23,12 +23,12 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page11 : Page
     {
-        public DataModelMaterials DataModelMaterialsFoundation => GlobalPage11.DataModelMaterialsFoundation;
-        public DataModelMaterials DataModelMaterialsFoundationTowerBase => GlobalPage11.DataModelMaterialsFoundationTowerBase;
-        public DataModelMaterials DataModelMaterialsLeanConcrete => GlobalPage11.DataModelMaterialsLeanConcrete;
-        public DataModelMaterials DataModelMaterialsEnvelopeAroundConduits => GlobalPage11.DataModelMaterialsEnvelopeAroundConduits;
-        public DataModelMaterials DataModelMaterialsGrouting => GlobalPage11.DataModelMaterialsGrouting;
-        public DataModelMaterials DataModelMaterialsFoundationPile => GlobalPage11.DataModelMaterialsFoundationPile;
+        public DataModelMaterials DataModelMaterialsFoundation => GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsFoundation;
+        public DataModelMaterials DataModelMaterialsFoundationTowerBase => GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsFoundationTowerBase;
+        public DataModelMaterials DataModelMaterialsLeanConcrete => GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsLeanConcrete;
+        public DataModelMaterials DataModelMaterialsEnvelopeAroundConduits => GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsEnvelopeAroundConduits;
+        public DataModelMaterials DataModelMaterialsGrouting => GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsGrouting;
+        public DataModelMaterials DataModelMaterialsFoundationPile => GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsFoundationPile;
 
         public Page11()
         {

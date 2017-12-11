@@ -7,18 +7,18 @@ using WindBarrierReinforcement.DataModels.NSPage01;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public static class GlobalPage01
+    public class GlobalPage01
     {
-        private static DataModel_Global_Formwork dataModel_Global_Formwork;
-        public static DataModel_Global_Formwork DataModel_Global_Formwork
+        private DataModel_Global_Formwork dataModel_Global_Formwork;
+        public DataModel_Global_Formwork DataModel_Global_Formwork
             => dataModel_Global_Formwork ?? (dataModel_Global_Formwork = new DataModel_Global_Formwork());
 
-        private static DataModel_Global_Coordinations_GroundPoint dataModel_Global_Coordinations_GroundPoint;
-        public static DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint
+        private DataModel_Global_Coordinations_GroundPoint dataModel_Global_Coordinations_GroundPoint;
+        public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint
             => dataModel_Global_Coordinations_GroundPoint ?? (dataModel_Global_Coordinations_GroundPoint = new DataModel_Global_Coordinations_GroundPoint());
 
-        private static DataModel_Global_Materials dataModel_Global_Materials;
-        public static DataModel_Global_Materials DataModel_Global_Materials
+        private DataModel_Global_Materials dataModel_Global_Materials;
+        public  DataModel_Global_Materials DataModel_Global_Materials
             => dataModel_Global_Materials ?? (dataModel_Global_Materials = new DataModel_Global_Materials());
     }
 }
