@@ -19,14 +19,14 @@
     </Page.Resources>
 
     <Grid Background="{StaticResource AppMainBackgroundColor}">
-        <TextBlock HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" Text="Anchor" VerticalAlignment="Top" Style="{StaticResource AppContentTitleTextBlock}"/>
-        <Grid Name="Ui_Grid_Anchor" Background="{StaticResource AppContainerBackgroundColor}" Margin="25">
+        <TextBlock HorizontalAlignment="Left" Margin="20,15,0,0" TextWrapping="Wrap" Text="Anchor" VerticalAlignment="Top" Style="{StaticResource AppContentTitleTextBlock}"/>
+        <Grid Name="Ui_Grid_Anchor" Background="{StaticResource AppContainerBackgroundColor}" Margin="15,50,200,25">
 
             <!--Diameter Anchor-->
-            <Label Content="__Diameter Anchor" HorizontalAlignment="Left" Margin="5,5,0,0" Height="25" VerticalAlignment="Top"
-                   ap:CultureKey.CultureRes="Lbl_Anc_DiameterAnchor" />
-            <TextBox 
-                x:Name="UI_TextBox_DiameterAnchor"
+            <Label Content="__Diameter Anchor" HorizontalAlignment="Left" VerticalAlignment="Top"                    
+                   ap:CultureKey.CultureRes="Lbl_Anc_DiameterAnchor"
+                   Margin="5,5,0,0" Height="25"/>
+            <TextBox                 
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding DiameterAnchor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"                 
@@ -38,10 +38,10 @@
             </TextBox>
 
             <!--Diameter Anchor Int-->
-            <Label Content="__Diameter Anchor Int" HorizontalAlignment="Left" Margin="5,35,0,0" Height="25" VerticalAlignment="Top"
-                   ap:CultureKey.CultureRes="Lbl_Anc_DiameterAnchorInt" />
-            <TextBox 
-                x:Name="UI_TextBox_DiameterAnchorInt"        
+            <Label Content="__Diameter Anchor Int" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_DiameterAnchorInt" 
+                   Margin="5,35,0,0" Height="25"/>
+            <TextBox                      
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding DiameterAnchorInt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"                 
@@ -53,10 +53,10 @@
             </TextBox>
             
             <!--No Bolt Pairs-->
-            <Label Content="__Diameter Anchor Int" HorizontalAlignment="Left" Margin="5,65,0,0" Height="25" VerticalAlignment="Top"
-                   ap:CultureKey.CultureRes="Lbl_Anc_DiameterAnchorInt" />
-            <TextBox
-                x:Name="UI_TextBox_NoBoltPairs"
+            <Label Content="__No Bolt Pairs" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_NoBoltPairs" 
+                   Margin="5,65,0,0" Height="25"/>
+            <TextBox              
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding NoOfBoltPairs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"                 
@@ -67,11 +67,11 @@
                 </i:Interaction.Behaviors>
             </TextBox>
 
-
             <!--Shrink Hose Heigth-->
-            <Label Content="Shrink Hose Heigth" HorizontalAlignment="Left" Margin="2,88,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_PE_shrink_hose_heigth"  
+            <Label Content="__Shrink Hose Height" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_Peshrinkhoseheigth" 
+                   Margin="5,95,0,0" Height="25"/>
+            <TextBox                
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding Peshrinkhoseheigth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"                 
@@ -83,9 +83,10 @@
             </TextBox>
 
             <!--Fillet Top Zone-->
-            <Label  Content="Fillet Top Zone" HorizontalAlignment="Left" Margin="2,116,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_FIlletTOP_ZONE"
+            <Label Content="__FilletTopZone" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_FilletTopZone" 
+                   Margin="5,125,0,0" Height="25"/>
+            <TextBox               
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding FilletTopZone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
@@ -97,9 +98,10 @@
             </TextBox>
 
             <!--Fillet Bott Zone-->
-            <Label  Content="Fillet Bottom Zone" HorizontalAlignment="Left" Margin="2,144,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_FIlletBott_ZONE"
+            <Label Content="__FilletBottomZone" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_FilletBottomZone" 
+                   Margin="5,155,0,0" Height="25"/>
+            <TextBox                 
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding FilletBottomZone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
@@ -111,9 +113,10 @@
             </TextBox>
 
             <!--Top Anchor Nut-->
-            <Label  Content="Top Anchor Nut" HorizontalAlignment="Left" Margin="2,172,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_TopAnchorNut"
+            <Label Content="__TopAnchorNut" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_TopAnchorNut" 
+                   Margin="5,185,0,0" Height="25"/>
+            <TextBox                
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding TopAnchorNut, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
@@ -125,9 +128,10 @@
             </TextBox>
 
             <!--Bottom Anchor Nut-->
-            <Label FontSize="12" Content="Bottom Anchor Nut" HorizontalAlignment="Left" Margin="2,200,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_BottomAnchorNut"
+            <Label Content="__BottomAnchorNut" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_BottomAnchorNut" 
+                   Margin="5,215,0,0" Height="25"/>
+            <TextBox                
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding BottomAnchorNut, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
@@ -139,7 +143,9 @@
             </TextBox>
 
             <!--Depth Anchor-->
-            <Label FontSize="12" Content="Depth Anchor" HorizontalAlignment="Left" Margin="2,228,0,0" VerticalAlignment="Top"/>
+            <Label Content="__Depth Anchor" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_DepthAnchor" 
+                   Margin="5,245,0,0" Height="25"/>
             <TextBox 
                 IsEnabled="False"
                 DataContext="{Binding DataModel_Anchor}"
@@ -153,7 +159,9 @@
             </TextBox>
 
             <!--Depth Anchor Bottom-->
-            <Label FontSize="12" Content="Depth Anchor Bottom" HorizontalAlignment="Left" Margin="2,256,0,0" VerticalAlignment="Top"/>
+            <Label Content="__Depth Anchor Bottom" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_DepthAnchorBottom" 
+                   Margin="5,275,0,0" Height="25"/>
             <TextBox                 
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding DepthAnchorBottom, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
@@ -166,9 +174,10 @@
             </TextBox>
 
             <!--Radius Centerline Tower-->
-            <Label FontSize="12" Content="Radius Centerline Tower" HorizontalAlignment="Left" Margin="2,283,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_Radius_Centerline_Tower"
+            <Label Content="__Radius Centerline Tower" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_RadiusCenterlineTower" 
+                   Margin="5,305,0,0" Height="25"/>
+            <TextBox               
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding RadiusCenterLineTower, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
@@ -180,9 +189,10 @@
             </TextBox>
 
             <!--Insertion Depth Top Flange-->
-            <Label FontSize="12" Content="Insertion Depth Top Flange" HorizontalAlignment="Left" Margin="2,311,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_Insertion_Depth_Top_Flange"
+            <Label Content="__Insertion Depth Top Flange" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_InsertionDepthTopFlange" 
+                   Margin="5,335,0,0" Height="25"/>
+            <TextBox
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding InsertionDepthTopFlange, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
@@ -194,9 +204,10 @@
             </TextBox>
 
             <!--Thickness Top Flange-->
-            <Label FontSize="12" Content="Thickness Top Flange" HorizontalAlignment="Left" Margin="2,339,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_Thickness_Top_Flange"
+            <Label Content="__Thickness Top Flange" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_ThicknessTopFlange" 
+                   Margin="5,365,0,0" Height="25"/>
+            <TextBox             
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding ThicknessTopFlange, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
@@ -208,9 +219,10 @@
             </TextBox>
 
             <!--Width Concrete Bed-->
-            <Label FontSize="12" Content="Width Concrete Bed" HorizontalAlignment="Left" Margin="2,367,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_Width_Concrete_Bed"
+            <Label Content="__Width Concrete Bed" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_WidthConcreteBed" 
+                   Margin="240,5,0,0" Height="25"/>
+            <TextBox                 
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding WidthConcreteBed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
@@ -222,9 +234,10 @@
             </TextBox>
 
             <!--Width Top Flange-->
-            <Label FontSize="12" Content="Width Top Flange" HorizontalAlignment="Left" Margin="250,5,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_Width_Top_Flange"
+            <Label Content="__Width Top Flange" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_WidthTopFlange" 
+                   Margin="240,35,0,0" Height="25"/>
+            <TextBox                
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding WidthTopFlange, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
@@ -233,26 +246,13 @@
                 <i:Interaction.Behaviors>
                     <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
                 </i:Interaction.Behaviors>
-            </TextBox>
-
-            <!--Depth Conc Bed-->
-            <Label FontSize="12" Content="Depth Conc Bed" HorizontalAlignment="Left" Margin="250,305,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_Depth_Conc_Bed"    
-                DataContext="{Binding DataModel_Anchor}"
-                Text="{Binding DepthConcreteBed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                Template="{StaticResource AppTextBoxGeneric}"
-                HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
-                Margin="370,305,0,0"  Height="25" Width="100">
-                <i:Interaction.Behaviors>
-                    <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
-                </i:Interaction.Behaviors>
-            </TextBox>
+            </TextBox>       
 
             <!--Distance Bolt Pair-->
-            <Label FontSize="12" Content="Distance Bolt Pair" HorizontalAlignment="Left" Margin="250,65,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_DistanceBoltPair"  
+            <Label Content="__Dispance Bolt Pairs" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_DispanceBoltPairs" 
+                   Margin="240,65,0,0" Height="25"/>
+            <TextBox               
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding DispanceBoltPairs, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
@@ -264,9 +264,10 @@
             </TextBox>
 
             <!--UI_TextBox_Thickness_Bott_Flange-->
-            <Label FontSize="12" Content="Thickness Bott Flange" HorizontalAlignment="Left" Margin="240,95,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_Thickness_Bott_Flange"   
+            <Label Content="__Thickness Bott Flange" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_ThicknessBottFlange" 
+                   Margin="240,95,0,0" Height="25"/>
+            <TextBox                  
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding ThicknessBottFlange, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
@@ -278,9 +279,10 @@
             </TextBox>
 
             <!--Width Bott Flange-->
-            <Label FontSize="12" Content="Width Bott Flange" HorizontalAlignment="Left" Margin="250,135,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_Width_Bott_Flange" 
+            <Label Content="__Width Bott Flange" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_WidthBottFlange" 
+                   Margin="240,125,0,0" Height="25"/>
+            <TextBox                 
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding WidthBottFlange, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
@@ -290,11 +292,12 @@
                     <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
                 </i:Interaction.Behaviors>
             </TextBox>
-
+           
             <!--Bolt Diameter-->
-            <Label FontSize="12" Content="Bolt Diameter" HorizontalAlignment="Left" Margin="253,155,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_BoltDiameter"
+            <Label Content="__Bolt Diameter" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_BoltDiameter"
+                   Margin="240,155,0,0" Height="25"/>
+            <TextBox                 
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding BoltDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
@@ -306,9 +309,10 @@
             </TextBox>
 
             <!--Material Grout-->
-            <Label FontSize="12" Content="Material Grout" HorizontalAlignment="Left" Margin="255,185,0,0" VerticalAlignment="Top"/>
-            <TextBox 
-                x:Name="UI_TextBox_MaterialGrout"         
+            <Label Content="__Material Grout" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_MaterialGrout"
+                   Margin="240,185,0,0" Height="25"/>
+            <TextBox                        
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding MaterialGrout, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
@@ -320,9 +324,10 @@
             </TextBox>
 
             <!--Number Suppports-->
-            <Label FontSize="12" Content="Number Suppports" HorizontalAlignment="Left" Margin="249,215,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.376,-1.52"/>
-            <TextBox 
-                x:Name="UI_TextBox_NumberSuppports"
+            <Label Content="__Number Suppports" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_NumberSuppports"
+                   Margin="240,215,0,0" Height="25"/>
+            <TextBox              
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding NumberSuppports, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
@@ -334,7 +339,9 @@
             </TextBox>
 
             <!--Bolt Length-->
-            <Label FontSize="12" Content="Bolt Length" HorizontalAlignment="Left" Margin="255,247,0,0" VerticalAlignment="Top"/>
+            <Label Content="__Bolt Length" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_BoltLength"
+                   Margin="240,245,0,0" Height="25"/>
             <TextBox 
                 IsEnabled="False"
                 DataContext="{Binding DataModel_Anchor}"
@@ -348,13 +355,31 @@
             </TextBox>
 
             <!--Offset Bott Flange-->
-            <Label FontSize="12" Content="Offset Bott Flange" HorizontalAlignment="Left" Margin="255,275,0,0" VerticalAlignment="Top"/>
+            <Label Content="__Offset Bott Flange" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_OffsetBottFlange"
+                   Margin="240,275,0,0" Height="25"/>
             <TextBox 
-               IsEnabled="False"
+                IsEnabled="False"
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding OffsetBottFlange, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
-                HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" Margin="370,275,0,0"  Height="25" Width="100">
+                HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                Margin="370,275,0,0"  Height="25" Width="100">
+                <i:Interaction.Behaviors>
+                    <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
+                </i:Interaction.Behaviors>
+            </TextBox>
+
+            <!--Depth Conc Bed-->
+            <Label Content="__Depth Concrete Bed" HorizontalAlignment="Left"  VerticalAlignment="Top"
+                   ap:CultureKey.CultureRes="Lbl_Anc_DepthConcreteBed" 
+                   Margin="240,305,0,0" Height="25"/>
+            <TextBox                  
+                DataContext="{Binding DataModel_Anchor}"
+                Text="{Binding DepthConcreteBed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Template="{StaticResource AppTextBoxGeneric}"
+                HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                Margin="370,305,0,0"  Height="25" Width="100">
                 <i:Interaction.Behaviors>
                     <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
                 </i:Interaction.Behaviors>

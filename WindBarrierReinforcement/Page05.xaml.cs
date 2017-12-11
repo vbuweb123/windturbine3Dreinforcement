@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WindBarrierReinforcement.DataModels.NSPage05;
+using WindBarrierReinforcement.Resources;
 
 namespace WindBarrierReinforcement
 {
@@ -32,6 +33,10 @@ namespace WindBarrierReinforcement
             InitializeComponent();
             this.DataContext = this;
         }
-       
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CultureRenamer.RenameCollection(UI_Grid_TRR1.Children);
+            CultureRenamer.RenameTextBlock(UI_TextBlock_Title);
+        }        
     }
 }

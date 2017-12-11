@@ -117,11 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  
   <data name="Lbl_Anc_DiameterAnchor" xml:space="preserve">
     <value>Diameter Anchor</value>
   </data>
-
   <data name="Lbl_AR_ECB_Diameter" xml:space="preserve">
     <value>Diameter</value>
   </data>
@@ -293,5 +291,296 @@
   </data>
   <data name="Lbl_Anc_DiameterAnchorInt" xml:space="preserve">
     <value>Diameter Anchor Int</value>
+  </data>
+  <data name="Lbl_Anc_BoltDiameter" xml:space="preserve">
+    <value>Bolt Diameter</value>
+  </data>
+  <data name="Lbl_Anc_BoltLength" xml:space="preserve">
+    <value>Bolt Length</value>
+  </data>
+  <data name="Lbl_Anc_BottomAnchorNut" xml:space="preserve">
+    <value>Bottom Anchor Nut</value>
+  </data>
+  <data name="Lbl_Anc_DepthAnchor" xml:space="preserve">
+    <value>Depth Anchor</value>
+  </data>
+  <data name="Lbl_Anc_DepthAnchorBottom" xml:space="preserve">
+    <value>Depth Anchor Bottom</value>
+  </data>
+  <data name="Lbl_Anc_DepthConcreteBed" xml:space="preserve">
+    <value>Depth Concrete Bed</value>
+  </data>
+  <data name="Lbl_Anc_DispanceBoltPairs" xml:space="preserve">
+    <value>Dispance Bolt Pairs</value>
+  </data>
+  <data name="Lbl_Anc_FilletBottomZone" xml:space="preserve">
+    <value>Fillet Bottom Zone</value>
+  </data>
+  <data name="Lbl_Anc_FilletTopZone" xml:space="preserve">
+    <value>Fillet Top Zone</value>
+  </data>
+  <data name="Lbl_Anc_InsertionDepthTopFlange" xml:space="preserve">
+    <value>Insertion Depth Top Flange</value>
+  </data>
+  <data name="Lbl_Anc_MaterialGrout" xml:space="preserve">
+    <value>Materia lGrout</value>
+  </data>
+  <data name="Lbl_Anc_NoBoltPairs" xml:space="preserve">
+    <value>No Bolt Pairs</value>
+  </data>
+  <data name="Lbl_Anc_NumberSuppports" xml:space="preserve">
+    <value>Number Suppports</value>
+  </data>
+  <data name="Lbl_Anc_OffsetBottFlange" xml:space="preserve">
+    <value>Offset Bott Flange</value>
+  </data>
+  <data name="Lbl_Anc_Peshrinkhoseheigth" xml:space="preserve">
+    <value>Pe Shrink Hose Heigth</value>
+  </data>
+  <data name="Lbl_Anc_RadiusCenterlineTower" xml:space="preserve">
+    <value>Radius Centerline Tower</value>
+  </data>
+  <data name="Lbl_Anc_ThicknessBottFlange" xml:space="preserve">
+    <value>Thickness Bott Flange</value>
+  </data>
+  <data name="Lbl_Anc_ThicknessTopFlange" xml:space="preserve">
+    <value>Thickness Top Flange</value>
+  </data>
+  <data name="Lbl_Anc_TopAnchorNut" xml:space="preserve">
+    <value>Top Anchor Nut</value>
+  </data>
+  <data name="Lbl_Anc_WidthBottFlange" xml:space="preserve">
+    <value>Width Bott Flange</value>
+  </data>
+  <data name="Lbl_Anc_WidthConcreteBed" xml:space="preserve">
+    <value>Width Concrete Bed</value>
+  </data>
+  <data name="Lbl_Anc_WidthTopFlange" xml:space="preserve">
+    <value>Width Top Flange</value>
+  </data>
+  <data name="Lbl_G_BottomCover" xml:space="preserve">
+    <value>Bottom Cover</value>
+  </data>
+  <data name="Lbl_G_CoordinationX" xml:space="preserve">
+    <value>Coordination X</value>
+  </data>
+  <data name="Lbl_G_CoordinationY" xml:space="preserve">
+    <value>Coordination Y</value>
+  </data>
+  <data name="Lbl_G_CoordinationZ" xml:space="preserve">
+    <value>Coordination Z</value>
+  </data>
+  <data name="Lbl_G_DepthFoundation" xml:space="preserve">
+    <value>Depth Foundation</value>
+  </data>
+  <data name="Lbl_G_DFoundation" xml:space="preserve">
+    <value>D Foundation</value>
+  </data>
+  <data name="Lbl_G_DiameterAnchor" xml:space="preserve">
+    <value>Diameter Anchor</value>
+  </data>
+  <data name="Lbl_G_DTowerBase" xml:space="preserve">
+    <value>D Tower Base</value>
+  </data>
+  <data name="Lbl_G_EdgeCover" xml:space="preserve">
+    <value>Edge Cover</value>
+  </data>
+  <data name="Lbl_G_FoundationBed" xml:space="preserve">
+    <value>Foundation Bed</value>
+  </data>
+  <data name="Lbl_G_FoundationPointZ" xml:space="preserve">
+    <value>Foundation Point Z</value>
+  </data>
+  <data name="Lbl_G_HBottom" xml:space="preserve">
+    <value>H Bottom</value>
+  </data>
+  <data name="Lbl_G_HFoundation" xml:space="preserve">
+    <value>H Foundation</value>
+  </data>
+  <data name="Lbl_G_HFoundationEdge" xml:space="preserve">
+    <value>H Foundation Edge</value>
+  </data>
+  <data name="Lbl_G_HightAboveGround" xml:space="preserve">
+    <value>Hight Above Ground</value>
+  </data>
+  <data name="Lbl_G_HTowerBase" xml:space="preserve">
+    <value>H Tower Base</value>
+  </data>
+  <data name="Lbl_G_MaterialFoundation" xml:space="preserve">
+    <value>Material Foundation</value>
+  </data>
+  <data name="Lbl_G_MaterialFoundationBed" xml:space="preserve">
+    <value>Material Foundation Bed</value>
+  </data>
+  <data name="Lbl_G_MaterialTowerBase" xml:space="preserve">
+    <value>Material Tower Base</value>
+  </data>
+  <data name="Lbl_G_RadiusBtc" xml:space="preserve">
+    <value>Radius Btc</value>
+  </data>
+  <data name="Lbl_G_RadiusCenterLineTower" xml:space="preserve">
+    <value>Radius CenterLine Tower</value>
+  </data>
+  <data name="Lbl_G_TopCover" xml:space="preserve">
+    <value>Top Cover</value>
+  </data>
+  <data name="Lbl_UPBR_Dir1_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="Lbl_UPBR_Dir1_L_RadialSpacing" xml:space="preserve">
+    <value>Radial Spacing</value>
+  </data>
+  <data name="Lbl_UPBR_Dir1_NoOfBars" xml:space="preserve">
+    <value>No Of Bars</value>
+  </data>
+  <data name="Lbl_UPBR_Dir1_Option" xml:space="preserve">
+    <value>Option</value>
+  </data>
+  <data name="Lbl_UPBR_Dir1_Spacing" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="Lbl_UPBR_Dir2_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="Lbl_UPBR_Dir2_NoOfBars" xml:space="preserve">
+    <value>No Of Bars</value>
+  </data>
+  <data name="Lbl_UPBR_Dir2_Option" xml:space="preserve">
+    <value>Option</value>
+  </data>
+  <data name="Lbl_UPBR_Dir2_SpacingValue" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="Lbl_UPBR_Lx" xml:space="preserve">
+    <value>L x</value>
+  </data>
+  <data name="Lbl_UPBR_Ly" xml:space="preserve">
+    <value>L y</value>
+  </data>
+  <data name="Lbl_UPBR_L_BendAngle" xml:space="preserve">
+    <value>Bend Angle</value>
+  </data>
+  <data name="Lbl_UPBR_L_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="Lbl_UPBR_TB_Dir1_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="Lbl_UPBR_TB_Dir1_Option" xml:space="preserve">
+    <value>Option</value>
+  </data>
+  <data name="Txt_Global" xml:space="preserve">
+    <value>Global</value>
+  </data>
+  <data name="Txt_Under_Plate_Bottom_Reinforcement" xml:space="preserve">
+    <value>Under Plate Bottom Reinforcement</value>
+  </data>
+  <data name="Lbl_PilesAngle_1" xml:space="preserve">
+    <value>Angle</value>
+  </data>
+  <data name="Lbl_PilesCircleDiameter_1" xml:space="preserve">
+    <value>Circle Diameter</value>
+  </data>
+  <data name="Lbl_PilesDepthPile_1" xml:space="preserve">
+    <value>Depth Pile</value>
+  </data>
+  <data name="Lbl_PilesDir1_Diameters" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="Lbl_PilesdivPerCurve_1" xml:space="preserve">
+    <value>Div Per Curve</value>
+  </data>
+  <data name="Lbl_PilesForces_1" xml:space="preserve">
+    <value>Forces</value>
+  </data>
+  <data name="Lbl_PilesLongRebarDiam" xml:space="preserve">
+    <value>Long Rebar Diameter</value>
+  </data>
+  <data name="Lbl_PilesMaterial_Piles_1" xml:space="preserve">
+    <value>Material Piles</value>
+  </data>
+  <data name="Lbl_PilesNoOfLongRebars" xml:space="preserve">
+    <value>No Of Long Rebars</value>
+  </data>
+  <data name="Lbl_PilesNo_Piles_1" xml:space="preserve">
+    <value>No Piles</value>
+  </data>
+  <data name="Lbl_PilespileDepth_1" xml:space="preserve">
+    <value>pile Depth</value>
+  </data>
+  <data name="Lbl_PilesPRBottomCover_1" xml:space="preserve">
+    <value>Bottom Cover</value>
+  </data>
+  <data name="Lbl_PilesPR_TopLongExtension" xml:space="preserve">
+    <value>Top Long Extension</value>
+  </data>
+  <data name="Lbl_PilesSlope_1" xml:space="preserve">
+    <value>Slope</value>
+  </data>
+  <data name="Lbl_PilesSpacing_Layer1_1" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="Lbl_PilesStirrupRadius_Layer1_1" xml:space="preserve">
+    <value>Stirrup Radius</value>
+  </data>
+  <data name="Lbl_PilesTopCover_1" xml:space="preserve">
+    <value>Top Cover</value>
+  </data>
+  <data name="Lbl_UPBR_BottomCover" xml:space="preserve">
+    <value>Bottom Cover</value>
+  </data>
+  <data name="Lbl_UPBR_C_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="Lbl_UPBR_C_Dir2_Option" xml:space="preserve">
+    <value>Option</value>
+  </data>
+  <data name="Lbl_UPBR_C_Dir2_SpacingValue" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="Lbl_UPBR_C_MaxLength" xml:space="preserve">
+    <value>Max Length</value>
+  </data>
+  <data name="Lbl_UPBR_C_NoOfBars" xml:space="preserve">
+    <value>No Of Bars</value>
+  </data>
+  <data name="Lbl_UPBR_C_OverlapLength" xml:space="preserve">
+    <value>Overlap Length</value>
+  </data>
+  <data name="Lbl_UPBR_HorizontalEdgeCover" xml:space="preserve">
+    <value>Horizontal Edge Cover</value>
+  </data>
+  <data name="Lbl_UPBR_TB_Dir1_NoOfBars" xml:space="preserve">
+    <value>No Of Bars</value>
+  </data>
+  <data name="Lbl_UPBR_TB_Dir1_SpacingValue" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="Lbl_UPBR_TB_Dir2_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="Lbl_UPBR_TB_Dir2_NoOfBars" xml:space="preserve">
+    <value>No Of Bars</value>
+  </data>
+  <data name="Lbl_UPBR_TB_Dir2_Option" xml:space="preserve">
+    <value>Option</value>
+  </data>
+  <data name="Lbl_UPBR_TB_Dir2_SpacingValue" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="Lbl_UPBR_TB_MinLengthRebar" xml:space="preserve">
+    <value>Min Length Rebar</value>
+  </data>
+  <data name="Lbl_UPBR_TB_OffsetFromBottom" xml:space="preserve">
+    <value>Offset From Bottom</value>
+  </data>
+  <data name="Lbl_UPBR_TB_RadiusOfRebars" xml:space="preserve">
+    <value>Radius Of Rebars</value>
+  </data>
+  <data name="Txt_Piles" xml:space="preserve">
+    <value>Piles</value>
+  </data>
+  <data name="Txt_Top_Reinforcement" xml:space="preserve">
+    <value>Top Reinforcement</value>
   </data>
 </root>

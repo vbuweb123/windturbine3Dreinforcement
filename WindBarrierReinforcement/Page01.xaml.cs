@@ -16,6 +16,7 @@ using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.DataModels.NSPage01;
 using WindBarrierReinforcement.DataModels.NSPage02;
 using WindBarrierReinforcement.DataModels.NSPage06;
+using WindBarrierReinforcement.Resources;
 using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement
@@ -41,10 +42,6 @@ namespace WindBarrierReinforcement
         {
             get => Global.DataModel_Global_Materials;
             set => Global.DataModel_Global_Materials = value;
-        }
-
-        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
         }
 
         public Page01()
@@ -73,5 +70,14 @@ namespace WindBarrierReinforcement
 
             this.DataContext = this;
         }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CultureRenamer.RenameCollection(UI_Grid_Global.Children);
+            CultureRenamer.RenameTextBlock(UI_TextBlock_Title);
+            CultureRenamer.RenameCollection(UI_Grid_G_Materials.Children);
+            CultureRenamer.RenameCollection(UI_Grid_G_Coordinations.Children);            
+        }
+
     }
 }
