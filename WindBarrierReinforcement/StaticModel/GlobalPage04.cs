@@ -7,19 +7,28 @@ using WindBarrierReinforcement.DataModels.NSPage04;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public class GlobalPage04
+    public interface IGlobalPage04
     {
-        private DataModelCircularGeneral dataModelCircularGeneral;
-        public DataModelCircularGeneral DataModelCircularGeneral => dataModelCircularGeneral ?? (dataModelCircularGeneral = new DataModelCircularGeneral());
+        DataModelCircularGeneral DataModelCircularGeneral { get; }
+        DataModelRadial1 DataModelRadial1 { get; }
+        DataModelRadial2 DataModelRadial2 { get; }
+        DataModelRadialGeneral DataModelRadialGeneral { get; }
+    }
+    public partial class Global {
+        private class _GlobalPage04:IGlobalPage04
+        {
+            private DataModelCircularGeneral dataModelCircularGeneral;
+            public DataModelCircularGeneral DataModelCircularGeneral => dataModelCircularGeneral ?? (dataModelCircularGeneral = new DataModelCircularGeneral());
 
-        private DataModelRadial1 dataModelRadial1;
-        public DataModelRadial1 DataModelRadial1 => dataModelRadial1 ?? (dataModelRadial1 = new DataModelRadial1());
+            private DataModelRadial1 dataModelRadial1;
+            public DataModelRadial1 DataModelRadial1 => dataModelRadial1 ?? (dataModelRadial1 = new DataModelRadial1());
 
-        private DataModelRadial2 dataModelRadial2;
-        public DataModelRadial2 DataModelRadial2 => dataModelRadial2 ?? (dataModelRadial2 = new DataModelRadial2());
+            private DataModelRadial2 dataModelRadial2;
+            public DataModelRadial2 DataModelRadial2 => dataModelRadial2 ?? (dataModelRadial2 = new DataModelRadial2());
 
-        private DataModelRadialGeneral dataModelRadialGeneral;
-        public DataModelRadialGeneral DataModelRadialGeneral => dataModelRadialGeneral ?? (dataModelRadialGeneral = new DataModelRadialGeneral());
+            private DataModelRadialGeneral dataModelRadialGeneral;
+            public DataModelRadialGeneral DataModelRadialGeneral => dataModelRadialGeneral ?? (dataModelRadialGeneral = new DataModelRadialGeneral());
 
+        }
     }
 }

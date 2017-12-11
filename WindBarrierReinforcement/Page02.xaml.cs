@@ -31,7 +31,7 @@ namespace WindBarrierReinforcement
             InitializeComponent();
 
             this.DataContext = this;
-
+            
             CultureRenamer.Rename(UI_Grid_Master);
         }      
     }

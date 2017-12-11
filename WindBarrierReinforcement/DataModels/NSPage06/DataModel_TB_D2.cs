@@ -69,10 +69,5 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
             get { return spacing; }
             set { spacing = value; NotifyPropertyChanged("Spacing"); }
         }
-
-
-
-
-
     }
 }

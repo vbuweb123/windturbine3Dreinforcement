@@ -100,43 +100,45 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
 
         public DataModel_ARIntUBars()
         {
-            GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.PropertyChanged += (o, e) =>
-            {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.TopOffset))
+            GlobalPageEvts.Evts.Add(() => {
+                GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.PropertyChanged += (o, e) =>
                 {
-                    this.TopOffset = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.TopOffset;
-                }
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.TopOffset))
+                    {
+                        this.TopOffset = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.TopOffset;
+                    }
 
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.BottomOffset))
-                {
-                    this.BottomOffset = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.BottomOffset;
-                }
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.BottomOffset))
+                    {
+                        this.BottomOffset = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.BottomOffset;
+                    }
 
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.AxisOffset))
-                {
-                    this.AxisOffset = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.AxisOffset;
-                }
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.AxisOffset))
+                    {
+                        this.AxisOffset = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.AxisOffset;
+                    }
 
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.HookULarger))
-                {
-                    this.HookULarger = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.HookULarger;
-                }
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.HookULarger))
+                    {
+                        this.HookULarger = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.HookULarger;
+                    }
 
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.HookUSmaller))
-                {
-                    this.HookUSmaller = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.HookUSmaller;
-                }
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.HookUSmaller))
+                    {
+                        this.HookUSmaller = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.HookUSmaller;
+                    }
 
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.TopExtraOffset))
-                {
-                    this.TopExtraOffset = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.TopExtraOffset;
-                }
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.TopExtraOffset))
+                    {
+                        this.TopExtraOffset = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.TopExtraOffset;
+                    }
 
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.BottomExtraOffset))
-                {
-                    this.BottomExtraOffset = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.BottomExtraOffset;
-                }
-            };
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.BottomExtraOffset))
+                    {
+                        this.BottomExtraOffset = GlobalPageEvts.Global.GlobalPage08.DataModel_ARExtUBars.BottomExtraOffset;
+                    }
+                };
+            });
         }
     }
 }

@@ -7,30 +7,42 @@ using WindBarrierReinforcement.DataModels.NSPage11;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public class GlobalPage11
+    public interface IGlobalPage11
     {
-        private DataModelMaterials dataModelMaterialsFoundation;
-        public DataModelMaterials DataModelMaterialsFoundation
-            => dataModelMaterialsFoundation ?? (dataModelMaterialsFoundation = new DataModelMaterials("Foundation"));
+        DataModelMaterials DataModelMaterialsFoundation { get; }
+        DataModelMaterials DataModelMaterialsFoundationTowerBase { get; }
+        DataModelMaterials DataModelMaterialsLeanConcrete { get; }
+        DataModelMaterials DataModelMaterialsEnvelopeAroundConduits { get; }
+        DataModelMaterials DataModelMaterialsGrouting { get; }
+        DataModelMaterials DataModelMaterialsFoundationPile { get; }
+    }
+    public partial class Global
+    {
+        private class _GlobalPage11 : IGlobalPage11
+        {
+            private DataModelMaterials dataModelMaterialsFoundation;
+            public DataModelMaterials DataModelMaterialsFoundation
+                => dataModelMaterialsFoundation ?? (dataModelMaterialsFoundation = new DataModelMaterials("Foundation"));
 
-        private DataModelMaterials dataModelMaterialsFoundationTowerBase;
-        public DataModelMaterials DataModelMaterialsFoundationTowerBase
-            => dataModelMaterialsFoundationTowerBase ?? (dataModelMaterialsFoundationTowerBase = new DataModelMaterials("Foundation Tower Base"));
+            private DataModelMaterials dataModelMaterialsFoundationTowerBase;
+            public DataModelMaterials DataModelMaterialsFoundationTowerBase
+                => dataModelMaterialsFoundationTowerBase ?? (dataModelMaterialsFoundationTowerBase = new DataModelMaterials("Foundation Tower Base"));
 
-        private DataModelMaterials dataModelMaterialsLeanConcrete;
-        public DataModelMaterials DataModelMaterialsLeanConcrete
-            => dataModelMaterialsLeanConcrete ?? (dataModelMaterialsLeanConcrete = new DataModelMaterials("Lean Concrete"));
+            private DataModelMaterials dataModelMaterialsLeanConcrete;
+            public DataModelMaterials DataModelMaterialsLeanConcrete
+                => dataModelMaterialsLeanConcrete ?? (dataModelMaterialsLeanConcrete = new DataModelMaterials("Lean Concrete"));
 
-        private DataModelMaterials dataModelMaterialsEnvelopeAroundConduits;
-        public DataModelMaterials DataModelMaterialsEnvelopeAroundConduits
-            => dataModelMaterialsEnvelopeAroundConduits ?? (dataModelMaterialsEnvelopeAroundConduits = new DataModelMaterials("Envelope Around Conduits"));
+            private DataModelMaterials dataModelMaterialsEnvelopeAroundConduits;
+            public DataModelMaterials DataModelMaterialsEnvelopeAroundConduits
+                => dataModelMaterialsEnvelopeAroundConduits ?? (dataModelMaterialsEnvelopeAroundConduits = new DataModelMaterials("Envelope Around Conduits"));
 
-        private DataModelMaterials dataModelMaterialsGrouting;
-        public DataModelMaterials DataModelMaterialsGrouting
-            => dataModelMaterialsGrouting ?? (dataModelMaterialsGrouting = new DataModelMaterials("Grouting"));
+            private DataModelMaterials dataModelMaterialsGrouting;
+            public DataModelMaterials DataModelMaterialsGrouting
+                => dataModelMaterialsGrouting ?? (dataModelMaterialsGrouting = new DataModelMaterials("Grouting"));
 
-        private DataModelMaterials dataModelMaterialsFoundationPiles;
-        public DataModelMaterials DataModelMaterialsFoundationPile
-            => dataModelMaterialsFoundationPiles ?? (dataModelMaterialsFoundationPiles = new DataModelMaterials("Foundation Piles"));
+            private DataModelMaterials dataModelMaterialsFoundationPiles;
+            public DataModelMaterials DataModelMaterialsFoundationPile
+                => dataModelMaterialsFoundationPiles ?? (dataModelMaterialsFoundationPiles = new DataModelMaterials("Foundation Piles"));
+        }
     }
 }
