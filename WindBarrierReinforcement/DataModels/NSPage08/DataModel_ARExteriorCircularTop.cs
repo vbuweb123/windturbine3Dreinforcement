@@ -25,12 +25,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             get { return selectedIndexDiameter; }
             set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
         }
-
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameter = 0;
-        }
-
         /// <summary>
         /// UI_TextBox_AR_ECT_Spacing
         /// </summary>

@@ -65,9 +65,5 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             get { return startExtraOffset; }
             set { startExtraOffset = value; NotifyPropertyChanged("StartExtraOffset"); }
         }
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameter = 0;
-        }
     }
 }

@@ -79,6 +79,60 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bolt Diameter.
+        /// </summary>
+        internal static string Lbl_Anc_BoltDiameter {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_BoltDiameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bolt Length.
+        /// </summary>
+        internal static string Lbl_Anc_BoltLength {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_BoltLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom Anchor Nut.
+        /// </summary>
+        internal static string Lbl_Anc_BottomAnchorNut {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_BottomAnchorNut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Depth Anchor.
+        /// </summary>
+        internal static string Lbl_Anc_DepthAnchor {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_DepthAnchor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Depth Anchor Bottom.
+        /// </summary>
+        internal static string Lbl_Anc_DepthAnchorBottom {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_DepthAnchorBottom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Depth Concrete Bed.
+        /// </summary>
+        internal static string Lbl_Anc_DepthConcreteBed {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_DepthConcreteBed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Diameter Anchor.
         /// </summary>
         internal static string Lbl_Anc_DiameterAnchor {
@@ -93,6 +147,150 @@ namespace WindBarrierReinforcement.Resources {
         internal static string Lbl_Anc_DiameterAnchorInt {
             get {
                 return ResourceManager.GetString("Lbl_Anc_DiameterAnchorInt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Distance Bolt Pairs.
+        /// </summary>
+        internal static string Lbl_Anc_DistanceBoltPairs {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_DistanceBoltPairs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fillet Bottom Zone.
+        /// </summary>
+        internal static string Lbl_Anc_FilletBottomZone {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_FilletBottomZone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fillet Top Zone.
+        /// </summary>
+        internal static string Lbl_Anc_FilletTopZone {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_FilletTopZone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insertion Depth Top Flange.
+        /// </summary>
+        internal static string Lbl_Anc_InsertionDepthTopFlange {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_InsertionDepthTopFlange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grout Material.
+        /// </summary>
+        internal static string Lbl_Anc_MaterialGrout {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_MaterialGrout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Of Bolt Pairs.
+        /// </summary>
+        internal static string Lbl_Anc_NoBoltPairs {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_NoBoltPairs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Of Supports.
+        /// </summary>
+        internal static string Lbl_Anc_NumberSuppports {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_NumberSuppports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Offset Bottom Flange.
+        /// </summary>
+        internal static string Lbl_Anc_OffsetBottFlange {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_OffsetBottFlange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shrink Hode Height.
+        /// </summary>
+        internal static string Lbl_Anc_Peshrinkhoseheigth {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_Peshrinkhoseheigth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Radius Centerline Tower.
+        /// </summary>
+        internal static string Lbl_Anc_RadiusCenterlineTower {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_RadiusCenterlineTower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thickness Bottom Flange.
+        /// </summary>
+        internal static string Lbl_Anc_ThicknessBottFlange {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_ThicknessBottFlange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thickness Top Flange.
+        /// </summary>
+        internal static string Lbl_Anc_ThicknessTopFlange {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_ThicknessTopFlange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top Anchor Nut.
+        /// </summary>
+        internal static string Lbl_Anc_TopAnchorNut {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_TopAnchorNut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Width Bottom Flange.
+        /// </summary>
+        internal static string Lbl_Anc_WidthBottFlange {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_WidthBottFlange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Width Concrete Bed.
+        /// </summary>
+        internal static string Lbl_Anc_WidthConcreteBed {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_WidthConcreteBed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Width Top Flange.
+        /// </summary>
+        internal static string Lbl_Anc_WidthTopFlange {
+            get {
+                return ResourceManager.GetString("Lbl_Anc_WidthTopFlange", resourceCulture);
             }
         }
         
@@ -1101,6 +1299,15 @@ namespace WindBarrierReinforcement.Resources {
         internal static string Tb_CHR_Title {
             get {
                 return ResourceManager.GetString("Tb_CHR_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Anchor.
+        /// </summary>
+        internal static string Tb_P02_Title {
+            get {
+                return ResourceManager.GetString("Tb_P02_Title", resourceCulture);
             }
         }
         

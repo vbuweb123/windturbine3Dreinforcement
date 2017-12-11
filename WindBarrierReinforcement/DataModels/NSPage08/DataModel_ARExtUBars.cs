@@ -53,10 +53,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             set { selectedIndexDiameterL = value; NotifyPropertyChanged("SelectedIndexDiameterL"); }
         }
         
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameterL = 0;
-        }
         /// <summary>
         /// UI_TextBox_AR_Ext_Diameter_Usmaller
         /// </summary>        

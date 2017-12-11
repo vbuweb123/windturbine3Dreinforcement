@@ -63,7 +63,7 @@
             <Label ap:CultureKey.CultureRes="Lbl_CHR_RadialSpacing"  Grid.Column="0" Content="__Spacing Radial" HorizontalAlignment="Left" Margin="5,120,0,0" VerticalAlignment="Top"/>
             <TextBox 
                 DataContext="{Binding DataModel_CHR_Zones}"
-                Text="{Binding spacingValueRadial1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                Text="{Binding SpacingValueRadial1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                 Template="{StaticResource AppTextBoxGeneric}"
                 Grid.Column="1" HorizontalAlignment="Center" Height="25" Margin="0,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
@@ -103,7 +103,7 @@
             <!--ZoneLength2-->
             <TextBox 
                 DataContext="{Binding DataModel_CHR_Zones}" Template="{StaticResource AppTextBoxGeneric}"
-                Text="{Binding ZoneLength2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
+                Text="{Binding ZoneLength2, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"  IsEnabled="False"   
                 Grid.Column="2" HorizontalAlignment="Center" Height="25" Margin="0,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
             <TextBox 
                 DataContext="{Binding DataModel_CHR_Zones}" Template="{StaticResource AppTextBoxGeneric}"
