@@ -6,43 +6,49 @@ using System.Threading.Tasks;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public class Global
+    public partial class Global
     {
-        private GlobalPage01 globalPage01;
-        public GlobalPage01 GlobalPage01 => globalPage01 ??(globalPage01 = new GlobalPage01());
+        public IGlobalPage01 GlobalPage01 { get; private set; }
 
-        private GlobalPage02 globalPage02;
-        public GlobalPage02 GlobalPage02 => globalPage02 ?? (globalPage02 = new GlobalPage02());
+        public IGlobalPage02 GlobalPage02 { get; private set; }
 
-        private GlobalPage03 globalPage03;
-        public GlobalPage03 GlobalPage03 => globalPage03 ?? (globalPage03 = new GlobalPage03());
+        public IGlobalPage03 GlobalPage03 { get; private set; }
 
-        private GlobalPage04 globalPage04;
-        public GlobalPage04 GlobalPage04 => globalPage04 ?? (globalPage04 = new GlobalPage04());
+        public IGlobalPage04 GlobalPage04 { get; private set; }
 
-        private GlobalPage05 globalPage05;
-        public GlobalPage05 GlobalPage05 => globalPage05 ?? (globalPage05 = new GlobalPage05());
+        public IGlobalPage05 GlobalPage05 { get; private set; }
 
-        private GlobalPage06 globalPage06;
-        public GlobalPage06 GlobalPage06 => globalPage06 ?? (globalPage06 = new GlobalPage06());
+        public IGlobalPage06 GlobalPage06 { get; private set; }
 
-        private GlobalPage07 globalPage07;
-        public GlobalPage07 GlobalPage07 => globalPage07 ?? (globalPage07 = new GlobalPage07());
+        public IGlobalPage07 GlobalPage07 { get; private set; }
 
-        private GlobalPage08 globalPage08;
-        public GlobalPage08 GlobalPage08 => globalPage08 ?? (globalPage08 = new GlobalPage08());
+        public IGlobalPage08 GlobalPage08 { get; private set; }
 
-        private GlobalPage09 globalPage09;
-        public GlobalPage09 GlobalPage09 => globalPage09 ?? (globalPage09 = new GlobalPage09());
+        public IGlobalPage09 GlobalPage09 { get; private set; }
 
-        private GlobalPage10 globalPage10;
-        public GlobalPage10 GlobalPage10 => globalPage10 ?? (globalPage10 = new GlobalPage10());
+        public IGlobalPage10 GlobalPage10 { get; private set; }
 
-        private GlobalPage11 globalPage11;
-        public GlobalPage11 GlobalPage11 => globalPage11 ?? (globalPage11 = new GlobalPage11());
+        public IGlobalPage11 GlobalPage11 { get; private set; }
 
-        private GlobalPage12 globalPage12;
-        public GlobalPage12 GlobalPage12 => globalPage12 ?? (globalPage12 = new GlobalPage12());
+        public IGlobalPage12 GlobalPage12 { get; private set; }
+
+        public Global()
+        {
+            GlobalPage01 = new _GlobalPage01();
+            GlobalPage02 = new _GlobalPage02();
+            GlobalPage03 = new _GlobalPage03();
+            GlobalPage04 = new _GlobalPage04();
+            GlobalPage05 = new _GlobalPage05();
+            GlobalPage06 = new _GlobalPage06();
+            GlobalPage07 = new _GlobalPage07();
+            GlobalPage08 = new _GlobalPage08();
+            GlobalPage09 = new _GlobalPage09();
+            GlobalPage10 = new _GlobalPage10();
+            GlobalPage11 = new _GlobalPage11();
+            GlobalPage12 = new _GlobalPage12();
+            //calling each registered action
+            GlobalPageEvts.Evts.ForEach((evtAction) => evtAction());
+        }
     }
     public static class GlobalPageEvts
     {

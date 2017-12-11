@@ -131,7 +131,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
             }
 
         }
-              
+
         /// <summary>
         /// UI_TextBox_Bottom_Cover
         /// </summary>
@@ -214,23 +214,30 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         }
         public DataModel_Global_Formwork()
         {
-            this.PropertyChanged += (o, e) =>
+            GlobalPageEvts.Evts.Add(() =>
             {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HFoundation)
-                    || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HTowerBase)
-                    || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HightAboveGround))
-                    Set_DeptFoundation();
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DTowerBase)
-                || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))
-                    Set_RadiusBtc();
-            };
-            GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
+                this.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HFoundation)
+                        || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HTowerBase)
+                        || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HightAboveGround))
+                        Set_DeptFoundation();
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DTowerBase)
+                    || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))
+                        Set_RadiusBtc();
+                };
+            });
+
+            GlobalPageEvts.Evts.Add(() =>
             {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.RadiusCenterLineTower))
-                    Set_RadiusCenterLineTower();
-            };
+                GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.RadiusCenterLineTower))
+                        Set_RadiusCenterLineTower();
+                };
+            });
         }
-        
+
         private void Set_DeptFoundation()
         {
             DeptFoundation = HFoundation + HTowerBase - HightAboveGround;
