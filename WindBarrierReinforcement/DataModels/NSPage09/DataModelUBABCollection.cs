@@ -11,7 +11,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
     {
         public ObservableCollection<DataModelUBAB> Collection { get; set; }
 
-        private int _zoneIndexCurrent = 0;
+        //private int _zoneIndexCurrent = 0;
         private int _maxzones = 10;
 
         public DataModelUBAB this[int index]
