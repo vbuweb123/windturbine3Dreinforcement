@@ -26,11 +26,10 @@ namespace WindBarrierReinforcement
         public DataModel_ScrewPiles  DataModel_ScrewPile_SP{ get; set; }
         public Page03()
         {
-            DataModel_ScrewPile_SP =  new DataModel_ScrewPiles(this);
+            DataModel_ScrewPile_SP =  new DataModel_ScrewPiles();
               this.DataContext = this;
             InitializeComponent();
-            CultureRenamer.RenameCollection(Ui_Grid_Piles.Children);
-            CultureRenamer.RenameTextBlock(UI_TextBlock_Title);
+            CultureRenamer.Rename(UI_Grid_Master);
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

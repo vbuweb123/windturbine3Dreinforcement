@@ -32,14 +32,7 @@ namespace WindBarrierReinforcement
         public DataModel_Generalities DataModel_Generalities { get; set; }
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            CultureRenamer.RenameCollection(UI_Grid_UPBR_D2BB.Children);
-            CultureRenamer.RenameCollection(UI_Grid_UPBR_D1BB.Children);
-            CultureRenamer.RenameCollection(UI_Grid_UPBR_LB.Children);
-            CultureRenamer.RenameCollection(UI_Grid_UPBR_TB_Dir1TB.Children);
-            CultureRenamer.RenameCollection(UI_Grid_UPBR_TB_Dir2TB.Children);
-            CultureRenamer.RenameCollection(UI_Grid_UPBR_TB_CEOL.Children);
-            CultureRenamer.RenameCollection(UI_Grid_UPBR_TB_Gen.Children);
-            CultureRenamer.RenameTextBlock(UI_TextBlock_Title);
+            CultureRenamer.Rename(UI_Master_Grid);
         }
 
         public Page06()

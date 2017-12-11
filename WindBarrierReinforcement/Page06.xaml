@@ -21,7 +21,7 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Background="{StaticResource AppMainBackgroundColor}">
+    <Grid Name="UI_Master_Grid" Background="{StaticResource AppMainBackgroundColor}">
 
         <TextBlock ap:CultureKey.CultureRes="Txt_Under_Plate_Bottom_Reinforcement" Text="__Under Plate Bottom Reinforcement" HorizontalAlignment="Left" Margin="20,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                    Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title" />

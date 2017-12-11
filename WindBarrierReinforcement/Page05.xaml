@@ -19,7 +19,7 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Background="{StaticResource AppMainBackgroundColor}">
+    <Grid Name="UI_Grid_Master" Background="{StaticResource AppMainBackgroundColor}">
 
         <TextBlock ap:CultureKey.CultureRes="Txt_Top_Reinforcement" Text="__Top Reinforcement" HorizontalAlignment="Left" Margin="20,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                    Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title" />

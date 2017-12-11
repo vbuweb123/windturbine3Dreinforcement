@@ -73,10 +73,8 @@ namespace WindBarrierReinforcement
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            CultureRenamer.RenameCollection(UI_Grid_Global.Children);
-            CultureRenamer.RenameTextBlock(UI_TextBlock_Title);
-            CultureRenamer.RenameCollection(UI_Grid_G_Materials.Children);
-            CultureRenamer.RenameCollection(UI_Grid_G_Coordinations.Children);            
+            CultureRenamer.Rename(UI_Grid_Master);
+                     
         }
 
     }
