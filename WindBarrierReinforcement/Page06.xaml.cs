@@ -47,7 +47,7 @@ namespace WindBarrierReinforcement
             DataModel_Generalities = new DataModel_Generalities();
             InitializeComponent();
             this.DataContext = this;
-
+            
          //  Writer.Writer.AddElementToDisplay(PropertyDataInfo.GetInfo(DataModel_BR_D1, x => x.Diameter));
          //  Writer.Writer.AddElementToDisplay(PropertyDataInfo.GetInfo(DataModel_BR_D1, x => x.MarginCover));
          //  Writer.Writer.AddElementToDisplay(PropertyDataInfo.GetInfo(DataModel_BR_D1, x => x.Spacing));

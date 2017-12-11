@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
+using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.DataModels.NSPage02;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage01
 {
@@ -17,7 +19,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int HFoundation
         {
             get { return hFoundation; }
-            set { hFoundation = value; NotifyPropertyChanged("HFoundation"); NotifyPropertyChanged("DeptFoundation"); }
+            set
+            {
+                hFoundation = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HFoundation));
+            }
         }
         /// <summary>
         /// UI_TextBox_H_Foundation_Edge
@@ -26,7 +32,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int HFoundationEdge
         {
             get { return hFoundationEdge; }
-            set { hFoundationEdge = value; NotifyPropertyChanged("HFoundationEdge"); }
+            set
+            {
+                hFoundationEdge = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HFoundationEdge));
+            }
         }
         /// <summary>
         /// UI_TextBox_H_Tower_Base
@@ -35,7 +45,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int HTowerBase
         {
             get { return hTowerBase; }
-            set { hTowerBase = value; NotifyPropertyChanged("HTowerBase"); NotifyPropertyChanged("DeptFoundation"); }
+            set
+            {
+                hTowerBase = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HTowerBase));
+            }
         }
         /// <summary>
         /// UI_TextBox_H_Bottom"
@@ -44,7 +58,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int HBottom
         {
             get { return hBottom; }
-            set { hBottom = value; NotifyPropertyChanged("HBottom"); NotifyPropertyChanged("RadiusBtc"); }
+            set
+            {
+                hBottom = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom));
+            }
         }
         /// <summary>
         /// UI_TextBox_Diameter_Foundation
@@ -53,7 +71,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int DFoundation
         {
             get { return dFoundation; }
-            set { dFoundation = value; NotifyPropertyChanged("DFoundation"); }
+            set
+            {
+                dFoundation = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DFoundation));
+            }
         }
         /// <summary>
         /// UI_TextBox_Diameter_Tower_Base
@@ -62,7 +84,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int DTowerBase
         {
             get { return dTowerBase; }
-            set { dTowerBase = value; NotifyPropertyChanged("DTowerBase"); NotifyPropertyChanged("RadiusBtc"); }
+            set
+            {
+                dTowerBase = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DTowerBase));
+            }
         }
         /// <summary>
         /// UI_TextBox_Foundation_Bed
@@ -71,7 +97,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int FoundationBed
         {
             get { return foundationBed; }
-            set { foundationBed = value; NotifyPropertyChanged("FoundationBed"); }
+            set
+            {
+                foundationBed = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.FoundationBed));
+            }
         }
         /// <summary>
         /// UI_TextBox_DiameterAnchor
@@ -80,32 +110,28 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int DiameterAnchor
         {
             get { return diameterAnchor; }
-            set { diameterAnchor = value; NotifyPropertyChanged("DiameterAnchor"); }
+            set
+            {
+                diameterAnchor = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DiameterAnchor));
+            }
         }
         /// <summary>
         /// UI_TextBox_Radius_Centerline_Tower
         /// </summary>
-        
+
+        private int radiusCenterlineTower;
         public int RadiusCenterLineTower
         {
-            get => _radiusCenterlineTower;
+            get { return radiusCenterlineTower; }
+            set
+            {
+                radiusCenterlineTower = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.RadiusCenterLineTower));
+            }
 
         }
-        private int _radiusCenterlineTower;
-
-
-        public void UpdateA(int radiusCenterLineTower)
-        {
-            _radiusCenterlineTower = radiusCenterLineTower;
-            NotifyPropertyChanged("RadiusCenterLineTower");
-        }
-
-        public DataModel_Global_Formwork()
-        {
-
-        }
-       
-
+              
         /// <summary>
         /// UI_TextBox_Bottom_Cover
         /// </summary>
@@ -113,7 +139,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int BottomCover
         {
             get { return bottomCover; }
-            set { bottomCover = value; NotifyPropertyChanged("BottomCover"); }
+            set
+            {
+                bottomCover = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.BottomCover));
+            }
         }
         /// <summary>
         /// UI_TextBox_Top_Cover
@@ -122,7 +152,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int TopCover
         {
             get { return topCover; }
-            set { topCover = value; NotifyPropertyChanged("TopCover"); }
+            set
+            {
+                topCover = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.TopCover));
+            }
         }
 
         /// <summary>
@@ -132,7 +166,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int EdgeCover
         {
             get { return edgeCover; }
-            set { edgeCover = value; NotifyPropertyChanged("EdgeCover"); }
+            set
+            {
+                edgeCover = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.EdgeCover));
+            }
         }
         /// <summary>
         /// UI_TextBox_Radius_Btc
@@ -140,9 +178,13 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         private int radiusBtc;
         public int RadiusBtc
         {
-            get { return radiusBtc = dTowerBase/2 - hBottom; }
-            set { radiusBtc = value; NotifyPropertyChanged("RadiusBtc"); }
-        }     
+            get { return radiusBtc; }
+            set
+            {
+                radiusBtc = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.RadiusBtc));
+            }
+        }
 
         /// <summary>
         /// UI_TextBox_HeightAboveGround
@@ -151,7 +193,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int HightAboveGround
         {
             get { return hightAboveGround; }
-            set { hightAboveGround = value; NotifyPropertyChanged("HightAboveGround"); NotifyPropertyChanged("DeptFoundation");
+            set
+            {
+                hightAboveGround = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HightAboveGround));
             }
         }
         /// <summary>
@@ -160,8 +205,43 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         private int deptFoundation;
         public int DeptFoundation
         {
-            get { return deptFoundation = hFoundation + hTowerBase - hightAboveGround; }
-            set { deptFoundation = value; NotifyPropertyChanged("DeptFoundation");  }
+            get { return deptFoundation; }
+            private set
+            {
+                deptFoundation = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DeptFoundation));
+            }
+        }
+        public DataModel_Global_Formwork()
+        {
+            this.PropertyChanged += (o, e) =>
+            {
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HFoundation)
+                    || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HTowerBase)
+                    || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HightAboveGround))
+                    Set_DeptFoundation();
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DTowerBase)
+                || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))
+                    Set_RadiusBtc();
+            };
+            GlobalPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
+            {
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.RadiusCenterLineTower))
+                    Set_RadiusCenterLineTower();
+            };
+        }
+        
+        private void Set_DeptFoundation()
+        {
+            DeptFoundation = HFoundation + HTowerBase - HightAboveGround;
+        }
+        private void Set_RadiusBtc()
+        {
+            RadiusBtc = DTowerBase / 2 - HBottom;
+        }
+        private void Set_RadiusCenterLineTower()
+        {
+            RadiusCenterLineTower = GlobalPage02.DataModel_Anchor.RadiusCenterLineTower;
         }
     }
 }

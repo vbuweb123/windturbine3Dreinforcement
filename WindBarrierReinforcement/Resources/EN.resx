@@ -645,4 +645,7 @@
     <value>Bottom Reinforcement</value>
     <comment>Page 04</comment>
   </data>
+  <data name="Txt_Global" xml:space="preserve">
+    <value>Global</value>
+  </data>
 </root>
