@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
+using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage01
 {
@@ -16,7 +18,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int CoordinationX
         {
             get { return coordinationX; }
-            set { coordinationX = value; NotifyPropertyChanged("CoordinationX"); }
+            set { coordinationX = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.CoordinationX)); }
         }
 
         /// <summary>
@@ -26,7 +28,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int CoordinationY
         {
             get { return coordinationY; }
-            set { coordinationY = value; NotifyPropertyChanged("CoordinationY"); }
+            set { coordinationY = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.CoordinationY)); }
         }
         /// <summary>
         /// UI_TextBox_ARC_CenterPoint_Z
@@ -35,27 +37,42 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int CoordinationZ
         {
             get { return coordinationZ; }
-            set { coordinationZ = value; NotifyPropertyChanged("CoordinationZ"); NotifyPropertyChanged("FoundationPointZ"); }
+            set { coordinationZ = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.CoordinationZ)); }
         }
         /// <summary>
         /// UI_TextBox_ARC_FoundationPoint_Z
         /// </summary>
         /// 
+        private int foundationPointZ;
+
         public int FoundationPointZ
         {
-            get => coordinationZ - _depthFoundation - _hBottom;
+            get { return foundationPointZ; }
+            set { foundationPointZ = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.FoundationPointZ)); }
         }
-        private int _depthFoundation;
-        private int _hBottom;
 
         public DataModel_Global_Coordinations_GroundPoint()
         {
-
+            GlobalPageEvts.Evts.Add(() => {
+                this.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.CoordinationZ))
+                        Set_FoundationPointZ();
+                };
+            });
+            GlobalPageEvts.Evts.Add(() => {
+                GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DeptFoundation)
+                        || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))
+                        Set_FoundationPointZ();
+                };
+            });
         }
-        public void Update(int depthFoundation, int hBottom)
+              
+        private void Set_FoundationPointZ()
         {
-            _depthFoundation = depthFoundation;
-            _hBottom = hBottom;
-        }               
+            FoundationPointZ = CoordinationZ - GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.DeptFoundation - GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.HBottom;
+        }
     }
 }

@@ -28,41 +28,14 @@ namespace WindBarrierReinforcement
     public partial class Page01 : Page
     {
 
-        public DataModel_Global_Formwork DataModel_Global_Formwork
-        {
-            get => GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork;
-        }
-        public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint
-        {
-            get => GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Coordinations_GroundPoint;
-        }
-        public DataModel_Global_Materials DataModel_Global_Materials
-        {
-            get => GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Materials;
-        }
+        public DataModel_Global_Formwork DataModel_Global_Formwork => GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork;
 
+        public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint => GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Coordinations_GroundPoint;
+
+        public DataModel_Global_Materials DataModel_Global_Materials => GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Materials;
+                
         public Page01()
         {
-
-            DataModel_Global_Coordinations_GroundPoint.Update(DataModel_Global_Formwork.DeptFoundation, DataModel_Global_Formwork.HBottom);
-
-            DataModel_Global_Formwork.PropertyChanged += delegate (object sender, System.ComponentModel.PropertyChangedEventArgs e)
-            {
-                if (e.PropertyName == "HBottom" || e.PropertyName == "DeptFoundation")
-                {
-                    //update
-                    DataModel_Global_Coordinations_GroundPoint.Update(DataModel_Global_Formwork.DeptFoundation, DataModel_Global_Formwork.HBottom);
-                    DataModel_Global_Coordinations_GroundPoint.NotifyPropertyChanged("FoundationPointZ");
-                }
-            };
-            GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
-            {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x=>x.RadiusCenterLineTower))
-                {
-                    DataModel_Global_Formwork.UpdateA(GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.RadiusCenterLineTower);
-                }
-            };
-
             InitializeComponent();
 
             this.DataContext = this;
@@ -70,8 +43,7 @@ namespace WindBarrierReinforcement
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            CultureRenamer.Rename(UI_Grid_Master);
-                     
+            CultureRenamer.Rename(UI_Grid_Master);                     
         }
 
     }

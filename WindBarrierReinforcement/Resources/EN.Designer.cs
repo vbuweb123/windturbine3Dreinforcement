@@ -1456,6 +1456,15 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Global.
+        /// </summary>
+        internal static string Txt_Global {
+            get {
+                return ResourceManager.GetString("Txt_Global", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Over Plate Top Reinforcement.
         /// </summary>
         internal static string Txt_OverPlateTopReinforcementTitle {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
+using WindBarrierReinforcement.Common.Reflected;
 
 namespace WindBarrierReinforcement.DataModels.NSPage01
 {
@@ -16,7 +17,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public string MaterialFoundation
         {
             get { return materialFoundation; }
-            set { materialFoundation = value; NotifyPropertyChanged("MaterialFoundation"); }
+            set
+            {
+                materialFoundation = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Materials>(x => x.MaterialFoundation));
+            }
         }
         /// <summary>
         /// UI_TextBox_Material_Foundation_Bed
@@ -25,7 +30,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public string MaterialFoundationBed
         {
             get { return materialFoundationBed; }
-            set { materialFoundationBed = value; NotifyPropertyChanged("MaterialFoundationBed"); }
+            set
+            {
+                materialFoundationBed = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Materials>(x => x.MaterialFoundationBed));
+            }
         }
 
         /// <summary>
@@ -35,7 +44,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public string MaterialTowerBase
         {
             get { return materialTowerBase; }
-            set { materialTowerBase = value; NotifyPropertyChanged("MaterialTowerBase"); }
+            set
+            {
+                materialTowerBase = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Materials>(x => x.MaterialTowerBase));
+            }
         }
     }
 }

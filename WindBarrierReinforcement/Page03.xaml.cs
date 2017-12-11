@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WindBarrierReinforcement.DataModels.NSPAge03;
 using WindBarrierReinforcement.Resources;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement
 {
@@ -22,19 +23,15 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page03 : Page
     {
+               
+        public DataModel_ScrewPiles DataModel_ScrewPiles => GlobalPageEvts.Global.GlobalPage03.DataModel_ScrewPile;
 
-        public DataModel_ScrewPiles  DataModel_ScrewPile_SP{ get; set; }
         public Page03()
-        {
-            DataModel_ScrewPile_SP =  new DataModel_ScrewPiles();
-              this.DataContext = this;
+        {          
+            this.DataContext = this;
             InitializeComponent();
             CultureRenamer.Rename(UI_Grid_Master);
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
+               
     }
 }
