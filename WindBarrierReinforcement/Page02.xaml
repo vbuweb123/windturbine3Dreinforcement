@@ -149,13 +149,10 @@
             <TextBox 
                 IsEnabled="False"
                 DataContext="{Binding DataModel_Anchor}"
-                Text="{Binding DepthAnchor, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                Text="{Binding DepthAnchor, Mode = OneWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
                 Margin="140,245,0,0" Height="25" Width="100">
-                <i:Interaction.Behaviors>
-                    <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
-                </i:Interaction.Behaviors>
             </TextBox>
 
             <!--Depth Anchor Bottom-->
@@ -165,12 +162,9 @@
             <TextBox                 
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding DepthAnchorBottom, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
-                Template="{StaticResource AppTextBoxGeneric}"
+                Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
                 Margin="140,275,0,0"  Height="25" Width="100">
-                <i:Interaction.Behaviors>
-                    <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
-                </i:Interaction.Behaviors>
             </TextBox>
 
             <!--Radius Centerline Tower-->
@@ -180,12 +174,9 @@
             <TextBox               
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding RadiusCenterLineTower, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
-                Template="{StaticResource AppTextBoxGeneric}"
+                Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
                 Margin="140,305,0,0"  Height="25" Width="100">
-                <i:Interaction.Behaviors>
-                    <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
-                </i:Interaction.Behaviors>
             </TextBox>
 
             <!--Insertion Depth Top Flange-->
@@ -249,18 +240,15 @@
             </TextBox>       
 
             <!--Distance Bolt Pair-->
-            <Label Content="__Dispance Bolt Pairs" HorizontalAlignment="Left"  VerticalAlignment="Top"
+            <Label Content="__Distance Bolt Pairs" HorizontalAlignment="Left"  VerticalAlignment="Top"
                    ap:CultureKey.CultureRes="Lbl_Anc_DispanceBoltPairs" 
                    Margin="240,65,0,0" Height="25"/>
             <TextBox               
                 DataContext="{Binding DataModel_Anchor}"
                 Text="{Binding DispanceBoltPairs, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
-                Template="{StaticResource AppTextBoxGeneric}"
+                Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
                 Margin="370,65,0,0"  Height="25" Width="100">
-                <i:Interaction.Behaviors>
-                    <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
-                </i:Interaction.Behaviors>
             </TextBox>
 
             <!--UI_TextBox_Thickness_Bott_Flange-->
@@ -314,13 +302,10 @@
                    Margin="240,185,0,0" Height="25"/>
             <TextBox                        
                 DataContext="{Binding DataModel_Anchor}"
-                Text="{Binding MaterialGrout, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                Template="{StaticResource AppTextBoxGeneric}"
+                Text="{Binding MaterialGrout, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
                 Margin="370,185,0,0"  Height="25" Width="100">
-                <i:Interaction.Behaviors>
-                    <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
-                </i:Interaction.Behaviors>
             </TextBox>
 
             <!--Number Suppports-->
@@ -349,9 +334,6 @@
                 Template="{StaticResource AppTextBoxGeneric}"
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
                 Margin="370,245,0,0"  Height="25" Width="100">
-                <i:Interaction.Behaviors>
-                    <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
-                </i:Interaction.Behaviors>
             </TextBox>
 
             <!--Offset Bott Flange-->
@@ -365,9 +347,6 @@
                 Template="{StaticResource AppTextBoxGeneric}"
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
                 Margin="370,275,0,0"  Height="25" Width="100">
-                <i:Interaction.Behaviors>
-                    <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
-                </i:Interaction.Behaviors>
             </TextBox>
 
             <!--Depth Conc Bed-->
