@@ -33,12 +33,9 @@
                     <Label Content="__MinCore" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox
                         DataContext="{Binding DataModelRadialGeneral}"
-                        Text="{Binding MinCore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
-                        Template="{StaticResource AppTextBoxGeneric}"
+                        Text="{Binding MinCore, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
+                        Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         HorizontalAlignment="Left" Height="25" Margin="150,5,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
                     </TextBox>
 
                     <Label Content="__MinSpaceField" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
@@ -67,7 +64,7 @@
                     <TextBox
                         DataContext="{Binding DataModelRadialGeneral}"
                         Text="{Binding AlternativeMinStartAngle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
-                        Template="{StaticResource AppTextBoxGeneric}"
+                        Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour></behaviors:NumericBehaviour>

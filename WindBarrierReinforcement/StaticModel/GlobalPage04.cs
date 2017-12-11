@@ -7,18 +7,19 @@ using WindBarrierReinforcement.DataModels.NSPage04;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public static class GlobalPage04
+    public class GlobalPage04
     {
-        private static DataModelCircularGeneral dataModelCircularGeneral;
-        public static DataModelCircularGeneral DataModelCircularGeneral => dataModelCircularGeneral ?? (dataModelCircularGeneral = new DataModelCircularGeneral());
+        private DataModelCircularGeneral dataModelCircularGeneral;
+        public DataModelCircularGeneral DataModelCircularGeneral => dataModelCircularGeneral ?? (dataModelCircularGeneral = new DataModelCircularGeneral());
 
-        private static DataModelRadial1 dataModelRadial1;
-        public static DataModelRadial1 DataModelRadial1 => dataModelRadial1 ?? (dataModelRadial1 = new DataModelRadial1());
+        private DataModelRadial1 dataModelRadial1;
+        public DataModelRadial1 DataModelRadial1 => dataModelRadial1 ?? (dataModelRadial1 = new DataModelRadial1());
 
-        private static DataModelRadial2 dataModelRadial2;
-        public static DataModelRadial2 DataModelRadial2 => dataModelRadial2 ?? (dataModelRadial2 = new DataModelRadial2());
+        private DataModelRadial2 dataModelRadial2;
+        public DataModelRadial2 DataModelRadial2 => dataModelRadial2 ?? (dataModelRadial2 = new DataModelRadial2());
 
-        private static DataModelRadialGeneral dataModelRadialGeneral;
-        public static DataModelRadialGeneral DataModelRadialGeneral => dataModelRadialGeneral ?? (dataModelRadialGeneral = new DataModelRadialGeneral());
+        private DataModelRadialGeneral dataModelRadialGeneral;
+        public DataModelRadialGeneral DataModelRadialGeneral => dataModelRadialGeneral ?? (dataModelRadialGeneral = new DataModelRadialGeneral());
+
     }
 }

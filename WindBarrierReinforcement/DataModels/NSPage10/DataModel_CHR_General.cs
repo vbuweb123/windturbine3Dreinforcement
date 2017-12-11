@@ -55,7 +55,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         public DataModel_CHR_General()
         {
             this.PropertyChanged += DataModel_CHR_General_PropertyChanged;
-            GlobalPage12.DataModelShapesCollection.CollectionChanged += DataModelShapesCollection_CollectionChanged;
+            GlobalPageEvts.Global.GlobalPage12.DataModelShapesCollection.CollectionChanged += DataModelShapesCollection_CollectionChanged;
         }
 
         private void DataModelShapesCollection_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -73,7 +73,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         private void Set_HookLengths()
         {
             EDiameters value = (EDiameters)SelectedIndexDiameter; //TODO - check this strict dependency to the index in the list. Maybe add in tag a reference?
-            var BSShape = GlobalPage12.DataModelShapesCollection.Where(x => x.Reference == value).SingleOrDefault();
+            var BSShape = GlobalPageEvts.Global.GlobalPage12.DataModelShapesCollection.Where(x => x.Reference == value).SingleOrDefault();
             if (BSShape == null) HookLengths = - 1;//NEED TO ADD THE VALUE IN GLOBAPL PAGE 12 in the list of BSShapes
             HookLengths = BSShape.NominalSize * (7 + 5);
         }

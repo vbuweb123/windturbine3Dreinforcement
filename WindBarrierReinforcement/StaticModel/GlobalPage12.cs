@@ -8,10 +8,10 @@ using WindBarrierReinforcement.DataModels.NSPage12;
 
 namespace WindBarrierReinforcement.StaticModel
 {
-    public static class GlobalPage12
+    public class GlobalPage12
     {
-        private static ObservableCollection<DataModelBSShapes> dataModelShapesCollection;
-        public static ObservableCollection<DataModelBSShapes> DataModelShapesCollection
+        private ObservableCollection<DataModelBSShapes> dataModelShapesCollection;
+        public ObservableCollection<DataModelBSShapes> DataModelShapesCollection
         {
             get
             {
@@ -24,7 +24,7 @@ namespace WindBarrierReinforcement.StaticModel
                 return dataModelShapesCollection;
             }
         }
-        private static void PopulateShapes()
+        private void PopulateShapes()
         {
             // TODO : Get these from XML File
             DataModelShapesCollection.Add(new DataModelBSShapes

@@ -167,7 +167,6 @@
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\RManager.cs" />
-    <Compile Include="StaticModel\Global.cs" />
     <Compile Include="StaticModel\GlobalPage01.cs" />
     <Compile Include="StaticModel\GlobalPage02.cs" />
     <Compile Include="StaticModel\GlobalPage03.cs" />
@@ -180,6 +179,7 @@
     <Compile Include="StaticModel\GlobalPage10.cs" />
     <Compile Include="StaticModel\GlobalPage11.cs" />
     <Compile Include="StaticModel\GlobalPage12.cs" />
+    <Compile Include="StaticModel\GlobalPageEvts.cs" />
     <Compile Include="Writer\Writer.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

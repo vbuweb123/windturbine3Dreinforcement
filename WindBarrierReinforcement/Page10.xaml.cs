@@ -20,8 +20,8 @@ namespace WindBarrierReinforcement
 {
     public partial class Page10 : Page
     {
-        public DataModel_CHR_General DataModel_CHR_General => GlobalPage10.DataModel_CHR_General;
-        public DataModel_CHR_Zones DataModel_CHR_Zones => GlobalPage10.DataModel_CHR_Zones;
+        public DataModel_CHR_General DataModel_CHR_General => GlobalPageEvts.Global.GlobalPage10.DataModel_CHR_General;
+        public DataModel_CHR_Zones DataModel_CHR_Zones => GlobalPageEvts.Global.GlobalPage10.DataModel_CHR_Zones;
 
         public Page10()
         {

@@ -28,7 +28,7 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page09 : Page
     {
-        public DataModelUBABCollection DataModelUBABCollection => GlobalPage09.DataModelUBABCollection;
+        public DataModelUBABCollection DataModelUBABCollection => GlobalPageEvts.Global.GlobalPage09.DataModelUBABCollection;
 
         private string _zoneName = "Zona ";
         public Page09()

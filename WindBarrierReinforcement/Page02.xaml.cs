@@ -24,7 +24,7 @@ namespace WindBarrierReinforcement
     /// 
     public partial class Page02 : Page
     {
-        public DataModel_Anchor DataModel_Anchor => GlobalPage02.DataModel_Anchor;
+        public DataModel_Anchor DataModel_Anchor => GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor;
 
         public Page02()
         {

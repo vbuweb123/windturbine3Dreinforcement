@@ -229,10 +229,15 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         {
 
             this.PropertyChanged += DataModel_GlobalAnchor_PropertyChanged;
-            GlobalPage01.DataModel_Global_Formwork.PropertyChanged += DataModel_Global_Formwork_PropertyChanged;
-            GlobalPage11.DataModelMaterialsGrouting.PropertyChanged += DataModelMaterialsGrouting_PropertyChanged;
+            GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.PropertyChanged += DataModel_Global_Formwork_PropertyChanged;
+            GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsGrouting.PropertyChanged += DataModelMaterialsGrouting_PropertyChanged;
         }
-
+        
+        //helper function that encapsulates a functionality which may be further extended
+        public int GetBoltDiameterNominalSize()
+        {
+            return BoltDiameter;
+        }
        
         private void DataModel_Global_Formwork_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
@@ -287,7 +292,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         }
         private void Set_DepthAnchorBottom()
         {
-            DepthAnchorBottom = GlobalPage01.DataModel_Global_Formwork.HBottom + OffsetBottFlange;
+            DepthAnchorBottom = GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.HBottom + OffsetBottFlange;
         }
         private void Set_RadiusCenterLineTower()
         {
@@ -303,11 +308,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         }
         private void Set_OffsetBotFlange()
         {
-            OffsetBottFlange = GlobalPage01.DataModel_Global_Formwork.HFoundation + GlobalPage01.DataModel_Global_Formwork.HTowerBase - DepthAnchor;
+            OffsetBottFlange = GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.HFoundation + GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.HTowerBase - DepthAnchor;
         }
         private void Set_MaterialGrout()
         {
-            MaterialGrout = GlobalPage11.DataModelMaterialsGrouting.ConcreteQualityNames[GlobalPage11.DataModelMaterialsGrouting.SelectedIndexConcreteQuality];
+            MaterialGrout = GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsGrouting.ConcreteQualityNames[GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsGrouting.SelectedIndexConcreteQuality];
         }
     }
 }
