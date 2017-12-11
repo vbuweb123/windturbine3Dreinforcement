@@ -80,9 +80,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             get { return edgeCover; }
             set { edgeCover = value; NotifyPropertyChanged("EdgeCover"); }
         }
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameter = 0;
-        }
+
     }
 }

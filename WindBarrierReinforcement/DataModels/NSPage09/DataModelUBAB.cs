@@ -12,6 +12,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
 {
     public class DataModelUBAB : DataModel
     {
+        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
+
         private int exteriorHalfLength;
         public int ExteriorHalfLength
         {
@@ -20,11 +22,15 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
             {
                 exteriorHalfLength = value;
                 NotifyPropertyChanged("ExteriorHalfLength");
-                NotifyPropertyChanged("InteriorHalfLength");
             }
         }
 
-        public int InteriorHalfLength => ExteriorHalfLength;
+        private int interiorHalfLength;
+        public int InteriorHalfLength
+        {
+            get => interiorHalfLength;
+            private set { interiorHalfLength = value; NotifyPropertyChanged("InteriorHalfLength"); }
+        }
        
         private int smallEdge;
         public int SmallEdge
@@ -53,8 +59,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
             get { return selectedIndexDiameter; }
             set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
         }
-
-        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
+        
         /// <summary>
         /// Property related to button name in toolbar
         /// </summary>
@@ -75,6 +80,16 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
             ZoneName = zoneName;
 
             this.IndexInList = index;
+
+            this.PropertyChanged += (o, e) =>
+            {
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelUBAB>(x => x.ExteriorHalfLength))
+                    Set_InteriorHalfLength();
+            };
+        }
+        private void Set_InteriorHalfLength()
+        {
+            InteriorHalfLength = ExteriorHalfLength;
         }
     }
 }

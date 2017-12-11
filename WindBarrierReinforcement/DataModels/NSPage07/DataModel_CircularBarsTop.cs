@@ -82,9 +82,5 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             set { groups = value; NotifyPropertyChanged("Groups"); }
         }
 
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameter = 0;
-        }
     }
 }
