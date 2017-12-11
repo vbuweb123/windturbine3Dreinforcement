@@ -645,6 +645,9 @@
     <value>Bottom Reinforcement</value>
     <comment>Page 04</comment>
   </data>
+  <data name="Txt_Global" xml:space="preserve">
+    <value>Global</value>
+  </data>
   <data name="Lbl_Anc_BoltDiameter" xml:space="preserve">
     <value>Bolt Diameter</value>
     <comment>Page 02</comment>
