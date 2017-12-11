@@ -187,9 +187,14 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             get { return maximumLength; }
             set { maximumLength = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.MaximumLength)); }
         }
-        public DataModelRadial1()
+
+        private GlobalDataModels global;
+
+        public DataModelRadial1(GlobalDataModels global)
         {
-            GlobalPageEvts.Evts.Add(() => {
+            this.global = global;
+
+            global.EvtHandler.Add(() => {
                 this.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.LargeDiamNoOfBars))
@@ -208,8 +213,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                         Set_StartOffsetAngle();
                 };
             });
-            GlobalPageEvts.Evts.Add(() => {
-                GlobalPageEvts.Global.GlobalPage04.DataModelRadialGeneral.PropertyChanged += (o, e) =>
+            global.EvtHandler.Add(() => {
+                global.GDMPage04.DataModelRadialGeneral.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadialGeneral>(x => x.MinCore))
                         Set_LargeDiameterOffsetFromCenter();
@@ -217,8 +222,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                         Set_ThirdDiameterOffsetFromCenter();
                 };
             });
-            GlobalPageEvts.Evts.Add(() => {
-                GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
+            global.EvtHandler.Add(() => {
+                global.GDMPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage02.DataModel_Anchor>(x => x.DiameterAnchor)
                         || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage02.DataModel_Anchor>(x => x.BoltDiameter))
@@ -230,7 +235,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         private void Set_SmallDiameterOffsetFromCenter()
         {
             //TODO: Change into a combobox in pgae2
-            SmallDiameterOffsetFromCenter = (int)Math.Round(Math.Ceiling((double)(GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.DiameterAnchor / 2 + 50 + GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.BoltDiameter)), 0);
+            SmallDiameterOffsetFromCenter = (int)Math.Round(Math.Ceiling((double)(global.GDMPage02.DataModel_Anchor.DiameterAnchor / 2 + 50 + global.GDMPage02.DataModel_Anchor.BoltDiameter)), 0);
         }
         private void Set_SpacingAngle()
         {
@@ -238,12 +243,12 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
         private void Set_LargeDiameterOffsetFromCenter()
         {
-            LargeDiameterOffsetFromCenter = Math.Max(UnreinforcedCore, GlobalPageEvts.Global.GlobalPage04.DataModelRadialGeneral.MinCore);
+            LargeDiameterOffsetFromCenter = Math.Max(UnreinforcedCore, global.GDMPage04.DataModelRadialGeneral.MinCore);
         }
         private void Set_ThirdDiameterOffsetFromCenter()
         {
             ThirdDiameterOffsetFromCenter = (Spacing3rdDiameterAngle == 0) ? 0 :
-                (int)(Math.Round(Math.Ceiling((double)GlobalPageEvts.Global.GlobalPage04.DataModelRadialGeneral.MinSpaceField / (0.5 * Spacing3rdDiameterAngle * Math.PI / 180)), 0));
+                (int)(Math.Round(Math.Ceiling((double)global.GDMPage04.DataModelRadialGeneral.MinSpaceField / (0.5 * Spacing3rdDiameterAngle * Math.PI / 180)), 0));
         }
         private void Set_Spacing3rdDiameterAngle()
         {

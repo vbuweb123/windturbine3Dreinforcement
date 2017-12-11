@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage01
 {

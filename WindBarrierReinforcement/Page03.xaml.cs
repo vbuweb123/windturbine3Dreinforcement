@@ -24,10 +24,12 @@ namespace WindBarrierReinforcement
     public partial class Page03 : Page
     {
                
-        public DataModel_ScrewPiles DataModel_ScrewPiles => GlobalPageEvts.Global.GlobalPage03.DataModel_ScrewPile;
+        public DataModel_ScrewPiles DataModel_ScrewPiles { get; private set; }
 
-        public Page03()
-        {          
+        public Page03(GlobalDataModels global)
+        {
+            DataModel_ScrewPiles = global.GDMPage03.DataModel_ScrewPile;
+
             this.DataContext = this;
             InitializeComponent();
             CultureRenamer.Rename(UI_Grid_Master);

@@ -224,10 +224,13 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
             get { return offsetBottFlange; }
             private set { offsetBottFlange = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.OffsetBottFlange)); }
         }
+        private GlobalDataModels global;
 
-        public DataModel_Anchor()
+        public DataModel_Anchor(GlobalDataModels global)
         {
-            GlobalPageEvts.Evts.Add(() => {
+
+            this.global = global;
+            global.EvtHandler.Add(() => {
                 this.PropertyChanged += (o, e) => {
                     //Depth Anchor
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.Peshrinkhoseheigth)
@@ -258,8 +261,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
                 };
             });
 
-            GlobalPageEvts.Evts.Add(() => {
-                GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) => {
+            global.EvtHandler.Add(() => {
+                this.global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) => {
                     //DepthAnchorBottom
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))
                         Set_DepthAnchorBottom();
@@ -270,8 +273,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
                 };
             });
 
-            GlobalPageEvts.Evts.Add(() => {
-                GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsGrouting.PropertyChanged += (o, e) => {
+            global.EvtHandler.Add(() => {
+                global.GDMPage11.DataModelMaterialsGrouting.PropertyChanged += (o, e) => {
                     //MaterialGrout
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage11.DataModelMaterials>(x => x.SelectedIndexConcreteQuality))
                         Set_MaterialGrout();
@@ -291,7 +294,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         }
         private void Set_DepthAnchorBottom()
         {
-            DepthAnchorBottom = GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.HBottom + OffsetBottFlange;
+            DepthAnchorBottom = global.GDMPage01.DataModel_Global_Formwork.HBottom + OffsetBottFlange;
         }
         private void Set_RadiusCenterLineTower()
         {
@@ -307,11 +310,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         }
         private void Set_OffsetBotFlange()
         {
-            OffsetBottFlange = GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.HFoundation + GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.HTowerBase - DepthAnchor;
+            OffsetBottFlange = global.GDMPage01.DataModel_Global_Formwork.HFoundation + global.GDMPage01.DataModel_Global_Formwork.HTowerBase - DepthAnchor;
         }
         private void Set_MaterialGrout()
         {
-            MaterialGrout = GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsGrouting.ConcreteQualityNames[GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsGrouting.SelectedIndexConcreteQuality];
+            MaterialGrout = global.GDMPage11.DataModelMaterialsGrouting.ConcreteQualityNames[global.GDMPage11.DataModelMaterialsGrouting.SelectedIndexConcreteQuality];
         }
     }
 }

@@ -76,13 +76,13 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         /// </summary>
         public int IndexInList { get; private set; }
 
-        public DataModelUBAB(string zoneName, int index)
+        public DataModelUBAB(GlobalDataModels global, string zoneName, int index)
         {
             ZoneName = zoneName;
 
             this.IndexInList = index;
 
-            GlobalPageEvts.Evts.Add(() => {
+            global.EvtHandler.Add(() => {
                 this.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelUBAB>(x => x.ExteriorHalfLength))

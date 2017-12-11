@@ -257,28 +257,37 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PR_Ureinforcement_RebarDiam));
             }
         }
+        private GlobalDataModels global;
 
-        public DataModel_ScrewPiles()
+        public DataModel_ScrewPiles(GlobalDataModels global)
         {
-            this.PropertyChanged += (o, e) =>
-            {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PileDepth))
-                    Set_DepthPile();
-                if (true)
-                {
+            this.global = global;
 
-                }
-            };
-            GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Coordinations_GroundPoint.PropertyChanged += (o, e) =>
+            global.EvtHandler.Add(() => {
+                this.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PileDepth))
+                        Set_DepthPile();
+                    if (true)
+                    {
+
+                    }
+                };
+            });
+
+            global.EvtHandler.Add(() =>
             {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.FoundationPointZ))
-                    Set_DepthPile();
-            };
+                global.GDMPage01.DataModel_Global_Coordinations_GroundPoint.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.FoundationPointZ))
+                        Set_DepthPile();
+                };
+            });
         }
 
         private void Set_DepthPile()
         {
-            DepthPile = GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Coordinations_GroundPoint.FoundationPointZ + PileDepth;
+            DepthPile = global.GDMPage01.DataModel_Global_Coordinations_GroundPoint.FoundationPointZ + PileDepth;
         }
 
         private void Set_PR_StirrupRadius_Layer2()

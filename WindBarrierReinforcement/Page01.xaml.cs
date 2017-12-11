@@ -28,14 +28,18 @@ namespace WindBarrierReinforcement
     public partial class Page01 : Page
     {
 
-        public DataModel_Global_Formwork DataModel_Global_Formwork => GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork;
+        public DataModel_Global_Formwork DataModel_Global_Formwork { get; private set; }
 
-        public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint => GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Coordinations_GroundPoint;
+        public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint  { get;private set;}
 
-        public DataModel_Global_Materials DataModel_Global_Materials => GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Materials;
-                
-        public Page01()
+        public DataModel_Global_Materials DataModel_Global_Materials { get; private set; }
+
+        public Page01(GlobalDataModels global)
         {
+            DataModel_Global_Formwork = global.GDMPage01.DataModel_Global_Formwork;
+            DataModel_Global_Coordinations_GroundPoint = global.GDMPage01.DataModel_Global_Coordinations_GroundPoint;
+            DataModel_Global_Materials = global.GDMPage01.DataModel_Global_Materials;
+
             InitializeComponent();
 
             this.DataContext = this;

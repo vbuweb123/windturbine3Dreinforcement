@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WindBarrierReinforcement.DataModels.NSPage05;
 using WindBarrierReinforcement.Resources;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement
 {
@@ -22,13 +23,13 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page05 : Page
     {
-        public DataModel_Top_Reinforcement DataModel_Top_Reinforcement1 { get; set; }
-        public DataModel_Top_Reinforcement DataModel_Top_Reinforcement2 { get; set; }
+        public DataModel_Top_Reinforcement DataModel_Top_Reinforcement1 { get; private set; }
+        public DataModel_Top_Reinforcement DataModel_Top_Reinforcement2 { get; private set; }
 
-        public Page05()
+        public Page05(GlobalDataModels global)
         {
-            DataModel_Top_Reinforcement1 = new DataModel_Top_Reinforcement();
-            DataModel_Top_Reinforcement2 = new DataModel_Top_Reinforcement();
+            DataModel_Top_Reinforcement1 = global.GDMPage05.DataModel_Top_Reinforcement1;
+            DataModel_Top_Reinforcement2 = global.GDMPage05.DataModel_Top_Reinforcement2;
 
             InitializeComponent();
             this.DataContext = this;

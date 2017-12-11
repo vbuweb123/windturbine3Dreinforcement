@@ -53,9 +53,14 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
             get { return edgeOffset2; }
             set { edgeOffset2 = value; NotifyPropertyChanged("EdgeOffset2"); }
         }
-        public DataModel_CHR_Zones()
+
+        private GlobalDataModels global;
+
+        public DataModel_CHR_Zones(GlobalDataModels global)
         {
-            GlobalPageEvts.Evts.Add(() =>
+            this.global = global;
+
+            global.EvtHandler.Add(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -65,9 +70,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
                 };
             });
 
-            GlobalPageEvts.Evts.Add(() =>
+            global.EvtHandler.Add(() =>
             {
-                GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
+                global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage01.DataModel_Global_Formwork>(x => x.DFoundation) ||
                         e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage01.DataModel_Global_Formwork>(x => x.DTowerBase) ||
@@ -76,25 +81,25 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
                 };
 
             });
-            GlobalPageEvts.Evts.Add(() =>
+            global.EvtHandler.Add(() =>
             {
-                GlobalPageEvts.Global.GlobalPage04.DataModelRadial1.PropertyChanged += (o, e) =>
+                global.GDMPage04.DataModelRadial1.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage04.DataModelRadial1>(x => x.SelectedIndexLargeDiameter))
                         Set_ZoneLength2();
                 };
             });
-            GlobalPageEvts.Evts.Add(() =>
+            global.EvtHandler.Add(() =>
             {
-                GlobalPageEvts.Global.GlobalPage04.DataModelCircularGeneral.PropertyChanged += (o, e) =>
+                global.GDMPage04.DataModelCircularGeneral.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage04.DataModelCircularGeneral>(x => x.SelectedDiameterEdgeCirculars))
                         Set_ZoneLength2();
                 };
             });
-            GlobalPageEvts.Evts.Add(() =>
+            global.EvtHandler.Add(() =>
             {
-                GlobalPageEvts.Global.GlobalPage12.DataModelShapesCollection.CollectionChanged += (o, e) =>
+                global.GDMPage12.DataModelShapesCollection.CollectionChanged += (o, e) =>
                 {
                     Set_ZoneLength2();
                 };
@@ -104,22 +109,22 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         private void Set_ZoneLength2()
         {
             //getting large diameter
-            EDiameters valueLD = (EDiameters)GlobalPageEvts.Global.GlobalPage04.DataModelRadial1.SelectedIndexLargeDiameter; //TODO - check this strict dependency to the index in the list. Maybe add in tag a reference?
-            var BSShapeLD = GlobalPageEvts.Global.GlobalPage12.DataModelShapesCollection.Where(x => x.Reference == valueLD).SingleOrDefault();
+            EDiameters valueLD = (EDiameters)global.GDMPage04.DataModelRadial1.SelectedIndexLargeDiameter; //TODO - check this strict dependency to the index in the list. Maybe add in tag a reference?
+            var BSShapeLD = global.GDMPage12.DataModelShapesCollection.Where(x => x.Reference == valueLD).SingleOrDefault();
             if (BSShapeLD == null)
                 throw new Exception("Diameter Value " + Enum.GetName(typeof(EDiameters), valueLD) + " is not added in DataModelShapesCollection");
             int nominalSizeLargeDiameter = BSShapeLD.NominalSize;
 
             //getting edge circular diameter
-            EDiameters valueEC = (EDiameters)GlobalPageEvts.Global.GlobalPage04.DataModelCircularGeneral.SelectedDiameterEdgeCirculars; //TODO - check this strict dependency to the index in the list. Maybe add in tag a reference?
-            DataModelBSShapes BSShapeEC = GlobalPageEvts.Global.GlobalPage12.DataModelShapesCollection.Where(x => x.Reference == valueEC).SingleOrDefault();
+            EDiameters valueEC = (EDiameters)global.GDMPage04.DataModelCircularGeneral.SelectedDiameterEdgeCirculars; //TODO - check this strict dependency to the index in the list. Maybe add in tag a reference?
+            DataModelBSShapes BSShapeEC = global.GDMPage12.DataModelShapesCollection.Where(x => x.Reference == valueEC).SingleOrDefault();
             if (BSShapeEC == null)
                 throw new Exception("Diameter Value " + Enum.GetName(typeof(EDiameters), valueEC) + " is not added in DataModelShapesCollection");
             int nominalSizeEdgeCircular = BSShapeEC.NominalSize;
 
             //TODO : Alex - simplify formula???
-            ZoneLength2 = GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.DFoundation / 2 - EdgeOffset2
-                - (GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.DTowerBase / 2 - GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.EdgeCover)
+            ZoneLength2 = global.GDMPage01.DataModel_Global_Formwork.DFoundation / 2 - EdgeOffset2
+                - (global.GDMPage01.DataModel_Global_Formwork.DTowerBase / 2 - global.GDMPage01.DataModel_Global_Formwork.EdgeCover)
                 - nominalSizeLargeDiameter - nominalSizeEdgeCircular - ZoneLength1;
         }
     }
