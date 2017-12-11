@@ -37,7 +37,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             set { selectedIndexOption = value; NotifyPropertyChanged("SelectedIndexOption"); NotifyPropertyChanged("SpacingEnabled"); }
         }
 
-        public string SpacingEnabled => (SelectedIndexOption == 0) ? "0" : "1";
+        public string SpacingEnabled => (SelectedIndexOption == 0) ? "Disabled" : "Enabled";
   
         /// <summary>
         /// UI_TextBox_AR_ECL_Spacing
@@ -95,11 +95,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         {
             get { return bottomExtraOffset; }
             set { bottomExtraOffset = value; NotifyPropertyChanged("BottomExtraOffset"); }
-        }
-
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameter = 0;
         }
     }
 }

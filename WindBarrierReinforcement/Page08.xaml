@@ -174,7 +174,7 @@
                         DataContext="{Binding DataModel_ARExteriorCircularLateral}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Tag="{Binding SpacingEnabled}"
-                        Style="{StaticResource TextBoxTrigger_Tag10}" Template="{StaticResource AppTextBoxGeneric}"
+                        Style="{StaticResource TextBoxTagTrigger_EnabledIfEnabled}" Template="{StaticResource AppTextBoxGeneric}"
                         HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
@@ -187,7 +187,7 @@
                         DataContext="{Binding DataModel_ARExteriorCircularLateral}"
                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Tag="{Binding SpacingEnabled}"
-                        Style="{StaticResource TextBoxTrigger_Tag01}" Template="{StaticResource AppTextBoxGeneric}"
+                        Style="{StaticResource TextBoxTagTrigger_EnabledIfDisabled}" Template="{StaticResource AppTextBoxGeneric}"
                         HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" >
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
@@ -278,7 +278,7 @@
                     <Label ap:CultureKey.CultureRes="Lbl_AR_Int_TopOffset" Content="__Top Offset" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25" />
                     <TextBox 
                         DataContext="{Binding DataModel_ARIntUBars}"
-                        Text="{Binding TopOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Text="{Binding TopOffset, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                         Template="{StaticResource AppTextBoxGeneric}"
                         IsEnabled="False"
                         HorizontalAlignment="Left" Height="25" Margin="150,5,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
@@ -287,7 +287,7 @@
                     <Label ap:CultureKey.CultureRes="Lbl_AR_Int_BottomOffset" Content="__Bottom Offset" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
                         DataContext="{Binding DataModel_ARIntUBars}"
-                        Text="{Binding BottomOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Text="{Binding BottomOffset, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         HorizontalAlignment="Left" Height="23" Margin="150,35,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
@@ -295,7 +295,7 @@
                     <Label ap:CultureKey.CultureRes="Lbl_AR_Int_AxisOffset" Content="__Axis Offset" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
                         DataContext="{Binding DataModel_ARIntUBars}"
-                        Text="{Binding AxisOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                        Text="{Binding AxisOffset, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"  
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
@@ -320,14 +320,14 @@
                     <TextBox                                                 
                         DataContext="{Binding DataModel_ARIntUBars}"
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
-                        Text="{Binding HookULarger, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Text="{Binding HookULarger, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                         HorizontalAlignment="Left" Height="25" Margin="150,155,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
                     <!--Hook U Smaller-->
                     <Label ap:CultureKey.CultureRes="Lbl_AR_Int_HookLength_Usmaller" Content="__Hook U Smaller" HorizontalAlignment="Left" Margin="5,185,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
                         DataContext="{Binding DataModel_ARIntUBars}"
-                        Text="{Binding HookUSmaller, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Text="{Binding HookUSmaller, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         HorizontalAlignment="Left" Height="25" Margin="150,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
@@ -335,7 +335,7 @@
                     <Label ap:CultureKey.CultureRes="Lbl_AR_Int_TopExtraOffset" Content="__Top Extra Offset" HorizontalAlignment="Left" Margin="5,215,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                                                 
                         DataContext="{Binding DataModel_ARIntUBars}"
-                        Text="{Binding TopExtraOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Text="{Binding TopExtraOffset, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         HorizontalAlignment="Left" Height="25" Margin="150,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
@@ -343,7 +343,7 @@
                     <Label ap:CultureKey.CultureRes="Lbl_AR_Int_BottomExtraOffset" Content="__Bottom Extra Offset" HorizontalAlignment="Left" Margin="5,245,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox                         
                         DataContext="{Binding DataModel_ARIntUBars}"
-                        Text="{Binding BottomExtraOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Text="{Binding BottomExtraOffset, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         HorizontalAlignment="Left" Height="25" Margin="150,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
@@ -417,7 +417,7 @@
                         DataContext="{Binding DataModel_ARIntCircularLateral}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Tag="{Binding SpacingEnabled}"
-                        Template="{StaticResource AppTextBoxGeneric}" Style="{StaticResource TextBoxTrigger_Tag10}"
+                        Template="{StaticResource AppTextBoxGeneric}" Style="{StaticResource TextBoxTagTrigger_EnabledIfEnabled}"
                         HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" 
                         VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
@@ -432,7 +432,7 @@
                         DataContext="{Binding DataModel_ARIntCircularLateral}"
                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Tag="{Binding SpacingEnabled}"
-                        Template="{StaticResource AppTextBoxGeneric}" Style="{StaticResource TextBoxTrigger_Tag01}"
+                        Template="{StaticResource AppTextBoxGeneric}" Style="{StaticResource TextBoxTagTrigger_EnabledIfDisabled}"
                         HorizontalAlignment="Left" Height="25" Margin="150,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"/>
