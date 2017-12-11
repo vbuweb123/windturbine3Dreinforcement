@@ -269,7 +269,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
 
                 }
             };
-            GlobalPage01.DataModel_Global_Coordinations_GroundPoint.PropertyChanged += (o, e) =>
+            GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Coordinations_GroundPoint.PropertyChanged += (o, e) =>
             {
                 if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.FoundationPointZ))
                     Set_DepthPile();
@@ -278,7 +278,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
 
         private void Set_DepthPile()
         {
-            DepthPile = GlobalPage01.DataModel_Global_Coordinations_GroundPoint.FoundationPointZ + PileDepth;
+            DepthPile = GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Coordinations_GroundPoint.FoundationPointZ + PileDepth;
         }
 
         private void Set_PR_StirrupRadius_Layer2()

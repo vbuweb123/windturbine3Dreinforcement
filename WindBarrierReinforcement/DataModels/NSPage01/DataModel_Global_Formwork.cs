@@ -224,7 +224,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
                 || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))
                     Set_RadiusBtc();
             };
-            GlobalPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
+            GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
             {
                 if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.RadiusCenterLineTower))
                     Set_RadiusCenterLineTower();
@@ -241,7 +241,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         }
         private void Set_RadiusCenterLineTower()
         {
-            RadiusCenterLineTower = GlobalPage02.DataModel_Anchor.RadiusCenterLineTower;
+            RadiusCenterLineTower = GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.RadiusCenterLineTower;
         }
     }
 }

@@ -53,22 +53,26 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
 
         public DataModel_Global_Coordinations_GroundPoint()
         {
-            this.PropertyChanged += (o, e) =>
-            {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.CoordinationZ))
-                    Set_FoundationPointZ();                
-            };
-            GlobalPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
-            {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DeptFoundation)
-                    || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))                
-                    Set_FoundationPointZ();
-            };
+            GlobalPageEvts.Evts.Add(() => {
+                this.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.CoordinationZ))
+                        Set_FoundationPointZ();
+                };
+            });
+            GlobalPageEvts.Evts.Add(() => {
+                GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DeptFoundation)
+                        || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))
+                        Set_FoundationPointZ();
+                };
+            });
         }
               
         private void Set_FoundationPointZ()
         {
-            FoundationPointZ = CoordinationZ - GlobalPage01.DataModel_Global_Formwork.DeptFoundation - GlobalPage01.DataModel_Global_Formwork.HBottom;
+            FoundationPointZ = CoordinationZ - GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.DeptFoundation - GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.HBottom;
         }
     }
 }

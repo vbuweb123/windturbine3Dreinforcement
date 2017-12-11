@@ -28,11 +28,11 @@ namespace WindBarrierReinforcement
     public partial class Page01 : Page
     {
 
-        public DataModel_Global_Formwork DataModel_Global_Formwork => GlobalPage01.DataModel_Global_Formwork;
+        public DataModel_Global_Formwork DataModel_Global_Formwork => GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork;
 
-        public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint => GlobalPage01.DataModel_Global_Coordinations_GroundPoint;
+        public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint => GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Coordinations_GroundPoint;
 
-        public DataModel_Global_Materials DataModel_Global_Materials => GlobalPage01.DataModel_Global_Materials;
+        public DataModel_Global_Materials DataModel_Global_Materials => GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Materials;
                 
         public Page01()
         {

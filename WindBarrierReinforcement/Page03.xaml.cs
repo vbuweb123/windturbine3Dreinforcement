@@ -24,7 +24,7 @@ namespace WindBarrierReinforcement
     public partial class Page03 : Page
     {
                
-        public DataModel_ScrewPiles DataModel_ScrewPiles => GlobalPage03.DataModel_ScrewPile;
+        public DataModel_ScrewPiles DataModel_ScrewPiles => GlobalPageEvts.Global.GlobalPage03.DataModel_ScrewPile;
 
         public Page03()
         {          
