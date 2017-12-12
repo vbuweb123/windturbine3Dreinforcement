@@ -13,7 +13,9 @@ namespace WindBarrierReinforcement.StaticModel
         DataModelRadial1 DataModelRadial1 { get; }
         DataModelRadial2 DataModelRadial2 { get; }
         DataModelRadialGeneral DataModelRadialGeneral { get; }
+        DataModelCircular_ZoneCollection DataModelCircular_ZoneCollection { get; }
     }
+
     public partial class GlobalDataModels {
         private class _GlobalDataModelsPage04:IGlobalDataModelsPage04
         {
@@ -25,12 +27,15 @@ namespace WindBarrierReinforcement.StaticModel
 
             public DataModelRadialGeneral DataModelRadialGeneral { get;private set; }
 
+            public DataModelCircular_ZoneCollection DataModelCircular_ZoneCollection { get; private set; }
+
             public _GlobalDataModelsPage04(GlobalDataModels global)
             {
                 DataModelCircularGeneral = new DataModelCircularGeneral();
                 DataModelRadial1 = new DataModelRadial1(global);
                 DataModelRadial2 = new DataModelRadial2(global);
                 DataModelRadialGeneral = new DataModelRadialGeneral(global);
+                DataModelCircular_ZoneCollection = new DataModelCircular_ZoneCollection(global);
             }
         }
     }

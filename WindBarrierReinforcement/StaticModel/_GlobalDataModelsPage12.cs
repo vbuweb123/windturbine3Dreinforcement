@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.DataModels.NSPage12;
 
 namespace WindBarrierReinforcement.StaticModel
@@ -11,6 +12,7 @@ namespace WindBarrierReinforcement.StaticModel
     public interface IGlobalDataModelsPage12
     {
         ObservableCollection<DataModelBSShapes> DataModelShapesCollection { get; }
+        int GetNominalDiameterSize(int selectedIndex);
     }
 
     public partial class GlobalDataModels
@@ -18,6 +20,15 @@ namespace WindBarrierReinforcement.StaticModel
         private class _GlobalDataModelsPage12 : IGlobalDataModelsPage12
         {
             public ObservableCollection<DataModelBSShapes> DataModelShapesCollection { get; private set; }
+
+            //TODO : Helper function to be made global
+            public int GetNominalDiameterSize(int selectedIndex)
+            {
+                EDiameters ediameter = (EDiameters)selectedIndex; //TODO : Check this dependency on index
+                DataModelBSShapes shape = DataModelShapesCollection.Where(x => x.Reference == ediameter).SingleOrDefault();
+                if (shape == null) throw new Exception("Selected diameter is not found in the shape collection");
+                return shape.NominalSize;
+            }
 
             private void PopulateShapes()
             {
