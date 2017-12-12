@@ -12,7 +12,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
     {
         public ObservableCollection<IDataModelCircularZone> Zones { get; set; }
         private GlobalDataModels _globalDataModels;
-        public int Count => Zones.Count - 1;
+        public int Count => Zones.Count;
 
         public DataModelCircular_ZoneCollection(GlobalDataModels global)
         {
@@ -25,20 +25,32 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             //add 2 in the middle
             this.Add();
             this.Add();
+            UpdateIndices();
         }
-
+        public void UpdateIndices()
+        {
+            for (var i = 0; i < Count; i++)
+            {
+                Zones[i].ListIndex = i;
+            }
+        }
+        public IDataModelCircularZone Get(int index)
+        {
+            return Zones[index];
+        }
         public void Add()
         {
-            Zones.Insert(Zones.Count - 2, new DataModelCircular_ZoneMiddle(_globalDataModels, Zones.Count - 1));
+            Zones.Insert(Zones.Count - 2, new DataModelCircular_ZoneMiddle(_globalDataModels));
 
-            Zones[Count - 1].ListIndex++;
+            UpdateIndices();
         }
+
         public void RemoveNearEnd()
         {
             if (Zones.Count > 2)
             {
                 Zones.RemoveAt(Zones.Count - 2);
-                Zones[Count - 1].ListIndex--;
+                UpdateIndices();
             }
         }
     }

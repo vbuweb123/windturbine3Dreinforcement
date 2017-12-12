@@ -94,10 +94,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             set { listIndex = value; NotifyPropertyChanged("ListIndex"); }
         }
 
-        public DataModelCircular_ZoneMiddle(GlobalDataModels global, int listIndex)
+        public DataModelCircular_ZoneMiddle(GlobalDataModels global)
         {
             this._globalData = global;
-            this.ListIndex = listIndex;
             // do not try to set nextZone and prevZOne like bellow in the ctor. It till try to access the collection that is not yet fully defined
             //also because we want them to be dynamic. Always check prev or next item in the collection
             //IDataModelCircularZone nextZone = _globalData.GDMPage04.DataModelCircular_ZoneCollection.Zones[_listIndex + 1];
@@ -123,7 +122,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             });
             global.EvtHandler.Add(() =>
             {
-                _globalData.GDMPage04.DataModelCircular_ZoneCollection.Zones[ListIndex - 1].PropertyChanged += (o, e) =>
+                _globalData.GDMPage04.DataModelCircular_ZoneCollection.Get(ListIndex - 1).PropertyChanged += (o, e) =>
                 {
                     //OffsetFromEdge
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<IDataModelCircularZone>(x => x.ZoneLength) ||
