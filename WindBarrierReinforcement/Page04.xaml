@@ -66,9 +66,6 @@
                         Text="{Binding AlternativeMinStartAngle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
-                        </i:Interaction.Behaviors>
                     </TextBox>
                 </Grid>
             </TabItem>
@@ -165,7 +162,7 @@
                     <Label Grid.Column="0" Content="__Spacing3rdDiameterAngle" HorizontalAlignment="Left" Margin="5,455,0,0" VerticalAlignment="Top" Height="25"/>
                     <Label Grid.Column="0" Content="__StartOffsetAngle" HorizontalAlignment="Left" Margin="5,485,0,0" VerticalAlignment="Top" Height="25"/>
                     <Label Grid.Column="0" Content="__MaximumLength" HorizontalAlignment="Left" Margin="5,515,0,0" VerticalAlignment="Top" Height="25"/>
-                    
+
                     <!--Grid Column 1 -->
                     <TextBox
                         DataContext="{Binding DataModelRadial1}"
@@ -176,7 +173,7 @@
                             <behaviors:NumericBehaviour></behaviors:NumericBehaviour>
                         </i:Interaction.Behaviors>
                     </TextBox>
-                    
+
                     <ComboBox
                         DataContext="{Binding DataModelRadial1}"
                         ItemsSource="{Binding DiameterNames, Mode=OneWay}"
@@ -394,7 +391,7 @@
                         Text="{Binding SmallDiameterOffsetFromCenter, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,275,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                       
+
                     </TextBox>
 
                     <TextBox
@@ -402,7 +399,7 @@
                         Text="{Binding ThirdDiameterOffsetFromCenter, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"    
                         Template="{StaticResource AppTextBoxGeneric}" IsEnabled="False"
                         Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="5,305,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                   
+
                     </TextBox>
 
                     <ComboBox
@@ -464,10 +461,95 @@
             </TabItem>
 
             <TabItem Header="__Circular">
-                <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0"/>
+                <Grid Name="UI_Grid_CircularZones" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Grid Column 0-->
+                    <Grid Grid.Column="0">
+                        <Label Content="__NoOfBars" HorizontalAlignment="Left" VerticalAlignment="Top"                    
+                           ap:CultureKey.CultureRes="" Margin="5,35,5,0" Height="25"/>
+                        <Label Content="__Spacing Value" HorizontalAlignment="Left" VerticalAlignment="Top"                    
+                           ap:CultureKey.CultureRes="" Margin="5,65,5,0" Height="25"/>
+                        <Label Content="__Diameter" HorizontalAlignment="Left" VerticalAlignment="Top"                    
+                           ap:CultureKey.CultureRes="" Margin="5,95,5,0" Height="25"/>
+                        <Label Content="__ZoneLength" HorizontalAlignment="Left" VerticalAlignment="Top"                    
+                           ap:CultureKey.CultureRes="" Margin="5,125,5,0" Height="25"/>
+                        <Label Content="__ZoneInterDistance" HorizontalAlignment="Left" VerticalAlignment="Top"                    
+                           ap:CultureKey.CultureRes="" Margin="5,155,5,0" Height="25"/>
+                        <Label Content="__RadiusGiven" HorizontalAlignment="Left" VerticalAlignment="Top"                    
+                           ap:CultureKey.CultureRes="" Margin="5,185,5,0" Height="25"/>
+                        <Label Content="__DistanceFromBottom" HorizontalAlignment="Left" VerticalAlignment="Top"                    
+                           ap:CultureKey.CultureRes="" Margin="5,215,5,0" Height="25"/>
+                        <Label Content="__OffsetFromEdge" HorizontalAlignment="Left" VerticalAlignment="Top"                    
+                           ap:CultureKey.CultureRes="" Margin="5,245,5,0" Height="25"/>
+                        <Label Content="__DistributionBars" HorizontalAlignment="Left" VerticalAlignment="Top"                    
+                           ap:CultureKey.CultureRes="" Margin="5,275,5,0" Height="25"/>
+                    </Grid>
+                    <!--grid Column 2- will always be DataModelCircular_ZoneBeginning -->
+
+                    <Grid Name="UI_Grid_Col1" Grid.Column="1">
+                        <Label Content="__Zone 1" Margin="5,5,5,0"/>
+                        <TextBlock Text="{Binding ListIndex, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                                   Margin="5,305,4.8,213.4"/>
+                        <TextBox 
+                            Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                            Template="{StaticResource AppTextBoxGeneric}"                 
+                            HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                            Margin="5,35,5,0"  Height="25" Width="75">
+                        </TextBox>
+                        <TextBox 
+                            Text="{Binding SpacingValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                            Template="{StaticResource AppTextBoxGeneric}"                 
+                            HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                            Margin="5,65,5,0"  Height="25" Width="75">
+                        </TextBox>
+                        <ComboBox                        
+                            ItemsSource="{Binding DiameterNames}"
+                            SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            Margin="5,95,5,0"  Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBox 
+                            Text="{Binding ZoneLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                            Template="{StaticResource AppTextBoxGeneric}"              
+                            HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                            Margin="5,125,5,0"  Height="25" Width="75">
+                        </TextBox>
+                        <TextBox 
+                            Text="{Binding ZoneInterDistance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                            Template="{StaticResource AppTextBoxGeneric}"         
+                            HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                            Margin="5,155,5,0"  Height="25" Width="75">
+                        </TextBox>
+                        <TextBox 
+                            Text="{Binding RadiusGiven, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                            Template="{StaticResource AppTextBoxGeneric}" Name="Exception"               
+                            HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                            Margin="5,185,5,0"  Height="25" Width="75">
+                        </TextBox>
+                        <TextBox 
+                            Text="{Binding DistanceFromBottom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                            Template="{StaticResource AppTextBoxGeneric}"             
+                            HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                            Margin="5,215,5,0"  Height="25" Width="75">
+                        </TextBox>
+                        <TextBox 
+                            Text="{Binding OffsetFromEdge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                            Template="{StaticResource AppTextBoxGeneric}"                 
+                            HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                            Margin="5,245,5,0"  Height="25" Width="75">
+                        </TextBox>
+                        <TextBox 
+                            Text="{Binding DistributionBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                            Template="{StaticResource AppTextBoxGeneric}"                 
+                            HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                            Margin="5,275,5,0"  Height="25" Width="75">
+                        </TextBox>
+                    </Grid>
+                </Grid>
             </TabItem>
-
         </TabControl>
-
+        <Button Content="Add" Margin="36,159,617,375" Click="Button_Click"/>
+        <Button Content="Subtract" Margin="36,210,617,324" Click="Subtract_Click"/>
     </Grid>
 </Page>

@@ -249,7 +249,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         {
             //TODO: Change into a combobox in pgae2
             SmallDiameterOffsetFromCenter = (int)Math.Round(Math.Ceiling((double)(global.GDMPage02.DataModel_Anchor.DiameterAnchor / 2 + 50 +
-                global.GDMPage02.DataModel_Anchor.BoltDiameter)), 0);
+                global.GDMPage02.DataModel_Anchor.BoltDiameter/2)), 0);
         }
         private void Set_SpacingAngle()
         {
@@ -262,7 +262,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         private void Set_ThirdDiameterOffsetFromCenter()
         {
             ThirdDiameterOffsetFromCenter = (Spacing3rdDiameterAngle == 0) ? 0 :
-                (int)(Math.Round(Math.Ceiling((double)global.GDMPage04.DataModelRadialGeneral.MinSpaceField / (0.5 * Spacing3rdDiameterAngle * Math.PI / 180)), 0));
+                (int)(Math.Round(Math.Ceiling((double)global.GDMPage04.DataModelRadialGeneral.MinSpaceField / (0.5 * Spacing3rdDiameterAngle * Math.PI / 180)), 2));
         }
         private void Set_OverlappLargeDiameter()
         {
@@ -278,7 +278,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
         private void Set_Spacing3rdDiameterAngle()
         {
-            Spacing3rdDiameterAngle = (ThirdDiamNoOfBars == 0) ? 0 : (int)Math.Round((double)360 / ThirdDiamNoOfBars, 0);
+            Spacing3rdDiameterAngle = (ThirdDiamNoOfBars == 0) ? 0 : (double)Math.Round((double)360 / ThirdDiamNoOfBars, 2);
         }
         private void Set_StartOffsetAngle()
         {

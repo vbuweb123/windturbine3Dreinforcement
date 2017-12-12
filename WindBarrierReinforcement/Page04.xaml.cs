@@ -18,27 +18,214 @@ using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement
 {
+
     /// <summary>
     /// Interaction logic for Page4.xaml
     /// </summary>
+    /// Important Functionality preserved. Minimum amount is 2. If count is 3, then second is deleted and data from 1 and 3 are kept and made 1 and 2
+    /// Is count is 4 then data from 4 is move to 3 (end position) while 1 and 2 are not modified
     public partial class Page04 : Page
     {
         public DataModelCircularGeneral DataModelCircularGeneral { get; private set; }
         public DataModelRadial1 DataModelRadial1 { get; private set; }
         public DataModelRadial2 DataModelRadial2 { get; private set; }
         public DataModelRadialGeneral DataModelRadialGeneral { get; private set; }
+        public DataModelCircular_ZoneCollection DataModelCircular_ZoneCollection { get; private set; }
+        private Grid TemplateGrid;
+        private GlobalDataModels globalDataModels;
 
         public Page04(GlobalDataModels global)
         {
+            this.globalDataModels = global;
+
             DataModelCircularGeneral = global.GDMPage04.DataModelCircularGeneral;
             DataModelRadial1 = global.GDMPage04.DataModelRadial1;
             DataModelRadial2 = global.GDMPage04.DataModelRadial2;
             DataModelRadialGeneral = global.GDMPage04.DataModelRadialGeneral;
+            DataModelCircular_ZoneCollection = global.GDMPage04.DataModelCircular_ZoneCollection;
 
             InitializeComponent();
             this.DataContext = this;
 
+            TemplateGrid = CloneAndRemoveTemplateGrid();
+            //fixed 2 zones
+            AddGridAndZone();
+            AddGridAndZone();
+            var c = UI_Grid_CircularZones;
             CultureRenamer.Rename(UI_Grid_MasterGrid);
+        }
+
+        private TextBox CloneTextBox(TextBox textBox, bool enabled)
+        {
+            TextBox tb = new TextBox
+            {
+                HorizontalAlignment = textBox.HorizontalAlignment,
+                VerticalAlignment = textBox.VerticalAlignment,
+                TextWrapping = textBox.TextWrapping,
+                Height = textBox.Height,
+                Width = textBox.Width,
+                Margin = textBox.Margin
+            };
+            tb.SetValue(TemplateProperty, textBox.GetValue(TemplateProperty));
+            BindingExpression be = textBox.GetBindingExpression(TextBox.TextProperty);
+            if (enabled == false)
+            {
+                tb.IsEnabled = false;
+
+                Binding textBind = new Binding { Mode = BindingMode.OneWay, Path = be.ParentBinding.Path, UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged };
+                tb.SetBinding(TextBox.TextProperty, textBind);
+            }
+            else
+            {
+                tb.IsEnabled = true;
+                Binding textBind = new Binding { Mode = BindingMode.TwoWay, Path = be.ParentBinding.Path, UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged };
+                tb.SetBinding(TextBox.TextProperty, textBind);
+            }
+            return tb;
+        }
+
+        private TextBlock CloneTextBlock(TextBlock textBox)
+        {
+            TextBlock tb = new TextBlock
+            {
+                HorizontalAlignment = textBox.HorizontalAlignment,
+                VerticalAlignment = textBox.VerticalAlignment,
+                TextWrapping = textBox.TextWrapping,
+                Height = textBox.Height,
+                Width = textBox.Width,
+                Margin = textBox.Margin
+            };
+
+            BindingExpression be = textBox.GetBindingExpression(TextBlock.TextProperty);
+            Binding bind = new Binding
+            {
+                Mode = be.ParentBinding.Mode,
+                Path = be.ParentBinding.Path,
+                UpdateSourceTrigger = be.ParentBinding.UpdateSourceTrigger
+            };
+            tb.IsEnabled = textBox.IsEnabled;
+            tb.SetBinding(TextBlock.TextProperty, bind);
+
+            return tb;
+        }
+
+        private ComboBox CloneComboBox(ComboBox comboBox, bool enabled)
+        {
+            ComboBox cb = new ComboBox
+            {
+                HorizontalAlignment = comboBox.HorizontalAlignment,
+                VerticalAlignment = comboBox.VerticalAlignment,
+                Height = comboBox.Height,
+                Width = comboBox.Width,
+                Margin = comboBox.Margin
+            };
+            BindingExpression ItemsSourceExpr = comboBox.GetBindingExpression(ComboBox.ItemsSourceProperty);
+            Binding bindItemsSource = new Binding
+            {
+                Mode = ItemsSourceExpr.ParentBinding.Mode,
+                Path = ItemsSourceExpr.ParentBinding.Path,
+                UpdateSourceTrigger = ItemsSourceExpr.ParentBinding.UpdateSourceTrigger
+            };
+            cb.SetBinding(ComboBox.ItemsSourceProperty, bindItemsSource);
+
+            BindingExpression SelectedIndexExpr = comboBox.GetBindingExpression(ComboBox.SelectedIndexProperty);
+            Binding SelectedIndexBind = new Binding
+            {
+                Mode = SelectedIndexExpr.ParentBinding.Mode,
+                Path = SelectedIndexExpr.ParentBinding.Path,
+                UpdateSourceTrigger = SelectedIndexExpr.ParentBinding.UpdateSourceTrigger
+            };
+            cb.SetBinding(ComboBox.SelectedIndexProperty, SelectedIndexBind);
+            if (!enabled) cb.IsEnabled = false;
+            return cb;
+        }
+
+        private Grid CloneAndRemoveTemplateGrid()
+        {
+            UIElementCollection collection = UI_Grid_Col1.Children;
+            Grid grid = new Grid();
+
+            foreach (var element in collection)
+            {
+                if (element is TextBox)
+                    grid.Children.Add(CloneTextBox((TextBox)element, true));
+                if (element is ComboBox)
+                    grid.Children.Add(CloneComboBox((ComboBox)element, true));
+                if (element is TextBlock)
+                    grid.Children.Add(CloneTextBlock((TextBlock)element));
+            }
+            UI_Grid_CircularZones.Children.RemoveAt(UI_Grid_CircularZones.Children.Count - 1);
+            UI_Grid_CircularZones.ColumnDefinitions.RemoveAt(UI_Grid_CircularZones.ColumnDefinitions.Count - 1);
+            return grid;
+        }
+
+        private Grid CloneGrid(Grid Grid)
+        {
+            UIElementCollection collection = Grid.Children;
+            Grid grid = new Grid();
+
+            foreach (var element in collection)
+            {
+                if (element is TextBox)
+                    grid.Children.Add(CloneTextBox((TextBox)element, true));
+                if (element is ComboBox)
+                    grid.Children.Add(CloneComboBox((ComboBox)element, true));
+                if (element is TextBlock)
+                    grid.Children.Add(CloneTextBlock((TextBlock)element));
+            }
+            return grid;
+        }
+
+        private void RecalculateGridSetup()
+        {
+            for (var i = 1; i < UI_Grid_CircularZones.Children.Count; i++)
+            {
+                Grid current = (Grid)UI_Grid_CircularZones.Children[i];
+                current.DataContext = DataModelCircular_ZoneCollection.Zones[i-1];
+                //
+                current.SetValue(Grid.ColumnProperty, i);
+            }
+        }
+
+        private void AddGridAndZone()
+        {
+            //first move the grid positioned there and create new Column Def
+            ColumnDefinition columnDefinition = new ColumnDefinition();
+            UI_Grid_CircularZones.ColumnDefinitions.Add(columnDefinition);
+            if (DataModelCircular_ZoneCollection.Count < 2)
+            {
+                DataModelCircular_ZoneCollection.Add();
+            }
+            else
+            {
+                DataModelCircular_ZoneCollection.AddBeforeLast();
+            }
+
+            UI_Grid_CircularZones.Children.Add(CloneGrid(TemplateGrid));
+
+            RecalculateGridSetup();
+        }
+
+        private void RemoveGridAndZone()
+        {
+            //will return true if element is removed. Element is removed if the list is larger then 2. Minimum amount is 2
+            if (DataModelCircular_ZoneCollection.RemoveBeforeLast())
+            {
+                UI_Grid_CircularZones.ColumnDefinitions.RemoveAt(UI_Grid_CircularZones.ColumnDefinitions.Count - 1);
+                UI_Grid_CircularZones.Children.RemoveAt(UI_Grid_CircularZones.Children.Count - 1);
+
+                RecalculateGridSetup();
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddGridAndZone();
+        }
+
+        private void Subtract_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveGridAndZone();
         }
     }
 }
