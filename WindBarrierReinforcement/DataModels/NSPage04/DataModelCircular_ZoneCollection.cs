@@ -10,22 +10,31 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
 {
     public class DataModelCircular_ZoneCollection
     {
-        public ObservableCollection<IDataModelCircularZone> Zones { get; set; }
+        public ObservableCollection<DataModelCircular_Zone> Zones { get; set; }
+
         private GlobalDataModels _globalDataModels;
+
         public int Count => Zones.Count;
 
         public DataModelCircular_ZoneCollection(GlobalDataModels global)
         {
             _globalDataModels = global;
-            Zones = new ObservableCollection<IDataModelCircularZone>();
-            //fixed 2 zones
-            Zones.Add(new DataModelCircular_ZoneBegining(global));
-            Zones.Add(new DataModelCircular_ZoneEnd(global, 1));
 
-            //add 2 in the middle
-            this.Add();
-            this.Add();
-            UpdateIndices();
+            Zones = new ObservableCollection<DataModelCircular_Zone>();
+
+            Zones.CollectionChanged += (o, e) => {
+                for (var i = 0; i < Count; i++)
+                {
+                    Zones[i].ListIndex = i;
+                    var cc = Zones[i].ListIndex;
+                    if (i == 0)
+                        Zones[i].Position = EZonePosition.Start;
+                    else if (i == Count - 1)
+                        Zones[i].Position = EZonePosition.End;
+                    else
+                        Zones[i].Position = EZonePosition.Middle;
+                }
+            };
         }
         public void UpdateIndices()
         {
@@ -34,24 +43,40 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                 Zones[i].ListIndex = i;
             }
         }
-        public IDataModelCircularZone Get(int index)
+
+        public DataModelCircular_Zone Get(int index)
         {
             return Zones[index];
         }
+
         public void Add()
         {
-            Zones.Insert(Zones.Count - 2, new DataModelCircular_ZoneMiddle(_globalDataModels));
-
-            UpdateIndices();
+            Zones.Add(new DataModelCircular_Zone(_globalDataModels));
         }
 
-        public void RemoveNearEnd()
+        public void AddBeforeLast()
+        {
+            Zones.Insert(Count - 1, new DataModelCircular_Zone(_globalDataModels));
+        }
+
+        public bool Remove()
+        {
+            if (Zones.Count > 2)
+            {
+                Zones.RemoveAt(Zones.Count - 1);
+                return true;
+            }
+            return false;
+        }
+
+        public bool RemoveBeforeLast()
         {
             if (Zones.Count > 2)
             {
                 Zones.RemoveAt(Zones.Count - 2);
-                UpdateIndices();
+                return true;
             }
+            return false;
         }
     }
 }

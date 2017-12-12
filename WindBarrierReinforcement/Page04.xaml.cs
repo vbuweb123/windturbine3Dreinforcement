@@ -18,19 +18,26 @@ using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement
 {
+
     /// <summary>
     /// Interaction logic for Page4.xaml
     /// </summary>
+    /// Important Functionality preserved. Minimum amount is 2. If count is 3, then second is deleted and data from 1 and 3 are kept and made 1 and 2
+    /// Is count is 4 then data from 4 is move to 3 (end position) while 1 and 2 are not modified
     public partial class Page04 : Page
     {
         public DataModelCircularGeneral DataModelCircularGeneral { get; private set; }
         public DataModelRadial1 DataModelRadial1 { get; private set; }
         public DataModelRadial2 DataModelRadial2 { get; private set; }
         public DataModelRadialGeneral DataModelRadialGeneral { get; private set; }
-        public DataModelCircular_ZoneCollection DataModelCircular_ZoneCollection { get; private set;}
+        public DataModelCircular_ZoneCollection DataModelCircular_ZoneCollection { get; private set; }
+        private Grid TemplateGrid;
+        private GlobalDataModels globalDataModels;
 
         public Page04(GlobalDataModels global)
         {
+            this.globalDataModels = global;
+
             DataModelCircularGeneral = global.GDMPage04.DataModelCircularGeneral;
             DataModelRadial1 = global.GDMPage04.DataModelRadial1;
             DataModelRadial2 = global.GDMPage04.DataModelRadial2;
@@ -40,28 +47,15 @@ namespace WindBarrierReinforcement
             InitializeComponent();
             this.DataContext = this;
 
-            SolveCollection();
-
+            TemplateGrid = CloneAndRemoveTemplateGrid();
+            //fixed 2 zones
+            AddGridAndZone();
+            AddGridAndZone();
+            var c = UI_Grid_CircularZones;
             CultureRenamer.Rename(UI_Grid_MasterGrid);
         }
 
-        private void SolveCollection()
-        {
-            UI_Grid_Col1.DataContext = DataModelCircular_ZoneCollection.Zones[0];
-            UI_Grid_ColEnd.DataContext = DataModelCircular_ZoneCollection.Zones[DataModelCircular_ZoneCollection.Zones.Count - 1];
-            //
-            if (DataModelCircular_ZoneCollection.Zones.Count > 2)
-            {
-                for (var i = 1; i < DataModelCircular_ZoneCollection.Zones.Count - 1; i++)
-                {
-                    int zoneIndex = i ;
-                    MoveEndGridForward(zoneIndex);
-                   
-                }
-            }
-        }
-
-        private TextBox CloneTextBox(TextBox textBox)
+        private TextBox CloneTextBox(TextBox textBox, bool enabled)
         {
             TextBox tb = new TextBox
             {
@@ -73,31 +67,26 @@ namespace WindBarrierReinforcement
                 Margin = textBox.Margin
             };
             tb.SetValue(TemplateProperty, textBox.GetValue(TemplateProperty));
-            if (textBox.Name == "Exception")
+            BindingExpression be = textBox.GetBindingExpression(TextBox.TextProperty);
+            if (enabled == false)
             {
-                tb.IsEnabled = true;
-                BindingExpression be = textBox.GetBindingExpression(TextBox.TextProperty);
-                Binding textBind = new Binding { Mode = BindingMode.TwoWay, Path = be.ParentBinding.Path, UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged };
+                tb.IsEnabled = false;
 
+                Binding textBind = new Binding { Mode = BindingMode.OneWay, Path = be.ParentBinding.Path, UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged };
                 tb.SetBinding(TextBox.TextProperty, textBind);
             }
             else
             {
-                BindingExpression be = textBox.GetBindingExpression(TextBox.TextProperty);
-                Binding bind = new Binding
-                {
-                    Mode = be.ParentBinding.Mode,
-                    Path = be.ParentBinding.Path,
-                    UpdateSourceTrigger = be.ParentBinding.UpdateSourceTrigger
-                };
-                tb.IsEnabled = textBox.IsEnabled;
-                tb.SetBinding(TextBox.TextProperty, bind);
+                tb.IsEnabled = true;
+                Binding textBind = new Binding { Mode = BindingMode.TwoWay, Path = be.ParentBinding.Path, UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged };
+                tb.SetBinding(TextBox.TextProperty, textBind);
             }
             return tb;
         }
-        private TextBox CloneTextBlock(TextBlock textBox)
+
+        private TextBlock CloneTextBlock(TextBlock textBox)
         {
-            TextBox tb = new TextBox
+            TextBlock tb = new TextBlock
             {
                 HorizontalAlignment = textBox.HorizontalAlignment,
                 VerticalAlignment = textBox.VerticalAlignment,
@@ -106,7 +95,7 @@ namespace WindBarrierReinforcement
                 Width = textBox.Width,
                 Margin = textBox.Margin
             };
-           
+
             BindingExpression be = textBox.GetBindingExpression(TextBlock.TextProperty);
             Binding bind = new Binding
             {
@@ -115,12 +104,12 @@ namespace WindBarrierReinforcement
                 UpdateSourceTrigger = be.ParentBinding.UpdateSourceTrigger
             };
             tb.IsEnabled = textBox.IsEnabled;
-            tb.SetBinding(TextBox.TextProperty, bind);
-            
+            tb.SetBinding(TextBlock.TextProperty, bind);
+
             return tb;
         }
 
-        private ComboBox CloneComboBox(ComboBox comboBox)
+        private ComboBox CloneComboBox(ComboBox comboBox, bool enabled)
         {
             ComboBox cb = new ComboBox
             {
@@ -147,10 +136,11 @@ namespace WindBarrierReinforcement
                 UpdateSourceTrigger = SelectedIndexExpr.ParentBinding.UpdateSourceTrigger
             };
             cb.SetBinding(ComboBox.SelectedIndexProperty, SelectedIndexBind);
+            if (!enabled) cb.IsEnabled = false;
             return cb;
         }
 
-        private Grid CloneFirstGridChild()
+        private Grid CloneAndRemoveTemplateGrid()
         {
             UIElementCollection collection = UI_Grid_Col1.Children;
             Grid grid = new Grid();
@@ -158,59 +148,84 @@ namespace WindBarrierReinforcement
             foreach (var element in collection)
             {
                 if (element is TextBox)
-                    grid.Children.Add(CloneTextBox((TextBox)element));
+                    grid.Children.Add(CloneTextBox((TextBox)element, true));
                 if (element is ComboBox)
-                    grid.Children.Add(CloneComboBox((ComboBox)element));
+                    grid.Children.Add(CloneComboBox((ComboBox)element, true));
+                if (element is TextBlock)
+                    grid.Children.Add(CloneTextBlock((TextBlock)element));
+            }
+            UI_Grid_CircularZones.Children.RemoveAt(UI_Grid_CircularZones.Children.Count - 1);
+            UI_Grid_CircularZones.ColumnDefinitions.RemoveAt(UI_Grid_CircularZones.ColumnDefinitions.Count - 1);
+            return grid;
+        }
+
+        private Grid CloneGrid(Grid Grid)
+        {
+            UIElementCollection collection = Grid.Children;
+            Grid grid = new Grid();
+
+            foreach (var element in collection)
+            {
+                if (element is TextBox)
+                    grid.Children.Add(CloneTextBox((TextBox)element, true));
+                if (element is ComboBox)
+                    grid.Children.Add(CloneComboBox((ComboBox)element, true));
                 if (element is TextBlock)
                     grid.Children.Add(CloneTextBlock((TextBlock)element));
             }
             return grid;
         }
 
-        private void MoveEndGridForward(int zoneIndex)
-        { 
-            //first move the grid positioned there and create new Column Def
-            ColumnDefinition columnDefinition = new ColumnDefinition { Width = new GridLength() };
-            UI_Grid_CircularZones.ColumnDefinitions.Add(columnDefinition);
-
-            UI_Grid_ColEnd.SetValue(Grid.ColumnProperty, UI_Grid_CircularZones.ColumnDefinitions.Count - 1);
-            //now get last count
-            int LastColumnDef = UI_Grid_CircularZones.ColumnDefinitions.Count - 1;
-            //add before last
-            Grid newGrid = CloneFirstGridChild();
-            newGrid.SetValue(Grid.ColumnProperty, LastColumnDef - 1);
-
-            UI_Grid_CircularZones.Children.Insert(LastColumnDef - 1, newGrid);
-
-            //set up context for newly inserted item
-            Grid currentGrid = (Grid)UI_Grid_CircularZones.Children[1 + zoneIndex];
-            currentGrid.DataContext = DataModelCircular_ZoneCollection.Zones[zoneIndex];
-            //reset context for last inserted item
-            ((Grid)UI_Grid_CircularZones.Children[UI_Grid_CircularZones.Children.Count - 1]).DataContext = DataModelCircular_ZoneCollection.Zones[DataModelCircular_ZoneCollection.Zones.Count - 1];
+        private void RecalculateGridSetup()
+        {
+            for (var i = 1; i < UI_Grid_CircularZones.Children.Count; i++)
+            {
+                Grid current = (Grid)UI_Grid_CircularZones.Children[i];
+                current.DataContext = DataModelCircular_ZoneCollection.Zones[i-1];
+                //
+                current.SetValue(Grid.ColumnProperty, i);
+            }
         }
 
-        private void MoveEndGridBackwards()
+        private void AddGridAndZone()
         {
-            if (UI_Grid_CircularZones.Children.Count > 3)
+            //first move the grid positioned there and create new Column Def
+            ColumnDefinition columnDefinition = new ColumnDefinition();
+            UI_Grid_CircularZones.ColumnDefinitions.Add(columnDefinition);
+            if (DataModelCircular_ZoneCollection.Count < 2)
+            {
+                DataModelCircular_ZoneCollection.Add();
+            }
+            else
+            {
+                DataModelCircular_ZoneCollection.AddBeforeLast();
+            }
+
+            UI_Grid_CircularZones.Children.Add(CloneGrid(TemplateGrid));
+
+            RecalculateGridSetup();
+        }
+
+        private void RemoveGridAndZone()
+        {
+            //will return true if element is removed. Element is removed if the list is larger then 2. Minimum amount is 2
+            if (DataModelCircular_ZoneCollection.RemoveBeforeLast())
             {
                 UI_Grid_CircularZones.ColumnDefinitions.RemoveAt(UI_Grid_CircularZones.ColumnDefinitions.Count - 1);
-                UI_Grid_CircularZones.Children.RemoveAt(UI_Grid_CircularZones.Children.Count - 2);
-                UI_Grid_ColEnd.SetValue(Grid.ColumnProperty, UI_Grid_CircularZones.ColumnDefinitions.Count - 1);
+                UI_Grid_CircularZones.Children.RemoveAt(UI_Grid_CircularZones.Children.Count - 1);
+
+                RecalculateGridSetup();
             }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //first move the grid positioned there and create new Column Def
-            this.DataModelCircular_ZoneCollection.Add();
-            int zoneIndex = this.DataModelCircular_ZoneCollection.Zones.Count - 2;//before last
-           
-            MoveEndGridForward(zoneIndex);
+            AddGridAndZone();
         }
 
         private void Subtract_Click(object sender, RoutedEventArgs e)
         {
-            MoveEndGridBackwards();
+            RemoveGridAndZone();
         }
     }
 }
