@@ -224,66 +224,68 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
             get { return offsetBottFlange; }
             private set { offsetBottFlange = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.OffsetBottFlange)); }
         }
+        private GlobalDataModels global;
 
-        public DataModel_Anchor()
+        public DataModel_Anchor(GlobalDataModels global)
         {
 
-            this.PropertyChanged += DataModel_GlobalAnchor_PropertyChanged;
-            GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.PropertyChanged += DataModel_Global_Formwork_PropertyChanged;
-            GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsGrouting.PropertyChanged += DataModelMaterialsGrouting_PropertyChanged;
+            this.global = global;
+            global.EvtHandler.Add(() => {
+                this.PropertyChanged += (o, e) => {
+                    //Depth Anchor
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.Peshrinkhoseheigth)
+                         || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.FilletBottomZone)
+                         || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.FilletTopZone)
+                         || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.TopAnchorNut)
+                         || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.BottomAnchorNut)
+                         || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.ThicknessBottFlange))
+                        Set_DepthAnchor();
+                    //DepthAnchorBottom
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.OffsetBottFlange))
+                        Set_DepthAnchorBottom();
+                    //RadiusCenterLineTower
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DiameterAnchor)
+                         || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DispanceBoltPairs))
+                        Set_RadiusCenterLineTower();
+                    //DistanceBoltPairs
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DiameterAnchor)
+                         || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DiameterAnchorInt))
+                        Set_DistanceBoltPairs();
+                    //BoltLength
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.ThicknessBottFlange)
+                         || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DepthAnchor))
+                        Set_BoltLength();
+                    //OffsetBotFlange
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DepthAnchor))
+                        Set_OffsetBotFlange();
+                };
+            });
+
+            global.EvtHandler.Add(() => {
+                this.global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) => {
+                    //DepthAnchorBottom
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))
+                        Set_DepthAnchorBottom();
+                    //OffsetBotFlange
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HFoundation)
+                         || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HTowerBase))
+                        Set_OffsetBotFlange();
+                };
+            });
+
+            global.EvtHandler.Add(() => {
+                global.GDMPage11.DataModelMaterialsGrouting.PropertyChanged += (o, e) => {
+                    //MaterialGrout
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage11.DataModelMaterials>(x => x.SelectedIndexConcreteQuality))
+                        Set_MaterialGrout();
+                };
+            });
         }
         
         //helper function that encapsulates a functionality which may be further extended
         public int GetBoltDiameterNominalSize()
         {
             return BoltDiameter;
-        }
-       
-        private void DataModel_Global_Formwork_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            //DepthAnchorBottom
-            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))
-                Set_DepthAnchorBottom();
-            //OffsetBotFlange
-            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HFoundation)
-                 || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HTowerBase))
-                Set_OffsetBotFlange();
-        }
-
-        private void DataModel_GlobalAnchor_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            //Depth Anchor
-            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.Peshrinkhoseheigth)
-                 || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.FilletBottomZone)
-                 || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.FilletTopZone)
-                 || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.TopAnchorNut)
-                 || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.BottomAnchorNut)
-                 || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.ThicknessBottFlange))
-                Set_DepthAnchor();
-            //DepthAnchorBottom
-            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.OffsetBottFlange))
-                Set_DepthAnchorBottom();
-            //RadiusCenterLineTower
-            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DiameterAnchor)
-                 || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DispanceBoltPairs))
-                Set_RadiusCenterLineTower();
-            //DistanceBoltPairs
-            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DiameterAnchor)
-                 || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DiameterAnchorInt))
-                Set_DistanceBoltPairs();
-            //BoltLength
-            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.ThicknessBottFlange)
-                 || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DepthAnchor))
-                Set_BoltLength();
-            //OffsetBotFlange
-            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.DepthAnchor))
-                Set_OffsetBotFlange();
-        }
-        private void DataModelMaterialsGrouting_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            //MaterialGrout
-            if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage11.DataModelMaterials>(x => x.SelectedIndexConcreteQuality))
-                Set_MaterialGrout();
         }
 
         private void Set_DepthAnchor()
@@ -292,7 +294,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         }
         private void Set_DepthAnchorBottom()
         {
-            DepthAnchorBottom = GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.HBottom + OffsetBottFlange;
+            DepthAnchorBottom = global.GDMPage01.DataModel_Global_Formwork.HBottom + OffsetBottFlange;
         }
         private void Set_RadiusCenterLineTower()
         {
@@ -308,11 +310,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         }
         private void Set_OffsetBotFlange()
         {
-            OffsetBottFlange = GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.HFoundation + GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.HTowerBase - DepthAnchor;
+            OffsetBottFlange = global.GDMPage01.DataModel_Global_Formwork.HFoundation + global.GDMPage01.DataModel_Global_Formwork.HTowerBase - DepthAnchor;
         }
         private void Set_MaterialGrout()
         {
-            MaterialGrout = GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsGrouting.ConcreteQualityNames[GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsGrouting.SelectedIndexConcreteQuality];
+            MaterialGrout = global.GDMPage11.DataModelMaterialsGrouting.ConcreteQualityNames[global.GDMPage11.DataModelMaterialsGrouting.SelectedIndexConcreteQuality];
         }
     }
 }

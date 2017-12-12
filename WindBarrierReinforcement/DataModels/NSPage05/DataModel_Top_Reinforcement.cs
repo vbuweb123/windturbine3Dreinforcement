@@ -31,11 +31,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         public List<String> DiameterNamesL => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
-
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameterL = 0;
-        }
         /// <summary>
         /// UI_TextBox_TR_No.SmallDiameter
         /// </summary>

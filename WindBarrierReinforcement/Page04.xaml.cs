@@ -23,13 +23,18 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page04 : Page
     {
-        public DataModelCircularGeneral DataModelCircularGeneral => GlobalPageEvts.Global.GlobalPage04.DataModelCircularGeneral;
-        public DataModelRadial1 DataModelRadial1 => GlobalPageEvts.Global.GlobalPage04.DataModelRadial1;
-        public DataModelRadial2 DataModelRadial2 => GlobalPageEvts.Global.GlobalPage04.DataModelRadial2;
-        public DataModelRadialGeneral DataModelRadialGeneral => GlobalPageEvts.Global.GlobalPage04.DataModelRadialGeneral;
+        public DataModelCircularGeneral DataModelCircularGeneral { get; private set; }
+        public DataModelRadial1 DataModelRadial1 { get; private set; }
+        public DataModelRadial2 DataModelRadial2 { get; private set; }
+        public DataModelRadialGeneral DataModelRadialGeneral { get; private set; }
 
-        public Page04()
+        public Page04(GlobalDataModels global)
         {
+            DataModelCircularGeneral = global.GDMPage04.DataModelCircularGeneral;
+            DataModelRadial1 = global.GDMPage04.DataModelRadial1;
+            DataModelRadial2 = global.GDMPage04.DataModelRadial2;
+            DataModelRadialGeneral = global.GDMPage04.DataModelRadialGeneral;
+
             InitializeComponent();
             this.DataContext = this;
 

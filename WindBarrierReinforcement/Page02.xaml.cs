@@ -24,14 +24,16 @@ namespace WindBarrierReinforcement
     /// 
     public partial class Page02 : Page
     {
-        public DataModel_Anchor DataModel_Anchor => GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor;
+        public DataModel_Anchor DataModel_Anchor { get; private set; }
 
-        public Page02()
+        public Page02(GlobalDataModels global)
         {
+            DataModel_Anchor = global.GDMPage02.DataModel_Anchor;
+
             InitializeComponent();
 
             this.DataContext = this;
-
+            
             CultureRenamer.Rename(UI_Grid_Master);
         }      
     }

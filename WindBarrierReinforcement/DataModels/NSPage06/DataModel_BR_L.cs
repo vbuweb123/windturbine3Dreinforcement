@@ -32,7 +32,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// UI_TextBox_UPBR_Lx
         /// </summary>
         private int lx;
-        [KeyName(KeyName = "UPBR_Dir1_RadialSpacing")]
         public int Lx
         {
             get { return lx; }
@@ -43,7 +42,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// UI_TextBox_UPBR_Ly
         /// </summary>
         private int ly;
-        [KeyName(KeyName = "UPBR_Dir1_RadialSpacing")]
         public int Ly
         {
             get { return ly; }
@@ -54,7 +52,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// UI_TextBox_UPBR_L_BendAngle
         /// </summary>
         private int l_BendAngle;
-        [KeyName(KeyName = "UPBR_Dir1_BendAngle")]
         public int L_BendAngle
         {
             get { return l_BendAngle; }
@@ -65,7 +62,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// UI_TextBox_UPBR_Dir1_L_RadialSpacing
         /// </summary>
         private int l_RadialSpacing;
-        [KeyName(KeyName = "UPBR_Dir1_RadialSpacing")]
         public int L_RadialSpacing
         {
             get { return l_RadialSpacing; }

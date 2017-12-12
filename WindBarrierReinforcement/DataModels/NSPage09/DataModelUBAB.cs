@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage09
 {
@@ -75,17 +76,20 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         /// </summary>
         public int IndexInList { get; private set; }
 
-        public DataModelUBAB(string zoneName, int index)
+        public DataModelUBAB(GlobalDataModels global, string zoneName, int index)
         {
             ZoneName = zoneName;
 
             this.IndexInList = index;
 
-            this.PropertyChanged += (o, e) =>
-            {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelUBAB>(x => x.ExteriorHalfLength))
-                    Set_InteriorHalfLength();
-            };
+            global.EvtHandler.Add(() => {
+                this.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelUBAB>(x => x.ExteriorHalfLength))
+                        Set_InteriorHalfLength();
+                };
+            });
+            
         }
         private void Set_InteriorHalfLength()
         {

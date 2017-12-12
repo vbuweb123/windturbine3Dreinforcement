@@ -131,7 +131,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
             }
 
         }
-              
+
         /// <summary>
         /// UI_TextBox_Bottom_Cover
         /// </summary>
@@ -212,9 +212,13 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DeptFoundation));
             }
         }
-        public DataModel_Global_Formwork()
+        private GlobalDataModels global;
+
+        public DataModel_Global_Formwork(GlobalDataModels global)
         {
-            GlobalPageEvts.Evts.Add(() =>
+            this.global = global;
+
+            global.EvtHandler.Add(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -228,16 +232,16 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
                 };
             });
 
-            GlobalPageEvts.Evts.Add(() =>
+            global.EvtHandler.Add(() =>
             {
-                GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
-            {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.RadiusCenterLineTower))
-                    Set_RadiusCenterLineTower();
-            };
+                global.GDMPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.RadiusCenterLineTower))
+                        Set_RadiusCenterLineTower();
+                };
             });
         }
-        
+
         private void Set_DeptFoundation()
         {
             DeptFoundation = HFoundation + HTowerBase - HightAboveGround;
@@ -248,7 +252,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         }
         private void Set_RadiusCenterLineTower()
         {
-            RadiusCenterLineTower = GlobalPageEvts.Global.GlobalPage02.DataModel_Anchor.RadiusCenterLineTower;
+            RadiusCenterLineTower = this.global.GDMPage02.DataModel_Anchor.RadiusCenterLineTower;
         }
     }
 }

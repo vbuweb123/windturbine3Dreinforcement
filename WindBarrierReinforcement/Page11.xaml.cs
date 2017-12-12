@@ -23,15 +23,22 @@ namespace WindBarrierReinforcement
     /// </summary>
     public partial class Page11 : Page
     {
-        public DataModelMaterials DataModelMaterialsFoundation => GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsFoundation;
-        public DataModelMaterials DataModelMaterialsFoundationTowerBase => GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsFoundationTowerBase;
-        public DataModelMaterials DataModelMaterialsLeanConcrete => GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsLeanConcrete;
-        public DataModelMaterials DataModelMaterialsEnvelopeAroundConduits => GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsEnvelopeAroundConduits;
-        public DataModelMaterials DataModelMaterialsGrouting => GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsGrouting;
-        public DataModelMaterials DataModelMaterialsFoundationPile => GlobalPageEvts.Global.GlobalPage11.DataModelMaterialsFoundationPile;
+        public DataModelMaterials DataModelMaterialsFoundation { get; private set; }
+        public DataModelMaterials DataModelMaterialsFoundationTowerBase { get; private set; }
+        public DataModelMaterials DataModelMaterialsLeanConcrete { get; private set; }
+        public DataModelMaterials DataModelMaterialsEnvelopeAroundConduits { get; private set; }
+        public DataModelMaterials DataModelMaterialsGrouting { get; private set; }
+        public DataModelMaterials DataModelMaterialsFoundationPile { get; private set; }
 
-        public Page11()
+        public Page11(GlobalDataModels global)
         {
+            DataModelMaterialsFoundation = global.GDMPage11.DataModelMaterialsFoundation;
+            DataModelMaterialsFoundationTowerBase = global.GDMPage11.DataModelMaterialsFoundationTowerBase;
+            DataModelMaterialsLeanConcrete = global.GDMPage11.DataModelMaterialsLeanConcrete;
+            DataModelMaterialsEnvelopeAroundConduits = global.GDMPage11.DataModelMaterialsEnvelopeAroundConduits;
+            DataModelMaterialsGrouting = global.GDMPage11.DataModelMaterialsGrouting;
+            DataModelMaterialsFoundationPile = global.GDMPage11.DataModelMaterialsFoundationPile;
+
             InitializeComponent();
             this.DataContext = this;
 
