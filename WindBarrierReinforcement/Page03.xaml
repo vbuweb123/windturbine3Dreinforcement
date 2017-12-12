@@ -107,13 +107,12 @@
             <Label Content="__Material_Piles_1" HorizontalAlignment="Left" VerticalAlignment="Top"                    
                    ap:CultureKey.CultureRes="Lbl_PilesMaterial_Piles_1"
                    Margin="5,155,0,0" Height="25"/>
-            <TextBox 
-                DataContext="{Binding DataModel_ScrewPile_SP }"
-                Text="{Binding MaterialPiles, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                Template="{StaticResource AppTextBoxGeneric}"                 
-                HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
-                Margin="140,155,0,0"  Height="25" Width="100">
-            </TextBox>
+
+            <ComboBox  DataContext="{Binding DataModel_ScrewPiles}"
+                       ItemsSource="{Binding ConcreteQualityNames, Mode=TwoWay}"
+                       SelectedIndex="{Binding SelectedIndexConcreteQuality, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Margin="140,155,0,0" Height="25" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
 
             <!--Slope-->
             <Label Content="__Slope_1" HorizontalAlignment="Left" VerticalAlignment="Top"                    
@@ -249,7 +248,7 @@
                 Template="{StaticResource AppTextBoxGeneric}"   
                 Margin="360,125,0,0"  Height="25" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top">
             </TextBox>
-            
+
             <Label Content="__PR_StirrupRadius_Layer2" HorizontalAlignment="Left" VerticalAlignment="Top"                    
                 ap:CultureKey.CultureRes="Lbl_PilesPR_StirrupRadius_Layer2"
                 Margin="250,155,0,0" Height="25"/>
@@ -258,7 +257,7 @@
                 ItemsSource="{Binding Diameter, Mode=TwoWay}"
                 SelectedIndex="{Binding PR_StirrupRadius_Layer2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Margin="360,155,0,0"  Height="25" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            
+
             <Label Content="__Spacing_Layer2" HorizontalAlignment="Left" VerticalAlignment="Top"                    
                 ap:CultureKey.CultureRes="Lbl_PilesSpacing_Layer2"
                 Margin="250,185,0,0" Height="25"/>
@@ -272,7 +271,7 @@
                     <behaviors:NumericBehaviour InitialValue="0"/>
                 </i:Interaction.Behaviors>
             </TextBox>
-            
+
             <Label Content="__PR_StirrupRebarDiam_Layer2" HorizontalAlignment="Left" VerticalAlignment="Top"                    
                 ap:CultureKey.CultureRes="Lbl_PilesPR_StirrupRebarDiam_Layer2"
                 Margin="250,215,0,0" Height="25"/>

@@ -53,6 +53,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
 
         public DataModel_Global_Coordinations_GroundPoint()
         {
+
             GlobalPageEvts.Evts.Add(() => {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -60,6 +61,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
                         Set_FoundationPointZ();
                 };
             });
+
             GlobalPageEvts.Evts.Add(() => {
                 GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
                 {

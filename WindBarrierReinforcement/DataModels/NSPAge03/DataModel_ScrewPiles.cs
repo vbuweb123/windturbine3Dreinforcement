@@ -14,7 +14,9 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
     public  class DataModel_ScrewPiles : DataModel
     {
         public List<String> Diameter => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
-               
+
+        public List<string> ConcreteQualityNames => EnumHelpers.GetEnumDisplayText(typeof(EConcreteQuality));
+
         private int circleDiameter;
         public int CircleDiameter
         {
@@ -70,14 +72,14 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
             }
         }
 
-        private string materialPiles = "C12/45-OB";
-        public string MaterialPiles
+        private string selectedIndexConcreteQuality; //material Piles
+        public string SelectedIndexConcreteQuality
         {
-            get { return materialPiles; }
+            get { return selectedIndexConcreteQuality; }
             set
             {
-                materialPiles = value;
-                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.MaterialPiles));
+                selectedIndexConcreteQuality = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.SelectedIndexConcreteQuality));
             }
         }
 
@@ -260,20 +262,23 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
 
         public DataModel_ScrewPiles()
         {
-            this.PropertyChanged += (o, e) =>
+            GlobalPageEvts.Evts.Add(() =>
+            {
+                this.PropertyChanged += (o, e) =>
             {
                 if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PileDepth))
                     Set_DepthPile();
-                if (true)
-                {
 
-                }
             };
-            GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Coordinations_GroundPoint.PropertyChanged += (o, e) =>
+            });
+            GlobalPageEvts.Evts.Add(() =>
             {
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.FoundationPointZ))
-                    Set_DepthPile();
-            };
+                GlobalPageEvts.Global.GlobalPage01.DataModel_Global_Coordinations_GroundPoint.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.FoundationPointZ))
+                        Set_DepthPile();
+                };
+            });
         }
 
         private void Set_DepthPile()
