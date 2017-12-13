@@ -11,16 +11,21 @@ namespace WindBarrierReinforcement.StaticModel
     {
         void Add(Action EvtAction);
         void AddPostEvtAction(Action EvtAction);
+        void AddPopulateDataAction(Action action);
     }
     public partial class GlobalDataModels
     {
         public class _EvtHandler : IEvtStore
         {
+            //Property Changed events added here. They are attached after all data models are instanciated
             private List<Action> evts;
             public List<Action> Evts => evts ?? (evts = new List<Action>());
-
+            //Combobox and string initializers here. Called after all PropertyChanged events are set
             private List<Action> evtsPostRegister;
             public List<Action> EvtsPostRegister => evtsPostRegister ?? (evtsPostRegister = new List<Action>());
+            //Initializers for textboxes here - for prepopulating data
+            private List<Action> evtsPopulateData;
+            public List<Action> EvtsPopulateData => evtsPopulateData ?? (evtsPopulateData = new List<Action>());
 
             public void Add(Action EvtAction)
             {
@@ -30,7 +35,10 @@ namespace WindBarrierReinforcement.StaticModel
             {
                 Evts.ForEach((action) => action());
             }
-
+            public void PopulateData()
+            {
+                EvtsPopulateData.ForEach((action) => action());
+            }
             public void AddPostEvtAction(Action EvtAction)
             {
                 EvtsPostRegister.Add(EvtAction);
@@ -40,6 +48,10 @@ namespace WindBarrierReinforcement.StaticModel
                 EvtsPostRegister.ForEach((action) => action());
             }
 
+            public void AddPopulateDataAction(Action action)
+            {
+                EvtsPopulateData.Add(action);
+            }
         }
     }
 }

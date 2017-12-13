@@ -103,19 +103,19 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.FoundationBed));
             }
         }
-        /// <summary>
-        /// UI_TextBox_DiameterAnchor
-        /// </summary>
-        private int diameterAnchor;
-        public int DiameterAnchor
-        {
-            get { return diameterAnchor; }
-            set
-            {
-                diameterAnchor = value;
-                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DiameterAnchor));
-            }
-        }
+        ///// <summary>
+        ///// UI_TextBox_DiameterAnchor
+        ///// </summary>
+        //private int diameterAnchor;
+        //public int DiameterAnchor
+        //{
+        //    get { return diameterAnchor; }
+        //    set
+        //    {
+        //        diameterAnchor = value;
+        //        NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DiameterAnchor));
+        //    }
+        //}
         /// <summary>
         /// UI_TextBox_Radius_Centerline_Tower
         /// </summary>
