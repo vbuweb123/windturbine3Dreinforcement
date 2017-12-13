@@ -645,9 +645,6 @@
     <value>Bottom Reinforcement</value>
     <comment>Page 04</comment>
   </data>
-  <data name="Txt_Global" xml:space="preserve">
-    <value>Global</value>
-  </data>
   <data name="Lbl_Anc_BoltDiameter" xml:space="preserve">
     <value>Bolt Diameter</value>
     <comment>Page 02</comment>
@@ -739,5 +736,199 @@
   <data name="Tb_P02_Title" xml:space="preserve">
     <value>Anchor</value>
     <comment>Page 02</comment>
+  </data>
+  <data name="Txt_Global" xml:space="preserve">
+    <value>Global</value>
+  </data>
+  <data name="Lbl_G_BottomCover" xml:space="preserve">
+    <value>Bottom Cover</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_CoordinationX" xml:space="preserve">
+    <value>Coordination X</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_CoordinationY" xml:space="preserve">
+    <value>Coordination Y</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_CoordinationZ" xml:space="preserve">
+    <value>Coordination Z</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_DepthFoundation" xml:space="preserve">
+    <value>Depth Foundation</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_DFoundation" xml:space="preserve">
+    <value>D Foundation</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_DiameterAnchor" xml:space="preserve">
+    <value>Diameter Anchor</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_DTowerBase" xml:space="preserve">
+    <value>D Tower Base</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_EdgeCover" xml:space="preserve">
+    <value>Edge Cover</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_FoundationBed" xml:space="preserve">
+    <value>Foundation Bed</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_FoundationPointZ" xml:space="preserve">
+    <value>Foundation Point Z</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_HBottom" xml:space="preserve">
+    <value>H Bottom</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_HFoundation" xml:space="preserve">
+    <value>H Foundation</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_HFoundationEdge" xml:space="preserve">
+    <value>H Foundation Edge</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_HightAboveGround" xml:space="preserve">
+    <value>Hight Above Ground</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_HTowerBase" xml:space="preserve">
+    <value>H Tower Base</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_MaterialFoundation" xml:space="preserve">
+    <value>Material Foundation</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_MaterialFoundationBed" xml:space="preserve">
+    <value>Material Foundation Bed</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_MaterialTowerBase" xml:space="preserve">
+    <value>Material Tower Base</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_RadiusBtc" xml:space="preserve">
+    <value>Radius Btc</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_RadiusCenterLineTower" xml:space="preserve">
+    <value>Radius Center Line Tower</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_G_TopCover" xml:space="preserve">
+    <value>Top Cover</value>
+    <comment>Page 01</comment>
+  </data>
+  <data name="Lbl_PilesAngle_1" xml:space="preserve">
+    <value>Angle</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilesCircleDiameter_1" xml:space="preserve">
+    <value>Circle Diameter</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilesDepthPile_1" xml:space="preserve">
+    <value>Depth</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilesdivPerCurve_1" xml:space="preserve">
+    <value>div PerCurve</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilesForces_1" xml:space="preserve">
+    <value>Forces</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilesLongRebarDiam" xml:space="preserve">
+    <value>Diameter Long Bars</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilesMaterial_Piles_1" xml:space="preserve">
+    <value>Material</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilesNoOfLongRebars" xml:space="preserve">
+    <value>No Long Bars</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilesNo_Piles_1" xml:space="preserve">
+    <value>No_ Piles</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilespileDepth_1" xml:space="preserve">
+    <value>Pile Depth</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilesPRBottomCover_1" xml:space="preserve">
+    <value>Bottom Cover</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilesPR_StirrupRadius_Layer2" xml:space="preserve">
+    <value>Stirrups Radius Layer 2</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilesPR_TopLongExtension" xml:space="preserve">
+    <value>Long Extension Top</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilesSlope_1" xml:space="preserve">
+    <value>Slope</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilesSpacing_Layer1_1" xml:space="preserve">
+    <value>Spacing Layer 1</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilesSpacing_Layer2" xml:space="preserve">
+    <value>Spacing Layer 2</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilesStirrupRadius_Layer1_1" xml:space="preserve">
+    <value>Stirrups Radius Layer 1</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PilesTopCover_1" xml:space="preserve">
+    <value>Top Cover</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PR_StirrupRebarDiam_Layer1" xml:space="preserve">
+    <value>Diameter Stirrups Layer 1</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PR_StirrupRebarDiam_Layer2" xml:space="preserve">
+    <value>Diameter Stirrups Layer 2</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="Lbl_PR_Ureinforcement_RebarDiam" xml:space="preserve">
+    <value>Diameter Unreiforced</value>
+    <comment>Page 03</comment>
+  </data>
+  <data name="String" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Lbl_UPBR_Dir1_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_Dir1_NoOfBars" xml:space="preserve">
+    <value>No Of Bars</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_Dir1_Option" xml:space="preserve">
+    <value>Option</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_Dir1_Spacing" xml:space="preserve">
+    <value>Spacing</value>
+    <comment>Page 06</comment>
   </data>
 </root>

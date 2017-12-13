@@ -7,6 +7,7 @@ using WindBarrierReinforcement.Common.Attributes;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage06
 {
@@ -71,6 +72,16 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         {
             get { return noOfBars; }
             set { noOfBars = value; NotifyPropertyChanged("NoOfBars"); }
+        }
+
+        public DataModel_BR_D2(GlobalDataModels global)
+        {
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexDiameter = 0;
+            });
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexOption = 0;
+            });
         }
     }
 }

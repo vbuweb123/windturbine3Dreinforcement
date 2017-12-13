@@ -7,14 +7,15 @@ using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.DataModels.NSPage01;
+using WindBarrierReinforcement.DataModels.NSPage11;
 using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPAge03
 {
     public  class DataModel_ScrewPiles : DataModel
     {
-        public List<String> Diameter => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
-               
+        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
+
         private int circleDiameter;
         public int CircleDiameter
         {
@@ -70,11 +71,11 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
             }
         }
 
-        private string materialPiles = "C12/45-OB";
+        private string materialPiles;
         public string MaterialPiles
         {
-            get { return materialPiles; }
-            set
+            get { return materialPiles;  }
+            private set
             {
                 materialPiles = value;
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.MaterialPiles));
@@ -135,7 +136,9 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PR_TopCover));
             }
         }
-
+        /// <summary>
+        /// PR_StirrupRadius_Layer1
+        /// </summary>
         private int pr_StirrupRadius_Layer1;
         public int PR_StirrupRadius_Layer1
         {
@@ -146,7 +149,9 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PR_StirrupRadius_Layer1));
             }
         }
-
+        /// <summary>
+        /// PR_Spacing_Layer1
+        /// </summary>
         private int pr_Spacing_Layer1;
         public int PR_Spacing_Layer1
         {
@@ -157,7 +162,9 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PR_Spacing_Layer1));
             }
         }
-
+        /// <summary>
+        /// PR_StirrupRebarDiam_Layer1
+        /// </summary>
         private int pR_StirrupRebarDiam_Layer1;
         public int PR_StirrupRebarDiam_Layer1
         {
@@ -168,7 +175,9 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PR_StirrupRebarDiam_Layer1));
             }
         }
-
+        /// <summary>
+        /// PR_NoOfLongRebars
+        /// </summary>
         private int pr_NoOfLongRebars;
         public int PR_NoOfLongRebars
         {
@@ -180,6 +189,9 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
             }
         }
 
+        /// <summary>
+        /// PR_LongRebarDiam
+        /// </summary>
         private int pR_LongRebarDiam;
         public int PR_LongRebarDiam
         {
@@ -190,7 +202,10 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PR_LongRebarDiam));
             }
         }
-        
+
+        /// <summary>
+        /// PR_TopLongExtension
+        /// </summary>
         private int pr_TopLongExtension;
         public int PR_TopLongExtension
         {
@@ -202,7 +217,9 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
             }
         }
 
-
+        /// <summary>
+        /// PR_StirrupRadius_Layer2
+        /// </summary>
         private int pr_StirrupRadius_Layer2;
         public int PR_StirrupRadius_Layer2
         {
@@ -213,7 +230,9 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PR_StirrupRadius_Layer2));
             }
         }
-
+        /// <summary>
+        /// PR_Spacing_Layer2
+        /// </summary>
         private int pr_Spacing_Layer2;
         public int PR_Spacing_Layer2
         {
@@ -225,17 +244,9 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
             }
         }
 
-        private int selectedIndexDiameter3;
-        public int SelectedIndexDiameter3
-        {
-            get { return selectedIndexDiameter3; }
-            set
-            {
-                selectedIndexDiameter3 = value;
-                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.SelectedIndexDiameter3));
-            }
-        }
-
+        /// <summary>
+        /// PR_StirrupRebarDiam_Layer2
+        /// </summary>
         private int pR_StirrupRebarDiam_Layer2;
         public int PR_StirrupRebarDiam_Layer2
         {
@@ -246,7 +257,9 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PR_StirrupRebarDiam_Layer2));
             }
         }
-
+        /// <summary>
+        /// PR_Ureinforcement_RebarDiam
+        /// </summary>
         private int pR_Ureinforcement_RebarDiam;
         public int PR_Ureinforcement_RebarDiam
         {
@@ -261,17 +274,14 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
 
         public DataModel_ScrewPiles(GlobalDataModels global)
         {
-            this.global = global;
+            this.global = global;            
 
             global.EvtHandler.Add(() => {
                 this.PropertyChanged += (o, e) =>
                 {
+                    //Depth Pile
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PileDepth))
-                        Set_DepthPile();
-                    if (true)
-                    {
-
-                    }
+                        Set_DepthPile();                   
                 };
             });
 
@@ -279,10 +289,33 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
             {
                 global.GDMPage01.DataModel_Global_Coordinations_GroundPoint.PropertyChanged += (o, e) =>
                 {
+                    //Depth Pile
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.FoundationPointZ))
                         Set_DepthPile();
                 };
             });
+
+            global.EvtHandler.Add(() =>
+            {
+                global.GDMPage11.DataModelMaterialsFoundationPile.PropertyChanged += (o, e) =>
+                {
+                    //Material Piles
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelMaterials>(x => x.SelectedIndexConcreteQuality))
+                        Set_MaterialPiles();                    
+                };
+            });
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.PR_StirrupRebarDiam_Layer1 = 0;               
+            });
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.PR_LongRebarDiam = 0;
+            });
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.PR_StirrupRadius_Layer2 = 0;
+            });
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.PR_Ureinforcement_RebarDiam = 0;
+            });            
         }
 
         private void Set_DepthPile()
@@ -295,5 +328,9 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
             PR_StirrupRadius_Layer2 = PR_StirrupRadius_Layer1;
         }
 
+        private void Set_MaterialPiles()
+        {         
+            MaterialPiles = this.global.GDMPage11.DataModelMaterialsFoundationPile.ConcreteQualityNames[this.global.GDMPage11.DataModelMaterialsFoundationPile.SelectedIndexConcreteQuality];
+        }
     }
 }

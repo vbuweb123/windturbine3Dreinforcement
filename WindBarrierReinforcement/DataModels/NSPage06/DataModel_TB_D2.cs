@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage06
 {
@@ -68,6 +69,16 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         {
             get { return spacing; }
             set { spacing = value; NotifyPropertyChanged("Spacing"); }
+        }
+        public DataModel_TB_D2(GlobalDataModels global)
+        {
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexDiameter = 0;
+            });
+
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexOption = 0;
+            });
         }
     }
 }

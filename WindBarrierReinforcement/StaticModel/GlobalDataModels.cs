@@ -37,6 +37,7 @@ namespace WindBarrierReinforcement.StaticModel
         public GlobalDataModels()
         {
             var evtHandler = new _EvtHandler();
+
             EvtHandler = evtHandler;
 
             GDMPage01 = new _GlobalDataModelsPage01(this);
@@ -53,6 +54,7 @@ namespace WindBarrierReinforcement.StaticModel
             GDMPage12 = new _GlobalDataModelsPage12(this);
 
             evtHandler.RegisterAll(); // hide this method to the outside world to avoind caling it from other places
+            evtHandler.CallPostEvtActions();
         }
     }
 }

@@ -37,12 +37,12 @@ namespace WindBarrierReinforcement.StaticModel
 
             public _GlobalDataModelsPage06(GlobalDataModels global)
             {
-                DataModel_BR_D1 = new DataModel_BR_D1();
-                DataModel_BR_D2 = new DataModel_BR_D2();
-                DataModel_BR_L = new DataModel_BR_L();
-                DataModel_TB_D1 = new DataModel_TB_D1();
-                DataModel_TB_D2 = new DataModel_TB_D2();
-                DataModel_Circular_EdgeOfL = new DataModel_Circular_EdgeOfL();
+                DataModel_BR_D1 = new DataModel_BR_D1(global);
+                DataModel_BR_D2 = new DataModel_BR_D2(global);
+                DataModel_BR_L = new DataModel_BR_L(global);
+                DataModel_TB_D1 = new DataModel_TB_D1(global);
+                DataModel_TB_D2 = new DataModel_TB_D2(global);
+                DataModel_Circular_EdgeOfL = new DataModel_Circular_EdgeOfL(global);
                 DataModel_Generalities = new DataModel_Generalities();
             }
         }

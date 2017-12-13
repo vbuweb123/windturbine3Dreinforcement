@@ -34,14 +34,13 @@ namespace WindBarrierReinforcement.StaticModel
 
             public _GlobalDataModelsPage07(GlobalDataModels global)
             {
-                DataModel_StraightBars_Dir1 = new DataModel_StraightBars();
-                DataModel_StraightBars_Dir2 = new DataModel_StraightBars();
-                DataModel_RadialEdgeConcrete = new DataModel_RadialEdgeConcrete();
-                DataModel_CircularBarsTop = new DataModel_CircularBarsTop();
-                DataModel_CircularBarsExteriorSide = new DataModel_CircularBarsExteriorSide();
+                DataModel_StraightBars_Dir1 = new DataModel_StraightBars(global);
+                DataModel_StraightBars_Dir2 = new DataModel_StraightBars(global);
+                DataModel_RadialEdgeConcrete = new DataModel_RadialEdgeConcrete(global);
+                DataModel_CircularBarsTop = new DataModel_CircularBarsTop(global);
+                DataModel_CircularBarsExteriorSide = new DataModel_CircularBarsExteriorSide(global);
                 DataModel_StraightBars_Extra = new DataModel_StraightBars_Extra();
             }
         }
     }
-
 }

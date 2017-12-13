@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage08
 {
@@ -98,6 +99,17 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         {
             get { return bottomExtraOffset; }
             set { bottomExtraOffset = value; NotifyPropertyChanged("BottomExtraOffset"); }
+        }
+
+        public DataModel_ARIntCircularLateral(GlobalDataModels global)
+        {
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexDiameter = 0;
+            });
+            
+            global.EvtHandler.AddPostEvtAction(() => {
+                    this.SelectedIndexOption = 0;
+            });
         }
     }
 }

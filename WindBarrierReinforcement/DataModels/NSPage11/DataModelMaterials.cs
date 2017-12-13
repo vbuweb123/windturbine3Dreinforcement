@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage11
 {
@@ -85,10 +86,28 @@ namespace WindBarrierReinforcement.DataModels.NSPage11
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelMaterials>(x => x.ConcreteCover));
             }
         }
-        public DataModelMaterials(string destinationName)
+        public DataModelMaterials(GlobalDataModels global, string destinationName)
         {
             this.Name = destinationName;
             AdditionalInformation = "";
+
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexConcreteQuality = 0;
+            });
+
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexExposureClass = 0;
+            });
+                   
+
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexConsistenceTolerance = 0;
+            });
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.AdditionalInformation ="";
+            });
+
         }
+        
     }
 }

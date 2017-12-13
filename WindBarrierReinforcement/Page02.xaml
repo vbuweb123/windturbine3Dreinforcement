@@ -20,7 +20,7 @@
 
     <Grid Name="UI_Grid_Master" Background="{StaticResource AppMainBackgroundColor}">
         <TextBlock ap:CultureKey.CultureRes="Tb_P02_Title" HorizontalAlignment="Left" Margin="20,15,0,0" TextWrapping="Wrap" Text="__Anchor" VerticalAlignment="Top" Style="{StaticResource AppContentTitleTextBlock}"/>
-        <Grid Background="{StaticResource AppContainerBackgroundColor}" Margin="15,50,200,25">
+        <Grid Background="{StaticResource AppContainerBackgroundColor}" Margin="15,50,25,25">
 
             <!--Diameter Anchor-->
             <Label Content="__Diameter Anchor" HorizontalAlignment="Left" VerticalAlignment="Top"                    

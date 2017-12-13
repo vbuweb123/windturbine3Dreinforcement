@@ -236,7 +236,7 @@
                         DataContext="{Binding DataModel_ARExteriorCircularBottom}"
                         ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="150,5,50,0" VerticalAlignment="Top" Width="150"/>
+                        Margin="150,5,50,0" VerticalAlignment="Top" Width="150" Height="25"/>
 
                     <!--Spacing-->
                     <Label ap:CultureKey.CultureRes="Lbl_AR_ECB_Spacing" Content="__Spacing" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
@@ -401,7 +401,7 @@
                         DataContext="{Binding DataModel_ARIntCircularLateral}"
                         ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="150,5,50,0" Width="150" VerticalAlignment="Top"/>
+                        Margin="150,5,50,0" Width="150" Height="25" VerticalAlignment="Top"/>
 
                     <!--Option-->
                     <Label ap:CultureKey.CultureRes="Lbl_AR_ICL_Option" Content="__Option" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>

@@ -89,7 +89,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
                         Set_InteriorHalfLength();
                 };
             });
-            
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexDiameter = 0;
+            });
+
         }
         private void Set_InteriorHalfLength()
         {

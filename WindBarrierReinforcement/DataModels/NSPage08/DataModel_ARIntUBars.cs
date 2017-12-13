@@ -139,6 +139,12 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
                     }
                 };
             });
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexDiameterL = 0;
+            });
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexDiameterS = 0;
+            });
         }
     }
 }

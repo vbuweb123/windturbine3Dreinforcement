@@ -30,8 +30,10 @@ namespace WindBarrierReinforcement
         {
             DataModel_ScrewPiles = global.GDMPage03.DataModel_ScrewPile;
 
-            this.DataContext = this;
             InitializeComponent();
+
+            this.DataContext = this;
+
             CultureRenamer.Rename(UI_Grid_Master);
         }
                
