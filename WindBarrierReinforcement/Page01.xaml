@@ -35,6 +35,11 @@
                     <!--H Foundation-->
                     <Label Content="__H Foundation" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" 
                            Height="25" ap:CultureKey.CultureRes="Lbl_G_HFoundation"/>
+                    <Image Source="/Assets/Icons/Preview.png" Margin="109,10,430,359.6" VerticalAlignment="Top">
+                        <Image.ToolTip>
+                            <ToolTip Template="{StaticResource ToolTipImageLoader}" ap:ImageSourcePath.ImageSourcePath="/Assets/Images/2.png" ap:InfoText.InfoText="Foundation Height"/>
+                        </Image.ToolTip>
+                    </Image>
                     <TextBox                
                         DataContext="{Binding DataModel_Global_Formwork}"
                         Text="{Binding HFoundation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -43,6 +48,15 @@
                         <i:Interaction.Behaviors>
                             <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
                         </i:Interaction.Behaviors>
+                        <TextBox.ToolTip>
+                            <ToolTip>
+                                <ToolTip.Template>
+                                    <ControlTemplate>
+
+                                    </ControlTemplate>
+                                </ToolTip.Template>
+                            </ToolTip>
+                        </TextBox.ToolTip>
                     </TextBox>
 
                     <!--H Foundation Edge-->
@@ -144,7 +158,7 @@
                          DataContext="{Binding DataModel_Global_Formwork}"
                          Text="{Binding RadiusCenterLineTower, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                          Template="{StaticResource AppTextBoxGeneric}"
-                         HorizontalAlignment="Left" Height="25" Margin="130,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">                        
+                         HorizontalAlignment="Left" Height="25" Margin="130,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
                     </TextBox>
 
                     <!--Bottom Cover-->
@@ -219,14 +233,14 @@
                         DataContext="{Binding DataModel_Global_Formwork}"
                         Text="{Binding DeptFoundation, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                         Template="{StaticResource AppTextBoxGeneric}"
-                        HorizontalAlignment="Left" Height="25" Margin="350,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">                        
+                        HorizontalAlignment="Left" Height="25" Margin="350,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
                     </TextBox>
                 </Grid>
             </TabItem>
 
             <TabItem Header="Materials">
                 <Grid Name="UI_Grid_G_Materials" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="555">
-                    
+
                     <!--Material Foundation-->
                     <Label Content="__Material Foundation" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"
                            ap:CultureKey.CultureRes="Lbl_G_MaterialFoundation"/>
@@ -236,7 +250,7 @@
                         Text="{Binding MaterialFoundation, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                         Template="{StaticResource AppTextBoxGeneric}"                        
                         HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" 
-                        Height="25" Margin="130,5,50,0" Width="100"/>                
+                        Height="25" Margin="130,5,50,0" Width="100"/>
 
                     <!--Material Foundation Bed-->
                     <Label Content="__Material FoundationBed" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"
@@ -262,10 +276,10 @@
 
                 </Grid>
             </TabItem>
-            
+
             <TabItem Header="Coordinations">
                 <Grid Name="UI_Grid_G_Coordinations" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="555">
-                    
+
                     <!--Coordinations Ground Point X-->
                     <Label Content="__Coordination X" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"
                            ap:CultureKey.CultureRes="Lbl_G_CoordinationX"/>
@@ -317,7 +331,7 @@
                         Text="{Binding FoundationPointZ, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                         Template="{StaticResource AppTextBoxGeneric}"                        
                         HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" 
-                        Height="25" Margin="130,95,50,0" Width="100">                       
+                        Height="25" Margin="130,95,50,0" Width="100">
                     </TextBox>
                 </Grid>
             </TabItem>
