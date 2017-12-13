@@ -75,7 +75,7 @@
     <Compile Include="Common\AttachedProperties\ImageSourcePath.cs" />
     <Compile Include="Common\AttachedProperties\InfoText.cs" />
     <Compile Include="Common\Attributes\DisplayByResourceKeyAttribute.cs" />
-    <Compile Include="Common\Attributes\KeyNameAttribute.cs" />
+    <Compile Include="Common\Attributes\SaveKeyCode.cs" />
     <Compile Include="Common\Attributes\ResourceFileAttribute.cs" />
     <Compile Include="Common\Attributes\ValueAttribute.cs" />
     <Compile Include="Common\DataModel\DataModel.cs" />
@@ -361,6 +361,16 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\Save.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\Open.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

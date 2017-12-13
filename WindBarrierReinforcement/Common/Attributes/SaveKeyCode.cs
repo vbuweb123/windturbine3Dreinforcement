@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace WindBarrierReinforcement.Common.Attributes
 {
-    class KeyNameAttribute : System.Attribute
+    class SaveKeyCodeAttribute : System.Attribute
     {
-        public string KeyName;
-        public KeyNameAttribute()
+        public string KeyCode;
+
+        public SaveKeyCodeAttribute()
         {
         }
     }

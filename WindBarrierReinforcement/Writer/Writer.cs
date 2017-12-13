@@ -7,6 +7,8 @@ using System.IO;
 using WindBarrierReinforcement.Common.Reflected;
 using System.Reflection;
 using WindBarrierReinforcement.Common.Attributes;
+using System.Xml;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.Writer
 {
@@ -16,12 +18,30 @@ namespace WindBarrierReinforcement.Writer
 
         private static string currentDirectory;
 
-        static Writer()
-        {
-            currentDirectory = Directory.GetCurrentDirectory();
-            properties = new List<PropertyDataInfo>();
-        }
+        private static GlobalDataModels GlobalDataModels;
 
+        public static void Save(GlobalDataModels globalDataModels)
+        {
+            XmlDocument Document = new XmlDocument();
+            Document.PreserveWhitespace = true;
+            //craete Root Node
+            XmlNode root = Document.CreateElement("ReinforcementData");
+
+            XmlAttribute nowDate = Document.CreateAttribute("CreatedAt");
+            nowDate.Value = DateTime.Now.ToUniversalTime().ToString();
+            root.Attributes.Append(nowDate);
+
+            Document.AppendChild(root);
+
+            currentDirectory = Directory.GetCurrentDirectory();
+
+            FileStream fs = new FileStream(currentDirectory + "\\temp.xml", FileMode.Create);
+            Document.Save(fs);
+        }
+        private static void CollectData()
+        {
+
+        }
         public static void WriteTexts()
         {
             string filename = currentDirectory + "\\" + "temp.txt";
@@ -31,11 +51,11 @@ namespace WindBarrierReinforcement.Writer
             foreach (var item in properties)
             {
                 StringBuilder sb = new StringBuilder();
-                KeyNameAttribute attribute = item.PropertyInfo.GetCustomAttribute(typeof(KeyNameAttribute)) as KeyNameAttribute;
+                SaveKeyCodeAttribute attribute = item.PropertyInfo.GetCustomAttribute(typeof(SaveKeyCodeAttribute)) as SaveKeyCodeAttribute;
                 if (attribute != null)
                 {
                     sb.Append("{Key}");
-                    sb.Append(attribute.KeyName);
+                    sb.Append(attribute.KeyCode);
                 }
                 sb.Append("{Value}");
                 sb.Append(item.GetValue().ToString());

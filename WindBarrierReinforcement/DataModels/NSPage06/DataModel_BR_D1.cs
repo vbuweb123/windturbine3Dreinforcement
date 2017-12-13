@@ -17,7 +17,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// <summary>
         /// UI_ComboBox_UPBR_Dir1_Diameter
         /// </summary>       
-        [KeyName(KeyName = "UPBR_Dir1_Diameter")]
+        [SaveKeyCodeAttribute(KeyCode = "UPBR_Dir1_Diameter")]
         private int selectedIndexDiameter;
         public int SelectedIndexDiameter
         {
@@ -59,7 +59,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// <summary>
         /// UI_TextBox_UPBR_Dir1_SpacingValue
         /// </summary>
-        [KeyName(KeyName = "UPBR_Dir1_Spacing")]
+        [SaveKeyCodeAttribute(KeyCode = "UPBR_Dir1_Spacing")]
         private int spacing;
         public int Spacing
         {
