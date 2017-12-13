@@ -82,7 +82,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
         private void Set_MinCore()
         {
-            MinCore = (int)Math.Ceiling(MinSpaceCenter / (Math.Sin(global.GDMPage04.DataModelRadial2.SpacingAngle)));
+            if (global.GDMPage04.DataModelRadial2.SpacingAngle == 0)
+                MinCore = 0;
+            else
+                MinCore =  (int)Math.Ceiling(MinSpaceCenter / (Math.Sin(global.GDMPage04.DataModelRadial2.SpacingAngle * Math.PI / 180)));
         }
         private void Set_alternativeHalfMinStartAngle()
         {
@@ -90,7 +93,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             int radiusCenterLineTower =global.GDMPage02.DataModel_Anchor.RadiusCenterLineTower;
             int distanceBoltPair = global.GDMPage02.DataModel_Anchor.DispanceBoltPairs;
 
-            this.alternativeHalfMinStartAngle = Math.Atan((anchorBoltDiameter + 50) / (radiusCenterLineTower - distanceBoltPair / 2));
+            this.alternativeHalfMinStartAngle = Math.Atan(((double)anchorBoltDiameter + 50) / (radiusCenterLineTower - distanceBoltPair / 2));
 
             Set_AlternativeMinStartAngle();
         }

@@ -4,16 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WindBarrierReinforcement"
-        mc:Ignorable="d"        
-        Title="Main Window" Height="700" Width="930" ResizeMode="NoResize">
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="950" ResizeMode="NoResize">
     <Grid>
-        
-        <Frame Name="FrameMain" Margin="0,50,0,0" NavigationUIVisibility="Hidden">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+        <Frame Name="FrameMain" Margin="0,0,0,0" NavigationUIVisibility="Hidden" Grid.Column="0"/>
 
-        </Frame>
-        <Menu Name="UI_Menu" HorizontalAlignment="Center" FontWeight="Bold"  Height="360" Margin="700,0,0,0"
-              VerticalAlignment="Top" Width="100" Padding="10 1 1 1" Background="Orange" FontStyle="Italic">
-
+        <Menu Name="UI_Menu" HorizontalAlignment="Center" FontWeight="Bold"  Height="360" Margin="0,0,0,0"
+              VerticalAlignment="Top" Width="230" Padding="10 1 1 1" Background="Orange" FontStyle="Italic"
+              Grid.Column="1">
             <MenuItem Tag="Page01" Header="Global" Width="230" Height="30"></MenuItem>
 
             <MenuItem Tag="Page02" Header="Anchor" Width="230" Height="30"></MenuItem>
@@ -38,10 +40,7 @@
 
             <MenuItem Tag="Page12" Header="BS8666"   Width="230" Height="30"  ></MenuItem>
 
-
         </Menu>
-
-
 
     </Grid>
 </Window>
