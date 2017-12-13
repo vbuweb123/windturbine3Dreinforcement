@@ -28,8 +28,10 @@ namespace WindBarrierReinforcement.StaticModel
             public _GlobalDataModelsPage01(GlobalDataModels global)
             {
                 DataModel_Global_Formwork = new DataModel_Global_Formwork(global);
+
                 DataModel_Global_Coordinations_GroundPoint = new DataModel_Global_Coordinations_GroundPoint(global);
-                DataModel_Global_Materials = new DataModel_Global_Materials();
+
+                DataModel_Global_Materials = new DataModel_Global_Materials(global);
             }
         }
     }

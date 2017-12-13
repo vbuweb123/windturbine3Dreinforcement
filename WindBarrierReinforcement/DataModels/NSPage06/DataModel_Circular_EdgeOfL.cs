@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage06
 {
@@ -88,6 +89,16 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         {
             get { return overlapLength; }
             set { overlapLength = value; NotifyPropertyChanged("OverlapLength"); }
+        }
+        public DataModel_Circular_EdgeOfL(GlobalDataModels global)
+        {
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexDiameter = 0;
+            });
+
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexOption = 0;
+            });
         }
     }
 }

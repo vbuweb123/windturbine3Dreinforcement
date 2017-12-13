@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage07
 {
@@ -79,6 +80,13 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         {
             get { return edgeCover; }
             set { edgeCover = value; NotifyPropertyChanged("EdgeCover"); }
+        }
+
+        public DataModel_RadialEdgeConcrete(GlobalDataModels global)
+        {
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexDiameter = 0;
+            });
         }
 
     }

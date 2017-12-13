@@ -40,14 +40,14 @@ namespace WindBarrierReinforcement.StaticModel
 
             public _GlobalDataModelsPage08(GlobalDataModels global)
             {
-                DataModel_ARExtUBars = new DataModel_ARExtUBars();
-                DataModel_ARExteriorCircularTop = new DataModel_ARExteriorCircularTop();
-                DataModel_ARExteriorCircularLateral = new DataModel_ARExteriorCircularLateral();
-                DataModel_ARExteriorCircularBottom = new DataModel_ARExteriorCircularBottom();
+                DataModel_ARExtUBars = new DataModel_ARExtUBars(global);
+                DataModel_ARExteriorCircularTop = new DataModel_ARExteriorCircularTop(global);
+                DataModel_ARExteriorCircularLateral = new DataModel_ARExteriorCircularLateral(global);
+                DataModel_ARExteriorCircularBottom = new DataModel_ARExteriorCircularBottom(global);
                 DataModel_ARIntUBars = new DataModel_ARIntUBars(global);
-                DataModel_ARIntCircularTop = new DataModel_ARIntCircularTop();
-                DataModel_ARIntCircularBottom = new DataModel_ARIntCircularBottom();
-                DataModel_ARIntCircularLateral = new DataModel_ARIntCircularLateral();
+                DataModel_ARIntCircularTop = new DataModel_ARIntCircularTop(global);
+                DataModel_ARIntCircularBottom = new DataModel_ARIntCircularBottom(global);
+                DataModel_ARIntCircularLateral = new DataModel_ARIntCircularLateral(global);
             }
         }
     }

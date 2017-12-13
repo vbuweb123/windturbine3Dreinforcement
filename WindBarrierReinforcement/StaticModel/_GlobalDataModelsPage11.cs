@@ -34,17 +34,18 @@ namespace WindBarrierReinforcement.StaticModel
 
             public _GlobalDataModelsPage11(GlobalDataModels global)
             {
-                DataModelMaterialsFoundation = new DataModelMaterials("Foundation");
+                DataModelMaterialsFoundation = new DataModelMaterials(global,"Foundation");                
 
-                DataModelMaterialsFoundationTowerBase = new DataModelMaterials("Foundation Tower Base");
+                DataModelMaterialsFoundationTowerBase = new DataModelMaterials(global, "Foundation Tower Base");
 
-                DataModelMaterialsLeanConcrete = new DataModelMaterials("Lean Concrete");
+                DataModelMaterialsLeanConcrete = new DataModelMaterials(global, "Lean Concrete");
 
-                DataModelMaterialsEnvelopeAroundConduits = new DataModelMaterials("Envelope Around Conduits");
+                DataModelMaterialsEnvelopeAroundConduits = new DataModelMaterials(global, "Envelope Around Conduits");
 
-                DataModelMaterialsGrouting = new DataModelMaterials("Grouting");
+                DataModelMaterialsGrouting = new DataModelMaterials(global, "Grouting");
 
-                DataModelMaterialsFoundationPile = new DataModelMaterials("Foundation Piles");
+                DataModelMaterialsFoundationPile = new DataModelMaterials(global, "Foundation Piles");
+
             }
         }
     }

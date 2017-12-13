@@ -77,6 +77,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
                     Set_HookLengths();
                 };
             });
+            //SelectedIndexDiameter
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexDiameter = 0;
+            });
         }
 
         private void Set_HookLengths()

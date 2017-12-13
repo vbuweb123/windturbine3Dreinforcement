@@ -33,6 +33,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
@@ -167,6 +172,7 @@
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\RManager.cs" />
+    <Compile Include="StaticModel\GlobalDataModels.cs" />
     <Compile Include="StaticModel\_EvtHandler.cs" />
     <Compile Include="StaticModel\_GlobalDataModelsPage01.cs" />
     <Compile Include="StaticModel\_GlobalDataModelsPage02.cs" />
@@ -180,7 +186,6 @@
     <Compile Include="StaticModel\_GlobalDataModelsPage10.cs" />
     <Compile Include="StaticModel\_GlobalDataModelsPage11.cs" />
     <Compile Include="StaticModel\_GlobalDataModelsPage12.cs" />
-    <Compile Include="StaticModel\GlobalDataModels.cs" />
     <Compile Include="Writer\Writer.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -342,6 +347,5 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

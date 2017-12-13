@@ -124,7 +124,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int RadiusCenterLineTower
         {
             get { return radiusCenterlineTower; }
-            set
+            private set
             {
                 radiusCenterlineTower = value;
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.RadiusCenterLineTower));
@@ -179,7 +179,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int RadiusBtc
         {
             get { return radiusBtc; }
-            set
+            private set
             {
                 radiusBtc = value;
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.RadiusBtc));
@@ -222,10 +222,12 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
             {
                 this.PropertyChanged += (o, e) =>
                 {
+                    //Depth Foundation
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HFoundation)
                         || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HTowerBase)
                         || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HightAboveGround))
                         Set_DeptFoundation();
+                    //Radius Btc
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DTowerBase)
                     || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))
                         Set_RadiusBtc();
@@ -236,6 +238,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
             {
                 global.GDMPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
                 {
+                    //Radius Centerline Tower
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.RadiusCenterLineTower))
                         Set_RadiusCenterLineTower();
                 };

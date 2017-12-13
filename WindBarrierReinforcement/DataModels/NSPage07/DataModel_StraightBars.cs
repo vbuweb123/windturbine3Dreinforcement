@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage07
 {
@@ -83,6 +84,16 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         {
             get { return edgeCover; }
             set { edgeCover = value; NotifyPropertyChanged("EdgeCover"); }
+        }
+
+        public DataModel_StraightBars(GlobalDataModels global)
+        {
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexDiameter = 0;
+            });
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexOption = 0;
+            });
         }
     }
 }

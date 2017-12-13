@@ -48,7 +48,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         public int FoundationPointZ
         {
             get { return foundationPointZ; }
-            set { foundationPointZ = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.FoundationPointZ)); }
+            private set
+            {
+                foundationPointZ = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.FoundationPointZ));
+            }
         }
         private GlobalDataModels global;
 

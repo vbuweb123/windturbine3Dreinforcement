@@ -7,6 +7,7 @@ using WindBarrierReinforcement.Common.Attributes;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage06
 {
@@ -66,6 +67,12 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         {
             get { return l_RadialSpacing; }
             set { l_RadialSpacing = value; NotifyPropertyChanged("L_RadialSpacing"); }
+        }
+        public DataModel_BR_L(GlobalDataModels global)
+        {
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexDiameter = 0;
+            });           
         }
     }
 }

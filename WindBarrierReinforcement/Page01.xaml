@@ -230,9 +230,10 @@
                     <!--Material Foundation-->
                     <Label Content="__Material Foundation" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"
                            ap:CultureKey.CultureRes="Lbl_G_MaterialFoundation"/>
-                    <TextBox                 
+                    <TextBox           
+                        IsEnabled="False"
                         DataContext="{Binding DataModel_Global_Materials}"
-                        Text="{Binding MaterialFoundation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Text="{Binding MaterialFoundation, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                         Template="{StaticResource AppTextBoxGeneric}"                        
                         HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" 
                         Height="25" Margin="130,5,50,0" Width="100"/>                
@@ -240,9 +241,10 @@
                     <!--Material Foundation Bed-->
                     <Label Content="__Material FoundationBed" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"
                            ap:CultureKey.CultureRes="Lbl_G_MaterialFoundationBed"/>
-                    <TextBox                          
+                    <TextBox        
+                        IsEnabled="False"
                         DataContext="{Binding DataModel_Global_Materials}"
-                        Text="{Binding MaterialFoundationBed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Text="{Binding MaterialFoundationBed, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                         Template="{StaticResource AppTextBoxGeneric}"                        
                         HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" 
                         Height="25" Margin="130,35,50,0" Width="100"/>
@@ -250,9 +252,10 @@
                     <!--Material Tower Base-->
                     <Label Content="__Material Tower Base" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"
                            ap:CultureKey.CultureRes="Lbl_G_MaterialTowerBase"/>
-                    <TextBox                 
+                    <TextBox             
+                        IsEnabled="False"
                         DataContext="{Binding DataModel_Global_Materials}"
-                        Text="{Binding MaterialTowerBase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Text="{Binding MaterialTowerBase, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                         Template="{StaticResource AppTextBoxGeneric}"                        
                         HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" 
                         Height="25" Margin="130,65,50,0" Width="100"/>

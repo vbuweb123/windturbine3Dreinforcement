@@ -193,26 +193,6 @@
                         </i:Interaction.Behaviors>
                     </TextBox>
 
-                    <Label FontSize="12" Content="Start Offset Angle" HorizontalAlignment="Left" Margin="274,81,0,0" VerticalAlignment="Top"/>
-                    <TextBox                            
-                        DataContext="{Binding DataModel_Top_Reinforcement1}"
-                        Text="{Binding StartOffsetAngle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                        
-                        HorizontalAlignment="Left" Height="23" Margin="390,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" RenderTransformOrigin="-2.275,1.652">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
-                    </TextBox>
-
-                    <Label FontSize="12" Content="Maximum Length" HorizontalAlignment="Left" Margin="271,111,0,0" VerticalAlignment="Top"/>
-                    <TextBox                            
-                        DataContext="{Binding DataModel_Top_Reinforcement1}"
-                        Text="{Binding MaximumLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                        
-                        HorizontalAlignment="Left" Height="23" Margin="385,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" RenderTransformOrigin="-2.275,1.652">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
-                    </TextBox>
-
 
 
                 </Grid>

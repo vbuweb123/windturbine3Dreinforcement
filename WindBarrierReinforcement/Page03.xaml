@@ -33,7 +33,7 @@
                    ap:CultureKey.CultureRes="Lbl_PilesCircleDiameter_1"
                    Margin="5,5,0,0" Height="25"/>
             <TextBox 
-                DataContext="{Binding DataModel_ScrewPile_SP }"
+                DataContext="{Binding DataModel_ScrewPiles }"
                 Text="{Binding CircleDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
                 Template="{StaticResource AppTextBoxGeneric}"                 
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
@@ -48,7 +48,7 @@
                    ap:CultureKey.CultureRes="Lbl_PilesNo_Piles_1"
                    Margin="5,35,0,0" Height="25"/>
             <TextBox 
-                DataContext="{Binding DataModel_ScrewPile_SP }"
+                DataContext="{Binding DataModel_ScrewPiles }"
                 Text="{Binding NoPiles, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
                 Template="{StaticResource AppTextBoxGeneric}"                 
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
@@ -63,7 +63,7 @@
                    ap:CultureKey.CultureRes="Lbl_PilesdivPerCurve_1"
                    Margin="5,65,0,0" Height="25"/>
             <TextBox 
-                DataContext="{Binding DataModel_ScrewPile_SP }"
+                DataContext="{Binding DataModel_ScrewPiles }"
                 Text="{Binding DivPerCurve, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
                 Template="{StaticResource AppTextBoxGeneric}"                 
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
@@ -78,7 +78,7 @@
                    ap:CultureKey.CultureRes="Lbl_PilesAngle_1"
                    Margin="5,95,0,0" Height="25"/>
             <TextBox 
-                DataContext="{Binding DataModel_ScrewPile_SP }"
+                DataContext="{Binding DataModel_ScrewPiles }"
                 Text="{Binding Angle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
                 Template="{StaticResource AppTextBoxGeneric}"                 
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
@@ -93,7 +93,7 @@
                    ap:CultureKey.CultureRes="Lbl_PilespileDepth_1"
                    Margin="5,125,0,0" Height="25"/>
             <TextBox 
-                DataContext="{Binding DataModel_ScrewPile_SP }"
+                DataContext="{Binding DataModel_ScrewPiles }"
                 Text="{Binding PileDepth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                  
                 Template="{StaticResource AppTextBoxGeneric}"                 
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
@@ -108,10 +108,14 @@
                    ap:CultureKey.CultureRes="Lbl_PilesMaterial_Piles_1"
                    Margin="5,155,0,0" Height="25"/>
 
-            <ComboBox  DataContext="{Binding DataModel_ScrewPiles}"
-                       ItemsSource="{Binding ConcreteQualityNames, Mode=TwoWay}"
-                       SelectedIndex="{Binding SelectedIndexConcreteQuality, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                       Margin="140,155,0,0" Height="25" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <TextBox 
+                IsEnabled="False"
+                DataContext="{Binding DataModel_ScrewPiles }"
+                Text="{Binding MaterialPiles, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                Template="{StaticResource AppTextBoxGeneric}"                 
+                HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                Margin="140,155,0,0"  Height="25" Width="100">
+            </TextBox>
 
 
             <!--Slope-->
@@ -119,7 +123,7 @@
                    ap:CultureKey.CultureRes="Lbl_PilesSlope_1"
                    Margin="5,185,0,0" Height="25"/>
             <TextBox 
-                DataContext="{Binding DataModel_ScrewPile_SP }"
+                DataContext="{Binding DataModel_ScrewPiles }"
                 Text="{Binding Slope, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"                 
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
@@ -131,7 +135,7 @@
                    ap:CultureKey.CultureRes="Lbl_PilesDepthPile_1"
                    Margin="5,215,0,0" Height="25"/>
             <TextBox 
-                DataContext="{Binding DataModel_ScrewPile_SP }"
+                DataContext="{Binding DataModel_ScrewPiles }"
                 Text="{Binding DepthPile, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"                 
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
@@ -143,7 +147,7 @@
                    ap:CultureKey.CultureRes="Lbl_PilesForces_1"
                    Margin="5,245,0,0" Height="25"/>
             <TextBox 
-                DataContext="{Binding DataModel_ScrewPile_SP}"
+                DataContext="{Binding DataModel_ScrewPiles}"
                 Text="{Binding Forces , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"                 
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
@@ -155,7 +159,7 @@
                    ap:CultureKey.CultureRes="Lbl_PilesPRBottomCover_1"
                    Margin="5,275,0,0" Height="25"/>
             <TextBox 
-                DataContext="{Binding DataModel_ScrewPile_SP}"
+                DataContext="{Binding DataModel_ScrewPiles}"
                 Text="{Binding PR_BottomCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"                 
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
@@ -167,7 +171,7 @@
                    ap:CultureKey.CultureRes="Lbl_PilesTopCover_1"
                    Margin="5,305,0,0" Height="25"/>
             <TextBox 
-                DataContext="{Binding DataModel_ScrewPile_SP}"
+                DataContext="{Binding DataModel_ScrewPiles}"
                 Text="{Binding PR_TopCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"                 
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
@@ -179,7 +183,7 @@
                    ap:CultureKey.CultureRes="Lbl_PilesStirrupRadius_Layer1_1"
                    Margin="5,335,0,0" Height="25"/>
             <TextBox 
-                DataContext="{Binding DataModel_ScrewPile_SP}"
+                DataContext="{Binding DataModel_ScrewPiles}"
                 Text="{Binding PR_StirrupRadius_Layer1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"                 
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
@@ -191,7 +195,7 @@
                    ap:CultureKey.CultureRes="Lbl_PilesSpacing_Layer1_1"
                    Margin="250,5,0,0" Height="25"/>
             <TextBox            
-                DataContext="{Binding DataModel_ScrewPile_SP}"
+                DataContext="{Binding DataModel_ScrewPiles}"
                 Text="{Binding PR_Spacing_Layer1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"                 
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
@@ -202,12 +206,12 @@
             </TextBox>
 
             <!--PR_StirrupRebarDiam_Layer1-->
-            <Label Content="__Dir1_Diameters" HorizontalAlignment="Left" VerticalAlignment="Top"                    
-                   ap:CultureKey.CultureRes="Lbl_PilesDir1_Diameters"
+            <Label Content="__PR_StirrupRebarDiam_Layer1" HorizontalAlignment="Left" VerticalAlignment="Top"                    
+                   ap:CultureKey.CultureRes="Lbl_PR_StirrupRebarDiam_Layer1"
                    Margin="250,35,0,0" Height="25"/>
             <ComboBox
-                   DataContext="{Binding DataModel_ScrewPile_SP}"
-                   ItemsSource="{Binding Diameter, Mode=TwoWay}"
+                   DataContext="{Binding DataModel_ScrewPiles}"
+                   ItemsSource="{Binding DiameterNames}"
                    SelectedIndex="{Binding PR_StirrupRebarDiam_Layer1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                    Margin="360,35,0,0"  Height="25" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top">
             </ComboBox>
@@ -217,7 +221,7 @@
                    ap:CultureKey.CultureRes="Lbl_PilesNoOfLongRebars"
                    Margin="250,65,0,0" Height="25"/>
             <TextBox                
-                DataContext="{Binding DataModel_ScrewPile_SP}"
+                DataContext="{Binding DataModel_ScrewPiles}"
                 Text="{Binding PR_NoOfLongRebars , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"                 
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
@@ -232,8 +236,8 @@
                    ap:CultureKey.CultureRes="Lbl_PilesLongRebarDiam"
                    Margin="250,95,0,0" Height="25"/>
             <ComboBox                        
-                        DataContext="{Binding DataModel_ScrewPile_SP}"
-                        ItemsSource="{Binding Diameter, Mode=TwoWay}"
+                        DataContext="{Binding DataModel_ScrewPiles}"
+                        ItemsSource="{Binding DiameterNames}"
                         SelectedIndex="{Binding PR_LongRebarDiam, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Margin="360,95,0,0"  Height="25" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top">
             </ComboBox>
@@ -243,9 +247,9 @@
                    Margin="250,125,0,0" Height="25"/>
             <TextBox 
                 x:Name="UI_TextBox_PR_TopLongExtension"
-                DataContext="{Binding DataModel_ScrewPile_SP}"
+                DataContext="{Binding DataModel_ScrewPiles}"
                 Text="{Binding PR_TopLongExtension, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                Template="{StaticResource AppTextBoxGeneric}"   
+                Template="{StaticResource AppTextBoxGeneric}"
                 Margin="360,125,0,0"  Height="25" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top">
             </TextBox>
 
@@ -253,8 +257,8 @@
                 ap:CultureKey.CultureRes="Lbl_PilesPR_StirrupRadius_Layer2"
                 Margin="250,155,0,0" Height="25"/>
             <ComboBox 
-                DataContext="{Binding DataModel_ScrewPile_SP}"
-                ItemsSource="{Binding Diameter, Mode=TwoWay}"
+                DataContext="{Binding DataModel_ScrewPiles}"
+                ItemsSource="{Binding DiameterNames}"
                 SelectedIndex="{Binding PR_StirrupRadius_Layer2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Margin="360,155,0,0"  Height="25" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
@@ -262,7 +266,7 @@
                 ap:CultureKey.CultureRes="Lbl_PilesSpacing_Layer2"
                 Margin="250,185,0,0" Height="25"/>
             <TextBox            
-                DataContext="{Binding DataModel_ScrewPile_SP}"
+                DataContext="{Binding DataModel_ScrewPiles}"
                 Text="{Binding PR_Spacing_Layer2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Template="{StaticResource AppTextBoxGeneric}"                 
                 HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
@@ -273,13 +277,22 @@
             </TextBox>
 
             <Label Content="__PR_StirrupRebarDiam_Layer2" HorizontalAlignment="Left" VerticalAlignment="Top"                    
-                ap:CultureKey.CultureRes="Lbl_PilesPR_StirrupRebarDiam_Layer2"
+                ap:CultureKey.CultureRes="Lbl_PR_StirrupRebarDiam_Layer2"
                 Margin="250,215,0,0" Height="25"/>
             <ComboBox                        
-                DataContext="{Binding DataModel_ScrewPile_SP}"
-                ItemsSource="{Binding Diameter, Mode=TwoWay}"
-                SelectedIndex="{Binding PR_Ureinforcement_RebarDiam, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                DataContext="{Binding DataModel_ScrewPiles}"
+                ItemsSource="{Binding DiameterNames}"
+                SelectedIndex="{Binding PR_StirrupRebarDiam_Layer2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Margin="360,215,0,0"  Height="25" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            
+            <Label Content="__PR_Ureinforcement_RebarDiam" HorizontalAlignment="Left" VerticalAlignment="Top"                    
+                ap:CultureKey.CultureRes="Lbl_PR_Ureinforcement_RebarDiam"
+                Margin="250,245,0,0" Height="25"/>
+            <ComboBox                        
+                DataContext="{Binding DataModel_ScrewPiles}"
+                ItemsSource="{Binding DiameterNames}"
+                SelectedIndex="{Binding PR_Ureinforcement_RebarDiam, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Margin="360,245,0,0"  Height="25" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
         </Grid>
     </Grid>
