@@ -30,7 +30,7 @@
                     Background="{StaticResource AppMainBackgroundColor}">
 
             <TabItem Header="Formwork">
-                <Grid Name="UI_Grid_Global" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="500" >
+                <Grid Name="UI_Grid_Global" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="555" >
 
                     <!--H Foundation-->
                     <Label Content="__H Foundation" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" 
@@ -225,7 +225,7 @@
             </TabItem>
 
             <TabItem Header="Materials">
-                <Grid Name="UI_Grid_G_Materials" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="500">
+                <Grid Name="UI_Grid_G_Materials" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="555">
                     
                     <!--Material Foundation-->
                     <Label Content="__Material Foundation" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"
@@ -264,7 +264,7 @@
             </TabItem>
             
             <TabItem Header="Coordinations">
-                <Grid Name="UI_Grid_G_Coordinations" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="500">
+                <Grid Name="UI_Grid_G_Coordinations" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="555">
                     
                     <!--Coordinations Ground Point X-->
                     <Label Content="__Coordination X" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"

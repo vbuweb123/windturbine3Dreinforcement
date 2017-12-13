@@ -83,7 +83,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelMaterials>(x => x.SelectedIndexConcreteQuality))
                         Set_MaterialTowerBase();
                 };
-            });
+            });                         
         }
         
         private void Set_MaterialFoundation()

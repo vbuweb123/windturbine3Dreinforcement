@@ -90,6 +90,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage11
         {
             this.Name = destinationName;
             AdditionalInformation = "";
+
             global.EvtHandler.AddPostEvtAction(() => {
                 this.SelectedIndexConcreteQuality = 0;
             });
@@ -102,7 +103,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage11
             global.EvtHandler.AddPostEvtAction(() => {
                 this.SelectedIndexConsistenceTolerance = 0;
             });
-            
+            global.EvtHandler.AddPostEvtAction(() => {
+                this.AdditionalInformation ="";
+            });
+
         }
         
     }

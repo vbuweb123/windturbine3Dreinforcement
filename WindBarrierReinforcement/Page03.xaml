@@ -23,7 +23,7 @@
     <Grid Name="UI_Grid_Master"  Background="{StaticResource AppMainBackgroundColor}">
         <TextBlock ap:CultureKey.CultureRes="Txt_Piles" Text="__Piles" HorizontalAlignment="Left" Margin="20,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                    Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title" />
-        <Grid Name="Ui_Grid_Piles" Background="{StaticResource AppContainerBackgroundColor}" Margin="15,50,200,25">
+        <Grid Name="Ui_Grid_Piles" Background="{StaticResource AppContainerBackgroundColor}" Margin="15,50,25,25">
 
             <Label FontSize="12" Content="Screw Piles 1" HorizontalAlignment="Left" Margin="140,-30,0,0" VerticalAlignment="Top"/>
             <Label FontSize="12" Content="Straigh Piles 1" HorizontalAlignment="Left" Margin="300,-30,0,0" VerticalAlignment="Top"/>
