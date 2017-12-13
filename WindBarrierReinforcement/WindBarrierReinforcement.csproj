@@ -72,6 +72,8 @@
     </ApplicationDefinition>
     <Compile Include="Behaviors\NumericBehavior.cs" />
     <Compile Include="Common\AttachedProperties\CultureKey.cs" />
+    <Compile Include="Common\AttachedProperties\ImageSourcePath.cs" />
+    <Compile Include="Common\AttachedProperties\InfoText.cs" />
     <Compile Include="Common\Attributes\DisplayByResourceKeyAttribute.cs" />
     <Compile Include="Common\Attributes\KeyNameAttribute.cs" />
     <Compile Include="Common\Attributes\ResourceFileAttribute.cs" />
@@ -337,6 +339,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\Images\2.png" />
     <Resource Include="Resources\UPBR_1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -348,6 +351,16 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Icons\partial.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\Preview.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
