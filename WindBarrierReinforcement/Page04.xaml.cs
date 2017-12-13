@@ -51,7 +51,6 @@ namespace WindBarrierReinforcement
             //fixed 2 zones
             AddGridAndZone();
             AddGridAndZone();
-            var c = UI_Grid_CircularZones;
             CultureRenamer.Rename(UI_Grid_MasterGrid);
         }
 
@@ -64,7 +63,8 @@ namespace WindBarrierReinforcement
                 TextWrapping = textBox.TextWrapping,
                 Height = textBox.Height,
                 Width = textBox.Width,
-                Margin = textBox.Margin
+                Margin = textBox.Margin,
+                Name = textBox.Name
             };
             tb.SetValue(TemplateProperty, textBox.GetValue(TemplateProperty));
             BindingExpression be = textBox.GetBindingExpression(TextBox.TextProperty);
@@ -84,26 +84,27 @@ namespace WindBarrierReinforcement
             return tb;
         }
 
-        private TextBlock CloneTextBlock(TextBlock textBox)
+        private TextBlock CloneTextBlock(TextBlock textblock)
         {
             TextBlock tb = new TextBlock
             {
-                HorizontalAlignment = textBox.HorizontalAlignment,
-                VerticalAlignment = textBox.VerticalAlignment,
-                TextWrapping = textBox.TextWrapping,
-                Height = textBox.Height,
-                Width = textBox.Width,
-                Margin = textBox.Margin
+                HorizontalAlignment = textblock.HorizontalAlignment,
+                VerticalAlignment = textblock.VerticalAlignment,
+                TextWrapping = textblock.TextWrapping,
+                Height = textblock.Height,
+                Width = textblock.Width,
+                Margin = textblock.Margin,
+                Name = textblock.Name
             };
 
-            BindingExpression be = textBox.GetBindingExpression(TextBlock.TextProperty);
+            BindingExpression be = textblock.GetBindingExpression(TextBlock.TextProperty);
             Binding bind = new Binding
             {
                 Mode = be.ParentBinding.Mode,
                 Path = be.ParentBinding.Path,
                 UpdateSourceTrigger = be.ParentBinding.UpdateSourceTrigger
             };
-            tb.IsEnabled = textBox.IsEnabled;
+            tb.IsEnabled = textblock.IsEnabled;
             tb.SetBinding(TextBlock.TextProperty, bind);
 
             return tb;
@@ -117,7 +118,8 @@ namespace WindBarrierReinforcement
                 VerticalAlignment = comboBox.VerticalAlignment,
                 Height = comboBox.Height,
                 Width = comboBox.Width,
-                Margin = comboBox.Margin
+                Margin = comboBox.Margin,
+                Name = comboBox.Name
             };
             BindingExpression ItemsSourceExpr = comboBox.GetBindingExpression(ComboBox.ItemsSourceProperty);
             Binding bindItemsSource = new Binding
@@ -181,9 +183,106 @@ namespace WindBarrierReinforcement
             for (var i = 1; i < UI_Grid_CircularZones.Children.Count; i++)
             {
                 Grid current = (Grid)UI_Grid_CircularZones.Children[i];
-                current.DataContext = DataModelCircular_ZoneCollection.Zones[i-1];
+                current.DataContext = DataModelCircular_ZoneCollection.Zones[i - 1];
                 //
                 current.SetValue(Grid.ColumnProperty, i);
+            }
+        }
+
+        public void EvaluateUIEnabled()
+        {
+            for (var i = 1; i < UI_Grid_CircularZones.Children.Count; i++)
+            {
+                if (i == 1)
+                {
+                    Grid grid = (Grid)UI_Grid_CircularZones.Children[i];
+                    foreach (FrameworkElement element in grid.Children)
+                    {
+                        switch (element.Name)
+                        {
+                            case "ZoneOfBars":
+                                element.IsEnabled = false;
+                                break;
+                            case "SpacingValue":
+                                element.IsEnabled = true;
+                                break;
+                            case "Diameter":
+                                element.IsEnabled = true;
+                                break;
+                            case "ZoneLength":
+                                element.IsEnabled = false;
+                                break;
+                            case "ZoneInterDistance":
+                                element.IsEnabled = false;
+                                break;
+                            case "RadiusGiven":
+                                element.IsEnabled = false;
+                                break;
+                            case "DistanceFromBottom":
+                                element.IsEnabled = false;
+                                break;
+                            case "OffsetFromEdge":
+                                element.IsEnabled = false;
+                                break;
+                            case "DistributionBars":
+                                element.IsEnabled = true;
+                                break;
+                        }
+                    }
+                }
+                else if (i == UI_Grid_CircularZones.Children.Count - 1)
+                {
+                    Grid grid = (Grid)UI_Grid_CircularZones.Children[i];
+                    foreach (FrameworkElement element in grid.Children)
+                    {
+                        switch (element.Name)
+                        {
+                            case "DistributionBars":
+                                element.IsEnabled = true;
+                                break;
+                            default:
+                                element.IsEnabled = false;
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    Grid grid = (Grid)UI_Grid_CircularZones.Children[i];
+                    foreach (FrameworkElement element in grid.Children)
+                    {
+                        switch (element.Name)
+                        {
+                            case "ZoneOfBars":
+                                element.IsEnabled = false;
+                                break;
+                            case "SpacingValue":
+                                element.IsEnabled = true;
+                                break;
+                            case "Diameter":
+                                element.IsEnabled = true;
+                                break;
+                            case "ZoneLength":
+                                element.IsEnabled = false;
+                                break;
+                            case "ZoneInterDistance":
+                                element.IsEnabled = false;
+                                break;
+                            case "RadiusGiven":
+                                element.IsEnabled = true;
+                                break;
+                            case "DistanceFromBottom":
+                                element.IsEnabled = false;
+                                break;
+                            case "OffsetFromEdge":
+                                element.IsEnabled = false;
+                                break;
+                            case "DistributionBars":
+                                element.IsEnabled = true;
+                                break;
+                        }
+                    }
+                }
             }
         }
 
@@ -204,6 +303,7 @@ namespace WindBarrierReinforcement
             UI_Grid_CircularZones.Children.Add(CloneGrid(TemplateGrid));
 
             RecalculateGridSetup();
+            EvaluateUIEnabled();
         }
 
         private void RemoveGridAndZone()
@@ -215,6 +315,7 @@ namespace WindBarrierReinforcement
                 UI_Grid_CircularZones.Children.RemoveAt(UI_Grid_CircularZones.Children.Count - 1);
 
                 RecalculateGridSetup();
+                EvaluateUIEnabled();
             }
         }
 
