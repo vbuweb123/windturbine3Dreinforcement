@@ -75,7 +75,9 @@
     <Compile Include="Common\AttachedProperties\ImageSourcePath.cs" />
     <Compile Include="Common\AttachedProperties\InfoText.cs" />
     <Compile Include="Common\Attributes\DisplayByResourceKeyAttribute.cs" />
-    <Compile Include="Common\Attributes\SaveKeyCode.cs" />
+    <Compile Include="Writer\KeyCodeDictionary.cs" />
+    <Compile Include="Writer\SaveDataType.cs" />
+    <Compile Include="Writer\SaveKeyCode.cs" />
     <Compile Include="Common\Attributes\ResourceFileAttribute.cs" />
     <Compile Include="Common\Attributes\ValueAttribute.cs" />
     <Compile Include="Common\DataModel\DataModel.cs" />

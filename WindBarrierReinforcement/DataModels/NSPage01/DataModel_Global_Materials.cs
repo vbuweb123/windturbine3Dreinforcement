@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindBarrierReinforcement.Common.Attributes;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.DataModels.NSPage11;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage01
 {
@@ -15,6 +17,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// <summary>
         /// UI_TextBox_Material_Foundation
         /// </summary>
+        [SaveKeyCode(KeyCode = "Global_Materials_MaterialFoundation")]
         private string materialFoundation;
         public string MaterialFoundation
         {
@@ -28,6 +31,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// <summary>
         /// UI_TextBox_Material_Foundation_Bed
         /// </summary>
+        [SaveKeyCode(KeyCode = "Global_Materials_MaterialFoundationBed")]
         private string materialFoundationBed;
         public string MaterialFoundationBed
         {

@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindBarrierReinforcement.Common.Attributes
+namespace WindBarrierReinforcement.Writer
 {
-    class SaveKeyCodeAttribute : System.Attribute
+    public class SaveKeyCodeAttribute : System.Attribute
     {
         public string KeyCode;
+        public SaveDataType SaveDataType = SaveDataType.Default;
+        public Type CollectionElementType;
 
         public SaveKeyCodeAttribute()
         {

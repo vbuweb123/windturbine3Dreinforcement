@@ -8,6 +8,7 @@ using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage06
 {

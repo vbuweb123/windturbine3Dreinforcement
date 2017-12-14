@@ -8,6 +8,7 @@ using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.DataModels.NSPage02;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage01
 {
@@ -273,5 +274,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         {
             RadiusCenterLineTower = this.global.GDMPage02.DataModel_Anchor.RadiusCenterLineTower;
         }
+
+      
     }
 }

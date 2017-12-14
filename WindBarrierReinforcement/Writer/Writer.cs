@@ -9,6 +9,7 @@ using System.Reflection;
 using WindBarrierReinforcement.Common.Attributes;
 using System.Xml;
 using WindBarrierReinforcement.StaticModel;
+using System.Collections;
 
 namespace WindBarrierReinforcement.Writer
 {
@@ -22,52 +23,171 @@ namespace WindBarrierReinforcement.Writer
 
         public static void Save(GlobalDataModels globalDataModels)
         {
-            XmlDocument Document = new XmlDocument();
-            Document.PreserveWhitespace = true;
-            //craete Root Node
-            XmlNode root = Document.CreateElement("ReinforcementData");
+            GlobalDataModels = globalDataModels;
 
-            XmlAttribute nowDate = Document.CreateAttribute("CreatedAt");
-            nowDate.Value = DateTime.Now.ToUniversalTime().ToString();
-            root.Attributes.Append(nowDate);
+            XmlDocument Document = new XmlDocument();
+
+            Document.PreserveWhitespace = true;
+
+            XmlNode root = AppendRoot(Document);
+
+            KeyCodeDictionary saveData = CollectGlobalDataModel(GlobalDataModels);
+
+            EvaluateDictionary(saveData, Document, root);
 
             Document.AppendChild(root);
 
-            currentDirectory = Directory.GetCurrentDirectory();
-
-            FileStream fs = new FileStream(currentDirectory + "\\temp.xml", FileMode.Create);
-            Document.Save(fs);
+            Save(Document);
         }
-        private static void CollectData()
+        private static void EvaluateDictionary(KeyCodeDictionary dictionary, XmlDocument xmlDocument, XmlNode Node)
         {
-
-        }
-        public static void WriteTexts()
-        {
-            string filename = currentDirectory + "\\" + "temp.txt";
-
-            List<string> toprint = new List<string>();
-
-            foreach (var item in properties)
+            foreach (KeyValuePair<SaveKeyCodeAttribute, object> keyValuePair in dictionary)
             {
-                StringBuilder sb = new StringBuilder();
-                SaveKeyCodeAttribute attribute = item.PropertyInfo.GetCustomAttribute(typeof(SaveKeyCodeAttribute)) as SaveKeyCodeAttribute;
-                if (attribute != null)
+                if (keyValuePair.Key.SaveDataType == SaveDataType.Navigation)
                 {
-                    sb.Append("{Key}");
-                    sb.Append(attribute.KeyCode);
+                    XmlElement children = xmlDocument.CreateElement(keyValuePair.Key.KeyCode);
+                    EvaluateDictionary((KeyCodeDictionary)(keyValuePair.Value), xmlDocument, children);
+                    Node.AppendChild(children);
                 }
-                sb.Append("{Value}");
-                sb.Append(item.GetValue().ToString());
-
-                toprint.Add(sb.ToString());
+                else if (keyValuePair.Key.SaveDataType == SaveDataType.ListAndNavigation)
+                {
+                    /*
+                         ListNavigation translates like:
+                         List<SomeClass> = [Object1, Object2, Object3] is
+                            ListAttributeKeyCode :: 
+                                [
+                                    [ Object1Attribute, value ],
+                                    [ Object2Attribute, value ],
+                                    [ Object3Attribute, value ]
+                                ]
+                            
+                         */
+                    XmlElement children = xmlDocument.CreateElement(keyValuePair.Key.KeyCode);
+                    List<KeyCodeDictionary> converted = (List<KeyCodeDictionary>)keyValuePair.Value;
+                    foreach (var item in converted)
+                    {
+                        XmlElement itemElement = xmlDocument.CreateElement(keyValuePair.Key.KeyCode + "_item");
+                        EvaluateDictionary(item, xmlDocument, itemElement);
+                        children.AppendChild(itemElement);
+                    }
+                    Node.AppendChild(children);
+                }
+                else if (keyValuePair.Key.SaveDataType == SaveDataType.List)
+                { /*
+                    List<int> = [1,2,3]  is
+                    ListAttrCode :: [1,2,3] ]
+                    */
+                    IEnumerable converted = (IEnumerable)keyValuePair.Value;
+                    XmlElement children = xmlDocument.CreateElement(keyValuePair.Key.KeyCode);
+                    foreach (var item in converted)
+                    {
+                        XmlElement itemElement = xmlDocument.CreateElement(keyValuePair.Key.KeyCode + "_item");
+                        itemElement.InnerText = item.ToString();
+                        children.AppendChild(itemElement);
+                    }
+                    Node.AppendChild(children);
+                }
+                else
+                {
+                    XmlElement element = xmlDocument.CreateElement(keyValuePair.Key.KeyCode);
+                    element.InnerText = keyValuePair.Value.ToString();
+                    Node.AppendChild(element);
+                }
             }
-            //Uri path = new Uri(new Uri(currentDirectory), new Uri(filename));
-            File.WriteAllLines(filename, toprint.ToArray());
         }
-        public static void AddElementToDisplay(PropertyDataInfo datainfo)
+
+        private static XmlNode AppendRoot(XmlDocument xmlDocument)
         {
-            properties.Add(datainfo);
+            ////craete Root Node
+            XmlNode root = xmlDocument.CreateElement("ReinforcementData");
+
+            XmlAttribute nowDate = xmlDocument.CreateAttribute("CreatedAt");
+            nowDate.Value = DateTime.Now.ToUniversalTime().ToString();
+            root.Attributes.Append(nowDate);
+            return root;
         }
+
+        private static void Save(XmlDocument xmlDocument)
+        {
+            currentDirectory = Directory.GetCurrentDirectory();
+            FileStream fs = new FileStream(currentDirectory + "\\temp.xml", FileMode.Create);
+            XmlTextWriter xmlTextWriter = new XmlTextWriter(fs, Encoding.Unicode) { Formatting = Formatting.Indented };
+
+            xmlDocument.WriteContentTo(xmlTextWriter);
+
+            //xmlDocument.Save(fs)
+            //xmlTextWriter.Flush();
+            //fs.Flush();
+            xmlTextWriter.Close();
+            fs.Close();
+
+        }
+
+        private static KeyCodeDictionary CollectGlobalDataModel(object Data)
+        {
+            //inquiring global
+            Type globalType = Data.GetType();
+            //get all properties - GDMPage01, 02, etc
+            PropertyInfo[] GDMPropertiesInfo = globalType.GetProperties(BindingFlags.Instance | BindingFlags.Public);
+
+            KeyCodeDictionary dictionary = new KeyCodeDictionary();
+
+            foreach (PropertyInfo propertyInfo in GDMPropertiesInfo)
+            {
+                //get the custom attribute that makes the object saveable
+                SaveKeyCodeAttribute Attribute = propertyInfo.GetCustomAttribute<SaveKeyCodeAttribute>() as SaveKeyCodeAttribute;
+                if (Attribute != null)
+                {
+                    if (Attribute.SaveDataType == SaveDataType.Navigation)
+                    {
+                        /*
+                         PropertyWithNavigation =>
+                            PropertyAttribute :: [Properties<Attribute, value>] 
+                         */
+                        object returnData = CollectGlobalDataModel(propertyInfo.GetValue(Data));
+                        dictionary.Add(Attribute, returnData);
+                    }
+                    else if (Attribute.SaveDataType == SaveDataType.ListAndNavigation)
+                    {
+                        //convert current object to list
+                        IEnumerable<object> list = (IEnumerable<object>)propertyInfo.GetValue(Data);
+                        List<KeyCodeDictionary> convertedItems = new List<KeyCodeDictionary>();
+                        /*
+                         ListNavigation translates like:
+                         List<SomeClass> = [Object1, Object2, Object3] is
+                            ListAttributeKeyCode :: 
+                                [
+                                    [ Object1Attribute, value == [ Attr1 :: val1; Attr2 :: val2 ] ],
+                                    [ Object2Attribute, value ],
+                                    [ Object3Attribute, value ]
+                                ]
+                            
+                         */
+                        foreach (var item in list)
+                        {
+                            convertedItems.Add(CollectGlobalDataModel(item));
+                        }
+                        dictionary.Add(Attribute, convertedItems);
+                    }
+                    else if (Attribute.SaveDataType == SaveDataType.List)
+                    {
+                        /*
+                         List<int> = [1,2,3]  is
+                            ListAttrCode :: [1,2,3] ]
+                         */
+                        object returnData = propertyInfo.GetValue(Data);
+                        dictionary.Add(Attribute, returnData);
+                    }
+                    else
+                    {
+                        //Property => Attribute :: Value
+                        dictionary.Add(Attribute, propertyInfo.GetValue(Data));
+                    }
+                }
+            }
+            return dictionary;
+        }
+
+    
     }
 }
