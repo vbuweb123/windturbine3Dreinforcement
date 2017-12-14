@@ -104,13 +104,15 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
 
         public DataModel_TB_D1(GlobalDataModels global)
         {
+            
             global.EvtHandler.AddPostEvtAction(() => {
                 this.SelectedIndexDiameter = 0;
-            });
-
-            global.EvtHandler.AddPostEvtAction(() => {
                 this.SelectedIndexOption = 0;
-            });            
+            });                                 
+        }
+        private void Set_OffsetFromBottom()
+        {
+            
         }
     }
 }

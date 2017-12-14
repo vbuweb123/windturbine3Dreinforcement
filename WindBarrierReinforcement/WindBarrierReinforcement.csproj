@@ -104,7 +104,14 @@
     <Compile Include="DataModels\NSPage04\DataModelRadialGeneral.cs" />
     <Compile Include="DataModels\NSPage04\EZonePosition.cs" />
     <Compile Include="DataModels\NSPage04\IDataModelCircularZone.cs" />
-    <Compile Include="DataModels\NSPage05\DataModel_Top_Reinforcement.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelCircularGeneral.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelCircular_Zone.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelCircular_ZoneCollection.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelRadial1.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelRadial2.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelRadialGeneral.cs" />
+    <Compile Include="DataModels\NSPage05\EZonePosition.cs" />
+    <Compile Include="DataModels\NSPage05\IDataModelCircularZone.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_D1.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_D2.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_L.cs" />
@@ -351,5 +358,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

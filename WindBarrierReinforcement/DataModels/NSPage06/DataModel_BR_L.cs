@@ -62,8 +62,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// <summary>
         /// UI_TextBox_UPBR_Dir1_L_RadialSpacing
         /// </summary>
-        private int l_RadialSpacing;
-        public int L_RadialSpacing
+        private double l_RadialSpacing;
+        public double L_RadialSpacing
         {
             get { return l_RadialSpacing; }
             set { l_RadialSpacing = value; NotifyPropertyChanged("L_RadialSpacing"); }

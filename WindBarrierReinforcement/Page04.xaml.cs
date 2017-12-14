@@ -52,6 +52,13 @@ namespace WindBarrierReinforcement
             AddGridAndZone();
             AddGridAndZone();
             CultureRenamer.Rename(UI_Grid_MasterGrid);
+
+            global.EvtHandler.AddPopulateDataAction(() =>
+            {
+                AddGridAndZone();
+                AddGridAndZone();
+                //DataModelCircular_ZoneCollection.Zones[0].
+            });
         }
 
         private TextBox CloneTextBox(TextBox textBox, bool enabled)
@@ -286,7 +293,7 @@ namespace WindBarrierReinforcement
             }
         }
 
-        private void AddGridAndZone()
+        public void AddGridAndZone()
         {
             //first move the grid positioned there and create new Column Def
             ColumnDefinition columnDefinition = new ColumnDefinition();
@@ -306,7 +313,7 @@ namespace WindBarrierReinforcement
             EvaluateUIEnabled();
         }
 
-        private void RemoveGridAndZone()
+        public void RemoveGridAndZone()
         {
             //will return true if element is removed. Element is removed if the list is larger then 2. Minimum amount is 2
             if (DataModelCircular_ZoneCollection.RemoveBeforeLast())

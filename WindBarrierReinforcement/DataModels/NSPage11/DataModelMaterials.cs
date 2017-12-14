@@ -92,7 +92,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage11
             AdditionalInformation = "";
 
             global.EvtHandler.AddPostEvtAction(() => {
-                this.SelectedIndexConcreteQuality = 0;
+                this.SelectedIndexConcreteQuality = 2;
             });
 
             global.EvtHandler.AddPostEvtAction(() => {

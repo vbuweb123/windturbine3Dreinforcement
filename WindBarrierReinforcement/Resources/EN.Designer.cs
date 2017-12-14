@@ -2122,6 +2122,15 @@ namespace WindBarrierReinforcement.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Top Reinforcement.
+        /// </summary>
+        internal static string Tb_TopReinforcement {
+            get {
+                return ResourceManager.GetString("Tb_TopReinforcement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter values for.
         /// </summary>
         internal static string Tb_UBAB_Label_Title {
@@ -2154,6 +2163,15 @@ namespace WindBarrierReinforcement.Resources {
         internal static string Txt_OverPlateTopReinforcementTitle {
             get {
                 return ResourceManager.GetString("Txt_OverPlateTopReinforcementTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Under PlateBottom Reinforcement.
+        /// </summary>
+        internal static string Txt_Under_Plate_Bottom_Reinforcement {
+            get {
+                return ResourceManager.GetString("Txt_Under_Plate_Bottom_Reinforcement", resourceCulture);
             }
         }
     }

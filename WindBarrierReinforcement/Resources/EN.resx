@@ -1043,4 +1043,10 @@
     <value>Radius Of Bars</value>
     <comment>Page 06</comment>
   </data>
+  <data name="Tb_TopReinforcement" xml:space="preserve">
+    <value>Top Reinforcement</value>
+  </data>
+  <data name="Txt_Under_Plate_Bottom_Reinforcement" xml:space="preserve">
+    <value>Under PlateBottom Reinforcement</value>
+  </data>
 </root>
