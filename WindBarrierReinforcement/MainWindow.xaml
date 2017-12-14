@@ -62,7 +62,7 @@
                         <TextBlock Text="Save" VerticalAlignment="Center" Style="{StaticResource AppTextBlockGeneric}"/>
                     </StackPanel>
                 </Button>
-                <Button Click="Save_Click">
+                <Button Click="Open_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="pack://application:,,,/WindBarrierReinforcement;component/Assets/Icons/Open.jpg" Height="25"/>
                         <TextBlock Text="Open" VerticalAlignment="Center" Style="{StaticResource AppTextBlockGeneric}"/>

@@ -21,6 +21,8 @@ namespace WindBarrierReinforcement.Writer
 
         private static GlobalDataModels GlobalDataModels;
 
+        private static readonly string RootNodeName = "ReinforcementData";
+
         public static void Save(GlobalDataModels globalDataModels)
         {
             GlobalDataModels = globalDataModels;
@@ -47,6 +49,16 @@ namespace WindBarrierReinforcement.Writer
                 {
                     XmlElement children = xmlDocument.CreateElement(keyValuePair.Key.KeyCode);
                     EvaluateDictionary((KeyCodeDictionary)(keyValuePair.Value), xmlDocument, children);
+
+                    XmlAttribute _saveTypeAttribute = xmlDocument.CreateAttribute("SaveDataType");
+                    _saveTypeAttribute.Value = keyValuePair.Key.SaveDataType.ToString();
+
+                    XmlAttribute _collectionElementTypeAttribute = xmlDocument.CreateAttribute("Type");
+                    _collectionElementTypeAttribute.Value = (keyValuePair.Key.CollectionElementType != null) ? keyValuePair.Key.CollectionElementType.FullName : "";
+
+                    children.Attributes.Append(_saveTypeAttribute);
+                    children.Attributes.Append(_collectionElementTypeAttribute);
+
                     Node.AppendChild(children);
                 }
                 else if (keyValuePair.Key.SaveDataType == SaveDataType.ListAndNavigation)
@@ -64,6 +76,16 @@ namespace WindBarrierReinforcement.Writer
                          */
                     XmlElement children = xmlDocument.CreateElement(keyValuePair.Key.KeyCode);
                     List<KeyCodeDictionary> converted = (List<KeyCodeDictionary>)keyValuePair.Value;
+
+                    XmlAttribute _saveTypeAttribute = xmlDocument.CreateAttribute("SaveDataType");
+                    _saveTypeAttribute.Value = keyValuePair.Key.SaveDataType.ToString();
+
+                    XmlAttribute _collectionElementTypeAttribute = xmlDocument.CreateAttribute("Type");
+                    _collectionElementTypeAttribute.Value = (keyValuePair.Key.CollectionElementType != null) ? keyValuePair.Key.CollectionElementType.FullName : "";
+
+                    children.Attributes.Append(_saveTypeAttribute);
+                    children.Attributes.Append(_collectionElementTypeAttribute);
+
                     foreach (var item in converted)
                     {
                         XmlElement itemElement = xmlDocument.CreateElement(keyValuePair.Key.KeyCode + "_item");
@@ -79,6 +101,17 @@ namespace WindBarrierReinforcement.Writer
                     */
                     IEnumerable converted = (IEnumerable)keyValuePair.Value;
                     XmlElement children = xmlDocument.CreateElement(keyValuePair.Key.KeyCode);
+
+                    XmlAttribute _saveTypeAttribute = xmlDocument.CreateAttribute("SaveDataType");
+                    _saveTypeAttribute.Value = keyValuePair.Key.SaveDataType.ToString();
+
+                    XmlAttribute _collectionElementTypeAttribute = xmlDocument.CreateAttribute("Type");
+                    _collectionElementTypeAttribute.Value = (keyValuePair.Key.CollectionElementType != null) ? keyValuePair.Key.CollectionElementType.FullName : "";
+
+                    children.Attributes.Append(_saveTypeAttribute);
+                    children.Attributes.Append(_collectionElementTypeAttribute);
+
+
                     foreach (var item in converted)
                     {
                         XmlElement itemElement = xmlDocument.CreateElement(keyValuePair.Key.KeyCode + "_item");
@@ -89,9 +122,19 @@ namespace WindBarrierReinforcement.Writer
                 }
                 else
                 {
-                    XmlElement element = xmlDocument.CreateElement(keyValuePair.Key.KeyCode);
-                    element.InnerText = keyValuePair.Value.ToString();
-                    Node.AppendChild(element);
+                    XmlElement children = xmlDocument.CreateElement(keyValuePair.Key.KeyCode);
+                    children.InnerText = keyValuePair.Value.ToString();
+
+                    XmlAttribute _saveTypeAttribute = xmlDocument.CreateAttribute("SaveDataType");
+                    _saveTypeAttribute.Value = keyValuePair.Key.SaveDataType.ToString();
+
+                    XmlAttribute _collectionElementTypeAttribute = xmlDocument.CreateAttribute("Type");
+                    _collectionElementTypeAttribute.Value = (keyValuePair.Key.CollectionElementType != null) ? keyValuePair.Key.CollectionElementType.FullName : "";
+
+                    children.Attributes.Append(_saveTypeAttribute);
+                    children.Attributes.Append(_collectionElementTypeAttribute);
+
+                    Node.AppendChild(children);
                 }
             }
         }
@@ -99,7 +142,7 @@ namespace WindBarrierReinforcement.Writer
         private static XmlNode AppendRoot(XmlDocument xmlDocument)
         {
             ////craete Root Node
-            XmlNode root = xmlDocument.CreateElement("ReinforcementData");
+            XmlNode root = xmlDocument.CreateElement(RootNodeName);
 
             XmlAttribute nowDate = xmlDocument.CreateAttribute("CreatedAt");
             nowDate.Value = DateTime.Now.ToUniversalTime().ToString();
@@ -115,10 +158,8 @@ namespace WindBarrierReinforcement.Writer
 
             xmlDocument.WriteContentTo(xmlTextWriter);
 
-            //xmlDocument.Save(fs)
-            //xmlTextWriter.Flush();
-            //fs.Flush();
             xmlTextWriter.Close();
+
             fs.Close();
 
         }
@@ -188,6 +229,36 @@ namespace WindBarrierReinforcement.Writer
             return dictionary;
         }
 
-    
+        public static void Open(GlobalDataModels global)
+        {
+            GlobalDataModels = global;
+
+            currentDirectory = Directory.GetCurrentDirectory();
+            //FileStream fs = new FileStream(currentDirectory + "\\temp.xml", FileMode.Open);
+            string xml = System.IO.File.ReadAllText(currentDirectory + "\\temp.xml");
+            //XmlTextReader xmlTextReader = new XmlTextReader(fs);
+            //xmlTextReader.read();
+
+            XmlDocument doc = new XmlDocument();
+
+            doc.LoadXml(xml);
+
+            EvaluateOpenedXML(doc);
+        }
+
+        public static void EvaluateOpenedXML(XmlDocument xmlDocument)
+        {
+            //first child node is 
+            var root = xmlDocument.GetElementsByTagName(RootNodeName)[0];
+
+            KeyCodeDictionary dictionary = new KeyCodeDictionary();
+
+            foreach (XmlNode node in root.ChildNodes)
+            {
+                string KeyCodeName = node.Name;
+                var aa = 2;
+            }
+            var a = 1;
+        }
     }
 }

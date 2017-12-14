@@ -114,5 +114,9 @@ namespace WindBarrierReinforcement
         {
             Writer.Writer.Save(Global);
         }
+        private void  Open_Click(object sender, RoutedEventArgs e)
+        {
+            Writer.Writer.Open(Global);
+        }
     }
 }
