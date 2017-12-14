@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WindBarrierReinforcement.Common.AttachedProperties;
+using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.DataModels;
 using WindBarrierReinforcement.DataModels.NSPage09;
 using WindBarrierReinforcement.Resources;
@@ -42,13 +43,39 @@ namespace WindBarrierReinforcement
             SetGridDataContext(0);
 
             CultureRenamer.Rename(UI_Grid_Master);
+
+            global.EvtHandler.AddPopulateDataAction(() =>
+            {
+                AddNewNDataModel();
+                AddNewNDataModel();
+
+                DataModelUBABCollection.Collection[0].ExteriorHalfLength = 1000;
+                DataModelUBABCollection.Collection[0].SmallEdge = 170;
+                DataModelUBABCollection.Collection[0].DistanceFromTop = 400;
+                DataModelUBABCollection.Collection[0].FreeEdgeLength = 50;
+                DataModelUBABCollection.Collection[0].SelectedIndexDiameter =
+                Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D16.ToString());
+                DataModelUBABCollection.Collection[1].ExteriorHalfLength = 1000;
+                DataModelUBABCollection.Collection[1].SmallEdge = 170;
+                DataModelUBABCollection.Collection[1].DistanceFromTop = 600;
+                DataModelUBABCollection.Collection[1].FreeEdgeLength = 50;
+                DataModelUBABCollection.Collection[1].SelectedIndexDiameter =
+                Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D18.ToString());
+                DataModelUBABCollection.Collection[2].ExteriorHalfLength = 1000;
+                DataModelUBABCollection.Collection[2].SmallEdge = 170;
+                DataModelUBABCollection.Collection[2].DistanceFromTop = 800;
+                DataModelUBABCollection.Collection[2].FreeEdgeLength = 50;
+                DataModelUBABCollection.Collection[2].SelectedIndexDiameter =
+                Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D20.ToString());
+
+            });
         }
 
         private void AddNewNDataModel()
         {
             DataModelUBABCollection.Add(_zoneName);
         }
-        
+
         private void RemoveLastDataModel()
         {
             DataModelUBABCollection.RemoveLast();

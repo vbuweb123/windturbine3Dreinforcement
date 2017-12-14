@@ -108,7 +108,14 @@
     <Compile Include="DataModels\NSPage04\DataModelRadialGeneral.cs" />
     <Compile Include="DataModels\NSPage04\EZonePosition.cs" />
     <Compile Include="DataModels\NSPage04\IDataModelCircularZone.cs" />
-    <Compile Include="DataModels\NSPage05\DataModel_Top_Reinforcement.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelCircularGeneral.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelCircular_Zone.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelCircular_ZoneCollection.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelRadial1.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelRadial2.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelRadialGeneral.cs" />
+    <Compile Include="DataModels\NSPage05\EZonePosition.cs" />
+    <Compile Include="DataModels\NSPage05\IDataModelCircularZone.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_D1.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_D2.cs" />
     <Compile Include="DataModels\NSPage06\DataModel_BR_L.cs" />
@@ -353,26 +360,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Icons\partial.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\Icons\Preview.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\Images\1.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\Icons\Save.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\Icons\Open.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

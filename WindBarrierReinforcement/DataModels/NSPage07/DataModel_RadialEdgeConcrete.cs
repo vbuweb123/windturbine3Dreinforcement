@@ -82,6 +82,13 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             set { edgeCover = value; NotifyPropertyChanged("EdgeCover"); }
         }
 
+        private int spacingRadialDeg;
+        public int SpacingRadialDeg
+        {
+            get { return spacingRadialDeg; }
+            set { spacingRadialDeg = value; NotifyPropertyChanged("SpacingRadialDeg"); }
+        }
+
         public DataModel_RadialEdgeConcrete(GlobalDataModels global)
         {
             global.EvtHandler.AddPostEvtAction(() => {

@@ -281,8 +281,14 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
                 {
                     //Depth Pile
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PileDepth))
-                        Set_DepthPile();                   
-                };
+                        Set_DepthPile();
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.PR_StirrupRadius_Layer1))
+                        Set_PR_StirrupRadius_Layer2();
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.Slope))
+                        Set_Angle();
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ScrewPiles>(x => x.NoPiles))
+                        Set_divCurve();
+                };              
             });
 
             global.EvtHandler.Add(() =>
@@ -310,9 +316,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
             global.EvtHandler.AddPostEvtAction(() => {
                 this.PR_LongRebarDiam = 0;
             });
-            global.EvtHandler.AddPostEvtAction(() => {
-                this.PR_StirrupRadius_Layer2 = 0;
-            });
+           
             global.EvtHandler.AddPostEvtAction(() => {
                 this.PR_Ureinforcement_RebarDiam = 0;
             });            
@@ -332,5 +336,14 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         {         
             MaterialPiles = this.global.GDMPage11.DataModelMaterialsFoundationPile.ConcreteQualityNames[this.global.GDMPage11.DataModelMaterialsFoundationPile.SelectedIndexConcreteQuality];
         }
+        private void Set_Angle()
+        {
+            Angle = Math.Tan(Slope)* (180 / Math.PI);         
+        }
+        private void Set_divCurve()
+        {
+            DivPerCurve = NoPiles;
+        }
+
     }
 }
