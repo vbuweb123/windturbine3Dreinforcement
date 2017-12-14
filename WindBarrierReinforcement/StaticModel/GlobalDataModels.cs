@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindBarrierReinforcement.Common.Attributes;
+using WindBarrierReinforcement.Writer;
 using WindBarrierReinforcement.Common.Eng;
-
 namespace WindBarrierReinforcement.StaticModel
 {
     public partial class GlobalDataModels
     {
+        [SaveKeyCode(KeyCode = "GDMPage01", SaveDataType = SaveDataType.Navigation)]
         public IGlobalDataModelsPage01 GDMPage01 { get; private set; }
 
         public IGlobalDataModelsPage02 GDMPage02 { get; private set; }
@@ -24,7 +26,7 @@ namespace WindBarrierReinforcement.StaticModel
         public IGlobalDataModelsPage07 GDMPage07 { get; private set; }
 
         public IGlobalDataModelsPage08 GDMPage08 { get; private set; }
-
+        [SaveKeyCode(KeyCode = "GDMPage09", SaveDataType = SaveDataType.Navigation)]
         public IGlobalDataModelsPage09 GDMPage09 { get; private set; }
 
         public IGlobalDataModelsPage10 GDMPage10 { get; private set; }

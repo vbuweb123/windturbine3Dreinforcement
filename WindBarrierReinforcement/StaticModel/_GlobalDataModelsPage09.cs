@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindBarrierReinforcement.Common.Attributes;
 using WindBarrierReinforcement.DataModels.NSPage09;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.StaticModel
 {
@@ -15,6 +17,7 @@ namespace WindBarrierReinforcement.StaticModel
     {
         private class _GlobalDataModelsPage09 : IGlobalDataModelsPage09
         {
+            [SaveKeyCode(KeyCode = "UBABCollection", SaveDataType = SaveDataType.Navigation)]
             public DataModelUBABCollection DataModelUBABCollection { get; private set; }
 
             public _GlobalDataModelsPage09(GlobalDataModels global)
