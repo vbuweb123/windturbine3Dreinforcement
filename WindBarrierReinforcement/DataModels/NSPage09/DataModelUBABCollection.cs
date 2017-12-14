@@ -4,14 +4,19 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindBarrierReinforcement.Common.Attributes;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage09
 {
     public class DataModelUBABCollection
     {
+        [SaveKeyCode(CollectionElementType = typeof(DataModelUBAB), KeyCode = "Collection", SaveDataType = SaveDataType.ListAndNavigation)]
         public ObservableCollection<DataModelUBAB> Collection { get; set; }
 
+        [SaveKeyCode(CollectionElementType = typeof(int), KeyCode = "DADADA", SaveDataType = SaveDataType.List)]
+        public List<int> DataMyData => new List<int> { 1, 2, 3 };
         //private int _zoneIndexCurrent = 0;
         private int _maxzones = 10;
         private GlobalDataModels global;

@@ -4,10 +4,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindBarrierReinforcement.Common.Attributes;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage09
 {
@@ -16,6 +18,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
 
         private int exteriorHalfLength;
+        [SaveKeyCode(KeyCode = "ExteriorHalfLength")]
         public int ExteriorHalfLength
         {
             get { return exteriorHalfLength; }
@@ -27,6 +30,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         }
 
         private int interiorHalfLength;
+        [SaveKeyCode(KeyCode = "InteriorHalfLength")]
         public int InteriorHalfLength
         {
             get => interiorHalfLength;

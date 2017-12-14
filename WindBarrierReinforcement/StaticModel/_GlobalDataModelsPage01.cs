@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindBarrierReinforcement.Common.Attributes;
 using WindBarrierReinforcement.DataModels.NSPage01;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.StaticModel
 {
@@ -18,11 +20,11 @@ namespace WindBarrierReinforcement.StaticModel
     {
         private class _GlobalDataModelsPage01 : IGlobalDataModelsPage01
         {
-
+            [SaveKeyCode(KeyCode = "GlobalFormwork", SaveDataType = SaveDataType.Navigation)]
             public DataModel_Global_Formwork DataModel_Global_Formwork { get; private set; }
-
+            //[SaveKeyCode(KeyCode = "GlobalCoordination")]
             public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint{ get; private set; }
-
+            //[SaveKeyCode(KeyCode = "GlobalMaterials")]
             public DataModel_Global_Materials DataModel_Global_Materials { get; private set; }
 
             public _GlobalDataModelsPage01(GlobalDataModels global)

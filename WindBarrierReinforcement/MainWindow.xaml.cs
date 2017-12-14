@@ -55,6 +55,7 @@ namespace WindBarrierReinforcement
             Page12 = new Page12(global);
         }
     }
+
     public partial class MainWindow : Window
     {
         public GlobalDataModels Global { get; private set; }
@@ -96,6 +97,7 @@ namespace WindBarrierReinforcement
                 }
             }
         }
+
         public MainWindow()
         {
             Global = new GlobalDataModels();
@@ -107,20 +109,14 @@ namespace WindBarrierReinforcement
             InitializeMenuItemHeaders();
             //Writer.Writer.WriteTexts();
         }
-       
-        //private void MenuItemOpenPage(object sender, RoutedEventArgs e)
-        //{
-        //    FrameMain.Content = MenuPageProvider.Page01;
-        //}
-
-        //private void ButtonClickP02(object sender, RoutedEventArgs e)
-        //{
-        //    FrameMain.Content = MenuPageProvider.Page02;
-        //}
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+      
+        private void Save_Click(object sender, RoutedEventArgs e)
         {
-            Writer.Writer.WriteTexts();
+            Writer.Writer.Save(Global);
+        }
+        private void  Open_Click(object sender, RoutedEventArgs e)
+        {
+            Writer.Writer.Open(Global);
         }
     }
 }

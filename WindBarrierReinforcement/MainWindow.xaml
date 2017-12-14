@@ -5,17 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WindBarrierReinforcement"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="950" ResizeMode="NoResize">
+        Title="MainWindow" Height="750" Width="950" ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/XamlResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="250"/>
         </Grid.ColumnDefinitions>
-        <Frame Name="FrameMain" Margin="0,0,0,0" NavigationUIVisibility="Hidden" Grid.Column="0"/>
+        <Frame Name="FrameMain" Margin="0,0,0,0" NavigationUIVisibility="Hidden" Grid.Column="0" Grid.Row="1"/>
 
         <Menu Name="UI_Menu" HorizontalAlignment="Center" FontWeight="Bold"  Height="360" Margin="0,0,0,0"
               VerticalAlignment="Top" Width="230" Padding="10 1 1 1" Background="Orange" FontStyle="Italic"
-              Grid.Column="1">
+              Grid.Column="1" Grid.Row="1">
             <MenuItem Tag="Page01" Header="Global" Width="230" Height="30"></MenuItem>
 
             <MenuItem Tag="Page02" Header="Anchor" Width="230" Height="30"></MenuItem>
@@ -41,6 +53,23 @@
             <MenuItem Tag="Page12" Header="BS8666"   Width="230" Height="30"  ></MenuItem>
 
         </Menu>
+
+        <ToolBarPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0">
+            <ToolBar Height="45" Margin="10,0,0,0" VerticalAlignment="Top" Width="681" >
+                <Button Click="Save_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="pack://application:,,,/WindBarrierReinforcement;component/Assets/Icons/Save.png" Height="25"/>
+                        <TextBlock Text="Save" VerticalAlignment="Center" Style="{StaticResource AppTextBlockGeneric}"/>
+                    </StackPanel>
+                </Button>
+                <Button Click="Open_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="pack://application:,,,/WindBarrierReinforcement;component/Assets/Icons/Open.jpg" Height="25"/>
+                        <TextBlock Text="Open" VerticalAlignment="Center" Style="{StaticResource AppTextBlockGeneric}"/>
+                    </StackPanel>
+                </Button>
+            </ToolBar>
+        </ToolBarPanel>
 
     </Grid>
 </Window>
