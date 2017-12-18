@@ -310,6 +310,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
                         Set_MaterialPiles();                    
                 };
             });
+
             global.EvtHandler.AddPostEvtAction(() => {
                 this.PR_StirrupRebarDiam_Layer1 = 0;               
             });
@@ -336,10 +337,12 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         {         
             MaterialPiles = this.global.GDMPage11.DataModelMaterialsFoundationPile.ConcreteQualityNames[this.global.GDMPage11.DataModelMaterialsFoundationPile.SelectedIndexConcreteQuality];
         }
+        
         private void Set_Angle()
         {
             Angle = Math.Tan(Slope)* (180 / Math.PI);         
         }
+
         private void Set_divCurve()
         {
             DivPerCurve = NoPiles;

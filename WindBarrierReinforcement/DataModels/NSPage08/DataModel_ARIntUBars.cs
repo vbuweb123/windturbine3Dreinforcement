@@ -21,7 +21,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int TopOffset
         {
             get { return topOffset; }
-            private set { topOffset = value; NotifyPropertyChanged("TopOffset"); }
+            private set
+            {
+                topOffset = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.TopOffset));
+            }
         }
         /// <summary>
         /// UI_TextBox_AR_Int_BottomOffset
@@ -30,7 +34,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int BottomOffset
         {
             get { return bottomOffset; }
-            private set { bottomOffset = value; NotifyPropertyChanged("BottomOffset"); }
+            private set
+            {
+                bottomOffset = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.BottomOffset));
+            }
         }
         /// <summary>
         /// UI_TextBox_AR_Int_AxisOffset
@@ -39,7 +47,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int AxisOffset
         {
             get { return axisOffset; }
-            private set { axisOffset = value; NotifyPropertyChanged("AxisOffset"); }
+            private set
+            {
+                axisOffset = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.AxisOffset));
+            }
         }
         /// <summary>
         /// UI_ComboBox_AR_Int_Diameter_Ularger
@@ -48,7 +60,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int SelectedIndexDiameterL
         {
             get { return selectedIndexDiameterL; }
-            set { selectedIndexDiameterL = value; NotifyPropertyChanged("SelectedIndexDiameterL"); }
+            set
+            {
+                selectedIndexDiameterL = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.SelectedIndexDiameterL));
+            }
         }
        
         /// <summary>
@@ -58,7 +74,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int SelectedIndexDiameterS
         {
             get { return selectedIndexDiameterS; }
-            set { selectedIndexDiameterS = value; NotifyPropertyChanged("SelectedIndexDiameterS"); }
+            set
+            {
+                selectedIndexDiameterS = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.SelectedIndexDiameterS));
+            }
         }
 
         /// <summary>
@@ -68,7 +88,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int HookULarger
         {
             get { return hookULarger; }
-            private set { hookULarger = value; NotifyPropertyChanged("HookULarger"); }
+            private set
+            {
+                hookULarger = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.HookULarger));
+            }
         }
         /// <summary>
         /// UI_TextBox_AR_Int_HookLength_Usmaller
@@ -77,7 +101,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int HookUSmaller
         {
             get { return hookUSmaller; }
-            private set { hookUSmaller = value; NotifyPropertyChanged("HookUSmaller"); }
+            private set
+            {
+                hookUSmaller = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.HookUSmaller));
+            }
         }
         /// <summary>
         /// UI_TextBox_AR_Int_TopExtraOffset
@@ -86,7 +114,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int TopExtraOffset
         {
             get { return topExtraOffset; }
-            private set { topExtraOffset = value; NotifyPropertyChanged("TopExtraOffset"); }
+            private set
+            {
+                topExtraOffset = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.TopExtraOffset));
+            }
         }
         /// <summary>
         /// UI_TextBox_AR_Int_BottomExtraOffset
@@ -95,7 +127,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int BottomExtraOffset
         {
             get { return bottomExtraOffset; }
-            private set { bottomExtraOffset = value; NotifyPropertyChanged("BottomExtraOffset"); }
+            private set
+            {
+                bottomExtraOffset = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntUBars>(x => x.BottomExtraOffset));
+            }
         }
 
         public DataModel_ARIntUBars(GlobalDataModels global)

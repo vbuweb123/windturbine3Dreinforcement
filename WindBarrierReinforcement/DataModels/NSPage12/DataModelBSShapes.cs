@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
+using WindBarrierReinforcement.Common.Reflected;
 
 namespace WindBarrierReinforcement.DataModels.NSPage12
 {
@@ -19,7 +20,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage12
         public int NominalSize
         {
             get { return nominalSize; }
-            set { nominalSize = value; NotifyPropertyChanged("NominalSize"); }
+            set
+            {
+                nominalSize = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelBSShapes>(x => x.NominalSize));
+            }
         }
         /// <summary>
         /// Minimum radius for scheduling, r
@@ -29,7 +34,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage12
         public int MinRadiusForScheduling
         {
             get { return minRadiusForScheduling; }
-            set { minRadiusForScheduling = value; NotifyPropertyChanged("MinRadiusForScheduling"); }
+            set
+            {
+                minRadiusForScheduling = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelBSShapes>(x => x.MinRadiusForScheduling));
+            }
         }
         /// <summary>
         /// Minimum diameter of bending former, M
@@ -39,7 +48,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage12
         public int MinDiameterOfBendingFormer
         {
             get { return minDiameterOfBendingFormer; }
-            set { minDiameterOfBendingFormer = value;NotifyPropertyChanged("MinDiameterOfBendingFormer"); }
+            set
+            {
+                minDiameterOfBendingFormer = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelBSShapes>(x => x.MinDiameterOfBendingFormer));
+            }
         }
         /// <summary>
         /// General (min 5d straight), including links where bend ≥ 150° mm
@@ -49,7 +62,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage12
         public int GeneralMin5d
         {
             get { return generalMin5d; }
-            set { generalMin5d = value; NotifyPropertyChanged("GeneralMin5d"); }
+            set
+            {
+                generalMin5d = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelBSShapes>(x => x.GeneralMin5d));
+            }
         }
         /// <summary>
         /// Links where bend ≤ 150° (min 10d straight) mm
@@ -59,7 +76,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage12
         public int LinksUnder150
         {
             get { return linksUnder150; }
-            set { linksUnder150 = value; NotifyPropertyChanged("LinksUnder150"); }
+            set
+            {
+                linksUnder150 = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelBSShapes>(x => x.LinksUnder150));
+            }
         }
 
     }
