@@ -94,7 +94,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         public int ListIndex
         {
             get { return listIndex; }
-            set { listIndex = value; NotifyPropertyChanged("ListIndex"); }
+            set { listIndex = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelCircular_Zone>(x => x.ListIndex)); }
         }
 
         public EZonePosition Position { get; set; }

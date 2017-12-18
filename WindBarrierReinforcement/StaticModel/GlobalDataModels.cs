@@ -176,10 +176,12 @@ namespace WindBarrierReinforcement.StaticModel
                 GDMPage05.DataModelRadialGeneral.MinSpaceCenter = 50;
                 GDMPage05.DataModelRadialGeneral.MinSpaceField = 100;
 
-
-
-
-
+                //Circular General
+                GDMPage05.DataModelCircularGeneral.OverlapLength = 1800;
+                GDMPage05.DataModelCircularGeneral.MaximumRebarLength = 8500;
+                GDMPage05.DataModelCircularGeneral.SelectedDiameterEdgeCirculars = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
+                GDMPage05.DataModelCircularGeneral.SpacingEdgeCirculars = 200;
+                                
                 //page 06
 
                 GDMPage06.DataModel_BR_D1.Spacing = 150;

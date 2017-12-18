@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.DataModels.NSPage05;
 using WindBarrierReinforcement.Resources;
 using WindBarrierReinforcement.StaticModel;
@@ -51,10 +52,26 @@ namespace WindBarrierReinforcement
             CultureRenamer.Rename(UI_Grid_MasterGrid);
 
             global.EvtHandler.AddPopulateDataAction(() => {
-                this.Initialized += (o, e) => {
-                    AddGridAndZone();
-                    AddGridAndZone();
-                };
+                
+                AddGridAndZone();
+                AddGridAndZone();
+
+                DataModelCircular_ZoneCollection.Zones[0].SpacingValue = 175;
+                DataModelCircular_ZoneCollection.Zones[0].SelectedIndexDiameter =
+                Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
+
+                DataModelCircular_ZoneCollection.Zones[1].SpacingValue = 125;
+                DataModelCircular_ZoneCollection.Zones[1].SelectedIndexDiameter =
+                Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
+                DataModelCircular_ZoneCollection.Zones[1].RadiusGiven = 6540;
+
+                DataModelCircular_ZoneCollection.Zones[2].SpacingValue = 0;
+                DataModelCircular_ZoneCollection.Zones[2].SelectedIndexDiameter = 0;
+                
+                DataModelCircular_ZoneCollection.Zones[2].RadiusGiven = 1550;
+
+                DataModelCircular_ZoneCollection.Zones[3].SpacingValue = 0;
+                DataModelCircular_ZoneCollection.Zones[3].RadiusGiven = 1550;
                 //DataModelCircular_ZoneCollection.Zones[0].
             });
         }
