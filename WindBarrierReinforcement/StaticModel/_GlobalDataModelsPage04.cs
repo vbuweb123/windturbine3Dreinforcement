@@ -37,7 +37,7 @@ namespace WindBarrierReinforcement.StaticModel
 
             public _GlobalDataModelsPage04(GlobalDataModels global)
             {
-                DataModelCircularGeneral = new DataModelCircularGeneral();
+                DataModelCircularGeneral = new DataModelCircularGeneral(global);
                 DataModelRadial1 = new DataModelRadial1(global);
                 DataModelRadial2 = new DataModelRadial2(global);
                 DataModelRadialGeneral = new DataModelRadialGeneral(global);

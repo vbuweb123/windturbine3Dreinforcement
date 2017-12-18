@@ -247,7 +247,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
             });
             global.EvtHandler.Add(() =>
             {
-                global.GDMPage04.DataModelRadial1.PropertyChanged += (o, e) =>
+                global.GDMPage05.DataModelRadial1.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.OverlappLargeDiameter))
                         Set_OverlappLargeDiameter();
@@ -299,15 +299,15 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
         private void Set_OverlappLargeDiameter()
         {
-            OverlappLargeDiameter = global.GDMPage04.DataModelRadial1.OverlappLargeDiameter;
+            OverlappLargeDiameter = global.GDMPage05.DataModelRadial1.OverlappLargeDiameter;
         }
         private void Set_OverlappSmallDiameter()
         {
-            OverlappSmallDiameter = global.GDMPage04.DataModelRadial1.OverlappSmallDiameter;
+            OverlappSmallDiameter = global.GDMPage05.DataModelRadial1.OverlappSmallDiameter;
         }
         private void Set_Overlapp3rdDiameter()
         {
-            Overlapp3rdDiameter = global.GDMPage04.DataModelRadial1.Overlapp3rdDiameter;
+            Overlapp3rdDiameter = global.GDMPage05.DataModelRadial1.Overlapp3rdDiameter;
         }
         private void Set_Spacing3rdDiameterAngle()
         {

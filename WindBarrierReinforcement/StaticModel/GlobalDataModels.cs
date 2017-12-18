@@ -126,11 +126,11 @@ namespace WindBarrierReinforcement.StaticModel
 
                 //Radia 1
                 GDMPage04.DataModelRadial1.LargeDiamNoOfBars = 80;
-                //GDMPage04.DataModelRadial1.SelectedIndexLargeDiameter = 25;
+                GDMPage04.DataModelRadial1.SelectedIndexLargeDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
                 GDMPage04.DataModelRadial1.SmallDiamNoOfBars = 80;
-                //GDMPage04.DataModelRadial1.SelectedIndexSmallDiameter = 25;
+                GDMPage04.DataModelRadial1.SelectedIndexSmallDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
                 GDMPage04.DataModelRadial1.ThirdDiamNoOfBars = 160;
-                //GDMPage04.DataModelRadial1.SelectedIndexThirdDiameter = 20;
+                GDMPage04.DataModelRadial1.SelectedIndexThirdDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D20.ToString());
                 GDMPage04.DataModelRadial1.UnreinforcedCore = 750;
                 GDMPage04.DataModelRadial1.OverlappLargeDiameter = 1200;
                 GDMPage04.DataModelRadial1.OverlappSmallDiameter = 1200;
@@ -140,11 +140,11 @@ namespace WindBarrierReinforcement.StaticModel
                 //Radial 2
 
                 GDMPage04.DataModelRadial2.LargeDiamNoOfBars = 80;
-                //GDMPage04.DataModelRadial2.SelectedIndexLargeDiameter = 25;
+                GDMPage04.DataModelRadial2.SelectedIndexLargeDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
                 GDMPage04.DataModelRadial2.SmallDiamNoOfBars = 80;
-                //GDMPage04.DataModelRadial2.SelectedIndexSmallDiameter = 25;
+                GDMPage04.DataModelRadial2.SelectedIndexSmallDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
                 GDMPage04.DataModelRadial2.ThirdDiamNoOfBars = 160;
-                //GDMPage04.DataModelRadial2.SelectedIndexThirdDiameter = 20;
+                GDMPage04.DataModelRadial2.SelectedIndexThirdDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D20.ToString());
                 GDMPage04.DataModelRadial2.UnreinforcedCore = 750;                
                 GDMPage04.DataModelRadial2.MaximumLength = 12000;
 
@@ -155,10 +155,41 @@ namespace WindBarrierReinforcement.StaticModel
                 //Circular General
                 GDMPage04.DataModelCircularGeneral.OverlapLength = 1800;
                 GDMPage04.DataModelCircularGeneral.MaximumRebarLength = 8500;
-              //  GDMPage04.DataModelCircularGeneral.SelectedDiameterEdgeCirculars = 25;
+                GDMPage04.DataModelCircularGeneral.SelectedDiameterEdgeCirculars = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
                 GDMPage04.DataModelCircularGeneral.SpacingEdgeCirculars = 200;
 
-                //Circular zone ???????????
+
+                //page05
+
+                //Radia 1
+                GDMPage05.DataModelRadial1.LargeDiamNoOfBars = 80;
+                GDMPage05.DataModelRadial1.SelectedIndexLargeDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
+                GDMPage05.DataModelRadial1.SmallDiamNoOfBars = 80;
+                GDMPage05.DataModelRadial1.SelectedIndexSmallDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
+                GDMPage05.DataModelRadial1.ThirdDiamNoOfBars = 160;
+                GDMPage05.DataModelRadial1.SelectedIndexThirdDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D20.ToString());
+                
+                GDMPage05.DataModelRadial1.OverlappLargeDiameter = 1600;
+                GDMPage05.DataModelRadial1.OverlappSmallDiameter = 1600;
+                GDMPage05.DataModelRadial1.Overlapp3rdDiameter = 1200;
+                GDMPage05.DataModelRadial1.MaximumLength = 12000;
+
+                //Radial 2
+
+                GDMPage05.DataModelRadial2.LargeDiamNoOfBars = 80;
+                GDMPage05.DataModelRadial2.SelectedIndexLargeDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
+                GDMPage05.DataModelRadial2.SmallDiamNoOfBars = 80;
+                GDMPage05.DataModelRadial2.SelectedIndexSmallDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
+                GDMPage05.DataModelRadial2.ThirdDiamNoOfBars = 160;
+                GDMPage05.DataModelRadial2.SelectedIndexThirdDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D20.ToString());
+                GDMPage05.DataModelRadial2.MaximumLength = 12000;
+
+                GDMPage05.DataModelRadialGeneral.MinSpaceCenter = 50;
+                GDMPage05.DataModelRadialGeneral.MinSpaceField = 100;
+
+
+
+
 
                 //page 06
 
@@ -197,13 +228,13 @@ namespace WindBarrierReinforcement.StaticModel
                 GDMPage06.DataModel_Generalities.HorizontalEdgeCover = 55;
 
                 GDMPage07.DataModel_StraightBars_Dir1.Spacing = 100;
-              //  GDMPage07.DataModel_StraightBars_Dir1.SelectedIndexDiameter = 20;
+                GDMPage07.DataModel_StraightBars_Dir1.SelectedIndexDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D20.ToString());
                 GDMPage07.DataModel_StraightBars_Dir1.EdgeCover = 55;
                 GDMPage07.DataModel_StraightBars_Dir1.NoOfBars = 10;
                 GDMPage07.DataModel_StraightBars_Dir1.Lx = 750;
                 GDMPage07.DataModel_StraightBars_Dir1.Ly = 750;               
                 GDMPage07.DataModel_StraightBars_Dir2.Spacing = 100;
-              //  GDMPage07.DataModel_StraightBars_Dir2.SelectedIndexDiameter = 20;
+                GDMPage07.DataModel_StraightBars_Dir2.SelectedIndexDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D20.ToString());
                 GDMPage07.DataModel_StraightBars_Dir2.EdgeCover = 55;
                 GDMPage07.DataModel_StraightBars_Dir2.NoOfBars = 10;
                 GDMPage07.DataModel_StraightBars_Dir2.Lx = 750;
@@ -214,20 +245,20 @@ namespace WindBarrierReinforcement.StaticModel
 
                 GDMPage07.DataModel_RadialEdgeConcrete.InteriorEdgeLength = 200;
                 GDMPage07.DataModel_RadialEdgeConcrete.BottomEdgeLength = 1200;
-                // GDMPage07.DataModel_RadialEdgeConcrete.SelectedIndexDiameter = 20;
+                GDMPage07.DataModel_RadialEdgeConcrete.SelectedIndexDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D20.ToString());
                 GDMPage07.DataModel_RadialEdgeConcrete.TowerAxisCover = 200;
                 GDMPage07.DataModel_RadialEdgeConcrete.TopCover = 55;
                 GDMPage07.DataModel_RadialEdgeConcrete.BottomCover = 100;
                 GDMPage07.DataModel_RadialEdgeConcrete.EdgeCover = 55;
                 GDMPage07.DataModel_RadialEdgeConcrete.SpacingRadialDeg = 3;
 
-                //GDMPage07.DataModel_CircularBarsTop.SelectedIndexDiameter = 20;
+                GDMPage07.DataModel_CircularBarsTop.SelectedIndexDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D20.ToString());
                 GDMPage07.DataModel_CircularBarsTop.NoOfBars = 7;
                 GDMPage07.DataModel_CircularBarsTop.Spacing = 100;
                 GDMPage07.DataModel_CircularBarsTop.MaxLength = 8000;
                 GDMPage07.DataModel_CircularBarsTop.Overlap = 500;
 
-                //GDMPage07.DataModel_CircularBarsExteriorSide.SelectedIndexDiameter = 20;
+                GDMPage07.DataModel_CircularBarsExteriorSide.SelectedIndexDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D20.ToString());
                 GDMPage07.DataModel_CircularBarsExteriorSide.NoOfBars = 8;
                 GDMPage07.DataModel_CircularBarsExteriorSide.Spacing = 100;
                 GDMPage07.DataModel_CircularBarsExteriorSide.CustomLength = 1000;
@@ -238,18 +269,18 @@ namespace WindBarrierReinforcement.StaticModel
                 GDMPage08.DataModel_ARExtUBars.TopOffset = 150;
                 GDMPage08.DataModel_ARExtUBars.BottomOffset = 100;
                 GDMPage08.DataModel_ARExtUBars.AxisOffset = 100;
-               //GDMPage08.DataModel_ARExtUBars.SelectedIndexDiameterL = 32;
-               // GDMPage08.DataModel_ARExtUBars.SelectedIndexDiameterS = 25;
+                GDMPage08.DataModel_ARExtUBars.SelectedIndexDiameterL = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D32.ToString());
+                GDMPage08.DataModel_ARExtUBars.SelectedIndexDiameterS = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
                 GDMPage08.DataModel_ARExtUBars.HookULarger = 200;
                 GDMPage08.DataModel_ARExtUBars.HookUSmaller = 200;
 
-                //GDMPage08.DataModel_ARExteriorCircularTop.SelectedIndexDiameter = 12;
+                GDMPage08.DataModel_ARExteriorCircularTop.SelectedIndexDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D12.ToString());
                 GDMPage08.DataModel_ARExteriorCircularTop.Spacing = 100;
                 GDMPage08.DataModel_ARExteriorCircularTop.MinBarLength = 500;
                 GDMPage08.DataModel_ARExteriorCircularTop.MaxBarLength = 8000;
                 GDMPage08.DataModel_ARExteriorCircularTop.StartExtraOffset = 20;
 
-                //GDMPage08.DataModel_ARExteriorCircularLateral.SelectedIndexDiameter = 12;
+                GDMPage08.DataModel_ARExteriorCircularLateral.SelectedIndexDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D12.ToString());
                 GDMPage08.DataModel_ARExteriorCircularLateral.Spacing = 100;
                 GDMPage08.DataModel_ARExteriorCircularLateral.NoOfBars = 10;
                 GDMPage08.DataModel_ARExteriorCircularLateral.MinBarLength = 500;
@@ -257,20 +288,20 @@ namespace WindBarrierReinforcement.StaticModel
                 GDMPage08.DataModel_ARExteriorCircularLateral.TopExtraOffset = 100;
                 GDMPage08.DataModel_ARExteriorCircularLateral.BottomExtraOffset = 100;
 
-                //GDMPage08.DataModel_ARExteriorCircularBottom.SelectedIndexDiameter = 12;
+                GDMPage08.DataModel_ARExteriorCircularBottom.SelectedIndexDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D12.ToString());
                 GDMPage08.DataModel_ARExteriorCircularBottom.Spacing = 100;
                 GDMPage08.DataModel_ARExteriorCircularBottom.MinBarLength = 500;
                 GDMPage08.DataModel_ARExteriorCircularBottom.MaxBarLength = 8000;
                 GDMPage08.DataModel_ARExteriorCircularBottom.StartExtraOffset = 20;
 
-                //GDMPage08.DataModel_ARIntCircularTop.SelectedIndexDiameter = 12;
+                GDMPage08.DataModel_ARIntCircularTop.SelectedIndexDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D12.ToString());
                 GDMPage08.DataModel_ARIntCircularTop.Spacing = 100;
                 GDMPage08.DataModel_ARIntCircularTop.SelectedIndexDiameter = 12;
                 GDMPage08.DataModel_ARIntCircularTop.MinBarLength = 500;
                 GDMPage08.DataModel_ARIntCircularTop.MaxBarLength = 8000;
                 GDMPage08.DataModel_ARIntCircularTop.StartExtraOffset = 20;
 
-                //GDMPage08.DataModel_ARIntCircularLateral.SelectedIndexDiameter = 12;
+                GDMPage08.DataModel_ARIntCircularLateral.SelectedIndexDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D12.ToString());
                 GDMPage08.DataModel_ARIntCircularLateral.Spacing = 100;
                 GDMPage08.DataModel_ARIntCircularLateral.NoOfBars = 10;
                 GDMPage08.DataModel_ARIntCircularLateral.MinBarLength = 500;
@@ -278,7 +309,7 @@ namespace WindBarrierReinforcement.StaticModel
                 GDMPage08.DataModel_ARIntCircularLateral.TopExtraOffset = 100;
                 GDMPage08.DataModel_ARIntCircularLateral.BottomExtraOffset = 100;
 
-                //GDMPage08.DataModel_ARIntCircularBottom.SelectedIndexDiameter = 12;
+                GDMPage08.DataModel_ARIntCircularBottom.SelectedIndexDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D12.ToString());
                 GDMPage08.DataModel_ARIntCircularBottom.Spacing = 100;
                 GDMPage08.DataModel_ARIntCircularBottom.MinBarLength = 500;
                 GDMPage08.DataModel_ARIntCircularBottom.MaxBarLength = 8000;
