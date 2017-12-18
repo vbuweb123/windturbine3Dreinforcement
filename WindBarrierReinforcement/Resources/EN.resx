@@ -915,8 +915,40 @@
   <data name="String" xml:space="preserve">
     <value />
   </data>
+  <data name="Lbl_UPBR_BottomCover" xml:space="preserve">
+    <value>Bottom Cover</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_C_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_C_Dir2_Option" xml:space="preserve">
+    <value>Option</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_C_Dir2_SpacingValue" xml:space="preserve">
+    <value>Spacing</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_C_MaxLength" xml:space="preserve">
+    <value>Max Length</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_C_NoOfBars" xml:space="preserve">
+    <value>No Of Bars</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_C_OverlapLength" xml:space="preserve">
+    <value>Overlap Length</value>
+    <comment>Page 06</comment>
+  </data>
   <data name="Lbl_UPBR_Dir1_Diameter" xml:space="preserve">
     <value>Diameter</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_Dir1_L_RadialSpacing" xml:space="preserve">
+    <value>Radial Spacing</value>
     <comment>Page 06</comment>
   </data>
   <data name="Lbl_UPBR_Dir1_NoOfBars" xml:space="preserve">
@@ -930,5 +962,91 @@
   <data name="Lbl_UPBR_Dir1_Spacing" xml:space="preserve">
     <value>Spacing</value>
     <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_Dir2_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_Dir2_NoOfBars" xml:space="preserve">
+    <value>No Of Bars</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_Dir2_Option" xml:space="preserve">
+    <value>Option</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_Dir2_SpacingValue" xml:space="preserve">
+    <value>Spacing</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_HorizontalEdgeCover" xml:space="preserve">
+    <value>Horizontal Edge Cover</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_Lx" xml:space="preserve">
+    <value>L x</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_Ly" xml:space="preserve">
+    <value>L y</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_L_BendAngle" xml:space="preserve">
+    <value>Bend Angle</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_L_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_TB_Dir1_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_TB_Dir1_NoOfBars" xml:space="preserve">
+    <value>No Of Bars</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_TB_Dir1_Option" xml:space="preserve">
+    <value>Option</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_TB_Dir1_SpacingValue" xml:space="preserve">
+    <value>Spacing</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_TB_Dir2_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_TB_Dir2_NoOfBars" xml:space="preserve">
+    <value>No Of Bars</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_TB_Dir2_Option" xml:space="preserve">
+    <value>Option</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_TB_Dir2_SpacingValue" xml:space="preserve">
+    <value>Spacing</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_TB_MinLengthRebar" xml:space="preserve">
+    <value>Min Length Rebar</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_TB_OffsetFromBottom" xml:space="preserve">
+    <value>Offset From Botton</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Lbl_UPBR_TB_RadiusOfRebars" xml:space="preserve">
+    <value>Radius Of Bars</value>
+    <comment>Page 06</comment>
+  </data>
+  <data name="Tb_TopReinforcement" xml:space="preserve">
+    <value>Top Reinforcement</value>
+  </data>
+  <data name="Txt_Under_Plate_Bottom_Reinforcement" xml:space="preserve">
+    <value>Under PlateBottom Reinforcement</value>
   </data>
 </root>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.DataModels.NSPage04;
 using WindBarrierReinforcement.Resources;
 using WindBarrierReinforcement.StaticModel;
@@ -52,6 +53,31 @@ namespace WindBarrierReinforcement
             AddGridAndZone();
             AddGridAndZone();
             CultureRenamer.Rename(UI_Grid_MasterGrid);
+
+            global.EvtHandler.AddPopulateDataAction(() =>
+            {
+                AddGridAndZone();
+                AddGridAndZone();
+
+                DataModelCircular_ZoneCollection.Zones[0].SpacingValue = 200;
+                DataModelCircular_ZoneCollection.Zones[0].SelectedIndexDiameter =
+                Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
+
+                DataModelCircular_ZoneCollection.Zones[1].SpacingValue = 200;
+                DataModelCircular_ZoneCollection.Zones[1].SelectedIndexDiameter =
+                Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
+                DataModelCircular_ZoneCollection.Zones[1].RadiusGiven = 8250;
+
+                DataModelCircular_ZoneCollection.Zones[2].SpacingValue = 200;
+                DataModelCircular_ZoneCollection.Zones[2].SelectedIndexDiameter =
+                Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
+                DataModelCircular_ZoneCollection.Zones[2].RadiusGiven = 6540;
+
+
+
+
+
+            });
         }
 
         private TextBox CloneTextBox(TextBox textBox, bool enabled)
@@ -286,7 +312,7 @@ namespace WindBarrierReinforcement
             }
         }
 
-        private void AddGridAndZone()
+        public void AddGridAndZone()
         {
             //first move the grid positioned there and create new Column Def
             ColumnDefinition columnDefinition = new ColumnDefinition();
@@ -306,7 +332,7 @@ namespace WindBarrierReinforcement
             EvaluateUIEnabled();
         }
 
-        private void RemoveGridAndZone()
+        public void RemoveGridAndZone()
         {
             //will return true if element is removed. Element is removed if the list is larger then 2. Minimum amount is 2
             if (DataModelCircular_ZoneCollection.RemoveBeforeLast())

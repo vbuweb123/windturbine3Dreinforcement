@@ -12,6 +12,7 @@ namespace WindBarrierReinforcement.StaticModel
         void Add(Action EvtAction);
         void AddPostEvtAction(Action EvtAction);
         void AddPopulateDataAction(Action action);
+        void PopulateData();
     }
     public partial class GlobalDataModels
     {

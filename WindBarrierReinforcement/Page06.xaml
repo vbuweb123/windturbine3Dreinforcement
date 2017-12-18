@@ -24,10 +24,10 @@
     <Grid Name="UI_Master_Grid" Background="{StaticResource AppMainBackgroundColor}">
 
         <TextBlock ap:CultureKey.CultureRes="Txt_Under_Plate_Bottom_Reinforcement" Text="__Under Plate Bottom Reinforcement" HorizontalAlignment="Left" Margin="20,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-                   Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title" />
+                   Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title"/>
 
         <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,50,25,25" 
-                    SelectionChanged="TabControl_SelectionChanged" BorderThickness="0" 
+                    SelectionChanged="TabControl_SelectionChanged" BorderThickness="0"
                     Background="{StaticResource AppMainBackgroundColor}">
 
             <TabItem Header="Direction 1 (bottom bars)">
@@ -215,7 +215,7 @@
                     <TextBox 
                         x:Name="UI_TextBox_UPBR_L_BendAngle"   
                         DataContext="{Binding DataModel_BR_L}"
-                        Text="{Binding L_RadialSpacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   
+                        Text="{Binding L_BendAngle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   
                         Template="{StaticResource AppTextBoxGeneric}"
                         HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
                         <i:Interaction.Behaviors>
@@ -229,9 +229,7 @@
                        Text="{Binding L_RadialSpacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                        Template="{StaticResource AppTextBoxGeneric}"
                        HorizontalAlignment="Left" Height="25" Margin="150,125,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
+                       
                     </TextBox>
                 </Grid>
             </TabItem>
@@ -307,14 +305,12 @@
 
                     <!--Offset From Bottom-->
                     <Label ap:CultureKey.CultureRes="Lbl_UPBR_TB_OffsetFromBottom" Content="__UPBR_TB_OffsetFromBottom" HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top" Height="25"/>
-                    <TextBox    
+                    <TextBox   
+                        IsEnabled="False"
                         DataContext="{Binding DataModel_TB_D1}"                        
-                        Text="{Binding OffsetFromBottom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Text="{Binding OffsetFromBottom, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                         Template="{StaticResource AppTextBoxGeneric}"
-                        HorizontalAlignment="Left" Height="25" Margin="150,125,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
+                        HorizontalAlignment="Left" Height="25" Margin="150,125,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">                        
                     </TextBox>
 
                     <!--Radius of Rebars-->

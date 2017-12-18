@@ -39,7 +39,6 @@ namespace WindBarrierReinforcement
 
         public Page06(GlobalDataModels global)
         {
-
             DataModel_BR_D1 = global.GDMPage06.DataModel_BR_D1;
             DataModel_BR_D2 = global.GDMPage06.DataModel_BR_D2;
             DataModel_BR_L = global.GDMPage06.DataModel_BR_L;
@@ -47,7 +46,6 @@ namespace WindBarrierReinforcement
             DataModel_TB_D2 = global.GDMPage06.DataModel_TB_D2;
             DataModel_Circular_EdgeOfL = global.GDMPage06.DataModel_Circular_EdgeOfL;
             DataModel_Generalities = global.GDMPage06.DataModel_Generalities;
-
 
             InitializeComponent();
             this.DataContext = this;

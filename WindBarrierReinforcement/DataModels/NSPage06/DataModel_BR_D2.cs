@@ -20,7 +20,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
-            set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
+            set { selectedIndexDiameter = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_D2>(x => x.SelectedIndexDiameter)); }
         }
 
         public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
@@ -36,7 +36,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
-            set { selectedIndexOption = value; NotifyPropertyChanged("SelectedIndexOption"); NotifyPropertyChanged("SpacingEnabled"); }
+            set { selectedIndexOption = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_D2>(x => x.SelectedIndexOption)); }
         }
         public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
 
@@ -61,7 +61,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int Spacing
         {
             get { return spacing; }
-            set { spacing = value; NotifyPropertyChanged("Spacing"); }
+            set { spacing = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_D2>(x => x.Spacing)); }
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int NoOfBars
         {
             get { return noOfBars; }
-            set { noOfBars = value; NotifyPropertyChanged("NoOfBars"); }
+            set { noOfBars = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_D2>(x => x.NoOfBars)); }
         }
 
         public DataModel_BR_D2(GlobalDataModels global)

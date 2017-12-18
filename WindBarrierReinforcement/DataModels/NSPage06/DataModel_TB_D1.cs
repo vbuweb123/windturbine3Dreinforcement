@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.DataModels.NSPage01;
 using WindBarrierReinforcement.StaticModel;
 
 namespace WindBarrierReinforcement.DataModels.NSPage06
@@ -19,15 +20,15 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
-            set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
+            set
+            {
+                selectedIndexDiameter = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_TB_D1>(x => x.SelectedIndexDiameter));
+            }
         }
 
         public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
-
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameter = 0;
-        }
+              
 
         /// <summary>
         /// UI_ComboBox_UPBR_TB_Dir1_Option
@@ -58,7 +59,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int OffsetFromBottom
         {
             get { return offsetFromBottom; }
-            set { offsetFromBottom = value; NotifyPropertyChanged("OffsetFromBottom"); }
+            set
+            {
+                offsetFromBottom = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_TB_D1>(x => x.OffsetFromBottom));
+            }
         }
 
         /// <summary>
@@ -68,7 +73,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int RadiusOfRebars
         {
             get { return radiusOfRebars; }
-            set { radiusOfRebars = value; NotifyPropertyChanged("RadiusOfRebars"); }
+            set
+            {
+                radiusOfRebars = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_TB_D1>(x => x.RadiusOfRebars));
+            }
         }
 
         /// <summary>
@@ -78,7 +87,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int MinLengthRebar
         {
             get { return minLengthRebar; }
-            set { minLengthRebar = value; NotifyPropertyChanged("MinLengthRebar"); }
+            set
+            {
+                minLengthRebar = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_TB_D1>(x => x.MinLengthRebar));
+            }
         }
 
         /// <summary>
@@ -88,7 +101,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int NoOfBars
         {
             get { return noOfBars; }
-            set { noOfBars = value; NotifyPropertyChanged("NoOfBars"); }
+            set
+            {
+                noOfBars = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_TB_D1>(x => x.NoOfBars));
+            }
         }
 
 
@@ -99,18 +116,39 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int Spacing
         {
             get { return spacing; }
-            set { spacing = value; NotifyPropertyChanged("Spacing"); }
+            set
+            {
+                spacing = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_TB_D1>(x => x.Spacing));
+            }
         }
+        private GlobalDataModels global;
 
         public DataModel_TB_D1(GlobalDataModels global)
         {
-            global.EvtHandler.AddPostEvtAction(() => {
-                this.SelectedIndexDiameter = 0;
+            this.global = global;
+
+            global.EvtHandler.Add(() =>
+            {
+                global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
+                {
+                    //Depth Pile
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))
+                        Set_OffsetFromBottom();
+                };
             });
 
             global.EvtHandler.AddPostEvtAction(() => {
+                this.SelectedIndexDiameter = 0;
                 this.SelectedIndexOption = 0;
-            });            
+            });                                 
+        }
+
+        private void Set_OffsetFromBottom()
+        {
+            //must be added bottom reinforcement C27 from excel !!haw to calculate value from index diameter
+            OffsetFromBottom = global.GDMPage01.DataModel_Global_Formwork.HBottom + global.GDMPage04.DataModelRadial1.SelectedIndexLargeDiameter +
+                global.GDMPage04.DataModelRadial2.SelectedIndexLargeDiameter;
         }
     }
 }

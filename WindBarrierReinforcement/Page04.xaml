@@ -20,7 +20,7 @@
     </Page.Resources>
 
     <Grid Name="UI_Grid_MasterGrid" Background="{StaticResource AppMainBackgroundColor}">
-        <TextBlock ap:CultureKey.CultureRes="Tb_BottomReinforcement" Text="__OPTR - Over Plate Top Reinforcement" HorizontalAlignment="Left" Margin="20,5,0,0"
+        <TextBlock ap:CultureKey.CultureRes="Tb_BottomReinforcement" Text="__Bottom Reinforcement" HorizontalAlignment="Left" Margin="20,5,0,0"
                    TextWrapping="Wrap" VerticalAlignment="Top"
                    Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title" />
 

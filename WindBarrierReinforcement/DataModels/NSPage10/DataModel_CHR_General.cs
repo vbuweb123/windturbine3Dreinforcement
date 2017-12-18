@@ -19,14 +19,22 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         public int TangentialSpacing
         {
             get { return tangentialSpacing; }
-            set { tangentialSpacing = value; NotifyPropertyChanged("TangentialSpacing"); }
+            set
+            {
+                tangentialSpacing = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CHR_General>(x => x.TangentialSpacing));
+            }
         }
 
         private int selectedIndexDiameter;
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
-            set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
+            set
+            {
+                selectedIndexDiameter = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CHR_General>(x => x.SelectedIndexDiameter));
+            }
         }
 
         private int hookLengths;
@@ -36,7 +44,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
             private set
             {
                 hookLengths = value;
-                NotifyPropertyChanged("HookLengths");
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CHR_General>(x => x.HookLengths));
             }
         }
 
@@ -44,14 +52,22 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         public bool ChairsOverTopCirculars
         {
             get { return chairsOverTopCirculars; }
-            set { chairsOverTopCirculars = value; NotifyPropertyChanged("ChairsOverTopCirculars"); }
+            set
+            {
+                chairsOverTopCirculars = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CHR_General>(x => x.ChairsOverTopCirculars));
+            }
         }
 
         private int topChairsOverlapp;
         public int TopChairsOverlapp
         {
             get { return topChairsOverlapp; }
-            set { topChairsOverlapp = value; NotifyPropertyChanged("TopChairsOverlapp"); }
+            set
+            {
+                topChairsOverlapp = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CHR_General>(x => x.TopChairsOverlapp));
+            }
         }
 
         private GlobalDataModels global;

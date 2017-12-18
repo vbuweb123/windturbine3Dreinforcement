@@ -24,7 +24,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
-            set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
+            set
+            {
+                selectedIndexDiameter = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARExteriorCircularBottom>(x => x.SelectedIndexDiameter));
+            }
         }
 
         /// <summary>
@@ -34,7 +38,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int Spacing
         {
             get { return spacing; }
-            set { spacing = value; NotifyPropertyChanged("Spacing"); }
+            set
+            {
+                spacing = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARExteriorCircularBottom>(x => x.Spacing));
+            }
         }
 
         /// <summary>
@@ -44,7 +52,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int MinBarLength
         {
             get { return minbarLength; }
-            set { minbarLength = value; NotifyPropertyChanged("MinBarLength"); }
+            set
+            {
+                minbarLength = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARExteriorCircularBottom>(x => x.MinBarLength));
+            }
         }
 
         /// <summary>
@@ -54,7 +66,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int MaxBarLength
         {
             get { return maxbarLength; }
-            set { maxbarLength = value; NotifyPropertyChanged("MaxBarLength"); }
+            set
+            {
+                maxbarLength = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARExteriorCircularBottom>(x => x.MaxBarLength));
+            }
         }
 
         /// <summary>
@@ -64,7 +80,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int StartExtraOffset
         {
             get { return startExtraOffset; }
-            set { startExtraOffset = value; NotifyPropertyChanged("StartExtraOffset"); }
+            set
+            {
+                startExtraOffset = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARExteriorCircularBottom>(x => x.StartExtraOffset));
+            }
         }
 
         public DataModel_ARExteriorCircularBottom(GlobalDataModels global)

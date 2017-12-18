@@ -10,7 +10,7 @@ using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.DataModels.NSPage12;
 using WindBarrierReinforcement.StaticModel;
 
-namespace WindBarrierReinforcement.DataModels.NSPage04
+namespace WindBarrierReinforcement.DataModels.NSPage05
 {
     public class DataModelCircular_Zone : DataModel, IDataModelCircularZone
     {
@@ -64,7 +64,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             set { radiusGiven = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelCircular_Zone>(x => x.RadiusGiven)); }
         }
 
-        private double distanceFromBottom;
+        private double distanceFromBottom; //distancefromTop
 
         public double DistanceFromBottom
         {
@@ -132,7 +132,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                             Set_RadiusGiven();
                         //DistanceFromBottom
                         if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelCircular_Zone>(x => x.SelectedIndexDiameter))
-                            Set_DistanceFromBottom();
+                            Set_DistanceFromTop();
                         //OffsetFromEdge
                         if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelCircular_Zone>(x => x.SelectedIndexDiameter))
                             Set_OffsetFromEdge();
@@ -150,7 +150,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                             Set_ZoneInterDistance();
                         //DistanceFromBottom
                         if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelCircular_Zone>(x => x.SelectedIndexDiameter))
-                            Set_DistanceFromBottom();
+                            Set_DistanceFromTop();
                         break;
                     case EZonePosition.End:
                         //OffsetFromEdge
@@ -159,7 +159,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                             Set_OffsetFromEdge();
                         //DistanceFromBottom
                         if (e.PropertyName == Reflected.ObjGetLastPropertyName<IDataModelCircularZone>(x => x.SelectedIndexDiameter))
-                            Set_DistanceFromBottom();
+                            Set_DistanceFromTop();
                         break;
                 }
             };
@@ -198,8 +198,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             action_page01_formwork_propertyChanged = (o, e) =>
             {
                 //DistanceFromBottom
-                if (e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage01.DataModel_Global_Formwork>(x => x.BottomCover))
-                    Set_DistanceFromBottom();
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage01.DataModel_Global_Formwork>(x => x.TopCover))
+                    Set_DistanceFromTop();
 
                 switch (Position)
                 {
@@ -217,7 +217,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             {
                 //DistanceFromBottom
                 if (e.PropertyName == Reflected.ObjGetLastPropertyName<NSPage04.DataModelRadial1>(x => x.SelectedIndexLargeDiameter))
-                    Set_DistanceFromBottom();
+                    Set_DistanceFromTop();
             };
             action_page04_circulargeneral = (o, e) =>
             {
@@ -243,7 +243,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                 global.GDMPage04.DataModelRadial1.PropertyChanged += action_page04_radial1;
                 global.GDMPage04.DataModelCircularGeneral.PropertyChanged += action_page04_circulargeneral;
             };
-
             removeEvents = () =>
             {
                 this.PropertyChanged -= action_this_propertyChanged;
@@ -284,12 +283,12 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             {
                 case EZonePosition.Start:
                     //keep it dynamic. Leave second zone here not in constructor
-                    IDataModelCircularZone SecondZone = globalData.GDMPage04.DataModelCircular_ZoneCollection.Get(1);
+                    IDataModelCircularZone SecondZone = globalData.GDMPage05.DataModelCircular_ZoneCollection.Get(1);
                     ZoneLength = RadiusGiven - SecondZone.RadiusGiven;
                     break;
                 case EZonePosition.Middle:
                     // do not 
-                    IDataModelCircularZone nextZone = globalData.GDMPage04.DataModelCircular_ZoneCollection.Get(ListIndex + 1);
+                    IDataModelCircularZone nextZone = globalData.GDMPage05.DataModelCircular_ZoneCollection.Get(ListIndex + 1);
                     ZoneLength = RadiusGiven - nextZone.RadiusGiven;
                     break;
                 case EZonePosition.End:
@@ -303,11 +302,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             switch (Position)
             {
                 case EZonePosition.Start:
-                    IDataModelCircularZone SecondZone = globalData.GDMPage04.DataModelCircular_ZoneCollection.Get(1);
+                    IDataModelCircularZone SecondZone = globalData.GDMPage05.DataModelCircular_ZoneCollection.Get(1);
                     ZoneInterDistance = Math.Min(SpacingValue, SecondZone.SpacingValue);
                     break;
                 case EZonePosition.Middle:
-                    IDataModelCircularZone nextZone = globalData.GDMPage04.DataModelCircular_ZoneCollection.Get(ListIndex + 1);
+                    IDataModelCircularZone nextZone = globalData.GDMPage05.DataModelCircular_ZoneCollection.Get(ListIndex + 1);
                     ZoneInterDistance = Math.Min(SpacingValue, nextZone.SpacingValue);
                     break;
                 case EZonePosition.End:
@@ -330,9 +329,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             }
         }
 
-        public void Set_DistanceFromBottom()
+        public void Set_DistanceFromTop()
         {
-            int bottomCover = this.globalData.GDMPage01.DataModel_Global_Formwork.BottomCover;
+            int bottomCover = this.globalData.GDMPage01.DataModel_Global_Formwork.TopCover;
             int radial1LargeDiamNominalSize = this.globalData.GDMPage12.GetNominalDiameterSize(this.globalData.GDMPage04.DataModelRadial1.SelectedIndexLargeDiameter);
             int diameterNominalSize = this.globalData.GDMPage12.GetNominalDiameterSize(SelectedIndexDiameter);
 
@@ -359,11 +358,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                     OffsetFromEdge = (double)diameterNominalSize / 2 + diameterEdgeCircularNominalSize + EdgeCover;
                     break;
                 case EZonePosition.Middle:
-                    IDataModelCircularZone prevZone = globalData.GDMPage04.DataModelCircular_ZoneCollection.Get(ListIndex - 1);
+                    IDataModelCircularZone prevZone = globalData.GDMPage05.DataModelCircular_ZoneCollection.Get(ListIndex - 1);
                     OffsetFromEdge = prevZone.ZoneLength + prevZone.ZoneInterDistance + prevZone.OffsetFromEdge;
                     break;
                 case EZonePosition.End:
-                    IDataModelCircularZone prevZone_e = globalData.GDMPage04.DataModelCircular_ZoneCollection.Get(ListIndex - 1);
+                    IDataModelCircularZone prevZone_e = globalData.GDMPage05.DataModelCircular_ZoneCollection.Get(ListIndex - 1);
                     OffsetFromEdge = ZoneLength + ZoneInterDistance + prevZone_e.OffsetFromEdge;
                     break;
             }

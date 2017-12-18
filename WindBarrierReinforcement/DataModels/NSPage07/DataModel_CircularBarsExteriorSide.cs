@@ -22,7 +22,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
-            set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
+            set
+            {
+                selectedIndexDiameter = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CircularBarsExteriorSide>(x => x.SelectedIndexDiameter));
+            }
         }      
 
 
@@ -33,14 +37,22 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
-            set { selectedIndexOption = value; NotifyPropertyChanged("SelectedIndexOption"); NotifyPropertyChanged("SelectedOptionName"); }
+            set
+            {
+                selectedIndexOption = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CircularBarsExteriorSide>(x => x.SelectedIndexOption));
+            }
         }
 
         private int selectedTrueFalseOption;
         public int SelectedTrueFalseOption
         {
             get { return selectedTrueFalseOption; }
-            set { selectedTrueFalseOption = value; NotifyPropertyChanged("SelectedTrueFalseOption"); }
+            set
+            {
+                selectedTrueFalseOption = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CircularBarsExteriorSide>(x => x.SelectedTrueFalseOption));
+            }
         }
         /// <summary>
         /// UI_TextBox_OPTR_CircularMargin_Overlap
@@ -49,7 +61,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         public bool UseDefaultLength
         {
             get { return useDefaultLength; }
-            set { useDefaultLength = value; NotifyPropertyChanged("UseDefaultLength"); }
+            set
+            {
+                useDefaultLength = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CircularBarsExteriorSide>(x => x.UseDefaultLength));
+            }
         }
         //binded to Style (IsEnabled) triggers to textblocks. Styles maybe defined in XamlResources
         public string SelectedOptionName => Enum.GetName(typeof(EOptionsCBES), SelectedIndexOption);

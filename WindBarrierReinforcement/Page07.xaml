@@ -296,6 +296,16 @@
                             <behaviors:NumericBehaviour InitialValue="0"/>
                         </i:Interaction.Behaviors>
                     </TextBox>
+                    <Label ap:CultureKey.CultureRes="Lbl_OPTR_S_SpacingRadialDeg" Content="__Radial Spacing" HorizontalAlignment="Left" Margin="5,215,0,0" VerticalAlignment="Top"/>
+                    <TextBox 
+                        DataContext="{Binding DataModel_RadialEdgeConcrete}"
+                        Text="{Binding SpacingRadialDeg, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericBehaviour InitialValue="0"/>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
                 </Grid>
             </TabItem>
             <TabItem Header="Circular Bars - Top">

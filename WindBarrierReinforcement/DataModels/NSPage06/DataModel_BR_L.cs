@@ -20,7 +20,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
-            set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
+            set { selectedIndexDiameter = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_L>(x => x.SelectedIndexDiameter)); }
         }
 
         public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
@@ -36,7 +36,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int Lx
         {
             get { return lx; }
-            set { lx = value; NotifyPropertyChanged("Lx"); }
+            set { lx = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_L>(x => x.Lx)); }
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int Ly
         {
             get { return ly; }
-            set { ly = value; NotifyPropertyChanged("Ly"); }
+            set { ly = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_L>(x => x.Ly)); }
         }
 
         /// <summary>
@@ -56,17 +56,17 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int L_BendAngle
         {
             get { return l_BendAngle; }
-            set { l_BendAngle = value; NotifyPropertyChanged("L_BendAngle"); }
+            set { l_BendAngle = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_L>(x => x.L_BendAngle)); }
         }
 
         /// <summary>
         /// UI_TextBox_UPBR_Dir1_L_RadialSpacing
         /// </summary>
-        private int l_RadialSpacing;
-        public int L_RadialSpacing
+        private double l_RadialSpacing;
+        public double L_RadialSpacing
         {
             get { return l_RadialSpacing; }
-            set { l_RadialSpacing = value; NotifyPropertyChanged("L_RadialSpacing"); }
+            set { l_RadialSpacing = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_L>(x => x.L_RadialSpacing)); }
         }
         public DataModel_BR_L(GlobalDataModels global)
         {
