@@ -63,19 +63,18 @@ namespace WindBarrierReinforcement
                 DataModelCircular_ZoneCollection.Zones[0].SelectedIndexDiameter =
                 Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
 
-                DataModelCircular_ZoneCollection.Zones[1].SpacingValue = 200;
+                DataModelCircular_ZoneCollection.Zones[1].SpacingValue = 150;
                 DataModelCircular_ZoneCollection.Zones[1].SelectedIndexDiameter =
                 Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
                 DataModelCircular_ZoneCollection.Zones[1].RadiusGiven = 8250;
 
-                DataModelCircular_ZoneCollection.Zones[2].SpacingValue = 200;
+                DataModelCircular_ZoneCollection.Zones[2].SpacingValue = 125;
                 DataModelCircular_ZoneCollection.Zones[2].SelectedIndexDiameter =
                 Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
                 DataModelCircular_ZoneCollection.Zones[2].RadiusGiven = 6540;
 
-
-
-
+                DataModelCircular_ZoneCollection.Zones[3].SpacingValue = 0;               
+                DataModelCircular_ZoneCollection.Zones[3].RadiusGiven = 1550;                                
 
             });
         }
