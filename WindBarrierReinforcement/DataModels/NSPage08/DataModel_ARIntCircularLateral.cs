@@ -25,7 +25,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
-            set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
+            set
+            {
+                selectedIndexDiameter = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntCircularLateral>(x => x.SelectedIndexDiameter));
+            }
         }
 
         /// <summary>
@@ -35,7 +39,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
-            set { selectedIndexOption = value; NotifyPropertyChanged("SelectedIndexOption"); NotifyPropertyChanged("SpacingEnabled"); }
+            set
+            {
+                selectedIndexOption = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntCircularLateral>(x => x.SelectedIndexOption));
+            }
         }
         /// <summary>
         /// Will affect a trigger in the textbox that has SpacingEnabled Binded to it.
@@ -50,7 +58,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int Spacing
         {
             get { return spacing; }
-            set { spacing = value; NotifyPropertyChanged("Spacing"); }
+            set
+            {
+                spacing = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntCircularLateral>(x => x.Spacing));
+            }
         }
         /// <summary>
         /// UI_TextBox_AR_ICL_NoOfBars
@@ -59,7 +71,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int NoOfBars
         {
             get { return noOfBars; }
-            set { noOfBars = value; NotifyPropertyChanged("NoOfBars"); }
+            set
+            {
+                noOfBars = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntCircularLateral>(x => x.NoOfBars));
+            }
         }
         /// <summary>
         /// UI_TextBox_AR_ECL_MinBarLength
@@ -68,7 +84,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int MinBarLength
         {
             get { return minbarLength; }
-            set { minbarLength = value; NotifyPropertyChanged("MinBarLength"); }
+            set
+            {
+                minbarLength = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntCircularLateral>(x => x.MinBarLength));
+            }
         }
 
         /// <summary>
@@ -78,7 +98,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int MaxBarLength
         {
             get { return maxbarLength; }
-            set { maxbarLength = value; NotifyPropertyChanged("MaxBarLength"); }
+            set
+            {
+                maxbarLength = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntCircularLateral>(x => x.MaxBarLength));
+            }
         }
 
         /// <summary>
@@ -88,7 +112,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int TopExtraOffset
         {
             get { return topExtraOffset; }
-            set { topExtraOffset = value; NotifyPropertyChanged("TopExtraOffset"); }
+            set
+            {
+                topExtraOffset = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntCircularLateral>(x => x.TopExtraOffset));
+            }
         }
 
         /// <summary>
@@ -98,7 +126,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public int BottomExtraOffset
         {
             get { return bottomExtraOffset; }
-            set { bottomExtraOffset = value; NotifyPropertyChanged("BottomExtraOffset"); }
+            set
+            {
+                bottomExtraOffset = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntCircularLateral>(x => x.BottomExtraOffset));
+            }
         }
 
         public DataModel_ARIntCircularLateral(GlobalDataModels global)

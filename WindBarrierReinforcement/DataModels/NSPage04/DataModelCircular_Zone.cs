@@ -243,6 +243,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                 global.GDMPage04.DataModelRadial1.PropertyChanged += action_page04_radial1;
                 global.GDMPage04.DataModelCircularGeneral.PropertyChanged += action_page04_circulargeneral;
             };
+
             removeEvents = () =>
             {
                 this.PropertyChanged -= action_this_propertyChanged;

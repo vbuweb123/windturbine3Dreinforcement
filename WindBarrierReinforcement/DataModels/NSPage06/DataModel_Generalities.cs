@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
+using WindBarrierReinforcement.Common.Reflected;
 
 namespace WindBarrierReinforcement.DataModels.NSPage06
 {
@@ -16,7 +17,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int BottomCover
         {
             get { return bottomCover; }
-            set { bottomCover = value; NotifyPropertyChanged("BottomCover"); }
+            set { bottomCover = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Generalities>(x => x.BottomCover)); }
         }
         /// <summary>
         /// UI_TextBox_UPBR_HorizontalEdgeCover
@@ -25,7 +26,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int HorizontalEdgeCover
         {
             get { return horizontalEdgeCover; }
-            set { horizontalEdgeCover = value; NotifyPropertyChanged("HorizontalEdgeCover"); }
+            set { horizontalEdgeCover = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Generalities>(x => x.HorizontalEdgeCover)); }
         }
     }
 }

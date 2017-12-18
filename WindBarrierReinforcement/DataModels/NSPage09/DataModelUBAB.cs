@@ -25,7 +25,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
             set
             {
                 exteriorHalfLength = value;
-                NotifyPropertyChanged("ExteriorHalfLength");
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelUBAB>(x => x.ExteriorHalfLength));
             }
         }
 
@@ -34,35 +34,55 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         public int InteriorHalfLength
         {
             get => interiorHalfLength;
-            private set { interiorHalfLength = value; NotifyPropertyChanged("InteriorHalfLength"); }
+            private set
+            {
+                interiorHalfLength = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelUBAB>(x => x.InteriorHalfLength));
+            }
         }
        
         private int smallEdge;
         public int SmallEdge
         {
             get { return smallEdge; }
-            set { smallEdge = value; NotifyPropertyChanged("SmallEdge"); }
+            set
+            {
+                smallEdge = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelUBAB>(x => x.SmallEdge));
+            }
         }
 
         private int distanceFromTop;
         public int DistanceFromTop
         {
             get { return distanceFromTop; }
-            set { distanceFromTop = value; NotifyPropertyChanged("DistanceFromTop"); }
+            set
+            {
+                distanceFromTop = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelUBAB>(x => x.DistanceFromTop));
+            }
         }
 
         private int freeEdgeLength;
         public int FreeEdgeLength
         {
             get { return freeEdgeLength; }
-            set { freeEdgeLength = value; NotifyPropertyChanged("FreeEdgeLength"); }
+            set
+            {
+                freeEdgeLength = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelUBAB>(x => x.FreeEdgeLength));
+            }
         }
 
         private int selectedIndexDiameter;
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
-            set { selectedIndexDiameter = value; NotifyPropertyChanged("SelectedIndexDiameter"); }
+            set
+            {
+                selectedIndexDiameter = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelUBAB>(x => x.SelectedIndexDiameter));
+            }
         }
         
         /// <summary>
@@ -73,7 +93,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         public string ZoneName
         {
             get => zoneName;
-            set { zoneName = value; NotifyPropertyChanged("ZoneName"); }
+            set
+            {
+                zoneName = value;
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelUBAB>(x => x.ZoneName));
+            }
         }
         /// <summary>
         /// Property related to Tag Content of the Button in ToolBar
@@ -96,8 +120,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
             global.EvtHandler.AddPostEvtAction(() => {
                 this.SelectedIndexDiameter = 0;
             });
-
         }
+
         private void Set_InteriorHalfLength()
         {
             InteriorHalfLength = ExteriorHalfLength;
