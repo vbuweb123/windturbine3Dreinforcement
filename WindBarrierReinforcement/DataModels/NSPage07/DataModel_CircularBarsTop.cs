@@ -7,6 +7,7 @@ using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage07
 {
@@ -18,6 +19,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_CircularBarDiam
         /// </summary>        
         private int selectedIndexDiameter;
+        [SaveKeyCode(KeyCode = "SelectedIndexDiameter")]
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
@@ -29,6 +31,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// OPTR_CircularTop_Option
         /// </summary>
         private int selectedIndexOption;
+        [SaveKeyCode(KeyCode = "SelectedIndexOption")]
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
@@ -38,6 +41,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_CircularTop_Spacing
         /// </summary>
         private int spacing;
+        [SaveKeyCode(KeyCode = "Spacing")]
         public int Spacing
         {
             get { return spacing; }
@@ -49,6 +53,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_CircularTop_NoBars
         /// </summary>
         private int noOfBars;
+        [SaveKeyCode(KeyCode = "NoOfBars")]
         public int NoOfBars
         {
             get { return noOfBars; }
@@ -59,6 +64,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_CircularTop_MaxLength
         /// </summary>
         private int maxLength;
+        [SaveKeyCode(KeyCode = "MaxLength")]
         public int MaxLength
         {
             get { return maxLength; }
@@ -68,6 +74,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_CircularTop_Overlap
         /// </summary>
         private int overlap;
+        [SaveKeyCode(KeyCode = "Overlap")]
         public int Overlap
         {
             get { return overlap; }
@@ -77,6 +84,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_Groups
         /// </summary>
         private string groups;
+        [SaveKeyCode(KeyCode = "Groups")]
         public string Groups
         {
             get { return groups; }

@@ -7,6 +7,7 @@ using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.DataModels.NSPage01;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage02
 {
@@ -17,6 +18,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// UI_TextBox_DiameterAnchor
         /// </summary>
         private int diameterAnchor;
+        [SaveKeyCode(KeyCode = "DiameterAnchor")]
         public int DiameterAnchor
         {
             //B2
@@ -32,6 +34,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// UI_TextBox_DiameterAnchorINT
         /// </summary>
         private int diameterAnchorInt;
+        [SaveKeyCode(KeyCode = "DiameterAnchor")]
         public int DiameterAnchorInt
         {
             //B3
@@ -42,6 +45,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// UI_TextBox_No_BoltPairs
         /// </summary>
         private int noOFBoltPairs;
+        [SaveKeyCode(KeyCode = "NoOfBoltPairs")]
         public int NoOfBoltPairs
         {
 
@@ -52,6 +56,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// UI_TextBox_PE_shrink_hose_heigths
         /// </summary>
         private int pe_shrink_hose_heigth;
+        [SaveKeyCode(KeyCode = "Peshrinkhoseheigth")]
         public int Peshrinkhoseheigth
         {
             get { return pe_shrink_hose_heigth; }
@@ -61,6 +66,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// UI_TextBox_FIlletTOP_ZONE
         /// </summary>
         private int filletTopZone;
+        [SaveKeyCode(KeyCode = "FilletTopZone")]
         public int FilletTopZone
         {
             get { return filletTopZone; }
@@ -70,6 +76,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// UI_TextBox_FIlletBott_ZONE
         /// </summary>
         private int filletBottomZone;
+        [SaveKeyCode(KeyCode = "FilletBottomZone")]
         public int FilletBottomZone
         {
             get { return filletBottomZone; }
@@ -79,6 +86,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// UI_TextBox_TopAnchorNut
         /// </summary>
         private int topAnchorNut;
+        [SaveKeyCode(KeyCode = "TopAnchorNut")]
         public int TopAnchorNut
         {
             get { return topAnchorNut; }
@@ -87,6 +95,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_BottomAnchorNut
         private int bottomAnchorNut;
+        [SaveKeyCode(KeyCode = "BottomAnchorNut")]
         public int BottomAnchorNut
         {
             get { return bottomAnchorNut; }
@@ -95,6 +104,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_Depth_Anchor
         private int depthAnchor;
+        [SaveKeyCode(KeyCode = "DepthAnchor")]
         public int DepthAnchor
         {
             get => depthAnchor;
@@ -103,6 +113,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_Depth_Anchor_Botttom
         private int depthAnchorBottom;
+        [SaveKeyCode(KeyCode = "DepthAnchorBottom")]
         public int DepthAnchorBottom
         {
             get => depthAnchorBottom;
@@ -111,6 +122,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_Radius_Centerline_Tower
         private int radiusCenterLineTower;
+        [SaveKeyCode(KeyCode = "RadiusCenterLineTower")]
         public int RadiusCenterLineTower
         {
             get => radiusCenterLineTower;
@@ -119,6 +131,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_Insertion_Depth_Top_Flange
         private int insertionDepthTopFlange;
+        [SaveKeyCode(KeyCode = "InsertionDepthTopFlange")]
         public int InsertionDepthTopFlange
         {
             get { return insertionDepthTopFlange; }
@@ -127,6 +140,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_Thickness_Top_Flange
         private int thicknessTopFlange;
+        [SaveKeyCode(KeyCode = "ThicknessTopFlange")]
         public int ThicknessTopFlange
         {
             get { return thicknessTopFlange; }
@@ -135,6 +149,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_Width_Concrete_Bed
         private int widthConcreteBed;
+        [SaveKeyCode(KeyCode = "WidthConcreteBed")]
         public int WidthConcreteBed
         {
             get { return widthConcreteBed; }
@@ -143,6 +158,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_Width_Top_Flange
         private int widthTopFlange;
+        [SaveKeyCode(KeyCode = "WidthTopFlange")]
         public int WidthTopFlange
         {
             get { return widthTopFlange; }
@@ -151,6 +167,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_Depth_Conc_Bed
         private int depthConcreteBed;
+        [SaveKeyCode(KeyCode = "DepthConcreteBed")]
         public int DepthConcreteBed
         {
             get { return depthConcreteBed; }
@@ -159,6 +176,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_DistanceBoltPair
         private int dispanceBoltPairs;
+        [SaveKeyCode(KeyCode = "DispanceBoltPairs")]
         public int DispanceBoltPairs
         {   
             get { return dispanceBoltPairs; }
@@ -167,6 +185,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_Thickness_Bott_Flange
         private int thicknessBottFlange;
+        [SaveKeyCode(KeyCode = "ThicknessBottFlange")]
         public int ThicknessBottFlange
         {
             get { return thicknessBottFlange; }
@@ -175,6 +194,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_Width_Bott_Flange
         private int widthBottFlange;
+        [SaveKeyCode(KeyCode = "WidthBottFlange")]
         public int WidthBottFlange
         {
             get { return widthBottFlange; }
@@ -183,6 +203,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_BoltDiameter
         private int boltDiameter;
+        [SaveKeyCode(KeyCode = "BoltDiameter")]
         public int BoltDiameter
         {
             get { return boltDiameter; }
@@ -191,6 +212,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_MaterialGrout
         private string materialGrout;
+        [SaveKeyCode(KeyCode = "MaterialGrout")]
         public string MaterialGrout
         {
             get { return materialGrout; }
@@ -200,6 +222,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// UI_TextBox_NumberSuppports
         /// </summary>
         private int numberSuppports;
+        [SaveKeyCode(KeyCode = "NumberSuppports")]
         public int NumberSuppports
         {
             get { return numberSuppports; }
@@ -209,6 +232,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// UI_TextBox_BoltLength
         /// </summary>
         private int boltLength;
+        [SaveKeyCode(KeyCode = "BoltLength")]
         public int BoltLength
         {
             get { return boltLength; }
@@ -219,6 +243,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// UI_TextBox_OffsetBottFlange
         /// </summary>
         private int offsetBottFlange;
+        [SaveKeyCode(KeyCode = "OffsetBottFlange")]
         public int OffsetBottFlange
         {
             get { return offsetBottFlange; }

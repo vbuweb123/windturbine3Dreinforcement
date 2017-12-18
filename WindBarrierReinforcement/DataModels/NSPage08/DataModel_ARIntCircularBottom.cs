@@ -7,6 +7,7 @@ using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage08
 {
@@ -18,6 +19,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_ComboBox_AR_ICT_Diameter
         /// </summary>        
         private int selectedIndexDiameter;
+        [SaveKeyCode(KeyCode = "SelectedIndexDiameter")]
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
@@ -32,6 +34,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_ICT_Spacing
         /// </summary>
         private int spacing;
+        [SaveKeyCode(KeyCode = "Spacing")]
         public int Spacing
         {
             get { return spacing; }
@@ -46,6 +49,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_ICT_MinBarLength
         /// </summary>
         private int minbarLength;
+        [SaveKeyCode(KeyCode = "MinBarLength")]
         public int MinBarLength
         {
             get { return minbarLength; }
@@ -60,6 +64,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_ICT_MaxBarLength
         /// </summary>
         private int maxbarLength;
+        [SaveKeyCode(KeyCode = "MaxBarLength")]
         public int MaxBarLength
         {
             get { return maxbarLength; }
@@ -74,6 +79,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_ICT_StartExtraOffset
         /// </summary>
         private int startExtraOffset;
+        [SaveKeyCode(KeyCode = "StartExtraOffset")]
         public int StartExtraOffset
         {
             get { return startExtraOffset; }

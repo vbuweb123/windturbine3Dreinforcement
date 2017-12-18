@@ -8,15 +8,19 @@ using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.DataModels.NSPage01;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage06
 {
     public class DataModel_TB_D1 : DataModel
     {
+        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
+        public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
         /// <summary>
         /// UI_ComboBox_UPBR_TB_Dir1_Diameter
         /// </summary>
         private int selectedIndexDiameter;
+        [SaveKeyCode(KeyCode = "SelectedIndexDiameter")]
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
@@ -26,21 +30,17 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_TB_D1>(x => x.SelectedIndexDiameter));
             }
         }
-
-        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
-              
-
         /// <summary>
         /// UI_ComboBox_UPBR_TB_Dir1_Option
         /// </summary>
         private int selectedIndexOption;
+        [SaveKeyCode(KeyCode = "SelectedIndexOption")]
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
             set { selectedIndexOption = value; NotifyPropertyChanged("SelectedIndexOption"); NotifyPropertyChanged("SpacingEnabled"); }
         }
-        public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
-
+        //TODO : Change Spacing 
         public string SpacingEnabled
         {
             get
@@ -55,7 +55,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// <summary>
         /// UI_TextBox_UPBR_TB_OffsetFromBottom
         /// </summary>
-        private int offsetFromBottom;       
+        private int offsetFromBottom;
+        [SaveKeyCode(KeyCode = "OffsetFromBottom")]
         public int OffsetFromBottom
         {
             get { return offsetFromBottom; }
@@ -70,6 +71,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// UI_TextBox_UPBR_TB_RadiusOfRebars
         /// </summary>
         private int radiusOfRebars;
+        [SaveKeyCode(KeyCode = "RadiusOfRebars")]
         public int RadiusOfRebars
         {
             get { return radiusOfRebars; }
@@ -84,6 +86,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// UI_TextBox_UPBR_TB_MinLengthRebar
         /// </summary>
         private int minLengthRebar;
+        [SaveKeyCode(KeyCode = "MinLengthRebar")]
         public int MinLengthRebar
         {
             get { return minLengthRebar; }
@@ -98,6 +101,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// UI_TextBox_UPBR_TB_Dir1_NoOfBars
         /// </summary>
         private int noOfBars;
+        [SaveKeyCode(KeyCode = "NoOfBars")]
         public int NoOfBars
         {
             get { return noOfBars; }
@@ -113,6 +117,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// UI_TextBox_UPBR_TB_Dir1_SpacingValue
         /// </summary>       
         private int spacing;
+        [SaveKeyCode(KeyCode = "Spacing")]
         public int Spacing
         {
             get { return spacing; }

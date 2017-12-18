@@ -42,6 +42,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         }
        
         private int smallEdge;
+        [SaveKeyCode(KeyCode = "SmallEdge")]
         public int SmallEdge
         {
             get { return smallEdge; }
@@ -53,6 +54,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         }
 
         private int distanceFromTop;
+        [SaveKeyCode(KeyCode = "DistanceFromTop")]
         public int DistanceFromTop
         {
             get { return distanceFromTop; }
@@ -64,6 +66,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         }
 
         private int freeEdgeLength;
+        [SaveKeyCode(KeyCode = "FreeEdgeLength")]
         public int FreeEdgeLength
         {
             get { return freeEdgeLength; }
@@ -75,6 +78,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         }
 
         private int selectedIndexDiameter;
+        [SaveKeyCode(KeyCode = "SelectedIndexDiameter")]
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
@@ -89,7 +93,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         /// Property related to button name in toolbar
         /// </summary>
         private string zoneName;
-
+        [SaveKeyCode(KeyCode = "ZoneName")]
         public string ZoneName
         {
             get => zoneName;
@@ -102,6 +106,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         /// <summary>
         /// Property related to Tag Content of the Button in ToolBar
         /// </summary>
+        [SaveKeyCode(KeyCode = "IndexInList")]
         public int IndexInList { get; private set; }
 
         public DataModelUBAB(GlobalDataModels global, string zoneName, int index)

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage04
 {
@@ -14,6 +15,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         public List<string> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
 
         private int overlapLength;
+        [SaveKeyCode(KeyCode = "OverlapLength")]
         public int OverlapLength
         {
             get { return overlapLength; }
@@ -21,6 +23,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int maximumRebarLength;
+        [SaveKeyCode(KeyCode = "MaximumRebarLength")]
         public int MaximumRebarLength
         {
             get { return maximumRebarLength; }
@@ -28,6 +31,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int selectedDiameterEdgeCirculars;
+        [SaveKeyCode(KeyCode = "SelectedDiameterEdgeCirculars")]
         public int SelectedDiameterEdgeCirculars
         {
             get { return selectedDiameterEdgeCirculars; }
@@ -35,6 +39,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int numberEdgeCirculars;
+        [SaveKeyCode(KeyCode = "NumberEdgeCirculars")]
         public int NumberEdgeCirculars
         {
             get { return numberEdgeCirculars; }
@@ -42,6 +47,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int spacingEdgeCirculars;
+        [SaveKeyCode(KeyCode = "SpacingEdgeCirculars")]
         public int SpacingEdgeCirculars
         {
             get { return spacingEdgeCirculars; }
@@ -49,6 +55,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int radiusCore;
+        [SaveKeyCode(KeyCode = "RadiusCore")]
         public int RadiusCore
         {
             get { return radiusCore; }

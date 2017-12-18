@@ -8,6 +8,7 @@ using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage07
 {
@@ -20,6 +21,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// ComboBox - Option Types
         /// </summary>
         private int selectedIndexOption;
+        [SaveKeyCode(KeyCode = "SelectedIndexOption")]
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
@@ -30,6 +32,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// ComboBox - Diameter Types
         /// </summary>
         private int selectedIndexDiameter;
+        [SaveKeyCode(KeyCode = "SelectedIndexDiameter")]
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
@@ -40,18 +43,20 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// Spacing
         /// </summary>
         private int spacing;
+        [SaveKeyCode(KeyCode = "Spacing")]
         public int Spacing
         {
             get { return spacing; }
             set { spacing = value; NotifyPropertyChanged("Spacing"); }
         }
-
+        //TODO : Make this enum type
         public string SpacingEnabled => (SelectedIndexOption == 0) ? "Disabled" : "Enabled";
         
         /// <summary>
         /// NoOfBars
         /// </summary>
         private int noOfBars;
+        [SaveKeyCode(KeyCode = "NoOfBars")]
         public int NoOfBars
         {
             get { return noOfBars; }
@@ -62,6 +67,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// Lx
         /// </summary>
         private int lx;
+        [SaveKeyCode(KeyCode = "Lx")]
         public int Lx
         {
             get { return lx; }
@@ -71,6 +77,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// Ly
         /// </summary>
         private int ly;
+        [SaveKeyCode(KeyCode = "Ly")]
         public int Ly
         {
             get { return ly; }
@@ -80,6 +87,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// EdgeCover
         /// </summary>
         private int edgeCover;
+        [SaveKeyCode(KeyCode = "EdgeCover")]
         public int EdgeCover
         {
             get { return edgeCover; }

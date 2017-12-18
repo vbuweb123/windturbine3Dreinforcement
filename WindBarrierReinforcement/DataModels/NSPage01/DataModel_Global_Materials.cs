@@ -17,8 +17,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// <summary>
         /// UI_TextBox_Material_Foundation
         /// </summary>
-        [SaveKeyCode(KeyCode = "Global_Materials_MaterialFoundation")]
         private string materialFoundation;
+        [SaveKeyCode(KeyCode = "MaterialFoundation")]
         public string MaterialFoundation
         {
             get { return materialFoundation; }
@@ -31,8 +31,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// <summary>
         /// UI_TextBox_Material_Foundation_Bed
         /// </summary>
-        [SaveKeyCode(KeyCode = "Global_Materials_MaterialFoundationBed")]
         private string materialFoundationBed;
+        [SaveKeyCode(KeyCode = "MaterialFoundationBed")]
         public string MaterialFoundationBed
         {
             get { return materialFoundationBed; }
@@ -47,6 +47,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_Material_Tower_Base
         /// </summary>
         private string materialTowerBase;
+        [SaveKeyCode(KeyCode = "MaterialTowerBase")]
         public string MaterialTowerBase
         {
             get { return materialTowerBase; }

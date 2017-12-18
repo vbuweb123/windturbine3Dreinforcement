@@ -7,6 +7,7 @@ using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage08
 {
@@ -21,6 +22,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_Ext_TopOffset
         /// </summary>
         private int topOffset;
+        [SaveKeyCode(KeyCode = "TopOffset")]
         public int TopOffset
         {
             get { return topOffset; }
@@ -34,6 +36,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_Ext_BottomOffset
         /// </summary>
         private int bottomOffset;
+        [SaveKeyCode(KeyCode = "BottomOffset")]
         public int BottomOffset
         {
             get { return bottomOffset; }
@@ -47,6 +50,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_Ext_AxisOffset
         /// </summary>
         private int axisOffset;
+        [SaveKeyCode(KeyCode = "AxisOffset")]
         public int AxisOffset
         {
             get { return axisOffset; }
@@ -61,6 +65,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_ComboBox_AR_Ext_Diameter_Ularger
         /// </summary>        
         private int selectedIndexDiameterL;
+        [SaveKeyCode(KeyCode = "SelectedIndexDiameterL")]
         public int SelectedIndexDiameterL
         {
             get { return selectedIndexDiameterL; }
@@ -75,6 +80,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_Ext_Diameter_Usmaller
         /// </summary>        
         private int selectedIndexDiameterS;
+        [SaveKeyCode(KeyCode = "SelectedIndexDiameterS")]
         public int SelectedIndexDiameterS
         {
             get { return selectedIndexDiameterS; }
@@ -89,6 +95,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_Ext_HookLength_Ularger
         /// </summary>
         private int hookULarger;
+        [SaveKeyCode(KeyCode = "HookULarger")]
         public int HookULarger
         {
             get { return hookULarger; }
@@ -102,6 +109,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_Ext_HookLength_Usmaller
         /// </summary>
         private int hookUSmaller;
+        [SaveKeyCode(KeyCode = "HookUSmaller")]
         public int HookUSmaller
         {
             get { return hookUSmaller; }
@@ -115,6 +123,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_Int_TopExtraOffset
         /// </summary>
         private int topExtraOffset;
+        [SaveKeyCode(KeyCode = "TopExtraOffset")]
         public int TopExtraOffset
         {
             get { return topExtraOffset; }
@@ -128,6 +137,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_Int_BottomExtraOffset
         /// </summary>
         private int bottomExtraOffset;
+        [SaveKeyCode(KeyCode = "BottomExtraOffset")]
         public int BottomExtraOffset
         {
             get { return bottomExtraOffset; }

@@ -9,6 +9,7 @@ using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.DataModels.NSPage12;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage05
 {
@@ -17,7 +18,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         public List<string> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
 
         private int noOfBars;
-
+        [SaveKeyCode(KeyCode = "NoOfBars")]
         public int NoOfBars
         {
             get { return noOfBars; }
@@ -25,7 +26,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int spacingValue;
-
+        [SaveKeyCode(KeyCode = "SpacingValue")]
         public int SpacingValue
         {
             get { return spacingValue; }
@@ -33,7 +34,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int selectedIndexDiameter;
-
+        [SaveKeyCode(KeyCode = "SelectedIndexDiameter")]
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
@@ -41,7 +42,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private double zoneLength;
-
+        [SaveKeyCode(KeyCode = "ZoneLength")]
         public double ZoneLength
         {
             get { return zoneLength; }
@@ -49,7 +50,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int zoneInterDistance;
-
+        [SaveKeyCode(KeyCode = "ZoneInterDistance")]
         public int ZoneInterDistance
         {
             get { return zoneInterDistance; }
@@ -57,7 +58,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private double radiusGiven;
-
+        [SaveKeyCode(KeyCode = "RadiusGiven")]
         public double RadiusGiven
         {
             get { return radiusGiven; }
@@ -65,7 +66,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private double distanceFromBottom; //distancefromTop
-
+        [SaveKeyCode(KeyCode = "DistanceFromBottom")]
         public double DistanceFromBottom
         {
             get { return distanceFromBottom; }
@@ -73,7 +74,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private double offsetFromEdge;
-
+        [SaveKeyCode(KeyCode = "OffsetFromEdge")]
         public double OffsetFromEdge
         {
             get { return offsetFromEdge; }
@@ -81,7 +82,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int distributionBars;
-
+        [SaveKeyCode(KeyCode = "DistributionBars")]
         public int DistributionBars
         {
             get { return distributionBars; }

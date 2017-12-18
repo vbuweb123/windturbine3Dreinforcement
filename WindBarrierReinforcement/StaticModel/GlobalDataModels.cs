@@ -9,7 +9,6 @@ using WindBarrierReinforcement.Writer;
 using WindBarrierReinforcement.Common.Eng;
 namespace WindBarrierReinforcement.StaticModel
 {
-    [XmlRoot("GlobalData")]
     public partial class GlobalDataModels
     {
         [SaveKeyCode(KeyCode = "GDMPage01", SaveDataType = SaveDataType.Class)]
@@ -27,7 +26,7 @@ namespace WindBarrierReinforcement.StaticModel
         [SaveKeyCode(KeyCode = "GDMPage05", SaveDataType = SaveDataType.Class)]
         public IGlobalDataModelsPage05 GDMPage05 { get; private set; }
 
-        [SaveKeyCode(KeyCode = "GDMPage06", SaveDataType = SaveDataType.Class]
+        [SaveKeyCode(KeyCode = "GDMPage06", SaveDataType = SaveDataType.Class)]
         public IGlobalDataModelsPage06 GDMPage06 { get; private set; }
 
         [SaveKeyCode(KeyCode = "GDMPage07", SaveDataType = SaveDataType.Class)]
@@ -45,7 +44,6 @@ namespace WindBarrierReinforcement.StaticModel
         [SaveKeyCode(KeyCode = "GDMPage11", SaveDataType = SaveDataType.Class)]
         public IGlobalDataModelsPage11 GDMPage11 { get; private set; }
 
-        [SaveKeyCode(KeyCode = "GDMPage12", SaveDataType = SaveDataType.Class)]
         public IGlobalDataModelsPage12 GDMPage12 { get; private set; }
 
         public IEvtStore EvtHandler { get; private set; }

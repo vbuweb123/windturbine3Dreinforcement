@@ -7,6 +7,7 @@ using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage08
 {
@@ -22,6 +23,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_ComboBox_AR_ECL_Diameter
         /// </summary>        
         private int selectedIndexDiameter;
+        [SaveKeyCode(KeyCode = "SelectedIndexDiameter")]
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
@@ -36,6 +38,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_ComboBox_AR_ECL_Option
         /// </summary>
         private int selectedIndexOption;
+        [SaveKeyCode(KeyCode = "SelectedIndexOption")]
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
@@ -45,13 +48,14 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARExteriorCircularLateral>(x => x.SelectedIndexOption));
             }
         }
-
+        //TODO : Change to enum 
         public string SpacingEnabled => (SelectedIndexOption == 0) ? "Disabled" : "Enabled";
   
         /// <summary>
         /// UI_TextBox_AR_ECL_Spacing
         /// </summary>
         private int spacing;
+        [SaveKeyCode(KeyCode = "Spacing")]
         public int Spacing
         {
             get { return spacing; }
@@ -65,6 +69,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_ECL_NoOfBars
         /// </summary>
         private int noOfBars;
+        [SaveKeyCode(KeyCode = "NoOfBars")]
         public int NoOfBars
         {
             get { return noOfBars; }
@@ -78,6 +83,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_ECL_MinBarLength
         /// </summary>
         private int minbarLength;
+        [SaveKeyCode(KeyCode = "MinBarLength")]
         public int MinBarLength
         {
             get { return minbarLength; }
@@ -92,6 +98,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_ECL_MaxBarLength
         /// </summary>
         private int maxbarLength;
+        [SaveKeyCode(KeyCode = "MaxBarLength")]
         public int MaxBarLength
         {
             get { return maxbarLength; }
@@ -106,6 +113,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_ECL_TopExtraOffset
         /// </summary>
         private int topExtraOffset;
+        [SaveKeyCode(KeyCode = "TopExtraOffset")]
         public int TopExtraOffset
         {
             get { return topExtraOffset; }
@@ -120,6 +128,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_ECL_MaxBarLength
         /// </summary>
         private int bottomExtraOffset;
+        [SaveKeyCode(KeyCode = "BottomExtraOffset")]
         public int BottomExtraOffset
         {
             get { return bottomExtraOffset; }

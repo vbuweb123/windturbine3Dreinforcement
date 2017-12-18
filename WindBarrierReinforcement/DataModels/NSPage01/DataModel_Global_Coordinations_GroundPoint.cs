@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage01
 {
@@ -15,6 +16,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_ARC_CenterPoint_X
         /// </summary>
         private int coordinationX;
+        [SaveKeyCode(KeyCode = "CoordinationX", SaveDataType = SaveDataType.Default)]
         public int CoordinationX
         {
             get { return coordinationX; }
@@ -25,6 +27,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_ARC_CenterPoint_Y
         /// </summary>
         private int coordinationY;
+        [SaveKeyCode(KeyCode = "CoordinationY", SaveDataType = SaveDataType.Default)]
         public int CoordinationY
         {
             get { return coordinationY; }
@@ -34,6 +37,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_ARC_CenterPoint_Z
         /// </summary>
         private int coordinationZ;
+        [SaveKeyCode(KeyCode = "CoordinationZ", SaveDataType = SaveDataType.Default)]
         public int CoordinationZ
         {
             get { return coordinationZ; }
@@ -44,7 +48,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// </summary>
         /// 
         private int foundationPointZ;
-
+        [SaveKeyCode(KeyCode = "FoundationPointZ", SaveDataType = SaveDataType.Default)]
         public int FoundationPointZ
         {
             get { return foundationPointZ; }

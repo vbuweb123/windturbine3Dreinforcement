@@ -9,6 +9,7 @@ using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.DataModels.NSPage01;
 using WindBarrierReinforcement.DataModels.NSPage11;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPAge03
 {
@@ -17,6 +18,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
 
         private int circleDiameter;
+        [SaveKeyCode(KeyCode = "CircleDiameter")]
         public int CircleDiameter
         {
             get { return circleDiameter; }
@@ -28,6 +30,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         }
 
         private int noPiles;
+        [SaveKeyCode(KeyCode = "NoPiles")]
         public int NoPiles
         {
             get { return noPiles; }
@@ -39,6 +42,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         }
 
         private int divPerCurve;
+        [SaveKeyCode(KeyCode = "DivPerCurve")]
         public int DivPerCurve
         {
             get { return divPerCurve; }
@@ -50,6 +54,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         }
 
         private double angle ;
+        [SaveKeyCode(KeyCode = "Angle")]
         public double Angle
         {
             get { return angle; }
@@ -61,6 +66,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         }
 
         private int pileDepth;
+        [SaveKeyCode(KeyCode = "PileDepth")]
         public int PileDepth
         {
             get { return pileDepth; }
@@ -72,6 +78,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         }
 
         private string materialPiles;
+        [SaveKeyCode(KeyCode = "MaterialPiles")]
         public string MaterialPiles
         {
             get { return materialPiles;  }
@@ -83,6 +90,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         }
 
         private double slope;
+        [SaveKeyCode(KeyCode = "Slope")]
         public double Slope
         {
             get { return slope; }
@@ -94,6 +102,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         }
 
         private int depthPile;
+        [SaveKeyCode(KeyCode = "DepthPile")]
         public int DepthPile
         {
             get { return depthPile; }
@@ -105,6 +114,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         }
 
         private string forces;
+        [SaveKeyCode(KeyCode = "Forces")]
         public string Forces
         {
             get { return forces; }
@@ -116,6 +126,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         }
 
         private int pr_BottomCover;
+        [SaveKeyCode(KeyCode = "PR_BottomCover")]
         public int PR_BottomCover
         {
             get { return pr_BottomCover; }
@@ -127,6 +138,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         }
 
         private int pr_TopCover;
+        [SaveKeyCode(KeyCode = "PR_TopCover")]
         public int PR_TopCover
         {
             get { return pr_TopCover; }
@@ -140,6 +152,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         /// PR_StirrupRadius_Layer1
         /// </summary>
         private int pr_StirrupRadius_Layer1;
+        [SaveKeyCode(KeyCode = "PR_StirrupRadius_Layer1")]
         public int PR_StirrupRadius_Layer1
         {
             get { return pr_StirrupRadius_Layer1; }
@@ -153,6 +166,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         /// PR_Spacing_Layer1
         /// </summary>
         private int pr_Spacing_Layer1;
+        [SaveKeyCode(KeyCode = "PR_Spacing_Layer1")]
         public int PR_Spacing_Layer1
         {
             get { return pr_Spacing_Layer1; }
@@ -166,6 +180,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         /// PR_StirrupRebarDiam_Layer1
         /// </summary>
         private int pR_StirrupRebarDiam_Layer1;
+        [SaveKeyCode(KeyCode = "PR_StirrupRebarDiam_Layer1")]
         public int PR_StirrupRebarDiam_Layer1
         {
             get { return pR_StirrupRebarDiam_Layer1; }
@@ -179,6 +194,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         /// PR_NoOfLongRebars
         /// </summary>
         private int pr_NoOfLongRebars;
+        [SaveKeyCode(KeyCode = "PR_NoOfLongRebars")]
         public int PR_NoOfLongRebars
         {
             get { return pr_NoOfLongRebars; }
@@ -193,6 +209,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         /// PR_LongRebarDiam
         /// </summary>
         private int pR_LongRebarDiam;
+        [SaveKeyCode(KeyCode = "PR_LongRebarDiam")]
         public int PR_LongRebarDiam
         {
             get { return pR_LongRebarDiam; }
@@ -207,6 +224,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         /// PR_TopLongExtension
         /// </summary>
         private int pr_TopLongExtension;
+        [SaveKeyCode(KeyCode = "PR_TopLongExtension")]
         public int PR_TopLongExtension
         {
             get { return pr_TopLongExtension; }
@@ -221,6 +239,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         /// PR_StirrupRadius_Layer2
         /// </summary>
         private int pr_StirrupRadius_Layer2;
+        [SaveKeyCode(KeyCode = "PR_StirrupRadius_Layer2")]
         public int PR_StirrupRadius_Layer2
         {
             get { return pr_StirrupRadius_Layer2; }
@@ -234,6 +253,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         /// PR_Spacing_Layer2
         /// </summary>
         private int pr_Spacing_Layer2;
+        [SaveKeyCode(KeyCode = "PR_Spacing_Layer2")]
         public int PR_Spacing_Layer2
         {
             get { return pr_Spacing_Layer2; }
@@ -248,6 +268,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         /// PR_StirrupRebarDiam_Layer2
         /// </summary>
         private int pR_StirrupRebarDiam_Layer2;
+        [SaveKeyCode(KeyCode = "PR_StirrupRebarDiam_Layer2")]
         public int PR_StirrupRebarDiam_Layer2
         {
             get { return pR_StirrupRebarDiam_Layer2; }
@@ -261,6 +282,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         /// PR_Ureinforcement_RebarDiam
         /// </summary>
         private int pR_Ureinforcement_RebarDiam;
+        [SaveKeyCode(KeyCode = "PR_Ureinforcement_RebarDiam")]
         public int PR_Ureinforcement_RebarDiam
         {
             get { return pR_Ureinforcement_RebarDiam; }

@@ -7,6 +7,7 @@ using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage11
 {
@@ -22,6 +23,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage11
         public string Name { get; private set; }
 
         private int selectedIndexConcreteQuality;
+        [SaveKeyCode(KeyCode = "SelectedIndexConcreteQuality")]
         public int SelectedIndexConcreteQuality
         {
             get => selectedIndexConcreteQuality;
@@ -33,6 +35,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage11
         }
 
         private int selectedIndexExposureClass;
+        [SaveKeyCode(KeyCode = "SelectedIndexExposureClass")]
         public int SelectedIndexExposureClass
         {
             get => selectedIndexExposureClass;
@@ -44,6 +47,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage11
         }
 
         private int selectedIndexConsistenceTolerance;
+        [SaveKeyCode(KeyCode = "SelectedIndexConsistenceTolerance")]
         public int SelectedIndexConsistenceTolerance
         {
             get => selectedIndexConsistenceTolerance;
@@ -53,8 +57,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage11
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModelMaterials>(x => x.SelectedIndexConsistenceTolerance));
             }
         }
-        private int maximumGranulesSize;
 
+        private int maximumGranulesSize;
+        [SaveKeyCode(KeyCode = "MaximumGranulesSize")]
         public int MaximumGranulesSize
         {
             get { return maximumGranulesSize; }
@@ -66,6 +71,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage11
         }
 
         private string additionalInformation;
+        [SaveKeyCode(KeyCode = "AdditionalInformation")]
         public string AdditionalInformation
         {
             get => additionalInformation;
@@ -77,6 +83,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage11
         }
 
         private int concreteCover;
+        [SaveKeyCode(KeyCode = "ConcreteCover")]
         public int ConcreteCover
         {
             get => concreteCover;

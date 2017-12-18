@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage04
 {
     public class DataModelRadialGeneral : DataModel
     {
         private int minCore;
+        [SaveKeyCode(KeyCode = "MinCore")]
         public int MinCore
         {
             get { return minCore; }
@@ -19,6 +21,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int minSpaceField;
+        [SaveKeyCode(KeyCode = "MinCore")]
         public int MinSpaceField
         {
             get { return minSpaceField; }
@@ -26,6 +29,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int minSpaceCenter;
+        [SaveKeyCode(KeyCode = "MinCore")]
         public int MinSpaceCenter
         {
             get { return minSpaceCenter; }
@@ -35,6 +39,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         private double alternativeHalfMinStartAngle; //TODO : calculated after anchor is set
 
         private double alternativeMinStartAngle;
+        [SaveKeyCode(KeyCode = "AlternativeMinStartAngle")]
         public double AlternativeMinStartAngle
         {
             get { return alternativeMinStartAngle; }
