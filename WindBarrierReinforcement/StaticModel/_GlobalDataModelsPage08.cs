@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.DataModels.NSPage08;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.StaticModel
 {
@@ -22,20 +23,28 @@ namespace WindBarrierReinforcement.StaticModel
     {
         private class _GlobalDataModelsPage08 : IGlobalDataModelsPage08
         {
+            [SaveKeyCode(KeyCode = "DataModel_ARExtUBars", SaveDataType = SaveDataType.Class)]
             public DataModel_ARExtUBars DataModel_ARExtUBars { get; private set; }
 
+            [SaveKeyCode(KeyCode = "DataModel_ARExteriorCircularTop", SaveDataType = SaveDataType.Class)]
             public DataModel_ARExteriorCircularTop DataModel_ARExteriorCircularTop { get; private set; }
 
+            [SaveKeyCode(KeyCode = "DataModel_ARExteriorCircularLateral", SaveDataType = SaveDataType.Class)]
             public DataModel_ARExteriorCircularLateral DataModel_ARExteriorCircularLateral { get; private set; }
 
+            [SaveKeyCode(KeyCode = "DataModel_ARExteriorCircularBottom", SaveDataType = SaveDataType.Class)]
             public DataModel_ARExteriorCircularBottom DataModel_ARExteriorCircularBottom { get; private set; }
 
+            [SaveKeyCode(KeyCode = "DataModel_ARIntUBars", SaveDataType = SaveDataType.Class)]
             public DataModel_ARIntUBars DataModel_ARIntUBars { get; private set; }
 
+            [SaveKeyCode(KeyCode = "DataModel_ARIntCircularTop", SaveDataType = SaveDataType.Class)]
             public DataModel_ARIntCircularTop DataModel_ARIntCircularTop { get; private set; }
 
+            [SaveKeyCode(KeyCode = "DataModel_ARIntCircularBottom", SaveDataType = SaveDataType.Class)]
             public DataModel_ARIntCircularBottom DataModel_ARIntCircularBottom { get; private set; }
 
+            [SaveKeyCode(KeyCode = "DataModel_ARIntCircularLateral", SaveDataType = SaveDataType.Class)]
             public DataModel_ARIntCircularLateral DataModel_ARIntCircularLateral { get; private set; }
 
             public _GlobalDataModelsPage08(GlobalDataModels global)

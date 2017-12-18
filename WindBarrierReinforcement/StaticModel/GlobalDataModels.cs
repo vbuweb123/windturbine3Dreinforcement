@@ -12,30 +12,40 @@ namespace WindBarrierReinforcement.StaticModel
     [XmlRoot("GlobalData")]
     public partial class GlobalDataModels
     {
-        [SaveKeyCode(KeyCode = "GDMPage01", SaveDataType = SaveDataType.Navigation)]
-        [XmlElement("Page01", Type = typeof(_GlobalDataModelsPage01), DataType = "WindBarrierReinforcement.StaticModel.GlobalDataModels._GlobalDataModelsPage01")]
+        [SaveKeyCode(KeyCode = "GDMPage01", SaveDataType = SaveDataType.Class)]
         public IGlobalDataModelsPage01 GDMPage01 { get; private set; }
 
+        [SaveKeyCode(KeyCode = "GDMPage02", SaveDataType = SaveDataType.Class)]
         public IGlobalDataModelsPage02 GDMPage02 { get; private set; }
 
+        [SaveKeyCode(KeyCode = "GDMPage03", SaveDataType = SaveDataType.Class)]
         public IGlobalDataModelsPage03 GDMPage03 { get; private set; }
 
+        [SaveKeyCode(KeyCode = "GDMPage04", SaveDataType = SaveDataType.Class)]
         public IGlobalDataModelsPage04 GDMPage04 { get; private set; }
 
+        [SaveKeyCode(KeyCode = "GDMPage05", SaveDataType = SaveDataType.Class)]
         public IGlobalDataModelsPage05 GDMPage05 { get; private set; }
 
+        [SaveKeyCode(KeyCode = "GDMPage06", SaveDataType = SaveDataType.Class]
         public IGlobalDataModelsPage06 GDMPage06 { get; private set; }
 
+        [SaveKeyCode(KeyCode = "GDMPage07", SaveDataType = SaveDataType.Class)]
         public IGlobalDataModelsPage07 GDMPage07 { get; private set; }
 
+        [SaveKeyCode(KeyCode = "GDMPage08", SaveDataType = SaveDataType.Class)]
         public IGlobalDataModelsPage08 GDMPage08 { get; private set; }
-        [SaveKeyCode(KeyCode = "GDMPage09", SaveDataType = SaveDataType.Navigation)]
+
+        [SaveKeyCode(KeyCode = "GDMPage09", SaveDataType = SaveDataType.Class)]
         public IGlobalDataModelsPage09 GDMPage09 { get; private set; }
 
+        [SaveKeyCode(KeyCode = "GDMPage10", SaveDataType = SaveDataType.Class)]
         public IGlobalDataModelsPage10 GDMPage10 { get; private set; }
 
+        [SaveKeyCode(KeyCode = "GDMPage11", SaveDataType = SaveDataType.Class)]
         public IGlobalDataModelsPage11 GDMPage11 { get; private set; }
 
+        [SaveKeyCode(KeyCode = "GDMPage12", SaveDataType = SaveDataType.Class)]
         public IGlobalDataModelsPage12 GDMPage12 { get; private set; }
 
         public IEvtStore EvtHandler { get; private set; }

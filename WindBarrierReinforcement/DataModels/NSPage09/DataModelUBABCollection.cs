@@ -12,7 +12,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
 {
     public class DataModelUBABCollection
     {
-        [SaveKeyCode(CollectionElementType = typeof(DataModelUBAB), KeyCode = "Collection", SaveDataType = SaveDataType.ListAndNavigation)]
+        [SaveKeyCode(CollectionElementType = typeof(DataModelUBAB), KeyCode = "Collection", SaveDataType = SaveDataType.ListOfClass)]
         public ObservableCollection<DataModelUBAB> Collection { get; set; }
 
         [SaveKeyCode(CollectionElementType = typeof(int), KeyCode = "DADADA", SaveDataType = SaveDataType.List)]

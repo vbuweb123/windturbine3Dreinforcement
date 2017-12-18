@@ -46,7 +46,7 @@ namespace WindBarrierReinforcement.Writer
         {
             foreach (KeyValuePair<SaveKeyCodeAttribute, object> keyValuePair in dictionary)
             {
-                if (keyValuePair.Key.SaveDataType == SaveDataType.Navigation)
+                if (keyValuePair.Key.SaveDataType == SaveDataType.Class)
                 {
                     XmlElement children = xmlDocument.CreateElement(keyValuePair.Key.KeyCode);
                     EvaluateDictionary((KeyCodeDictionary)(keyValuePair.Value), xmlDocument, children);
@@ -62,7 +62,7 @@ namespace WindBarrierReinforcement.Writer
 
                     Node.AppendChild(children);
                 }
-                else if (keyValuePair.Key.SaveDataType == SaveDataType.ListAndNavigation)
+                else if (keyValuePair.Key.SaveDataType == SaveDataType.ListOfClass)
                 {
                     /*
                          ListNavigation translates like:
@@ -180,7 +180,7 @@ namespace WindBarrierReinforcement.Writer
                 SaveKeyCodeAttribute Attribute = propertyInfo.GetCustomAttribute<SaveKeyCodeAttribute>() as SaveKeyCodeAttribute;
                 if (Attribute != null)
                 {
-                    if (Attribute.SaveDataType == SaveDataType.Navigation)
+                    if (Attribute.SaveDataType == SaveDataType.Class)
                     {
                         /*
                          PropertyWithNavigation =>
@@ -189,7 +189,7 @@ namespace WindBarrierReinforcement.Writer
                         object returnData = CollectGlobalDataModel(propertyInfo.GetValue(Data));
                         dictionary.Add(Attribute, returnData);
                     }
-                    else if (Attribute.SaveDataType == SaveDataType.ListAndNavigation)
+                    else if (Attribute.SaveDataType == SaveDataType.ListOfClass)
                     {
                         //convert current object to list
                         IEnumerable<object> list = (IEnumerable<object>)propertyInfo.GetValue(Data);

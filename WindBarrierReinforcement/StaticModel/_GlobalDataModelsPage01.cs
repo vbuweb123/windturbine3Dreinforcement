@@ -20,13 +20,13 @@ namespace WindBarrierReinforcement.StaticModel
     {
         private class _GlobalDataModelsPage01 : IGlobalDataModelsPage01
         {
-            [SaveKeyCode(KeyCode = "GlobalFormwork", SaveDataType = SaveDataType.Navigation)]
+            [SaveKeyCode(KeyCode = "DataModel_Global_Formwork", SaveDataType = SaveDataType.Class)]
             public DataModel_Global_Formwork DataModel_Global_Formwork { get; private set; }
 
-            [SaveKeyCode(KeyCode = "GlobalCoordination", SaveDataType = SaveDataType.Navigation)]
+            [SaveKeyCode(KeyCode = "DataModel_Global_Coordinations_GroundPoint", SaveDataType = SaveDataType.Class)]
             public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint{ get; private set; }
 
-            [SaveKeyCode(KeyCode = "GlobalMaterials", SaveDataType = SaveDataType.Navigation)]
+            [SaveKeyCode(KeyCode = "DataModel_Global_Materials", SaveDataType = SaveDataType.Class)]
             public DataModel_Global_Materials DataModel_Global_Materials { get; private set; }
 
             public _GlobalDataModelsPage01(GlobalDataModels global)

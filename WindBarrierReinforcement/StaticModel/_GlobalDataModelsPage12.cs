@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.DataModels.NSPage12;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.StaticModel
 {
@@ -19,6 +20,7 @@ namespace WindBarrierReinforcement.StaticModel
     {
         private class _GlobalDataModelsPage12 : IGlobalDataModelsPage12
         {
+            [SaveKeyCode(KeyCode = "DataModelShapesCollection", CollectionElementType = typeof(DataModelBSShapes), SaveDataType = SaveDataType.ListOfClass)]
             public ObservableCollection<DataModelBSShapes> DataModelShapesCollection { get; private set; }
 
             //TODO : Helper function to be made global
