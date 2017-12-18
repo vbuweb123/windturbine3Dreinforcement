@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 using WindBarrierReinforcement.Common.Attributes;
 using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.StaticModel
 {
+    [XmlRoot("GlobalData")]
     public partial class GlobalDataModels
     {
         [SaveKeyCode(KeyCode = "GDMPage01", SaveDataType = SaveDataType.Navigation)]
+        [XmlElement("Page01", Type = typeof(_GlobalDataModelsPage01), DataType = "WindBarrierReinforcement.StaticModel.GlobalDataModels._GlobalDataModelsPage01")]
         public IGlobalDataModelsPage01 GDMPage01 { get; private set; }
 
         public IGlobalDataModelsPage02 GDMPage02 { get; private set; }

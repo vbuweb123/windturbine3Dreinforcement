@@ -10,6 +10,7 @@ using WindBarrierReinforcement.Common.Attributes;
 using System.Xml;
 using WindBarrierReinforcement.StaticModel;
 using System.Collections;
+using System.Xml.Serialization;
 
 namespace WindBarrierReinforcement.Writer
 {

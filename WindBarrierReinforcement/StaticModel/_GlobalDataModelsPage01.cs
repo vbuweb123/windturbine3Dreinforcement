@@ -22,9 +22,11 @@ namespace WindBarrierReinforcement.StaticModel
         {
             [SaveKeyCode(KeyCode = "GlobalFormwork", SaveDataType = SaveDataType.Navigation)]
             public DataModel_Global_Formwork DataModel_Global_Formwork { get; private set; }
-            //[SaveKeyCode(KeyCode = "GlobalCoordination")]
+
+            [SaveKeyCode(KeyCode = "GlobalCoordination", SaveDataType = SaveDataType.Navigation)]
             public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint{ get; private set; }
-            //[SaveKeyCode(KeyCode = "GlobalMaterials")]
+
+            [SaveKeyCode(KeyCode = "GlobalMaterials", SaveDataType = SaveDataType.Navigation)]
             public DataModel_Global_Materials DataModel_Global_Materials { get; private set; }
 
             public _GlobalDataModelsPage01(GlobalDataModels global)
