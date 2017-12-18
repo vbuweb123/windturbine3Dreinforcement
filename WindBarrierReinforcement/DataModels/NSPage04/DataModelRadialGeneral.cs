@@ -21,7 +21,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int minSpaceField;
-        [SaveKeyCode(KeyCode = "MinCore")]
+        [SaveKeyCode(KeyCode = "MinSpaceField")]
         public int MinSpaceField
         {
             get { return minSpaceField; }
@@ -29,7 +29,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int minSpaceCenter;
-        [SaveKeyCode(KeyCode = "MinCore")]
+        [SaveKeyCode(KeyCode = "MinSpaceCenter")]
         public int MinSpaceCenter
         {
             get { return minSpaceCenter; }

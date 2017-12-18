@@ -334,7 +334,8 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
             });
 
             global.EvtHandler.AddPostEvtAction(() => {
-                this.PR_StirrupRebarDiam_Layer1 = 0;               
+                this.PR_StirrupRebarDiam_Layer1 = 0;
+                this.Forces = "";
             });
             global.EvtHandler.AddPostEvtAction(() => {
                 this.PR_LongRebarDiam = 0;

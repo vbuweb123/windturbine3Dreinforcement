@@ -34,7 +34,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// UI_TextBox_DiameterAnchorINT
         /// </summary>
         private int diameterAnchorInt;
-        [SaveKeyCode(KeyCode = "DiameterAnchor")]
+        [SaveKeyCode(KeyCode = "DiameterAnchorInt")]
         public int DiameterAnchorInt
         {
             //B3

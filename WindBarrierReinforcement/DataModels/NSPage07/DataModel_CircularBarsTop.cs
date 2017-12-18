@@ -95,12 +95,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         {
             global.EvtHandler.AddPostEvtAction(() => {
                 this.SelectedIndexDiameter = 0;
+                this.Groups = "";
             });
             global.EvtHandler.AddPostEvtAction(() => {
                 this.SelectedIndexOption = 0;
             });
-            
-
         }
 
     }

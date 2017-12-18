@@ -20,19 +20,19 @@ namespace WindBarrierReinforcement.StaticModel
     public partial class GlobalDataModels {
         private class _GlobalDataModelsPage04:IGlobalDataModelsPage04
         {
-            [SaveKeyCode(KeyCode = "DataModelCircularGeneral ", SaveDataType = SaveDataType.Class)]
+            [SaveKeyCode(KeyCode = "DataModelCircularGeneral", SaveDataType = SaveDataType.Class)]
             public DataModelCircularGeneral DataModelCircularGeneral { get; private set; }
 
-            [SaveKeyCode(KeyCode = "DataModelRadial1 ", SaveDataType = SaveDataType.Class)]
+            [SaveKeyCode(KeyCode = "DataModelRadial1", SaveDataType = SaveDataType.Class)]
             public DataModelRadial1 DataModelRadial1 { get; private set; }
 
-            [SaveKeyCode(KeyCode = "DataModelRadial2 ", SaveDataType = SaveDataType.Class)]
+            [SaveKeyCode(KeyCode = "DataModelRadial2", SaveDataType = SaveDataType.Class)]
             public DataModelRadial2 DataModelRadial2 { get; private set; }
 
-            [SaveKeyCode(KeyCode = "DataModelRadialGeneral ", SaveDataType = SaveDataType.Class)]
+            [SaveKeyCode(KeyCode = "DataModelRadialGeneral", SaveDataType = SaveDataType.Class)]
             public DataModelRadialGeneral DataModelRadialGeneral { get;private set; }
 
-            [SaveKeyCode(KeyCode = "DataModelCircular_ZoneCollection ", SaveDataType = SaveDataType.Class)]
+            [SaveKeyCode(KeyCode = "DataModelCircular_ZoneCollection", SaveDataType = SaveDataType.Class)]
             public DataModelCircular_ZoneCollection DataModelCircular_ZoneCollection { get; private set; }
 
             public _GlobalDataModelsPage04(GlobalDataModels global)
