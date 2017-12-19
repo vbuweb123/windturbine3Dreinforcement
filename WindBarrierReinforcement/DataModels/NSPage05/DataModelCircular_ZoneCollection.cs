@@ -24,21 +24,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
 
             Zones = new ObservableCollection<DataModelCircular_Zone>();
 
-            //Zones.CollectionChanged += (o, e) => {
-            //    for (var i = 0; i < Count; i++)
-            //    {
-            //        Zones[i].ListIndex = i;
-            //        var cc = Zones[i].ListIndex;
-            //        if (i == 0)
-            //            Zones[i].Position = EZonePosition.Start;
-            //        else if (i == Count - 1)
-            //            Zones[i].Position = EZonePosition.End;
-            //        else
-            //            Zones[i].Position = EZonePosition.Middle;
-            //    }
-            //    UpdateIndices();
-            //};
-
             global.EvtHandler.Add(() => {
                 Zones.CollectionChanged += (o, e) =>
                 {
@@ -57,6 +42,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                     UpdateIndices();
                     foreach (var item in Zones)
                     {
+                        item.addEvents();
+
                         item.Set_DistanceFromTop();
                         item.Set_NoOfBars();
                         item.Set_OffsetFromEdge();
@@ -91,11 +78,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
             Zones.Add(new DataModelCircular_Zone(_globalDataModels));
         }
 
-        //public void AddBeforeLast()
-        //{
-        //    Zones.Insert(Count - 1, new DataModelCircular_Zone(_globalDataModels));
-        //}
-
+    
         public bool Remove()
         {
             if (Zones.Count > 2)
@@ -105,15 +88,5 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
             }
             return false;
         }
-
-        //public bool RemoveBeforeLast()
-        //{
-        //    if (Zones.Count > 2)
-        //    {
-        //        Zones.RemoveAt(Zones.Count - 2);
-        //        return true;
-        //    }
-        //    return false;
-        //}
     }
 }
