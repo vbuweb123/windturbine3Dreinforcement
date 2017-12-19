@@ -287,7 +287,7 @@ namespace WindBarrierReinforcement.StaticModel
 
                 GDMPage08.DataModel_ARIntCircularTop.SelectedIndexDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D12.ToString());
                 GDMPage08.DataModel_ARIntCircularTop.Spacing = 100;
-                GDMPage08.DataModel_ARIntCircularTop.SelectedIndexDiameter = 12;
+               
                 GDMPage08.DataModel_ARIntCircularTop.MinBarLength = 500;
                 GDMPage08.DataModel_ARIntCircularTop.MaxBarLength = 8000;
                 GDMPage08.DataModel_ARIntCircularTop.StartExtraOffset = 20;

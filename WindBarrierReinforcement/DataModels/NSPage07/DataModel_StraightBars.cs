@@ -23,7 +23,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
-            set { selectedIndexOption = value; NotifyPropertyChanged("SelectedIndexOption"); NotifyPropertyChanged("SpacingEnabled"); }
+            set
+            {
+                selectedIndexOption = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_StraightBars>(x => x.SelectedIndexOption));
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_StraightBars>(x => x.CurrentOption));
+            }
         }
 
         /// <summary>
@@ -46,8 +50,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             set { spacing = value; NotifyPropertyChanged("Spacing"); }
         }
 
-        public string SpacingEnabled => (SelectedIndexOption == 0) ? "Disabled" : "Enabled";
-        
+        public string CurrentOption => (SelectedIndexOption == 0) ? Enum.GetName(typeof(EOption), EOption.NoOfBars) : Enum.GetName(typeof(EOption), EOption.Spacing);
+
         /// <summary>
         /// NoOfBars
         /// </summary>

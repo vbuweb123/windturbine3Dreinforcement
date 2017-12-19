@@ -14,7 +14,4 @@ namespace WindBarrierReinforcement.Common.Eng
         [DisplayByResourceKey(ResourceKey = "EOption_Spacing")]
         Spacing
     };
-  
-
-
-}
+  }
