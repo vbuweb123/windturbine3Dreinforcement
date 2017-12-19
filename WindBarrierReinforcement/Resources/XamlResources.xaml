@@ -140,44 +140,44 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="TextBoxTagTrigger_NoOFBars_SpacingSelectCurrent" TargetType="TextBox">
+    <Style x:Key="TextBoxTagTrigger_CBES_Spacing" TargetType="TextBox">
         <Style.Triggers>
-            <Trigger Property="Tag" Value="NoOfBars">
+            <Trigger Property="Tag" Value="NoOfBars_Spacing">
                 <Setter Property="IsEnabled" Value="True"></Setter>
             </Trigger>
-            <Trigger Property="Tag" Value="Length">
+            <Trigger Property="Tag" Value="Spacing_Length">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars_Length">
                 <Setter Property="IsEnabled" Value="False"></Setter>
             </Trigger>
-            <Trigger Property="Tag" Value="Spacing">
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBoxTagTrigger_CBES_Length" TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger Property="Tag" Value="NoOfBars_Spacing">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Spacing_Length">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars_Length">
                 <Setter Property="IsEnabled" Value="True"></Setter>
             </Trigger>
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="TextBoxTagTrigger_Spacing_LengthSelectCurrent" TargetType="TextBox">
+    <Style x:Key="TextBoxTagTrigger_CBES_NoOfBars" TargetType="TextBox">
         <Style.Triggers>
-            <Trigger Property="Tag" Value="NoOfBars">
+            <Trigger Property="Tag" Value="NoOfBars_Spacing">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Spacing_Length">
                 <Setter Property="IsEnabled" Value="False"></Setter>
             </Trigger>
-            <Trigger Property="Tag" Value="Length">
+            <Trigger Property="Tag" Value="NoOfBars_Length">
                 <Setter Property="IsEnabled" Value="True"></Setter>
-            </Trigger>
-            <Trigger Property="Tag" Value="Spacing">
-                <Setter Property="IsEnabled" Value="True"></Setter>
-            </Trigger>
-        </Style.Triggers>
-    </Style>
-
-    <Style x:Key="TextBoxTagTrigger_NoOfBars_LengthSelectCurrent" TargetType="TextBox">
-        <Style.Triggers>
-            <Trigger Property="Tag" Value="NoOfBars">
-                <Setter Property="IsEnabled" Value="True"></Setter>
-            </Trigger>
-            <Trigger Property="Tag" Value="Length">
-                <Setter Property="IsEnabled" Value="True"></Setter>
-            </Trigger>
-            <Trigger Property="Tag" Value="Spacing">
-                <Setter Property="IsEnabled" Value="False"></Setter>
             </Trigger>
         </Style.Triggers>
     </Style>

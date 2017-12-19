@@ -52,11 +52,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
                 switch (SelectedIndexOption)
                 {
                     case 0:
-                        return Enum.GetName(typeof(EOptionsCBES), EOptionsCBES.NoOfBars_Length);
+                        return Enum.GetName(typeof(EOptionsCBES), EOptionsCBES.NoOfBars_Spacing);
                     case 1:
-                        return "";
+                        return Enum.GetName(typeof(EOptionsCBES), EOptionsCBES.Spacing_Length);
                     case 2:
-                        return "";
+                        return Enum.GetName(typeof(EOptionsCBES), EOptionsCBES.NoOfBars_Length);
                     default:
                         throw new Exception("Unknown Option selected");
                 }
