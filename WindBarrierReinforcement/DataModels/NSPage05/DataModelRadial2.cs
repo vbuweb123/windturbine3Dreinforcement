@@ -212,7 +212,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         {
             this.global = global;
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -235,7 +235,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                         Set_StartOffsetAngle();
                 };
             });
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage04.DataModelRadialGeneral.PropertyChanged += (o, e) =>
                 {
@@ -245,7 +245,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                         Set_ThirdDiameterOffsetFromCenter();
                 };
             });
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage05.DataModelRadial1.PropertyChanged += (o, e) =>
                 {
@@ -257,7 +257,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                         Set_Overlapp3rdDiameter();
                 };
             });
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 global.GDMPage04.DataModelRadial2.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial2>(x => x.LargeDiameterOffsetFromCenter))  //
@@ -265,7 +265,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                 };
             });
 
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage01.DataModel_Global_Formwork>(x => x.DTowerBase))

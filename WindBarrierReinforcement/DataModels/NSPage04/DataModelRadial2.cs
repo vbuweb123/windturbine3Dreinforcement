@@ -212,7 +212,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         {
             this.global = global;
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -232,7 +232,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                         Set_StartOffsetAngle();
                 };
             });
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage04.DataModelRadialGeneral.PropertyChanged += (o, e) =>
                 {
@@ -242,7 +242,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                         Set_ThirdDiameterOffsetFromCenter();
                 };
             });
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage04.DataModelRadial1.PropertyChanged += (o, e) =>
                 {
@@ -254,7 +254,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                         Set_Overlapp3rdDiameter();
                 };
             });
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                global.GDMPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
                 {

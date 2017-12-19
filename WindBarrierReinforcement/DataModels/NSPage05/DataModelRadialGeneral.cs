@@ -51,7 +51,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         {
             this.global = global;
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -61,7 +61,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                 };
             });
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage04.DataModelRadial2.PropertyChanged += (o, e) =>
                 {
@@ -72,7 +72,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                 };
             });
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
                 {

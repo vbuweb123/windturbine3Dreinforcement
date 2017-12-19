@@ -100,10 +100,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
 
         public DataModel_StraightBars(GlobalDataModels global)
         {
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameter = 0;
             });
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexOption = 0;
             });
         }

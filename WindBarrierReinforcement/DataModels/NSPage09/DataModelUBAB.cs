@@ -111,14 +111,14 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
 
         public DataModelUBAB(GlobalDataModels global)
         {
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 this.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelUBAB>(x => x.ExteriorHalfLength))
                         Set_InteriorHalfLength();
                 };
             });
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameter = 0;
             });
         }

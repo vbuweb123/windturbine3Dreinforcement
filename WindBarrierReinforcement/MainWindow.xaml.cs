@@ -103,7 +103,7 @@ namespace WindBarrierReinforcement
             Global = new GlobalDataModels();
 
             MenuPageProvider = new MenuPageProvider(Global);
-            Global.EvtHandler.PopulateData();
+            Global.EvtHandler.CallPopulateDataAction();
             InitializeComponent();
             InitializeMenuClicks();
             InitializeMenuItemHeaders();

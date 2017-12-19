@@ -146,7 +146,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
 
         public DataModel_ARIntUBars(GlobalDataModels global)
         {
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 global.GDMPage08.DataModel_ARExtUBars.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.TopOffset))
@@ -185,10 +185,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
                     }
                 };
             });
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameterL = 0;
             });
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameterS = 0;
             });
         }

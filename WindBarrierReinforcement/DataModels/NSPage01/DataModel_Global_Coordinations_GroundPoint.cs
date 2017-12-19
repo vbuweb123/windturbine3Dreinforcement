@@ -64,14 +64,14 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         {
             this.global = global;
 
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 this.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Coordinations_GroundPoint>(x => x.CoordinationZ))
                         Set_FoundationPointZ();
                 };
             });
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DeptFoundation)

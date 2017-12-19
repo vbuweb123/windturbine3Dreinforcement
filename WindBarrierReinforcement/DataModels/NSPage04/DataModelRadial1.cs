@@ -213,7 +213,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         {
             this.global = global;
 
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 this.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.LargeDiamNoOfBars))
@@ -232,7 +232,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                         Set_StartOffsetAngle();
                 };
             });
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 global.GDMPage04.DataModelRadialGeneral.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadialGeneral>(x => x.MinCore))
@@ -241,7 +241,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                         Set_ThirdDiameterOffsetFromCenter();
                 };
             });
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 global.GDMPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage02.DataModel_Anchor>(x => x.DiameterAnchor)

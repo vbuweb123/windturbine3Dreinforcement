@@ -219,7 +219,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         {
             this.global = global;
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -235,7 +235,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
                 };
             });
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
                 {

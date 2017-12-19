@@ -152,7 +152,6 @@ namespace WindBarrierReinforcement.Writer
             xmlTextWriter.Close();
 
             fs.Close();
-
         }
 
         private static KeyCodeDictionary CollectGlobalDataModel(object Data)

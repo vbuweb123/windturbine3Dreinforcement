@@ -145,11 +145,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
 
         public DataModel_ARIntCircularLateral(GlobalDataModels global)
         {
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameter = 0;
             });
             
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                     this.SelectedIndexOption = 0;
             });
         }

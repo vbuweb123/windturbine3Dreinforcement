@@ -255,7 +255,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         {
 
             this.global = global;
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 this.PropertyChanged += (o, e) => {
                     //Depth Anchor
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.Peshrinkhoseheigth)
@@ -286,7 +286,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
                 };
             });
 
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 this.global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) => {
                     //DepthAnchorBottom
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))
@@ -298,7 +298,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
                 };
             });
 
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 global.GDMPage11.DataModelMaterialsGrouting.PropertyChanged += (o, e) => {
                     //MaterialGrout
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage11.DataModelMaterials>(x => x.SelectedIndexConcreteQuality))

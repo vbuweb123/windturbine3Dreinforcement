@@ -24,7 +24,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
 
             Zones = new ObservableCollection<DataModelCircular_Zone>();
 
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 Zones.CollectionChanged += (o, e) =>
                 {
                     for (var i = 0; i < Count; i++)
@@ -54,7 +54,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                 };
             });
 
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 Zones.Add(new DataModelCircular_Zone(global));
                 Zones.Add(new DataModelCircular_Zone(global));
             });

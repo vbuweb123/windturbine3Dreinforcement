@@ -298,7 +298,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         {
             this.global = global;            
 
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 this.PropertyChanged += (o, e) =>
                 {
                     //Depth Pile
@@ -313,7 +313,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
                 };              
             });
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage01.DataModel_Global_Coordinations_GroundPoint.PropertyChanged += (o, e) =>
                 {
@@ -323,7 +323,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
                 };
             });
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage11.DataModelMaterialsFoundationPile.PropertyChanged += (o, e) =>
                 {
@@ -333,15 +333,15 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
                 };
             });
 
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.PR_StirrupRebarDiam_Layer1 = 0;
                 this.Forces = "";
             });
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.PR_LongRebarDiam = 0;
             });
            
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.PR_Ureinforcement_RebarDiam = 0;
             });            
         }

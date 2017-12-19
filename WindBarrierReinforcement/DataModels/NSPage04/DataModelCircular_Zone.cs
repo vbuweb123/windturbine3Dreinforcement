@@ -289,13 +289,20 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             {
                 case EZonePosition.Start:
                     //keep it dynamic. Leave second zone here not in constructor
-                    IDataModelCircularZone SecondZone = globalData.GDMPage04.DataModelCircular_ZoneCollection.Get(1);
-                    ZoneLength = RadiusGiven - SecondZone.RadiusGiven;
+                    if (globalData.GDMPage04.DataModelCircular_ZoneCollection.Count > 1)
+                    {
+                        IDataModelCircularZone SecondZone = globalData.GDMPage04.DataModelCircular_ZoneCollection.Get(1);
+                        ZoneLength = RadiusGiven - SecondZone.RadiusGiven;
+                    }
                     break;
                 case EZonePosition.Middle:
                     // do not 
-                    IDataModelCircularZone nextZone = globalData.GDMPage04.DataModelCircular_ZoneCollection.Get(ListIndex + 1);
-                    ZoneLength = RadiusGiven - nextZone.RadiusGiven;
+                    if (globalData.GDMPage04.DataModelCircular_ZoneCollection.Count > ListIndex + 1)
+                    {
+                        IDataModelCircularZone nextZone = globalData.GDMPage04.DataModelCircular_ZoneCollection.Get(ListIndex + 1);
+                        ZoneLength = RadiusGiven - nextZone.RadiusGiven;
+                    }
+                      
                     break;
                 case EZonePosition.End:
                     ZoneLength = 0;
@@ -308,12 +315,19 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             switch (Position)
             {
                 case EZonePosition.Start:
-                    IDataModelCircularZone SecondZone = globalData.GDMPage04.DataModelCircular_ZoneCollection.Get(1);
-                    ZoneInterDistance = Math.Min(SpacingValue, SecondZone.SpacingValue);
+                    if (globalData.GDMPage04.DataModelCircular_ZoneCollection.Count > 1)
+                    {
+                        IDataModelCircularZone SecondZone = globalData.GDMPage04.DataModelCircular_ZoneCollection.Get(1);
+                        ZoneInterDistance = Math.Min(SpacingValue, SecondZone.SpacingValue);
+                    }
                     break;
                 case EZonePosition.Middle:
-                    IDataModelCircularZone nextZone = globalData.GDMPage04.DataModelCircular_ZoneCollection.Get(ListIndex + 1);
-                    ZoneInterDistance = Math.Min(SpacingValue, nextZone.SpacingValue);
+                    if (globalData.GDMPage04.DataModelCircular_ZoneCollection.Count > ListIndex + 1)
+                    {
+                        IDataModelCircularZone nextZone = globalData.GDMPage04.DataModelCircular_ZoneCollection.Get(ListIndex + 1);
+                        ZoneInterDistance = Math.Min(SpacingValue, nextZone.SpacingValue);
+                    }
+                       
                     break;
                 case EZonePosition.End:
                     ZoneInterDistance = 0;

@@ -150,10 +150,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
 
         public DataModel_ARExtUBars(GlobalDataModels global)
         {
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameterL = 0;
             });
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameterS = 0;
             });          
 

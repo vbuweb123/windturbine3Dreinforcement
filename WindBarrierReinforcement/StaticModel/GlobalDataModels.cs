@@ -328,8 +328,8 @@ namespace WindBarrierReinforcement.StaticModel
                 GDMPage10.DataModel_CHR_Zones.EdgeOffset1 = 300;
                 GDMPage10.DataModel_CHR_Zones.EdgeOffset2 = 1000;
             });
-            evtHandler.RegisterAll(); // hide this method to the outside world to avoind caling it from other places
-            evtHandler.CallPostEvtActions();
+            evtHandler.RegisterPostBuildEvents(); // hide this method to the outside world to avoind caling it from other places
+            evtHandler.CallPostEventsRegisterAction();
             //evtHandler.PopulateData(); // called from MainWindows.cs because PopulateData maycontain functions defined in Pages. Pages are loaded after Global Has finished loading.
         }
     }

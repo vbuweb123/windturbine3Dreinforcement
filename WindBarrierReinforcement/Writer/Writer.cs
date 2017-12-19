@@ -11,6 +11,7 @@ using System.Xml;
 using WindBarrierReinforcement.StaticModel;
 using System.Collections;
 using System.Xml.Serialization;
+using System.Collections.ObjectModel;
 
 namespace WindBarrierReinforcement.Writer
 {
@@ -42,8 +43,6 @@ namespace WindBarrierReinforcement.Writer
             doc.LoadXml(xml);
 
             EvaluateOpenedXML(doc);
-
-            var a = 1;
         }
 
         public static void EvaluateOpenedXML(XmlDocument xmlDocument)
@@ -54,6 +53,8 @@ namespace WindBarrierReinforcement.Writer
             KeyCodeDictionary dictionary = new KeyCodeDictionary();
 
             GlobalDataModels globalDataModels = Registry.Demand<GlobalDataModels>();
+
+            globalDataModels.GDMPage05.DataModelCircular_ZoneCollection.Add();
 
             PropertyInfo[] propertiesInfo = typeof(GlobalDataModels).GetProperties(BindingFlags.Public | BindingFlags.Instance);
             foreach (PropertyInfo pinfo in propertiesInfo)
@@ -98,16 +99,23 @@ namespace WindBarrierReinforcement.Writer
             }
             else if (SaveDataType == SaveDataType.ListOfClass)
             {
-                IList collection = (IList)pInfo.GetValue(Context);
+                var data = pInfo.GetValue(Context);
+                IList ocollection = (IList)data;
                 //because we are working with the existing global - reset the collection
-                collection.Clear();
+                ocollection.Clear();
                 //iterate through items of collection
-                foreach (XmlElement xmlItem in element.ChildNodes)
+                for (var i = 0; i < element.ChildNodes.Count; i++)
                 {
                     var classItem = SolveConstructor(CollectionType);
                     if (classItem == null) throw new Exception(string.Format("Unable to create class item {0}", CollectionType.FullName));
-                   
 
+                    ocollection.Add(classItem);
+                }
+                int index = 0;
+                foreach (XmlElement xmlItem in element.ChildNodes)
+                {
+                    var classItem = ocollection[index];
+                    index++;
                     //iterate through properties of this class
                     PropertyInfo[] propertiesInfo = classItem.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
 
@@ -115,9 +123,8 @@ namespace WindBarrierReinforcement.Writer
                     {
                         Match(pInfoInContext, xmlItem, classItem);
                     }
-
-                    collection.Add(classItem);
                 }
+
             }
             else if (SaveDataType == SaveDataType.List)
             {
@@ -136,7 +143,6 @@ namespace WindBarrierReinforcement.Writer
                 object solvedValue = TrySolveConverter(value, pInfo.PropertyType);
                 if (solvedValue == null) throw new Exception("Unable to solve request");
                 pInfo.SetValue(Context, solvedValue);
-                var b = 1;
             }
         }
         public static object TrySolveConverter(string value, Type Req)
@@ -158,7 +164,7 @@ namespace WindBarrierReinforcement.Writer
                 bool.TryParse(value, out bool result);
                 return result;
             }
-            
+
             return null;
         }
         public static object SolveConstructor(Type type)

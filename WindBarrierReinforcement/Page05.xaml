@@ -496,62 +496,69 @@
                     <!--grid Column 2- will always be DataModelCircular_ZoneBeginning -->
 
                     <Grid Name="UI_Grid_Col1" Grid.Column="1">
-                        <Label Content="__Zone 1" Margin="5,5,5,0"/>
-                        <TextBlock Text="{Binding ListIndex, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                        <Grid Name="UI_Grid_ZonesContainer">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid>
+                                <Label Content="__Zone 1" Margin="5,5,5,0"/>
+                                <TextBlock Text="{Binding ListIndex, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
                                    Margin="5,305,4.8,213.4"/>
-                        <!--Name is important for switch statement-->
-                        <TextBox Name="ZoneOfBars"
-                            Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
-                            Template="{StaticResource AppTextBoxGeneric}"                 
-                            HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
-                            Margin="5,35,5,0"  Height="25" Width="75">
-                        </TextBox>
-                        <TextBox Name="SpacingValue"
-                            Text="{Binding SpacingValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
-                            Template="{StaticResource AppTextBoxGeneric}"                 
-                            HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
-                            Margin="5,65,5,0"  Height="25" Width="75">
-                        </TextBox>
-                        <ComboBox Name="Diameter"                 
-                            ItemsSource="{Binding DiameterNames}"
-                            SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                            Margin="5,95,5,0"  Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                        <TextBox Name="ZoneLength"
-                            Text="{Binding ZoneLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
-                            Template="{StaticResource AppTextBoxGeneric}"              
-                            HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
-                            Margin="5,125,5,0"  Height="25" Width="75">
-                        </TextBox>
-                        <TextBox Name="ZoneInterDistance"
-                            Text="{Binding ZoneInterDistance, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"  
-                            Template="{StaticResource AppTextBoxGeneric}"         
-                            HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
-                            Margin="5,155,5,0"  Height="25" Width="75">
-                        </TextBox>
-                        <TextBox Name="RadiusGiven"
-                            Text="{Binding RadiusGiven, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
-                            Template="{StaticResource AppTextBoxGeneric}"             
-                            HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
-                            Margin="5,185,5,0"  Height="25" Width="75">
-                        </TextBox>
-                        <TextBox Name="DistanceFromBottom"
-                            Text="{Binding DistanceFromBottom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
-                            Template="{StaticResource AppTextBoxGeneric}"             
-                            HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
-                            Margin="5,215,5,0"  Height="25" Width="75">
-                        </TextBox>
-                        <TextBox Name="OffsetFromEdge"
-                            Text="{Binding OffsetFromEdge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
-                            Template="{StaticResource AppTextBoxGeneric}"                 
-                            HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
-                            Margin="5,245,5,0"  Height="25" Width="75">
-                        </TextBox>
-                        <TextBox Name="DistributionBars"
-                            Text="{Binding DistributionBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
-                            Template="{StaticResource AppTextBoxGeneric}"                 
-                            HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
-                            Margin="5,275,5,0"  Height="25" Width="75">
-                        </TextBox>
+                                <!--Name is important for switch statement-->
+                                <TextBox Name="ZoneOfBars"
+                                Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                                Template="{StaticResource AppTextBoxGeneric}"                 
+                                HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                                Margin="5,35,5,0"  Height="25" Width="75">
+                                </TextBox>
+                                <TextBox Name="SpacingValue"
+                                Text="{Binding SpacingValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                                Template="{StaticResource AppTextBoxGeneric}"                 
+                                HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                                Margin="5,65,5,0"  Height="25" Width="75">
+                                </TextBox>
+                                <ComboBox Name="Diameter"                 
+                                ItemsSource="{Binding DiameterNames}"
+                                SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                Margin="5,95,5,0"  Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                <TextBox Name="ZoneLength"
+                                Text="{Binding ZoneLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                                Template="{StaticResource AppTextBoxGeneric}"              
+                                HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                                Margin="5,125,5,0"  Height="25" Width="75">
+                                </TextBox>
+                                <TextBox Name="ZoneInterDistance"
+                                Text="{Binding ZoneInterDistance, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"  
+                                Template="{StaticResource AppTextBoxGeneric}"         
+                                HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                                Margin="5,155,5,0"  Height="25" Width="75">
+                                </TextBox>
+                                <TextBox Name="RadiusGiven"
+                                Text="{Binding RadiusGiven, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                                Template="{StaticResource AppTextBoxGeneric}"             
+                                HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                                Margin="5,185,5,0"  Height="25" Width="75">
+                                </TextBox>
+                                <TextBox Name="DistanceFromBottom"
+                                Text="{Binding DistanceFromBottom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                                Template="{StaticResource AppTextBoxGeneric}"             
+                                HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                                Margin="5,215,5,0"  Height="25" Width="75">
+                                </TextBox>
+                                <TextBox Name="OffsetFromEdge"
+                                Text="{Binding OffsetFromEdge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                                Template="{StaticResource AppTextBoxGeneric}"                 
+                                HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                                Margin="5,245,5,0"  Height="25" Width="75">
+                                </TextBox>
+                                <TextBox Name="DistributionBars"
+                                Text="{Binding DistributionBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                                Template="{StaticResource AppTextBoxGeneric}"                 
+                                HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                                Margin="5,275,5,0"  Height="25" Width="75">
+                                </TextBox>
+                            </Grid>
+                        </Grid>
                     </Grid>
                 </Grid>
             </TabItem>

@@ -98,11 +98,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
 
         public DataModel_CircularBarsTop(GlobalDataModels global)
         {
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameter = 0;
                 this.Groups = "";
             });
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexOption = 0;
             });
         }

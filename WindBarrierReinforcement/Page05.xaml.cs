@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,16 +48,12 @@ namespace WindBarrierReinforcement
 
             TemplateGrid = CloneAndRemoveTemplateGrid();
 
-            //for prepopulated data - add ui grids
-            //foreach (var item in DataModelCircular_ZoneCollection.Zones)
-            //{
-            //    AddGridAndZone();
-            //}
-            global.EvtHandler.AddPostEvtAction(() => {
-                DataModelCircular_ZoneCollection.Zones.CollectionChanged += (o, e) => {
-                    int gridColumnsCount = UI_Grid_CircularZones.Children.Count; // grid always has extra
-                    int dataModelCount = DataModelCircular_ZoneCollection.Count;
 
+            global.EvtHandler.AddPopulateDataAction(() => {
+                DataModelCircular_ZoneCollection.Zones.CollectionChanged += (o, e) 
+                => {
+                    RecalculateGridSetup();
+                    EvaluateUIEnabled();
                 };
             });
             CultureRenamer.Rename(UI_Grid_MasterGrid);
@@ -65,22 +62,22 @@ namespace WindBarrierReinforcement
                 Button_Click(null, null);
                 Button_Click(null, null);
 
-                DataModelCircular_ZoneCollection.Zones[0].SpacingValue = 200;
+                DataModelCircular_ZoneCollection.Zones[0].SpacingValue = 175;
                 DataModelCircular_ZoneCollection.Zones[0].SelectedIndexDiameter =
                 Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
 
-                DataModelCircular_ZoneCollection.Zones[1].SpacingValue = 150;
+                DataModelCircular_ZoneCollection.Zones[1].SpacingValue = 125;
                 DataModelCircular_ZoneCollection.Zones[1].SelectedIndexDiameter =
                 Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
-                DataModelCircular_ZoneCollection.Zones[1].RadiusGiven = 8250;
+                DataModelCircular_ZoneCollection.Zones[1].RadiusGiven = 6540;
 
-                DataModelCircular_ZoneCollection.Zones[2].SpacingValue = 125;
+                DataModelCircular_ZoneCollection.Zones[2].SpacingValue = 0;
                 DataModelCircular_ZoneCollection.Zones[2].SelectedIndexDiameter =
                 Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
-                DataModelCircular_ZoneCollection.Zones[2].RadiusGiven = 6540;
+                DataModelCircular_ZoneCollection.Zones[2].RadiusGiven = 1550;
 
                 DataModelCircular_ZoneCollection.Zones[3].SpacingValue = 0;
-                DataModelCircular_ZoneCollection.Zones[3].RadiusGiven = 1550;
+                //DataModelCircular_ZoneCollection.Zones[3].RadiusGiven = 1550;
             });
         }
 
@@ -174,10 +171,14 @@ namespace WindBarrierReinforcement
 
         private Grid CloneAndRemoveTemplateGrid()
         {
-            UIElementCollection collection = UI_Grid_Col1.Children;
+            IEnumerator enumerator = UI_Grid_ZonesContainer.Children.GetEnumerator();
+            enumerator.MoveNext();
+
+            Grid sourceGrid = (Grid)enumerator.Current;
+
             Grid grid = new Grid();
 
-            foreach (var element in collection)
+            foreach (var element in sourceGrid.Children)
             {
                 if (element is TextBox)
                     grid.Children.Add(CloneTextBox((TextBox)element, true));
@@ -186,8 +187,8 @@ namespace WindBarrierReinforcement
                 if (element is TextBlock)
                     grid.Children.Add(CloneTextBlock((TextBlock)element));
             }
-            UI_Grid_CircularZones.Children.RemoveAt(UI_Grid_CircularZones.Children.Count - 1);
-            UI_Grid_CircularZones.ColumnDefinitions.RemoveAt(UI_Grid_CircularZones.ColumnDefinitions.Count - 1);
+            UI_Grid_ZonesContainer.Children.RemoveAt(0);
+            UI_Grid_ZonesContainer.ColumnDefinitions.RemoveAt(0);
             return grid;
         }
 
@@ -210,22 +211,47 @@ namespace WindBarrierReinforcement
 
         private void RecalculateGridSetup()
         {
-            for (var i = 1; i < UI_Grid_CircularZones.Children.Count; i++)
+            int gridCount = UI_Grid_ZonesContainer.Children.Count;
+            int modelCount = DataModelCircular_ZoneCollection.Count;
+            Grid Container = UI_Grid_ZonesContainer;
+            //setting grid columns
+            if (gridCount < modelCount)
             {
-                Grid current = (Grid)UI_Grid_CircularZones.Children[i];
-                current.DataContext = DataModelCircular_ZoneCollection.Zones[i - 1];
-                //
+                int dif = modelCount - gridCount;
+                for (var i = 0; i < dif; i++)
+                {
+                    ColumnDefinition columnDefinition = new ColumnDefinition();
+                    Container.ColumnDefinitions.Add(columnDefinition);
+                    var template = CloneGrid(TemplateGrid);
+                    Container.Children.Add(template);
+                }
+            }
+            else if (gridCount > modelCount)
+            {
+                int dif = gridCount - modelCount;
+                for (var i = 0; i < dif; i++)
+                {
+                    Container.ColumnDefinitions.RemoveAt(Container.ColumnDefinitions.Count - 1);
+                    Container.Children.RemoveAt(Container.Children.Count - 1);
+                }
+            }
+            //setting data contexts and column definition pos
+            for (var i = 0; i < Container.Children.Count; i++)
+            {
+                Grid current = (Grid)Container.Children[i];
+                current.DataContext = DataModelCircular_ZoneCollection.Zones[i];
                 current.SetValue(Grid.ColumnProperty, i);
             }
+            
         }
 
         public void EvaluateUIEnabled()
         {
-            for (var i = 1; i < UI_Grid_CircularZones.Children.Count; i++)
+            for (var i = 0; i < UI_Grid_ZonesContainer.Children.Count; i++)
             {
-                if (i == 1)
+                if (i == 0)
                 {
-                    Grid grid = (Grid)UI_Grid_CircularZones.Children[i];
+                    Grid grid = (Grid)UI_Grid_ZonesContainer.Children[i];
                     foreach (FrameworkElement element in grid.Children)
                     {
                         switch (element.Name)
@@ -260,9 +286,9 @@ namespace WindBarrierReinforcement
                         }
                     }
                 }
-                else if (i == UI_Grid_CircularZones.Children.Count - 1)
+                else if (i == UI_Grid_ZonesContainer.Children.Count - 1)
                 {
-                    Grid grid = (Grid)UI_Grid_CircularZones.Children[i];
+                    Grid grid = (Grid)UI_Grid_ZonesContainer.Children[i];
                     foreach (FrameworkElement element in grid.Children)
                     {
                         switch (element.Name)
@@ -278,7 +304,7 @@ namespace WindBarrierReinforcement
                 }
                 else
                 {
-                    Grid grid = (Grid)UI_Grid_CircularZones.Children[i];
+                    Grid grid = (Grid)UI_Grid_ZonesContainer.Children[i];
                     foreach (FrameworkElement element in grid.Children)
                     {
                         switch (element.Name)
@@ -316,40 +342,14 @@ namespace WindBarrierReinforcement
             }
         }
 
-        public void AddGridAndZone()
-        {
-            ColumnDefinition columnDefinition = new ColumnDefinition();
-            UI_Grid_CircularZones.ColumnDefinitions.Add(columnDefinition);
-
-            UI_Grid_CircularZones.Children.Add(CloneGrid(TemplateGrid));
-
-            RecalculateGridSetup();
-            EvaluateUIEnabled();
-        }
-
-        public void RemoveGridAndZone()
-        {
-            //will return true if element is removed. Element is removed if the list is larger then 2. Minimum amount is 2
-            if (DataModelCircular_ZoneCollection.Remove())
-            {
-                UI_Grid_CircularZones.ColumnDefinitions.RemoveAt(UI_Grid_CircularZones.ColumnDefinitions.Count - 1);
-                UI_Grid_CircularZones.Children.RemoveAt(UI_Grid_CircularZones.Children.Count - 1);
-
-                RecalculateGridSetup();
-                EvaluateUIEnabled();
-            }
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             DataModelCircular_ZoneCollection.Add();
-
-            //AddGridAndZone();
         }
 
         private void Subtract_Click(object sender, RoutedEventArgs e)
         {
-            RemoveGridAndZone();
+            DataModelCircular_ZoneCollection.Remove();
         }
     }
 }

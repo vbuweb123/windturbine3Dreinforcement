@@ -125,7 +125,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         {
             this.global = global;
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
                 {
@@ -135,7 +135,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
                 };
             });
 
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameter = 0;
                 this.SelectedIndexOption = 0;
             });                                 

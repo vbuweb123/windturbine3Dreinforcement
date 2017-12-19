@@ -95,7 +95,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
 
         public DataModel_ARExteriorCircularBottom(GlobalDataModels global)
         {
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameter = 0;
             });
         }        

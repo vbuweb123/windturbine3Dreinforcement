@@ -359,7 +359,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                     DistanceFromBottom = (double)bottomCover + radial1LargeDiamNoOfBars;
                     break;
                 default:
-
                     DistanceFromBottom = (double)bottomCover + (double)diameterNominalSize / 2 + radial1LargeDiamNoOfBars;
                     break;
             }

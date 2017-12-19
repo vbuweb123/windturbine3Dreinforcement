@@ -9,10 +9,10 @@ namespace WindBarrierReinforcement.StaticModel
 {
     public interface IEvtStore
     {
-        void Add(Action EvtAction);
-        void AddPostEvtAction(Action EvtAction);
+        void AddPostBuildEvents(Action EvtAction);
+        void AddPostEventsRegisterAction(Action EvtAction);
         void AddPopulateDataAction(Action action);
-        void PopulateData();
+        void CallPopulateDataAction();
     }
     public partial class GlobalDataModels
     {
@@ -28,23 +28,20 @@ namespace WindBarrierReinforcement.StaticModel
             private List<Action> evtsPopulateData;
             public List<Action> EvtsPopulateData => evtsPopulateData ?? (evtsPopulateData = new List<Action>());
 
-            public void Add(Action EvtAction)
+            public void AddPostBuildEvents(Action EvtAction)
             {
                 Evts.Add(EvtAction);
             }
-            public void RegisterAll()
+            public void RegisterPostBuildEvents()
             {
                 Evts.ForEach((action) => action());
             }
-            public void PopulateData()
-            {
-                EvtsPopulateData.ForEach((action) => action());
-            }
-            public void AddPostEvtAction(Action EvtAction)
+           
+            public void AddPostEventsRegisterAction(Action EvtAction)
             {
                 EvtsPostRegister.Add(EvtAction);
             }
-            public void CallPostEvtActions()
+            public void CallPostEventsRegisterAction()
             {
                 EvtsPostRegister.ForEach((action) => action());
             }
@@ -52,6 +49,10 @@ namespace WindBarrierReinforcement.StaticModel
             public void AddPopulateDataAction(Action action)
             {
                 EvtsPopulateData.Add(action);
+            }
+            public void CallPopulateDataAction()
+            {
+                EvtsPopulateData.ForEach((action) => action());
             }
         }
     }

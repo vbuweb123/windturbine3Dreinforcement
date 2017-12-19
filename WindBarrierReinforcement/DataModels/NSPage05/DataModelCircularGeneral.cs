@@ -73,7 +73,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         public DataModelCircularGeneral(GlobalDataModels global)
         {
             this.global = global;
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 this.PropertyChanged += (o, e) => {
 
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelCircularGeneral>(x => x.SpacingEdgeCirculars))
@@ -81,7 +81,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                 };
             });
 
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 this.global.GDMPage02.DataModel_Anchor.PropertyChanged += (o, e) => {
 
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.RadiusCenterLineTower) ||
@@ -90,7 +90,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                 };
             });
 
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 this.global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) => {
 
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HFoundationEdge) ||
