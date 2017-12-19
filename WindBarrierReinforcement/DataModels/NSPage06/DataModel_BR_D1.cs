@@ -19,38 +19,17 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// <summary>
         /// UI_ComboBox_UPBR_Dir1_Diameter
         /// </summary>       
-        [SaveKeyCodeAttribute(KeyCode = "UPBR_Dir1_Diameter")]
+        [SaveKeyCode(KeyCode = "SelectedIndexDiameter")]
         private int selectedIndexDiameter;
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
             set { selectedIndexDiameter = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_D1>(x => x.SelectedIndexDiameter)); }
         }
-
-        
-
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameter = 0;
-        }
-        /// <summary>
-        /// UI_ComboBox_UPBR_Dir1_Diameter
-        /// </summary>
-        private int selectedIndexOption;
-        public int SelectedIndexOption
-        {
-            get { return selectedIndexOption; }
-            set { selectedIndexOption = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_D1>(x => x.SelectedIndexOption));
-                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_D1>(x => x.CurrentOption));
-            }
-        }
-
-        public string CurrentOption => (SelectedIndexOption == 0) ? Enum.GetName(typeof(EOption), EOption.NoOfBars) : Enum.GetName(typeof(EOption), EOption.Spacing);
-
         /// <summary>
         /// UI_TextBox_UPBR_Dir1_SpacingValue
         /// </summary>
-        [SaveKeyCodeAttribute(KeyCode = "UPBR_Dir1_Spacing")]
+        [SaveKeyCode(KeyCode = "Spacing")]
         private int spacing;
         public int Spacing
         {
@@ -62,11 +41,29 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// UI_TextBox_UPBR_Dir1_NoOfBars
         /// </summary>
         private int noOfBars;
+        [SaveKeyCode(KeyCode = "NoOfBars")]
         public int NoOfBars
         {
             get { return noOfBars; }
             set { noOfBars = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_D1>(x => x.NoOfBars)); }
         }
+
+        /// <summary>
+        /// UI_ComboBox_UPBR_Dir1_Diameter
+        /// </summary>
+        private int selectedIndexOption;
+        [SaveKeyCode(KeyCode = "SelectedIndexOption")]
+        public int SelectedIndexOption
+        {
+            get { return selectedIndexOption; }
+            set { selectedIndexOption = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_D1>(x => x.SelectedIndexOption));
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_D1>(x => x.CurrentOption));
+            }
+        }
+
+        public string CurrentOption => (SelectedIndexOption == 0) ? Enum.GetName(typeof(EOption), EOption.NoOfBars) : Enum.GetName(typeof(EOption), EOption.Spacing);
+
+        
         public DataModel_BR_D1(GlobalDataModels global)
         {
             global.EvtHandler.AddPostEvtAction(() => {

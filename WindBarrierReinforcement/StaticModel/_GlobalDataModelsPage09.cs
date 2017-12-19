@@ -17,7 +17,7 @@ namespace WindBarrierReinforcement.StaticModel
     {
         private class _GlobalDataModelsPage09 : IGlobalDataModelsPage09
         {
-            [SaveKeyCode(KeyCode = "UBABCollection", SaveDataType = SaveDataType.Navigation)]
+            [SaveKeyCode(KeyCode = "DataModelUBABCollection", SaveDataType = SaveDataType.Class)]
             public DataModelUBABCollection DataModelUBABCollection { get; private set; }
 
             public _GlobalDataModelsPage09(GlobalDataModels global)

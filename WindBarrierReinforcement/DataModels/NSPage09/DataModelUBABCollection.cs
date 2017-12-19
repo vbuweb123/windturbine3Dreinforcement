@@ -12,11 +12,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
 {
     public class DataModelUBABCollection
     {
-        [SaveKeyCode(CollectionElementType = typeof(DataModelUBAB), KeyCode = "Collection", SaveDataType = SaveDataType.ListAndNavigation)]
+        [SaveKeyCode(CollectionElementType = typeof(DataModelUBAB), KeyCode = "Collection", SaveDataType = SaveDataType.ListOfClass)]
         public ObservableCollection<DataModelUBAB> Collection { get; set; }
 
-        [SaveKeyCode(CollectionElementType = typeof(int), KeyCode = "DADADA", SaveDataType = SaveDataType.List)]
-        public List<int> DataMyData => new List<int> { 1, 2, 3 };
         //private int _zoneIndexCurrent = 0;
         private int _maxzones = 10;
         private GlobalDataModels global;
@@ -32,18 +30,24 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
             this.global = global;
 
             Collection = new ObservableCollection<DataModelUBAB>();
+
+            this.Collection.CollectionChanged += (o, e) => {
+                for (var i = 0; i < Collection.Count; i++)
+                {
+                    Collection[i].ZoneName = "zone " + i;
+                    Collection[i].IndexInList = i;
+                }
+            };
         }
-        public void Add(string zoneName)
+
+        public void Add()
         {
             if (Collection.Count < _maxzones)
             {
-                int lastPosition = this.Collection.Count;
-
-                string zoneNameIndex = zoneName + lastPosition;
-
-                this.Collection.Add(new DataModelUBAB(global, zoneNameIndex, lastPosition));
+                this.Collection.Add(new DataModelUBAB(global));
             }
         }
+
         public void RemoveAt(int index)
         {
             this.Collection.RemoveAt(index);

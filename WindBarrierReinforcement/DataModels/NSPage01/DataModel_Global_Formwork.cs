@@ -19,7 +19,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// </summary>
         
         private int hFoundation;
-        [SaveKeyCode(KeyCode = "Global_Formwork_HFoundation")]
+        [SaveKeyCode(KeyCode = "HFoundation")]
         public int HFoundation
         {
             get { return hFoundation; }
@@ -33,7 +33,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_H_Foundation_Edge
         /// </summary>
         private int hFoundationEdge;
-        [SaveKeyCode(KeyCode = "Global_Formwork_HFoundationEdge")]
+        [SaveKeyCode(KeyCode = "HFoundationEdge")]
         public int HFoundationEdge
         {
             get { return hFoundationEdge; }
@@ -47,7 +47,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_H_Tower_Base
         /// </summary>
         private int hTowerBase;
-        [SaveKeyCode(KeyCode = "Global_Formwork_HTowerBase")]
+        [SaveKeyCode(KeyCode = "HTowerBase")]
         public int HTowerBase
         {
             get { return hTowerBase; }
@@ -61,7 +61,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_H_Bottom"
         /// </summary>
         private int hBottom;
-        [SaveKeyCode(KeyCode = "Global_Formwork_HBottom")]
+        [SaveKeyCode(KeyCode = "HBottom")]
         public int HBottom
         {
             get { return hBottom; }
@@ -75,7 +75,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_Diameter_Foundation
         /// </summary>
         private int dFoundation;
-        [SaveKeyCode(KeyCode = "Global_Formwork_DFoundation")]
+        [SaveKeyCode(KeyCode = "DFoundation")]
         public int DFoundation
         {
             get { return dFoundation; }
@@ -89,7 +89,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_Diameter_Tower_Base
         /// </summary>
         private int dTowerBase;
-        [SaveKeyCode(KeyCode = "Global_Formwork_DTowerBase")]
+        [SaveKeyCode(KeyCode = "DTowerBase")]
         public int DTowerBase
         {
             get { return dTowerBase; }
@@ -103,7 +103,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_Foundation_Bed
         /// </summary>
         private int foundationBed;
-        [SaveKeyCode(KeyCode = "Global_Formwork_FoundationBed")]
+        [SaveKeyCode(KeyCode = "FoundationBed")]
         public int FoundationBed
         {
             get { return foundationBed; }
@@ -113,25 +113,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.FoundationBed));
             }
         }
-        ///// <summary>
-        ///// UI_TextBox_DiameterAnchor
-        ///// </summary>
-        //private int diameterAnchor;
-        //public int DiameterAnchor
-        //{
-        //    get { return diameterAnchor; }
-        //    set
-        //    {
-        //        diameterAnchor = value;
-        //        NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.DiameterAnchor));
-        //    }
-        //}
-        /// <summary>
-        /// UI_TextBox_Radius_Centerline_Tower
-        /// </summary>
 
         private int radiusCenterlineTower;
-        [SaveKeyCode(KeyCode = "Global_Formwork_RadiusCenterLineTower")]
+        [SaveKeyCode(KeyCode = "RadiusCenterLineTower")]
         public int RadiusCenterLineTower
         {
             get { return radiusCenterlineTower; }
@@ -147,7 +131,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_Bottom_Cover
         /// </summary>
         private int bottomCover;
-        [SaveKeyCode(KeyCode = "Global_Formwork_BottomCover")]
+        [SaveKeyCode(KeyCode = "BottomCover")]
         public int BottomCover
         {
             get { return bottomCover; }
@@ -161,7 +145,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_Top_Cover
         /// </summary>
         private int topCover;
-        [SaveKeyCode(KeyCode = "Global_Formwork_TopCover")]
+        [SaveKeyCode(KeyCode = "TopCover")]
         public int TopCover
         {
             get { return topCover; }
@@ -176,7 +160,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_Edge_Cover
         /// </summary>
         private int edgeCover;
-        [SaveKeyCode(KeyCode = "Global_Formwork_EdgeCover")]
+        [SaveKeyCode(KeyCode = "EdgeCover")]
         public int EdgeCover
         {
             get { return edgeCover; }
@@ -190,7 +174,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_Radius_Btc
         /// </summary>
         private int radiusBtc;
-        [SaveKeyCode(KeyCode = "Global_Formwork_RadiusBtc")]
+        [SaveKeyCode(KeyCode = "RadiusBtc")]
         public int RadiusBtc
         {
             get { return radiusBtc; }
@@ -205,7 +189,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_HeightAboveGround
         /// </summary>
         private int hightAboveGround;
-        [SaveKeyCode(KeyCode = "Global_Formwork_HightAboveGround")]
+        [SaveKeyCode(KeyCode = "HightAboveGround")]
         public int HightAboveGround
         {
             get { return hightAboveGround; }
@@ -219,7 +203,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_Dept_Foundation
         /// </summary>
         private int deptFoundation;
-        [SaveKeyCode(KeyCode = "Global_Formwork_DeptFoundation")]
+        [SaveKeyCode(KeyCode = "DeptFoundation")]
         public int DeptFoundation
         {
             get { return deptFoundation; }

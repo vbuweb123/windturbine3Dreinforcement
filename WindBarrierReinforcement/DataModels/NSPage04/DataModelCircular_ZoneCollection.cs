@@ -5,11 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage04
 {
     public class DataModelCircular_ZoneCollection
     {
+        [SaveKeyCode(KeyCode = "Zones", SaveDataType = SaveDataType.ListOfClass, CollectionElementType = typeof(DataModelCircular_Zone))]
         public ObservableCollection<DataModelCircular_Zone> Zones { get; set; }
 
         private GlobalDataModels _globalDataModels;
@@ -21,6 +23,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             _globalDataModels = global;
 
             Zones = new ObservableCollection<DataModelCircular_Zone>();
+
+            //2 zones minimum
+            Zones.Add(new DataModelCircular_Zone(global));
+            Zones.Add(new DataModelCircular_Zone(global));
 
             Zones.CollectionChanged += (o, e) => {
                 for (var i = 0; i < Count; i++)

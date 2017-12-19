@@ -10,10 +10,10 @@ namespace WindBarrierReinforcement.Writer
     {
         Default,
         //Navigation is an object that has other properties to be saved
-        Navigation,
+        Class,
         //List is a list or observable collection of primary values
         List,
         //list of objects with other properties to be saved
-        ListAndNavigation
+        ListOfClass
     }
 }

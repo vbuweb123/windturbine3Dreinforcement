@@ -8,6 +8,7 @@ using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.DataModels.NSPage12;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage10
 {
@@ -15,6 +16,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
     {
         //TODO: Definition of zone in excel are not clear. Hardcoding zones for now
         private int zoneLength1;
+        [SaveKeyCode(KeyCode = "ZoneLength1")]
         public int ZoneLength1
         {
             get { return zoneLength1; }
@@ -25,6 +27,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
             }
         }
         private int spacingValueRadial1;
+        [SaveKeyCode(KeyCode = "SpacingValueRadial1")]
         public int SpacingValueRadial1
         {
             get { return spacingValueRadial1; }
@@ -36,6 +39,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         }
 
         private int edgeOffset1;
+        [SaveKeyCode(KeyCode = "EdgeOffset1")]
         public int EdgeOffset1 //Edge Offset for secon zone needs to be calculated
         {
             get { return edgeOffset1; }
@@ -47,6 +51,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         }
 
         private int zoneLength2;
+        [SaveKeyCode(KeyCode = "ZoneLength2")]
         public int ZoneLength2 // TODO : this needs to be calculated
         {
             get { return zoneLength2; }
@@ -57,6 +62,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
             }
         }
         private int spacingValueRadial2;
+        [SaveKeyCode(KeyCode = "SpacingValueRadial2")]
         public int SpacingValueRadial2
         {
             get { return spacingValueRadial2; }
@@ -68,6 +74,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         }
 
         private int edgeOffset2;
+        [SaveKeyCode(KeyCode = "EdgeOffset2")]
         public int EdgeOffset2 //Edge Offset for secon zone needs to be calculated
         {
             get { return edgeOffset2; }

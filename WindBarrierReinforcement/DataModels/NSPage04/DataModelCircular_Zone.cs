@@ -9,6 +9,7 @@ using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.DataModels.NSPage12;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage04
 {
@@ -17,7 +18,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         public List<string> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
 
         private int noOfBars;
-
+        [SaveKeyCode(KeyCode = "NoOfBars")]
         public int NoOfBars
         {
             get { return noOfBars; }
@@ -25,7 +26,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int spacingValue;
-
+        [SaveKeyCode(KeyCode = "SpacingValue")]
         public int SpacingValue
         {
             get { return spacingValue; }
@@ -33,7 +34,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int selectedIndexDiameter;
-
+        [SaveKeyCode(KeyCode = "SelectedIndexDiameter")]
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
@@ -41,7 +42,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private double zoneLength;
-
+        [SaveKeyCode(KeyCode = "ZoneLength")]
         public double ZoneLength
         {
             get { return zoneLength; }
@@ -49,7 +50,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int zoneInterDistance;
-
+        [SaveKeyCode(KeyCode = "ZoneInterDistance")]
         public int ZoneInterDistance
         {
             get { return zoneInterDistance; }
@@ -57,7 +58,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private double radiusGiven;
-
+        [SaveKeyCode(KeyCode = "RadiusGiven")]
         public double RadiusGiven
         {
             get { return radiusGiven; }
@@ -65,7 +66,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private double distanceFromBottom;
-
+        [SaveKeyCode(KeyCode = "DistanceFromBottom")]
         public double DistanceFromBottom
         {
             get { return distanceFromBottom; }
@@ -73,7 +74,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private double offsetFromEdge;
-
+        [SaveKeyCode(KeyCode = "OffsetFromEdge")]
         public double OffsetFromEdge
         {
             get { return offsetFromEdge; }
@@ -81,7 +82,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int distributionBars;
-
+        [SaveKeyCode(KeyCode = "DistributionBars")]
         public int DistributionBars
         {
             get { return distributionBars; }
@@ -91,6 +92,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         private GlobalDataModels globalData;
 
         private int listIndex;
+        [SaveKeyCode(KeyCode = "ListIndex")]
         public int ListIndex
         {
             get { return listIndex; }
@@ -99,7 +101,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
 
         public EZonePosition Position { get; set; }
 
-        Action addEvents;
+        private bool _eventsAdded = false;
+        public Action addEvents;
+
         Action removeEvents;
 
         private PropertyChangedEventHandler action_this_propertyChanged;
@@ -237,11 +241,13 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
 
             addEvents = () =>
             {
-                this.PropertyChanged += action_this_propertyChanged;
-                this.PropertyChanged += action_this2_propertyChanged;
-                global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += action_page01_formwork_propertyChanged;
-                global.GDMPage04.DataModelRadial1.PropertyChanged += action_page04_radial1;
-                global.GDMPage04.DataModelCircularGeneral.PropertyChanged += action_page04_circulargeneral;
+                if (!_eventsAdded) {
+                    this.PropertyChanged += action_this_propertyChanged;
+                    this.PropertyChanged += action_this2_propertyChanged;
+                    global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += action_page01_formwork_propertyChanged;
+                    global.GDMPage04.DataModelRadial1.PropertyChanged += action_page04_radial1;
+                    global.GDMPage04.DataModelCircularGeneral.PropertyChanged += action_page04_circulargeneral;
+                }
             };
 
             removeEvents = () =>
@@ -252,7 +258,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                 global.GDMPage04.DataModelRadial1.PropertyChanged -= action_page04_radial1;
                 global.GDMPage04.DataModelCircularGeneral.PropertyChanged -= action_page04_circulargeneral;
             };
-            addEvents();
         }
 
         ~DataModelCircular_Zone()

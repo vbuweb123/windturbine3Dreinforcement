@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.DataModels.NSPage11;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.StaticModel
 {
@@ -20,16 +21,22 @@ namespace WindBarrierReinforcement.StaticModel
     {
         private class _GlobalDataModelsPage11 : IGlobalDataModelsPage11
         {
+            [SaveKeyCode(KeyCode = "DataModelMaterialsFoundation", SaveDataType = SaveDataType.Class)]
             public DataModelMaterials DataModelMaterialsFoundation { get; private set; }
 
+            [SaveKeyCode(KeyCode = "DataModelMaterialsFoundationTowerBase", SaveDataType = SaveDataType.Class)]
             public DataModelMaterials DataModelMaterialsFoundationTowerBase { get; private set; }
 
+            [SaveKeyCode(KeyCode = "DataModelMaterialsLeanConcrete", SaveDataType = SaveDataType.Class)]
             public DataModelMaterials DataModelMaterialsLeanConcrete { get; private set; }
 
+            [SaveKeyCode(KeyCode = "DataModelMaterialsEnvelopeAroundConduits", SaveDataType = SaveDataType.Class)]
             public DataModelMaterials DataModelMaterialsEnvelopeAroundConduits { get; private set; }
 
+            [SaveKeyCode(KeyCode = "DataModelMaterialsGrouting", SaveDataType = SaveDataType.Class)]
             public DataModelMaterials DataModelMaterialsGrouting { get; private set; }
 
+            [SaveKeyCode(KeyCode = "DataModelMaterialsFoundationPile", SaveDataType = SaveDataType.Class)]
             public DataModelMaterials DataModelMaterialsFoundationPile { get; private set; }
 
             public _GlobalDataModelsPage11(GlobalDataModels global)

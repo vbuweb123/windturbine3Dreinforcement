@@ -199,9 +199,11 @@
     <Compile Include="StaticModel\_GlobalDataModelsPage11.cs" />
     <Compile Include="StaticModel\_GlobalDataModelsPage12.cs" />
     <Compile Include="Writer\KeyCodeDictionary.cs" />
+    <Compile Include="Writer\Registry.cs" />
     <Compile Include="Writer\SaveDataType.cs" />
     <Compile Include="Writer\SaveKeyCode.cs" />
     <Compile Include="Writer\Writer.cs" />
+    <Compile Include="Writer\Writer.write.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
