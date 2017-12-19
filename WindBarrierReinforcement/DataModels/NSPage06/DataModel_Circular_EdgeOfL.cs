@@ -15,7 +15,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
     {
         public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
         public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
-
         /// <summary>
         /// UI_ComboBox_UPBR_C_Diameter
         /// </summary>
@@ -35,20 +34,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
-            set { selectedIndexOption = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Circular_EdgeOfL>(x => x.SelectedIndexOption)); }
-        }
-        
-        public string SpacingEnabled
-        {
-            get
-            {
-                //TODO : CHANGE
-                if (SelectedIndexOption == 0)
-                    return "0";
-                else
-                    return "1";
+            set { selectedIndexOption = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Circular_EdgeOfL>(x => x.SelectedIndexOption));
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Circular_EdgeOfL>(x => x.CurrentOption));
             }
         }
+        public string CurrentOption => (SelectedIndexOption == 0) ? Enum.GetName(typeof(EOption), EOption.NoOfBars) : Enum.GetName(typeof(EOption), EOption.Spacing);
 
         /// <summary>
         /// UI_TextBox_UPBR_C_NoOfBars

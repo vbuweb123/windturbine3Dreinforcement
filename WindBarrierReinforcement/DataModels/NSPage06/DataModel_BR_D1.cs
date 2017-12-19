@@ -14,9 +14,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
 {
    public class DataModel_BR_D1 : DataModel
     {
-
-        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
         public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
+        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
         /// <summary>
         /// UI_ComboBox_UPBR_Dir1_Diameter
         /// </summary>       
@@ -57,22 +56,12 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
-            set { selectedIndexOption = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_D1>(x => x.SelectedIndexOption)); }
-        }
-
-        /// <summary>
-        /// Binded to TextBox Style Trigger. Value of 0 will disagle Spacing. Value of 1 will disable NoOfBars
-        /// </summary>
-        public string SpacingEnabled
-        {
-            get
-            {
-                if (SelectedIndexOption == 0)
-                    return "0";
-                else
-                    return "1";
+            set { selectedIndexOption = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_D1>(x => x.SelectedIndexOption));
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_D1>(x => x.CurrentOption));
             }
         }
+
+        public string CurrentOption => (SelectedIndexOption == 0) ? Enum.GetName(typeof(EOption), EOption.NoOfBars) : Enum.GetName(typeof(EOption), EOption.Spacing);
 
         
         public DataModel_BR_D1(GlobalDataModels global)

@@ -28,8 +28,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             {
                 selectedIndexDiameter = value;
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CircularBarsExteriorSide>(x => x.SelectedIndexDiameter));
+
             }
-        }      
+        }
 
 
         /// <summary>
@@ -44,6 +45,24 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             {
                 selectedIndexOption = value;
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CircularBarsExteriorSide>(x => x.SelectedIndexOption));
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CircularBarsExteriorSide>(x => x.CurrentOption));
+            }
+        }
+        public string CurrentOption
+        {
+            get
+            {
+                switch (SelectedIndexOption)
+                {
+                    case 0:
+                        return Enum.GetName(typeof(EOptionsCBES), EOptionsCBES.NoOfBars_Length);
+                    case 1:
+                        return "";
+                    case 2:
+                        return "";
+                    default:
+                        throw new Exception("Unknown Option selected");
+                }
             }
         }
 
@@ -85,7 +104,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             get { return noOfBars; }
             set { noOfBars = value; NotifyPropertyChanged("NoOfBars"); }
         }
-        
+
         /// <summary>
         /// UI_TextBox_OPTR_CircularMargin_Spacing_CustomLength
         /// </summary>
@@ -96,7 +115,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             get { return customLength; }
             set { customLength = value; NotifyPropertyChanged("CustomLength"); }
         }
-        
+
         /// <summary>
         /// UI_TextBox_OPTR_CircularMargin_Spacing
         /// </summary>
@@ -143,13 +162,15 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
 
         public DataModel_CircularBarsExteriorSide(GlobalDataModels global)
         {
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEvtAction(() =>
+            {
                 this.SelectedIndexDiameter = 0;
             });
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEvtAction(() =>
+            {
                 this.SelectedIndexOption = 0;
             });
-            
+
         }
     }
 }

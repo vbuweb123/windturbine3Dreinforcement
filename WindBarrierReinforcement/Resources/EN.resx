@@ -1049,4 +1049,299 @@
   <data name="Txt_Under_Plate_Bottom_Reinforcement" xml:space="preserve">
     <value>Under PlateBottom Reinforcement</value>
   </data>
+  <data name="Lbl_BT_AlternativeMinStartAngle" xml:space="preserve">
+    <value>Alternative Min Start Angle</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_DiameterEdgeCirculars" xml:space="preserve">
+    <value>Diameter Edge Circulars</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_DistanceFromBottom" xml:space="preserve">
+    <value>Distance From Bottom</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_DistributionBars" xml:space="preserve">
+    <value>Distribution Bars</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_HookType" xml:space="preserve">
+    <value>Hook Type</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_LargeDiameter" xml:space="preserve">
+    <value>Large Diameter</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_LargeDiameterOffsetFromCenter" xml:space="preserve">
+    <value>Large Diameter Offset From Center</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_LargeDiamNoOfBars" xml:space="preserve">
+    <value>Large Diam No Of Bars</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_MaximumLength" xml:space="preserve">
+    <value>Maximum Length</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_MaximumRebarLength" xml:space="preserve">
+    <value>Maximum Rebar Length</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_MinCore" xml:space="preserve">
+    <value>Min Core</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_MinSpaceCenter" xml:space="preserve">
+    <value>Min Space enter</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_MinSpaceField" xml:space="preserve">
+    <value>Min Space Field</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_NoOfBars" xml:space="preserve">
+    <value>No Of Bars</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_NumberEdgeCirculars" xml:space="preserve">
+    <value>Number Edge Circulars</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_OffsetFromEdge" xml:space="preserve">
+    <value>Offset From Edge</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_OverlapLength" xml:space="preserve">
+    <value>Overlap Length</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_Overlapp3rdDiameter" xml:space="preserve">
+    <value>Overlapp 3rd Diameter</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_OverlappLargeDiameter" xml:space="preserve">
+    <value>Overlapp Large Diameter</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_OverlappSmallDiameter" xml:space="preserve">
+    <value>Overlapp Small Diameter</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_RadiusCore" xml:space="preserve">
+    <value>Radius Core</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_RadiusGiven" xml:space="preserve">
+    <value>Radius Given</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_SmallDiameter" xml:space="preserve">
+    <value>Small Diameter</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_SmallDiameterOffsetFromCenter" xml:space="preserve">
+    <value>Small Diameter Offset From Center</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_SmallDiamNoOfBars" xml:space="preserve">
+    <value>Small Diameter No Of Bars</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_Spacing3rdDiameterAngle" xml:space="preserve">
+    <value>Spacing 3rd Diameter Angle</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_SpacingAngle" xml:space="preserve">
+    <value>Spacing Angle</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_SpacingEdgeCirculars" xml:space="preserve">
+    <value>Spacing Edge Circulars</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_SpacingValue" xml:space="preserve">
+    <value>Spacing Value</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_StartOffsetAngle" xml:space="preserve">
+    <value>Start Offset Angle</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_ThirdDiameter" xml:space="preserve">
+    <value>3rd Diameter</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_ThirdDiameterOffsetFromCenter" xml:space="preserve">
+    <value>3rd Diameter Offset From Center</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_ThirdDiamNoOfBars" xml:space="preserve">
+    <value>3rd Diameter No Of Bars</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_UnreinforcedCore" xml:space="preserve">
+    <value>Unreinforced Core</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_ZoneInterDistance" xml:space="preserve">
+    <value>Zone Inter Distance</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_BT_ZoneLength" xml:space="preserve">
+    <value>Zone Length</value>
+    <comment>Page 04</comment>
+  </data>
+  <data name="Lbl_TR_AlternativeMinStartAngle" xml:space="preserve">
+    <value>Alternative Min Start Angle</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_DiameterEdgeCirculars" xml:space="preserve">
+    <value>Diameter Edge Circulars</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_HookType" xml:space="preserve">
+    <value>Hook Type</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_LargeDiameter" xml:space="preserve">
+    <value>Large Diameter</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_LargeDiameterOffsetFromCenter" xml:space="preserve">
+    <value>Large Diameter Offset From Center</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_LargeDiamNoOfBars" xml:space="preserve">
+    <value>Large Diameter No Of Bars</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_MaximumLength" xml:space="preserve">
+    <value>Maximum Length</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_MaximumRebarLength" xml:space="preserve">
+    <value>Maximum Rebar Length</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_MinCore" xml:space="preserve">
+    <value>Min Core</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_MinSpaceCenter" xml:space="preserve">
+    <value>Min Space Center</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_MinSpaceField" xml:space="preserve">
+    <value>Min Space Field</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_NumberEdgeCirculars" xml:space="preserve">
+    <value>Number Edge Circulars</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_Overlapp3rdDiameter" xml:space="preserve">
+    <value>Overlapp 3rd Diameter</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_OverlappLargeDiameter" xml:space="preserve">
+    <value>Overlapp Large Diameter</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_OverlappSmallDiameter" xml:space="preserve">
+    <value>Overlapp Small Diameter</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_RadiusCore" xml:space="preserve">
+    <value>Radius Core</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_SmallDiameter" xml:space="preserve">
+    <value>Small Diameter</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_SmallDiameterOffsetFromCenter" xml:space="preserve">
+    <value>Small Diamete Offset From Center</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_SmallDiamNoOfBars" xml:space="preserve">
+    <value>Small Diameter No Of Bars</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_Spacing3rdDiameterAngle" xml:space="preserve">
+    <value>Spacing 3rd Diameter Angle</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_SpacingAngle" xml:space="preserve">
+    <value>Spacing Angle</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_SpacingEdgeCirculars" xml:space="preserve">
+    <value>Spacing Edge Circulars</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_StartOffsetAngle" xml:space="preserve">
+    <value>Start Offset Angle</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_ThirdDiameter" xml:space="preserve">
+    <value>3rd Diameter</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_ThirdDiameterOffsetFromCenter" xml:space="preserve">
+    <value>3rd Diameter Offset From Center</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="Lbl_TR_ThirdDiamNoOfBars" xml:space="preserve">
+    <value>3rd Diameter No Of Bars</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="LB_TR_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="LB_TR_DistanceFromBottom" xml:space="preserve">
+    <value>Distance From Bottom</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="LB_TR_DistributionBars" xml:space="preserve">
+    <value>Distribution Bars</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="LB_TR_NoOfBars" xml:space="preserve">
+    <value>No Of Bars</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="LB_TR_OffsetFromEdge" xml:space="preserve">
+    <value>Offset From Edge</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="LB_TR_RadiusGiven" xml:space="preserve">
+    <value>Radius Given</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="LB_TR_SpacingValue" xml:space="preserve">
+    <value>Spacing Value</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="LB_TR_ZoneInterDistance" xml:space="preserve">
+    <value>Zone Inter Distance</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="LB_TR_ZoneLength" xml:space="preserve">
+    <value>Zone Length</value>
+    <comment>Page 05</comment>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Txt_Piles" xml:space="preserve">
+    <value>Piles</value>
+    <comment>Page 04</comment>
+  </data>
 </root>

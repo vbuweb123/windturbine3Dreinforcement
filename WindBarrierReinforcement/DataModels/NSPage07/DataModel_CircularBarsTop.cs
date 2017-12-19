@@ -35,8 +35,13 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
-            set { selectedIndexOption = value; NotifyPropertyChanged("SelectedIndexOption"); NotifyPropertyChanged("SpacingEnabled");}
+            set
+            {
+                selectedIndexOption = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CircularBarsTop>(x => x.SelectedIndexOption));
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CircularBarsTop>(x => x.CurrentOption));
+            }
         }
+        public string CurrentOption => (SelectedIndexOption == 0) ? Enum.GetName(typeof(EOption), EOption.NoOfBars) : Enum.GetName(typeof(EOption), EOption.Spacing);
         /// <summary>
         /// UI_TextBox_OPTR_CircularTop_Spacing
         /// </summary>

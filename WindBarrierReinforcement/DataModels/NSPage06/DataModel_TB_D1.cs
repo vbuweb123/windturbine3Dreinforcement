@@ -28,8 +28,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
             {
                 selectedIndexDiameter = value;
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_TB_D1>(x => x.SelectedIndexDiameter));
+               
             }
         }
+        public string CurrentOption => (SelectedIndexOption == 0) ? Enum.GetName(typeof(EOption), EOption.NoOfBars) : Enum.GetName(typeof(EOption), EOption.Spacing);
         /// <summary>
         /// UI_ComboBox_UPBR_TB_Dir1_Option
         /// </summary>
@@ -38,20 +40,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
-            set { selectedIndexOption = value; NotifyPropertyChanged("SelectedIndexOption"); NotifyPropertyChanged("SpacingEnabled"); }
+            set { selectedIndexOption = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_TB_D1>(x => x.SelectedIndexOption));
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_TB_D1>(x => x.CurrentOption)); }
         }
-        //TODO : Change Spacing 
-        public string SpacingEnabled
-        {
-            get
-            {
-                if (SelectedIndexOption == 0)
-                    return "0";
-                else
-                    return "1";
-            }
-        }
-
+       
         /// <summary>
         /// UI_TextBox_UPBR_TB_OffsetFromBottom
         /// </summary>

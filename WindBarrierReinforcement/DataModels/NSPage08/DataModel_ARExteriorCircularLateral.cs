@@ -44,13 +44,14 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             get { return selectedIndexOption; }
             set
             {
-                selectedIndexDiameter = value;
+                selectedIndexOption = value;
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARExteriorCircularLateral>(x => x.SelectedIndexOption));
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARExteriorCircularLateral>(x => x.CurrentOption));
             }
         }
-        //TODO : Change to enum 
-        public string SpacingEnabled => (SelectedIndexOption == 0) ? "Disabled" : "Enabled";
-  
+
+        public string CurrentOption => (SelectedIndexOption == 0) ? Enum.GetName(typeof(EOption), EOption.NoOfBars) : Enum.GetName(typeof(EOption), EOption.Spacing);
+
         /// <summary>
         /// UI_TextBox_AR_ECL_Spacing
         /// </summary>
