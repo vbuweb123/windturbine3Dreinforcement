@@ -7,6 +7,7 @@ using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage05
 {
@@ -19,6 +20,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         /// 
         /// </summary>
         private int largeDiamNoOfBars;
+        [SaveKeyCode(KeyCode = "LargeDiamNoOfBars")]
         public int LargeDiamNoOfBars
         {
             get { return largeDiamNoOfBars; }
@@ -30,6 +32,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int selectedIndexLargeDiameter;
+        [SaveKeyCode(KeyCode = "SelectedIndexLargeDiameter")]
         public int SelectedIndexLargeDiameter
         {
             get { return selectedIndexLargeDiameter; }
@@ -41,6 +44,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int smallDiamNoOfBars;
+        [SaveKeyCode(KeyCode = "SmallDiamNoOfBars")]
         public int SmallDiamNoOfBars
         {
             get { return smallDiamNoOfBars; }
@@ -52,6 +56,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int selectedIndexSmallDiameter;
+        [SaveKeyCode(KeyCode = "SelectedIndexSmallDiameter")]
         public int SelectedIndexSmallDiameter
         {
             get { return selectedIndexSmallDiameter; }
@@ -63,6 +68,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int thirdDiamNoOfBars;
+        [SaveKeyCode(KeyCode = "ThirdDiamNoOfBars")]
         public int ThirdDiamNoOfBars
         {
             get { return thirdDiamNoOfBars; }
@@ -74,6 +80,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int selectedIndexThirdDiameter;
+        [SaveKeyCode(KeyCode = "SelectedIndexThirdDiameter")]
         public int SelectedIndexThirdDiameter
         {
             get { return selectedIndexThirdDiameter; }
@@ -84,7 +91,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
             }
         }
 
-        private int unreinforcedCore; //must be deleted
+        private int unreinforcedCore;
+        [SaveKeyCode(KeyCode = "UnreinforcedCore")]
         public int UnreinforcedCore
         {
             get { return unreinforcedCore; }
@@ -96,6 +104,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private double spacingAngle;
+        [SaveKeyCode(KeyCode = "SpacingAngle")]
         public double SpacingAngle
         {
             get { return spacingAngle; }
@@ -107,6 +116,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int largeDiameterOffsetFromCenter;
+        [SaveKeyCode(KeyCode = "LargeDiameterOffsetFromCenter")]
         public int LargeDiameterOffsetFromCenter
         {
             get { return largeDiameterOffsetFromCenter; }
@@ -118,6 +128,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private double smallDiameterOffsetFromCenter;
+        [SaveKeyCode(KeyCode = "SmallDiameterOffsetFromCenter")]
         public double SmallDiameterOffsetFromCenter
         {
             get { return smallDiameterOffsetFromCenter; }
@@ -129,6 +140,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int thirdDiameterOffsetFromCenter;
+        [SaveKeyCode(KeyCode = "ThirdDiameterOffsetFromCenter")]
         public int ThirdDiameterOffsetFromCenter
         {
             get { return thirdDiameterOffsetFromCenter; }
@@ -136,6 +148,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int selectedIndexHookType;
+        [SaveKeyCode(KeyCode = "SelectedIndexHookType")]
         public int SelectedIndexHookType
         {
             get { return selectedIndexHookType; }
@@ -147,6 +160,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int overlappLargeDiameter;
+        [SaveKeyCode(KeyCode = "OverlappLargeDiameter")]
         public int OverlappLargeDiameter
         {
             get { return overlappLargeDiameter; }
@@ -154,6 +168,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int overlappSmallDiameter;
+        [SaveKeyCode(KeyCode = "OverlappSmallDiameter")]
         public int OverlappSmallDiameter
         {
             get { return overlappSmallDiameter; }
@@ -161,6 +176,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int overlapp3rdDiameter;
+        [SaveKeyCode(KeyCode = "Overlapp3rdDiameter")]
         public int Overlapp3rdDiameter
         {
             get { return overlapp3rdDiameter; }
@@ -168,6 +184,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private double spacing3rdDiameterAngle;
+        [SaveKeyCode(KeyCode = "Spacing3rdDiameterAngle")]
         public double Spacing3rdDiameterAngle
         {
             get { return spacing3rdDiameterAngle; }
@@ -175,6 +192,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private double startOffsetAngle;
+        [SaveKeyCode(KeyCode = "StartOffsetAngle")]
         public double StartOffsetAngle
         {
             get { return startOffsetAngle; }
@@ -182,6 +200,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int maximumLength;
+        [SaveKeyCode(KeyCode = "MaximumLength")]
         public int MaximumLength
         {
             get { return maximumLength; }

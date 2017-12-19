@@ -7,6 +7,7 @@ using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage07
 {
@@ -18,6 +19,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_InteriorEdgeLength
         /// </summary>
         private int interiorEdgeLength;
+        [SaveKeyCode(KeyCode = "InteriorEdgeLength")]
         public int InteriorEdgeLength
         {
             get { return interiorEdgeLength; }
@@ -27,6 +29,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_BottomEdgeLength
         /// </summary>
         private int bottomEdgeLength;
+        [SaveKeyCode(KeyCode = "BottomEdgeLength")]
         public int BottomEdgeLength
         {
             get { return bottomEdgeLength; }
@@ -36,6 +39,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_RadialBarDiameter
         /// </summary>        
         private int selectedIndexDiameter;
+        [SaveKeyCode(KeyCode = "SelectedIndexDiameter")]
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
@@ -47,6 +51,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_TowerAxisCover
         /// </summary>
         private int towerAxisCover;
+        [SaveKeyCode(KeyCode = "TowerAxisCover")]
         public int TowerAxisCover
         {
             get { return towerAxisCover; }
@@ -56,6 +61,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_TopCover
         /// </summary>
         private int topCover;
+        [SaveKeyCode(KeyCode = "TopCover")]
         public int TopCover
         {
             get { return topCover; }
@@ -66,6 +72,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_BottomCover
         /// </summary>
         private int bottomCover;
+        [SaveKeyCode(KeyCode = "BottomCover")]
         public int BottomCover
         {
             get { return bottomCover; }
@@ -76,6 +83,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_EdgeCover
         /// </summary>
         private int edgeCover;
+        [SaveKeyCode(KeyCode = "EdgeCover")]
         public int EdgeCover
         {
             get { return edgeCover; }
@@ -83,6 +91,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         }
 
         private int spacingRadialDeg;
+        [SaveKeyCode(KeyCode = "SpacingRadialDeg")]
         public int SpacingRadialDeg
         {
             get { return spacingRadialDeg; }

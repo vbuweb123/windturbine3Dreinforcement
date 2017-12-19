@@ -8,6 +8,7 @@ using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage10
 {
@@ -16,6 +17,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
 
         private int tangentialSpacing;
+        [SaveKeyCode(KeyCode = "TangentialSpacing")]
         public int TangentialSpacing
         {
             get { return tangentialSpacing; }
@@ -27,6 +29,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         }
 
         private int selectedIndexDiameter;
+        [SaveKeyCode(KeyCode = "SelectedIndexDiameter")]
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
@@ -38,6 +41,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         }
 
         private int hookLengths;
+        [SaveKeyCode(KeyCode = "HookLengths")]
         public int HookLengths
         {
             get => hookLengths;
@@ -49,6 +53,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         }
 
         private bool chairsOverTopCirculars;
+        [SaveKeyCode(KeyCode = "ChairsOverTopCirculars")]
         public bool ChairsOverTopCirculars
         {
             get { return chairsOverTopCirculars; }
@@ -60,6 +65,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         }
 
         private int topChairsOverlapp;
+        [SaveKeyCode(KeyCode = "TopChairsOverlapp")]
         public int TopChairsOverlapp
         {
             get { return topChairsOverlapp; }

@@ -46,33 +46,41 @@ namespace WindBarrierReinforcement
             this.DataContext = this;
 
             TemplateGrid = CloneAndRemoveTemplateGrid();
-            //fixed 2 zones
-            AddGridAndZone();
-            AddGridAndZone();
+
+            //for prepopulated data - add ui grids
+            //foreach (var item in DataModelCircular_ZoneCollection.Zones)
+            //{
+            //    AddGridAndZone();
+            //}
+            global.EvtHandler.AddPostEvtAction(() => {
+                DataModelCircular_ZoneCollection.Zones.CollectionChanged += (o, e) => {
+                    int gridColumnsCount = UI_Grid_CircularZones.Children.Count; // grid always has extra
+                    int dataModelCount = DataModelCircular_ZoneCollection.Count;
+
+                };
+            });
             CultureRenamer.Rename(UI_Grid_MasterGrid);
 
             global.EvtHandler.AddPopulateDataAction(() => {
-                
-                AddGridAndZone();
-                AddGridAndZone();
+                Button_Click(null, null);
+                Button_Click(null, null);
 
-                DataModelCircular_ZoneCollection.Zones[0].SpacingValue = 175;
+                DataModelCircular_ZoneCollection.Zones[0].SpacingValue = 200;
                 DataModelCircular_ZoneCollection.Zones[0].SelectedIndexDiameter =
                 Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
 
-                DataModelCircular_ZoneCollection.Zones[1].SpacingValue = 125;
+                DataModelCircular_ZoneCollection.Zones[1].SpacingValue = 150;
                 DataModelCircular_ZoneCollection.Zones[1].SelectedIndexDiameter =
                 Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
-                DataModelCircular_ZoneCollection.Zones[1].RadiusGiven = 6540;
+                DataModelCircular_ZoneCollection.Zones[1].RadiusGiven = 8250;
 
-                DataModelCircular_ZoneCollection.Zones[2].SpacingValue = 0;
-                DataModelCircular_ZoneCollection.Zones[2].SelectedIndexDiameter = 0;
-                
-                DataModelCircular_ZoneCollection.Zones[2].RadiusGiven = 1550;
+                DataModelCircular_ZoneCollection.Zones[2].SpacingValue = 125;
+                DataModelCircular_ZoneCollection.Zones[2].SelectedIndexDiameter =
+                Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
+                DataModelCircular_ZoneCollection.Zones[2].RadiusGiven = 6540;
 
                 DataModelCircular_ZoneCollection.Zones[3].SpacingValue = 0;
                 DataModelCircular_ZoneCollection.Zones[3].RadiusGiven = 1550;
-                //DataModelCircular_ZoneCollection.Zones[0].
             });
         }
 
@@ -310,17 +318,8 @@ namespace WindBarrierReinforcement
 
         public void AddGridAndZone()
         {
-            //first move the grid positioned there and create new Column Def
             ColumnDefinition columnDefinition = new ColumnDefinition();
             UI_Grid_CircularZones.ColumnDefinitions.Add(columnDefinition);
-            if (DataModelCircular_ZoneCollection.Count < 2)
-            {
-                DataModelCircular_ZoneCollection.Add();
-            }
-            else
-            {
-                DataModelCircular_ZoneCollection.AddBeforeLast();
-            }
 
             UI_Grid_CircularZones.Children.Add(CloneGrid(TemplateGrid));
 
@@ -331,7 +330,7 @@ namespace WindBarrierReinforcement
         public void RemoveGridAndZone()
         {
             //will return true if element is removed. Element is removed if the list is larger then 2. Minimum amount is 2
-            if (DataModelCircular_ZoneCollection.RemoveBeforeLast())
+            if (DataModelCircular_ZoneCollection.Remove())
             {
                 UI_Grid_CircularZones.ColumnDefinitions.RemoveAt(UI_Grid_CircularZones.ColumnDefinitions.Count - 1);
                 UI_Grid_CircularZones.Children.RemoveAt(UI_Grid_CircularZones.Children.Count - 1);
@@ -343,7 +342,9 @@ namespace WindBarrierReinforcement
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AddGridAndZone();
+            DataModelCircular_ZoneCollection.Add();
+
+            //AddGridAndZone();
         }
 
         private void Subtract_Click(object sender, RoutedEventArgs e)

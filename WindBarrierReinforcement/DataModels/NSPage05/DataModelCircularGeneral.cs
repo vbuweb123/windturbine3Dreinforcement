@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.Writer;
 using WindBarrierReinforcement.DataModels.NSPage01;
 using WindBarrierReinforcement.DataModels.NSPage02;
 using WindBarrierReinforcement.StaticModel;
-
+using WindBarrierReinforcement.DataModels.NSPage01;
+using WindBarrierReinforcement.DataModels.NSPage02;
+using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 namespace WindBarrierReinforcement.DataModels.NSPage05
 {
     public class DataModelCircularGeneral : DataModel
@@ -17,6 +21,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         public List<string> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
 
         private int overlapLength;
+        [SaveKeyCode(KeyCode = "OverlapLength")]
         public int OverlapLength
         {
             get { return overlapLength; }
@@ -24,6 +29,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int maximumRebarLength;
+        [SaveKeyCode(KeyCode = "MaximumRebarLength")]
         public int MaximumRebarLength
         {
             get { return maximumRebarLength; }
@@ -31,6 +37,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int selectedDiameterEdgeCirculars;
+        [SaveKeyCode(KeyCode = "SelectedDiameterEdgeCirculars")]
         public int SelectedDiameterEdgeCirculars
         {
             get { return selectedDiameterEdgeCirculars; }
@@ -38,6 +45,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int numberEdgeCirculars;
+        [SaveKeyCode(KeyCode = "NumberEdgeCirculars")]
         public int NumberEdgeCirculars
         {
             get { return numberEdgeCirculars; }
@@ -45,6 +53,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int spacingEdgeCirculars;
+        [SaveKeyCode(KeyCode = "SpacingEdgeCirculars")]
         public int SpacingEdgeCirculars
         {
             get { return spacingEdgeCirculars; }
@@ -52,6 +61,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int radiusCore;
+        [SaveKeyCode(KeyCode = "RadiusCore")]
         public int RadiusCore
         {
             get { return radiusCore; }

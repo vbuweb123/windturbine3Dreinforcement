@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Reflected;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage06
 {
@@ -14,6 +15,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// UI_TextBox_UPBR_BottomCover
         /// </summary>       
         private int bottomCover;
+        [SaveKeyCode(KeyCode = "BottomCover")]
         public int BottomCover
         {
             get { return bottomCover; }
@@ -23,6 +25,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// UI_TextBox_UPBR_HorizontalEdgeCover
         /// </summary>       
         private int horizontalEdgeCover;
+        [SaveKeyCode(KeyCode = "HorizontalEdgeCover")]
         public int HorizontalEdgeCover
         {
             get { return horizontalEdgeCover; }

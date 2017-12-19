@@ -7,6 +7,7 @@ using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage07
 {
@@ -19,6 +20,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// </summary>      
         /// 
         private int selectedIndexDiameter;
+        [SaveKeyCode(KeyCode = "SelectedIndexDiameter")]
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
@@ -35,6 +37,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_CircularMargin_Option
         /// </summary>
         private int selectedIndexOption;
+        [SaveKeyCode(KeyCode = "SelectedIndexOption")]
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
@@ -64,6 +67,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         }
 
         private int selectedTrueFalseOption;
+        [SaveKeyCode(KeyCode = "SelectedTrueFalseOption")]
         public int SelectedTrueFalseOption
         {
             get { return selectedTrueFalseOption; }
@@ -77,6 +81,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_CircularMargin_Overlap
         /// </summary>
         private bool useDefaultLength;
+        [SaveKeyCode(KeyCode = "UseDefaultLength")]
         public bool UseDefaultLength
         {
             get { return useDefaultLength; }
@@ -93,6 +98,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_CircularTop_NoBars
         /// </summary>
         private int noOfBars;
+        [SaveKeyCode(KeyCode = "NoOfBars")]
         public int NoOfBars
         {
             get { return noOfBars; }
@@ -103,6 +109,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_CircularMargin_Spacing_CustomLength
         /// </summary>
         private int customLength;
+        [SaveKeyCode(KeyCode = "CustomLength")]
         public int CustomLength
         {
             get { return customLength; }
@@ -113,6 +120,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_CircularMargin_Spacing
         /// </summary>
         private int spacing;
+        [SaveKeyCode(KeyCode = "Spacing")]
         public int Spacing
         {
             get { return spacing; }
@@ -123,6 +131,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_CircularMargin_Offset
         /// </summary>
         private int offset;
+        [SaveKeyCode(KeyCode = "Offset")]
         public int Offset
         {
             get { return offset; }
@@ -133,6 +142,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_CircularMargin_MaxLength
         /// </summary>
         private int maxLength;
+        [SaveKeyCode(KeyCode = "MaxLength")]
         public int MaxLength
         {
             get { return maxLength; }
@@ -143,6 +153,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         /// UI_TextBox_OPTR_CircularMargin_Overlap
         /// </summary>
         private int overlap;
+        [SaveKeyCode(KeyCode = "Overlap")]
         public int Overlap
         {
             get { return overlap; }

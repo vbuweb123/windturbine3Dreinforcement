@@ -8,6 +8,7 @@ using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage06
 {
@@ -19,21 +20,18 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// UI_ComboBox_UPBR_Dir2_Diameter
         /// </summary>       
         private int selectedIndexDiameter;
+        [SaveKeyCode(KeyCode = "SelectedIndexDiameter")]
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
             set { selectedIndexDiameter = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_BR_D2>(x => x.SelectedIndexDiameter)); }
         }
-                
 
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameter = 0;
-        }
         /// <summary>
         /// UI_ComboBox_UPBR_Dir2_Diameter
         /// </summary>
         private int selectedIndexOption;
+        [SaveKeyCode(KeyCode = "SelectedIndexOption")]
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
@@ -46,6 +44,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// UI_TextBox_UPBR_Dir2_SpacingValue
         /// </summary>
         private int spacing;
+        [SaveKeyCode(KeyCode = "Spacing")]
         public int Spacing
         {
             get { return spacing; }
@@ -56,6 +55,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         /// UI_TextBox_UPBR_Dir2_NoOfBars
         /// </summary>
         private int noOfBars;
+        [SaveKeyCode(KeyCode = "NoOfBars")]
         public int NoOfBars
         {
             get { return noOfBars; }

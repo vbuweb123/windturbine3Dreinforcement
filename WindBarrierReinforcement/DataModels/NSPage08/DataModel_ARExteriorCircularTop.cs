@@ -7,6 +7,7 @@ using WindBarrierReinforcement.Common.DataModel;
 using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.Common.Reflected;
 using WindBarrierReinforcement.StaticModel;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.DataModels.NSPage08
 {
@@ -21,6 +22,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_ComboBox_AR_ECT_Diameter
         /// </summary>        
         private int selectedIndexDiameter;
+        [SaveKeyCode(KeyCode = "SelectedIndexDiameter")]
         public int SelectedIndexDiameter
         {
             get { return selectedIndexDiameter; }
@@ -34,6 +36,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_ECT_Spacing
         /// </summary>
         private int spacing;
+        [SaveKeyCode(KeyCode = "Spacing")]
         public int Spacing
         {
             get { return spacing; }
@@ -48,6 +51,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_ECT_MinBarLength
         /// </summary>
         private int minbarLength;
+        [SaveKeyCode(KeyCode = "MinBarLength")]
         public int MinBarLength
         {
             get { return minbarLength; }
@@ -62,6 +66,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_ECT_MaxBarLength
         /// </summary>
         private int maxbarLength;
+        [SaveKeyCode(KeyCode = "MaxBarLength")]
         public int MaxBarLength
         {
             get { return maxbarLength; }
@@ -76,6 +81,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_ECT_StartExtraOffset
         /// </summary>
         private int startExtraOffset;
+        [SaveKeyCode(KeyCode = "StartExtraOffset")]
         public int StartExtraOffset
         {
             get { return startExtraOffset; }
@@ -88,7 +94,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
 
         public DataModel_ARExteriorCircularTop(GlobalDataModels global)
         {
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEvtAction(() =>
+            {
                 this.SelectedIndexDiameter = 0;
             });
         }

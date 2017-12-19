@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindBarrierReinforcement.DataModels.NSPage10;
+using WindBarrierReinforcement.Writer;
 
 namespace WindBarrierReinforcement.StaticModel
 {
@@ -16,8 +17,10 @@ namespace WindBarrierReinforcement.StaticModel
     {
         private class _GlobalDataModelsPage10 : IGlobalDataModelsPage10
         {
+            [SaveKeyCode(KeyCode = "DataModel_CHR_General", SaveDataType = SaveDataType.Class)]
             public DataModel_CHR_General DataModel_CHR_General { get; private set; }
 
+            [SaveKeyCode(KeyCode = "DataModel_CHR_Zones", SaveDataType = SaveDataType.Class)]
             public DataModel_CHR_Zones DataModel_CHR_Zones { get; private set; }
 
             public _GlobalDataModelsPage10(GlobalDataModels global)
