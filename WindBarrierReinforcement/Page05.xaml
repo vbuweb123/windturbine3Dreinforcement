@@ -27,10 +27,11 @@
         <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,25,25,5" BorderThickness="0" 
                     Background="{StaticResource AppMainBackgroundColor}">
             <!--Tab Item Radial General-->
-            <TabItem Header="__Radial General">
+            <TabItem Header="Radial General">
                 <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
 
-                    <Label Content="__MinCore" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Content="__MinCore" ap:CultureKey.CultureRes="Lbl_TR_MinCore"
+                           HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox
                         DataContext="{Binding DataModelRadialGeneral}"
                         Text="{Binding MinCore, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
@@ -38,7 +39,8 @@
                         HorizontalAlignment="Left" Height="25" Margin="150,5,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                     </TextBox>
 
-                    <Label Content="__MinSpaceField" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Content="__MinSpaceField" ap:CultureKey.CultureRes="Lbl_TR_MinSpaceField"
+                           HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox
                         DataContext="{Binding DataModelRadialGeneral}"
                         Text="{Binding MinSpaceField, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
@@ -49,7 +51,8 @@
                         </i:Interaction.Behaviors>
                     </TextBox>
 
-                    <Label Content="__MinSpaceCenter" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Content="__MinSpaceCenter" ap:CultureKey.CultureRes="Lbl_TR_MinSpaceCenter"
+                           HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox
                         DataContext="{Binding DataModelRadialGeneral}"
                         Text="{Binding MinSpaceCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
@@ -60,7 +63,8 @@
                         </i:Interaction.Behaviors>
                     </TextBox>
 
-                    <Label Content="__AlternativeMinStartAngle" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Content="__AlternativeMinStartAngle" ap:CultureKey.CultureRes="Lbl_TR_AlternativeMinStartAngle"
+                           HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox
                         DataContext="{Binding DataModelRadialGeneral}"
                         Text="{Binding AlternativeMinStartAngle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
@@ -70,9 +74,10 @@
                 </Grid>
             </TabItem>
             <!--Tab Item Circular General-->
-            <TabItem Header="__Circular General">
+            <TabItem Header="Circular General">
                 <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
-                    <Label Content="__MinCore" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Content="__MinCore" ap:CultureKey.CultureRes="Lbl_TR_MinCore"
+                           HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox
                         DataContext="{Binding DataModelCircularGeneral}"
                         Text="{Binding OverlapLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
@@ -83,7 +88,8 @@
                         </i:Interaction.Behaviors>
                     </TextBox>
 
-                    <Label Content="__MaximumRebarLength" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Content="__MaximumRebarLength" ap:CultureKey.CultureRes="Lbl_TR_MaximumRebarLength"
+                           HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox
                         DataContext="{Binding DataModelCircularGeneral}"
                         Text="{Binding MaximumRebarLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
@@ -94,14 +100,16 @@
                         </i:Interaction.Behaviors>
                     </TextBox>
 
-                    <Label Content="__DiameterEdgeCirculars" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Content="__DiameterEdgeCirculars" ap:CultureKey.CultureRes="Lbl_TR_DiameterEdgeCirculars"
+                           HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"/>
                     <ComboBox                        
                         DataContext="{Binding DataModelCircularGeneral}"
                         ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedDiameterEdgeCirculars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="150,65,4,0" VerticalAlignment="Top" Width="150" HorizontalAlignment="Left"/>
+                        Margin="150,65,4,0" VerticalAlignment="Top" Width="150" Height="25" HorizontalAlignment="Left"/>
 
-                    <Label Content="__NumberEdgeCirculars" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Content="__NumberEdgeCirculars" ap:CultureKey.CultureRes="Lbl_TR_NumberEdgeCirculars"
+                           HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox
                         DataContext="{Binding DataModelCircularGeneral}"
                         Text="{Binding NumberEdgeCirculars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
@@ -112,7 +120,8 @@
                         </i:Interaction.Behaviors>
                     </TextBox>
 
-                    <Label Content="__SpacingEdgeCirculars" HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Content="__SpacingEdgeCirculars" ap:CultureKey.CultureRes="Lbl_TR_SpacingEdgeCirculars"
+                           HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox
                         DataContext="{Binding DataModelCircularGeneral}"
                         Text="{Binding SpacingEdgeCirculars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
@@ -123,7 +132,8 @@
                         </i:Interaction.Behaviors>
                     </TextBox>
 
-                    <Label Content="__RadiusCore" HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Content="__RadiusCore" ap:CultureKey.CultureRes="Lbl_TR_RadiusCore"
+                           HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox
                         DataContext="{Binding DataModelCircularGeneral}"
                         Text="{Binding RadiusCore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    
@@ -136,7 +146,7 @@
                 </Grid>
             </TabItem>
             <!--Tab Item Radial-->
-            <TabItem Header="__Radial" HorizontalAlignment="Stretch">
+            <TabItem Header="Radial" HorizontalAlignment="Stretch">
                 <Grid Background="{StaticResource AppContainerBackgroundColor}"  HorizontalAlignment="Stretch" Margin="0,0,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -144,23 +154,40 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <!--Grid Column 0 -->
-                    <Label Grid.Column="0" Content="__LargeDiamNoOfBars" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
-                    <Label Grid.Column="0" Content="__LargeDiameter" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
-                    <Label Grid.Column="0" Content="__SmallDiamNoOfBars" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"/>
-                    <Label Grid.Column="0" Content="__SmallDiameter" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"/>
-                    <Label Grid.Column="0" Content="__ThirdDiamNoOfBars" HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top" Height="25"/>
-                    <Label Grid.Column="0" Content="__ThirdDiameter" HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top" Height="25"/>
-                    <Label Grid.Column="0" Content="__SpacingAngle" HorizontalAlignment="Left" Margin="5,215,0,0" VerticalAlignment="Top" Height="25"/>
-                    <Label Grid.Column="0" Content="__LargeDiameterOffsetFromCenter" HorizontalAlignment="Left" Margin="5,245,0,0" VerticalAlignment="Top" Height="25"/>
-                    <Label Grid.Column="0" Content="__SmallDiameterOffsetFromCenter" HorizontalAlignment="Left" Margin="5,275,0,0" VerticalAlignment="Top" Height="25"/>
-                    <Label Grid.Column="0" Content="__ThirdDiameterOffsetFromCenter" HorizontalAlignment="Left" Margin="5,305,0,0" VerticalAlignment="Top" Height="25"/>
-                    <Label Grid.Column="0" Content="__HookType" HorizontalAlignment="Left" Margin="5,335,0,0" VerticalAlignment="Top" Height="25"/>
-                    <Label Grid.Column="0" Content="__OverlappLargeDiameter" HorizontalAlignment="Left" Margin="5,365,0,0" VerticalAlignment="Top" Height="25"/>
-                    <Label Grid.Column="0" Content="__OverlappSmallDiameter" HorizontalAlignment="Left" Margin="5,395,0,0" VerticalAlignment="Top" Height="25"/>
-                    <Label Grid.Column="0" Content="__Overlapp3rdDiameter" HorizontalAlignment="Left" Margin="5,425,0,0" VerticalAlignment="Top" Height="25"/>
-                    <Label Grid.Column="0" Content="__Spacing3rdDiameterAngle" HorizontalAlignment="Left" Margin="5,455,0,0" VerticalAlignment="Top" Height="25"/>
-                    <Label Grid.Column="0" Content="__StartOffsetAngle" HorizontalAlignment="Left" Margin="5,485,0,0" VerticalAlignment="Top" Height="25"/>
-                    <Label Grid.Column="0" Content="__MaximumLength" HorizontalAlignment="Left" Margin="5,515,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__LargeDiamNoOfBars" ap:CultureKey.CultureRes="Lbl_TR_LargeDiamNoOfBars"
+                           HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__LargeDiameter" ap:CultureKey.CultureRes="Lbl_TR_LargeDiameter"
+                           HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__SmallDiamNoOfBars" ap:CultureKey.CultureRes="Lbl_TR_SmallDiamNoOfBars"
+                           HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__SmallDiameter" ap:CultureKey.CultureRes="Lbl_TR_SmallDiameter"
+                           HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__ThirdDiamNoOfBars" ap:CultureKey.CultureRes="Lbl_TR_ThirdDiamNoOfBars"
+                           HorizontalAlignment="Left" Margin="5,125,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__ThirdDiameter" ap:CultureKey.CultureRes="Lbl_TR_ThirdDiameter"
+                           HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__SpacingAngle" ap:CultureKey.CultureRes="Lbl_TR_SpacingAngle"
+                           HorizontalAlignment="Left" Margin="5,215,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__LargeDiameterOffsetFromCenter" ap:CultureKey.CultureRes="Lbl_TR_LargeDiameterOffsetFromCenter"
+                           HorizontalAlignment="Left" Margin="5,245,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__SmallDiameterOffsetFromCenter" ap:CultureKey.CultureRes="Lbl_TR_SmallDiameterOffsetFromCenter"
+                           HorizontalAlignment="Left" Margin="5,275,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__ThirdDiameterOffsetFromCenter" ap:CultureKey.CultureRes="Lbl_TR_ThirdDiameterOffsetFromCenter"
+                           HorizontalAlignment="Left" Margin="5,305,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__HookType" ap:CultureKey.CultureRes="Lbl_TR_HookType"
+                           HorizontalAlignment="Left" Margin="5,335,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__OverlappLargeDiameter" ap:CultureKey.CultureRes="Lbl_TR_OverlappLargeDiameter"
+                           HorizontalAlignment="Left" Margin="5,365,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__OverlappSmallDiameter" ap:CultureKey.CultureRes="Lbl_TR_OverlappSmallDiameter"
+                           HorizontalAlignment="Left" Margin="5,395,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__Overlapp3rdDiameter" ap:CultureKey.CultureRes="Lbl_TR_Overlapp3rdDiameter"
+                           HorizontalAlignment="Left" Margin="5,425,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__Spacing3rdDiameterAngle" ap:CultureKey.CultureRes="Lbl_TR_Spacing3rdDiameterAngle"
+                           HorizontalAlignment="Left" Margin="5,455,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__StartOffsetAngle" ap:CultureKey.CultureRes="Lbl_TR_StartOffsetAngle"
+                           HorizontalAlignment="Left" Margin="5,485,0,0" VerticalAlignment="Top" Height="25"/>
+                    <Label Grid.Column="0" Content="__MaximumLength" ap:CultureKey.CultureRes="Lbl_TR_MaximumLength"
+                           HorizontalAlignment="Left" Margin="5,515,0,0" VerticalAlignment="Top" Height="25"/>
 
                     <!--Grid Column 1 -->
                     <TextBox
@@ -439,7 +466,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="__Circular">
+            <TabItem Header="Circular">
                 <Grid Name="UI_Grid_CircularZones" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -448,23 +475,23 @@
                     <!--Grid Column 0-->
                     <Grid Grid.Column="0">
                         <Label Content="__NoOfBars" HorizontalAlignment="Left" VerticalAlignment="Top"                    
-                           ap:CultureKey.CultureRes="" Margin="5,35,5,0" Height="25"/>
+                           ap:CultureKey.CultureRes="LB_TR_NoOfBars" Margin="5,35,5,0" Height="25"/>
                         <Label Content="__Spacing Value" HorizontalAlignment="Left" VerticalAlignment="Top"                    
-                           ap:CultureKey.CultureRes="" Margin="5,65,5,0" Height="25"/>
+                           ap:CultureKey.CultureRes="LB_TR_SpacingValue" Margin="5,65,5,0" Height="25"/>
                         <Label Content="__Diameter" HorizontalAlignment="Left" VerticalAlignment="Top"                    
-                           ap:CultureKey.CultureRes="" Margin="5,95,5,0" Height="25"/>
+                           ap:CultureKey.CultureRes="LB_TR_Diameter" Margin="5,95,5,0" Height="25"/>
                         <Label Content="__ZoneLength" HorizontalAlignment="Left" VerticalAlignment="Top"                    
-                           ap:CultureKey.CultureRes="" Margin="5,125,5,0" Height="25"/>
+                           ap:CultureKey.CultureRes="LB_TR_ZoneLength" Margin="5,125,5,0" Height="25"/>
                         <Label Content="__ZoneInterDistance" HorizontalAlignment="Left" VerticalAlignment="Top"                    
-                           ap:CultureKey.CultureRes="" Margin="5,155,5,0" Height="25"/>
+                           ap:CultureKey.CultureRes="LB_TR_ZoneInterDistance" Margin="5,155,5,0" Height="25"/>
                         <Label Content="__RadiusGiven" HorizontalAlignment="Left" VerticalAlignment="Top"                    
-                           ap:CultureKey.CultureRes="" Margin="5,185,5,0" Height="25"/>
+                           ap:CultureKey.CultureRes="LB_TR_RadiusGiven" Margin="5,185,5,0" Height="25"/>
                         <Label Content="__DistanceFromBottom" HorizontalAlignment="Left" VerticalAlignment="Top"                    
-                           ap:CultureKey.CultureRes="" Margin="5,215,5,0" Height="25"/>
+                           ap:CultureKey.CultureRes="LB_TR_DistanceFromBottom" Margin="5,215,5,0" Height="25"/>
                         <Label Content="__OffsetFromEdge" HorizontalAlignment="Left" VerticalAlignment="Top"                    
-                           ap:CultureKey.CultureRes="" Margin="5,245,5,0" Height="25"/>
+                           ap:CultureKey.CultureRes="LB_TR_OffsetFromEdge" Margin="5,245,5,0" Height="25"/>
                         <Label Content="__DistributionBars" HorizontalAlignment="Left" VerticalAlignment="Top"                    
-                           ap:CultureKey.CultureRes="" Margin="5,275,5,0" Height="25"/>
+                           ap:CultureKey.CultureRes="LB_TR_DistributionBars" Margin="5,275,5,0" Height="25"/>
                     </Grid>
                     <!--grid Column 2- will always be DataModelCircular_ZoneBeginning -->
 
@@ -496,7 +523,7 @@
                             Margin="5,125,5,0"  Height="25" Width="75">
                         </TextBox>
                         <TextBox Name="ZoneInterDistance"
-                            Text="{Binding ZoneInterDistance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                            Text="{Binding ZoneInterDistance, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"  
                             Template="{StaticResource AppTextBoxGeneric}"         
                             HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
                             Margin="5,155,5,0"  Height="25" Width="75">

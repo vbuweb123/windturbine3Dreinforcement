@@ -20,7 +20,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
         /// <summary>
         /// UI_ComboBox_AR_ICL_Diameter
-        /// </summary>        
+        /// </summary>
         private int selectedIndexDiameter;
         public int SelectedIndexDiameter
         {
@@ -43,14 +43,15 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             {
                 selectedIndexOption = value;
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntCircularLateral>(x => x.SelectedIndexOption));
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARIntCircularLateral>(x => x.CurrentOption));
+
             }
         }
         /// <summary>
         /// Will affect a trigger in the textbox that has SpacingEnabled Binded to it.
         /// The trigger itself is defined in XamlResources and added to textboxes
         /// </summary>
-        public string SpacingEnabled => (SelectedIndexOption == 0) ? "Disabled" : "Enabled";
-
+        public string CurrentOption => (SelectedIndexOption == 0) ? Enum.GetName(typeof(EOption), EOption.NoOfBars) : Enum.GetName(typeof(EOption), EOption.Spacing);
         /// <summary>
         /// UI_TextBox_AR_ICL_Spacing
         /// </summary>

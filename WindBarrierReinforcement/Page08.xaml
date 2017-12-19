@@ -24,7 +24,7 @@
     <Grid Name="UI_Grid_Page8_Master" Background="{StaticResource AppMainBackgroundColor}">
         <TextBlock ap:CultureKey.CultureRes="Txt_AnchorsReinforcement" Text="__Anchors Reinforcement" HorizontalAlignment="Left" Margin="20,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                    Style="{StaticResource  AppContentTitleTextBlock}" />
-        
+
         <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,50,25,25" 
                     SelectionChanged="TabControl_SelectionChanged" BorderThickness="0" 
                     Background="{StaticResource AppMainBackgroundColor}">
@@ -106,7 +106,7 @@
                         HorizontalAlignment="Left" Height="25" Margin="150,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
                 </Grid>
             </TabItem>
-            
+
             <TabItem Header="Exterior Circular Top">
                 <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
                     <!--Diameter-->
@@ -166,19 +166,17 @@
                         DataContext="{Binding DataModel_ARExteriorCircularLateral}"
                         ItemsSource="{Binding OptionNames, Mode=OneWay}"
                         SelectedIndex="{Binding SelectedIndexOption, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Margin="150,35,50,0" VerticalAlignment="Top"/>
+                        Margin="150,35,50,0" Height="25" VerticalAlignment="Top"/>
 
                     <!--Spacing-->
                     <Label ap:CultureKey.CultureRes="Lbl_AR_ECL_Spacing" Content="__Spacing" HorizontalAlignment="Left" Margin="5,95,0,0" VerticalAlignment="Top" Height="25"/>
                     <TextBox 
                         DataContext="{Binding DataModel_ARExteriorCircularLateral}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        Style="{StaticResource TextBoxTagTrigger_EnabledIfEnabled}" Template="{StaticResource AppTextBoxGeneric}"
+                        Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource TextBoxTagTrigger_SpacingSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
                         HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
+
                     </TextBox>
 
                     <!--No Of Bars-->
@@ -186,12 +184,10 @@
                     <TextBox                         
                         DataContext="{Binding DataModel_ARExteriorCircularLateral}"
                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        Style="{StaticResource TextBoxTagTrigger_EnabledIfDisabled}" Template="{StaticResource AppTextBoxGeneric}"
+                        Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource TextBoxTagTrigger_NoOfBarsSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
                         HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" >
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
+
                     </TextBox>
 
                     <!--Bar Length Min-->
@@ -227,7 +223,7 @@
                         HorizontalAlignment="Left" Height="25" Margin="150,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
                 </Grid>
             </TabItem>
-            
+
             <TabItem Header="Exterior Circular Bottom">
                 <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">
 
@@ -416,13 +412,10 @@
                     <TextBox 
                         DataContext="{Binding DataModel_ARIntCircularLateral}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        Template="{StaticResource AppTextBoxGeneric}" Style="{StaticResource TextBoxTagTrigger_EnabledIfEnabled}"
+                        Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource TextBoxTagTrigger_SpacingSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
                         HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
+                        VerticalAlignment="Top" Width="150">                   
                     </TextBox>
 
                     <!--No Of Bars-->
@@ -431,12 +424,9 @@
                         x:Name="UI_TextBox_AR_ICL_NoOfBars"                       
                         DataContext="{Binding DataModel_ARIntCircularLateral}"
                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        Template="{StaticResource AppTextBoxGeneric}" Style="{StaticResource TextBoxTagTrigger_EnabledIfDisabled}"
-                        HorizontalAlignment="Left" Height="25" Margin="150,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
+                        Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource TextBoxTagTrigger_NoOfBarsSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">                       
                     </TextBox>
 
                     <!--Length Bar Min-->

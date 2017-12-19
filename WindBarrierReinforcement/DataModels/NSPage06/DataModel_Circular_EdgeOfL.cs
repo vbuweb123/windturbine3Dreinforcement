@@ -12,6 +12,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
 {
     public class DataModel_Circular_EdgeOfL : DataModel
     {
+        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
+        public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
         /// <summary>
         /// UI_ComboBox_UPBR_C_Diameter
         /// </summary>
@@ -22,12 +24,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
             set { selectedIndexDiameter = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Circular_EdgeOfL>(x => x.SelectedIndexDiameter)); }
         }
 
-        public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
-
-        private void Context_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SelectedIndexDiameter = 0;
-        }
         /// <summary>
         /// UI_ComboBox_UPBR_C_Dir2_Option
         /// </summary>
@@ -35,20 +31,11 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
-            set { selectedIndexOption = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Circular_EdgeOfL>(x => x.SelectedIndexOption)); }
-        }
-        public List<String> OptionNames => EnumHelpers.GetEnumDisplayText(typeof(EOption));
-
-        public string SpacingEnabled
-        {
-            get
-            {
-                if (SelectedIndexOption == 0)
-                    return "0";
-                else
-                    return "1";
+            set { selectedIndexOption = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Circular_EdgeOfL>(x => x.SelectedIndexOption));
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_Circular_EdgeOfL>(x => x.CurrentOption));
             }
         }
+        public string CurrentOption => (SelectedIndexOption == 0) ? Enum.GetName(typeof(EOption), EOption.NoOfBars) : Enum.GetName(typeof(EOption), EOption.Spacing);
 
         /// <summary>
         /// UI_TextBox_UPBR_C_NoOfBars

@@ -54,24 +54,11 @@
                     <TextBox                        
                         DataContext="{Binding DataModel_BR_D1}"
                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        Template="{StaticResource AppTextBoxGeneric}"
+                        Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource TextBoxTagTrigger_NoOfBarsSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
                         HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="0">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="1">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
+                        
+                        
                     </TextBox>
 
                     <!--Spacing-->
@@ -79,24 +66,9 @@
                     <TextBox               
                         DataContext="{Binding DataModel_BR_D1}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        Template="{StaticResource AppTextBoxGeneric}"
-                        HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="0">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="1">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
+                        Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource TextBoxTagTrigger_SpacingSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">                       
                     </TextBox>
                 </Grid>
             </TabItem>
@@ -126,24 +98,9 @@
                     <TextBox                                   
                         DataContext="{Binding DataModel_BR_D2}"
                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        Template="{StaticResource AppTextBoxGeneric}"
-                        HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="0">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="1">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
+                        Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource TextBoxTagTrigger_NoOfBarsSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">                       
                     </TextBox>
 
                     <!--Spacing-->
@@ -151,24 +108,9 @@
                     <TextBox                                             
                         DataContext="{Binding DataModel_BR_D2}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        Template="{StaticResource AppTextBoxGeneric}"
-                        HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="0">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="1">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
+                        Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource TextBoxTagTrigger_SpacingSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">                                               
                     </TextBox>
 
                 </Grid>
@@ -258,24 +200,9 @@
                     <TextBox                           
                         DataContext="{Binding DataModel_TB_D1}"
                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        Template="{StaticResource AppTextBoxGeneric}"
-                        HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="0">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="1">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
+                        Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource TextBoxTagTrigger_NoOfBarsSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">                                               
                     </TextBox>
 
                     <!--Spacing-->
@@ -283,24 +210,9 @@
                     <TextBox                      
                         DataContext="{Binding DataModel_TB_D1}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        Template="{StaticResource AppTextBoxGeneric}"
-                        HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="0">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="1">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
+                        Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource TextBoxTagTrigger_SpacingSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">                       
                     </TextBox>
 
                     <!--Offset From Bottom-->
@@ -364,24 +276,9 @@
                     <TextBox                          
                         DataContext="{Binding DataModel_TB_D2}"
                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        Template="{StaticResource AppTextBoxGeneric}"
-                        HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="0">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="1">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
+                        Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource TextBoxTagTrigger_NoOfBarsSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">                       
                     </TextBox>
 
                     <!--Spacing-->
@@ -389,24 +286,10 @@
                     <TextBox          
                         DataContext="{Binding DataModel_TB_D2}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        Template="{StaticResource AppTextBoxGeneric}"
+                        Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource TextBoxTagTrigger_SpacingSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
                         HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="0">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="1">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
+                      
                     </TextBox>
                 </Grid>
             </TabItem>
@@ -437,24 +320,9 @@
                         x:Name="UI_TextBox_UPBR_C_NoOfBars"                       
                         DataContext="{Binding DataModel_Circular_EdgeOfL}"
                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        Template="{StaticResource AppTextBoxGeneric}"
-                        HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="0">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="1">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
+                        Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource TextBoxTagTrigger_NoOfBarsSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">                    
                     </TextBox>
 
                     <!--Spacing-->
@@ -462,24 +330,9 @@
                     <TextBox                  
                         DataContext="{Binding DataModel_Circular_EdgeOfL}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SpacingEnabled}"
-                        Template="{StaticResource AppTextBoxGeneric}"
-                        HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="0">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="1">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
+                        Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource TextBoxTagTrigger_SpacingSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
+                        HorizontalAlignment="Left" Height="25" Margin="150,95,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100">                      
                     </TextBox>
 
                     <!--Max Length-->

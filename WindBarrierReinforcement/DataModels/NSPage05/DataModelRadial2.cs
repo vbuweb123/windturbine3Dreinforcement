@@ -204,7 +204,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.LargeDiamNoOfBars)
                     || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.SmallDiamNoOfBars)
                     || e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.SpacingAngle))
-                        Set_LargeDiameterOffsetFromCenter();
+                        Set_SmallDiameterOffsetFromCenter();
 
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.Spacing3rdDiameterAngle))
                         Set_ThirdDiameterOffsetFromCenter();
@@ -254,16 +254,18 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                 };
             });
         }
-        private void Set_SmallDiameterOffsetFromCenter()
-        {
+        
             //TODO: Change into a combobox in pgae2
             // SmallDiameterOffsetFromCenter = (int)Math.Round(Math.Ceiling((double)(global.GDMPage02.DataModel_Anchor.DiameterAnchor / 2 + 50 + global.GDMPage02.DataModel_Anchor.BoltDiameter/2)), 0);
 
-            if (((global.GDMPage01.DataModel_Global_Formwork.DTowerBase * Math.PI) / (LargeDiamNoOfBars + SmallDiamNoOfBars)) < 150)
-            {
-                SmallDiameterOffsetFromCenter = global.GDMPage01.DataModel_Global_Formwork.DTowerBase / 2;
-            }
-            SmallDiameterOffsetFromCenter = (150 / 2) + Math.Sin(SpacingAngle / 2);
+           
+        private void Set_SmallDiameterOffsetFromCenter()
+        {
+            var raport = ((LargeDiamNoOfBars + SmallDiamNoOfBars) == 0) ? 0 : (global.GDMPage01.DataModel_Global_Formwork.DTowerBase * Math.PI) / (LargeDiamNoOfBars + SmallDiamNoOfBars);
+
+            SmallDiameterOffsetFromCenter = (raport < 150) ?
+                                            global.GDMPage01.DataModel_Global_Formwork.DTowerBase / 2 :
+                                            75 + Math.Sin(SpacingAngle / 2);
         }
         private void Set_SpacingAngle()
         {
