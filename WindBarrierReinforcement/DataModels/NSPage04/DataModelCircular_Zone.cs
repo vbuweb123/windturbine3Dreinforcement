@@ -101,7 +101,9 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
 
         public EZonePosition Position { get; set; }
 
-        Action addEvents;
+        private bool _eventsAdded = false;
+        public Action addEvents;
+
         Action removeEvents;
 
         private PropertyChangedEventHandler action_this_propertyChanged;
@@ -239,11 +241,13 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
 
             addEvents = () =>
             {
-                this.PropertyChanged += action_this_propertyChanged;
-                this.PropertyChanged += action_this2_propertyChanged;
-                global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += action_page01_formwork_propertyChanged;
-                global.GDMPage04.DataModelRadial1.PropertyChanged += action_page04_radial1;
-                global.GDMPage04.DataModelCircularGeneral.PropertyChanged += action_page04_circulargeneral;
+                if (!_eventsAdded) {
+                    this.PropertyChanged += action_this_propertyChanged;
+                    this.PropertyChanged += action_this2_propertyChanged;
+                    global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += action_page01_formwork_propertyChanged;
+                    global.GDMPage04.DataModelRadial1.PropertyChanged += action_page04_radial1;
+                    global.GDMPage04.DataModelCircularGeneral.PropertyChanged += action_page04_circulargeneral;
+                }
             };
 
             removeEvents = () =>
@@ -254,7 +258,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                 global.GDMPage04.DataModelRadial1.PropertyChanged -= action_page04_radial1;
                 global.GDMPage04.DataModelCircularGeneral.PropertyChanged -= action_page04_circulargeneral;
             };
-            addEvents();
         }
 
         ~DataModelCircular_Zone()

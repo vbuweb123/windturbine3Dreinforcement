@@ -117,6 +117,8 @@ namespace WindBarrierReinforcement
         private void  Open_Click(object sender, RoutedEventArgs e)
         {
             Writer.Writer.Open(Global);
+
+
         }
     }
 }

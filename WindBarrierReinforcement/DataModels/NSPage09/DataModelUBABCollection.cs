@@ -30,18 +30,24 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
             this.global = global;
 
             Collection = new ObservableCollection<DataModelUBAB>();
+
+            this.Collection.CollectionChanged += (o, e) => {
+                for (var i = 0; i < Collection.Count; i++)
+                {
+                    Collection[i].ZoneName = "zone " + i;
+                    Collection[i].IndexInList = i;
+                }
+            };
         }
-        public void Add(string zoneName)
+
+        public void Add()
         {
             if (Collection.Count < _maxzones)
             {
-                int lastPosition = this.Collection.Count;
-
-                string zoneNameIndex = zoneName + lastPosition;
-
-                this.Collection.Add(new DataModelUBAB(global, zoneNameIndex, lastPosition));
+                this.Collection.Add(new DataModelUBAB(global));
             }
         }
+
         public void RemoveAt(int index)
         {
             this.Collection.RemoveAt(index);

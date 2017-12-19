@@ -44,6 +44,8 @@ namespace WindBarrierReinforcement
 
             CultureRenamer.Rename(UI_Grid_Master);
 
+
+
             global.EvtHandler.AddPopulateDataAction(() =>
             {
                 AddNewNDataModel();
@@ -73,7 +75,7 @@ namespace WindBarrierReinforcement
 
         private void AddNewNDataModel()
         {
-            DataModelUBABCollection.Add(_zoneName);
+            DataModelUBABCollection.Add();
         }
 
         private void RemoveLastDataModel()

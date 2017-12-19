@@ -49,15 +49,35 @@ namespace WindBarrierReinforcement
             this.DataContext = this;
 
             TemplateGrid = CloneAndRemoveTemplateGrid();
-            //fixed 2 zones
-            AddGridAndZone();
-            AddGridAndZone();
+
+            global.EvtHandler.AddPopulateDataAction(() => {
+                //After application has loaded. Check each DataModel in collection and add events for existing items
+                foreach (var item in DataModelCircular_ZoneCollection.Zones)
+                {
+                    //will not re-add if already added. Functionality in Zone Model
+                    item.addEvents();
+                }
+                //Each time collection changes - add events to that item
+                DataModelCircular_ZoneCollection.Zones.CollectionChanged += (o, e) => {
+                    foreach (var item in DataModelCircular_ZoneCollection.Zones)
+                    {
+                        //will not re-add if already added. Functionality in Zone Model
+                        item.addEvents();
+                    }
+                };
+            });
+            //for prepopulated data - add ui grids
+            foreach (var item in DataModelCircular_ZoneCollection.Zones) {
+                AddGridAndZone();
+            }
+
             CultureRenamer.Rename(UI_Grid_MasterGrid);
+           
 
             global.EvtHandler.AddPopulateDataAction(() =>
             {
-                AddGridAndZone();
-                AddGridAndZone();
+                Button_Click(null, null);
+                Button_Click(null, null);
 
                 DataModelCircular_ZoneCollection.Zones[0].SpacingValue = 200;
                 DataModelCircular_ZoneCollection.Zones[0].SelectedIndexDiameter =
@@ -316,14 +336,14 @@ namespace WindBarrierReinforcement
             //first move the grid positioned there and create new Column Def
             ColumnDefinition columnDefinition = new ColumnDefinition();
             UI_Grid_CircularZones.ColumnDefinitions.Add(columnDefinition);
-            if (DataModelCircular_ZoneCollection.Count < 2)
-            {
-                DataModelCircular_ZoneCollection.Add();
-            }
-            else
-            {
-                DataModelCircular_ZoneCollection.AddBeforeLast();
-            }
+            //if (DataModelCircular_ZoneCollection.Count < 2)
+            //{
+            //    DataModelCircular_ZoneCollection.Add();
+            //}
+            //else
+            //{
+            //    DataModelCircular_ZoneCollection.AddBeforeLast();
+            //}
 
             UI_Grid_CircularZones.Children.Add(CloneGrid(TemplateGrid));
 
@@ -346,6 +366,8 @@ namespace WindBarrierReinforcement
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            DataModelCircular_ZoneCollection.AddBeforeLast();
+
             AddGridAndZone();
         }
 

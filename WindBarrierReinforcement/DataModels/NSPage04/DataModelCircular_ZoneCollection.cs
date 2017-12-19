@@ -24,6 +24,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
 
             Zones = new ObservableCollection<DataModelCircular_Zone>();
 
+            //2 zones minimum
+            Zones.Add(new DataModelCircular_Zone(global));
+            Zones.Add(new DataModelCircular_Zone(global));
+
             Zones.CollectionChanged += (o, e) => {
                 for (var i = 0; i < Count; i++)
                 {

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WindBarrierReinforcement.Common.Eng;
 using WindBarrierReinforcement.DataModels.NSPage05;
 using WindBarrierReinforcement.Resources;
 using WindBarrierReinforcement.StaticModel;
@@ -46,16 +47,50 @@ namespace WindBarrierReinforcement
 
             TemplateGrid = CloneAndRemoveTemplateGrid();
             //fixed 2 zones
-            AddGridAndZone();
-            AddGridAndZone();
+            global.EvtHandler.AddPopulateDataAction(() => {
+                //After application has loaded. Check each DataModel in collection and add events for existing items
+                foreach (var item in DataModelCircular_ZoneCollection.Zones)
+                {
+                    //will not re-add if already added. Functionality in Zone Model
+                    item.addEvents();
+                }
+                //Each time collection changes - add events to that item
+                DataModelCircular_ZoneCollection.Zones.CollectionChanged += (o, e) => {
+                    foreach (var item in DataModelCircular_ZoneCollection.Zones)
+                    {
+                        //will not re-add if already added. Functionality in Zone Model
+                        item.addEvents();
+                    }
+                };
+            });
+            //for prepopulated data - add ui grids
+            foreach (var item in DataModelCircular_ZoneCollection.Zones)
+            {
+                AddGridAndZone();
+            }
+
             CultureRenamer.Rename(UI_Grid_MasterGrid);
 
             global.EvtHandler.AddPopulateDataAction(() => {
-                this.Initialized += (o, e) => {
-                    AddGridAndZone();
-                    AddGridAndZone();
-                };
-                //DataModelCircular_ZoneCollection.Zones[0].
+                Button_Click(null, null);
+                Button_Click(null, null);
+
+                DataModelCircular_ZoneCollection.Zones[0].SpacingValue = 200;
+                DataModelCircular_ZoneCollection.Zones[0].SelectedIndexDiameter =
+                Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
+
+                DataModelCircular_ZoneCollection.Zones[1].SpacingValue = 150;
+                DataModelCircular_ZoneCollection.Zones[1].SelectedIndexDiameter =
+                Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
+                DataModelCircular_ZoneCollection.Zones[1].RadiusGiven = 8250;
+
+                DataModelCircular_ZoneCollection.Zones[2].SpacingValue = 125;
+                DataModelCircular_ZoneCollection.Zones[2].SelectedIndexDiameter =
+                Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D25.ToString());
+                DataModelCircular_ZoneCollection.Zones[2].RadiusGiven = 6540;
+
+                DataModelCircular_ZoneCollection.Zones[3].SpacingValue = 0;
+                DataModelCircular_ZoneCollection.Zones[3].RadiusGiven = 1550;
             });
         }
 
@@ -296,14 +331,14 @@ namespace WindBarrierReinforcement
             //first move the grid positioned there and create new Column Def
             ColumnDefinition columnDefinition = new ColumnDefinition();
             UI_Grid_CircularZones.ColumnDefinitions.Add(columnDefinition);
-            if (DataModelCircular_ZoneCollection.Count < 2)
-            {
-                DataModelCircular_ZoneCollection.Add();
-            }
-            else
-            {
-                DataModelCircular_ZoneCollection.AddBeforeLast();
-            }
+            //if (DataModelCircular_ZoneCollection.Count < 2)
+            //{
+            //    DataModelCircular_ZoneCollection.Add();
+            //}
+            //else
+            //{
+            //    DataModelCircular_ZoneCollection.AddBeforeLast();
+            //}
 
             UI_Grid_CircularZones.Children.Add(CloneGrid(TemplateGrid));
 
@@ -314,7 +349,7 @@ namespace WindBarrierReinforcement
         public void RemoveGridAndZone()
         {
             //will return true if element is removed. Element is removed if the list is larger then 2. Minimum amount is 2
-            if (DataModelCircular_ZoneCollection.RemoveBeforeLast())
+            if (DataModelCircular_ZoneCollection.Remove())
             {
                 UI_Grid_CircularZones.ColumnDefinitions.RemoveAt(UI_Grid_CircularZones.ColumnDefinitions.Count - 1);
                 UI_Grid_CircularZones.Children.RemoveAt(UI_Grid_CircularZones.Children.Count - 1);
@@ -326,6 +361,8 @@ namespace WindBarrierReinforcement
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            DataModelCircular_ZoneCollection.Add();
+
             AddGridAndZone();
         }
 

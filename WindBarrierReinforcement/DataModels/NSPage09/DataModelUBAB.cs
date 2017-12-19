@@ -107,14 +107,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         /// Property related to Tag Content of the Button in ToolBar
         /// </summary>
         [SaveKeyCode(KeyCode = "IndexInList")]
-        public int IndexInList { get; private set; }
+        public int IndexInList { get; set; }
 
-        public DataModelUBAB(GlobalDataModels global, string zoneName, int index)
+        public DataModelUBAB(GlobalDataModels global)
         {
-            ZoneName = zoneName;
-
-            this.IndexInList = index;
-
             global.EvtHandler.Add(() => {
                 this.PropertyChanged += (o, e) =>
                 {

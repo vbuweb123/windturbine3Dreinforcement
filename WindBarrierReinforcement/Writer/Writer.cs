@@ -14,227 +14,24 @@ using System.Xml.Serialization;
 
 namespace WindBarrierReinforcement.Writer
 {
-    public static class Writer
+    public static partial class Writer
     {
-        static List<PropertyDataInfo> properties;
+        //static List<PropertyDataInfo> properties;
 
-        private static string currentDirectory;
+        //private static string currentDirectory;
 
-        private static GlobalDataModels GlobalDataModels;
+        //private static GlobalDataModels GlobalDataModels;
 
-        private static readonly string RootNodeName = "ReinforcementData";
-
-        public static void Save(GlobalDataModels globalDataModels)
-        {
-            GlobalDataModels = globalDataModels;
-
-            XmlDocument Document = new XmlDocument();
-
-            Document.PreserveWhitespace = true;
-
-            XmlNode root = AppendRoot(Document);
-
-            KeyCodeDictionary saveData = CollectGlobalDataModel(GlobalDataModels);
-
-            EvaluateDictionary(saveData, Document, root);
-
-            Document.AppendChild(root);
-
-            Save(Document);
-        }
-        private static void EvaluateDictionary(KeyCodeDictionary dictionary, XmlDocument xmlDocument, XmlNode Node)
-        {
-            foreach (KeyValuePair<SaveKeyCodeAttribute, object> keyValuePair in dictionary)
-            {
-                if (keyValuePair.Key.SaveDataType == SaveDataType.Class)
-                {
-                    XmlElement children = xmlDocument.CreateElement(keyValuePair.Key.KeyCode);
-                    EvaluateDictionary((KeyCodeDictionary)(keyValuePair.Value), xmlDocument, children);
-
-                    XmlAttribute _saveTypeAttribute = xmlDocument.CreateAttribute("SaveDataType");
-                    _saveTypeAttribute.Value = keyValuePair.Key.SaveDataType.ToString();
-
-                    XmlAttribute _collectionElementTypeAttribute = xmlDocument.CreateAttribute("Type");
-                    _collectionElementTypeAttribute.Value = (keyValuePair.Key.CollectionElementType != null) ? keyValuePair.Key.CollectionElementType.FullName : "";
-
-                    children.Attributes.Append(_saveTypeAttribute);
-                    children.Attributes.Append(_collectionElementTypeAttribute);
-
-                    Node.AppendChild(children);
-                }
-                else if (keyValuePair.Key.SaveDataType == SaveDataType.ListOfClass)
-                {
-                    /*
-                         ListNavigation translates like:
-                         List<SomeClass> = [Object1, Object2, Object3] is
-                            ListAttributeKeyCode :: 
-                                [
-                                    [ Object1Attribute, value ],
-                                    [ Object2Attribute, value ],
-                                    [ Object3Attribute, value ]
-                                ]
-                            
-                         */
-                    XmlElement children = xmlDocument.CreateElement(keyValuePair.Key.KeyCode);
-                    List<KeyCodeDictionary> converted = (List<KeyCodeDictionary>)keyValuePair.Value;
-
-                    XmlAttribute _saveTypeAttribute = xmlDocument.CreateAttribute("SaveDataType");
-                    _saveTypeAttribute.Value = keyValuePair.Key.SaveDataType.ToString();
-
-                    XmlAttribute _collectionElementTypeAttribute = xmlDocument.CreateAttribute("Type");
-                    _collectionElementTypeAttribute.Value = (keyValuePair.Key.CollectionElementType != null) ? keyValuePair.Key.CollectionElementType.FullName : "";
-
-                    children.Attributes.Append(_saveTypeAttribute);
-                    children.Attributes.Append(_collectionElementTypeAttribute);
-
-                    foreach (var item in converted)
-                    {
-                        XmlElement itemElement = xmlDocument.CreateElement(keyValuePair.Key.KeyCode + "_item");
-                        EvaluateDictionary(item, xmlDocument, itemElement);
-                        children.AppendChild(itemElement);
-                    }
-                    Node.AppendChild(children);
-                }
-                else if (keyValuePair.Key.SaveDataType == SaveDataType.List)
-                { /*
-                    List<int> = [1,2,3]  is
-                    ListAttrCode :: [1,2,3] ]
-                    */
-                    IEnumerable converted = (IEnumerable)keyValuePair.Value;
-                    XmlElement children = xmlDocument.CreateElement(keyValuePair.Key.KeyCode);
-
-                    XmlAttribute _saveTypeAttribute = xmlDocument.CreateAttribute("SaveDataType");
-                    _saveTypeAttribute.Value = keyValuePair.Key.SaveDataType.ToString();
-
-                    XmlAttribute _collectionElementTypeAttribute = xmlDocument.CreateAttribute("Type");
-                    _collectionElementTypeAttribute.Value = (keyValuePair.Key.CollectionElementType != null) ? keyValuePair.Key.CollectionElementType.FullName : "";
-
-                    children.Attributes.Append(_saveTypeAttribute);
-                    children.Attributes.Append(_collectionElementTypeAttribute);
-
-
-                    foreach (var item in converted)
-                    {
-                        XmlElement itemElement = xmlDocument.CreateElement(keyValuePair.Key.KeyCode + "_item");
-                        itemElement.InnerText = item.ToString();
-                        children.AppendChild(itemElement);
-                    }
-                    Node.AppendChild(children);
-                }
-                else
-                {
-                    XmlElement children = xmlDocument.CreateElement(keyValuePair.Key.KeyCode);
-                    children.InnerText = keyValuePair.Value.ToString();
-
-                    XmlAttribute _saveTypeAttribute = xmlDocument.CreateAttribute("SaveDataType");
-                    _saveTypeAttribute.Value = keyValuePair.Key.SaveDataType.ToString();
-
-                    XmlAttribute _collectionElementTypeAttribute = xmlDocument.CreateAttribute("Type");
-                    _collectionElementTypeAttribute.Value = (keyValuePair.Key.CollectionElementType != null) ? keyValuePair.Key.CollectionElementType.FullName : "";
-
-                    children.Attributes.Append(_saveTypeAttribute);
-                    children.Attributes.Append(_collectionElementTypeAttribute);
-
-                    Node.AppendChild(children);
-                }
-            }
-        }
-
-        private static XmlNode AppendRoot(XmlDocument xmlDocument)
-        {
-            ////craete Root Node
-            XmlNode root = xmlDocument.CreateElement(RootNodeName);
-
-            XmlAttribute nowDate = xmlDocument.CreateAttribute("CreatedAt");
-            nowDate.Value = DateTime.Now.ToUniversalTime().ToString();
-            root.Attributes.Append(nowDate);
-            return root;
-        }
-
-        private static void Save(XmlDocument xmlDocument)
-        {
-            currentDirectory = Directory.GetCurrentDirectory();
-            FileStream fs = new FileStream(currentDirectory + "\\temp.xml", FileMode.Create);
-            XmlTextWriter xmlTextWriter = new XmlTextWriter(fs, Encoding.Unicode) { Formatting = Formatting.Indented };
-
-            xmlDocument.WriteContentTo(xmlTextWriter);
-
-            xmlTextWriter.Close();
-
-            fs.Close();
-
-        }
-
-        private static KeyCodeDictionary CollectGlobalDataModel(object Data)
-        {
-            //inquiring global
-            Type globalType = Data.GetType();
-            //get all properties - GDMPage01, 02, etc
-            PropertyInfo[] GDMPropertiesInfo = globalType.GetProperties(BindingFlags.Instance | BindingFlags.Public);
-
-            KeyCodeDictionary dictionary = new KeyCodeDictionary();
-
-            foreach (PropertyInfo propertyInfo in GDMPropertiesInfo)
-            {
-                //get the custom attribute that makes the object saveable
-                SaveKeyCodeAttribute Attribute = propertyInfo.GetCustomAttribute<SaveKeyCodeAttribute>() as SaveKeyCodeAttribute;
-                if (Attribute != null)
-                {
-                    if (Attribute.SaveDataType == SaveDataType.Class)
-                    {
-                        /*
-                         PropertyWithNavigation =>
-                            PropertyAttribute :: [Properties<Attribute, value>] 
-                         */
-                        object returnData = CollectGlobalDataModel(propertyInfo.GetValue(Data));
-                        dictionary.Add(Attribute, returnData);
-                    }
-                    else if (Attribute.SaveDataType == SaveDataType.ListOfClass)
-                    {
-                        //convert current object to list
-                        IEnumerable<object> list = (IEnumerable<object>)propertyInfo.GetValue(Data);
-                        List<KeyCodeDictionary> convertedItems = new List<KeyCodeDictionary>();
-                        /*
-                         ListNavigation translates like:
-                         List<SomeClass> = [Object1, Object2, Object3] is
-                            ListAttributeKeyCode :: 
-                                [
-                                    [ Object1Attribute, value == [ Attr1 :: val1; Attr2 :: val2 ] ],
-                                    [ Object2Attribute, value ],
-                                    [ Object3Attribute, value ]
-                                ]
-                            
-                         */
-                        foreach (var item in list)
-                        {
-                            convertedItems.Add(CollectGlobalDataModel(item));
-                        }
-                        dictionary.Add(Attribute, convertedItems);
-                    }
-                    else if (Attribute.SaveDataType == SaveDataType.List)
-                    {
-                        /*
-                         List<int> = [1,2,3]  is
-                            ListAttrCode :: [1,2,3] ]
-                         */
-                        object returnData = propertyInfo.GetValue(Data);
-                        dictionary.Add(Attribute, returnData);
-                    }
-                    else
-                    {
-                        //Property => Attribute :: Value
-                        dictionary.Add(Attribute, propertyInfo.GetValue(Data));
-                    }
-                }
-            }
-            return dictionary;
-        }
+        private static Registry Registry;
 
         public static void Open(GlobalDataModels global)
         {
-            GlobalDataModels = global;
 
-            currentDirectory = Directory.GetCurrentDirectory();
+            //Registry
+            Registry = new Registry();
+            Registry.Register<GlobalDataModels, GlobalDataModels>(global);
+            //Registry
+            var currentDirectory = Directory.GetCurrentDirectory();
             //FileStream fs = new FileStream(currentDirectory + "\\temp.xml", FileMode.Open);
             string xml = System.IO.File.ReadAllText(currentDirectory + "\\temp.xml");
             //XmlTextReader xmlTextReader = new XmlTextReader(fs);
@@ -245,6 +42,8 @@ namespace WindBarrierReinforcement.Writer
             doc.LoadXml(xml);
 
             EvaluateOpenedXML(doc);
+
+            var a = 1;
         }
 
         public static void EvaluateOpenedXML(XmlDocument xmlDocument)
@@ -254,12 +53,131 @@ namespace WindBarrierReinforcement.Writer
 
             KeyCodeDictionary dictionary = new KeyCodeDictionary();
 
-            foreach (XmlNode node in root.ChildNodes)
+            GlobalDataModels globalDataModels = Registry.Demand<GlobalDataModels>();
+
+            PropertyInfo[] propertiesInfo = typeof(GlobalDataModels).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            foreach (PropertyInfo pinfo in propertiesInfo)
             {
-                string KeyCodeName = node.Name;
-                var aa = 2;
+                Match(pinfo, root, globalDataModels);
             }
-            var a = 1;
+        }
+
+        private static void Match(PropertyInfo pInfo, XmlNode xmlNode, object context)
+        {
+            SaveKeyCodeAttribute Attribute = pInfo.GetCustomAttribute<SaveKeyCodeAttribute>();
+            if (Attribute != null)
+            {
+                foreach (XmlElement node in xmlNode.ChildNodes)
+                {
+                    if (node.Name == Attribute.KeyCode)
+                    {
+                        SetUpData(node, pInfo, context);
+                        break;
+                    }
+                }
+            }
+        }
+        public static void SetUpData(XmlElement element, PropertyInfo pInfo, object Context)
+        {
+            SaveKeyCodeAttribute Attribute = pInfo.GetCustomAttribute<SaveKeyCodeAttribute>();
+            string KeyCode = Attribute.KeyCode;
+            SaveDataType SaveDataType = Attribute.SaveDataType;
+            Type CollectionType = Attribute.CollectionElementType;
+
+            if (SaveDataType == SaveDataType.Class)
+            {
+                object PropertyValue = pInfo.GetValue(Context);
+
+                //iterate through properties of this class
+                PropertyInfo[] propertiesInfo = PropertyValue.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+                foreach (PropertyInfo pInfoInContext in propertiesInfo)
+                {
+                    Match(pInfoInContext, element, PropertyValue);
+                }
+            }
+            else if (SaveDataType == SaveDataType.ListOfClass)
+            {
+                IList collection = (IList)pInfo.GetValue(Context);
+                //because we are working with the existing global - reset the collection
+                collection.Clear();
+                //iterate through items of collection
+                foreach (XmlElement xmlItem in element.ChildNodes)
+                {
+                    var classItem = SolveConstructor(CollectionType);
+                    if (classItem == null) throw new Exception(string.Format("Unable to create class item {0}", CollectionType.FullName));
+                   
+
+                    //iterate through properties of this class
+                    PropertyInfo[] propertiesInfo = classItem.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+                    foreach (PropertyInfo pInfoInContext in propertiesInfo)
+                    {
+                        Match(pInfoInContext, xmlItem, classItem);
+                    }
+
+                    collection.Add(classItem);
+                }
+            }
+            else if (SaveDataType == SaveDataType.List)
+            {
+                IList collection = (IList)pInfo.GetValue(Context);
+                //because we are working with the existing global - reset the collection
+                collection.Clear();
+                //iterate through items of collection
+                foreach (XmlElement xmlItem in element.ChildNodes)
+                {
+                    collection.Add(TrySolveConverter(xmlItem.InnerText, Attribute.CollectionElementType));
+                }
+            }
+            else if (SaveDataType == SaveDataType.Default)
+            {
+                string value = element.InnerText;
+                object solvedValue = TrySolveConverter(value, pInfo.PropertyType);
+                if (solvedValue == null) throw new Exception("Unable to solve request");
+                pInfo.SetValue(Context, solvedValue);
+                var b = 1;
+            }
+        }
+        public static object TrySolveConverter(string value, Type Req)
+        {
+            if (Req == typeof(int))
+            {
+                int.TryParse(value, out int result);
+                return result;
+            }
+            if (Req == typeof(string))
+                return value;
+            if (Req == typeof(double))
+            {
+                double.TryParse(value, out double result);
+                return result;
+            }
+            if (Req == typeof(bool))
+            {
+                bool.TryParse(value, out bool result);
+                return result;
+            }
+            
+            return null;
+        }
+        public static object SolveConstructor(Type type)
+        {
+            ConstructorInfo constructor = type.GetConstructors().FirstOrDefault();
+            if (constructor == null)
+                return null;
+
+            var arguments = constructor.GetParameters();
+            List<object> argumentFullfilment = new List<object>();
+
+            foreach (var argument in arguments)
+            {
+                var obj = Registry.Demand(argument.ParameterType);
+                if (obj == null) throw new Exception(string.Format("Unable to fullfill requirement Argument {0} for type {1} not found in registry ", argument.Name, type.FullName));
+
+                argumentFullfilment.Add(obj);
+            }
+            return Activator.CreateInstance(type, argumentFullfilment.ToArray());
         }
     }
 }
