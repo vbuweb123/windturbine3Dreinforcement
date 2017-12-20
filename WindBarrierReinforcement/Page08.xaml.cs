@@ -58,5 +58,12 @@ namespace WindBarrierReinforcement
         {
             CultureRenamer.Rename(UI_Grid_Page8_Master);
         }
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            string imageSource = "Assets/Images/AR_01.png";
+
+            PictureInfo PictureInfo = new PictureInfo(imageSource);
+            PictureInfo.Show();
+        }
     }
 }

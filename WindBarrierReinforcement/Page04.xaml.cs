@@ -360,5 +360,12 @@ namespace WindBarrierReinforcement
         {
             DataModelCircular_ZoneCollection.Remove();
         }
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            string imageSource = "Assets/Images/BottomR_01.png";
+
+            PictureInfo PictureInfo = new PictureInfo(imageSource);
+            PictureInfo.Show();
+        }
     }
 }

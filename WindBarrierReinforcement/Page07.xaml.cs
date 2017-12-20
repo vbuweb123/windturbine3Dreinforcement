@@ -49,5 +49,12 @@ namespace WindBarrierReinforcement
 
             CultureRenamer.Rename(UI_MasterGrid);
         }
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            string imageSource = "Assets/Images/OPTR_01.png";
+
+            PictureInfo PictureInfo = new PictureInfo(imageSource);
+            PictureInfo.Show();
+        }
     }
 }

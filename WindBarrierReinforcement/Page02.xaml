@@ -51,7 +51,7 @@
                     <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
                 </i:Interaction.Behaviors>
             </TextBox>
-            
+
             <!--No Bolt Pairs-->
             <Label Content="__No Bolt Pairs" HorizontalAlignment="Left"  VerticalAlignment="Top"
                    ap:CultureKey.CultureRes="Lbl_Anc_NoBoltPairs" 
@@ -237,7 +237,7 @@
                 <i:Interaction.Behaviors>
                     <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
                 </i:Interaction.Behaviors>
-            </TextBox>       
+            </TextBox>
 
             <!--Distance Bolt Pair-->
             <Label Content="__Distance Bolt Pairs" HorizontalAlignment="Left"  VerticalAlignment="Top"
@@ -280,7 +280,7 @@
                     <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
                 </i:Interaction.Behaviors>
             </TextBox>
-           
+
             <!--Bolt Diameter-->
             <Label Content="__Bolt Diameter" HorizontalAlignment="Left"  VerticalAlignment="Top"
                    ap:CultureKey.CultureRes="Lbl_Anc_BoltDiameter"
@@ -363,6 +363,14 @@
                     <behaviors:NumericBehaviour InitialValue="0"></behaviors:NumericBehaviour>
                 </i:Interaction.Behaviors>
             </TextBox>
+
+            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Height="30" Click="Button_Click" Margin="485,5,0,0" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Assets/Icons/Preview.png"/>
+                    <TextBlock Text="Show Image" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
         </Grid>
 
     </Grid>

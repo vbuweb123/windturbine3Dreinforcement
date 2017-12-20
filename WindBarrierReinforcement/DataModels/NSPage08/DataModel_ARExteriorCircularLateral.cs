@@ -90,7 +90,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
             get { return minbarLength; }
             set
             {
-                noOfBars = value;
+                minbarLength = value;
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_ARExteriorCircularLateral>(x => x.MinBarLength));
             }
         }

@@ -583,7 +583,17 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button Content="Add" Margin="36,159,617,375" Click="Button_Click"/>
-        <Button Content="Subtract" Margin="36,210,617,324" Click="Subtract_Click"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Add" 
+                Margin="20,160,0,0" Width="100" Height="30" Click="Button_Click" />
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Subtract" 
+                Margin="20,195,0,0" Width="100" Height="30" Click="Subtract_Click"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="40" Click="Button_Click1" Margin="20,230,0,0"   >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Assets/Icons/Preview.png"/>
+                <TextBlock Text="Show Image" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+
     </Grid>
 </Page>

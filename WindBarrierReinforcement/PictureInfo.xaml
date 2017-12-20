@@ -1,0 +1,41 @@
+﻿<Window x:Class="WindBarrierReinforcement.PictureInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WindBarrierReinforcement"
+      mc:Ignorable="d" 
+      ResizeMode="CanResize"
+      Title="PictureInfo" Width="739" Height="446">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/XamlResources.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Border BorderBrush="{StaticResource TT_BottomBGBrush}" BorderThickness="0.5"
+                        Height="{Binding Height, RelativeSource={RelativeSource AncestorType={x:Type Window} }}"
+                        Width="{Binding Width, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+
+            <WrapPanel Background="Transparent" Margin="0,0,0,0" 
+                        Height="{Binding Height, RelativeSource={RelativeSource AncestorType={x:Type Window} }}"
+                        Width="{Binding Width, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+
+                <Border Background="{StaticResource BackgroundGradientBrush}" Margin="0,0,0,0"
+                        Height="{Binding Height, RelativeSource={RelativeSource AncestorType={x:Type WrapPanel} }}"
+                        Width="{Binding Width, RelativeSource={RelativeSource AncestorType={x:Type WrapPanel}}}"
+                        DockPanel.Dock="Top">
+
+                    <Image VerticalAlignment="Center" 
+                           DataContext="{Binding Picture}"
+                           Source="{Binding ImageSource, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                </Border>
+            </WrapPanel>
+        </Border>
+
+    </Grid>
+</Window>

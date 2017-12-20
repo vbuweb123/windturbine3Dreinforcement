@@ -415,7 +415,7 @@
                         Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
                         Style="{StaticResource TextBoxTagTrigger_SpacingSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
                         HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" 
-                        VerticalAlignment="Top" Width="150">                   
+                        VerticalAlignment="Top" Width="150">
                     </TextBox>
 
                     <!--No Of Bars-->
@@ -426,7 +426,7 @@
                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
                         Style="{StaticResource TextBoxTagTrigger_NoOfBarsSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
-                        HorizontalAlignment="Left" Height="25" Margin="150,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">                       
+                        HorizontalAlignment="Left" Height="25" Margin="150,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
                     </TextBox>
 
                     <!--Length Bar Min-->
@@ -509,5 +509,11 @@
                 </Grid>
             </TabItem>
         </TabControl>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Height="30" Click="Button_Click1" Margin="50,300,0,0"  >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Assets/Icons/Preview.png"/>
+                <TextBlock Text="Show Image" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Page>
