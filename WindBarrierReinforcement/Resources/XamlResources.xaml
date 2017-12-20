@@ -140,47 +140,75 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="TextBoxTagTrigger_NoOFBars_SpacingSelectCurrent" TargetType="TextBox">
+    <Style x:Key="TextBoxTagTrigger_CBES_Spacing" TargetType="TextBox">
         <Style.Triggers>
-            <Trigger Property="Tag" Value="NoOfBars">
+            <Trigger Property="Tag" Value="NoOfBars_Spacing_True">
                 <Setter Property="IsEnabled" Value="True"></Setter>
             </Trigger>
-            <Trigger Property="Tag" Value="Length">
+            <Trigger Property="Tag" Value="NoOfBars_Spacing_False">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Spacing_Length_True">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Spacing_Length_False">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars_Length_True">
                 <Setter Property="IsEnabled" Value="False"></Setter>
             </Trigger>
-            <Trigger Property="Tag" Value="Spacing">
-                <Setter Property="IsEnabled" Value="True"></Setter>
+            <Trigger Property="Tag" Value="NoOfBars_Length_False">
+                <Setter Property="IsEnabled" Value="False"></Setter>
             </Trigger>
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="TextBoxTagTrigger_Spacing_LengthSelectCurrent" TargetType="TextBox">
+    <Style x:Key="TextBoxTagTrigger_CBES_Length" TargetType="TextBox">
         <Style.Triggers>
-            <Trigger Property="Tag" Value="NoOfBars">
+            <Trigger Property="Tag" Value="NoOfBars_Spacing_True">
                 <Setter Property="IsEnabled" Value="False"></Setter>
             </Trigger>
-            <Trigger Property="Tag" Value="Length">
+            <Trigger Property="Tag" Value="NoOfBars_Spacing_False">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Spacing_Length_True">
                 <Setter Property="IsEnabled" Value="True"></Setter>
             </Trigger>
-            <Trigger Property="Tag" Value="Spacing">
+            <Trigger Property="Tag" Value="Spacing_Length_False">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars_Length_True">
                 <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars_Length_False">
+                <Setter Property="IsEnabled" Value="False"></Setter>
             </Trigger>
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="TextBoxTagTrigger_NoOfBars_LengthSelectCurrent" TargetType="TextBox">
+    <Style x:Key="TextBoxTagTrigger_CBES_NoOfBars" TargetType="TextBox">
         <Style.Triggers>
-            <Trigger Property="Tag" Value="NoOfBars">
+            <Trigger Property="Tag" Value="NoOfBars_Spacing_True">
                 <Setter Property="IsEnabled" Value="True"></Setter>
             </Trigger>
-            <Trigger Property="Tag" Value="Length">
+            <Trigger Property="Tag" Value="NoOfBars_Spacing_False">
                 <Setter Property="IsEnabled" Value="True"></Setter>
             </Trigger>
-            <Trigger Property="Tag" Value="Spacing">
+            <Trigger Property="Tag" Value="Spacing_Length_True">
                 <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Spacing_Length_False">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars_Length_True">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars_Length_False">
+                <Setter Property="IsEnabled" Value="True"></Setter>
             </Trigger>
         </Style.Triggers>
     </Style>
+    
 
     <!--Tab Item Style-->
     <Style TargetType="TabItem">
@@ -193,7 +221,7 @@
     </Style>
 
     <ControlTemplate x:Key="ToolTipImageLoader" TargetType="ToolTip">
-        <Border BorderBrush="{StaticResource TT_BottomBGBrush}" BorderThickness="0.5"  Height="270" Width="480">
+        <Border BorderBrush="{StaticResource TT_BottomBGBrush}" BorderThickness="0.5"  Height="360" Width="640">
             <WrapPanel Background="Transparent" Margin="0,0,0,0" >
                 <Border Background="{StaticResource BackgroundGradientBrush}" Margin="0,0,0,0"
                         Height="{Binding Height, RelativeSource={RelativeSource AncestorType={x:Type Border} }}"

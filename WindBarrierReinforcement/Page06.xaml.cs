@@ -50,5 +50,12 @@ namespace WindBarrierReinforcement
             InitializeComponent();
             this.DataContext = this;
         }
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            string imageSource = "Assets/Images/UPBR_01.png";
+
+            PictureInfo PictureInfo = new PictureInfo(imageSource);
+            PictureInfo.Show();
+        }
     }
 }

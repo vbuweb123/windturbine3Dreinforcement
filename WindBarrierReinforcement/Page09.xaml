@@ -17,11 +17,15 @@
     </Page.Resources>
 
     <Grid Name="UI_Grid_Master" Background="{StaticResource AppMainBackgroundColor}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="23*"/>
+        </Grid.ColumnDefinitions>
         <TextBlock ap:CultureKey.CultureRes="Tb_Page09_Title"  HorizontalAlignment="Left" Margin="20,10,0,0" TextWrapping="Wrap" Text="__U Bars Around Bolts" 
-                   VerticalAlignment="Top" Style="{StaticResource AppContentTitleTextBlock}"/>
-        
+                   VerticalAlignment="Top" Style="{StaticResource AppContentTitleTextBlock}" Grid.ColumnSpan="2"/>
+
         <ToolBarTray Orientation="Vertical" HorizontalAlignment="Left" Height="402"
-                     Margin="13,43,0,0" VerticalAlignment="Top" Width="150">
+                     Margin="13,43,0,0" VerticalAlignment="Top" Width="150" Grid.ColumnSpan="2">
             <ToolBar DataContext="{Binding DataModelUBABCollection}" ItemsSource="{Binding Collection}" 
                      VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,0,-150,-402">
                 <ToolBar.ItemTemplate>
@@ -38,12 +42,12 @@
             </ToolBar>
         </ToolBarTray>
 
-        <Button Content="+" HorizontalAlignment="Left" Margin="168,49,0,0" VerticalAlignment="Top" Width="29" Click="Ui_ButtonAdd_Click" Height="52"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="43,49,0,0" VerticalAlignment="Top" Width="29" Click="Ui_ButtonAdd_Click" Height="52" Grid.Column="1"/>
 
-        <Button Content="-" HorizontalAlignment="Left" Margin="168,120,0,0" VerticalAlignment="Top" Width="29" Click="Ui_ButtonRemove_Click" Height="52"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="43,120,0,0" VerticalAlignment="Top" Width="29" Click="Ui_ButtonRemove_Click" Height="52" Grid.Column="1"/>
 
         <!--Singular Content-->
-        <Grid Name="UI_Grid_DataModelContent" Background="{StaticResource AppContainerBackgroundColor}" Margin="202,45,20,20">
+        <Grid Name="UI_Grid_DataModelContent" Background="{StaticResource AppContainerBackgroundColor}" Margin="77,45,20,20" Grid.Column="1">
             <Label Name="UiLabelTitle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,0" Height="30">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock ap:CultureKey.CultureRes="Tb_UBAB_Label_Title" Text="__Enter" Padding="0,0,5,0" Style="{StaticResource AppContentTitleTextBlock2}"/>
@@ -75,7 +79,13 @@
             <Label ap:CultureKey.CultureRes="Lbl_UBAB_Diameter" Content="__Diameter" HorizontalAlignment="Left" Margin="5,185,0,0" VerticalAlignment="Top" Height="25"/>
             <ComboBox ItemsSource="{Binding DiameterNames, Mode=OneWay}"
                       SelectedIndex="{Binding SelectedIndexDiameter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                      Margin="150,185,50,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150" />
+                      Margin="150,185,50,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150" Height="25"/>
         </Grid>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Height="30" Click="Button_Click1" Margin="30,450,0,-15" Grid.ColumnSpan="2"  >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Assets/Icons/Preview.png"/>
+                <TextBlock Text="Show Image" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Page>

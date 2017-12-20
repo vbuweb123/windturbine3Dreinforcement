@@ -413,7 +413,7 @@
                         <RadioButton
                                     GroupName="TrueFalse" Margin="40,0,0,0"
                                     Content="True" HorizontalAlignment="Left"  VerticalContentAlignment="Center" FontSize="12"
-                                    DataContext="{Binding DataModel_CircularBarsExteriorSide}"
+                                    DataContext="{Binding DataModel_CircularBarsExteriorSide}"                            
                                     IsChecked="{Binding UseDefaultLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <RadioButton
                                     GroupName="TrueFalse" Margin="15,0,0,0"
@@ -428,7 +428,7 @@
                         DataContext="{Binding DataModel_CircularBarsExteriorSide}"
                         Text="{Binding NoOfBars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
-                        Style="{StaticResource TextBoxTagTrigger_NoOfBarsSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
+                        Style="{StaticResource TextBoxTagTrigger_CBES_NoOfBars}" Template="{StaticResource AppTextBoxGeneric}"
                         HorizontalAlignment="Left" Height="25" Margin="150,65,50,0" TextWrapping="Wrap" VerticalAlignment="Top" 
                         Width="150">                        
                     </TextBox>
@@ -438,7 +438,7 @@
                         DataContext="{Binding DataModel_CircularBarsExteriorSide}"
                         Text="{Binding Spacing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
-                        Style="{StaticResource TextBoxTagTrigger_SpacingSelectCurrent}" Template="{StaticResource AppTextBoxGeneric}"
+                        Style="{StaticResource TextBoxTagTrigger_CBES_Spacing}" Template="{StaticResource AppTextBoxGeneric}"
                         HorizontalAlignment="Left" Height="25" Margin="150,125,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">                                                
                     </TextBox>
 
@@ -447,26 +447,10 @@
                     <TextBox                        
                         DataContext="{Binding DataModel_CircularBarsExteriorSide}"
                         Text="{Binding CustomLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Tag="{Binding SelectedOptionName}" Template="{StaticResource AppTextBoxGeneric}"
+                        Tag="{Binding CurrentOption, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource TextBoxTagTrigger_CBES_Length}" Template="{StaticResource AppTextBoxGeneric}"
                         HorizontalAlignment="Left" Height="25" Margin="150,155,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Style.Triggers>
-                                    <Trigger Property="Tag" Value="NoOfBars_Spacing">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="Spacing_Length">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                    <Trigger Property="Tag" Value="NoOfBars_Length">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBox.Style>
+                        
                     </TextBox>
 
                     <!--Offset-->
@@ -514,5 +498,11 @@
             </TabItem>
 
         </TabControl>
-    </Grid>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Height="30" Click="Button_Click1" Margin="50,210,0,0"  >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Assets/Icons/Preview.png"/>
+                <TextBlock Text="Show Image" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+    </Grid>         
 </Page>

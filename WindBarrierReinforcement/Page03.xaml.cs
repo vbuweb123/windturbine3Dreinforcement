@@ -36,6 +36,19 @@ namespace WindBarrierReinforcement
 
             CultureRenamer.Rename(UI_Grid_Master);
         }
-               
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            string imageSource = "Assets/Images/Piles_01.png";
+
+            PictureInfo PictureInfo = new PictureInfo(imageSource);
+            PictureInfo.Show();
+        }
+        private void Button_Click2(object sender, RoutedEventArgs e)
+        {
+            string imageSource = "Assets/Images/Piles_02.png";
+
+            PictureInfo PictureInfo = new PictureInfo(imageSource);
+            PictureInfo.Show();
+        }
     }
 }
