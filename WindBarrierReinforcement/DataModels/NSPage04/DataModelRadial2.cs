@@ -104,7 +104,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private double spacingAngle;
-        [SaveKeyCode(KeyCode = "SpacingAngle")]
+        //NO SAVE CODE REQUIRED
         public double SpacingAngle
         {
             get { return spacingAngle; }
@@ -116,7 +116,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int largeDiameterOffsetFromCenter;
-        [SaveKeyCode(KeyCode = "LargeDiameterOffsetFromCenter")]
+        //NO SAVE CODE REQUIRED
         public int LargeDiameterOffsetFromCenter
         {
             get { return largeDiameterOffsetFromCenter; }
@@ -128,7 +128,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int smallDiameterOffsetFromCenter;
-        [SaveKeyCode(KeyCode = "SmallDiameterOffsetFromCenter")]
+        //NO SAVE CODE REQUIRED
         public int SmallDiameterOffsetFromCenter
         {
             get { return smallDiameterOffsetFromCenter; }
@@ -140,7 +140,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int thirdDiameterOffsetFromCenter;
-        [SaveKeyCode(KeyCode = "ThirdDiameterOffsetFromCenter")]
+        //NO SAVE CODE REQUIRED
         public int ThirdDiameterOffsetFromCenter
         {
             get { return thirdDiameterOffsetFromCenter; }
@@ -160,7 +160,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int overlappLargeDiameter;
-        [SaveKeyCode(KeyCode = "OverlappLargeDiameter")]
+        //NO SAVE CODE REQUIRED
         public int OverlappLargeDiameter
         {
             get { return overlappLargeDiameter; }
@@ -168,7 +168,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int overlappSmallDiameter;
-        [SaveKeyCode(KeyCode = "OverlappSmallDiameter")]
+        //NO SAVE CODE REQUIRED
         public int OverlappSmallDiameter
         {
             get { return overlappSmallDiameter; }
@@ -176,7 +176,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int overlapp3rdDiameter;
-        [SaveKeyCode(KeyCode = "Overlapp3rdDiameter")]
+        //NO SAVE CODE REQUIRED
         public int Overlapp3rdDiameter
         {
             get { return overlapp3rdDiameter; }
@@ -184,7 +184,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private double spacing3rdDiameterAngle;
-        [SaveKeyCode(KeyCode = "Spacing3rdDiameterAngle")]
+        //NO SAVE CODE REQUIRED
         public double Spacing3rdDiameterAngle
         {
             get { return spacing3rdDiameterAngle; }
@@ -192,7 +192,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private double startOffsetAngle;
-        [SaveKeyCode(KeyCode = "StartOffsetAngle")]
+        //NO SAVE CODE REQUIRED
         public double StartOffsetAngle
         {
             get { return startOffsetAngle; }
@@ -212,7 +212,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         {
             this.global = global;
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -232,7 +232,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                         Set_StartOffsetAngle();
                 };
             });
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage04.DataModelRadialGeneral.PropertyChanged += (o, e) =>
                 {
@@ -242,7 +242,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                         Set_ThirdDiameterOffsetFromCenter();
                 };
             });
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage04.DataModelRadial1.PropertyChanged += (o, e) =>
                 {
@@ -254,7 +254,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                         Set_Overlapp3rdDiameter();
                 };
             });
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                global.GDMPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
                 {

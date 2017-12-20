@@ -13,7 +13,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
     public class DataModelRadialGeneral : DataModel
     {
         private int minCore;
-        [SaveKeyCode(KeyCode = "MinCore")]
+        //NO SAVE CODE REQUIRED
         public int MinCore
         {
             get { return minCore; }
@@ -39,7 +39,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         private double alternativeHalfMinStartAngle; //TODO : calculated after anchor is set
 
         private double alternativeMinStartAngle;
-        [SaveKeyCode(KeyCode = "AlternativeMinStartAngle")]
+        //NO SAVE CODE REQUIRED
         public double AlternativeMinStartAngle
         {
             get { return alternativeMinStartAngle; }
@@ -51,7 +51,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         {
             this.global = global;
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -61,7 +61,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                 };
             });
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage04.DataModelRadial2.PropertyChanged += (o, e) =>
                 {
@@ -72,7 +72,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                 };
             });
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage02.DataModel_Anchor.PropertyChanged += (o, e) =>
                 {

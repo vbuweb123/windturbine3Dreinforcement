@@ -18,7 +18,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_Material_Foundation
         /// </summary>
         private string materialFoundation;
-        [SaveKeyCode(KeyCode = "MaterialFoundation")]
+        //NO SAVE CODE REQUIRED
         public string MaterialFoundation
         {
             get { return materialFoundation; }
@@ -32,7 +32,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_Material_Foundation_Bed
         /// </summary>
         private string materialFoundationBed;
-        [SaveKeyCode(KeyCode = "MaterialFoundationBed")]
+        //NO SAVE CODE REQUIRED
         public string MaterialFoundationBed
         {
             get { return materialFoundationBed; }
@@ -47,7 +47,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_Material_Tower_Base
         /// </summary>
         private string materialTowerBase;
-        [SaveKeyCode(KeyCode = "MaterialTowerBase")]
+        //NO SAVE CODE REQUIRED
         public string MaterialTowerBase
         {
             get { return materialTowerBase; }
@@ -64,7 +64,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         {
             this.global = global;
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage11.DataModelMaterialsFoundation.PropertyChanged += (o, e) =>
                 {
@@ -72,7 +72,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
                         Set_MaterialFoundation();                    
                 };
             });
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage11.DataModelMaterialsLeanConcrete.PropertyChanged += (o, e) =>
                 {                  
@@ -81,7 +81,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
                 };
             });
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage11.DataModelMaterialsFoundationTowerBase.PropertyChanged += (o, e) =>
                 {

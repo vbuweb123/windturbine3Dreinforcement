@@ -100,7 +100,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
 
         public DataModel_RadialEdgeConcrete(GlobalDataModels global)
         {
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameter = 0;
             });
         }

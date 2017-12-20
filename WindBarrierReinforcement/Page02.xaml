@@ -18,7 +18,7 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Name="UI_Grid_Master" Background="{StaticResource AppMainBackgroundColor}">
+    <Grid Name="UI_Grid_Master">
         <TextBlock ap:CultureKey.CultureRes="Tb_P02_Title" HorizontalAlignment="Left" Margin="20,15,0,0" TextWrapping="Wrap" Text="__Anchor" VerticalAlignment="Top" Style="{StaticResource AppContentTitleTextBlock}"/>
         <Grid Background="{StaticResource AppContainerBackgroundColor}" Margin="15,50,25,25">
 

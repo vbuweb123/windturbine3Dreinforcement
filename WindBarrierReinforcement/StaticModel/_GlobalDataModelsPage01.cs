@@ -26,7 +26,7 @@ namespace WindBarrierReinforcement.StaticModel
             [SaveKeyCode(KeyCode = "DataModel_Global_Coordinations_GroundPoint", SaveDataType = SaveDataType.Class)]
             public DataModel_Global_Coordinations_GroundPoint DataModel_Global_Coordinations_GroundPoint{ get; private set; }
 
-            [SaveKeyCode(KeyCode = "DataModel_Global_Materials", SaveDataType = SaveDataType.Class)]
+            //NO SAVE CODE REQUIRED
             public DataModel_Global_Materials DataModel_Global_Materials { get; private set; }
 
             public _GlobalDataModelsPage01(GlobalDataModels global)

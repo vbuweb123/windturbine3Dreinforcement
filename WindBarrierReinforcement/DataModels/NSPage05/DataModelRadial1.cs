@@ -104,7 +104,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private double spacingAngle;
-        [SaveKeyCode(KeyCode = "SpacingAngle")]
+        //NO SAVE CODE REQUIRED
         public double SpacingAngle
         {
             get { return spacingAngle; }
@@ -116,7 +116,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int largeDiameterOffsetFromCenter;
-        [SaveKeyCode(KeyCode = "LargeDiameterOffsetFromCenter")]
+        //NO SAVE CODE REQUIRED
         public int LargeDiameterOffsetFromCenter
         {
             get { return largeDiameterOffsetFromCenter; }
@@ -128,7 +128,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private double smallDiameterOffsetFromCenter;
-        [SaveKeyCode(KeyCode = "SmallDiameterOffsetFromCenter")]
+        //NO SAVE CODE REQUIRED
         public double SmallDiameterOffsetFromCenter
         {
             get { return smallDiameterOffsetFromCenter; }
@@ -140,7 +140,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int thirdDiameterOffsetFromCenter;
-        [SaveKeyCode(KeyCode = "ThirdDiameterOffsetFromCenter")]
+        //NO SAVE CODE REQUIRED
         public int ThirdDiameterOffsetFromCenter
         {
             get { return thirdDiameterOffsetFromCenter; }
@@ -184,7 +184,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private double spacing3rdDiameterAngle;
-        [SaveKeyCode(KeyCode = "Spacing3rdDiameterAngle")]
+        //NO SAVE CODE REQUIRED
         public double Spacing3rdDiameterAngle
         {
             get { return spacing3rdDiameterAngle; }
@@ -192,7 +192,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private double startOffsetAngle;
-        [SaveKeyCode(KeyCode = "StartOffsetAngle")]
+        //NO SAVE CODE REQUIRED
         public double StartOffsetAngle
         {
             get { return startOffsetAngle; }
@@ -213,7 +213,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         {
             this.global = global;
 
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 this.PropertyChanged += (o, e) =>
                 {
 
@@ -238,14 +238,14 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                 };
             });
 
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 global.GDMPage04.DataModelRadialGeneral.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadialGeneral>(x => x.MinSpaceField))
                         Set_ThirdDiameterOffsetFromCenter();
                 };
             });
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 global.GDMPage04.DataModelRadial1.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelRadial1>(x => x.LargeDiameterOffsetFromCenter))
@@ -254,7 +254,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                 };
             });
             //e ok
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage01.DataModel_Global_Formwork>(x => x.DTowerBase))

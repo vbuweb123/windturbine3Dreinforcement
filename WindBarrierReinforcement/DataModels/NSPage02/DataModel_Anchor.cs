@@ -104,7 +104,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_Depth_Anchor
         private int depthAnchor;
-        [SaveKeyCode(KeyCode = "DepthAnchor")]
+        //NO SAVE CODE REQUIRED
         public int DepthAnchor
         {
             get => depthAnchor;
@@ -113,7 +113,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_Depth_Anchor_Botttom
         private int depthAnchorBottom;
-        [SaveKeyCode(KeyCode = "DepthAnchorBottom")]
+        //NO SAVE CODE REQUIRED
         public int DepthAnchorBottom
         {
             get => depthAnchorBottom;
@@ -122,7 +122,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_Radius_Centerline_Tower
         private int radiusCenterLineTower;
-        [SaveKeyCode(KeyCode = "RadiusCenterLineTower")]
+        //NO SAVE CODE REQUIRED
         public int RadiusCenterLineTower
         {
             get => radiusCenterLineTower;
@@ -176,7 +176,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_DistanceBoltPair
         private int dispanceBoltPairs;
-        [SaveKeyCode(KeyCode = "DispanceBoltPairs")]
+        //NO SAVE CODE REQUIRED
         public int DispanceBoltPairs
         {   
             get { return dispanceBoltPairs; }
@@ -212,7 +212,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// <summary>
         /// UI_TextBox_MaterialGrout
         private string materialGrout;
-        [SaveKeyCode(KeyCode = "MaterialGrout")]
+        //NO SAVE CODE REQUIRED
         public string MaterialGrout
         {
             get { return materialGrout; }
@@ -232,7 +232,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// UI_TextBox_BoltLength
         /// </summary>
         private int boltLength;
-        [SaveKeyCode(KeyCode = "BoltLength")]
+        //NO SAVE CODE REQUIRED
         public int BoltLength
         {
             get { return boltLength; }
@@ -243,7 +243,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         /// UI_TextBox_OffsetBottFlange
         /// </summary>
         private int offsetBottFlange;
-        [SaveKeyCode(KeyCode = "OffsetBottFlange")]
+        //NO SAVE CODE REQUIRED
         public int OffsetBottFlange
         {
             get { return offsetBottFlange; }
@@ -255,7 +255,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
         {
 
             this.global = global;
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 this.PropertyChanged += (o, e) => {
                     //Depth Anchor
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.Peshrinkhoseheigth)
@@ -286,7 +286,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
                 };
             });
 
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 this.global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) => {
                     //DepthAnchorBottom
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))
@@ -298,7 +298,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage02
                 };
             });
 
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 global.GDMPage11.DataModelMaterialsGrouting.PropertyChanged += (o, e) => {
                     //MaterialGrout
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage11.DataModelMaterials>(x => x.SelectedIndexConcreteQuality))

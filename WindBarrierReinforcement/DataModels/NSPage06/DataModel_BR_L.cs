@@ -71,7 +71,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
 
         public DataModel_BR_L(GlobalDataModels global)
         {
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameter = 0;
             });           
         }

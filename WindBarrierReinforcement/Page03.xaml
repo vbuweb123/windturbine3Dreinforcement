@@ -20,7 +20,7 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Name="UI_Grid_Master"  Background="{StaticResource AppMainBackgroundColor}">
+    <Grid Name="UI_Grid_Master" >
         <TextBlock ap:CultureKey.CultureRes="Txt_Piles" Text="__Piles" HorizontalAlignment="Left" Margin="20,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                    Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title" />
         <Grid Name="Ui_Grid_Piles" Background="{StaticResource AppContainerBackgroundColor}" Margin="15,50,25,25">

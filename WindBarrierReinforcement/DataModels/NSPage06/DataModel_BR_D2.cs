@@ -64,10 +64,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage06
 
         public DataModel_BR_D2(GlobalDataModels global)
         {
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameter = 0;
             });
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexOption = 0;
             });
         }

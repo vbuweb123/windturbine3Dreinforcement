@@ -31,6 +31,9 @@ namespace WindBarrierReinforcement
     {
         public DataModelUBABCollection DataModelUBABCollection { get; private set; }
 
+        private string _zoneName = "Zona ";
+        private int SelectedIndex = -1;
+
         public Page09(GlobalDataModels global)
         {
             DataModelUBABCollection = global.GDMPage09.DataModelUBABCollection;
@@ -38,12 +41,22 @@ namespace WindBarrierReinforcement
             InitializeComponent();
             this.DataContext = this;
 
-            AddNewNDataModel();
-            SetGridDataContext(0);
-
             CultureRenamer.Rename(UI_Grid_Master);
 
+            global.EvtHandler.AddPostBuildEvents(() => {
+                AddNewNDataModel();
+                SetGridDataContext(0);
+            });
 
+            global.EvtHandler.AddPostBuildEvents(() => {
+                DataModelUBABCollection.Collection.CollectionChanged += (o, e) => {
+                    foreach (var item in DataModelUBABCollection.Collection)
+                    {
+                        item.AddEvents();
+                        item.Set_InteriorHalfLength();
+                    }
+                };
+            });
 
             global.EvtHandler.AddPopulateDataAction(() =>
             {
@@ -114,9 +127,9 @@ namespace WindBarrierReinforcement
         private void Ui_ToolBarBtn_Click(object sender, RoutedEventArgs e)
         {
             Button btnSender = (Button)sender;
-            int Index = (int)btnSender.GetValue(TagProperty);
+            SelectedIndex  = (int)btnSender.GetValue(TagProperty);
 
-            SetGridDataContext(Index);
+            SetGridDataContext(SelectedIndex);
         }
         private void Button_Click1(object sender, RoutedEventArgs e)
         {

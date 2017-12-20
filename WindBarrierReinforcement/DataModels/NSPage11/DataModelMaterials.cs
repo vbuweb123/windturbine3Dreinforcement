@@ -98,19 +98,19 @@ namespace WindBarrierReinforcement.DataModels.NSPage11
             this.Name = destinationName;
             AdditionalInformation = "";
 
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexConcreteQuality = 2;
             });
 
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexExposureClass = 0;
             });
                    
 
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexConsistenceTolerance = 0;
             });
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.AdditionalInformation ="";
             });
 

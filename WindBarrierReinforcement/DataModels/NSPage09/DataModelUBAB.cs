@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         public List<String> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
 
         private int exteriorHalfLength;
-        [SaveKeyCode(KeyCode = "ExteriorHalfLength")]
+        //NO SAVE CODE REQUIRED
         public int ExteriorHalfLength
         {
             get { return exteriorHalfLength; }
@@ -109,23 +110,40 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         [SaveKeyCode(KeyCode = "IndexInList")]
         public int IndexInList { get; set; }
 
+        private bool eventsAdded = false;
+        private PropertyChangedEventHandler actionOnConstructed;
+
+        public Action AddEvents;
+        private Action RemoveEvents;
+
         public DataModelUBAB(GlobalDataModels global)
         {
-            global.EvtHandler.Add(() => {
-                this.PropertyChanged += (o, e) =>
+            actionOnConstructed = (o, e) => {
+                if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelUBAB>(x => x.ExteriorHalfLength))
+                    Set_InteriorHalfLength();
+            };
+
+            AddEvents = () =>
+            {
+                if (!eventsAdded)
                 {
-                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelUBAB>(x => x.ExteriorHalfLength))
-                        Set_InteriorHalfLength();
-                };
-            });
-            global.EvtHandler.AddPostEvtAction(() => {
-                this.SelectedIndexDiameter = 0;
-            });
+                    this.PropertyChanged += actionOnConstructed;
+                    eventsAdded = true;
+                }
+            };
+            RemoveEvents = () =>
+            {
+                this.PropertyChanged -= actionOnConstructed;
+            };
         }
 
-        private void Set_InteriorHalfLength()
+        public void Set_InteriorHalfLength()
         {
             InteriorHalfLength = ExteriorHalfLength;
+        }
+
+        ~DataModelUBAB() {
+            RemoveEvents();
         }
     }
 }

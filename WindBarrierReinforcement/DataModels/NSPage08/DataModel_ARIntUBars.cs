@@ -19,7 +19,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_Int_TopOffset
         /// </summary>
         private int topOffset;
-        [SaveKeyCode(KeyCode = "TopOffset")]
+        //NO SAVE CODE REQUIRED
         public int TopOffset
         {
             get { return topOffset; }
@@ -33,7 +33,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_Int_BottomOffset
         /// </summary>
         private int bottomOffset;
-        [SaveKeyCode(KeyCode = "BottomOffset")]
+        //NO SAVE CODE REQUIRED
         public int BottomOffset
         {
             get { return bottomOffset; }
@@ -47,7 +47,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_Int_AxisOffset
         /// </summary>
         private int axisOffset;
-        [SaveKeyCode(KeyCode = "AxisOffset")]
+        //NO SAVE CODE REQUIRED
         public int AxisOffset
         {
             get { return axisOffset; }
@@ -91,7 +91,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_Int_HookLength_Ularger
         /// </summary>
         private int hookULarger;
-        [SaveKeyCode(KeyCode = "HookULarger")]
+        //NO SAVE CODE REQUIRED
         public int HookULarger
         {
             get { return hookULarger; }
@@ -105,7 +105,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_Int_HookLength_Usmaller
         /// </summary>
         private int hookUSmaller;
-        [SaveKeyCode(KeyCode = "HookUSmaller")]
+        //NO SAVE CODE REQUIRED
         public int HookUSmaller
         {
             get { return hookUSmaller; }
@@ -119,7 +119,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_Int_TopExtraOffset
         /// </summary>
         private int topExtraOffset;
-        [SaveKeyCode(KeyCode = "TopExtraOffset")]
+        //NO SAVE CODE REQUIRED
         public int TopExtraOffset
         {
             get { return topExtraOffset; }
@@ -133,7 +133,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
         /// UI_TextBox_AR_Int_BottomExtraOffset
         /// </summary>
         private int bottomExtraOffset;
-        [SaveKeyCode(KeyCode = "BottomExtraOffset")]
+        //NO SAVE CODE REQUIRED
         public int BottomExtraOffset
         {
             get { return bottomExtraOffset; }
@@ -146,7 +146,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
 
         public DataModel_ARIntUBars(GlobalDataModels global)
         {
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 global.GDMPage08.DataModel_ARExtUBars.PropertyChanged += (o, e) =>
                 {
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_ARExtUBars>(x => x.TopOffset))
@@ -185,10 +185,10 @@ namespace WindBarrierReinforcement.DataModels.NSPage08
                     }
                 };
             });
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameterL = 0;
             });
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameterS = 0;
             });
         }

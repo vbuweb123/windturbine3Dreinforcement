@@ -41,7 +41,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         }
 
         private int hookLengths;
-        [SaveKeyCode(KeyCode = "HookLengths")]
+        //NO SAVE CODE REQUIRED
         public int HookLengths
         {
             get => hookLengths;
@@ -82,7 +82,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         {
             this.global = global;
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -92,7 +92,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
                     }
                 };
             });
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage12.DataModelShapesCollection.CollectionChanged += (o, e) =>
                 {
@@ -100,7 +100,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
                 };
             });
             //SelectedIndexDiameter
-            global.EvtHandler.AddPostEvtAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameter = 0;
             });
         }

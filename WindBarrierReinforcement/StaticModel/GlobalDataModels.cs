@@ -259,6 +259,7 @@ namespace WindBarrierReinforcement.StaticModel
                 GDMPage07.DataModel_CircularBarsTop.Spacing = 100;
                 GDMPage07.DataModel_CircularBarsTop.MaxLength = 8000;
                 GDMPage07.DataModel_CircularBarsTop.Overlap = 500;
+                GDMPage07.DataModel_CircularBarsTop.Groups = "2,2,x";
 
                 GDMPage07.DataModel_CircularBarsExteriorSide.SelectedIndexDiameter = Enum.GetNames(typeof(EDiameters)).ToList().IndexOf(EDiameters.D20.ToString());
                 GDMPage07.DataModel_CircularBarsExteriorSide.NoOfBars = 8;
@@ -328,8 +329,7 @@ namespace WindBarrierReinforcement.StaticModel
                 GDMPage10.DataModel_CHR_Zones.EdgeOffset1 = 300;
                 GDMPage10.DataModel_CHR_Zones.EdgeOffset2 = 1000;
             });
-            evtHandler.RegisterAll(); // hide this method to the outside world to avoind caling it from other places
-            evtHandler.CallPostEvtActions();
+           
             //evtHandler.PopulateData(); // called from MainWindows.cs because PopulateData maycontain functions defined in Pages. Pages are loaded after Global Has finished loading.
         }
     }

@@ -42,7 +42,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int numberEdgeCirculars;
-        [SaveKeyCode(KeyCode = "NumberEdgeCirculars")]
+        //NO SAVE CODE REQUIRED
         public int NumberEdgeCirculars
         {
             get { return numberEdgeCirculars; }
@@ -58,7 +58,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int radiusCore;
-        [SaveKeyCode(KeyCode = "RadiusCore")]
+        //NO SAVE CODE REQUIRED
         public int RadiusCore
         {
             get { return radiusCore; }
@@ -70,7 +70,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         public DataModelCircularGeneral(GlobalDataModels global)
         {
             this.global = global;
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 this.PropertyChanged += (o, e) => {
 
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelCircularGeneral>(x => x.SpacingEdgeCirculars))
@@ -78,7 +78,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                 };
             });
 
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 this.global.GDMPage02.DataModel_Anchor.PropertyChanged += (o, e) => {
                     
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.RadiusCenterLineTower) ||
@@ -87,7 +87,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
                 };
             });
 
-            global.EvtHandler.Add(() => {
+            global.EvtHandler.AddPostBuildEvents(() => {
                 this.global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) => {
 
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HFoundationEdge) ||

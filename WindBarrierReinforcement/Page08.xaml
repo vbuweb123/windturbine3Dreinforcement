@@ -21,13 +21,13 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Name="UI_Grid_Page8_Master" Background="{StaticResource AppMainBackgroundColor}">
+    <Grid Name="UI_Grid_Page8_Master">
         <TextBlock ap:CultureKey.CultureRes="Txt_AnchorsReinforcement" Text="__Anchors Reinforcement" HorizontalAlignment="Left" Margin="20,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                    Style="{StaticResource  AppContentTitleTextBlock}" />
 
         <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,50,25,25" 
                     SelectionChanged="TabControl_SelectionChanged" BorderThickness="0" 
-                    Background="{StaticResource AppMainBackgroundColor}">
+                    Background="Transparent">
 
             <TabItem Header="Exterior U Bars">
                 <Grid  Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">

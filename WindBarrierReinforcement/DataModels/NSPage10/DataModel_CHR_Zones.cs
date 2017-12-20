@@ -51,7 +51,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         }
 
         private int zoneLength2;
-        [SaveKeyCode(KeyCode = "ZoneLength2")]
+        //NO SAVE CODE REQUIRED
         public int ZoneLength2 // TODO : this needs to be calculated
         {
             get { return zoneLength2; }
@@ -91,7 +91,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         {
             this.global = global;
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 this.PropertyChanged += (o, e) =>
                 {
@@ -101,7 +101,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
                 };
             });
 
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) =>
                 {
@@ -112,7 +112,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
                 };
 
             });
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage04.DataModelRadial1.PropertyChanged += (o, e) =>
                 {
@@ -120,7 +120,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
                         Set_ZoneLength2();
                 };
             });
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage04.DataModelCircularGeneral.PropertyChanged += (o, e) =>
                 {
@@ -128,7 +128,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
                         Set_ZoneLength2();
                 };
             });
-            global.EvtHandler.Add(() =>
+            global.EvtHandler.AddPostBuildEvents(() =>
             {
                 global.GDMPage12.DataModelShapesCollection.CollectionChanged += (o, e) =>
                 {

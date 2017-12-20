@@ -24,23 +24,40 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
 
             Zones = new ObservableCollection<DataModelCircular_Zone>();
 
-            //2 zones minimum
-            Zones.Add(new DataModelCircular_Zone(global));
-            Zones.Add(new DataModelCircular_Zone(global));
-
-            Zones.CollectionChanged += (o, e) => {
-                for (var i = 0; i < Count; i++)
+            global.EvtHandler.AddPostBuildEvents(() => {
+                Zones.CollectionChanged += (o, e) =>
                 {
-                    Zones[i].ListIndex = i;
-                    var cc = Zones[i].ListIndex;
-                    if (i == 0)
-                        Zones[i].Position = EZonePosition.Start;
-                    else if (i == Count - 1)
-                        Zones[i].Position = EZonePosition.End;
-                    else
-                        Zones[i].Position = EZonePosition.Middle;
-                }
-            };
+                    for (var i = 0; i < Count; i++)
+                    {
+                        Zones[i].ListIndex = i;
+                        var cc = Zones[i].ListIndex;
+                        if (i == 0)
+                            Zones[i].Position = EZonePosition.Start;
+                        else if (i == Count - 1)
+                            Zones[i].Position = EZonePosition.End;
+                        else
+                            Zones[i].Position = EZonePosition.Middle;
+                    }
+                    //first update indices and then set data
+                    UpdateIndices();
+                    foreach (var item in Zones)
+                    {
+                        item.addEvents();
+
+                        item.Set_DistanceFromBottom();
+                        item.Set_NoOfBars();
+                        item.Set_OffsetFromEdge();
+                        item.Set_RadiusGiven();
+                        item.Set_ZoneLength();
+                        item.Set_ZoneInterDistance();
+                    }
+                };
+            });
+
+            global.EvtHandler.AddPostEventsRegisterAction(() => {
+                Zones.Add(new DataModelCircular_Zone(global));
+                Zones.Add(new DataModelCircular_Zone(global));
+            });
         }
         public void UpdateIndices()
         {
@@ -60,26 +77,12 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
             Zones.Add(new DataModelCircular_Zone(_globalDataModels));
         }
 
-        public void AddBeforeLast()
-        {
-            Zones.Insert(Count - 1, new DataModelCircular_Zone(_globalDataModels));
-        }
-
+     
         public bool Remove()
         {
             if (Zones.Count > 2)
             {
                 Zones.RemoveAt(Zones.Count - 1);
-                return true;
-            }
-            return false;
-        }
-
-        public bool RemoveBeforeLast()
-        {
-            if (Zones.Count > 2)
-            {
-                Zones.RemoveAt(Zones.Count - 2);
                 return true;
             }
             return false;
