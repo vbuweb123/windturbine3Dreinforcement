@@ -44,14 +44,12 @@ namespace WindBarrierReinforcement.DataModels.NSPage09
         {
             if (Collection.Count < _maxzones)
             {
-                this.Collection.Add(new DataModelUBAB(global));
+                var dataModelUBAB = new DataModelUBAB(global);
+                this.Collection.Add(dataModelUBAB);
+                dataModelUBAB.AddEvents();
             }
         }
 
-        public void RemoveAt(int index)
-        {
-            this.Collection.RemoveAt(index);
-        }
         public void RemoveLast()
         {
             if (Collection.Count == 1) return;

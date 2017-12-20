@@ -12,7 +12,10 @@ namespace WindBarrierReinforcement.StaticModel
         void AddPostBuildEvents(Action EvtAction);
         void AddPostEventsRegisterAction(Action EvtAction);
         void AddPopulateDataAction(Action action);
+        void RegisterPostBuildEvents();
+        void CallPostEventsRegisterAction();
         void CallPopulateDataAction();
+
     }
     public partial class GlobalDataModels
     {

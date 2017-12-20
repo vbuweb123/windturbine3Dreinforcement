@@ -104,7 +104,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private double spacingAngle;
-        [SaveKeyCode(KeyCode = "SpacingAngle")]
+        //NO SAVE CODE REQUIRED
         public double SpacingAngle
         {
             get { return spacingAngle; }
@@ -116,7 +116,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int largeDiameterOffsetFromCenter;
-        [SaveKeyCode(KeyCode = "LargeDiameterOffsetFromCenter")]
+        //NO SAVE CODE REQUIRED
         public int LargeDiameterOffsetFromCenter
         {
             get { return largeDiameterOffsetFromCenter; }
@@ -128,7 +128,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int smallDiameterOffsetFromCenter;
-        [SaveKeyCode(KeyCode = "SmallDiameterOffsetFromCenter")]
+        //NO SAVE CODE REQUIRED
         public int SmallDiameterOffsetFromCenter
         {
             get { return smallDiameterOffsetFromCenter; }
@@ -140,7 +140,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int thirdDiameterOffsetFromCenter;
-        [SaveKeyCode(KeyCode = "ThirdDiameterOffsetFromCenter")]
+        //NO SAVE CODE REQUIRED
         public int ThirdDiameterOffsetFromCenter
         {
             get { return thirdDiameterOffsetFromCenter; }
@@ -184,7 +184,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private double spacing3rdDiameterAngle;
-        [SaveKeyCode(KeyCode = "Spacing3rdDiameterAngle")]
+        //NO SAVE CODE REQUIRED
         public double Spacing3rdDiameterAngle
         {
             get { return spacing3rdDiameterAngle; }
@@ -192,7 +192,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private double startOffsetAngle;
-        [SaveKeyCode(KeyCode = "StartOffsetAngle")]
+        //NO SAVE CODE REQUIRED
         public double StartOffsetAngle
         {
             get { return startOffsetAngle; }

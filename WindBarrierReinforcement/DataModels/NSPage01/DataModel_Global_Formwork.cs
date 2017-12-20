@@ -115,7 +115,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         }
 
         private int radiusCenterlineTower;
-        [SaveKeyCode(KeyCode = "RadiusCenterLineTower")]
+        //NO SAVE CODE REQUIRED
         public int RadiusCenterLineTower
         {
             get { return radiusCenterlineTower; }
@@ -174,7 +174,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_Radius_Btc
         /// </summary>
         private int radiusBtc;
-        [SaveKeyCode(KeyCode = "RadiusBtc")]
+        //NO SAVE CODE REQUIRED
         public int RadiusBtc
         {
             get { return radiusBtc; }
@@ -203,7 +203,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// UI_TextBox_Dept_Foundation
         /// </summary>
         private int deptFoundation;
-        [SaveKeyCode(KeyCode = "DeptFoundation")]
+        //NO SAVE CODE REQUIRED
         public int DeptFoundation
         {
             get { return deptFoundation; }

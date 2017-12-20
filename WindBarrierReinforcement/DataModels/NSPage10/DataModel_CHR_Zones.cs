@@ -51,7 +51,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         }
 
         private int zoneLength2;
-        [SaveKeyCode(KeyCode = "ZoneLength2")]
+        //NO SAVE CODE REQUIRED
         public int ZoneLength2 // TODO : this needs to be calculated
         {
             get { return zoneLength2; }

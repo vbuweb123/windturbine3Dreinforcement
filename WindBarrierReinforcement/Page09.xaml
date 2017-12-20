@@ -16,7 +16,7 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Name="UI_Grid_Master" Background="{StaticResource AppMainBackgroundColor}">
+    <Grid Name="UI_Grid_Master">
         <TextBlock ap:CultureKey.CultureRes="Tb_Page09_Title"  HorizontalAlignment="Left" Margin="20,10,0,0" TextWrapping="Wrap" Text="__U Bars Around Bolts" 
                    VerticalAlignment="Top" Style="{StaticResource AppContentTitleTextBlock}"/>
         

@@ -8,7 +8,7 @@
       xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Behaviors="clr-namespace:WindBarrierReinforcement.Behaviors" x:Class="WindBarrierReinforcement.Page04"
       mc:Ignorable="d" 
       xmlns:ap ="clr-namespace:WindBarrierReinforcement.Common.AttachedProperties"
-      d:DesignHeight="580" d:DesignWidth="700"
+      MinHeight="580" MinWidth="700"
       Title="Page04">
 
     <Page.Resources>
@@ -19,13 +19,13 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Name="UI_Grid_MasterGrid" Background="{StaticResource AppMainBackgroundColor}">
+    <Grid Name="UI_Grid_MasterGrid">
         <TextBlock ap:CultureKey.CultureRes="Tb_BottomReinforcement" Text="__Bottom Reinforcement" HorizontalAlignment="Left" Margin="20,5,0,0"
                    TextWrapping="Wrap" VerticalAlignment="Top"
                    Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title" />
 
         <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,25,25,5" BorderThickness="0" 
-                    Background="{StaticResource AppMainBackgroundColor}">
+                    Background="Transparent">
             <!--Tab Item Radial General-->
             <TabItem Header="Radial General">
                 <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">

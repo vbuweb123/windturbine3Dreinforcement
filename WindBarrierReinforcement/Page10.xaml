@@ -19,7 +19,7 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Name="UI_Grid_Master" Background="{StaticResource AppMainBackgroundColor}">
+    <Grid Name="UI_Grid_Master" >
 
         <TextBlock ap:CultureKey.CultureRes="Tb_CHR_Title" Text="__Chairs" HorizontalAlignment="Left" Margin="20,15,0,0"
                    TextWrapping="Wrap" VerticalAlignment="Top"

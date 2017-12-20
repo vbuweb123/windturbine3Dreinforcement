@@ -13,7 +13,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
     public class DataModelRadialGeneral : DataModel
     {
         private int minCore;
-        [SaveKeyCode(KeyCode = "MinCore")]
+        //NO SAVE CODE REQUIRED
         public int MinCore
         {
             get { return minCore; }
@@ -39,7 +39,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         private double alternativeHalfMinStartAngle; //TODO : calculated after anchor is set
 
         private double alternativeMinStartAngle;
-        [SaveKeyCode(KeyCode = "AlternativeMinStartAngle")]
+        //NO SAVE CODE REQUIRED
         public double AlternativeMinStartAngle
         {
             get { return alternativeMinStartAngle; }

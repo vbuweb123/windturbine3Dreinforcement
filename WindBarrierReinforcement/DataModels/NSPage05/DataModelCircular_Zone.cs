@@ -18,7 +18,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         public List<string> DiameterNames => EnumHelpers.GetEnumDisplayText(typeof(EDiameters));
 
         private int noOfBars;
-        [SaveKeyCode(KeyCode = "NoOfBars")]
+        //NO SAVE CODE REQUIRED
         public int NoOfBars
         {
             get { return noOfBars; }
@@ -42,7 +42,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private double zoneLength;
-        [SaveKeyCode(KeyCode = "ZoneLength")]
+        //NO SAVE CODE REQUIRED
         public double ZoneLength
         {
             get { return zoneLength; }
@@ -50,7 +50,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private int zoneInterDistance;
-        [SaveKeyCode(KeyCode = "ZoneInterDistance")]
+        //NO SAVE CODE REQUIRED
         public int ZoneInterDistance
         {
             get { return zoneInterDistance; }
@@ -66,7 +66,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private double distanceFromBottom; //distancefromTop
-        [SaveKeyCode(KeyCode = "DistanceFromBottom")]
+        //NO SAVE CODE REQUIRED
         public double DistanceFromBottom
         {
             get { return distanceFromBottom; }
@@ -74,7 +74,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
         }
 
         private double offsetFromEdge;
-        [SaveKeyCode(KeyCode = "OffsetFromEdge")]
+        //NO SAVE CODE REQUIRED
         public double OffsetFromEdge
         {
             get { return offsetFromEdge; }
@@ -246,6 +246,8 @@ namespace WindBarrierReinforcement.DataModels.NSPage05
                     global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += action_page01_formwork_propertyChanged;
                     global.GDMPage05.DataModelRadial1.PropertyChanged += action_page05_radial1;
                     global.GDMPage05.DataModelCircularGeneral.PropertyChanged += action_page05_circulargeneral;
+
+                    _eventsAdded = true;
                 }
             };
             removeEvents = () =>

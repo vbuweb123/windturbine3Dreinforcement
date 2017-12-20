@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WindBarrierReinforcement"
         mc:Ignorable="d"
-        Title="MainWindow" Height="750" Width="950" ResizeMode="NoResize">
+        Title="MainWindow" MinHeight="600" Width="950" ResizeMode="CanResize" Height="651.2">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -23,12 +23,16 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="250"/>
         </Grid.ColumnDefinitions>
-        <Frame Name="FrameMain" Margin="0,0,0,0" NavigationUIVisibility="Hidden" Grid.Column="0" Grid.Row="1"/>
+        <Frame Panel.ZIndex="999" Name="FrameMain" Margin="0,0,0,0" NavigationUIVisibility="Hidden" Grid.Column="0" Grid.Row="1"/>
 
-        <Menu Name="UI_Menu" HorizontalAlignment="Center" FontWeight="Bold"  Height="360" Margin="0,0,0,0"
-              VerticalAlignment="Top" Width="230" Padding="10 1 1 1" Background="Orange" FontStyle="Italic"
-              Grid.Column="1" Grid.Row="1">
-            <MenuItem Tag="Page01" Header="Global" Width="230" Height="30"></MenuItem>
+
+        <Rectangle Fill="{StaticResource BackgroundGradientBrush}" Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></Rectangle>
+        
+        <Menu Name="UI_Menu" HorizontalAlignment="Center" Height="360" Margin="0,0,0,0"
+              VerticalAlignment="Top"  Padding="10 1 1 1" Background="Transparent" Grid.Column="1" Grid.Row="1">
+            
+            <MenuItem Tag="Page01" Header="Global" Width="230" Height="30">
+            </MenuItem>
 
             <MenuItem Tag="Page02" Header="Anchor" Width="230" Height="30"></MenuItem>
 
@@ -53,23 +57,26 @@
             <MenuItem Tag="Page12" Header="BS8666"   Width="230" Height="30"  ></MenuItem>
 
         </Menu>
-
-        <ToolBarPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0">
-            <ToolBar Height="45" Margin="10,0,0,0" VerticalAlignment="Top" Width="681" >
-                <Button Click="Save_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="pack://application:,,,/WindBarrierReinforcement;component/Assets/Icons/Save.png" Height="25"/>
-                        <TextBlock Text="Save" VerticalAlignment="Center" Style="{StaticResource AppTextBlockGeneric}"/>
-                    </StackPanel>
-                </Button>
-                <Button Click="Open_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="pack://application:,,,/WindBarrierReinforcement;component/Assets/Icons/Open.jpg" Height="25"/>
-                        <TextBlock Text="Open" VerticalAlignment="Center" Style="{StaticResource AppTextBlockGeneric}"/>
-                    </StackPanel>
-                </Button>
+        <StackPanel  Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Background="Transparent">
+            <Button Click="Save_Click" Height="40" Padding="10,0,10,0" Background="Transparent" BorderThickness="0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="pack://application:,,,/WindBarrierReinforcement;component/Assets/Icons/Save.png" Height="25"/>
+                    <TextBlock Text="Save" VerticalAlignment="Center" Margin="10,0,0,0" Style="{StaticResource AppTextBlockGeneric}" Foreground="White"/>
+                </StackPanel>
+            </Button>
+            <Button Click="Open_Click"  Height="40" Padding="10,0,10,0" Background="Transparent" BorderThickness="0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="pack://application:,,,/WindBarrierReinforcement;component/Assets/Icons/Open.jpg" Height="25"/>
+                    <TextBlock Text="Open" VerticalAlignment="Center"  Margin="10,0,0,0" Style="{StaticResource AppTextBlockGeneric}" Foreground="White"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+       
+        <!--<ToolBarPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" Background="Transparent">
+            <ToolBar Height="45" Margin="10,0,0,0" VerticalAlignment="Top" Width="681" Background="Transparent" >
+                
             </ToolBar>
-        </ToolBarPanel>
+        </ToolBarPanel>-->
 
     </Grid>
 </Window>

@@ -15,7 +15,7 @@ namespace WindBarrierReinforcement.Writer
     {
         private static readonly string RootNodeName = "ReinforcementData";
 
-        public static void Save(GlobalDataModels globalDataModels)
+        public static void Save(GlobalDataModels globalDataModels, string filePath)
         {
             //GlobalDataModels = globalDataModels;
 
@@ -31,7 +31,7 @@ namespace WindBarrierReinforcement.Writer
 
             Document.AppendChild(root);
 
-            SaveToFile(Document);
+            SaveToFile(Document, filePath);
         }
         private static void EvaluateDictionary(KeyCodeDictionary dictionary, XmlDocument xmlDocument, XmlNode Node)
         {
@@ -141,14 +141,14 @@ namespace WindBarrierReinforcement.Writer
             return root;
         }
 
-        private static void SaveToFile(XmlDocument xmlDocument)
+        private static void SaveToFile(XmlDocument xmlDocument, string filePath)
         {
-            var currentDirectory = Directory.GetCurrentDirectory();
-            FileStream fs = new FileStream(currentDirectory + "\\temp.xml", FileMode.Create);
+            FileStream fs = new FileStream(filePath, FileMode.Create);
+
             XmlTextWriter xmlTextWriter = new XmlTextWriter(fs, Encoding.Unicode) { Formatting = Formatting.Indented };
 
             xmlDocument.WriteContentTo(xmlTextWriter);
-
+            
             xmlTextWriter.Close();
 
             fs.Close();

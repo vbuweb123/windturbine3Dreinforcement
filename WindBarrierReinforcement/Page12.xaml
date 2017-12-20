@@ -15,7 +15,7 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Background="{StaticResource AppMainBackgroundColor}">
+    <Grid >
         <DataGrid  ItemsSource="{Binding DataModelShapesCollection, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
                    Name="Ui_DataGrid_Shapes" HorizontalAlignment="Left" Height="427" Margin="10,10,0,0" VerticalAlignment="Top" Width="680"
                    AutoGenerateColumns="False"  CanUserReorderColumns="False" CanUserDeleteRows="False" CanUserAddRows="False">

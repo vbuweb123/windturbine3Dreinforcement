@@ -17,7 +17,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
-    <Grid Name="UI_Grid_Master" Background="{StaticResource AppMainBackgroundColor}">
+    <Grid Name="UI_Grid_Master">
         <TextBlock ap:CultureKey.CultureRes="Tb_Page11_Title"  HorizontalAlignment="Left" Margin="20,10,0,0" TextWrapping="Wrap" Text="__Materials" 
                    VerticalAlignment="Top" Style="{StaticResource AppContentTitleTextBlock}"/>
 

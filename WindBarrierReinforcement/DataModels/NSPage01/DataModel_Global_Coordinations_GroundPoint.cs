@@ -48,7 +48,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage01
         /// </summary>
         /// 
         private int foundationPointZ;
-        [SaveKeyCode(KeyCode = "FoundationPointZ", SaveDataType = SaveDataType.Default)]
+        //NO SAVE CODE REQUIRED
         public int FoundationPointZ
         {
             get { return foundationPointZ; }

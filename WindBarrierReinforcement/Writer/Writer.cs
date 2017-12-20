@@ -25,16 +25,15 @@ namespace WindBarrierReinforcement.Writer
 
         private static Registry Registry;
 
-        public static void Open(GlobalDataModels global)
+        public static void Open(GlobalDataModels global, string filePath)
         {
 
             //Registry
             Registry = new Registry();
             Registry.Register<GlobalDataModels, GlobalDataModels>(global);
             //Registry
-            var currentDirectory = Directory.GetCurrentDirectory();
             //FileStream fs = new FileStream(currentDirectory + "\\temp.xml", FileMode.Open);
-            string xml = System.IO.File.ReadAllText(currentDirectory + "\\temp.xml");
+            string xml = System.IO.File.ReadAllText(filePath);
             //XmlTextReader xmlTextReader = new XmlTextReader(fs);
             //xmlTextReader.read();
 

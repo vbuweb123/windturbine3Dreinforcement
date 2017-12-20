@@ -20,13 +20,13 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Name="UI_MasterGrid" Background="{StaticResource AppMainBackgroundColor}">
+    <Grid Name="UI_MasterGrid">
         <TextBlock ap:CultureKey.CultureRes="Txt_OverPlateTopReinforcementTitle" Text="__OPTR - Over Plate Top Reinforcement" HorizontalAlignment="Left" Margin="20,15,0,0"
                    TextWrapping="Wrap" VerticalAlignment="Top"
                    Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title" />
 
         <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,50,25,25" BorderThickness="0" 
-                    Background="{StaticResource AppMainBackgroundColor}">
+                    Background="Transparent">
 
             <TabItem Header="Straight Bars Direction 1">
                 <Grid Name="UI_Grid_OPTR_StraightBars1" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">

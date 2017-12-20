@@ -41,7 +41,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage10
         }
 
         private int hookLengths;
-        [SaveKeyCode(KeyCode = "HookLengths")]
+        //NO SAVE CODE REQUIRED
         public int HookLengths
         {
             get => hookLengths;

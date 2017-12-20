@@ -10,10 +10,7 @@ using WindBarrierReinforcement.Writer;
 using WindBarrierReinforcement.DataModels.NSPage01;
 using WindBarrierReinforcement.DataModels.NSPage02;
 using WindBarrierReinforcement.StaticModel;
-using WindBarrierReinforcement.DataModels.NSPage01;
-using WindBarrierReinforcement.DataModels.NSPage02;
-using WindBarrierReinforcement.StaticModel;
-using WindBarrierReinforcement.Writer;
+
 namespace WindBarrierReinforcement.DataModels.NSPage05
 {
     public class DataModelCircularGeneral : DataModel

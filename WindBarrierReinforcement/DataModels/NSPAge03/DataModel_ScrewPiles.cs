@@ -54,7 +54,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         }
 
         private double angle ;
-        [SaveKeyCode(KeyCode = "Angle")]
+        //NO SAVE CODE REQUIRED
         public double Angle
         {
             get { return angle; }
@@ -78,7 +78,7 @@ namespace WindBarrierReinforcement.DataModels.NSPAge03
         }
 
         private string materialPiles;
-        [SaveKeyCode(KeyCode = "MaterialPiles")]
+        //NO SAVE CODE REQUIRED
         public string MaterialPiles
         {
             get { return materialPiles;  }

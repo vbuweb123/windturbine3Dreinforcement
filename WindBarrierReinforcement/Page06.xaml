@@ -21,14 +21,14 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Name="UI_Master_Grid" Background="{StaticResource AppMainBackgroundColor}">
+    <Grid Name="UI_Master_Grid" >
 
         <TextBlock ap:CultureKey.CultureRes="Txt_Under_Plate_Bottom_Reinforcement" Text="__Under Plate Bottom Reinforcement" HorizontalAlignment="Left" Margin="20,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                    Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title"/>
 
         <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,50,25,25" 
                     SelectionChanged="TabControl_SelectionChanged" BorderThickness="0"
-                    Background="{StaticResource AppMainBackgroundColor}">
+                    Background="Transparent">
 
             <TabItem Header="Direction 1 (bottom bars)">
                 <Grid Name="UI_Grid_UPBR_D1BB" Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="300">

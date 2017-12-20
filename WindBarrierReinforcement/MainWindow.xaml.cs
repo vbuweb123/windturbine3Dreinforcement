@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -103,22 +104,47 @@ namespace WindBarrierReinforcement
             Global = new GlobalDataModels();
 
             MenuPageProvider = new MenuPageProvider(Global);
+
+            Global.EvtHandler.RegisterPostBuildEvents(); 
+            Global.EvtHandler.CallPostEventsRegisterAction();
             Global.EvtHandler.CallPopulateDataAction();
+
             InitializeComponent();
             InitializeMenuClicks();
             InitializeMenuItemHeaders();
             //Writer.Writer.WriteTexts();
         }
-      
+
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            Writer.Writer.Save(Global);
+            System.Windows.Forms.SaveFileDialog sfd = new System.Windows.Forms.SaveFileDialog()
+            {
+                Filter = "wbr files (#.wbr)|*.wbr",
+                RestoreDirectory = true,
+                AddExtension = true,
+                DefaultExt = "wbr",
+                CheckPathExists = true,
+            };
+            if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Writer.Writer.Save(Global, sfd.FileName);
+            }
         }
         private void  Open_Click(object sender, RoutedEventArgs e)
         {
-            Writer.Writer.Open(Global);
-
-
+            System.Windows.Forms.OpenFileDialog ofd = new System.Windows.Forms.OpenFileDialog()
+            {
+                Filter = "wbr files (#.wbr)|*.wbr",
+                CheckFileExists = true,
+                CheckPathExists = true,
+                DefaultExt = "wbr",
+                Multiselect = false,
+                Title= "Open Wbr File"
+            };
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Writer.Writer.Open(Global, ofd.FileName);
+            }
         }
     }
 }

@@ -48,6 +48,9 @@
     <SolidColorBrush x:Key="AppContainerBackgroundColor" Color="{StaticResource BlueGrey200}"/>
     <SolidColorBrush x:Key="AppTabItemTextColor" Color="{StaticResource Gray900}"/>
     <SolidColorBrush x:Key="AppTitleColor" Color="{StaticResource LightGreen300}"/>
+    
+    <SolidColorBrush x:Key="MenuItemBackground" Color="{StaticResource BlueGrey200}"/>
+    <SolidColorBrush x:Key="MenuItemBorder" Color="{StaticResource BlueGrey600}"/>
     <!--Load Fonts-->
     <FontFamily x:Key="Lato">pack://application:,,,/Assets/Fonts/Lato/#Lato</FontFamily>
     <FontFamily x:Key="Pacifico">pack://application:,,,/Assets/Fonts/Pacifico/#Pacifico</FontFamily>
@@ -79,6 +82,31 @@
     </Style>
     <Style TargetType="TextBlock" x:Key="AppContentTitleTextBlock2" BasedOn="{StaticResource AppTextBlockGeneric}">
         <Setter Property="FontSize" Value="18"/>
+    </Style>
+
+    <Style TargetType="MenuItem">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontFamily" Value="{StaticResource IndieFlower}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+        <!--<Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                        <Border Background="{StaticResource MenuItemBackground}"  BorderBrush="{StaticResource MenuItemBorder}" BorderThickness="1">
+                        <DockPanel VerticalAlignment="Center">
+                            <Image Source="pack://application:,,,/WindBarrierReinforcement;component/Assets/Icons/Page.png" Width="15"/>
+                            <TextBlock Padding="5,0,0,0" Text="{Binding Header, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DockPanel>
+
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="MouseEnter" Value="True">
+                            <Setter TargetName="Border" Property="BorderThickness" Value="0"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>-->
+        <!--</Setter>-->
     </Style>
     <!--Text Box template-->
 

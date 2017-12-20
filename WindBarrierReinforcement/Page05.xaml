@@ -19,13 +19,12 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Name="UI_Grid_MasterGrid" Background="{StaticResource AppMainBackgroundColor}">
+    <Grid Name="UI_Grid_MasterGrid" Background="Transparent">
         <TextBlock ap:CultureKey.CultureRes="Tb_TopReinforcement" Text="__Top Reinforcement" HorizontalAlignment="Left" Margin="20,5,0,0"
                    TextWrapping="Wrap" VerticalAlignment="Top"
                    Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title" />
 
-        <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,25,25,5" BorderThickness="0" 
-                    Background="{StaticResource AppMainBackgroundColor}">
+        <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,25,25,5" BorderThickness="0" Background="Transparent">
             <!--Tab Item Radial General-->
             <TabItem Header="Radial General">
                 <Grid Background="{StaticResource AppContainerBackgroundColor}" HorizontalAlignment="Stretch" Margin="0,0,0,0">

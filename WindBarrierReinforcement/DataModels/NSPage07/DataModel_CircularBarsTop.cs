@@ -101,8 +101,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexDiameter = 0;
                 this.Groups = "";
-            });
-            global.EvtHandler.AddPostEventsRegisterAction(() => {
                 this.SelectedIndexOption = 0;
             });
         }

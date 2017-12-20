@@ -42,7 +42,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int numberEdgeCirculars;
-        [SaveKeyCode(KeyCode = "NumberEdgeCirculars")]
+        //NO SAVE CODE REQUIRED
         public int NumberEdgeCirculars
         {
             get { return numberEdgeCirculars; }
@@ -58,7 +58,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage04
         }
 
         private int radiusCore;
-        [SaveKeyCode(KeyCode = "RadiusCore")]
+        //NO SAVE CODE REQUIRED
         public int RadiusCore
         {
             get { return radiusCore; }
