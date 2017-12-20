@@ -92,6 +92,7 @@
     <Compile Include="Common\Reflected\PropertyDataInfo.cs" />
     <Compile Include="Common\Reflected\Reflected.cs" />
     <Compile Include="Common\ValueConverters\NegateBool.cs" />
+    <Compile Include="DataModelPictures\Picture.cs" />
     <Compile Include="DataModels\NSPage01\DataModel_Global_Coordinations_GroundPoint.cs" />
     <Compile Include="DataModels\NSPage01\DataModel_Global_Formwork.cs" />
     <Compile Include="DataModels\NSPage01\DataModel_Global_Materials.cs" />
@@ -168,6 +169,9 @@
     </Compile>
     <Compile Include="Page12.xaml.cs">
       <DependentUpon>Page12.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PictureInfo.xaml.cs">
+      <DependentUpon>PictureInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resources\CultureLanguages.cs" />
     <Compile Include="Resources\CultureRenamer.cs" />
@@ -264,6 +268,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PictureInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\XamlResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -329,7 +337,16 @@
     <Resource Include="Assets\Icons\Preview.png" />
     <Resource Include="Assets\Icons\Save.png" />
     <Resource Include="Assets\Images\1.jpg" />
-    <Resource Include="Assets\Images\2.png" />
+    <Resource Include="Assets\Images\AR_01.png" />
+    <Resource Include="Assets\Images\BottomR_01.png" />
+    <Resource Include="Assets\Images\ChairsR_01.png" />
+    <Resource Include="Assets\Images\Global_01.png" />
+    <Resource Include="Assets\Images\OPTR_01.png" />
+    <Resource Include="Assets\Images\Piles_01.png" />
+    <Resource Include="Assets\Images\Piles_02.png" />
+    <Resource Include="Assets\Images\TopR_01.png" />
+    <Resource Include="Assets\Images\UBAB_01.png" />
+    <Resource Include="Assets\Images\UPBR_01.png" />
     <Resource Include="Resources\UPBR_1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -338,6 +355,9 @@
     <Resource Include="Resources\UPBR_2.JPG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\Anchor_01.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -413,7 +413,7 @@
                         <RadioButton
                                     GroupName="TrueFalse" Margin="40,0,0,0"
                                     Content="True" HorizontalAlignment="Left"  VerticalContentAlignment="Center" FontSize="12"
-                                    DataContext="{Binding DataModel_CircularBarsExteriorSide}"
+                                    DataContext="{Binding DataModel_CircularBarsExteriorSide}"                            
                                     IsChecked="{Binding UseDefaultLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <RadioButton
                                     GroupName="TrueFalse" Margin="15,0,0,0"
@@ -498,5 +498,11 @@
             </TabItem>
 
         </TabControl>
-    </Grid>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Height="30" Click="Button_Click1" Margin="50,210,0,0"  >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Assets/Icons/Preview.png"/>
+                <TextBlock Text="Show Image" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+    </Grid>         
 </Page>

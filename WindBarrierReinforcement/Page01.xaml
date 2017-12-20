@@ -25,7 +25,7 @@
         <TextBlock ap:CultureKey.CultureRes="Txt_Global" Text="__Global" HorizontalAlignment="Left" Margin="20,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                    Style="{StaticResource  AppContentTitleTextBlock}" Name="UI_TextBlock_Title" />
 
-        <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,50,25,25" 
+        <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" Margin="15,50,10,25" 
                     SelectionChanged="TabControl_SelectionChanged" BorderThickness="0" 
                     Background="{StaticResource AppMainBackgroundColor}">
 
@@ -35,11 +35,6 @@
                     <!--H Foundation-->
                     <Label Content="__H Foundation" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" 
                            Height="25" ap:CultureKey.CultureRes="Lbl_G_HFoundation"/>
-                    <Image Source="/Assets/Icons/Preview.png" Margin="109,10,430,359.6" VerticalAlignment="Top">
-                        <Image.ToolTip>
-                            <ToolTip Template="{StaticResource ToolTipImageLoader}" ap:ImageSourcePath.ImageSourcePath="/Assets/Images/2.png" ap:InfoText.InfoText="Foundation Height"/>
-                        </Image.ToolTip>
-                    </Image>
                     <TextBox                
                         DataContext="{Binding DataModel_Global_Formwork}"
                         Text="{Binding HFoundation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -336,5 +331,12 @@
                 </Grid>
             </TabItem>
         </TabControl>
+       
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Click="Button_Click" Margin="585,60,0,0">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Assets/Icons/Preview.png"/>
+                <TextBlock Text="Show Image" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Page>

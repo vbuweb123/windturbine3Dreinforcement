@@ -394,12 +394,20 @@
 
         </TabControl>
 
-        <Image 
+       <!-- <Image 
             Name="Imagetest" Source="/WindBarrierReinforcement;component/Resources/UPBR_1.jpg"
             HorizontalAlignment="Left" Height="105" Margin="480,104,0,0" VerticalAlignment="Top" Width="215"/>
         <Image 
             Name="Imagetest2" Source="/WindBarrierReinforcement;component/Resources/UPBR_2.jpg"
             HorizontalAlignment="Left" Height="194" Margin="480,209,0,0" VerticalAlignment="Top" Width="215"/>
+        -->
+        
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Height="30" Click="Button_Click1" Margin="50,265,0,0"  >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Assets/Icons/Preview.png"/>
+                <TextBlock Text="Show Image" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
 
-    </Grid>
+    </Grid>     
 </Page>

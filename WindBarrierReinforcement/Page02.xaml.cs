@@ -35,6 +35,13 @@ namespace WindBarrierReinforcement
             this.DataContext = this;
             
             CultureRenamer.Rename(UI_Grid_Master);
-        }      
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string imageSource = "Assets/Images/Anchor_01.png";
+
+            PictureInfo PictureInfo = new PictureInfo(imageSource);
+            PictureInfo.Show();
+        }
     }
 }

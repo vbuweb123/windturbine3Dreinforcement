@@ -31,7 +31,6 @@ namespace WindBarrierReinforcement
     {
         public DataModelUBABCollection DataModelUBABCollection { get; private set; }
 
-        private string _zoneName = "Zona ";
         public Page09(GlobalDataModels global)
         {
             DataModelUBABCollection = global.GDMPage09.DataModelUBABCollection;
@@ -118,6 +117,13 @@ namespace WindBarrierReinforcement
             int Index = (int)btnSender.GetValue(TagProperty);
 
             SetGridDataContext(Index);
+        }
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            string imageSource = "Assets/Images/UBAB_01.png";
+
+            PictureInfo PictureInfo = new PictureInfo(imageSource);
+            PictureInfo.Show();
         }
     }
 }

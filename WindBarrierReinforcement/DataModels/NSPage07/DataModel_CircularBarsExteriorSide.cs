@@ -48,6 +48,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CircularBarsExteriorSide>(x => x.CurrentOption));
             }
         }
+        
         public string CurrentOption
         {
             get
@@ -55,27 +56,19 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
                 switch (SelectedIndexOption)
                 {
                     case 0:
-                        return Enum.GetName(typeof(EOptionsCBES), EOptionsCBES.NoOfBars_Spacing);
+                        return Enum.GetName(typeof(EOptionsCBES), EOptionsCBES.NoOfBars_Spacing) + "_" + BoolText(UseDefaultLength);
                     case 1:
-                        return Enum.GetName(typeof(EOptionsCBES), EOptionsCBES.Spacing_Length);
+                        return Enum.GetName(typeof(EOptionsCBES), EOptionsCBES.Spacing_Length) + "_" + BoolText(UseDefaultLength);
                     case 2:
-                        return Enum.GetName(typeof(EOptionsCBES), EOptionsCBES.NoOfBars_Length);
+                        return Enum.GetName(typeof(EOptionsCBES), EOptionsCBES.NoOfBars_Length) + "_" + BoolText(UseDefaultLength);
                     default:
                         throw new Exception("Unknown Option selected");
                 }
             }
         }
-
-        private int selectedTrueFalseOption;
-        [SaveKeyCode(KeyCode = "SelectedTrueFalseOption")]
-        public int SelectedTrueFalseOption
+        private string BoolText(bool value)
         {
-            get { return selectedTrueFalseOption; }
-            set
-            {
-                selectedTrueFalseOption = value;
-                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CircularBarsExteriorSide>(x => x.SelectedTrueFalseOption));
-            }
+            return (value == true) ? "True" : "False";
         }
         /// <summary>
         /// UI_TextBox_OPTR_CircularMargin_Overlap
@@ -89,6 +82,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
             {
                 useDefaultLength = value;
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CircularBarsExteriorSide>(x => x.UseDefaultLength));
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CircularBarsExteriorSide>(x => x.CurrentOption));
             }
         }
         //binded to Style (IsEnabled) triggers to textblocks. Styles maybe defined in XamlResources
@@ -102,7 +96,7 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
         public int NoOfBars
         {
             get { return noOfBars; }
-            set { noOfBars = value; NotifyPropertyChanged("NoOfBars"); }
+            set { noOfBars = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_CircularBarsExteriorSide>(x => x.NoOfBars)); }
         }
 
         /// <summary>
@@ -171,6 +165,6 @@ namespace WindBarrierReinforcement.DataModels.NSPage07
                 this.SelectedIndexOption = 0;
             });
 
-        }
+        }    
     }
 }

@@ -33,5 +33,12 @@ namespace WindBarrierReinforcement
 
             CultureRenamer.Rename(UI_Grid_Master);
         }
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            string imageSource = "Assets/Images/ChairsR_01.png";
+
+            PictureInfo PictureInfo = new PictureInfo(imageSource);
+            PictureInfo.Show();
+        }
     }
 }

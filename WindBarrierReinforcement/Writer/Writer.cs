@@ -43,7 +43,6 @@ namespace WindBarrierReinforcement.Writer
 
             EvaluateOpenedXML(doc);
 
-            var a = 1;
         }
 
         public static void EvaluateOpenedXML(XmlDocument xmlDocument)
@@ -136,7 +135,6 @@ namespace WindBarrierReinforcement.Writer
                 object solvedValue = TrySolveConverter(value, pInfo.PropertyType);
                 if (solvedValue == null) throw new Exception("Unable to solve request");
                 pInfo.SetValue(Context, solvedValue);
-                var b = 1;
             }
         }
         public static object TrySolveConverter(string value, Type Req)
