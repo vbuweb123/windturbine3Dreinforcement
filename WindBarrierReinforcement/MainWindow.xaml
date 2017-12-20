@@ -27,10 +27,10 @@
 
 
         <Rectangle Fill="{StaticResource BackgroundGradientBrush}" Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></Rectangle>
-        
+
         <Menu Name="UI_Menu" HorizontalAlignment="Center" Height="360" Margin="0,0,0,0"
               VerticalAlignment="Top"  Padding="10 1 1 1" Background="Transparent" Grid.Column="1" Grid.Row="1">
-            
+
             <MenuItem Tag="Page01" Header="Global" Width="230" Height="30">
             </MenuItem>
 
@@ -71,12 +71,15 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-       
+
         <!--<ToolBarPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" Background="Transparent">
             <ToolBar Height="45" Margin="10,0,0,0" VerticalAlignment="Top" Width="681" Background="Transparent" >
                 
             </ToolBar>
         </ToolBarPanel>-->
 
+        <Image HorizontalAlignment="Right" Height="100" Width="100"
+               VerticalAlignment="Bottom"
+            Source="pack://application:,,,/WindBarrierReinforcement;component/Assets/Images/salamandra.png"  Grid.Row="1" Grid.Column="1"/>
     </Grid>
 </Window>
