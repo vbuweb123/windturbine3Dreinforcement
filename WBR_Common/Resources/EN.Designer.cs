@@ -1843,6 +1843,15 @@ namespace WBR_Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Overlap Length.
+        /// </summary>
+        internal static string Lbl_OverlapLength {
+            get {
+                return ResourceManager.GetString("Lbl_OverlapLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Angle.
         /// </summary>
         internal static string Lbl_PilesAngle_1 {

@@ -208,6 +208,15 @@
     <value>X0</value>
     <comment>EExposureClass</comment>
   </data>
+  <data name="ExposureClass_XA1" xml:space="preserve">
+    <value>XA1</value>
+  </data>
+  <data name="ExposureClass_XA2" xml:space="preserve">
+    <value>XA2</value>
+  </data>
+  <data name="ExposureClass_XA3" xml:space="preserve">
+    <value>XA3</value>
+  </data>
   <data name="ExposureClass_XC1" xml:space="preserve">
     <value>XC1</value>
     <comment>EExposureClass</comment>
@@ -235,6 +244,27 @@
   <data name="ExposureClass_XD3" xml:space="preserve">
     <value>XD3</value>
     <comment>EExposureClass</comment>
+  </data>
+  <data name="ExposureClass_XF1" xml:space="preserve">
+    <value>XF1</value>
+  </data>
+  <data name="ExposureClass_XF2" xml:space="preserve">
+    <value>XF2</value>
+  </data>
+  <data name="ExposureClass_XF3" xml:space="preserve">
+    <value>XF3</value>
+  </data>
+  <data name="ExposureClass_XF4" xml:space="preserve">
+    <value>XF4</value>
+  </data>
+  <data name="ExposureClass_XS1" xml:space="preserve">
+    <value>XS1</value>
+  </data>
+  <data name="ExposureClass_XS2" xml:space="preserve">
+    <value>XS2</value>
+  </data>
+  <data name="ExposureClass_XS3" xml:space="preserve">
+    <value>XS3</value>
   </data>
   <data name="HookType_A" xml:space="preserve">
     <value>A(Over Top Radial Bars)</value>

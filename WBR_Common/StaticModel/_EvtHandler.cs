@@ -13,6 +13,8 @@ namespace WBR_Common.StaticModel
         void AddPostEventsRegisterAction(Action EvtAction);
         void AddPopulateDataAction(Action action);
         void RegisterPostBuildEvents();
+        void AddEvtsDependables(Action action);
+        void CallEvtsDependables();
         void CallPostEventsRegisterAction();
         void CallPopulateDataAction();
 
@@ -27,6 +29,10 @@ namespace WBR_Common.StaticModel
             //Combobox and string initializers here. Called after all PropertyChanged events are set
             private List<Action> evtsPostRegister;
             public List<Action> EvtsPostRegister => evtsPostRegister ?? (evtsPostRegister = new List<Action>());
+
+            private List<Action> evtsDependables;
+            public List<Action> EvtsDependables => evtsDependables ?? (evtsDependables = new List<Action>());
+
             //Initializers for textboxes here - for prepopulating data
             private List<Action> evtsPopulateData;
             public List<Action> EvtsPopulateData => evtsPopulateData ?? (evtsPopulateData = new List<Action>());
@@ -48,6 +54,17 @@ namespace WBR_Common.StaticModel
             {
                 EvtsPostRegister.ForEach((action) => action());
             }
+
+
+            public void AddEvtsDependables(Action EvtAction)
+            {
+                EvtsDependables.Add(EvtAction);
+            }
+            public void CallEvtsDependables()
+            {
+                EvtsDependables.ForEach((action) => action());
+            }
+
 
             public void AddPopulateDataAction(Action action)
             {

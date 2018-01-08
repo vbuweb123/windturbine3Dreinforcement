@@ -383,9 +383,6 @@
                         Text="{Binding Groups, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         Template="{StaticResource AppTextBoxGeneric}"
                         HorizontalAlignment="Left" Height="25" Margin="150,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericBehaviour InitialValue="0"/>
-                        </i:Interaction.Behaviors>
                     </TextBox>
 
                 </Grid>
@@ -414,12 +411,12 @@
                                     GroupName="TrueFalse" Margin="40,0,0,0"
                                     Content="True" HorizontalAlignment="Left"  VerticalContentAlignment="Center" FontSize="12"
                                     DataContext="{Binding DataModel_CircularBarsExteriorSide}"                            
-                                    IsChecked="{Binding UseDefaultLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    IsChecked="{Binding UseDefaultLength, Converter={StaticResource NegateBoolConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <RadioButton
                                     GroupName="TrueFalse" Margin="15,0,0,0"
                                     Content="False" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="12"
                                     DataContext="{Binding DataModel_CircularBarsExteriorSide}"
-                                    IsChecked="{Binding UseDefaultLength, Converter={StaticResource NegateBoolConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                    IsChecked="{Binding UseDefaultLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     </StackPanel>
                     
                     <!--No Of Bars-->

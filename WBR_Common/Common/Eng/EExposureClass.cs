@@ -24,6 +24,26 @@ namespace WBR_Common.Common.Eng
         [DisplayByResourceKey(ResourceKey = "ExposureClass_XD2")]
         XD2,
         [DisplayByResourceKey(ResourceKey = "ExposureClass_XD3")]
-        XD3
+        XD3,
+        [DisplayByResourceKey(ResourceKey = "ExposureClass_XS1")]
+        XS1,
+        [DisplayByResourceKey(ResourceKey = "ExposureClass_XS2")]
+        XS2,
+        [DisplayByResourceKey(ResourceKey = "ExposureClass_XS3")]
+        XS3,
+        [DisplayByResourceKey(ResourceKey = "ExposureClass_XF1")]
+        XF1,
+        [DisplayByResourceKey(ResourceKey = "ExposureClass_XF2")]
+        XF2,
+        [DisplayByResourceKey(ResourceKey = "ExposureClass_XF3")]
+        XF3,
+        [DisplayByResourceKey(ResourceKey = "ExposureClass_XF4")]
+        XF4,
+        [DisplayByResourceKey(ResourceKey = "ExposureClass_XA1")]
+        XA1,
+        [DisplayByResourceKey(ResourceKey = "ExposureClass_XA2")]
+        XA2,
+        [DisplayByResourceKey(ResourceKey = "ExposureClass_XA3")]
+        XA3
     }
 }

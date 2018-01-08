@@ -108,6 +108,7 @@ namespace WindBarrierReinforcement
 
             Global.EvtHandler.RegisterPostBuildEvents(); 
             Global.EvtHandler.CallPostEventsRegisterAction();
+            Global.EvtHandler.CallEvtsDependables();
             Global.EvtHandler.CallPopulateDataAction();
 
             InitializeComponent();

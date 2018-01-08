@@ -29,7 +29,7 @@ namespace WBR_Common.DataModels.NSPage06
             {
                 selectedIndexDiameter = value;
                 NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_TB_D1>(x => x.SelectedIndexDiameter));
-               
+
             }
         }
 
@@ -37,7 +37,7 @@ namespace WBR_Common.DataModels.NSPage06
         [DynGet(DynKey = "RebarDiameter")]
         public int RebarDiameter => Calculator.GetNominalSize((EDiameters)SelectedIndexDiameter, this.global);
 
-       
+
         /// <summary>
         /// UI_ComboBox_UPBR_TB_Dir1_Option
         /// </summary>
@@ -46,8 +46,11 @@ namespace WBR_Common.DataModels.NSPage06
         public int SelectedIndexOption
         {
             get { return selectedIndexOption; }
-            set { selectedIndexOption = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_TB_D1>(x => x.SelectedIndexOption));
-                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_TB_D1>(x => x.CurrentOption)); }
+            set
+            {
+                selectedIndexOption = value; NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_TB_D1>(x => x.SelectedIndexOption));
+                NotifyPropertyChanged(Reflected.ObjGetLastPropertyName<DataModel_TB_D1>(x => x.CurrentOption));
+            }
         }
 
         [DynGet(DynKey = "CurrentOption")]
@@ -146,20 +149,45 @@ namespace WBR_Common.DataModels.NSPage06
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HBottom))
                         Set_OffsetFromBottom();
                 };
+                global.GDMPage04.DataModelRadial1.PropertyChanged += (o, e) => 
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage04.DataModelRadial1>(x => x.SelectedIndexLargeDiameter))
+                        Set_OffsetFromBottom();
+                };
+                global.GDMPage04.DataModelRadial2.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage04.DataModelRadial2>(x => x.SelectedIndexLargeDiameter))
+                        Set_OffsetFromBottom();
+                };
+               
             });
 
-            global.EvtHandler.AddPostEventsRegisterAction(() => {
+            global.EvtHandler.AddPostEventsRegisterAction(() =>
+            {
                 this.SelectedIndexDiameter = 0;
                 this.SelectedIndexOption = 0;
-            });                                 
+            });
+
+            global.EvtHandler.AddEvtsDependables(() => {
+                //after collection is generated (on posteventsregisteraction)
+                global.GDMPage04.DataModelCircular_ZoneCollection.Zones[0].PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModels.NSPage04.DataModelCircular_Zone>(x => x.SelectedIndexDiameter))
+                        Set_OffsetFromBottom();
+                };
+            });
         }
 
         private void Set_OffsetFromBottom()
         {
-            OffsetFromBottom = 
-                  global.GDMPage01.DataModel_Global_Formwork.HBottom
-                + Calculator.GetNominalSize((EDiameters)global.GDMPage04.DataModelRadial1.SelectedIndexLargeDiameter, global)
-                + Calculator.GetNominalSize((EDiameters)global.GDMPage04.DataModelRadial2.SelectedIndexLargeDiameter, global);
+            var hbottom = global.GDMPage01.DataModel_Global_Formwork.HBottom;
+            var d1 = Calculator.GetNominalSize((EDiameters)global.GDMPage04.DataModelRadial1.SelectedIndexLargeDiameter, global);
+            var d2 = Calculator.GetNominalSize((EDiameters)global.GDMPage04.DataModelRadial2.SelectedIndexLargeDiameter, global);
+            int selIndex = global.GDMPage04.DataModelCircular_ZoneCollection.Get(0).SelectedIndexDiameter;
+            EDiameters eDiameter = (EDiameters)selIndex;
+            var d3 = Calculator.GetNominalSize(eDiameter, global);
+
+            OffsetFromBottom = hbottom + d1 + d2 + d3;
         }
     }
 }

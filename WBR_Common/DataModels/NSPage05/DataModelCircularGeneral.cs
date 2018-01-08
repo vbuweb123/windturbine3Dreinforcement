@@ -81,45 +81,27 @@ namespace WBR_Common.DataModels.NSPage05
         {
             this.global = global;
             global.EvtHandler.AddPostBuildEvents(() => {
-                this.PropertyChanged += (o, e) => {
+                global.GDMPage04.DataModelCircularGeneral.PropertyChanged += (o, e) => {
+
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelCircularGeneral>(x => x.MaximumRebarLength))
+                        MaximumRebarLength = global.GDMPage04.DataModelCircularGeneral.MaximumRebarLength;
+
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelCircularGeneral>(x => x.SelectedDiameterEdgeCirculars))
+                        SelectedDiameterEdgeCirculars = global.GDMPage04.DataModelCircularGeneral.SelectedDiameterEdgeCirculars;
+
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelCircularGeneral>(x => x.NumberEdgeCirculars))
+                        NumberEdgeCirculars = global.GDMPage04.DataModelCircularGeneral.NumberEdgeCirculars;
 
                     if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelCircularGeneral>(x => x.SpacingEdgeCirculars))
-                        Set_NumberEdgeCircular();
+                        SpacingEdgeCirculars = global.GDMPage04.DataModelCircularGeneral.SpacingEdgeCirculars;
+
+                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModelCircularGeneral>(x => x.RadiusCore))
+                        RadiusCore = global.GDMPage04.DataModelCircularGeneral.RadiusCore;
+
                 };
             });
 
-            global.EvtHandler.AddPostBuildEvents(() => {
-                this.global.GDMPage02.DataModel_Anchor.PropertyChanged += (o, e) => {
-
-                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.RadiusCenterLineTower) ||
-                    e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Anchor>(x => x.WidthBottFlange))
-                        Set_RadiusCore();
-                };
-            });
-
-            global.EvtHandler.AddPostBuildEvents(() => {
-                this.global.GDMPage01.DataModel_Global_Formwork.PropertyChanged += (o, e) => {
-
-                    if (e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.HFoundationEdge) ||
-                    e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.BottomCover) ||
-                    e.PropertyName == Reflected.ObjGetLastPropertyName<DataModel_Global_Formwork>(x => x.TopCover))
-                        Set_NumberEdgeCircular();
-                };
-            });
+            
         }
-
-        private void Set_RadiusCore()
-        {
-            RadiusCore = global.GDMPage02.DataModel_Anchor.RadiusCenterLineTower - global.GDMPage02.DataModel_Anchor.WidthBottFlange;
-        }
-        private void Set_NumberEdgeCircular()
-        {
-            NumberEdgeCirculars = (SpacingEdgeCirculars == 0) ? 0 : (global.GDMPage01.DataModel_Global_Formwork.HFoundationEdge -
-                                                                    global.GDMPage01.DataModel_Global_Formwork.BottomCover -
-                                                                    global.GDMPage01.DataModel_Global_Formwork.TopCover)
-                                                                    / SpacingEdgeCirculars;
-        }
-
-
     }
 }

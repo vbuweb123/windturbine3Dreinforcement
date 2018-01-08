@@ -380,7 +380,7 @@ namespace WBR_Common.DataModels.NSPAge03
         
         private void Set_Angle()
         {
-            Angle = Math.Tan(Slope)* (180 / Math.PI);         
+            Angle = Math.Atan(Slope) * (180 / Math.PI);         
         }
 
         private void Set_divCurve()

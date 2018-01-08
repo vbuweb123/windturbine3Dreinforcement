@@ -304,6 +304,33 @@ namespace WBR_Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to XA1.
+        /// </summary>
+        internal static string ExposureClass_XA1 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XA1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XA2.
+        /// </summary>
+        internal static string ExposureClass_XA2 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XA2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XA3.
+        /// </summary>
+        internal static string ExposureClass_XA3 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XA3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to XC1.
         /// </summary>
         internal static string ExposureClass_XC1 {
@@ -363,6 +390,69 @@ namespace WBR_Common.Resources {
         internal static string ExposureClass_XD3 {
             get {
                 return ResourceManager.GetString("ExposureClass_XD3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XF1.
+        /// </summary>
+        internal static string ExposureClass_XF1 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XF1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XF2.
+        /// </summary>
+        internal static string ExposureClass_XF2 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XF2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XF3.
+        /// </summary>
+        internal static string ExposureClass_XF3 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XF3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XF4.
+        /// </summary>
+        internal static string ExposureClass_XF4 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XF4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XS1.
+        /// </summary>
+        internal static string ExposureClass_XS1 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XS1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XS2.
+        /// </summary>
+        internal static string ExposureClass_XS2 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XS2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XS3.
+        /// </summary>
+        internal static string ExposureClass_XS3 {
+            get {
+                return ResourceManager.GetString("ExposureClass_XS3", resourceCulture);
             }
         }
         
