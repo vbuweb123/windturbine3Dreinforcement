@@ -5,16 +5,18 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WindBarrierReinforcement"
       xmlns:behaviors="clr-namespace:WindBarrierReinforcement.Behaviors"
-      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Behaviors="clr-namespace:WindBarrierReinforcement.Behaviors" x:Class="WindBarrierReinforcement.Page04"
+      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+      xmlns:Behaviors="clr-namespace:WindBarrierReinforcement.Behaviors" 
+      x:Class="WindBarrierReinforcement.Page04"
       mc:Ignorable="d" 
-      xmlns:ap ="clr-namespace:WindBarrierReinforcement.Common.AttachedProperties"
+      xmlns:ap ="clr-namespace:WBR_Common.Common.AttachedProperties;assembly=WBR_Common"
       MinHeight="580" MinWidth="700"
       Title="Page04">
 
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Resources/XamlResources.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WBR_Common;component/Resources/XamlResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>

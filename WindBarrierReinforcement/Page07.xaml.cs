@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WindBarrierReinforcement.DataModels.NSPage07;
-using WindBarrierReinforcement.Resources;
-using WindBarrierReinforcement.StaticModel;
+using WBR_Common.DataModels.NSPage07;
+using WBR_Common.Resources;
+using WBR_Common.StaticModel;
 
 namespace WindBarrierReinforcement
 {

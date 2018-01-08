@@ -1,0 +1,272 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WBR_Common.Resources"
+                    xmlns:ap="clr-namespace:WBR_Common.Common.AttachedProperties">
+    <Color x:Key="LightGray">#AED581</Color>
+
+
+
+    <!--Do not delete these - used in tool tip template-->
+    <Color x:Key="TT_BottomBGColor">#313131</Color>
+    <Color x:Key="C1">#16222A</Color>
+    <Color x:Key="C2">#3A6073</Color>
+    <SolidColorBrush x:Key="TT_BottomBGBrush" Color="{StaticResource ResourceKey=TT_BottomBGColor}"/>
+    <LinearGradientBrush x:Key="BackgroundGradientBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{StaticResource C1}" Offset="0.0" />
+        <GradientStop Color="{StaticResource C2}" Offset="0.51" />
+        <GradientStop Color="{StaticResource C1}" Offset="1" />
+    </LinearGradientBrush>
+    <!--Colors-->
+    <Color x:Key="Orange 200">#FFCC80</Color>
+    <Color x:Key="LightGreen300">#9CCC65</Color>
+    <Color x:Key="Teal400">#26A69A</Color>
+
+    <Color x:Key="BlueGrey50">#ECEFF1</Color>
+    <Color x:Key="BlueGrey100">#CFD8DC</Color>
+    <Color x:Key="BlueGrey200">#B0BEC5</Color>
+    <Color x:Key="BlueGrey300">#90A4AE</Color>
+    <Color x:Key="BlueGrey400">#78909C</Color>
+    <Color x:Key="BlueGrey500">#607D8B</Color>
+    <Color x:Key="BlueGrey600">#546E7A</Color>
+    <Color x:Key="BlueGrey700">#455A64</Color>
+    <Color x:Key="BlueGrey800">#37474F</Color>
+    <Color x:Key="BlueGrey900">#263238</Color>
+
+    <Color x:Key="Cyan 100">#B2EBF2</Color>
+
+    <Color x:Key="Gray900">#212121</Color>
+
+    <Color x:Key="BlueGray_Random1">#374760</Color>
+    <!--Brushes-->
+    <SolidColorBrush x:Key="ExpanderBackgroudBrush" Color="{StaticResource LightGray}"></SolidColorBrush>
+
+    <SolidColorBrush x:Key="AppTextBox_BorderBrush" Color="{StaticResource BlueGrey900}"/>
+    <SolidColorBrush x:Key="AppTextBox_Background" Color="{StaticResource Cyan 100}"/>
+    <SolidColorBrush x:Key="AppTextBox_Disabled_Background" Color="{StaticResource BlueGrey100}"/>
+
+    <SolidColorBrush x:Key="AppMainBackgroundColor" Color="{StaticResource BlueGray_Random1}"/>
+    <SolidColorBrush x:Key="AppContainerBackgroundColor" Color="{StaticResource BlueGrey200}"/>
+    <SolidColorBrush x:Key="AppTabItemTextColor" Color="{StaticResource Gray900}"/>
+    <SolidColorBrush x:Key="AppTitleColor" Color="{StaticResource LightGreen300}"/>
+    
+    <SolidColorBrush x:Key="MenuItemBackground" Color="{StaticResource BlueGrey200}"/>
+    <SolidColorBrush x:Key="MenuItemBorder" Color="{StaticResource BlueGrey600}"/>
+    <!--Load Fonts-->
+    <FontFamily x:Key="Lato">pack://application:,,,/Assets/Fonts/Lato/#Lato</FontFamily>
+    <FontFamily x:Key="Pacifico">pack://application:,,,/Assets/Fonts/Pacifico/#Pacifico</FontFamily>
+    <FontFamily x:Key="Acme">pack://application:,,,/Assets/Fonts/Acme/#Acme</FontFamily>
+    <FontFamily x:Key="IndieFlower">pack://application:,,,/Assets/Fonts/Indie Flower/#IndieFlower</FontFamily>
+
+    <!--App Styles generics -->
+    <Style x:Key="AppGeneric" TargetType="Control">
+        <Setter Property="FontFamily" Value="{DynamicResource Acme}"></Setter>
+    </Style>
+    <Style x:Key="AppTextBlockGeneric" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{DynamicResource Acme}"></Setter>
+    </Style>
+    <!--app styles global-->
+    <Style TargetType="Label" BasedOn="{StaticResource AppGeneric}">
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+
+    <Style TargetType="TextBlock" BasedOn="{StaticResource AppTextBlockGeneric}">
+        <Setter Property="FontSize" Value="10"/>
+    </Style>
+    <!--app styles particular-->
+    <Style TargetType="Label" x:Key="AppContentTitleLabel">
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="AppContentTitleTextBlock" BasedOn="{StaticResource AppTextBlockGeneric}">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="{StaticResource AppTitleColor}"/>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="AppContentTitleTextBlock2" BasedOn="{StaticResource AppTextBlockGeneric}">
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
+
+    <Style TargetType="MenuItem">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontFamily" Value="{StaticResource IndieFlower}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+        <!--<Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                        <Border Background="{StaticResource MenuItemBackground}"  BorderBrush="{StaticResource MenuItemBorder}" BorderThickness="1">
+                        <DockPanel VerticalAlignment="Center">
+                            <Image Source="pack://application:,,,/WindBarrierReinforcement;component/Assets/Icons/Page.png" Width="15"/>
+                            <TextBlock Padding="5,0,0,0" Text="{Binding Header, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DockPanel>
+
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="MouseEnter" Value="True">
+                            <Setter TargetName="Border" Property="BorderThickness" Value="0"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>-->
+        <!--</Setter>-->
+    </Style>
+    <!--Text Box template-->
+
+    <ControlTemplate x:Key="AppTextBoxGeneric" TargetType="TextBox">
+        <Border x:Name="border" Height="25" CornerRadius="3" BorderBrush="{StaticResource AppTextBox_BorderBrush}" BorderThickness="1" 
+                            Background="{StaticResource AppTextBox_Background}" VerticalAlignment="Center">
+            <TextBox Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Text, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{TemplateBinding IsEnabled}" 
+                           BorderBrush="Transparent" BorderThickness="0" Background="Transparent"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="border" Property="Background" Value="{StaticResource AppTextBox_Disabled_Background}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <!--Text Box Styles-->
+    <Style x:Key="TextBoxTrigger_Tag01" TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger Property="Tag" Value="0">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="1">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="TextBoxTrigger_Tag10" TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger Property="Tag" Value="1">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="0">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+     
+
+    <Style x:Key="TextBoxTagTrigger_NoOfBarsSelectCurrent" TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger Property="Tag" Value="NoOfBars">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Spacing">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBoxTagTrigger_SpacingSelectCurrent" TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger Property="Tag" Value="Spacing">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBoxTagTrigger_CBES_Spacing" TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger Property="Tag" Value="NoOfBars_Spacing_True">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars_Spacing_False">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Spacing_Length_True">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Spacing_Length_False">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars_Length_True">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars_Length_False">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBoxTagTrigger_CBES_Length" TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger Property="Tag" Value="NoOfBars_Spacing_True">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars_Spacing_False">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Spacing_Length_True">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Spacing_Length_False">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars_Length_True">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars_Length_False">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBoxTagTrigger_CBES_NoOfBars" TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger Property="Tag" Value="NoOfBars_Spacing_True">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars_Spacing_False">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Spacing_Length_True">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="Spacing_Length_False">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars_Length_True">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+            <Trigger Property="Tag" Value="NoOfBars_Length_False">
+                <Setter Property="IsEnabled" Value="True"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+
+    <!--Tab Item Style-->
+    <Style TargetType="TabItem">
+        <Setter Property="Foreground" Value="{StaticResource AppTabItemTextColor}"/>
+        <Setter Property="FontFamily" Value="{StaticResource Lato}"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+    </Style>
+
+    <ControlTemplate x:Key="ToolTipImageLoader" TargetType="ToolTip">
+        <Border BorderBrush="{StaticResource TT_BottomBGBrush}" BorderThickness="0.5"  Height="360" Width="640">
+            <WrapPanel Background="Transparent" Margin="0,0,0,0" >
+                <Border Background="{StaticResource BackgroundGradientBrush}" Margin="0,0,0,0"
+                        Height="{Binding Height, RelativeSource={RelativeSource AncestorType={x:Type Border} }}"
+                        Width="{Binding Width, RelativeSource={RelativeSource AncestorType={x:Type Border}}}"
+                        DockPanel.Dock="Top">
+                    <Image VerticalAlignment="Center" Source="{Binding Path=(ap:ImageSourcePath.ImageSourcePath), RelativeSource={RelativeSource AncestorType={x:Type ToolTip}, Mode=FindAncestor}}" />
+                </Border>
+                <Rectangle
+                        Height="30" Margin="0,-30,0,0" Fill="{StaticResource TT_BottomBGBrush}" Opacity="0.8"
+                        Width="{Binding Width, RelativeSource={RelativeSource AncestorType={x:Type Border}}}">
+                </Rectangle>
+                <Border Width="{Binding Width, RelativeSource={RelativeSource AncestorType={x:Type Border}}}" Margin="0,-30,0,0" Background="Transparent">
+                    <TextBlock Text="{Binding Path=(ap:InfoText.InfoText), RelativeSource={RelativeSource AncestorType={x:Type ToolTip}, Mode=FindAncestor}}" 
+                        VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Left" Margin="10,5,2,2" FontStyle="Normal" FontSize="10" TextWrapping="Wrap"/>
+                </Border>
+            </WrapPanel>
+        </Border>
+    </ControlTemplate>
+    
+</ResourceDictionary>

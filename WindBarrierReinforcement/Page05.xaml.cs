@@ -13,10 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WindBarrierReinforcement.Common.Eng;
-using WindBarrierReinforcement.DataModels.NSPage05;
-using WindBarrierReinforcement.Resources;
-using WindBarrierReinforcement.StaticModel;
+using WBR_Common.Common.Eng;
+using WBR_Common.DataModels.NSPage05;
+using WBR_Common.Resources;
+using WBR_Common.StaticModel;
 
 namespace WindBarrierReinforcement
 {

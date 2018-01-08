@@ -6,14 +6,14 @@
       xmlns:local="clr-namespace:WindBarrierReinforcement"
       xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
       xmlns:behaviors ="clr-namespace:WindBarrierReinforcement.Behaviors"
-      xmlns:ap ="clr-namespace:WindBarrierReinforcement.Common.AttachedProperties"
+      xmlns:ap ="clr-namespace:WBR_Common.Common.AttachedProperties;assembly=WBR_Common"
       mc:Ignorable="d" 
       d:DesignHeight="465" d:DesignWidth="700"
       Title="Materials">
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/WindBarrierReinforcement;component/Resources/XamlResources.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/WBR_Common;component/Resources/XamlResources.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>

@@ -13,12 +13,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WindBarrierReinforcement.Common.Attributes;
-using WindBarrierReinforcement.Common.Eng;
-using WindBarrierReinforcement.Common.Reflected;
-using WindBarrierReinforcement.DataModels.NSPage06;
-using WindBarrierReinforcement.Resources;
-using WindBarrierReinforcement.StaticModel;
+using WBR_Common.Common.Attributes;
+using WBR_Common.Common.Eng;
+using WBR_Common.Common.Reflected;
+using WBR_Common.DataModels.NSPage06;
+using WBR_Common.Resources;
+using WBR_Common.StaticModel;
+using WBR_Common.Writer;
 
 namespace WindBarrierReinforcement
 {
@@ -127,7 +128,7 @@ namespace WindBarrierReinforcement
             };
             if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                Writer.Writer.Save(Global, sfd.FileName);
+                Writer.Save(Global, sfd.FileName);
             }
         }
         private void  Open_Click(object sender, RoutedEventArgs e)
@@ -143,7 +144,7 @@ namespace WindBarrierReinforcement
             };
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                Writer.Writer.Open(Global, ofd.FileName);
+                Writer.Open(Global, ofd.FileName);
             }
         }
     }

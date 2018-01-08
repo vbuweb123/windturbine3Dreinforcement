@@ -10,7 +10,7 @@
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/WindBarrierReinforcement;component/Resources/XamlResources.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/WBR_Common;component/Resources/XamlResources.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>

@@ -15,12 +15,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WindBarrierReinforcement.Common.AttachedProperties;
-using WindBarrierReinforcement.Common.Eng;
-using WindBarrierReinforcement.DataModels;
-using WindBarrierReinforcement.DataModels.NSPage09;
-using WindBarrierReinforcement.Resources;
-using WindBarrierReinforcement.StaticModel;
+using WBR_Common.Common.AttachedProperties;
+using WBR_Common.Common.Eng;
+using WBR_Common.DataModels;
+using WBR_Common.DataModels.NSPage09;
+using WBR_Common.Resources;
+using WBR_Common.StaticModel;
 
 namespace WindBarrierReinforcement
 {
@@ -31,7 +31,6 @@ namespace WindBarrierReinforcement
     {
         public DataModelUBABCollection DataModelUBABCollection { get; private set; }
 
-        private string _zoneName = "Zona ";
         private int SelectedIndex = -1;
 
         public Page09(GlobalDataModels global)

@@ -1,16 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>ff4347f1-14e1-4985-a152-dc093ce3e5c5</ProjectGuid>
+    <ProjectGuid>{FF4347F1-14E1-4985-A152-DC093CE3E5C5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WBR_Common</RootNamespace>
     <AssemblyName>WBR_Common</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,24 +31,157 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="Microsoft.Expression.Interactions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Common\AttachedProperties\CultureKey.cs" />
+    <Compile Include="Common\AttachedProperties\ImageSourcePath.cs" />
+    <Compile Include="Common\AttachedProperties\InfoText.cs" />
+    <Compile Include="Common\Attributes\DisplayByResourceKeyAttribute.cs" />
+    <Compile Include="Common\Attributes\DynNav.cs" />
+    <Compile Include="Common\Attributes\DynGet.cs" />
+    <Compile Include="Common\Attributes\ResourceFileAttribute.cs" />
+    <Compile Include="Common\DataModel\DataModel.cs" />
+    <Compile Include="Common\Eng\Calculator.cs" />
+    <Compile Include="Common\Eng\EConcreteQuality.cs" />
+    <Compile Include="Common\Eng\EConsistenceTolerance.cs" />
+    <Compile Include="Common\Eng\EDiameters.cs" />
+    <Compile Include="Common\Eng\EExposureClass.cs" />
+    <Compile Include="Common\Eng\EHookTypes.cs" />
+    <Compile Include="Common\Eng\EOption.cs" />
+    <Compile Include="Common\Eng\EOptionsCBES.cs" />
+    <Compile Include="Common\Language\CultureLanguages.cs" />
+    <Compile Include="Common\Language\CultureRenamer.cs" />
+    <Compile Include="Common\Language\CurrentLanguage.cs" />
+    <Compile Include="Common\Language\RManager.cs" />
+    <Compile Include="Common\Reflected\DataInfo.cs" />
+    <Compile Include="Common\Reflected\EDataInfo.cs" />
+    <Compile Include="Common\Reflected\EnumHelpers.cs" />
+    <Compile Include="Common\Reflected\FieldDataInfo.cs" />
+    <Compile Include="Common\Reflected\PropertyDataInfo.cs" />
+    <Compile Include="Common\Reflected\Reflected.cs" />
+    <Compile Include="Common\ValueConverters\NegateBool.cs" />
+    <Compile Include="DataModels\NSPage01\DataModel_Global_Coordinations_GroundPoint.cs" />
+    <Compile Include="DataModels\NSPage01\DataModel_Global_Formwork.cs" />
+    <Compile Include="DataModels\NSPage01\DataModel_Global_Materials.cs" />
+    <Compile Include="DataModels\NSPage02\DataModel_Anchor.cs" />
+    <Compile Include="DataModels\NSPAge03\DataModel_ScrewPiles.cs" />
+    <Compile Include="DataModels\NSPage04\DataModelCircularGeneral.cs" />
+    <Compile Include="DataModels\NSPage04\DataModelCircular_Zone.cs" />
+    <Compile Include="DataModels\NSPage04\DataModelCircular_ZoneCollection.cs" />
+    <Compile Include="DataModels\NSPage04\DataModelRadial1.cs" />
+    <Compile Include="DataModels\NSPage04\DataModelRadial2.cs" />
+    <Compile Include="DataModels\NSPage04\DataModelRadialGeneral.cs" />
+    <Compile Include="DataModels\NSPage04\EZonePosition.cs" />
+    <Compile Include="DataModels\NSPage04\IDataModelCircularZone.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelCircularGeneral.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelCircular_Zone.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelCircular_ZoneCollection.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelRadial1.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelRadial2.cs" />
+    <Compile Include="DataModels\NSPage05\DataModelRadialGeneral.cs" />
+    <Compile Include="DataModels\NSPage05\EZonePosition.cs" />
+    <Compile Include="DataModels\NSPage06\IDataModelCircularZone.cs" />
+    <Compile Include="DataModels\NSPage06\DataModel_BR_D1.cs" />
+    <Compile Include="DataModels\NSPage06\DataModel_BR_D2.cs" />
+    <Compile Include="DataModels\NSPage06\DataModel_BR_L.cs" />
+    <Compile Include="DataModels\NSPage06\DataModel_Circular_EdgeOfL.cs" />
+    <Compile Include="DataModels\NSPage06\DataModel_Generalities.cs" />
+    <Compile Include="DataModels\NSPage06\DataModel_TB_D1.cs" />
+    <Compile Include="DataModels\NSPage06\DataModel_TB_D2.cs" />
+    <Compile Include="DataModels\NSPage07\DataModel_CircularBarsExteriorSide.cs" />
+    <Compile Include="DataModels\NSPage07\DataModel_CircularBarsTop.cs" />
+    <Compile Include="DataModels\NSPage07\DataModel_RadialEdgeConcrete.cs" />
+    <Compile Include="DataModels\NSPage07\DataModel_StraightBars.cs" />
+    <Compile Include="DataModels\NSPage07\DataModel_StraightBars_Extra.cs" />
+    <Compile Include="DataModels\NSPage08\DataModel_ARExteriorCircularBottom.cs" />
+    <Compile Include="DataModels\NSPage08\DataModel_ARExteriorCircularLateral.cs" />
+    <Compile Include="DataModels\NSPage08\DataModel_ARExteriorCircularTop.cs" />
+    <Compile Include="DataModels\NSPage08\DataModel_ARExtUBars.cs" />
+    <Compile Include="DataModels\NSPage08\DataModel_ARIntCircularBottom.cs" />
+    <Compile Include="DataModels\NSPage08\DataModel_ARIntCircularLateral.cs" />
+    <Compile Include="DataModels\NSPage08\DataModel_ARIntCircularTop.cs" />
+    <Compile Include="DataModels\NSPage08\DataModel_ARIntUBars.cs" />
+    <Compile Include="DataModels\NSPage09\DataModelUBAB.cs" />
+    <Compile Include="DataModels\NSPage09\DataModelUBABCollection.cs" />
+    <Compile Include="DataModels\NSPage10\DataModel_CHR_General.cs" />
+    <Compile Include="DataModels\NSPage10\DataModel_CHR_Zones.cs" />
+    <Compile Include="DataModels\NSPage11\DataModelMaterials.cs" />
+    <Compile Include="DataModels\NSPage12\DataModelBSShapes.cs" />
+    <Compile Include="DynGenerateData\CollectedDictionary.cs" />
+    <Compile Include="DynGenerateData\Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\EN.Designer.cs">
+      <DependentUpon>EN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Resource.Designer.cs">
+      <DependentUpon>Resource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="StaticModel\GlobalDataModels.cs" />
+    <Compile Include="StaticModel\_EvtHandler.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage01.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage02.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage03.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage04.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage05.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage06.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage07.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage08.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage09.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage10.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage11.cs" />
+    <Compile Include="StaticModel\_GlobalDataModelsPage12.cs" />
+    <Compile Include="Writer\KeyCodeDictionary.cs" />
+    <Compile Include="Writer\Registry.cs" />
+    <Compile Include="Writer\SaveDataType.cs" />
+    <Compile Include="Writer\SaveKeyCode.cs" />
+    <Compile Include="Writer\Writer.cs" />
+    <Compile Include="Writer\Writer.write.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UPBR_1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UPBR_2.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resources\XamlResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

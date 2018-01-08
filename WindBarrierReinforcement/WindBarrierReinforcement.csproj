@@ -72,75 +72,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Behaviors\NumericBehavior.cs" />
-    <Compile Include="Common\AttachedProperties\CultureKey.cs" />
-    <Compile Include="Common\AttachedProperties\ImageSourcePath.cs" />
-    <Compile Include="Common\AttachedProperties\InfoText.cs" />
-    <Compile Include="Common\Attributes\DisplayByResourceKeyAttribute.cs" />
-    <Compile Include="Common\Attributes\ResourceFileAttribute.cs" />
-    <Compile Include="Common\Attributes\ValueAttribute.cs" />
-    <Compile Include="Common\DataModel\DataModel.cs" />
-    <Compile Include="Common\Eng\EConcreteQuality.cs" />
-    <Compile Include="Common\Eng\EConsistenceTolerance.cs" />
-    <Compile Include="Common\Eng\EExposureClass.cs" />
-    <Compile Include="Common\Eng\EHookTypes.cs" />
-    <Compile Include="Common\Eng\EOptionsCBES.cs" />
-    <Compile Include="Common\Eng\EDiameters.cs" />
-    <Compile Include="Common\Eng\EOption.cs" />
-    <Compile Include="Common\Reflected\DataInfo.cs" />
-    <Compile Include="Common\Reflected\EDataInfo.cs" />
-    <Compile Include="Common\Reflected\EnumHelpers.cs" />
-    <Compile Include="Common\Reflected\FieldDataInfo.cs" />
-    <Compile Include="Common\Reflected\PropertyDataInfo.cs" />
-    <Compile Include="Common\Reflected\Reflected.cs" />
-    <Compile Include="Common\ValueConverters\NegateBool.cs" />
     <Compile Include="DataModelPictures\Picture.cs" />
-    <Compile Include="DataModels\NSPage01\DataModel_Global_Coordinations_GroundPoint.cs" />
-    <Compile Include="DataModels\NSPage01\DataModel_Global_Formwork.cs" />
-    <Compile Include="DataModels\NSPage01\DataModel_Global_Materials.cs" />
-    <Compile Include="DataModels\NSPage02\DataModel_Anchor.cs" />
-    <Compile Include="DataModels\NSPage03\DataModel_ScrewPiles.cs" />
-    <Compile Include="DataModels\NSPage04\DataModelCircularGeneral.cs" />
-    <Compile Include="DataModels\NSPage04\DataModelCircular_Zone.cs" />
-    <Compile Include="DataModels\NSPage04\DataModelCircular_ZoneCollection.cs" />
-    <Compile Include="DataModels\NSPage04\DataModelRadial1.cs" />
-    <Compile Include="DataModels\NSPage04\DataModelRadial2.cs" />
-    <Compile Include="DataModels\NSPage04\DataModelRadialGeneral.cs" />
-    <Compile Include="DataModels\NSPage04\EZonePosition.cs" />
-    <Compile Include="DataModels\NSPage04\IDataModelCircularZone.cs" />
-    <Compile Include="DataModels\NSPage05\DataModelCircularGeneral.cs" />
-    <Compile Include="DataModels\NSPage05\DataModelCircular_Zone.cs" />
-    <Compile Include="DataModels\NSPage05\DataModelCircular_ZoneCollection.cs" />
-    <Compile Include="DataModels\NSPage05\DataModelRadial1.cs" />
-    <Compile Include="DataModels\NSPage05\DataModelRadial2.cs" />
-    <Compile Include="DataModels\NSPage05\DataModelRadialGeneral.cs" />
-    <Compile Include="DataModels\NSPage05\EZonePosition.cs" />
-    <Compile Include="DataModels\NSPage05\IDataModelCircularZone.cs" />
-    <Compile Include="DataModels\NSPage06\DataModel_BR_D1.cs" />
-    <Compile Include="DataModels\NSPage06\DataModel_BR_D2.cs" />
-    <Compile Include="DataModels\NSPage06\DataModel_BR_L.cs" />
-    <Compile Include="DataModels\NSPage06\DataModel_Circular_EdgeOfL.cs" />
-    <Compile Include="DataModels\NSPage06\DataModel_TB_D1.cs" />
-    <Compile Include="DataModels\NSPage06\DataModel_TB_D2.cs" />
-    <Compile Include="DataModels\NSPage06\DataModel_Generalities.cs" />
-    <Compile Include="DataModels\NSPage07\DataModel_CircularBarsExteriorSide.cs" />
-    <Compile Include="DataModels\NSPage07\DataModel_CircularBarsTop.cs" />
-    <Compile Include="DataModels\NSPage07\DataModel_RadialEdgeConcrete.cs" />
-    <Compile Include="DataModels\NSPage07\DataModel_StraightBars.cs" />
-    <Compile Include="DataModels\NSPage07\DataModel_StraightBars_Extra.cs" />
-    <Compile Include="DataModels\NSPage08\DataModel_ARExteriorCircularBottom.cs" />
-    <Compile Include="DataModels\NSPage08\DataModel_ARExteriorCircularLateral.cs" />
-    <Compile Include="DataModels\NSPage08\DataModel_ARExteriorCircularTop.cs" />
-    <Compile Include="DataModels\NSPage08\DataModel_ARExtUBars.cs" />
-    <Compile Include="DataModels\NSPage08\DataModel_ARIntCircularBottom.cs" />
-    <Compile Include="DataModels\NSPage08\DataModel_ARIntCircularLateral.cs" />
-    <Compile Include="DataModels\NSPage08\DataModel_ARIntCircularTop.cs" />
-    <Compile Include="DataModels\NSPage08\DataModel_ARIntUBars.cs" />
-    <Compile Include="DataModels\NSPage09\DataModelUBAB.cs" />
-    <Compile Include="DataModels\NSPage09\DataModelUBABCollection.cs" />
-    <Compile Include="DataModels\NSPage10\DataModel_CHR_General.cs" />
-    <Compile Include="DataModels\NSPage10\DataModel_CHR_Zones.cs" />
-    <Compile Include="DataModels\NSPage11\DataModelMaterials.cs" />
-    <Compile Include="DataModels\NSPage12\DataModelBSShapes.cs" />
     <Compile Include="Page10.xaml.cs">
       <DependentUpon>Page10.xaml</DependentUpon>
     </Compile>
@@ -174,41 +106,6 @@
     <Compile Include="PictureInfo.xaml.cs">
       <DependentUpon>PictureInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Resources\CultureLanguages.cs" />
-    <Compile Include="Resources\CultureRenamer.cs" />
-    <Compile Include="Resources\CurrentLanguage.cs" />
-    <Compile Include="Resources\EN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EN.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\EWords.cs" />
-    <Compile Include="Resources\Resource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resource.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\RManager.cs" />
-    <Compile Include="StaticModel\GlobalDataModels.cs" />
-    <Compile Include="StaticModel\_EvtHandler.cs" />
-    <Compile Include="StaticModel\_GlobalDataModelsPage01.cs" />
-    <Compile Include="StaticModel\_GlobalDataModelsPage02.cs" />
-    <Compile Include="StaticModel\_GlobalDataModelsPage03.cs" />
-    <Compile Include="StaticModel\_GlobalDataModelsPage04.cs" />
-    <Compile Include="StaticModel\_GlobalDataModelsPage05.cs" />
-    <Compile Include="StaticModel\_GlobalDataModelsPage06.cs" />
-    <Compile Include="StaticModel\_GlobalDataModelsPage07.cs" />
-    <Compile Include="StaticModel\_GlobalDataModelsPage08.cs" />
-    <Compile Include="StaticModel\_GlobalDataModelsPage09.cs" />
-    <Compile Include="StaticModel\_GlobalDataModelsPage10.cs" />
-    <Compile Include="StaticModel\_GlobalDataModelsPage11.cs" />
-    <Compile Include="StaticModel\_GlobalDataModelsPage12.cs" />
-    <Compile Include="Writer\KeyCodeDictionary.cs" />
-    <Compile Include="Writer\Registry.cs" />
-    <Compile Include="Writer\SaveDataType.cs" />
-    <Compile Include="Writer\SaveKeyCode.cs" />
-    <Compile Include="Writer\Writer.cs" />
-    <Compile Include="Writer\Writer.write.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -273,10 +170,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\XamlResources.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Page01.xaml.cs">
@@ -301,14 +194,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\EN.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>EN.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Resource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -348,14 +233,6 @@
     <Resource Include="Assets\Images\TopR_01.png" />
     <Resource Include="Assets\Images\UBAB_01.png" />
     <Resource Include="Assets\Images\UPBR_01.png" />
-    <Resource Include="Resources\UPBR_1.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\UPBR_2.JPG">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\Anchor_01.png" />
@@ -364,6 +241,12 @@
     <Resource Include="Assets\Icons\Page.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WBR_Common\WBR_Common.csproj">
+      <Project>{ff4347f1-14e1-4985-a152-dc093ce3e5c5}</Project>
+      <Name>WBR_Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

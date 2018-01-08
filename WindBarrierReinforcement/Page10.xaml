@@ -4,8 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WindBarrierReinforcement"
-      xmlns:l="clr-namespace:WindBarrierReinforcement.Common.ValueConverters"
-      xmlns:ap ="clr-namespace:WindBarrierReinforcement.Common.AttachedProperties"
+      xmlns:l="clr-namespace:WBR_Common.Common.ValueConverters;assembly=WBR_Common"
+      xmlns:ap ="clr-namespace:WBR_Common.Common.AttachedProperties;assembly=WBR_Common"
       mc:Ignorable="d" 
       d:DesignHeight="465" d:DesignWidth="700"
       Title="Page10">
@@ -13,7 +13,7 @@
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Resources/XamlResources.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/WBR_Common;component/Resources/XamlResources.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
             <l:NegateBool x:Key="NegateBoolConverter"/>
         </ResourceDictionary>
